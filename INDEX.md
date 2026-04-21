@@ -6,6 +6,8 @@ For a **cross-cutting index by discovery technique** (diagonalization, infinite 
 
 For a **structured toolbox** (same content as Ch. 9 but as a tree / graph / function dictionary), see [`10_toolbox.md`](10_toolbox.md) — every technique as a callable "function" with inputs, process, outputs, preconditions, and examples, plus Mermaid-rendered cluster tree, inheritance graph, and decision flowchart.
 
+For a **knowledge graph** that wires the ~100 theorems and 57+ techniques into one bipartite directed structure (state nodes → technique nodes → state nodes, with 12 compound-technique subgraphs and JSON at `knowledge_graph.json`), see [`11_knowledge_graph.md`](11_knowledge_graph.md).
+
 ## Number Theory
 - Euclid's theorem (infinitude of primes) — Ch. 1
 - Fundamental theorem of arithmetic (unique factorization) — Ch. 1
