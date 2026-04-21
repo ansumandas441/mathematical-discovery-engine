@@ -4,6 +4,8 @@ Cross-references to where each theorem appears in the chronological chapters.
 
 For a **cross-cutting index by discovery technique** (diagonalization, infinite descent, completing the square, fixed-point iteration, cross-field transfer, etc.), see [`09_discovery_techniques.md`](09_discovery_techniques.md) — 10 technique clusters with theorem examples, 8 inheritance chains, a decision-tree playbook, and a catalog of provable impossibilities.
 
+For a **structured toolbox** (same content as Ch. 9 but as a tree / graph / function dictionary), see [`10_toolbox.md`](10_toolbox.md) — every technique as a callable "function" with inputs, process, outputs, preconditions, and examples, plus Mermaid-rendered cluster tree, inheritance graph, and decision flowchart.
+
 ## Number Theory
 - Euclid's theorem (infinitude of primes) — Ch. 1
 - Fundamental theorem of arithmetic (unique factorization) — Ch. 1
