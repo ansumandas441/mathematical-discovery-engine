@@ -31,7 +31,7 @@ Wikipedia's *List of theorems* catalogs roughly 400–500 named results across ~
 | 7 | [`07_brief_catalog.md`](07_brief_catalog.md) | all | Abbreviated reference for remaining theorems |
 | 8 | [`08_epilogue.md`](08_epilogue.md) | — | Patterns in mathematical discovery |
 | 9 | [`09_discovery_techniques.md`](09_discovery_techniques.md) | cross-cutting | Taxonomy of discovery techniques: 10 clusters, inheritance chains, decision tree, impossibility warnings |
-| 10 | [`10_toolbox.md`](10_toolbox.md) | cross-cutting | Structured toolbox: Mermaid tree of 35 techniques across 12 clusters, function-style dictionary, inheritance graph, decision flowchart, quick-reference table |
+| 10 | [`10_toolbox.md`](10_toolbox.md) | cross-cutting | Structured toolbox: Mermaid tree of 57 techniques across 12 clusters, function-style dictionary, inheritance graph, decision flowchart, quick-reference table |
 
 ### A note on "how things are discovered"
 
