@@ -32,6 +32,7 @@ Wikipedia's *List of theorems* catalogs roughly 400–500 named results across ~
 | 8 | [`08_epilogue.md`](08_epilogue.md) | — | Patterns in mathematical discovery |
 | 9 | [`09_discovery_techniques.md`](09_discovery_techniques.md) | cross-cutting | Taxonomy of discovery techniques: 10 clusters, inheritance chains, decision tree, impossibility warnings |
 | 10 | [`10_toolbox.md`](10_toolbox.md) | cross-cutting | Structured toolbox: Mermaid tree of 57 techniques across 12 clusters, function-style dictionary, inheritance graph, decision flowchart, quick-reference table |
+| 11 | [`11_knowledge_graph.md`](11_knowledge_graph.md) | cross-cutting | Bipartite directed knowledge graph: states as nodes, techniques as nodes, 12 compound-technique subgraphs (Fourier, SVD, Galois, Ricci flow, Wiles, Gödel, Atiyah–Singer, Selberg sieve, circle method, Furstenberg, categorical colimits, R=T), landmark derivation paths, JSON companion at `knowledge_graph.json` |
 
 ### A note on "how things are discovered"
 
