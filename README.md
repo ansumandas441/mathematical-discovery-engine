@@ -34,6 +34,25 @@ Wikipedia's *List of theorems* catalogs roughly 400–500 named results across ~
 | 10 | [`10_toolbox.md`](10_toolbox.md) | cross-cutting | Structured toolbox: Mermaid tree of 57 techniques across 12 clusters, function-style dictionary, inheritance graph, decision flowchart, quick-reference table |
 | 11 | [`11_knowledge_graph.md`](11_knowledge_graph.md) | cross-cutting | Bipartite directed knowledge graph: states as nodes, techniques as nodes, 12 compound-technique subgraphs (Fourier, SVD, Galois, Ricci flow, Wiles, Gödel, Atiyah–Singer, Selberg sieve, circle method, Furstenberg, categorical colimits, R=T), landmark derivation paths, JSON companion at `knowledge_graph.json` |
 
+### Interactive viewer
+
+`graph_viewer.html` renders the whole knowledge graph in a browser using vis-network (CDN). Filter by kind/cluster, search by name, click a node to see details, double-click a compound technique to open its subgraph, or use the "Subgraph browser" mode to navigate any of the 12 elaborations directly.
+
+Launch with:
+
+```bash
+./serve_viewer.sh       # runs `python3 -m http.server 8765` and opens the viewer
+```
+
+or manually:
+
+```bash
+python3 -m http.server 8765
+open http://localhost:8765/graph_viewer.html
+```
+
+Opening the HTML file directly (`file://`) will not work — `fetch()` of `knowledge_graph.json` is blocked by the browser's same-origin policy. The viewer shows a banner with the server command when this happens.
+
 ### A note on "how things are discovered"
 
 Mathematical discovery rarely looks like the polished proof in a textbook. It usually begins with a puzzle, a pattern noticed, a physical question, an unsuccessful attempt by a predecessor, or a technical nuisance that refuses to go away. Where primary sources survive — Euler's letters, Gauss's diaries, Ramanujan's notebooks, Wiles's interviews — the real reasoning is visible and often strange. This report draws from those primary sources where possible.
