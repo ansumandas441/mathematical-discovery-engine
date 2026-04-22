@@ -1,0 +1,370 @@
+# Canonical Node Index (after Round 0)
+
+**Phase A mathematicians: use these ids exactly. Do not re-invent new ids for nodes that already exist.**
+
+## Existing theorem nodes — DO NOT re-derive these (they're already in the graph)
+
+- `s_abel_ruffini` — Abel–Ruffini theorem
+- `s_area_of_circle` — Area of circle = πr²
+- `s_atiyah_singer_index_theorem` — Atiyah–Singer index theorem
+- `s_banach_fpt` — Banach fixed-point theorem
+- `s_basel_identity` — Basel identity Σ1/n² = π²/6
+- `s_birkhoff_ergodic_theorem` — Birkhoff ergodic theorem
+- `s_bounded_gaps_between_primes` — Bounded gaps between primes
+- `s_brouwer_fpt` — Brouwer fixed-point theorem
+- `s_cardano_cubic_formula` — Cardano's cubic formula
+- `s_cauchy_integral_formula` — Cauchy integral formula
+- `s_central_limit_theorem` — Central limit theorem
+- `s_cfsg` — Classification of finite simple groups
+- `s_ch_independent_of_zfc` — CH independent of ZFC
+- `s_chinese_remainder_theorem` — Chinese remainder theorem
+- `s_con_zfc_gch` — Con(ZFC) ⇒ Con(ZFC+GCH) (Gödel)
+- `s_de_moivre_formula` — De Moivre's formula
+- `s_desargues_theorem` — Desargues's theorem
+- `s_euler_formula` — Euler's formula
+- `s_euler_polyhedron_formula` — Euler polyhedron formula V-E+F=2
+- `s_eulerian_path_criterion` — Eulerian path criterion
+- `s_fermat_little_theorem` — Fermat's little theorem
+- `s_fermat_two_squares` — Fermat's sum of two squares
+- `s_ferrari_quartic_formula` — Ferrari's quartic formula
+- `s_flt` — Fermat's Last Theorem
+- `s_four_color_theorem` — Four color theorem
+- `s_fourier_theorem_heat` — Fourier's theorem on the heat equation
+- `s_fundamental_theorem_of_algebra` — Fundamental theorem of algebra
+- `s_fundamental_theorem_of_arithmetic` — Fundamental theorem of arithmetic
+- `s_fundamental_theorem_of_calculus` — Fundamental theorem of calculus
+- `s_fundamental_theorem_of_galois_theory` — Fundamental theorem of Galois theory
+- `s_gauss_bonnet_theorem` — Gauss–Bonnet theorem
+- `s_geometrization_theorem` — Geometrization theorem
+- `s_godel_incompleteness` — Gödel's incompleteness theorems
+- `s_graph_minor_theorem` — Robertson–Seymour graph minor theorem
+- `s_green_tao` — Green–Tao theorem
+- `s_hahn_banach` — Hahn–Banach theorem
+- `s_hilbert_basis_theorem` — Hilbert basis theorem
+- `s_infinitude_of_primes` — Infinitude of primes
+- `s_kepler_conjecture` — Kepler conjecture
+- `s_kepler_three_laws` — Kepler's three laws
+- `s_lagrange_four_squares` — Lagrange four-square theorem
+- `s_mordell_faltings` — Mordell–Faltings theorem
+- `s_noether_theorem` — Noether's theorem
+- `s_nullstellensatz` — Hilbert's Nullstellensatz
+- `s_poincare_conjecture` — Poincaré conjecture
+- `s_prime_number_theorem` — Prime number theorem
+- `s_ptolemys_theorem` — Ptolemy's theorem
+- `s_pythagorean_theorem` — Pythagorean theorem
+- `s_quadratic_reciprocity` — Quadratic reciprocity
+- `s_ramsey_theorem_infinite` — Infinite Ramsey theorem
+- `s_riemann_mapping_theorem` — Riemann mapping theorem
+- `s_riemann_roch_theorem` — Riemann–Roch theorem
+- `s_solvability_of_pell_equation` — Solvability of Pell's equation (Chakravāla)
+- `s_stokes_theorem` — Stokes's theorem
+- `s_sylow_theorems` — Sylow theorems
+- `s_szemeredi_theorem_terminal` — Szemerédi's theorem (as terminal)
+- `s_taylor_theorem` — Taylor's theorem
+- `s_ternary_goldbach` — Ternary Goldbach (Helfgott)
+- `s_thales_theorem` — Thales's theorem
+- `s_theorema_egregium` — Theorema Egregium
+- `s_tychonoff_theorem` — Tychonoff's theorem
+- `s_uncountability_of_reals` — Uncountability of ℝ
+- `s_undecidability_of_halting` — Undecidability of halting
+- `s_volume_of_sphere` — Volume of sphere = 4/3·πr³
+- `s_weierstrass_approximation` — Weierstrass approximation
+
+## Existing technique nodes — reuse these ids verbatim
+
+- `t_analysis_algebra_topology_bridge` (09_cross_field_transfer) — Analysis–algebra–topology bridge
+- `t_arithmetize_syntax` (07_self_reference_and_impossibility) — Arithmetize syntax
+- `t_atiyah_singer_index_machinery` (12_homological_and_categorical) — Atiyah–Singer index machinery (composite) [umbrella]
+- `t_auxiliary_construction` (C2) — Auxiliary construction
+- `t_axiomatize_from_instances` (05_abstraction_and_axiomatization) — Axiomatize from instances
+- `t_category_theoretic_colimits_and_adjoints` (12_homological_and_categorical) — Category-theoretic colimits/adjoints (composite) [single-use, umbrella]
+- `t_character_decomposition_count` (03_symmetry_and_invariants) — Character decomposition count
+- `t_circle_method` (09_cross_field_transfer) — Circle method (composite) [umbrella]
+- `t_compactness_argument` (06_topology_and_obstruction) — Compactness argument
+- `t_complete_the_square` (02_algebraic_manipulation) — Complete the square
+- `t_complex_analysis_to_integers` (09_cross_field_transfer) — Complex analysis to integers [single-use]
+- `t_compose_with_identity` (02_algebraic_manipulation) — Compose with identity
+- `t_conjecture_refinement` (C1) — Conjecture refinement
+- `t_conserved_quantity` (03_symmetry_and_invariants) — Conserved quantity
+- `t_contraction_fixed_point` (08_iteration_and_fixed_points) — Contraction fixed point
+- `t_deformation_cohomology` (06_topology_and_obstruction) — Deformation cohomology [single-use]
+- `t_diagonalize` (07_self_reference_and_impossibility) — Diagonalize
+- `t_distributed_collaboration` (10_computer_and_collaboration) — Distributed collaboration [meta]
+- `t_double_centralizer_decompose` (03_symmetry_and_invariants) — Double centralizer decompose
+- `t_duality` (03_symmetry_and_invariants) — Duality
+- `t_ergodic_correspondence` (09_cross_field_transfer) — Ergodic correspondence
+- `t_exhaustion_squeeze` (04_approximation_and_limits) — Exhaustion / squeeze
+- `t_finite_case_check` (10_computer_and_collaboration) — Finite case check
+- `t_flow_with_surgery` (08_iteration_and_fixed_points) — Flow with surgery
+- `t_force_independence` (07_self_reference_and_impossibility) — Force independence
+- `t_formal_verify` (10_computer_and_collaboration) — Formal verify
+- `t_fourier_transform` (04_approximation_and_limits) — Fourier transform (umbrella) [umbrella]
+- `t_frequency_decomposition` (04_approximation_and_limits) — Frequency decomposition
+- `t_furstenberg_correspondence_principle` (09_cross_field_transfer) — Furstenberg correspondence (composite) [umbrella]
+- `t_galois_correspondence` (05_abstraction_and_axiomatization) — Galois correspondence (composite) [umbrella]
+- `t_godel_numbering` (07_self_reference_and_impossibility) — Gödel numbering (composite) [umbrella]
+- `t_group_complete_exact_category` (12_homological_and_categorical) — Group-complete exact category (K-theory) [single-use]
+- `t_heights_and_galois_rep_bridge` (C9) — Heights / Galois representation bridge
+- `t_infinite_descent` (08_iteration_and_fixed_points) — Infinite descent
+- `t_interpolate_and_continue` (04_approximation_and_limits) — Interpolate and continue
+- `t_k_theoretic_index_bridge` (C12) — K-theoretic index bridge
+- `t_level_lowering_bridge` (C9) — Level-lowering bridge (Ribet)
+- `t_major_minor_arc_decomposition` (09_cross_field_transfer) — Major/minor arc decomposition
+- `t_obstruction_class` (06_topology_and_obstruction) — Obstruction class
+- `t_physics_to_pde` (09_cross_field_transfer) — Physics to PDE
+- `t_pigeonhole_collision` (11_probabilistic_and_counting) — Pigeonhole collision
+- `t_polynomial_method` (11_probabilistic_and_counting) — Polynomial method [single-use]
+- `t_probabilistic_existence` (11_probabilistic_and_counting) — Probabilistic existence [single-use]
+- `t_projection_to_subspace` (C6) — Projection to subspace
+- `t_raise_dimension` (06_topology_and_obstruction) — Raise dimension
+- `t_reduce_to_canonical_form` (02_algebraic_manipulation) — Reduce to canonical form
+- `t_reductio_ad_absurdum` (C7) — Reductio ad absurdum
+- `t_representable_functor_trick` (12_homological_and_categorical) — Representable functor trick
+- `t_rescale_for_asymptotic_geometry` (06_topology_and_obstruction) — Rescale for asymptotic geometry [single-use]
+- `t_ricci_flow_with_surgery` (08_iteration_and_fixed_points) — Ricci flow with surgery (composite) [umbrella]
+- `t_selberg_sieve_method` (11_probabilistic_and_counting) — Selberg sieve method (composite) [umbrella]
+- `t_sheaf_cohomology_bridge` (C12) — Sheaf cohomology bridge
+- `t_sheafify_on_grothendieck_topology` (12_homological_and_categorical) — Sheafify on Grothendieck topology [single-use]
+- `t_sieve_by_optimized_quadratic` (11_probabilistic_and_counting) — Sieve by optimized quadratic
+- `t_spot_pattern_in_table` (01_experimental_and_numerical) — Spot pattern in table
+- `t_structural_isomorphism` (05_abstraction_and_axiomatization) — Structural isomorphism
+- `t_svd_and_spectral_decomposition` (02_algebraic_manipulation_and_04_approximation_and_limits) — SVD / spectral decomposition
+- `t_symmetry_reduction` (03_symmetry_and_invariants) — Symmetry reduction
+- `t_transference_bridge` (C9) — Transference bridge
+- `t_ultraproduct_transfer` (05_abstraction_and_axiomatization) — Ultraproduct transfer [single-use]
+- `t_verify_on_special_cases` (01_experimental_and_numerical) — Verify on special cases
+- `t_wiles_modularity` (06_topology_and_obstruction) — Wiles modularity (composite) [umbrella]
+
+## Existing axiom/state nodes — reuse when possible
+
+- `s_A5_is_simple_non_abelian` — A₅ is simple non-abelian
+- `s_L2_function_space` — L² function space
+- `s_T_squared_prop_a_cubed_conjecture` — T² ∝ a³ conjecture
+- `s_abstract_multigraph` — Abstract multigraph
+- `s_admissible_k_tuple` — Admissible k-tuple
+- `s_algebraically_closed_field_k` — Algebraically closed field k
+- `s_alleged_decider_H_for_halting` — Alleged halting decider H
+- `s_alleged_enumeration_of_reals_in_0_1` — Alleged enumeration of ℝ ∩ [0,1]
+- `s_analytic_exponential_series` — Exponential series Σ zⁿ/n!
+- `s_aps_in_pseudorandom_dense_subset` — APs in pseudorandom dense subset
+- `s_area_additivity` — Area additivity
+- `s_auxiliary_mp_equals_sum_of_four_squares` — mp = a²+b²+c²+d² (with small m)
+- `s_axis_of_perspective` — Axis of perspective
+- `s_case_exhaustion_complete` — Case exhaustion complete
+- `s_cauchy_integral_theorem` — Cauchy integral theorem (lemma)
+- `s_characteristic_function_of_sum` — Characteristic function of sum
+- `s_circle` — Circle (as 2D object)
+- `s_circle_definition` — Circle (as locus)
+- `s_circle_integral_for_r3_N` — Circle integral for r₃(N)
+- `s_closed_3_manifold` — Closed 3-manifold
+- `s_closed_ball_D_n` — Closed ball Dⁿ
+- `s_compact_oriented_surface_without_boundary` — Compact oriented surface ∂=∅
+- `s_compact_riemann_surface` — Compact Riemann surface
+- `s_compact_smooth_manifold` — Compact smooth manifold
+- `s_complete_metric_space` — Complete metric space
+- `s_complex_number_cos_theta_plus_i_sin_theta` — cos θ + i sin θ
+- `s_complex_numbers` — Complex numbers ℂ
+- `s_complex_polynomial_p_z` — Complex polynomial p(z)
+- `s_component_type_and_characteristic_p_type_cases` — Component/char-p type cases
+- `s_composed_triple_mod_scaling` — Composed triple (after bhāvanā)
+- `s_conic_sections` — Conic sections
+- `s_continuous_function_on_closed_interval` — Continuous f on closed interval
+- `s_continuous_function_on_interval` — Continuous function on [a,b]
+- `s_continuous_self_map` — Continuous self-map
+- `s_continuous_self_map_of_disk_without_fixed_point` — Continuous self-map of Dⁿ (no fixed pt)
+- `s_contradiction_no_retraction` — No retraction Dⁿ → ∂Dⁿ (contradiction)
+- `s_convex_polyhedron` — Convex polyhedron
+- `s_coprime_pair` — Coprime pair
+- `s_curve_inside_abelian_variety` — C ↪ Jacobian J_C
+- `s_curve_of_genus_at_least_2` — Curve C, genus ≥ 2
+- `s_cyclic_quadrilateral` — Cyclic quadrilateral
+- `s_d_omega_in_local_coords` — dω in local coordinates
+- `s_depressed_cubic_t3_plus_pt_plus_q` — Depressed cubic t³+pt+q
+- `s_depressed_quartic` — Depressed quartic
+- `s_differential_form` — Differential form
+- `s_differential_form_omega_on_manifold` — Differential form ω on M
+- `s_divisibility_definition` — Divisibility relation
+- `s_divisor_D` — Divisor D (specific)
+- `s_divisor_on_curve` — Divisor on curve
+- `s_elliptic_curve_over_Q` — Elliptic curve over ℚ
+- `s_elliptic_operator_D` — Elliptic operator D
+- `s_elliptic_operator_D_on_manifold` — Elliptic operator D on M
+- `s_encoding_of_machines_as_data` — Encoding of TMs as data
+- `s_euclid_lemma` — Euclid's Lemma
+- `s_euclidean_3_space` — Euclidean 3-space (sphere-packing context) (aliases: s_euclidean_solid_geometry)
+- `s_euclidean_plane` — Euclidean plane ℝ²
+- `s_euler_characteristic_chi_O_D` — Euler char χ(O(D))
+- `s_euler_four_square_identity` — Euler four-square identity
+- `s_euler_product_zeta` — Euler product ζ(s) = ∏(1-p⁻ˢ)⁻¹
+- `s_existence_of_x_with_x2_equiv_minus1` — x with x² ≡ -1 (mod p)
+- `s_extremal_map_f_star` — Extremal map f*
+- `s_family_F_of_injective_holomorphic_maps_to_unit_disk` — Family F of injective hol maps to 𝔻
+- `s_family_of_compact_spaces` — Family of compact spaces
+- `s_field_extension_L_over_K` — Field extension L/K
+- `s_finite_family_of_local_star_configurations` — Finite family of local star configs
+- `s_finite_generating_set_of_ideal` — Finite generating set of ideal
+- `s_finite_group` — Finite group G
+- `s_finite_group_G_with_order_divisible_by_p_n` — Finite G with pⁿ | |G|
+- `s_finite_list_of_1500_configurations` — Unavoidable set of ~1500 configs
+- `s_finite_list_of_primes` — Finite list of primes {p₁,…,pₖ}
+- `s_finite_normal_separable_extension_L_over_K` — Finite normal separable extension L/K
+- `s_finite_simple_group` — Finite simple group
+- `s_finiteness_of_isogeny_class` — Finiteness of isogeny class
+- `s_first_fundamental_form` — First fundamental form
+- `s_first_order_peano_arithmetic` — Peano arithmetic (first-order)
+- `s_four_color_theorem_machine_certified` — Four Color Theorem (machine-certified)
+- `s_frey_elliptic_curve` — Frey elliptic curve y²=x(x-aⁿ)(x+bⁿ)
+- `s_furstenberg_system_with_positive_measure_A` — Furstenberg system with μ(A)>0
+- `s_galois_correspondence` — Galois correspondence
+- `s_galois_group` — Galois group Gal(L/K)
+- `s_galois_group_S5` — Galois group S₅
+- `s_galois_representation` — Galois representation
+- `s_gap_bound_246` — Gap bound 246 (Polymath8)
+- `s_gauss_curvature_K` — Gaussian curvature K
+- `s_general_cubic_ax3_plus_bx2_plus_cx_plus_d` — General cubic ax³+bx²+cx+d
+- `s_general_quartic` — General quartic
+- `s_geodesic_triangulation` — Geodesic triangulation
+- `s_godel_L_model` — Gödel L model (alias) (aliases: s_model_L_of_ZFC_plus_GCH)
+- `s_goldston_yildirim_sieve_majorant` — Goldston–Yıldırım sieve majorant
+- `s_graph_definition` — Graph (V, E)
+- `s_group_action` — Group action
+- `s_heat_conduction_on_rod` — Heat conduction on rod (physical)
+- `s_heat_equation_PDE` — Heat equation PDE ∂u/∂t = α∂²u/∂x²
+- `s_holomorphic_function_on_domain` — Holomorphic function on domain
+- `s_hypothetical_FLT_solution_a_n_plus_b_n_equals_c_n` — Hypothetical FLT solution aⁿ+bⁿ=cⁿ
+- `s_ideal_I` — Ideal I
+- `s_ideal_in_R_x` — Ideal in R[x]
+- `s_idempotent_pair_mod_mn` — Idempotent pair mod mn
+- `s_iid_sequence_finite_variance` — IID sequence (finite variance)
+- `s_infinite_sequence_of_graphs` — Infinite sequence of graphs
+- `s_infinite_set` — Infinite set
+- `s_infinitesimal_action_variation` — Infinitesimal action variation
+- `s_inscribed_circumscribed_96_gons` — Inscribed/circumscribed 96-gons
+- `s_integer_N_odd_and_larger_than_5` — Odd integer N > 5
+- `s_integers` — Integers ℤ
+- `s_integral_as_limit_of_sums` — Integral as limit of Riemann sums
+- `s_intermediate_fields_of_L` — Lattice of intermediate fields
+- `s_intersection_exists` — Intersection exists (lemma)
+- `s_invariant_subspace_decomposition` — Invariant subspace decomposition
+- `s_isosceles_triangle_base_angles_equal` — Pons asinorum
+- `s_jacobian_variety` — Jacobian variety
+- `s_k_coloring_of_pairs` — k-coloring of pairs
+- `s_kepler_conjecture_machine_certified` — Kepler conjecture (Flyspeck-verified)
+- `s_konigsberg_bridge_configuration` — Königsberg bridge configuration
+- `s_lagrangian_action_integral` — Lagrangian action integral
+- `s_legendre_symbol_table` — Legendre symbol table
+- `s_lie_group` — Lie group
+- `s_limit_characteristic_function_equals_gaussian` — Limit characteristic function = e^{-t²/2}
+- `s_linear_functional_on_subspace` — Linear functional on subspace
+- `s_local_angle_defect_identity` — Local angle-defect identity
+- `s_long_time_decomposition_into_geometric_pieces` — Long-time decomposition into geometric pieces
+- `s_major_arc_asymptotic_plus_minor_arc_error` — Major/minor arc decomposition
+- `s_maximal_ideal_m_in_k_x_1_x_n` — Maximal ideal m ⊂ k[x₁,…,xₙ]
+- `s_mean_value_theorem` — Mean value theorem (lemma)
+- `s_measure_preserving_transformation` — Measure-preserving transformation
+- `s_meromorphic_zeta_on_plane` — Meromorphic ζ on ℂ \ {1}
+- `s_minor_ordering` — Minor ordering on graphs
+- `s_mode_by_mode_ODE_system` — Mode-by-mode ODE system
+- `s_model_L_of_ZFC_plus_GCH` — Model L (constructible universe)
+- `s_model_of_ZFC_plus_not_CH` — Model of ZFC + ¬CH
+- `s_modular_form` — Modular form
+- `s_multiple_recurrence_for_A` — Multiple recurrence for A
+- `s_multiplicative_group_mod_p` — (ℤ/p)*
+- `s_multiplicative_law_on_unit_circle` — Multiplicative law on S¹
+- `s_naturals_with_multiplication` — Naturals ℕ (with multiplication)
+- `s_near_solution_triple_a_b_k` — Near-solution triple (a,b,k)
+- `s_nested_monochromatic_sequence` — Nested monochromatic sequence
+- `s_new_number_N_coprime_to_all_primes_in_list` — N = p₁⋯pₖ + 1
+- `s_newtonian_inverse_square_force` — Newtonian inverse-square force law
+- `s_noetherian_ring_R` — Noetherian ring R
+- `s_non_modular_galois_representation_required` — Non-modular mod-ℓ rep (required)
+- `s_one_dim_extension_step` — One-dim extension step (Hahn–Banach)
+- `s_orbit_of_a_mod_p` — Orbit of a mod p
+- `s_pair_of_coprime_moduli` — Pair of coprime moduli (m,n)
+- `s_pair_of_similar_triangles_on_diagonal` — Pair of similar triangles on diagonal
+- `s_pell_equation_x2_minus_N_y2` — Pell equation x² − Ny² = 1
+- `s_planar_graph` — Planar graph
+- `s_point_in_affine_n_space` — Point in affine n-space
+- `s_polygon_area_formula` — Polygon area formula
+- `s_polynomial_approximation_of_order_n` — Order-n polynomial approximation
+- `s_polynomial_ring` — Polynomial ring R[x]
+- `s_polynomial_ring_in_n_vars` — Polynomial ring k[x₁,…,xₙ]
+- `s_polynomial_ring_over_Q` — Polynomial ring ℚ[x]
+- `s_positive_density_subset` — Positive-density subset (of ℤ)
+- `s_positive_density_subset_of_integers` — Positive-density subset of ℤ
+- `s_positive_lower_bound_on_prime_pairs_in_tuple` — Positive lower bound on prime pairs in tuple
+- `s_prime_as_sum_of_four_squares` — p = sum of four squares
+- `s_prime_p` — Prime p
+- `s_prime_p_equiv_1_mod_4` — Prime p ≡ 1 (mod 4)
+- `s_prime_pair_p_q` — Prime pair (p,q)
+- `s_prime_power_divisor_p_n` — Prime-power divisor pⁿ
+- `s_primes_in_naturals` — Primes in ℕ (aliases: s_prime_numbers)
+- `s_primes_with_density_zero` — Primes with density 0
+- `s_principal_symbol_in_K_theory_of_TM` — Principal symbol in K(T*M)
+- `s_probability_axioms` — Probability axioms (Kolmogorov)
+- `s_product_topology` — Product topology
+- `s_projective_plane` — Projective plane ℙ²
+- `s_projective_space_axioms` — Projective space axioms
+- `s_proper_vertex_coloring` — Proper vertex coloring
+- `s_quintic_polynomial` — Generic quintic polynomial
+- `s_radical_extension_tower` — Radical extension tower
+- `s_real_analysis` — Real analysis framework
+- `s_real_line_or_circle` — ℝ or 𝕋¹
+- `s_real_not_in_list` — Real not in list
+- `s_real_numbers` — Real numbers ℝ (aliases: s_real_line)
+- `s_real_vector_space` — Real vector space
+- `s_reciprocity_conjecture` — Reciprocity conjecture
+- `s_refined_reciprocity_conjecture` — Refined reciprocity conjecture
+- `s_relative_szemeredi_for_pseudorandom_majorants` — Relative Szemerédi (pseudorandom majorants)
+- `s_resolvent_cubic` — Resolvent cubic
+- `s_retraction_to_boundary_sphere` — Retraction Dⁿ → ∂Dⁿ
+- `s_ricci_flow_equation` — Ricci flow eq. ∂g/∂t = -2Ric(g)
+- `s_riemann_zeta_function` — Riemann zeta function ζ(s)
+- `s_riemannian_metric` — Riemannian metric
+- `s_right_triangle_in_plane` — Right triangle in plane
+- `s_segment_length_identity_on_hypotenuse` — Segment-length identity on hypotenuse
+- `s_self_contradictory_machine_D` — Self-contradictory machine D
+- `s_self_referential_godel_sentence_G` — Gödel sentence G
+- `s_semistable_modularity_theorem` — Semistable modularity theorem
+- `s_series_for_e_i_theta` — Series for e^{iθ}
+- `s_set_of_p_subgroups_with_G_action` — p-subgroups with G-conjugation action
+- `s_sheaf_O_D_on_curve` — Sheaf O(D) on curve
+- `s_similar_triangle_criterion` — AA similarity
+- `s_simply_connected_proper_domain_in_C` — Simply connected proper domain in ℂ
+- `s_sin_x_as_infinite_product` — sin(x) = x ∏(1 - x²/n²π²)
+- `s_sine_function` — Sine function sin(x)
+- `s_small_a_b_with_a2_plus_b2_equiv_0_mod_p` — (a,b) with a²+b² ≡ 0 (mod p)
+- `s_smooth_approximant_f_epsilon` — Smooth approximant f_ε
+- `s_smooth_function` — Smooth function
+- `s_smooth_manifold_with_boundary` — Smooth manifold with boundary
+- `s_smooth_projective_curve_over_Q` — Smooth projective curve over ℚ
+- `s_smooth_surface_in_R3` — Smooth surface in ℝ³
+- `s_sphere` — Sphere (as 3D object)
+- `s_sphere_as_solid_of_revolution` — Sphere as solid of revolution
+- `s_sphere_packing_density_functional` — Sphere-packing density functional
+- `s_strict_contraction` — Strict contraction
+- `s_sublinear_functional_p` — Sublinear functional p
+- `s_syntactic_predicates_as_arithmetic_predicates` — Syntactic predicates arithmetized
+- `s_system_sum_and_product_of_cubes` — System u+v=?, uv=?
+- `s_szemeredi_theorem` — Szemerédi's theorem (input to Green–Tao)
+- `s_third_law` — Third law (verified)
+- `s_thurston_eight_geometries_classification` — Thurston 8 geometries
+- `s_topological_index_class_in_K_of_point` — Topological index in K(pt)=ℤ
+- `s_topological_sphere_S2` — Topological sphere S²
+- `s_tree_width_decomposition` — Tree-width decomposition
+- `s_triangle_inscribed_in_semicircle` — Triangle inscribed in semicircle
+- `s_triangulated_sphere_S2` — Triangulated S²
+- `s_turing_machine_model` — Turing machine model
+- `s_two_isosceles_subtriangles` — Two isosceles subtriangles
+- `s_two_real_algebraic_curves_in_plane` — Two real algebraic curves in ℝ²
+- `s_two_similar_subtriangles` — Two similar subtriangles
+- `s_two_triangles_in_perspective_in_plane` — Two triangles in perspective (plane)
+- `s_two_triangles_in_perspective_in_space` — Two triangles in perspective (space)
+- `s_tycho_brahe_observation_table` — Tycho Brahe observation table
+- `s_ultrafilter_limit_in_product` — Ultrafilter limit in ∏Xᵢ
+- `s_uniqueness_of_prime_factorization` — Uniqueness of prime factorization
+- `s_unit_balls_sphere_packing` — Unit ball sphere packing
+- `s_unit_circle_in_C` — Unit circle in ℂ
+- `s_vanishing_variety_V_I` — Vanishing variety V(I)
+- `s_zeta_nonvanishing_on_line_Re_1` — ζ(1+it) ≠ 0
+- `s_zfc_axioms` — ZFC axioms
