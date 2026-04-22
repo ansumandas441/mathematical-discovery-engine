@@ -202,13 +202,20 @@ def _has_transcendental_of_atoms(expr: sp.Expr, atoms) -> bool:
 def _heuristic_sign_test(Q: sp.Expr, atoms: List[sp.Expr], n_samples: int = 300) -> str:
     """Sample random values for atoms and check the sign of Q.
 
+    Before sampling, tries to symbolically verify sign via factor analysis
+    (catches false positives where the indefinite region is narrow).
+
     Auto-detects which atoms must be POSITIVE based on Q's structure (e.g. if
-    Q contains log(u) or 1/u, u must be > 0 for Q to make sense). For those
-    atoms, the sampler uses positive ranges only.
+    Q contains log(u) or 1/u, u must be > 0). For those atoms, the sampler
+    uses positive ranges only.
 
     Returns DECREASE if Q ≤ 0 on all valid samples, INCREASE if ≥ 0,
     MIXED otherwise.
     """
+    # First, try a symbolic structure analysis for common patterns.
+    sym_verdict = _symbolic_sign_check(Q)
+    if sym_verdict in ("DECREASE", "INCREASE", "ZERO", "MIXED"):
+        return sym_verdict
     import random
     saw_pos = False
     saw_neg = False
@@ -255,6 +262,135 @@ def _heuristic_sign_test(Q: sp.Expr, atoms: List[sp.Expr], n_samples: int = 300)
     if saw_neg and not saw_pos:
         return "DECREASE"
     return "ZERO"
+
+
+def _symbolic_sign_check(Q: sp.Expr) -> str:
+    """Symbolic factor analysis for Q's sign. Returns DECREASE/INCREASE/ZERO
+    if a definite sign can be established symbolically; 'UNKNOWN' otherwise.
+
+    Cases handled:
+      - Q = 0 → ZERO
+      - Q = c · (squared expr) → sign of c
+      - Q = c · p(u) · (squared expr), where p(u) is a univariate polynomial
+        in one field atom: factor p(u), check if it has real roots (MIXED if
+        yes within the reachable range; definite sign if not)
+
+    Before factoring, we dummy-swap Derivative-type atoms to plain Symbols
+    so sympy.factor can treat them as polynomial variables.
+    """
+    Q = sp.expand(Q)
+    if Q == 0:
+        return "ZERO"
+    from sympy.core.function import AppliedUndef
+    # Dummy-swap Derivative and AppliedUndef atoms (all treated as independent
+    # polynomial variables for the sign analysis).
+    atoms_for_swap = set()
+    for sub in sp.preorder_traversal(Q):
+        if isinstance(sub, sp.Derivative):
+            atoms_for_swap.add(sub)
+        elif isinstance(sub, AppliedUndef):
+            atoms_for_swap.add(sub)
+    atoms_sorted = sorted(atoms_for_swap, key=lambda e: str(e))
+    dummy_of = {a: sp.Symbol(f"_z{i}", real=True) for i, a in enumerate(atoms_sorted)}
+    Q_swapped = Q.xreplace(dummy_of)
+    factored = sp.factor(Q_swapped)
+    # Check if all non-squared factors are fixed-sign.
+    if isinstance(factored, sp.Mul):
+        sign = 1
+        for f in factored.args:
+            if f.is_number:
+                if f > 0:
+                    continue
+                if f < 0:
+                    sign *= -1
+                    continue
+                return "ZERO"
+            if isinstance(f, sp.Pow):
+                base, exp = f.args
+                if exp.is_integer and exp > 0 and exp % 2 == 0:
+                    continue  # always non-negative
+                # odd power — indefinite
+                return "UNKNOWN"
+            # A single factor that might have real roots.
+            # Check: is it a polynomial in its free symbols with definite sign?
+            roots_info = _polynomial_real_sign(f)
+            if roots_info == "always_positive":
+                continue
+            if roots_info == "always_negative":
+                sign *= -1
+                continue
+            if roots_info == "always_non_negative":
+                continue
+            if roots_info == "always_non_positive":
+                sign *= -1
+                continue
+            if roots_info == "sign_indefinite":
+                # This factor genuinely attains both signs — Q is mixed.
+                return "MIXED"
+            return "UNKNOWN"
+        if sign < 0:
+            return "DECREASE"
+        if sign > 0:
+            return "INCREASE"
+        return "ZERO"
+    # Single term (not a Mul).
+    if isinstance(factored, sp.Pow):
+        base, exp = factored.args
+        if exp.is_integer and exp > 0 and exp % 2 == 0:
+            return "INCREASE"  # non-negative; strictly positive except at zeros
+        return "UNKNOWN"
+    if factored.is_number:
+        if factored > 0:
+            return "INCREASE"
+        if factored < 0:
+            return "DECREASE"
+        return "ZERO"
+    return "UNKNOWN"
+
+
+def _polynomial_real_sign(expr: sp.Expr) -> str:
+    """Classify a scalar expression (one or more free symbols) by sign behavior.
+
+    Returns one of:
+      - 'always_positive' / 'always_negative' / 'always_non_positive' / 'always_non_negative'
+      - 'sign_indefinite' if the expr attains both signs
+      - 'unknown' if we can't decide
+    """
+    try:
+        free = list(expr.free_symbols)
+        if not free:
+            val = float(expr)
+            if val > 0: return "always_positive"
+            if val < 0: return "always_negative"
+            return "always_non_negative"  # zero
+        if len(free) != 1:
+            return "unknown"
+        var = free[0]
+        poly = sp.Poly(expr, var)
+        # Check for real roots.
+        real_roots = sp.real_roots(poly)
+        if real_roots:
+            # Discriminates signs.
+            return "sign_indefinite"
+        # No real roots: sign is constant. Evaluate at var=0.
+        val_at_zero = expr.subs(var, 0)
+        try:
+            v = float(val_at_zero)
+        except Exception:
+            return "unknown"
+        if v > 0: return "always_positive"
+        if v < 0: return "always_negative"
+        # val at zero is 0; pick another sample.
+        val_at_one = expr.subs(var, 1)
+        try:
+            v2 = float(val_at_one)
+        except Exception:
+            return "unknown"
+        if v2 > 0: return "always_non_negative"
+        if v2 < 0: return "always_non_positive"
+        return "unknown"
+    except Exception:
+        return "unknown"
 
 
 def _detect_positivity_constraints(Q: sp.Expr, atoms, dummy_of) -> Dict:
