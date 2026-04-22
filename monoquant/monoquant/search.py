@@ -106,18 +106,28 @@ def verify_functional(pde: PDE, phi: sp.Expr, verbose: bool = True) -> Dict:
 
 
 def _kernel_filter_static(Q: sp.Expr, pde: PDE, engine) -> sp.Expr:
-    """Same as MonotoneSearch._kernel_filter but callable statically."""
+    """Drop pointwise total-divergence monomials. Gracefully returns Q
+    unchanged if Q isn't polynomial in its atoms (non-polynomial Φ path)."""
     from monoquant.symbolic import _flat_fields
     Q = sp.expand(Q)
+    # Pre-pass: drop "bare" total-divergence terms, i.e. terms that are a single
+    # Derivative(u_i, multi-index) (or a scalar times one). These integrate to
+    # zero on decay data regardless of polynomial structure. Also handles the
+    # non-polynomial case where the main kernel filter would bail out.
+    Q = _drop_bare_divergence_terms(Q)
     atoms = engine._collect_atoms(Q)
     if not atoms:
+        return Q
+    # If Q contains transcendental functions of the atoms (log, exp, etc.),
+    # we can't turn it into a polynomial over atoms. Skip the kernel filter.
+    if _has_transcendental_of_atoms(Q, atoms):
         return Q
     dummy_of = {a: sp.Symbol(f"__kf{i}") for i, a in enumerate(atoms)}
     back_of = {d: a for a, d in dummy_of.items()}
     Q_dummy = Q.xreplace(dummy_of)
     try:
         poly = sp.Poly(Q_dummy, *dummy_of.values())
-    except sp.polys.polyerrors.GeneratorsError:
+    except (sp.polys.polyerrors.GeneratorsError, sp.polys.polyerrors.PolynomialError):
         return Q
     fields = _flat_fields(pde)
     kept = sp.Integer(0)
@@ -139,12 +149,65 @@ def _kernel_filter_static(Q: sp.Expr, pde: PDE, engine) -> sp.Expr:
     return sp.expand(kept)
 
 
-def _heuristic_sign_test(Q: sp.Expr, atoms: List[sp.Expr], n_samples: int = 50) -> str:
+def _drop_bare_divergence_terms(expr: sp.Expr) -> sp.Expr:
+    """Remove any additive term that consists of only numerical factors and
+    exactly one top-level Derivative(u_i, multi-index). Such terms are
+    total-divergences and integrate to zero on decay-at-∞ data."""
+    expr = sp.expand(expr)
+    terms = expr.args if isinstance(expr, sp.Add) else [expr]
+    keep = []
+    for t in terms:
+        if _is_bare_divergence(t):
+            continue
+        keep.append(t)
+    return sp.Add(*keep) if keep else sp.Integer(0)
+
+
+def _is_bare_divergence(term: sp.Expr) -> bool:
+    """True iff term is (numerical constant) * (single Derivative)."""
+    if isinstance(term, sp.Derivative):
+        return True
+    if isinstance(term, sp.Mul):
+        n_deriv = 0
+        for f in term.args:
+            if isinstance(f, sp.Derivative):
+                n_deriv += 1
+            elif f.is_number:
+                continue
+            else:
+                return False
+        return n_deriv == 1
+    return False
+
+
+def _has_transcendental_of_atoms(expr: sp.Expr, atoms) -> bool:
+    """Check if expr contains sp.log / sp.exp / sp.sin / etc applied to field
+    subexpressions. If yes, Poly-ification will fail."""
+    transcendentals = (sp.log, sp.exp, sp.sin, sp.cos, sp.tan, sp.sinh,
+                       sp.cosh, sp.tanh, sp.atan)
+    for sub in sp.preorder_traversal(expr):
+        if isinstance(sub, transcendentals):
+            return True
+        # sp.Pow with non-integer exponent depending on atoms is also transcendental.
+        if isinstance(sub, sp.Pow):
+            exp = sub.args[1]
+            if not exp.is_integer:
+                # Fractional power of a field expression is transcendental.
+                base = sub.args[0]
+                if any(atom in base.free_symbols or atom in base.atoms() for atom in atoms if hasattr(atom, 'free_symbols')):
+                    return True
+    return False
+
+
+def _heuristic_sign_test(Q: sp.Expr, atoms: List[sp.Expr], n_samples: int = 300) -> str:
     """Sample random values for atoms and check the sign of Q.
 
-    Returns DECREASE if Q ≤ 0 on all samples, INCREASE if ≥ 0, MIXED otherwise.
-    This is a probabilistic sign test (not a proof), useful when the basis
-    for a formal SDP is too large.
+    Auto-detects which atoms must be POSITIVE based on Q's structure (e.g. if
+    Q contains log(u) or 1/u, u must be > 0 for Q to make sense). For those
+    atoms, the sampler uses positive ranges only.
+
+    Returns DECREASE if Q ≤ 0 on all valid samples, INCREASE if ≥ 0,
+    MIXED otherwise.
     """
     import random
     saw_pos = False
@@ -152,10 +215,33 @@ def _heuristic_sign_test(Q: sp.Expr, atoms: List[sp.Expr], n_samples: int = 50) 
     dummy_of = {a: sp.Symbol(f"__s{i}") for i, a in enumerate(atoms)}
     Q_dummy = Q.xreplace(dummy_of)
     syms = list(dummy_of.values())
-    for _ in range(n_samples):
-        vals = {s: random.uniform(-2.0, 2.0) for s in syms}
+    if not syms:
         try:
-            v = float(Q_dummy.xreplace(vals))
+            v = float(Q_dummy)
+            if v < -1e-10:
+                return "DECREASE"
+            if v > 1e-10:
+                return "INCREASE"
+            return "ZERO"
+        except Exception:
+            return "MIXED"
+    # Detect which atoms must be positive.
+    positivity = _detect_positivity_constraints(Q, atoms, dummy_of)
+    # Build sample ranges per symbol.
+    def _sample(sym, lo_base, hi_base):
+        if positivity.get(sym, False):
+            # Must be > 0; pick from small-positive to large-positive.
+            return random.uniform(max(lo_base, 0.05), max(hi_base, 0.1))
+        return random.uniform(lo_base, hi_base)
+    range_options = [(-0.5, 0.5), (-2.0, 2.0), (-5.0, 5.0)]
+    for _ in range(n_samples):
+        lo, hi = random.choice(range_options)
+        vals = {s: _sample(s, lo, hi) for s in syms}
+        try:
+            v_raw = Q_dummy.xreplace(vals)
+            v = float(v_raw)
+            if v != v:  # NaN
+                continue
         except Exception:
             continue
         if v > 1e-10:
@@ -169,6 +255,37 @@ def _heuristic_sign_test(Q: sp.Expr, atoms: List[sp.Expr], n_samples: int = 50) 
     if saw_neg and not saw_pos:
         return "DECREASE"
     return "ZERO"
+
+
+def _detect_positivity_constraints(Q: sp.Expr, atoms, dummy_of) -> Dict:
+    """Return {dummy_symbol: must_be_positive} by inspecting Q for signatures
+    that restrict the domain: log(a), sqrt(a), 1/a, a**(rational-non-integer).
+
+    The mapping is from dummy symbol (used during sampling) to True if the
+    corresponding atom must be > 0.
+    """
+    positivity = {d: False for d in dummy_of.values()}
+    for sub in sp.preorder_traversal(Q):
+        target_atom = None
+        if isinstance(sub, sp.log):
+            target_atom = sub.args[0]
+        elif isinstance(sub, sp.Pow):
+            base, exp = sub.args
+            # Non-integer power ⇒ base > 0.
+            if not exp.is_integer and exp != 0:
+                target_atom = base
+            # 1/base ⇒ base ≠ 0 (we treat as > 0 to be safe).
+            elif exp.is_number and exp < 0:
+                target_atom = base
+        if target_atom is None:
+            continue
+        # Check which atom this relates to.
+        for atom, dummy in dummy_of.items():
+            if target_atom == atom or atom in target_atom.free_symbols or (
+                hasattr(target_atom, 'args') and atom in target_atom.atoms()
+            ):
+                positivity[dummy] = True
+    return positivity
 
 
 @dataclass
