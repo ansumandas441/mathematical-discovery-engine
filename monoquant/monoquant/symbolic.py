@@ -52,6 +52,30 @@ class TimeDerivativeEngine:
         fields = _flat_fields(self.pde)
         coords = self.pde.coords
         t = self.pde.t
+        # Case 1: atom = FracLap(u_i, β). FracLap commutes with ∂_t, so
+        #   ∂_t FracLap(u_i, β) = FracLap(∂_t u_i, β) = FracLap(F_i, β).
+        from monoquant.fractional import FracLap
+        if isinstance(atom, FracLap):
+            inner, beta = atom.args
+            # inner should be an AppliedUndef u_i(t, x, ...).
+            for f in fields:
+                if _is_derivative_of_function(inner, f.symbol):
+                    alpha = _extract_spatial_multi_index(inner, coords)
+                    rhs = self.pde.rhs_substitutions.get(sp.diff(f.symbol, t))
+                    if rhs is None:
+                        raise ValueError(
+                            f"No RHS for ∂_t {f.symbol}; check pde.rhs_substitutions."
+                        )
+                    # Apply α-many spatial derivatives to rhs, then wrap in FracLap.
+                    inner_t = rhs
+                    for x, order in zip(coords, alpha):
+                        if order:
+                            inner_t = sp.diff(inner_t, x, order)
+                    inner_t = sp.expand(inner_t)
+                    # FracLap distributes over sums (linear).
+                    return _distribute_fraclap(inner_t, beta)
+            # Fall through if FracLap's inner isn't a field.
+        # Case 2: atom = Derivative(u_i, α). Standard route.
         for f in fields:
             base = f.symbol
             if _is_derivative_of_function(atom, base):
@@ -230,6 +254,30 @@ def _as_addends(expr: sp.Expr) -> List[sp.Expr]:
     if isinstance(expr, sp.Add):
         return list(expr.args)
     return [expr]
+
+
+def _distribute_fraclap(expr: sp.Expr, beta) -> sp.Expr:
+    """Apply FracLap(·, β) to each additive term of `expr`.
+
+    FracLap is linear: FracLap(a + b, β) = FracLap(a, β) + FracLap(b, β).
+    FracLap also commutes with spatial derivatives: FracLap(∂_x u, β) =
+    ∂_x FracLap(u, β). We use this to push FracLap inward, producing a
+    clean sum of `FracLap(<elementary atom>, β)` terms.
+    """
+    from monoquant.fractional import FracLap
+    expr = sp.expand(expr)
+    if isinstance(expr, sp.Add):
+        return sp.Add(*[_distribute_fraclap(t, beta) for t in expr.args])
+    # Single term. Pull out numeric coefficient.
+    c, rest = expr.as_coeff_mul()
+    # If rest is empty, FracLap of constant = 0 (for β > 0).
+    if not rest:
+        if beta == 0:
+            return sp.Integer(int(c)) if c == int(c) else expr
+        return sp.Integer(0)
+    # For a product of atoms, FracLap(Π a_i, β) is NOT generally Π FracLap(a_i, β)
+    # — it's a nonlocal operator. We keep FracLap wrapping the whole product.
+    return c * FracLap(sp.Mul(*rest), beta)
 
 
 def _ibp_one_term(term: sp.Expr, coords) -> sp.Expr:
