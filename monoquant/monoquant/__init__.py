@@ -4,9 +4,9 @@ __version__ = "0.1.0"
 
 from monoquant.pde import PDE, ScalarField, VectorField
 from monoquant.symbolic import TimeDerivativeEngine
-from monoquant.invariants import PolynomialInvariantBasis
+from monoquant.invariants import PolynomialInvariantBasis, ScalingWeightBasis
 from monoquant.sos import SOSSearch
-from monoquant.search import MonotoneSearch, verify_functional
+from monoquant.search import MonotoneSearch, HierarchyConservationSearch, verify_functional
 from monoquant.certificate import (
     MonotonicityCertificate,
     ConservationCertificate,
@@ -20,8 +20,10 @@ __all__ = [
     "VectorField",
     "TimeDerivativeEngine",
     "PolynomialInvariantBasis",
+    "ScalingWeightBasis",
     "SOSSearch",
     "MonotoneSearch",
+    "HierarchyConservationSearch",
     "verify_functional",
     "MonotonicityCertificate",
     "ConservationCertificate",

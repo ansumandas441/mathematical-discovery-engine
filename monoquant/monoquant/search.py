@@ -25,7 +25,7 @@ import numpy as np
 import sympy as sp
 
 from monoquant.pde import PDE, ScalarField, VectorField
-from monoquant.invariants import PolynomialInvariantBasis, Monomial
+from monoquant.invariants import PolynomialInvariantBasis, ScalingWeightBasis, Monomial
 from monoquant.symbolic import TimeDerivativeEngine
 from monoquant.sos import SOSSearch
 from monoquant.certificate import (
@@ -772,3 +772,85 @@ def _dedupe(exprs: List[sp.Expr]) -> List[sp.Expr]:
         seen.add(key)
         out.append(e)
     return out
+
+
+@dataclass
+class HierarchyConservationSearch:
+    """Search for conservation laws at a specific scaling weight.
+
+    Uses `ScalingWeightBasis` to generate only monomials whose scaling weight
+    equals the target, then applies the existing conservation-phase machinery
+    (Euler–Lagrange residue → linear solve) to find independent conserved
+    functionals.
+
+    This is the workhorse for the KdV hierarchy enumeration: each Hamiltonian
+    H_n lives at weight 2n, and generating the basis directly at that weight
+    (rather than enumerating a degree/order box and filtering post-hoc) is
+    what makes the search tractable at H_5 and beyond.
+
+    Arguments:
+      pde:                  the PDE.
+      weight:               target scaling weight (e.g. 10 for H_5 of KdV).
+      max_poly_degree:      upper bound on atom count per monomial.
+      max_derivative_order: upper bound on a single derivative's order.
+      base_weight:          per-field base weight dict. Defaults to pde.scaling
+                            (cast to int), or {field: 1} if empty.
+      verbose:              print progress.
+    """
+
+    pde: PDE
+    weight: int
+    max_poly_degree: int = 10
+    max_derivative_order: int = 8
+    base_weight: Optional[Dict[str, int]] = None
+    verbose: bool = True
+
+    def run(self) -> SearchResult:
+        result = SearchResult()
+        basis = ScalingWeightBasis(
+            pde=self.pde,
+            target_weight=int(self.weight),
+            max_poly_degree=int(self.max_poly_degree),
+            max_derivative_order=int(self.max_derivative_order),
+            base_weight=self.base_weight,
+        )
+        monomials = basis.enumerate()
+        result.meta = {
+            "pde": self.pde.name,
+            "basis": (
+                f"scaling weight={self.weight}, "
+                f"poly_deg≤{self.max_poly_degree}, "
+                f"deriv_order≤{self.max_derivative_order}"
+            ),
+            "candidates": len(monomials),
+            "weight": int(self.weight),
+        }
+        if self.verbose:
+            print(
+                f"[{self.pde.name}] weight={self.weight}: "
+                f"enumerated {len(monomials)} scaling-weight monomials.",
+                flush=True,
+            )
+        if not monomials:
+            return result
+        engine = TimeDerivativeEngine(self.pde)
+        coefs = [m.coefficient_symbol for m in monomials]
+        phi_pointwise = sum(
+            m.coefficient_symbol * m.as_expr(self.pde) for m in monomials
+        )
+        if self.verbose:
+            print(f"[{self.pde.name}] weight={self.weight}: computing ∂_t Φ ...", flush=True)
+        dphi = engine.dphi_dt_pointwise(phi_pointwise)
+        # Reuse the private conservation-phase machinery from MonotoneSearch by
+        # building a MonotoneSearch stub and invoking _conservation_phase.
+        stub = MonotoneSearch(
+            pde=self.pde,
+            max_poly_degree=int(self.max_poly_degree),
+            max_derivative_order=int(self.max_derivative_order),
+            find_decrease=False,
+            find_conservation=True,
+            verbose=self.verbose,
+        )
+        conserved = stub._conservation_phase(dphi, coefs, monomials, engine)
+        result.conserved.extend(conserved)
+        return result
