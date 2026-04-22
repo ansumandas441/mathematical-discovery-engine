@@ -1,2 +1,6 @@
 .claude/
 .DS_Store
+monoquant_venv/
+__pycache__/
+*.pyc
+*.pyo
