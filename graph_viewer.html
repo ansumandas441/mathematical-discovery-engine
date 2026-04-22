@@ -61,7 +61,7 @@
 </head>
 <body>
 <header>
-  <h1>Knowledge Graph: Mathematical Discovery <small>~100 theorems · 58 techniques · 12 subgraphs</small></h1>
+  <h1>Knowledge Graph: Mathematical Discovery <small>336 theorems · 62 techniques · 12 subgraphs · 752 nodes · 1258 edges</small></h1>
   <div class="controls">
     <div class="group">
       <span class="label">Mode</span>
@@ -106,6 +106,7 @@
   <span class="legend-item"><span class="swatch swatch-state"></span> state (intermediate)</span>
   <span class="legend-item"><span class="swatch swatch-theorem"></span> theorem (leaf)</span>
   <span class="legend-item"><span class="swatch swatch-technique"></span> technique (process) — size ∝ fan-in+fan-out</span>
+  <span class="legend-item">★ fundamental axiom · ⚠ disputed theorem</span>
   <span class="stats" id="stats"></span>
 </footer>
 <script>
@@ -175,11 +176,17 @@
 
     const nodes = data.nodes.map(n => {
       const fanTotal = (fanIn[n.id] || 0) + (fanOut[n.id] || 0);
+      const color = { ...(KIND_COLOR[n.kind] || KIND_COLOR.state) };
+      // Disputed theorem: red border
+      if (n.status === "disputed") { color.border = "#c0392b"; }
+      // Fundamental axiom: teal border
+      else if (n.fundamental) { color.border = "#16a085"; }
       return {
         id: n.id,
         label: shortenLabel(n.name),
-        title: (n.description || n.name) + "\nkind: " + n.kind + (n.cluster ? "\ncluster: " + n.cluster : ""),
-        color: KIND_COLOR[n.kind] || KIND_COLOR.state,
+        title: (n.description || n.name) + "\nkind: " + n.kind + (n.cluster ? "\ncluster: " + n.cluster : "") + (n.status ? "\nstatus: " + n.status : "") + (n.fundamental ? "\n★ fundamental" : ""),
+        color: color,
+        borderWidth: (n.status === "disputed" || n.fundamental) ? 3 : 1,
         size: sizeOfNode(n, fanTotal),
         shape: n.kind === "technique" ? "diamond" : (n.kind === "theorem" ? "star" : "dot"),
         group: n.kind,
@@ -212,8 +219,10 @@
         physics: {
           enabled: true,
           solver: "forceAtlas2Based",
-          forceAtlas2Based: { gravitationalConstant: -60, centralGravity: 0.005, springLength: 110, springConstant: 0.05, damping: 0.6, avoidOverlap: 0.4 },
-          stabilization: { enabled: true, iterations: 500, updateInterval: 25, fit: true }
+          forceAtlas2Based: { gravitationalConstant: -40, centralGravity: 0.003, springLength: 130, springConstant: 0.04, damping: 0.7, avoidOverlap: 0.6 },
+          stabilization: { enabled: true, iterations: 800, updateInterval: 50, fit: true },
+          maxVelocity: 30,
+          minVelocity: 0.5
         },
         interaction: { hover: true, tooltipDelay: 200, navigationButtons: false, keyboard: false },
         nodes: { font: { size: 11, color: "#2c3e50", strokeWidth: 2, strokeColor: "#ffffff" }, borderWidth: 1, shadow: false },
@@ -324,6 +333,14 @@
     if (raw.provisional) parts.push(`<div class="field"><span class="value" style="color:#e67e22">⚠ provisional — not yet in toolbox</span></div>`);
     if (raw.single_use_landmark) parts.push(`<div class="field"><span class="value" style="color:#7f8c8d">↳ single-use landmark</span></div>`);
     if (raw.meta_technique) parts.push(`<div class="field"><span class="value" style="color:#7f8c8d">↳ meta-technique (sociological, not mathematical)</span></div>`);
+    if (raw.subgraph_host) parts.push(`<div class="field"><span class="value" style="color:#8e44ad">↳ umbrella technique — action lives in its subgraph</span></div>`);
+    if (raw.fundamental) parts.push(`<div class="field"><span class="value" style="color:#16a085">★ fundamental axiom (ambient — many theorems depend on it implicitly)</span></div>`);
+    if (raw.status === "disputed") parts.push(`<div class="field"><span class="value" style="color:#c0392b"><b>⚠ status: disputed</b> — proof claimed but not widely accepted</span></div>`);
+    else if (raw.status === "conjectured") parts.push(`<div class="field"><span class="value" style="color:#e67e22">status: conjectured (not yet proved)</span></div>`);
+    if (raw.is_specialization_of) parts.push(`<div class="field"><span class="name">specialization of</span><span class="value"><code>${raw.is_specialization_of}</code></span></div>`);
+    if (raw.is_generalization_of) parts.push(`<div class="field"><span class="name">generalization of</span><span class="value"><code>${raw.is_generalization_of}</code></span></div>`);
+    if (raw.is_special_case_of) parts.push(`<div class="field"><span class="name">special case of</span><span class="value"><code>${raw.is_special_case_of}</code></span></div>`);
+    if (raw.inherits && raw.inherits.length) parts.push(`<div class="field"><span class="name">inherits from</span><span class="value">${raw.inherits.map(i => "<code>"+i+"</code>").join(", ")}</span></div>`);
 
     if (n._fanIn !== undefined || n._fanOut !== undefined) {
       parts.push(`<div class="field"><span class="name">fan-in / fan-out</span><span class="value">${n._fanIn || 0} in, ${n._fanOut || 0} out</span></div>`);

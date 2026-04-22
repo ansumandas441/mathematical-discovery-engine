@@ -32,7 +32,7 @@ Wikipedia's *List of theorems* catalogs roughly 400–500 named results across ~
 | 8 | [`08_epilogue.md`](08_epilogue.md) | — | Patterns in mathematical discovery |
 | 9 | [`09_discovery_techniques.md`](09_discovery_techniques.md) | cross-cutting | Taxonomy of discovery techniques: 10 clusters, inheritance chains, decision tree, impossibility warnings |
 | 10 | [`10_toolbox.md`](10_toolbox.md) | cross-cutting | Structured toolbox: Mermaid tree of 57 techniques across 12 clusters, function-style dictionary, inheritance graph, decision flowchart, quick-reference table |
-| 11 | [`11_knowledge_graph.md`](11_knowledge_graph.md) | cross-cutting | Bipartite directed knowledge graph: states as nodes, techniques as nodes, 12 compound-technique subgraphs (Fourier, SVD, Galois, Ricci flow, Wiles, Gödel, Atiyah–Singer, Selberg sieve, circle method, Furstenberg, categorical colimits, R=T), landmark derivation paths, JSON companion at `knowledge_graph.json` |
+| 11 | [`11_knowledge_graph.md`](11_knowledge_graph.md) | cross-cutting | Bipartite directed knowledge graph: 752 nodes (115 axioms + 239 states + 336 theorems + 62 techniques), 1258 edges, 12 compound-technique subgraphs. JSON companion at `knowledge_graph.json` (~370 KB). Built over 2 iterations — iter 1 (63 landmark chains) + iter 2 (42 deep-dive completions + 229 brief-catalog skeletons covering all of chapters 01–07). |
 
 ### Interactive viewer
 

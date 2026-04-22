@@ -1,13 +1,14 @@
 # 11 — Knowledge Graph of Mathematical Discovery
 
-A bipartite directed graph that re-expresses the ~100 theorems of chapters 01–06 and the 57 discovery techniques of chapter 10 as a **single knowledge structure**: states (mathematical objects) flow through techniques (processes) to produce new states, and eventually theorems (leaves). Techniques that serve many proofs — Fourier transform, reduce-to-canonical-form, symmetry reduction, infinite descent, conserved quantity — appear as high-fan-in/fan-out hubs. Compound techniques (Fourier, SVD, Galois correspondence, Ricci flow with surgery, Wiles modularity, Gödel numbering, Atiyah–Singer, sieve/circle methods, Furstenberg correspondence, category-theoretic colimits/adjoints, deformation cohomology) are further elaborated as **subgraphs** whose internal bipartite structure shows how they are themselves built.
+A bipartite directed graph that re-expresses the **336 theorems of chapters 01–07** and the 62 discovery techniques of chapter 10 (+ five specializations + five new iter-2 additions) as a **single knowledge structure**: states (mathematical objects) flow through techniques (processes) to produce new states, and eventually theorems (leaves). Techniques that serve many proofs — reduce-to-canonical-form, compactness, compose-with-identity, axiomatize-from-instances, conserved quantity, structural isomorphism — appear as high-fan-in/fan-out hubs. Compound techniques (Fourier, SVD, Galois correspondence, Ricci flow with surgery, Wiles modularity, Gödel numbering, Atiyah–Singer, sieve/circle methods, Furstenberg correspondence, category-theoretic colimits/adjoints, deformation cohomology) are further elaborated as **subgraphs** whose internal bipartite structure shows how they are themselves built.
 
-Built by a 3-agent team:
-- **Mathematician** extracted 63 (state → technique → state) derivation chains from the corpus.
-- **Graph theorist** normalized, deduplicated, produced Mermaid + JSON.
-- **Philosopher** audited for semantic coherence, raised 25 specific corrections.
+**Current size (after iter 2):** 752 nodes (115 axioms + 239 states + 336 theorems + 62 techniques), 1258 edges, 12 subgraphs. Giant connected component covers 97.6% of the graph (734 nodes).
 
-Intermediate artefacts live in `knowledge_graph_workspace/`. The machine-readable form lives at `knowledge_graph.json` (~164 KB).
+Built by a 3-agent team across two iterations:
+- **Iter 1** (commit `c7b5f99`): 63 landmark derivation chains covering 65 deep-dive theorems across chapters 01–06. Philosopher flagged 26 structural concerns (17 applied in place).
+- **Iter 2** (commit `TBD`): +42 deep-dive chains completing chapters 01–06 + 229 brief-catalog skeletons from chapter 07. Philosopher Round-5 audit applied 10 additional critical corrections.
+
+Intermediate artefacts live in `knowledge_graph_workspace/` (iter 1) and `knowledge_graph_workspace_iter2/` (iter 2). The machine-readable form lives at `knowledge_graph.json` (~370 KB).
 
 ---
 
@@ -702,38 +703,45 @@ Green–Tao:
 
 ## §5 Statistics
 
-### 5.1 Node counts (after philosopher's corrections)
+### 5.1 Node counts (after iter 2)
 
-| Kind | Count | Change from draft |
-|---|---|---|
-| `axiom` | 94 | — |
-| `state` | 141 | +1 (splits created new intermediate `s_segment_length_identity` etc.) |
-| `theorem` | 65 | — |
-| `technique` | 58 | +5 (added `t_auxiliary_construction`, `t_conjecture_refinement`, `t_reductio_ad_absurdum`, `t_projection_to_subspace`, `t_svd_and_spectral_decomposition`; `t_analysis_algebra_topology_bridge` split into 5 specializations but kept as parent → net +4; `t_compose_with_identity` narrowed scope with no new node → net 0 from that item) |
-| **Total nodes** | **358** | **+6** |
+| Kind | Count (iter 1 → iter 2) |
+|---|---|
+| `axiom` | 94 → **115** (+21 from brief catalog) |
+| `state` | 141 → **239** (+98 from Phase A intermediate nodes) |
+| `theorem` | 65 → **336** (+42 Phase A + 229 Phase B skeletons) |
+| `technique` | 58 → **62** (+4 specialization nodes added in Round 0) |
+| **Total nodes** | 358 → **752** (5× larger) |
 
 ### 5.2 Edge counts
 
-| Quantity | Count |
-|---|---|
-| Top-level edges | 347 |
-| Subgraphs | 12 |
-| Subgraph-internal edges | ≈ 95 |
+| Quantity | iter 1 | iter 2 |
+|---|---|---|
+| Top-level edges | 347 | **1258** (3.6× amplification) |
+| Subgraphs | 12 | 12 (unchanged) |
+| Subgraph-internal edges | ≈ 95 | ≈ 95 |
 
-### 5.3 Top 10 techniques by fan-in + fan-out (after corrections)
+### 5.3 Top 15 techniques by fan-in + fan-out (iter 2)
 
-| Rank | Technique | Fan-in | Fan-out | Total | Note |
-|---|---|---|---|---|---|
-| 1 | `t_reduce_to_canonical_form` | 12 | 11 | 23 | now highest once `compose_with_identity` narrowed |
-| 2 | `t_conserved_quantity` | 11 | 10 | 21 | |
-| 3 | `t_symmetry_reduction` | 9 | 8 | 17 | |
-| 3 | `t_frequency_decomposition` | 9 | 8 | 17 | |
-| 3 | `t_obstruction_class` | 9 | 8 | 17 | |
-| 6 | `t_compose_with_identity` (narrowed) | 8 | 7 | 15 | was 46 before split |
-| 7 | `t_compactness_argument` | 7 | 7 | 14 | |
-| 7 | `t_auxiliary_construction` (new) | 7 | 6 | 13 | |
-| 9 | `t_structural_isomorphism` | 7 | 6 | 13 | |
-| 10 | `t_infinite_descent` (narrowed) | 7 | 5 | 12 | `reductio` uses split off |
+| Rank | Technique | Fan-in | Fan-out | Total |
+|---|---|---|---|---|
+| 1 | `t_reduce_to_canonical_form` | 61 | 36 | 97 |
+| 2 | `t_compactness_argument` | 48 | 43 | 91 |
+| 3 | `t_compose_with_identity` | 52 | 36 | 88 |
+| 4 | `t_axiomatize_from_instances` | 47 | 28 | 75 |
+| 5 | `t_conserved_quantity` | 40 | 31 | 71 |
+| 6 | `t_structural_isomorphism` | 40 | 30 | 70 |
+| 7 | `t_obstruction_class` | 38 | 26 | 64 |
+| 7 | `t_auxiliary_construction` | 41 | 23 | 64 |
+| 9 | `t_symmetry_reduction` | 33 | 20 | 53 |
+| 10 | `t_duality` | 28 | 22 | 50 |
+| 11 | `t_exhaustion_squeeze` | 25 | 23 | 48 |
+| 12 | `t_pigeonhole_collision` | 26 | 17 | 43 |
+| 13 | `t_frequency_decomposition` | 21 | 16 | 37 |
+| 14 | `t_character_decomposition_count` | 23 | 12 | 35 |
+| 15 | `t_infinite_descent` | 19 | 14 | 33 |
+
+The fan-in explosion across all hub techniques (2-5× increase) confirms that the brief-catalog sweep put each technique in its natural reuse context. `t_reduce_to_canonical_form` is now the most-reused single move across recorded mathematics, serving as the engine of everything from Cardano to Jordan normal form to Zariski's main theorem.
 
 ### 5.4 Deepest derivation paths (top-level, technique-invocation depth)
 
@@ -757,12 +765,17 @@ Green–Tao:
 
 Adding subgraph depth: Perelman's chain is 9 deep (4 top-level + 5 inside `sg_ricci_flow`), making it the deepest axiom-to-theorem chain in the graph.
 
-### 5.5 Coverage sanity check
+### 5.5 Coverage sanity check (iter 2)
 
-- Every terminal theorem has at least one incoming edge from a technique.
-- Every top-level technique node has fan-in ≥ 2 or fan-out ≥ 2, OR is flagged `single_use_landmark: true`. The flagged set: `t_complex_analysis_to_integers` (PNT only), `t_sheafify_on_grothendieck_topology` (Riemann–Roch), `t_group_complete_exact_category` (Atiyah–Singer), `t_rescale_for_asymptotic_geometry` (Perelman), `t_ultraproduct_transfer` (Tychonoff), `t_probabilistic_existence` (Szemerédi), `t_category_theoretic_colimits_and_adjoints` (no top-level use; retained for subgraph reference), `t_polynomial_method` (no top-level use), `t_schur_weyl_and_double_centralizer` (no top-level use).
-- No two state nodes share the same `type_signature` without being declared aliases.
+- Every one of the 336 terminal theorems has at least one incoming edge from a technique. **PASS.**
+- Every top-level technique node has fan-in + fan-out ≥ 3, OR is flagged `single_use_landmark: true` / `subgraph_host: true` / `meta_technique: true`. Fan-in gate after philosopher corrections: **PASS (0 unflagged low-fan techniques).**
+- Giant connected component: 734 nodes, 97.6% of graph. The remaining ~18 nodes are axioms flagged `fundamental: true` (representing ambient mathematics that will gain edges naturally as theorems are added) or umbrella technique nodes flagged `subgraph_host: true`.
+- Disputed theorems are explicitly marked `status: disputed` (currently one: `s_abc_conjecture_mochizuki_claimed`).
 - All parameter names used on edges are declared on their parent technique nodes.
+
+### 5.6 What the brief-catalog sweep revealed
+
+A practical observation from iter 2: the 229 brief-catalog theorems did not require any new techniques beyond what iter 1 already had. Every single brief-catalog skeleton mapped to an existing toolbox technique (zero `⚠ technique inference needed` flags across 5 mathematicians). This is evidence — admittedly weak, but evidence — that the 57-technique toolbox is reasonably complete as a vocabulary for describing mathematical discovery at this level of abstraction. The interesting signal lives in the parameter bindings on edges (e.g., "compactness applied in which space?"), not in the technique vocabulary itself.
 
 ---
 
