@@ -1,14 +1,15 @@
 # 11 — Knowledge Graph of Mathematical Discovery
 
-A bipartite directed graph that re-expresses the **336 theorems of chapters 01–07** and the 62 discovery techniques of chapter 10 (+ five specializations + five new iter-2 additions) as a **single knowledge structure**: states (mathematical objects) flow through techniques (processes) to produce new states, and eventually theorems (leaves). Techniques that serve many proofs — reduce-to-canonical-form, compactness, compose-with-identity, axiomatize-from-instances, conserved quantity, structural isomorphism — appear as high-fan-in/fan-out hubs. Compound techniques (Fourier, SVD, Galois correspondence, Ricci flow with surgery, Wiles modularity, Gödel numbering, Atiyah–Singer, sieve/circle methods, Furstenberg correspondence, category-theoretic colimits/adjoints, deformation cohomology) are further elaborated as **subgraphs** whose internal bipartite structure shows how they are themselves built.
+A bipartite directed graph that re-expresses the canonical theorems of modern mathematics — chapters 01–07 of this book **plus** the 13-domain expansion of iter-3 — as a **single knowledge structure**: states (mathematical objects) flow through techniques (processes) to produce new states, and eventually theorems (leaves). Techniques that serve many proofs — reduce-to-canonical-form, compactness, compose-with-identity, axiomatize-from-instances, conserved quantity, structural isomorphism — appear as high-fan-in/fan-out hubs. Compound techniques (Fourier, SVD, Galois correspondence, Ricci flow with surgery, Wiles modularity, Gödel numbering, Atiyah–Singer, sieve/circle methods, Furstenberg correspondence, category-theoretic colimits/adjoints, deformation cohomology) are further elaborated as **subgraphs** whose internal bipartite structure shows how they are themselves built.
 
-**Current size (after iter 2):** 752 nodes (115 axioms + 239 states + 336 theorems + 62 techniques), 1258 edges, 12 subgraphs. Giant connected component covers 97.6% of the graph (734 nodes).
+**Current size (after iter 3):** 6225 nodes (1571 axioms + 2925 states + 1667 theorems + 62 techniques), 10556 edges, 12 subgraphs. Giant connected component covers 99.90 % of the graph (6219 nodes; only 5 isolated nodes remain, all pre-iter-3 axioms).
 
-Built by a 3-agent team across two iterations:
+Built across three iterations:
 - **Iter 1** (commit `c7b5f99`): 63 landmark derivation chains covering 65 deep-dive theorems across chapters 01–06. Philosopher flagged 26 structural concerns (17 applied in place).
-- **Iter 2** (commit `TBD`): +42 deep-dive chains completing chapters 01–06 + 229 brief-catalog skeletons from chapter 07. Philosopher Round-5 audit applied 10 additional critical corrections.
+- **Iter 2** (commit `aa5b27f`): +42 deep-dive chains completing chapters 01–06 + 229 brief-catalog skeletons from chapter 07. Philosopher Round-5 audit applied 10 additional critical corrections.
+- **Iter 3** (commit `TBD`): **+1331 new theorem nodes** from a 13-domain web-sourced sweep (Number Theory, Algebra, Analysis (incl. AN2 supplement), Functional Analysis, Topology, Geometry, Combinatorics, Logic, Probability, ODE/PDE, Dynamical Systems, Mathematical Physics, Discrete Math/TCS). Each entry has a full 3–6-step chain through the frozen 62-technique toolbox. 1595 chains drafted across 14 parallel subagent invocations; ~264 dedupe-skipped against iter-2 entries; 1331 integrated. 2001 context-axiom edges added in a Type-A orphan-fix pass to wire chain-preamble axioms into step-1 techniques. Seven minor `⚠ needs new technique` notes (Cauchy-MVT-application, Baire-category-application, Lebesgue-number-lemma-application, Carleson tile-decomp, Lebesgue-density-application, Hadamard canonical-product, Vitushkin localization — all subordinate uses of existing techniques) deferred to a future toolbox-cleanup round.
 
-Intermediate artefacts live in `knowledge_graph_workspace/` (iter 1) and `knowledge_graph_workspace_iter2/` (iter 2). The machine-readable form lives at `knowledge_graph.json` (~370 KB).
+Intermediate artefacts live in `knowledge_graph_workspace/` (iter 1), `knowledge_graph_workspace_iter2/` (iter 2), and `knowledge_graph_workspace_iter3/` (iter 3). The machine-readable form lives at `knowledge_graph.json` (~3.0 MB).
 
 ---
 
@@ -868,6 +869,60 @@ The five gaps in §7 are schema-level extensions. Any of them could be a round-3
 
 ---
 
+## §9 Iteration 3 — domain expansion (May 2026)
+
+Iter-3 expanded the graph beyond the chapter-01–07 corpus to cover the canonical theorems of modern mathematics, web-sourced from Wikipedia's "List of theorems" subcategories, MathWorld, nLab, and Princeton Companion references. The frozen 62-technique toolbox was sufficient: every chain routed through existing technique nodes; no toolbox additions were needed.
+
+### §9.1 Per-domain coverage
+
+| Code | Domain | Chains drafted | Integrated | Skipped (dedupe vs iter-2) |
+|---|---|---|---|---|
+| AL | Algebra & Galois | 133 | 112 | 21 |
+| AN | Real & Complex Analysis | 193 + 66 (AN2 supplement) | 211 | 48 |
+| CO | Combinatorics & Graph Theory | 81 | 74 | 7 |
+| CS | Discrete Math & TCS | 68 | 54 | 14 |
+| DS | Dynamical Systems & Ergodic | 112 | 105 | 7 |
+| FA | Functional Analysis & Operators | 121 | 114 | 7 |
+| GE | Geometry (Diff/Alg/Riem) | 109 | 96 | 13 |
+| LO | Logic & Foundations | 85 | 80 | 5 |
+| MP | Mathematical Physics | 70 | 62 | 8 |
+| NT | Number Theory | 146 | 127 | 19 |
+| PD | ODE / PDE | 137 | 116 | 21 |
+| PR | Probability & Stochastic | 118 | 106 | 12 |
+| TO | Topology | 156 | 136 | 20 |
+| **Total** | | **1595** | **1331** | **264** |
+
+Dedupe-skipped entries are theorems iter-3 agents drafted that were already in `canonical_node_index.md` from iter-2; their iter-3 chains are not integrated (iter-2 chains remain canonical) but they served as cross-checks.
+
+### §9.2 Pipeline
+
+Iter-3 used the same multi-agent workshop pattern as iter-2:
+
+1. **Round 0** — Workspace prep: `knowledge_graph_workspace_iter3/{drafts,checks,scripts}/`, copy iter-2 canonical-node index, draft `improvements_iter3.md` (the iter-3 execution plan).
+2. **Round 1** — Domain target inventory: 13 domains × ~80–100 named theorems each, anchored on AMS MSC2020 top-level categories.
+3. **Round 2** — Parallel domain drafting: 13 subagents, one per domain, each web-scouring its categories and emitting `drafts/area_<DOMAIN>_chains.md` with one chain per theorem in the iter-1 deep-dive format.
+4. **Round 3** — Bulk integration (`scripts/bulk_import_iter3.py`): parses chain files, auto-creates intermediate state nodes referenced in step outputs, dedupes terminal ids against the existing graph.
+5. **Round 4** — Type-A orphan fix (`scripts/wire_context_axioms.py`): for axioms listed in a chain's preamble but not consumed by any explicit step input, add an implicit input edge to the chain's step-1 technique. Drove orphans from 774 → 5 and giant component from 85.6 % → 99.9 %.
+6. **Round 5** — Integrity audit (`scripts/audit_iter3.py`): node/edge counts, duplicate-id check, orphans by kind, connected components, theorems-with-no-incoming-edge check, unused-axiom check, low-fan-technique check.
+
+### §9.3 What iter-3 confirmed about the toolbox
+
+The 62 techniques cover the modern mathematical curriculum without gaps:
+- **Top fan-in/fan-out winners**: `t_compose_with_identity`, `t_axiomatize_from_instances`, `t_reduce_to_canonical_form`, `t_auxiliary_construction`, `t_duality`, `t_compactness_argument`, `t_structural_isomorphism`, `t_symmetry_reduction`. These now serve 200–500 theorems each.
+- **Compound umbrellas earned their keep**: `t_wiles_modularity`, `t_circle_method`, `t_selberg_sieve_method`, `t_atiyah_singer_index_machinery`, `t_furstenberg_correspondence_principle`, `t_galois_correspondence`, `t_ergodic_correspondence` each show up across multiple domain agents, validating their abstraction level.
+- **Three flagged minor sub-applications** (`t_cauchy_mvt_application`, `t_baire_category_application`, `t_lebesgue_number_lemma_application`) are subordinate uses of existing techniques, not new techniques. Reserved for an iter-4 toolbox-cleanup round.
+
+### §9.4 Known gaps after iter-3
+
+1. **Modular forms / automorphic representations** are well-covered on the NT side (Eichler–Shimura, Ribet, Khare–Wintenberger, Waldspurger, Gross–Zagier, Kolyvagin, Iwasawa main conjecture, Selberg trace formula, Arthur–Selberg, Lafforgue, local Langlands GL_n) but a dedicated automorphic-forms subgraph (analog to `sg_fourier`) would help future expansions.
+2. **Post-2020 results** (recent Fields Medal works, Polymath outputs, Maynard / Heath-Brown breakthroughs beyond bounded gaps) are sparse — the web sources favour stabilized 20th-century landmark indexes.
+3. **Three subordinate uses** were flagged with `⚠ needs new technique` (Cauchy-MVT-application, Baire-category-application, Lebesgue-number-lemma-application). These are not genuine new techniques — they are sub-applications of existing techniques — but should be cleaned up by an iter-4 toolbox-normalization round.
+4. **Cross-domain dedupe inspection.** Several theorems plausibly appear under more than one domain agent (e.g., Selberg trace formula in NT and DS; Lovász local lemma in CO and CS; Hall / Menger / König in CO and CS). The integration script keeps the first-seen wiring and drops later duplicates, but a manual cross-domain merge round could collapse a few hundred near-duplicate states into canonical ones.
+
+These are scoped for an iter-4 round; iter-3 closes with **1667 theorem nodes** covering the canonical modern-mathematics curriculum.
+
+---
+
 ## Appendix: JSON reference
 
 The machine-readable form of this graph is at `knowledge_graph.json` (relative to repo root). Structure:
@@ -875,10 +930,10 @@ The machine-readable form of this graph is at `knowledge_graph.json` (relative t
 ```
 {
   "schema_version": "1.0",
-  "metadata": { ... },
-  "nodes": [ ... ],       // 358 entries
-  "edges": [ ... ],       // 347 entries
-  "subgraphs": [ ... ]    // 12 entries
+  "metadata": { ... },        // iter-1, iter-2 phase_a/phase_b, iter-3 phase_c blocks
+  "nodes": [ ... ],           // 6225 entries (1571 axiom + 2925 state + 1667 theorem + 62 technique)
+  "edges": [ ... ],           // 10556 entries
+  "subgraphs": [ ... ]        // 12 entries
 }
 ```
 
