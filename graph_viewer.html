@@ -61,7 +61,7 @@
 </head>
 <body>
 <header>
-  <h1>Knowledge Graph: Mathematical Discovery <small>336 theorems · 62 techniques · 12 subgraphs · 752 nodes · 1258 edges</small></h1>
+  <h1>Knowledge Graph: Mathematical Discovery <small id="header-stats">loading…</small></h1>
   <div class="controls">
     <div class="group">
       <span class="label">Mode</span>
@@ -76,7 +76,7 @@
       <span class="label">Show</span>
       <label><input type="checkbox" data-kind="axiom"> axiom</label>
       <label><input type="checkbox" data-kind="state"> state</label>
-      <label><input type="checkbox" data-kind="theorem" checked> theorem</label>
+      <label><input type="checkbox" data-kind="theorem"> theorem</label>
       <label><input type="checkbox" data-kind="technique" checked> technique</label>
     </div>
     <div class="group">
@@ -160,6 +160,8 @@
   let edgesDS = null;
   let fanIn = {};
   let fanOut = {};
+  const MAX_VISIBLE_NODES = 1500;
+  let rebuildScheduled = false;
 
   function computeFanCounts(edges) {
     fanIn = {}; fanOut = {};
@@ -169,18 +171,52 @@
     }
   }
 
+  // Build the filtered subset (by current checkbox/cluster/search state),
+  // then hand it to vis-network. Re-runs on every filter change instead of
+  // toggling hidden flags on the full 6000+ node DataSet (which made the
+  // physics engine grind and the UI feel frozen).
   function buildOverview() {
     document.getElementById("subgraph-pick").style.display = "none";
-    const data = fullData;
-    computeFanCounts(data.edges);
+    const banner = document.getElementById("banner");
 
-    const nodes = data.nodes.map(n => {
+    const data = fullData;
+    if (!fanIn || Object.keys(fanIn).length === 0) computeFanCounts(data.edges);
+
+    const kindChecks = Array.from(document.querySelectorAll("#kind-filters input[type=checkbox]"));
+    const activeKinds = new Set(kindChecks.filter(c => c.checked).map(c => c.getAttribute("data-kind")));
+    const clusterPick = document.getElementById("cluster").value;
+    const searchText = document.getElementById("search").value.trim().toLowerCase();
+
+    // Filter pass.
+    const visibleNodeSet = new Set();
+    for (const n of data.nodes) {
+      if (!activeKinds.has(n.kind)) continue;
+      if (clusterPick && n.kind === "technique") {
+        const c = clusterOf(n);
+        if (c !== clusterPick) continue;
+      }
+      if (searchText) {
+        const hay = (n.id + " " + (n.name || "") + " " + (n.description || "") + " " + (n.aliases || []).join(" ")).toLowerCase();
+        if (!hay.includes(searchText)) continue;
+      }
+      visibleNodeSet.add(n.id);
+    }
+
+    // Cap to keep vis-network responsive.
+    if (visibleNodeSet.size > MAX_VISIBLE_NODES) {
+      banner.innerHTML = `Filter matches <b>${visibleNodeSet.size}</b> nodes. Limit is <b>${MAX_VISIBLE_NODES}</b> (otherwise the layout engine locks up). Narrow with search, cluster, or kind checkboxes.`;
+      banner.classList.add("visible");
+      if (network) { network.destroy(); network = null; nodesDS = null; edgesDS = null; }
+      document.getElementById("stats").textContent = `${visibleNodeSet.size} would-be visible · over ${MAX_VISIBLE_NODES} cap · render skipped`;
+      return;
+    }
+    banner.classList.remove("visible");
+
+    const nodes = data.nodes.filter(n => visibleNodeSet.has(n.id)).map(n => {
       const fanTotal = (fanIn[n.id] || 0) + (fanOut[n.id] || 0);
       const color = { ...(KIND_COLOR[n.kind] || KIND_COLOR.state) };
-      // Disputed theorem: red border
-      if (n.status === "disputed") { color.border = "#c0392b"; }
-      // Fundamental axiom: teal border
-      else if (n.fundamental) { color.border = "#16a085"; }
+      if (n.status === "disputed") color.border = "#c0392b";
+      else if (n.fundamental) color.border = "#16a085";
       return {
         id: n.id,
         label: shortenLabel(n.name),
@@ -196,22 +232,27 @@
       };
     });
 
-    const edges = data.edges.map((e, i) => ({
-      id: e.id || "e_" + i,
-      from: e.from,
-      to: e.to,
-      arrows: "to",
-      width: 0.6,
-      color: { color: "rgba(52,73,94,0.35)", highlight: "#2c3e50", hover: "#2c3e50" },
-      smooth: { enabled: true, type: "dynamic" },
-      title: (e.role ? "role: " + e.role : "") + (e.parameter_binding ? "\nparams: " + JSON.stringify(e.parameter_binding) : "") + (e.used_in_theorem ? "\ntheorem: " + e.used_in_theorem : ""),
-      _raw: e
-    }));
+    const edges = data.edges
+      .filter(e => visibleNodeSet.has(e.from) && visibleNodeSet.has(e.to))
+      .map((e, i) => ({
+        id: e.id || "e_" + i,
+        from: e.from,
+        to: e.to,
+        arrows: "to",
+        width: 0.6,
+        color: { color: "rgba(52,73,94,0.35)", highlight: "#2c3e50", hover: "#2c3e50" },
+        smooth: { enabled: true, type: "dynamic" },
+        title: (e.role ? "role: " + e.role : "") + (e.parameter_binding ? "\nparams: " + JSON.stringify(e.parameter_binding) : "") + (e.used_in_theorem ? "\ntheorem: " + e.used_in_theorem : ""),
+        _raw: e
+      }));
 
     nodesDS = new vis.DataSet(nodes);
     edgesDS = new vis.DataSet(edges);
 
     if (network) { network.destroy(); network = null; }
+    // Scale iterations to the visible size: small subsets stabilize fast,
+    // larger ones get fewer iterations per node to keep total time bounded.
+    const iters = Math.max(80, Math.min(600, Math.round(80000 / Math.max(1, nodes.length))));
     network = new vis.Network(
       document.getElementById("graph"),
       { nodes: nodesDS, edges: edgesDS },
@@ -220,7 +261,7 @@
           enabled: true,
           solver: "forceAtlas2Based",
           forceAtlas2Based: { gravitationalConstant: -40, centralGravity: 0.003, springLength: 130, springConstant: 0.04, damping: 0.7, avoidOverlap: 0.6 },
-          stabilization: { enabled: true, iterations: 800, updateInterval: 50, fit: true },
+          stabilization: { enabled: true, iterations: iters, updateInterval: 50, fit: true },
           maxVelocity: 30,
           minVelocity: 0.5
         },
@@ -229,8 +270,9 @@
         edges: { font: { size: 9 } }
       }
     );
+    // Stop physics once stabilized — otherwise it keeps the main thread busy.
+    network.once("stabilizationIterationsDone", () => { network.setOptions({ physics: { enabled: false } }); });
     attachClickHandlers();
-    applyFilters();
     updateStats();
   }
 
@@ -399,52 +441,32 @@
     document.getElementById("details-content").innerHTML = `<p class="placeholder">Click any node to see its details. Double-click a compound technique to jump to its subgraph.</p>`;
   }
 
+  // Debounced rebuild so quick checkbox toggles / typing in the search box
+  // don't trigger a render storm.
   function applyFilters() {
-    if (!nodesDS) return;
-    const kindChecks = Array.from(document.querySelectorAll("#kind-filters input[type=checkbox]"));
-    const activeKinds = new Set(kindChecks.filter(c => c.checked).map(c => c.getAttribute("data-kind")));
-    const clusterPick = document.getElementById("cluster").value;
-    const searchText = document.getElementById("search").value.trim().toLowerCase();
-
-    const hiddenIds = new Set();
-    nodesDS.forEach(n => {
-      const raw = n._raw || {};
-      let hide = false;
-      if (!activeKinds.has(raw.kind)) hide = true;
-      if (clusterPick && raw.kind === "technique") {
-        const c = clusterOf(raw);
-        if (c !== clusterPick) hide = true;
-      }
-      if (searchText) {
-        const hay = (n.label + " " + n.id + " " + (raw.name || "") + " " + (raw.description || "") + " " + (raw.aliases || []).join(" ")).toLowerCase();
-        if (!hay.includes(searchText)) hide = true;
-      }
-      if (hide) hiddenIds.add(n.id);
-    });
-
-    const updates = [];
-    nodesDS.forEach(n => {
-      const shouldHide = hiddenIds.has(n.id);
-      if (Boolean(n.hidden) !== shouldHide) updates.push({ id: n.id, hidden: shouldHide });
-    });
-    if (updates.length) nodesDS.update(updates);
-
-    const edgeUpdates = [];
-    edgesDS.forEach(e => {
-      const shouldHide = hiddenIds.has(e.from) || hiddenIds.has(e.to);
-      if (Boolean(e.hidden) !== shouldHide) edgeUpdates.push({ id: e.id, hidden: shouldHide });
-    });
-    if (edgeUpdates.length) edgesDS.update(edgeUpdates);
-
-    updateStats();
+    if (rebuildScheduled) return;
+    rebuildScheduled = true;
+    setTimeout(() => {
+      rebuildScheduled = false;
+      buildOverview();
+    }, 80);
   }
 
   function updateStats() {
     if (!nodesDS || !edgesDS) return;
-    let visibleNodes = 0, visibleEdges = 0, totalNodes = 0, totalEdges = 0;
-    nodesDS.forEach(n => { totalNodes++; if (!n.hidden) visibleNodes++; });
-    edgesDS.forEach(e => { totalEdges++; if (!e.hidden) visibleEdges++; });
-    document.getElementById("stats").textContent = `showing ${visibleNodes}/${totalNodes} nodes · ${visibleEdges}/${totalEdges} edges`;
+    const v = nodesDS.length, e = edgesDS.length;
+    const totalN = fullData ? fullData.nodes.length : 0;
+    const totalE = fullData ? fullData.edges.length : 0;
+    document.getElementById("stats").textContent = `showing ${v} / ${totalN} nodes · ${e} / ${totalE} edges`;
+  }
+
+  function updateHeaderStats() {
+    if (!fullData) return;
+    const counts = { axiom: 0, state: 0, theorem: 0, technique: 0 };
+    for (const n of fullData.nodes) { if (counts[n.kind] !== undefined) counts[n.kind]++; }
+    const sgN = (fullData.subgraphs || []).length;
+    document.getElementById("header-stats").textContent =
+      `${counts.theorem} theorems · ${counts.technique} techniques · ${sgN} subgraphs · ${fullData.nodes.length} nodes · ${fullData.edges.length} edges`;
   }
 
   function showModeSubgraph(forceId) {
@@ -476,7 +498,7 @@
       document.getElementById("cluster").value = "";
       document.querySelectorAll("#kind-filters input").forEach(c => {
         const k = c.getAttribute("data-kind");
-        c.checked = (k === "theorem" || k === "technique");
+        c.checked = (k === "technique");
       });
       applyFilters();
     });
@@ -527,6 +549,7 @@
       return;
     }
     populateSubgraphPicker();
+    updateHeaderStats();
     wireControls();
     buildOverview();
   }
