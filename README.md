@@ -33,6 +33,70 @@ Wikipedia's *List of theorems* catalogs roughly 400–500 named results across ~
 | 9 | [`09_discovery_techniques.md`](09_discovery_techniques.md) | cross-cutting | Taxonomy of discovery techniques: 10 clusters, inheritance chains, decision tree, impossibility warnings |
 | 10 | [`10_toolbox.md`](10_toolbox.md) | cross-cutting | Structured toolbox: Mermaid tree of 57 techniques across 12 clusters, function-style dictionary, inheritance graph, decision flowchart, quick-reference table |
 | 11 | [`11_knowledge_graph.md`](11_knowledge_graph.md) | cross-cutting | Bipartite directed knowledge graph: 752 nodes (115 axioms + 239 states + 336 theorems + 62 techniques), 1258 edges, 12 compound-technique subgraphs. JSON companion at `knowledge_graph.json` (~370 KB). Built over 2 iterations — iter 1 (63 landmark chains) + iter 2 (42 deep-dive completions + 229 brief-catalog skeletons covering all of chapters 01–07). |
+| 12 | [`12_ai_solvable_discoveries.md`](12_ai_solvable_discoveries.md) | 2026 | Recently solved problems (Erdős #1196, #728, #397, #729) traced through the knowledge graph — every proof path was latent in the existing nodes and techniques. |
+| 13 | [`13_workflow.md`](13_workflow.md) | cross-cutting | Automated theorem discovery workflow: orchestrator/worker LLM architecture, search tree over the knowledge graph (nodes = states, edges = techniques), pruning rules, worked example, implementation notes. |
+
+### Discovery engine
+
+`discovery_engine/` is a Python orchestrator that searches for proofs through the knowledge graph. It dispatches worker LLMs to apply techniques, prunes dead ends, and tracks a frontier of promising states.
+
+#### Quick start
+
+```bash
+# Dry run (mock workers, no API cost)
+python3 -m discovery_engine.discover --dry-run "Prove the Erdős primitive set conjecture"
+
+# With Claude Code as worker (uses your subscription, no API key needed)
+python3 -m discovery_engine.discover --use-cli \
+    --start s_divisibility_definition,s_antichain_in_boolean_lattice \
+    --goal "f(A) = sum 1/(a log a) is maximized when A is the set of primes" \
+    "Erdős primitive set conjecture"
+
+# With Claude API workers
+export ANTHROPIC_API_KEY=sk-...
+python3 -m discovery_engine.discover "Prove the Erdős primitive set conjecture"
+```
+
+#### Checkpointing and resume
+
+Long runs save periodic checkpoints so you can stop and resume without losing progress. Ctrl+C triggers a graceful save before exiting.
+
+```bash
+# Run with auto-checkpointing (saves every 3 iterations)
+python3 -m discovery_engine.discover --use-cli \
+    --checkpoint-dir checkpoints --checkpoint-every 3 \
+    --start s_divisibility_definition,s_antichain_in_boolean_lattice \
+    --goal "For every c >= 0, the density f(c) of integers n for which (p_{n+1} - p_n)/log p_n < c exists and is a continuous function of c." \
+    "Prime gap density continuity conjecture"
+
+# Resume from last checkpoint
+python3 -m discovery_engine.discover --use-cli \
+    --resume checkpoints/checkpoint_latest.json \
+    "ignored — problem is restored from checkpoint"
+```
+
+| Flag | Default | Description |
+|---|---|---|
+| `--checkpoint-dir <path>` | off | Directory for periodic checkpoint files |
+| `--checkpoint-every N` | 5 | Save every N iterations |
+| `--resume <path>` | — | Resume from a checkpoint JSON file |
+| `--save-tree <path>` | — | Save final search tree to JSON (no resume support) |
+
+#### Other flags
+
+| Flag | Default | Description |
+|---|---|---|
+| `--dry-run` | — | Mock workers, zero API cost |
+| `--use-cli` | — | Use `claude -p` subprocess as worker |
+| `--llm-orchestrate` | — | LLM picks techniques + checks goal (more expensive) |
+| `--start <ids>` | auto | Comma-separated start node IDs |
+| `--goal <text>` | auto | Goal description |
+| `--max-depth N` | 7 | Maximum search tree depth |
+| `--max-iterations N` | 200 | Maximum search iterations |
+| `--candidates N` | 4 | Techniques to try per step |
+| `--workers N` | 2 (cli) / 5 (api) | Number of parallel workers |
+| `--model <id>` | claude-sonnet-4-20250514 | Orchestrator model |
+| `--worker-model <id>` | claude-haiku-4-5-20251001 | Worker model |
 
 ### Interactive viewer
 

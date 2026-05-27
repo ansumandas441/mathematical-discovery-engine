@@ -1,0 +1,2003 @@
+{
+  "version": 1,
+  "iteration": 23,
+  "stats": {
+    "iterations": 22,
+    "worker_calls": 88,
+    "pruned": 0,
+    "goal_found": false
+  },
+  "goal_description": "zxccfzcx",
+  "token_stats": {
+    "orchestrator_input": 0,
+    "orchestrator_output": 0,
+    "orchestrator_calls": 0
+  },
+  "tree": {
+    "root_id": "sn_0001",
+    "nodes": {
+      "sn_0001": {
+        "id": "sn_0001",
+        "state": {
+          "description": "zxccfzcx",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": null,
+        "technique_applied": null,
+        "confidence": 1.0,
+        "status": "expanded",
+        "depth": 0,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0002",
+          "sn_0003",
+          "sn_0004",
+          "sn_0005"
+        ]
+      },
+      "sn_0002": {
+        "id": "sn_0002",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0001",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 1,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0006",
+          "sn_0007",
+          "sn_0008",
+          "sn_0009"
+        ]
+      },
+      "sn_0003": {
+        "id": "sn_0003",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0001",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 1,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0010",
+          "sn_0011",
+          "sn_0012",
+          "sn_0013"
+        ]
+      },
+      "sn_0004": {
+        "id": "sn_0004",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0001",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 1,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0014",
+          "sn_0015",
+          "sn_0016",
+          "sn_0017"
+        ]
+      },
+      "sn_0005": {
+        "id": "sn_0005",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0001",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 1,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0018",
+          "sn_0019",
+          "sn_0020",
+          "sn_0021"
+        ]
+      },
+      "sn_0006": {
+        "id": "sn_0006",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0002",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0022",
+          "sn_0023",
+          "sn_0024",
+          "sn_0025"
+        ]
+      },
+      "sn_0007": {
+        "id": "sn_0007",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0002",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0026",
+          "sn_0027",
+          "sn_0028",
+          "sn_0029"
+        ]
+      },
+      "sn_0008": {
+        "id": "sn_0008",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0002",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0030",
+          "sn_0031",
+          "sn_0032",
+          "sn_0033"
+        ]
+      },
+      "sn_0009": {
+        "id": "sn_0009",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0002",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0034",
+          "sn_0035",
+          "sn_0036",
+          "sn_0037"
+        ]
+      },
+      "sn_0010": {
+        "id": "sn_0010",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0003",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0038",
+          "sn_0039",
+          "sn_0040",
+          "sn_0041"
+        ]
+      },
+      "sn_0011": {
+        "id": "sn_0011",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0003",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0042",
+          "sn_0043",
+          "sn_0044",
+          "sn_0045"
+        ]
+      },
+      "sn_0012": {
+        "id": "sn_0012",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0003",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0046",
+          "sn_0047",
+          "sn_0048",
+          "sn_0049"
+        ]
+      },
+      "sn_0013": {
+        "id": "sn_0013",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0003",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0050",
+          "sn_0051",
+          "sn_0052",
+          "sn_0053"
+        ]
+      },
+      "sn_0014": {
+        "id": "sn_0014",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0004",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0054",
+          "sn_0055",
+          "sn_0056",
+          "sn_0057"
+        ]
+      },
+      "sn_0015": {
+        "id": "sn_0015",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0004",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0058",
+          "sn_0059",
+          "sn_0060",
+          "sn_0061"
+        ]
+      },
+      "sn_0016": {
+        "id": "sn_0016",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0004",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0062",
+          "sn_0063",
+          "sn_0064",
+          "sn_0065"
+        ]
+      },
+      "sn_0017": {
+        "id": "sn_0017",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0004",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0066",
+          "sn_0067",
+          "sn_0068",
+          "sn_0069"
+        ]
+      },
+      "sn_0018": {
+        "id": "sn_0018",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0005",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0070",
+          "sn_0071",
+          "sn_0072",
+          "sn_0073"
+        ]
+      },
+      "sn_0019": {
+        "id": "sn_0019",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0005",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0074",
+          "sn_0075",
+          "sn_0076",
+          "sn_0077"
+        ]
+      },
+      "sn_0020": {
+        "id": "sn_0020",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0005",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0078",
+          "sn_0079",
+          "sn_0080",
+          "sn_0081"
+        ]
+      },
+      "sn_0021": {
+        "id": "sn_0021",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0005",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 2,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0082",
+          "sn_0083",
+          "sn_0084",
+          "sn_0085"
+        ]
+      },
+      "sn_0022": {
+        "id": "sn_0022",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0006",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "expanded",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": [
+          "sn_0086",
+          "sn_0087",
+          "sn_0088",
+          "sn_0089"
+        ]
+      },
+      "sn_0023": {
+        "id": "sn_0023",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0006",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0024": {
+        "id": "sn_0024",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0006",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0025": {
+        "id": "sn_0025",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0006",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0026": {
+        "id": "sn_0026",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0007",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0027": {
+        "id": "sn_0027",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0007",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0028": {
+        "id": "sn_0028",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0007",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0029": {
+        "id": "sn_0029",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0007",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0030": {
+        "id": "sn_0030",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0008",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0031": {
+        "id": "sn_0031",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0008",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0032": {
+        "id": "sn_0032",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0008",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0033": {
+        "id": "sn_0033",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0008",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0034": {
+        "id": "sn_0034",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0009",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0035": {
+        "id": "sn_0035",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0009",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0036": {
+        "id": "sn_0036",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0009",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0037": {
+        "id": "sn_0037",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0009",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0038": {
+        "id": "sn_0038",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0010",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0039": {
+        "id": "sn_0039",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0010",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0040": {
+        "id": "sn_0040",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0010",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0041": {
+        "id": "sn_0041",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0010",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0042": {
+        "id": "sn_0042",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0011",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0043": {
+        "id": "sn_0043",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0011",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0044": {
+        "id": "sn_0044",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0011",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0045": {
+        "id": "sn_0045",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0011",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0046": {
+        "id": "sn_0046",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0012",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0047": {
+        "id": "sn_0047",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0012",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0048": {
+        "id": "sn_0048",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0012",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0049": {
+        "id": "sn_0049",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0012",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0050": {
+        "id": "sn_0050",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0013",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0051": {
+        "id": "sn_0051",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0013",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0052": {
+        "id": "sn_0052",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0013",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0053": {
+        "id": "sn_0053",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0013",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0054": {
+        "id": "sn_0054",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0014",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0055": {
+        "id": "sn_0055",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0014",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0056": {
+        "id": "sn_0056",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0014",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0057": {
+        "id": "sn_0057",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0014",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0058": {
+        "id": "sn_0058",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0015",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0059": {
+        "id": "sn_0059",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0015",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0060": {
+        "id": "sn_0060",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0015",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0061": {
+        "id": "sn_0061",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0015",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0062": {
+        "id": "sn_0062",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0016",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0063": {
+        "id": "sn_0063",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0016",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0064": {
+        "id": "sn_0064",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0016",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0065": {
+        "id": "sn_0065",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0016",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0066": {
+        "id": "sn_0066",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0017",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0067": {
+        "id": "sn_0067",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0017",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0068": {
+        "id": "sn_0068",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0017",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0069": {
+        "id": "sn_0069",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0017",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0070": {
+        "id": "sn_0070",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0018",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0071": {
+        "id": "sn_0071",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0018",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0072": {
+        "id": "sn_0072",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0018",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0073": {
+        "id": "sn_0073",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0018",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0074": {
+        "id": "sn_0074",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0019",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0075": {
+        "id": "sn_0075",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0019",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0076": {
+        "id": "sn_0076",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0019",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0077": {
+        "id": "sn_0077",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0019",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0078": {
+        "id": "sn_0078",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0020",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0079": {
+        "id": "sn_0079",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0020",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0080": {
+        "id": "sn_0080",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0020",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0081": {
+        "id": "sn_0081",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0020",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0082": {
+        "id": "sn_0082",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0021",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0083": {
+        "id": "sn_0083",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0021",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0084": {
+        "id": "sn_0084",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0021",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0085": {
+        "id": "sn_0085",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0021",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 3,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0086": {
+        "id": "sn_0086",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0022",
+        "technique_applied": "t_structural_isomorphism",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 4,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0087": {
+        "id": "sn_0087",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0022",
+        "technique_applied": "t_reduce_to_canonical_form",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 4,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0088": {
+        "id": "sn_0088",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0022",
+        "technique_applied": "t_exhaustion_squeeze",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 4,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      },
+      "sn_0089": {
+        "id": "sn_0089",
+        "state": {
+          "description": "[ERROR] No module named 'anthropic'",
+          "formal": "",
+          "graph_nodes_used": [],
+          "graph_nodes_produced": []
+        },
+        "parent_id": "sn_0022",
+        "technique_applied": "t_compose_with_identity",
+        "confidence": 0.0,
+        "status": "frontier",
+        "depth": 4,
+        "pruned_reason": null,
+        "proof_sketch": "",
+        "children_ids": []
+      }
+    },
+    "summary": {
+      "total_nodes": 89,
+      "frontier_size": 67,
+      "max_depth": 4,
+      "status_counts": {
+        "expanded": 22,
+        "frontier": 67
+      }
+    },
+    "_frontier": [
+      [
+        -0.0,
+        23,
+        "sn_0023"
+      ],
+      [
+        -0.0,
+        24,
+        "sn_0024"
+      ],
+      [
+        -0.0,
+        25,
+        "sn_0025"
+      ],
+      [
+        -0.0,
+        26,
+        "sn_0026"
+      ],
+      [
+        -0.0,
+        27,
+        "sn_0027"
+      ],
+      [
+        -0.0,
+        32,
+        "sn_0032"
+      ],
+      [
+        -0.0,
+        29,
+        "sn_0029"
+      ],
+      [
+        -0.0,
+        37,
+        "sn_0037"
+      ],
+      [
+        -0.0,
+        41,
+        "sn_0041"
+      ],
+      [
+        -0.0,
+        28,
+        "sn_0028"
+      ],
+      [
+        -0.0,
+        30,
+        "sn_0030"
+      ],
+      [
+        -0.0,
+        34,
+        "sn_0034"
+      ],
+      [
+        -0.0,
+        33,
+        "sn_0033"
+      ],
+      [
+        -0.0,
+        38,
+        "sn_0038"
+      ],
+      [
+        -0.0,
+        40,
+        "sn_0040"
+      ],
+      [
+        -0.0,
+        43,
+        "sn_0043"
+      ],
+      [
+        -0.0,
+        46,
+        "sn_0046"
+      ],
+      [
+        -0.0,
+        48,
+        "sn_0048"
+      ],
+      [
+        -0.0,
+        51,
+        "sn_0051"
+      ],
+      [
+        -0.0,
+        49,
+        "sn_0049"
+      ],
+      [
+        -0.0,
+        53,
+        "sn_0053"
+      ],
+      [
+        -0.0,
+        45,
+        "sn_0045"
+      ],
+      [
+        -0.0,
+        31,
+        "sn_0031"
+      ],
+      [
+        -0.0,
+        57,
+        "sn_0057"
+      ],
+      [
+        -0.0,
+        67,
+        "sn_0067"
+      ],
+      [
+        -0.0,
+        35,
+        "sn_0035"
+      ],
+      [
+        -0.0,
+        36,
+        "sn_0036"
+      ],
+      [
+        -0.0,
+        69,
+        "sn_0069"
+      ],
+      [
+        -0.0,
+        39,
+        "sn_0039"
+      ],
+      [
+        -0.0,
+        65,
+        "sn_0065"
+      ],
+      [
+        -0.0,
+        42,
+        "sn_0042"
+      ],
+      [
+        -0.0,
+        77,
+        "sn_0077"
+      ],
+      [
+        -0.0,
+        44,
+        "sn_0044"
+      ],
+      [
+        -0.0,
+        61,
+        "sn_0061"
+      ],
+      [
+        -0.0,
+        47,
+        "sn_0047"
+      ],
+      [
+        -0.0,
+        85,
+        "sn_0085"
+      ],
+      [
+        -0.0,
+        50,
+        "sn_0050"
+      ],
+      [
+        -0.0,
+        81,
+        "sn_0081"
+      ],
+      [
+        -0.0,
+        52,
+        "sn_0052"
+      ],
+      [
+        -0.0,
+        54,
+        "sn_0054"
+      ],
+      [
+        -0.0,
+        55,
+        "sn_0055"
+      ],
+      [
+        -0.0,
+        56,
+        "sn_0056"
+      ],
+      [
+        -0.0,
+        58,
+        "sn_0058"
+      ],
+      [
+        -0.0,
+        59,
+        "sn_0059"
+      ],
+      [
+        -0.0,
+        60,
+        "sn_0060"
+      ],
+      [
+        -0.0,
+        62,
+        "sn_0062"
+      ],
+      [
+        -0.0,
+        63,
+        "sn_0063"
+      ],
+      [
+        -0.0,
+        64,
+        "sn_0064"
+      ],
+      [
+        -0.0,
+        66,
+        "sn_0066"
+      ],
+      [
+        -0.0,
+        73,
+        "sn_0073"
+      ],
+      [
+        -0.0,
+        68,
+        "sn_0068"
+      ],
+      [
+        -0.0,
+        70,
+        "sn_0070"
+      ],
+      [
+        -0.0,
+        71,
+        "sn_0071"
+      ],
+      [
+        -0.0,
+        72,
+        "sn_0072"
+      ],
+      [
+        -0.0,
+        74,
+        "sn_0074"
+      ],
+      [
+        -0.0,
+        75,
+        "sn_0075"
+      ],
+      [
+        -0.0,
+        76,
+        "sn_0076"
+      ],
+      [
+        -0.0,
+        78,
+        "sn_0078"
+      ],
+      [
+        -0.0,
+        79,
+        "sn_0079"
+      ],
+      [
+        -0.0,
+        80,
+        "sn_0080"
+      ],
+      [
+        -0.0,
+        82,
+        "sn_0082"
+      ],
+      [
+        -0.0,
+        83,
+        "sn_0083"
+      ],
+      [
+        -0.0,
+        84,
+        "sn_0084"
+      ],
+      [
+        -0.0,
+        86,
+        "sn_0086"
+      ],
+      [
+        -0.0,
+        87,
+        "sn_0087"
+      ],
+      [
+        -0.0,
+        88,
+        "sn_0088"
+      ],
+      [
+        -0.0,
+        89,
+        "sn_0089"
+      ]
+    ],
+    "_counter": 89,
+    "_tiebreak": 89
+  },
+  "params": {
+    "problem": "zxccfzcx",
+    "start_node_ids": null,
+    "goal": null,
+    "use_llm_for_orchestration": false,
+    "max_depth": 7,
+    "max_iterations": 200,
+    "candidates_per_step": 4,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "saved_at": 1779209966.279571
+}
