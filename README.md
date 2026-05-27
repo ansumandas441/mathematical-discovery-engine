@@ -399,7 +399,7 @@ If you use this work in your research, please cite:
   author       = {Das, Ansuman},
   title        = {Mathematical Discovery Engine: Automated Theorem Discovery via Knowledge Graphs},
   year         = {2026},
-  url          = {https://github.com/ansumandas441/math-discovery-techniques},
+  url          = {https://github.com/ansumandas441/mathematical-discovery-engine},
   note         = {ORCID: 0000-0001-9695-9408. Knowledge graph of 6,225
                   mathematical nodes and 10,556 edges with an
                   LLM-orchestrated proof search engine}
@@ -408,7 +408,7 @@ If you use this work in your research, please cite:
 
 Or in prose:
 
-> Ansuman Das, *Mathematical Discovery Engine: Automated Theorem Discovery via Knowledge Graphs*, 2026. Available at https://github.com/ansumandas441/math-discovery-techniques
+> Ansuman Das, *Mathematical Discovery Engine: Automated Theorem Discovery via Knowledge Graphs*, 2026. Available at https://github.com/ansumandas441/mathematical-discovery-engine
 
 ---
 
