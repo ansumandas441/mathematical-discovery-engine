@@ -1,4 +1,4 @@
-# How Mathematics Was Discovered
+# Mathematical Discovery Engine
 
 ## What This Repository Does
 
@@ -397,7 +397,7 @@ If you use this work in your research, please cite:
 ```bibtex
 @software{das2026mathsdiscovery,
   author       = {Das, Ansuman},
-  title        = {How Mathematics Was Discovered: An Automated Theorem Discovery Engine},
+  title        = {Mathematical Discovery Engine: Automated Theorem Discovery via Knowledge Graphs},
   year         = {2026},
   url          = {https://github.com/ansumandas441/math-discovery-techniques},
   note         = {ORCID: 0000-0001-9695-9408. Knowledge graph of 6,225
@@ -408,7 +408,7 @@ If you use this work in your research, please cite:
 
 Or in prose:
 
-> Ansuman Das, *How Mathematics Was Discovered: An Automated Theorem Discovery Engine*, 2026. Available at https://github.com/ansumandas441/math-discovery-techniques
+> Ansuman Das, *Mathematical Discovery Engine: Automated Theorem Discovery via Knowledge Graphs*, 2026. Available at https://github.com/ansumandas441/math-discovery-techniques
 
 ---
 
