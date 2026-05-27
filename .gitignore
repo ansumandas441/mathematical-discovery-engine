@@ -4,3 +4,4 @@ monoquant_venv/
 __pycache__/
 *.pyc
 *.pyo
+resources.md
