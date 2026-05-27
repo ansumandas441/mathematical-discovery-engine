@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Knowledge Graph — Mathematical Discovery</title>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #2c3e50; }
+  body { display: flex; flex-direction: column; }
+
+  header { background: #2c3e50; color: #ecf0f1; padding: 12px 18px; flex-shrink: 0; }
+  header h1 { margin: 0 0 10px 0; font-size: 18px; font-weight: 500; }
+  header h1 small { font-weight: 300; opacity: 0.7; font-size: 13px; margin-left: 8px; }
+
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .controls > * { font-size: 13px; }
+  .controls label { display: flex; align-items: center; gap: 4px; cursor: pointer; user-select: none; }
+  .controls select, .controls input[type="text"], .controls button { background: #34495e; color: #ecf0f1; border: 1px solid #4a5f75; border-radius: 3px; padding: 5px 8px; font-size: 13px; }
+  .controls input[type="text"] { width: 220px; }
+  .controls button { cursor: pointer; }
+  .controls button:hover { background: #4a5f75; }
+  .controls .group { display: flex; gap: 8px; align-items: center; padding: 3px 8px; background: rgba(255,255,255,0.05); border-radius: 3px; }
+  .controls .group .label { opacity: 0.7; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  main { flex: 1; display: flex; min-height: 0; }
+  #graph { flex: 1; background: #ecf0f1; position: relative; }
+  #graph .banner { position: absolute; top: 10px; left: 10px; background: rgba(231, 76, 60, 0.9); color: white; padding: 8px 14px; border-radius: 4px; font-size: 13px; z-index: 10; display: none; max-width: 480px; }
+  #graph .banner.visible { display: block; }
+  #graph .banner code { background: rgba(0,0,0,0.25); padding: 1px 5px; border-radius: 2px; font-family: Menlo, Monaco, monospace; }
+
+  aside#details { width: 340px; background: white; border-left: 1px solid #bdc3c7; padding: 14px 16px; overflow-y: auto; flex-shrink: 0; }
+  aside#details h3 { margin: 0 0 10px 0; font-size: 14px; color: #34495e; text-transform: uppercase; letter-spacing: 0.5px; }
+  aside#details .detail { font-size: 13px; line-height: 1.5; }
+  aside#details .detail .field { margin-bottom: 8px; }
+  aside#details .detail .field .name { color: #7f8c8d; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 1px; }
+  aside#details .detail .field .value { color: #2c3e50; }
+  aside#details .detail .field .value code { background: #ecf0f1; padding: 1px 5px; border-radius: 2px; font-family: Menlo, Monaco, monospace; font-size: 12px; }
+  aside#details .detail .neighbors ul { padding-left: 16px; margin: 4px 0; max-height: 280px; overflow-y: auto; }
+  aside#details .detail .neighbors li { cursor: pointer; color: #2980b9; padding: 2px 0; }
+  aside#details .detail .neighbors li:hover { text-decoration: underline; }
+  aside#details .detail .placeholder { color: #95a5a6; font-style: italic; }
+  aside#details .detail .kind-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 500; text-transform: uppercase; margin-right: 6px; }
+  aside#details .detail .subgraph-btn { margin-top: 10px; padding: 8px 12px; background: #e67e22; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 13px; display: block; width: 100%; }
+  aside#details .detail .subgraph-btn:hover { background: #d35400; }
+
+  footer { background: #34495e; color: #ecf0f1; padding: 8px 18px; font-size: 12px; display: flex; gap: 14px; flex-shrink: 0; align-items: center; flex-wrap: wrap; }
+  footer .legend-item { display: inline-flex; align-items: center; gap: 5px; }
+  footer .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.2); }
+  footer .stats { margin-left: auto; opacity: 0.8; }
+
+  .kind-axiom { background: #95a5a6; color: white; }
+  .kind-state { background: #3498db; color: white; }
+  .kind-theorem { background: #27ae60; color: white; }
+  .kind-technique { background: #e67e22; color: white; }
+  .swatch-axiom { background: #95a5a6; }
+  .swatch-state { background: #3498db; }
+  .swatch-theorem { background: #27ae60; }
+  .swatch-technique { background: #e67e22; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Knowledge Graph: Mathematical Discovery <small id="header-stats">loading…</small></h1>
+  <div class="controls">
+    <div class="group">
+      <span class="label">Mode</span>
+      <select id="mode">
+        <option value="overview">Overview (top level)</option>
+        <option value="subgraph">Subgraph browser</option>
+      </select>
+      <select id="subgraph-pick" style="display:none">
+      </select>
+    </div>
+    <div class="group" id="kind-filters">
+      <span class="label">Show</span>
+      <label><input type="checkbox" data-kind="axiom"> axiom</label>
+      <label><input type="checkbox" data-kind="state"> state</label>
+      <label><input type="checkbox" data-kind="theorem"> theorem</label>
+      <label><input type="checkbox" data-kind="technique" checked> technique</label>
+    </div>
+    <div class="group">
+      <span class="label">Cluster</span>
+      <select id="cluster">
+        <option value="">all</option>
+      </select>
+    </div>
+    <input type="text" id="search" placeholder="Search by name or id...">
+    <button id="fitBtn">Fit view</button>
+    <button id="resetBtn">Reset filters</button>
+  </div>
+</header>
+<main>
+  <div id="graph">
+    <div class="banner" id="banner"></div>
+  </div>
+  <aside id="details">
+    <h3>Node details</h3>
+    <div id="details-content" class="detail">
+      <p class="placeholder">Click any node to see its details, neighbors, and (for compound techniques) its subgraph.</p>
+    </div>
+  </aside>
+</main>
+<footer>
+  <span class="legend-item"><span class="swatch swatch-axiom"></span> axiom (starting object)</span>
+  <span class="legend-item"><span class="swatch swatch-state"></span> state (intermediate)</span>
+  <span class="legend-item"><span class="swatch swatch-theorem"></span> theorem (leaf)</span>
+  <span class="legend-item"><span class="swatch swatch-technique"></span> technique (process) — size ∝ fan-in+fan-out</span>
+  <span class="legend-item">★ fundamental axiom · ⚠ disputed theorem</span>
+  <span class="stats" id="stats"></span>
+</footer>
+<script>
+(() => {
+  const CLUSTERS = {
+    C1: "Experimental & numerical",
+    C2: "Algebraic manipulation",
+    C3: "Symmetry & invariants",
+    C4: "Approximation & limits",
+    C5: "Abstraction & axiomatization",
+    C6: "Topology & obstruction",
+    C7: "Self-reference & impossibility",
+    C8: "Iteration & fixed points",
+    C9: "Cross-field transfer",
+    C10: "Computer-assisted & collaborative",
+    C11: "Probabilistic & counting",
+    C12: "Homological & categorical"
+  };
+
+  const KIND_COLOR = {
+    axiom: { background: "#95a5a6", border: "#7f8c8d", highlight: { background: "#bdc3c7", border: "#34495e" } },
+    state: { background: "#3498db", border: "#2980b9", highlight: { background: "#5dade2", border: "#1b4f72" } },
+    theorem: { background: "#27ae60", border: "#1e8449", highlight: { background: "#52be80", border: "#145a32" } },
+    technique: { background: "#e67e22", border: "#ca6f1e", highlight: { background: "#eb984e", border: "#6e2c00" } }
+  };
+
+  // Infer cluster from technique id prefix if not explicit
+  function clusterOf(node) {
+    if (node.cluster) {
+      const m = /^(?:C)?(\d+)/.exec(node.cluster);
+      if (m) return "C" + m[1];
+    }
+    return null;
+  }
+
+  function sizeOfNode(node, fanTotal) {
+    if (node.kind === "theorem") return 22;
+    if (node.kind === "technique") return 15 + Math.min(20, Math.sqrt(fanTotal || 1) * 3.5);
+    return 11;
+  }
+
+  function shortenLabel(name) {
+    if (!name) return "";
+    if (name.length <= 30) return name;
+    return name.slice(0, 28) + "…";
+  }
+
+  let fullData = null;
+  let network = null;
+  let nodesDS = null;
+  let edgesDS = null;
+  let fanIn = {};
+  let fanOut = {};
+  const MAX_VISIBLE_NODES = 1500;
+  let rebuildScheduled = false;
+
+  function computeFanCounts(edges) {
+    fanIn = {}; fanOut = {};
+    for (const e of edges) {
+      fanIn[e.to] = (fanIn[e.to] || 0) + 1;
+      fanOut[e.from] = (fanOut[e.from] || 0) + 1;
+    }
+  }
+
+  // Build the filtered subset (by current checkbox/cluster/search state),
+  // then hand it to vis-network. Re-runs on every filter change instead of
+  // toggling hidden flags on the full 6000+ node DataSet (which made the
+  // physics engine grind and the UI feel frozen).
+  function buildOverview() {
+    document.getElementById("subgraph-pick").style.display = "none";
+    const banner = document.getElementById("banner");
+
+    const data = fullData;
+    if (!fanIn || Object.keys(fanIn).length === 0) computeFanCounts(data.edges);
+
+    const kindChecks = Array.from(document.querySelectorAll("#kind-filters input[type=checkbox]"));
+    const activeKinds = new Set(kindChecks.filter(c => c.checked).map(c => c.getAttribute("data-kind")));
+    const clusterPick = document.getElementById("cluster").value;
+    const searchText = document.getElementById("search").value.trim().toLowerCase();
+
+    // Filter pass.
+    const visibleNodeSet = new Set();
+    for (const n of data.nodes) {
+      if (!activeKinds.has(n.kind)) continue;
+      if (clusterPick && n.kind === "technique") {
+        const c = clusterOf(n);
+        if (c !== clusterPick) continue;
+      }
+      if (searchText) {
+        const hay = (n.id + " " + (n.name || "") + " " + (n.description || "") + " " + (n.aliases || []).join(" ")).toLowerCase();
+        if (!hay.includes(searchText)) continue;
+      }
+      visibleNodeSet.add(n.id);
+    }
+
+    // Cap to keep vis-network responsive.
+    if (visibleNodeSet.size > MAX_VISIBLE_NODES) {
+      banner.innerHTML = `Filter matches <b>${visibleNodeSet.size}</b> nodes. Limit is <b>${MAX_VISIBLE_NODES}</b> (otherwise the layout engine locks up). Narrow with search, cluster, or kind checkboxes.`;
+      banner.classList.add("visible");
+      if (network) { network.destroy(); network = null; nodesDS = null; edgesDS = null; }
+      document.getElementById("stats").textContent = `${visibleNodeSet.size} would-be visible · over ${MAX_VISIBLE_NODES} cap · render skipped`;
+      return;
+    }
+    banner.classList.remove("visible");
+
+    const nodes = data.nodes.filter(n => visibleNodeSet.has(n.id)).map(n => {
+      const fanTotal = (fanIn[n.id] || 0) + (fanOut[n.id] || 0);
+      const color = { ...(KIND_COLOR[n.kind] || KIND_COLOR.state) };
+      if (n.status === "disputed") color.border = "#c0392b";
+      else if (n.fundamental) color.border = "#16a085";
+      return {
+        id: n.id,
+        label: shortenLabel(n.name),
+        title: (n.description || n.name) + "\nkind: " + n.kind + (n.cluster ? "\ncluster: " + n.cluster : "") + (n.status ? "\nstatus: " + n.status : "") + (n.fundamental ? "\n★ fundamental" : ""),
+        color: color,
+        borderWidth: (n.status === "disputed" || n.fundamental) ? 3 : 1,
+        size: sizeOfNode(n, fanTotal),
+        shape: n.kind === "technique" ? "diamond" : (n.kind === "theorem" ? "star" : "dot"),
+        group: n.kind,
+        _raw: n,
+        _fanIn: fanIn[n.id] || 0,
+        _fanOut: fanOut[n.id] || 0
+      };
+    });
+
+    const edges = data.edges
+      .filter(e => visibleNodeSet.has(e.from) && visibleNodeSet.has(e.to))
+      .map((e, i) => ({
+        id: e.id || "e_" + i,
+        from: e.from,
+        to: e.to,
+        arrows: "to",
+        width: 0.6,
+        color: { color: "rgba(52,73,94,0.35)", highlight: "#2c3e50", hover: "#2c3e50" },
+        smooth: { enabled: true, type: "dynamic" },
+        title: (e.role ? "role: " + e.role : "") + (e.parameter_binding ? "\nparams: " + JSON.stringify(e.parameter_binding) : "") + (e.used_in_theorem ? "\ntheorem: " + e.used_in_theorem : ""),
+        _raw: e
+      }));
+
+    nodesDS = new vis.DataSet(nodes);
+    edgesDS = new vis.DataSet(edges);
+
+    if (network) { network.destroy(); network = null; }
+    // Scale iterations to the visible size: small subsets stabilize fast,
+    // larger ones get fewer iterations per node to keep total time bounded.
+    const iters = Math.max(80, Math.min(600, Math.round(80000 / Math.max(1, nodes.length))));
+    network = new vis.Network(
+      document.getElementById("graph"),
+      { nodes: nodesDS, edges: edgesDS },
+      {
+        physics: {
+          enabled: true,
+          solver: "forceAtlas2Based",
+          forceAtlas2Based: { gravitationalConstant: -40, centralGravity: 0.003, springLength: 130, springConstant: 0.04, damping: 0.7, avoidOverlap: 0.6 },
+          stabilization: { enabled: true, iterations: iters, updateInterval: 50, fit: true },
+          maxVelocity: 30,
+          minVelocity: 0.5
+        },
+        interaction: { hover: true, tooltipDelay: 200, navigationButtons: false, keyboard: false },
+        nodes: { font: { size: 11, color: "#2c3e50", strokeWidth: 2, strokeColor: "#ffffff" }, borderWidth: 1, shadow: false },
+        edges: { font: { size: 9 } }
+      }
+    );
+    // Stop physics once stabilized — otherwise it keeps the main thread busy.
+    network.once("stabilizationIterationsDone", () => { network.setOptions({ physics: { enabled: false } }); });
+    attachClickHandlers();
+    updateStats();
+  }
+
+  function buildSubgraph(sgId) {
+    const sg = fullData.subgraphs.find(s => s.id === sgId);
+    if (!sg) return;
+
+    const nodes = sg.nodes.map(n => {
+      const parts = n.id.split(".");
+      const shortId = parts[parts.length - 1];
+      return {
+        id: n.id,
+        label: shortenLabel(n.name || shortId),
+        title: (n.name || shortId) + "\nkind: " + n.kind,
+        color: KIND_COLOR[n.kind] || KIND_COLOR.state,
+        size: n.kind === "technique" ? 20 : 14,
+        shape: n.kind === "technique" ? "diamond" : "dot",
+        _raw: n
+      };
+    });
+
+    // Mark entry / exit
+    const entrySet = new Set(sg.entry_points || []);
+    const exitSet = new Set(sg.exit_points || []);
+    for (const n of nodes) {
+      if (entrySet.has(n.id)) { n.borderWidth = 3; n.color = { ...n.color, border: "#c0392b" }; n.label = "▶ " + n.label; }
+      if (exitSet.has(n.id)) { n.borderWidth = 3; n.color = { ...n.color, border: "#27ae60" }; n.label = n.label + " ■"; }
+    }
+
+    const edges = (sg.edges || []).map((e, i) => ({
+      id: "sge_" + i,
+      from: e.from,
+      to: e.to,
+      arrows: "to",
+      width: 1,
+      color: { color: "rgba(52,73,94,0.6)", highlight: "#2c3e50" }
+    }));
+
+    nodesDS = new vis.DataSet(nodes);
+    edgesDS = new vis.DataSet(edges);
+
+    if (network) { network.destroy(); network = null; }
+    network = new vis.Network(
+      document.getElementById("graph"),
+      { nodes: nodesDS, edges: edgesDS },
+      {
+        layout: { hierarchical: { enabled: true, direction: "UD", sortMethod: "directed", levelSeparation: 120, nodeSpacing: 180 } },
+        physics: { enabled: false },
+        interaction: { hover: true, tooltipDelay: 200 },
+        nodes: { font: { size: 11, color: "#2c3e50", strokeWidth: 2, strokeColor: "#ffffff" } },
+        edges: { smooth: { type: "cubicBezier", forceDirection: "vertical" } }
+      }
+    );
+    attachClickHandlers();
+
+    const banner = document.getElementById("banner");
+    banner.innerHTML = `Subgraph <b>${sg.id}</b> — elaborates <code>${sg.belongs_to}</code>. Entry nodes marked ▶, exit nodes marked ■.`;
+    banner.classList.add("visible");
+    setTimeout(() => banner.classList.remove("visible"), 6000);
+
+    document.getElementById("stats").textContent = `subgraph: ${nodes.length} nodes · ${edges.length} edges · belongs to ${sg.belongs_to}`;
+  }
+
+  function attachClickHandlers() {
+    network.on("click", params => {
+      if (params.nodes.length) {
+        showNodeDetails(params.nodes[0]);
+        network.focus(params.nodes[0], { scale: 1.3, animation: { duration: 400, easingFunction: "easeInOutQuad" } });
+      } else {
+        showPlaceholder();
+      }
+    });
+    network.on("doubleClick", params => {
+      if (params.nodes.length) {
+        const nid = params.nodes[0];
+        const n = nodesDS.get(nid);
+        if (n && n._raw && n._raw.kind === "technique" && n._raw.subgraph_ref) {
+          document.getElementById("mode").value = "subgraph";
+          showModeSubgraph(n._raw.subgraph_ref);
+        }
+      }
+    });
+  }
+
+  function showNodeDetails(nid) {
+    const n = nodesDS.get(nid);
+    if (!n) return;
+    const raw = n._raw || {};
+    const box = document.getElementById("details-content");
+    const parts = [];
+    parts.push(`<div class="field"><span class="kind-badge kind-${raw.kind}">${raw.kind}</span><b>${raw.name || nid}</b></div>`);
+    parts.push(`<div class="field"><span class="name">id</span><span class="value"><code>${nid}</code></span></div>`);
+    if (raw.type_signature) parts.push(`<div class="field"><span class="name">type</span><span class="value"><code>${raw.type_signature}</code></span></div>`);
+    if (raw.function_signature) parts.push(`<div class="field"><span class="name">signature</span><span class="value"><code>${raw.function_signature}</code></span></div>`);
+    if (raw.cluster) parts.push(`<div class="field"><span class="name">cluster</span><span class="value">${raw.cluster}${CLUSTERS[raw.cluster] ? " — " + CLUSTERS[raw.cluster] : ""}</span></div>`);
+    if (raw.description) parts.push(`<div class="field"><span class="name">description</span><span class="value">${raw.description}</span></div>`);
+    if (raw.parameters && raw.parameters.length) parts.push(`<div class="field"><span class="name">parameters</span><span class="value"><code>${raw.parameters.join(", ")}</code></span></div>`);
+    if (raw.aliases && raw.aliases.length) parts.push(`<div class="field"><span class="name">aliases</span><span class="value"><code>${raw.aliases.join(", ")}</code></span></div>`);
+    if (raw.toolbox_ref) parts.push(`<div class="field"><span class="name">toolbox</span><span class="value"><code>${raw.toolbox_ref}</code></span></div>`);
+    if (raw.provisional) parts.push(`<div class="field"><span class="value" style="color:#e67e22">⚠ provisional — not yet in toolbox</span></div>`);
+    if (raw.single_use_landmark) parts.push(`<div class="field"><span class="value" style="color:#7f8c8d">↳ single-use landmark</span></div>`);
+    if (raw.meta_technique) parts.push(`<div class="field"><span class="value" style="color:#7f8c8d">↳ meta-technique (sociological, not mathematical)</span></div>`);
+    if (raw.subgraph_host) parts.push(`<div class="field"><span class="value" style="color:#8e44ad">↳ umbrella technique — action lives in its subgraph</span></div>`);
+    if (raw.fundamental) parts.push(`<div class="field"><span class="value" style="color:#16a085">★ fundamental axiom (ambient — many theorems depend on it implicitly)</span></div>`);
+    if (raw.status === "disputed") parts.push(`<div class="field"><span class="value" style="color:#c0392b"><b>⚠ status: disputed</b> — proof claimed but not widely accepted</span></div>`);
+    else if (raw.status === "conjectured") parts.push(`<div class="field"><span class="value" style="color:#e67e22">status: conjectured (not yet proved)</span></div>`);
+    if (raw.is_specialization_of) parts.push(`<div class="field"><span class="name">specialization of</span><span class="value"><code>${raw.is_specialization_of}</code></span></div>`);
+    if (raw.is_generalization_of) parts.push(`<div class="field"><span class="name">generalization of</span><span class="value"><code>${raw.is_generalization_of}</code></span></div>`);
+    if (raw.is_special_case_of) parts.push(`<div class="field"><span class="name">special case of</span><span class="value"><code>${raw.is_special_case_of}</code></span></div>`);
+    if (raw.inherits && raw.inherits.length) parts.push(`<div class="field"><span class="name">inherits from</span><span class="value">${raw.inherits.map(i => "<code>"+i+"</code>").join(", ")}</span></div>`);
+
+    if (n._fanIn !== undefined || n._fanOut !== undefined) {
+      parts.push(`<div class="field"><span class="name">fan-in / fan-out</span><span class="value">${n._fanIn || 0} in, ${n._fanOut || 0} out</span></div>`);
+    }
+
+    // Neighbors
+    const incoming = [];
+    const outgoing = [];
+    edgesDS.forEach(e => {
+      if (e.to === nid) incoming.push(e.from);
+      if (e.from === nid) outgoing.push(e.to);
+    });
+
+    if (incoming.length) {
+      parts.push(`<div class="field neighbors"><span class="name">incoming (${incoming.length})</span><ul>` +
+        incoming.slice(0, 50).map(id => {
+          const nb = nodesDS.get(id);
+          return `<li data-nav="${id}">${nb ? (nb._raw?.name || id) : id}</li>`;
+        }).join("") + `</ul></div>`);
+    }
+    if (outgoing.length) {
+      parts.push(`<div class="field neighbors"><span class="name">outgoing (${outgoing.length})</span><ul>` +
+        outgoing.slice(0, 50).map(id => {
+          const nb = nodesDS.get(id);
+          return `<li data-nav="${id}">${nb ? (nb._raw?.name || id) : id}</li>`;
+        }).join("") + `</ul></div>`);
+    }
+
+    if (raw.subgraph_ref) {
+      parts.push(`<button class="subgraph-btn" data-sgref="${raw.subgraph_ref}">Open subgraph: ${raw.subgraph_ref}</button>`);
+    }
+
+    box.innerHTML = parts.join("");
+
+    box.querySelectorAll("[data-nav]").forEach(el => {
+      el.addEventListener("click", () => {
+        const target = el.getAttribute("data-nav");
+        if (nodesDS.get(target)) {
+          network.selectNodes([target]);
+          showNodeDetails(target);
+          network.focus(target, { scale: 1.4, animation: { duration: 400, easingFunction: "easeInOutQuad" } });
+        }
+      });
+    });
+
+    box.querySelectorAll("[data-sgref]").forEach(el => {
+      el.addEventListener("click", () => {
+        const sg = el.getAttribute("data-sgref");
+        document.getElementById("mode").value = "subgraph";
+        showModeSubgraph(sg);
+      });
+    });
+  }
+
+  function showPlaceholder() {
+    document.getElementById("details-content").innerHTML = `<p class="placeholder">Click any node to see its details. Double-click a compound technique to jump to its subgraph.</p>`;
+  }
+
+  // Debounced rebuild so quick checkbox toggles / typing in the search box
+  // don't trigger a render storm.
+  function applyFilters() {
+    if (rebuildScheduled) return;
+    rebuildScheduled = true;
+    setTimeout(() => {
+      rebuildScheduled = false;
+      buildOverview();
+    }, 80);
+  }
+
+  function updateStats() {
+    if (!nodesDS || !edgesDS) return;
+    const v = nodesDS.length, e = edgesDS.length;
+    const totalN = fullData ? fullData.nodes.length : 0;
+    const totalE = fullData ? fullData.edges.length : 0;
+    document.getElementById("stats").textContent = `showing ${v} / ${totalN} nodes · ${e} / ${totalE} edges`;
+  }
+
+  function updateHeaderStats() {
+    if (!fullData) return;
+    const counts = { axiom: 0, state: 0, theorem: 0, technique: 0 };
+    for (const n of fullData.nodes) { if (counts[n.kind] !== undefined) counts[n.kind]++; }
+    const sgN = (fullData.subgraphs || []).length;
+    document.getElementById("header-stats").textContent =
+      `${counts.theorem} theorems · ${counts.technique} techniques · ${sgN} subgraphs · ${fullData.nodes.length} nodes · ${fullData.edges.length} edges`;
+  }
+
+  function showModeSubgraph(forceId) {
+    document.getElementById("mode").value = "subgraph";
+    const picker = document.getElementById("subgraph-pick");
+    picker.style.display = "";
+    if (forceId) picker.value = forceId;
+    buildSubgraph(picker.value);
+    showPlaceholder();
+  }
+
+  function wireControls() {
+    document.getElementById("mode").addEventListener("change", e => {
+      if (e.target.value === "overview") {
+        document.getElementById("subgraph-pick").style.display = "none";
+        buildOverview();
+        showPlaceholder();
+      } else {
+        showModeSubgraph();
+      }
+    });
+    document.getElementById("subgraph-pick").addEventListener("change", e => buildSubgraph(e.target.value));
+    document.querySelectorAll("#kind-filters input").forEach(c => c.addEventListener("change", applyFilters));
+    document.getElementById("cluster").addEventListener("change", applyFilters);
+    document.getElementById("search").addEventListener("input", applyFilters);
+    document.getElementById("fitBtn").addEventListener("click", () => network && network.fit({ animation: { duration: 500, easingFunction: "easeInOutQuad" } }));
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      document.getElementById("search").value = "";
+      document.getElementById("cluster").value = "";
+      document.querySelectorAll("#kind-filters input").forEach(c => {
+        const k = c.getAttribute("data-kind");
+        c.checked = (k === "technique");
+      });
+      applyFilters();
+    });
+  }
+
+  function populateClusterFilter() {
+    const sel = document.getElementById("cluster");
+    for (const [id, name] of Object.entries(CLUSTERS)) {
+      const opt = document.createElement("option");
+      opt.value = id;
+      opt.textContent = `${id} — ${name}`;
+      sel.appendChild(opt);
+    }
+  }
+
+  function populateSubgraphPicker() {
+    const sel = document.getElementById("subgraph-pick");
+    sel.innerHTML = "";
+    for (const sg of fullData.subgraphs || []) {
+      const opt = document.createElement("option");
+      opt.value = sg.id;
+      opt.textContent = `${sg.id} → ${sg.belongs_to}`;
+      sel.appendChild(opt);
+    }
+  }
+
+  function showFileProtocolBanner() {
+    const b = document.getElementById("banner");
+    b.innerHTML = "This viewer needs to load <code>knowledge_graph.json</code> via HTTP (fetch is blocked on <code>file://</code>). " +
+      "Run <code>python3 -m http.server 8765</code> in this directory, then open " +
+      "<code>http://localhost:8765/graph_viewer.html</code>.";
+    b.classList.add("visible");
+  }
+
+  async function init() {
+    populateClusterFilter();
+    try {
+      const r = await fetch("./knowledge_graph.json");
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      fullData = await r.json();
+    } catch (err) {
+      if (location.protocol === "file:") {
+        showFileProtocolBanner();
+      } else {
+        document.getElementById("banner").innerHTML = "Failed to load knowledge_graph.json: " + err.message;
+        document.getElementById("banner").classList.add("visible");
+      }
+      return;
+    }
+    populateSubgraphPicker();
+    updateHeaderStats();
+    wireControls();
+    buildOverview();
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
