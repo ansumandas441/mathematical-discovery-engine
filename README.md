@@ -365,6 +365,11 @@ The entire knowledge graph is explorable in an interactive 3D visualization — 
 <!-- REPLACE_WITH_VIDEO: Once you have a user-attachments URL, put it on its own line here to get inline playback -->
 
 
+https://github.com/user-attachments/assets/e6afe79e-9c0c-41e5-a049-af1aba319a31
+
+
+
+
 **TL;DR:** Every node is a mathematical object (axiom, state, theorem, or technique). Every edge is a logical dependency. Hover a node to see its connections light up. Double-click to explore its neighborhood. Particles flowing along edges show the direction of mathematical reasoning — from axioms through techniques to theorems.
 
 ### Quick start
