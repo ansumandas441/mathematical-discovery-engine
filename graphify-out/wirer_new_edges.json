@@ -1,0 +1,1626 @@
+[
+  {
+    "id": "e_10557",
+    "from": "s_von_mangoldt_function",
+    "to": "t_vaughan_identity",
+    "role": "input",
+    "parameter_binding": {
+      "target": "\u039b(n)"
+    },
+    "used_in_theorem": "s_bombieri_vinogradov"
+  },
+  {
+    "id": "e_10558",
+    "from": "s_mobius_function",
+    "to": "t_vaughan_identity",
+    "role": "input",
+    "parameter_binding": {
+      "role": "\u03bc_{\u2264U} filter"
+    },
+    "used_in_theorem": "s_bombieri_vinogradov"
+  },
+  {
+    "id": "e_10559",
+    "from": "s_dirichlet_convolution",
+    "to": "t_vaughan_identity",
+    "role": "input",
+    "parameter_binding": {
+      "operation": "convolution decomposition"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10560",
+    "from": "t_vaughan_identity",
+    "to": "s_bombieri_vinogradov",
+    "role": "output",
+    "parameter_binding": {
+      "application": "Type I/II sum estimates"
+    },
+    "used_in_theorem": "s_bombieri_vinogradov"
+  },
+  {
+    "id": "e_10561",
+    "from": "t_vaughan_identity",
+    "to": "s_primes_in_short_intervals",
+    "role": "output",
+    "parameter_binding": {
+      "application": "bilinear sum estimates"
+    },
+    "used_in_theorem": "s_primes_in_short_intervals"
+  },
+  {
+    "id": "e_10562",
+    "from": "t_vaughan_identity",
+    "to": "s_vinogradov_korobov_pnt_error",
+    "role": "output",
+    "parameter_binding": {
+      "application": "exponential sum decomposition"
+    },
+    "used_in_theorem": "s_vinogradov_korobov_pnt_error"
+  },
+  {
+    "id": "e_10563",
+    "from": "s_dirichlet_series",
+    "to": "t_rankin_trick",
+    "role": "input",
+    "parameter_binding": {
+      "role": "series providing smooth weight"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10564",
+    "from": "s_smooth_number_definition",
+    "to": "t_rankin_trick",
+    "role": "input",
+    "parameter_binding": {
+      "role": "counting function to bound"
+    },
+    "used_in_theorem": "s_smooth_number_asymptotic"
+  },
+  {
+    "id": "e_10565",
+    "from": "t_rankin_trick",
+    "to": "s_smooth_number_asymptotic",
+    "role": "output",
+    "parameter_binding": {
+      "application": "upper bound on \u03a8(x,y)"
+    },
+    "used_in_theorem": "s_smooth_number_asymptotic"
+  },
+  {
+    "id": "e_10566",
+    "from": "t_rankin_trick",
+    "to": "s_zero_density_estimate",
+    "role": "output",
+    "parameter_binding": {
+      "application": "bounding exceptional zeros"
+    },
+    "used_in_theorem": "s_zero_density_estimate"
+  },
+  {
+    "id": "e_10567",
+    "from": "s_riemann_stieltjes_integral",
+    "to": "t_integration_by_parts_stieltjes",
+    "role": "input",
+    "parameter_binding": {
+      "role": "integral framework"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10568",
+    "from": "t_integration_by_parts_stieltjes",
+    "to": "s_abel_summation_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "derivation": "Abel summation as special case"
+    },
+    "used_in_theorem": "s_abel_summation_theorem"
+  },
+  {
+    "id": "e_10569",
+    "from": "t_integration_by_parts_stieltjes",
+    "to": "s_mertens_theorems",
+    "role": "output",
+    "parameter_binding": {
+      "application": "deriving Mertens from PNT"
+    },
+    "used_in_theorem": "s_mertens_theorems"
+  },
+  {
+    "id": "e_10570",
+    "from": "t_integration_by_parts_stieltjes",
+    "to": "s_truncated_perron_formula",
+    "role": "output",
+    "parameter_binding": {
+      "application": "error estimation"
+    },
+    "used_in_theorem": "s_truncated_perron_formula"
+  },
+  {
+    "id": "e_10571",
+    "from": "s_non_trivial_zeros",
+    "to": "t_explicit_formula_test_function",
+    "role": "input",
+    "parameter_binding": {
+      "role": "zeros \u03c1 summed over"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10572",
+    "from": "s_riemann_zeta_function",
+    "to": "t_explicit_formula_test_function",
+    "role": "input",
+    "parameter_binding": {
+      "role": "L-function providing zeros"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10573",
+    "from": "t_explicit_formula_test_function",
+    "to": "s_weil_explicit_formula",
+    "role": "output",
+    "parameter_binding": {
+      "application": "Weil's form"
+    },
+    "used_in_theorem": "s_weil_explicit_formula"
+  },
+  {
+    "id": "e_10574",
+    "from": "t_explicit_formula_test_function",
+    "to": "s_guinand_weil_formula",
+    "role": "output",
+    "parameter_binding": {
+      "application": "Guinand-Weil symmetric form"
+    },
+    "used_in_theorem": "s_guinand_weil_formula"
+  },
+  {
+    "id": "e_10575",
+    "from": "t_explicit_formula_test_function",
+    "to": "s_montgomery_pair_correlation",
+    "role": "output",
+    "parameter_binding": {
+      "application": "pair correlation from test function choice"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10576",
+    "from": "s_riemann_stieltjes_integral",
+    "to": "t_riemann_stieltjes_partial_summation",
+    "role": "input",
+    "parameter_binding": {
+      "role": "integral representation"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10577",
+    "from": "s_arithmetic_function",
+    "to": "t_riemann_stieltjes_partial_summation",
+    "role": "input",
+    "parameter_binding": {
+      "role": "function being summed"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10578",
+    "from": "t_riemann_stieltjes_partial_summation",
+    "to": "s_mean_value_of_omega",
+    "role": "output",
+    "parameter_binding": {
+      "application": "converting to smooth integral"
+    },
+    "used_in_theorem": "s_mean_value_of_omega"
+  },
+  {
+    "id": "e_10579",
+    "from": "t_riemann_stieltjes_partial_summation",
+    "to": "s_asymptotic_euler_totient_sum",
+    "role": "output",
+    "parameter_binding": {
+      "application": "partial summation step"
+    },
+    "used_in_theorem": "s_asymptotic_euler_totient_sum"
+  },
+  {
+    "id": "e_10580",
+    "from": "t_riemann_stieltjes_partial_summation",
+    "to": "s_chebyshev_estimates",
+    "role": "output",
+    "parameter_binding": {
+      "application": "relating \u03b8 and \u03c8"
+    },
+    "used_in_theorem": "s_chebyshev_estimates"
+  },
+  {
+    "id": "e_10581",
+    "from": "s_euler_totient_function",
+    "to": "t_mobius_inversion",
+    "role": "input",
+    "parameter_binding": {
+      "role": "\u03c6 expressed via M\u00f6bius"
+    },
+    "used_in_theorem": "s_asymptotic_euler_totient_sum"
+  },
+  {
+    "id": "e_10582",
+    "from": "s_euler_totient_function",
+    "to": "t_dirichlet_hyperbola_method",
+    "role": "input",
+    "parameter_binding": {
+      "role": "summatory function"
+    },
+    "used_in_theorem": "s_asymptotic_euler_totient_sum"
+  },
+  {
+    "id": "e_10583",
+    "from": "s_big_omega_function",
+    "to": "t_riemann_stieltjes_partial_summation",
+    "role": "input",
+    "parameter_binding": {
+      "role": "additive function"
+    },
+    "used_in_theorem": "s_mean_value_of_omega"
+  },
+  {
+    "id": "e_10584",
+    "from": "s_additive_character_mod_q",
+    "to": "t_orthogonality_of_characters",
+    "role": "input",
+    "parameter_binding": {
+      "role": "additive character"
+    },
+    "used_in_theorem": "s_orthogonality_additive_characters"
+  },
+  {
+    "id": "e_10585",
+    "from": "s_additive_character_mod_q",
+    "to": "t_circle_method",
+    "role": "input",
+    "parameter_binding": {
+      "role": "exponential sum kernel"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10586",
+    "from": "s_cesaro_riesz_means",
+    "to": "t_perron_formula",
+    "role": "input",
+    "parameter_binding": {
+      "role": "smoothed Perron kernel"
+    },
+    "used_in_theorem": "s_landau_coefficient_formula"
+  },
+  {
+    "id": "e_10587",
+    "from": "s_cesaro_riesz_means",
+    "to": "t_mellin_transform_asymptotics",
+    "role": "input",
+    "parameter_binding": {
+      "role": "smoothing for Mellin inversion"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10588",
+    "from": "s_smooth_number_definition",
+    "to": "t_selberg_sieve",
+    "role": "input",
+    "parameter_binding": {
+      "role": "sifting set"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10589",
+    "from": "s_smooth_number_definition",
+    "to": "t_bruns_sieve",
+    "role": "input",
+    "parameter_binding": {
+      "role": "combinatorial sieve target"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10590",
+    "from": "s_dickman_rho_function",
+    "to": "t_mellin_transform_asymptotics",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Mellin transform of \u03c1(u)"
+    },
+    "used_in_theorem": "s_smooth_number_asymptotic"
+  },
+  {
+    "id": "e_10591",
+    "from": "s_dickman_rho_function",
+    "to": "t_rankin_trick",
+    "role": "input",
+    "parameter_binding": {
+      "role": "saddle point analysis"
+    },
+    "used_in_theorem": "s_smooth_number_asymptotic"
+  },
+  {
+    "id": "e_10592",
+    "from": "s_buchstab_function",
+    "to": "t_selberg_sieve",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Buchstab identity iteration"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10593",
+    "from": "s_buchstab_function",
+    "to": "t_bruns_sieve",
+    "role": "input",
+    "parameter_binding": {
+      "role": "sieve weight limit"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10594",
+    "from": "s_beurling_generalized_primes",
+    "to": "t_pnt_from_wiener_ikehara",
+    "role": "input",
+    "parameter_binding": {
+      "role": "generalized zeta function"
+    },
+    "used_in_theorem": "s_beurling_pnt"
+  },
+  {
+    "id": "e_10595",
+    "from": "s_induced_dirichlet_character",
+    "to": "t_extraction_ap_via_characters",
+    "role": "input",
+    "parameter_binding": {
+      "role": "induced character"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10596",
+    "from": "s_induced_dirichlet_character",
+    "to": "t_orthogonality_of_characters",
+    "role": "input",
+    "parameter_binding": {
+      "role": "character in orthogonality"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10597",
+    "from": "s_quadratic_dirichlet_character",
+    "to": "t_qr_proof_via_gauss_sums",
+    "role": "input",
+    "parameter_binding": {
+      "role": "quadratic character"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10598",
+    "from": "s_quadratic_dirichlet_character",
+    "to": "t_logarithmic_derivative_of_l",
+    "role": "input",
+    "parameter_binding": {
+      "role": "real character L-function"
+    },
+    "used_in_theorem": "s_siegel_theorem_l_functions"
+  },
+  {
+    "id": "e_10599",
+    "from": "s_theta_function_number_theory",
+    "to": "t_mellin_transform_asymptotics",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Mellin transform of theta"
+    },
+    "used_in_theorem": "s_theta_transformation_formula"
+  },
+  {
+    "id": "e_10600",
+    "from": "s_selberg_class",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "axiomatic L-function"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10601",
+    "from": "s_generalized_von_mangoldt_lambda_k",
+    "to": "t_mobius_inversion",
+    "role": "input",
+    "parameter_binding": {
+      "role": "\u039b_k = \u03bc * log^k"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10602",
+    "from": "s_generalized_von_mangoldt_lambda_k",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "via -\u03b6^(k)/\u03b6"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10603",
+    "from": "s_omega_plus_minus_notation",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "oscillation quantification"
+    },
+    "used_in_theorem": "s_littlewood_omega_theorem"
+  },
+  {
+    "id": "e_10604",
+    "from": "s_effective_vs_ineffective_constants",
+    "to": "t_logarithmic_derivative_of_l",
+    "role": "input",
+    "parameter_binding": {
+      "role": "ineffective constants from Siegel"
+    },
+    "used_in_theorem": "s_siegel_walfisz_theorem"
+  },
+  {
+    "id": "e_10605",
+    "from": "s_legendre_sieve_formula",
+    "to": "t_selberg_sieve",
+    "role": "input",
+    "parameter_binding": {
+      "role": "starting identity for sieve"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10606",
+    "from": "s_legendre_sieve_formula",
+    "to": "t_bruns_sieve",
+    "role": "input",
+    "parameter_binding": {
+      "role": "inclusion-exclusion base"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10607",
+    "from": "t_selberg_sieve",
+    "to": "s_twin_prime_sieve_estimate",
+    "role": "output",
+    "parameter_binding": {
+      "application": "upper bound on twin primes"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10608",
+    "from": "t_bruns_sieve",
+    "to": "s_twin_prime_sieve_estimate",
+    "role": "output",
+    "parameter_binding": {
+      "application": "Brun's twin prime bound"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10609",
+    "from": "s_three_four_one_inequality",
+    "to": "t_mertens_3_4_1_inequality",
+    "role": "input",
+    "parameter_binding": {
+      "role": "trigonometric inequality"
+    },
+    "used_in_theorem": "s_zeta_nonvanishing_on_line_Re_1"
+  },
+  {
+    "id": "e_10610",
+    "from": "s_riemann_hypothesis",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "enables contour shift to Re=1/2"
+    },
+    "used_in_theorem": "s_von_koch_rh_prime_estimate"
+  },
+  {
+    "id": "e_10611",
+    "from": "s_riemann_hypothesis",
+    "to": "t_contour_integration_pnt",
+    "role": "input",
+    "parameter_binding": {
+      "role": "conditional contour"
+    },
+    "used_in_theorem": "s_von_koch_rh_prime_estimate"
+  },
+  {
+    "id": "e_10612",
+    "from": "s_generalized_riemann_hypothesis",
+    "to": "t_extraction_ap_via_characters",
+    "role": "input",
+    "parameter_binding": {
+      "role": "conditional zero-free region"
+    },
+    "used_in_theorem": "s_rh_sharp_error_ap"
+  },
+  {
+    "id": "e_10613",
+    "from": "s_generalized_riemann_hypothesis",
+    "to": "t_logarithmic_derivative_of_l",
+    "role": "input",
+    "parameter_binding": {
+      "role": "conditional zero location"
+    },
+    "used_in_theorem": "s_conditional_pi_large_q"
+  },
+  {
+    "id": "e_10614",
+    "from": "s_zero_counting_function_N_T",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "argument principle"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10615",
+    "from": "s_lindelof_hypothesis",
+    "to": "t_exponential_sum_technique",
+    "role": "input",
+    "parameter_binding": {
+      "role": "moment bound hypothesis"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10616",
+    "from": "s_density_hypothesis",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "zero density assumption"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10617",
+    "from": "s_skewes_number",
+    "to": "t_explicit_formula_test_function",
+    "role": "input",
+    "parameter_binding": {
+      "role": "first sign change"
+    },
+    "used_in_theorem": "s_littlewood_omega_theorem"
+  },
+  {
+    "id": "e_10618",
+    "from": "s_dirichlet_divisor_problem",
+    "to": "t_dirichlet_hyperbola_method",
+    "role": "input",
+    "parameter_binding": {
+      "role": "\u2211d(n) estimation"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10619",
+    "from": "s_dirichlet_divisor_problem",
+    "to": "t_exponential_sum_technique",
+    "role": "input",
+    "parameter_binding": {
+      "role": "lattice point bound"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10620",
+    "from": "s_mertens_conjecture_disproved",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "zero computation"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10621",
+    "from": "s_twin_prime_conjecture",
+    "to": "t_selberg_sieve",
+    "role": "input",
+    "parameter_binding": {
+      "role": "sieve upper bound"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10622",
+    "from": "s_hardy_littlewood_twin_prime_conjecture",
+    "to": "t_circle_method",
+    "role": "input",
+    "parameter_binding": {
+      "role": "singular series prediction"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10623",
+    "from": "s_dirichlet_series_liouville",
+    "to": "t_mobius_inversion",
+    "role": "input",
+    "parameter_binding": {
+      "role": "\u03b6(2s)/\u03b6(s) identity"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10624",
+    "from": "s_grand_riemann_hypothesis",
+    "to": "t_logarithmic_derivative_of_l",
+    "role": "input",
+    "parameter_binding": {
+      "role": "universal zero-free assumption"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10625",
+    "from": "s_explicit_zero_free_region_improvements",
+    "to": "t_mertens_3_4_1_inequality",
+    "role": "input",
+    "parameter_binding": {
+      "role": "refined constants"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10626",
+    "from": "s_explicit_zero_free_region_improvements",
+    "to": "t_exponential_sum_technique",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Vinogradov-Korobov improvements"
+    },
+    "used_in_theorem": "s_vinogradov_korobov_zero_free_region"
+  },
+  {
+    "id": "e_10627",
+    "from": "t_mobius_inversion",
+    "to": "s_asymptotic_euler_totient_sum",
+    "role": "output",
+    "parameter_binding": {
+      "result": "\u03c6 = id * \u03bc, then sum"
+    },
+    "used_in_theorem": "s_asymptotic_euler_totient_sum"
+  },
+  {
+    "id": "e_10628",
+    "from": "t_dirichlet_hyperbola_method",
+    "to": "s_asymptotic_euler_totient_sum",
+    "role": "output",
+    "parameter_binding": {
+      "result": "(3/\u03c0\u00b2)x\u00b2"
+    },
+    "used_in_theorem": "s_asymptotic_euler_totient_sum"
+  },
+  {
+    "id": "e_10629",
+    "from": "s_mobius_function",
+    "to": "t_mobius_inversion",
+    "role": "input",
+    "parameter_binding": {
+      "role": "\u03bc\u00b2 = \u2211_{d\u00b2|n} \u03bc(d)"
+    },
+    "used_in_theorem": "s_density_of_squarefree_integers"
+  },
+  {
+    "id": "e_10630",
+    "from": "t_mobius_inversion",
+    "to": "s_density_of_squarefree_integers",
+    "role": "output",
+    "parameter_binding": {
+      "result": "6/\u03c0\u00b2 density"
+    },
+    "used_in_theorem": "s_density_of_squarefree_integers"
+  },
+  {
+    "id": "e_10631",
+    "from": "t_riemann_stieltjes_partial_summation",
+    "to": "s_mean_value_of_omega",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mean_value_of_omega"
+  },
+  {
+    "id": "e_10632",
+    "from": "s_turan_inequality_number_theory",
+    "to": "t_riemann_stieltjes_partial_summation",
+    "role": "input",
+    "parameter_binding": {
+      "role": "variance bound input"
+    },
+    "used_in_theorem": "s_hardy_ramanujan_normal_order"
+  },
+  {
+    "id": "e_10633",
+    "from": "t_riemann_stieltjes_partial_summation",
+    "to": "s_hardy_ramanujan_normal_order",
+    "role": "output",
+    "parameter_binding": {
+      "derivation": "from variance bound"
+    },
+    "used_in_theorem": "s_hardy_ramanujan_normal_order"
+  },
+  {
+    "id": "e_10634",
+    "from": "t_mobius_inversion",
+    "to": "s_turan_inequality_number_theory",
+    "role": "output",
+    "parameter_binding": {
+      "result": "variance computation"
+    },
+    "used_in_theorem": "s_turan_inequality_number_theory"
+  },
+  {
+    "id": "e_10635",
+    "from": "t_orthogonality_of_characters",
+    "to": "s_orthogonality_additive_characters",
+    "role": "output",
+    "parameter_binding": {
+      "result": "additive orthogonality"
+    },
+    "used_in_theorem": "s_orthogonality_additive_characters"
+  },
+  {
+    "id": "e_10636",
+    "from": "s_perron_formula",
+    "to": "t_perron_formula",
+    "role": "input",
+    "parameter_binding": {
+      "role": "exact Perron"
+    },
+    "used_in_theorem": "s_truncated_perron_formula"
+  },
+  {
+    "id": "e_10637",
+    "from": "t_perron_formula",
+    "to": "s_truncated_perron_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "truncated version with error"
+    },
+    "used_in_theorem": "s_truncated_perron_formula"
+  },
+  {
+    "id": "e_10638",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_truncated_perron_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "contour truncation"
+    },
+    "used_in_theorem": "s_truncated_perron_formula"
+  },
+  {
+    "id": "e_10639",
+    "from": "t_perron_formula",
+    "to": "s_landau_coefficient_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "residue main terms"
+    },
+    "used_in_theorem": "s_landau_coefficient_formula"
+  },
+  {
+    "id": "e_10640",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_landau_coefficient_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "residue computation"
+    },
+    "used_in_theorem": "s_landau_coefficient_formula"
+  },
+  {
+    "id": "e_10641",
+    "from": "t_rankin_trick",
+    "to": "s_smooth_number_asymptotic",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_smooth_number_asymptotic"
+  },
+  {
+    "id": "e_10642",
+    "from": "t_mellin_transform_asymptotics",
+    "to": "s_smooth_number_asymptotic",
+    "role": "output",
+    "parameter_binding": {
+      "result": "saddle-point for \u03c1(u)"
+    },
+    "used_in_theorem": "s_smooth_number_asymptotic"
+  },
+  {
+    "id": "e_10643",
+    "from": "s_zero_density_estimate",
+    "to": "t_exponential_sum_technique",
+    "role": "input",
+    "parameter_binding": {
+      "role": "zero density input"
+    },
+    "used_in_theorem": "s_primes_in_short_intervals"
+  },
+  {
+    "id": "e_10644",
+    "from": "t_exponential_sum_technique",
+    "to": "s_primes_in_short_intervals",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Huxley \u03b8>7/12"
+    },
+    "used_in_theorem": "s_primes_in_short_intervals"
+  },
+  {
+    "id": "e_10645",
+    "from": "t_selberg_sieve",
+    "to": "s_sathe_selberg_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "k-prime-factor count"
+    },
+    "used_in_theorem": "s_sathe_selberg_theorem"
+  },
+  {
+    "id": "e_10646",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_sathe_selberg_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Selberg's analytic method"
+    },
+    "used_in_theorem": "s_sathe_selberg_theorem"
+  },
+  {
+    "id": "e_10647",
+    "from": "t_pnt_from_wiener_ikehara",
+    "to": "s_beurling_pnt",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Tauberian argument for generalized integers"
+    },
+    "used_in_theorem": "s_beurling_pnt"
+  },
+  {
+    "id": "e_10648",
+    "from": "s_hadamard_factorization_theorem",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "order 1 entire function theory"
+    },
+    "used_in_theorem": "s_hadamard_product_for_xi"
+  },
+  {
+    "id": "e_10649",
+    "from": "s_completed_xi_function",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "entire function \u03be(s)"
+    },
+    "used_in_theorem": "s_hadamard_product_for_xi"
+  },
+  {
+    "id": "e_10650",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_hadamard_product_for_xi",
+    "role": "output",
+    "parameter_binding": {
+      "result": "product over zeros"
+    },
+    "used_in_theorem": "s_hadamard_product_for_xi"
+  },
+  {
+    "id": "e_10651",
+    "from": "t_mertens_3_4_1_inequality",
+    "to": "s_zero_free_region_l_functions",
+    "role": "output",
+    "parameter_binding": {
+      "result": "classical zero-free region for L"
+    },
+    "used_in_theorem": "s_zero_free_region_l_functions"
+  },
+  {
+    "id": "e_10652",
+    "from": "t_logarithmic_derivative_of_l",
+    "to": "s_zero_free_region_l_functions",
+    "role": "output",
+    "parameter_binding": {
+      "result": "L'/L bounds"
+    },
+    "used_in_theorem": "s_zero_free_region_l_functions"
+  },
+  {
+    "id": "e_10653",
+    "from": "s_siegel_zero",
+    "to": "t_logarithmic_derivative_of_l",
+    "role": "input",
+    "parameter_binding": {
+      "role": "exceptional zero"
+    },
+    "used_in_theorem": "s_siegel_theorem_l_functions"
+  },
+  {
+    "id": "e_10654",
+    "from": "t_logarithmic_derivative_of_l",
+    "to": "s_siegel_theorem_l_functions",
+    "role": "output",
+    "parameter_binding": {
+      "result": "L(1,\u03c7) > c(\u03b5)q^{-\u03b5}"
+    },
+    "used_in_theorem": "s_siegel_theorem_l_functions"
+  },
+  {
+    "id": "e_10655",
+    "from": "t_logarithmic_derivative_of_l",
+    "to": "s_page_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "at most one exceptional zero"
+    },
+    "used_in_theorem": "s_page_theorem"
+  },
+  {
+    "id": "e_10656",
+    "from": "t_extraction_ap_via_characters",
+    "to": "s_pnt_arithmetic_progressions",
+    "role": "output",
+    "parameter_binding": {
+      "result": "\u03c0(x;q,a) ~ Li(x)/\u03c6(q)"
+    },
+    "used_in_theorem": "s_pnt_arithmetic_progressions"
+  },
+  {
+    "id": "e_10657",
+    "from": "t_logarithmic_derivative_of_l",
+    "to": "s_pnt_arithmetic_progressions",
+    "role": "output",
+    "parameter_binding": {
+      "result": "zero-free region for error term"
+    },
+    "used_in_theorem": "s_pnt_arithmetic_progressions"
+  },
+  {
+    "id": "e_10658",
+    "from": "s_siegel_theorem_l_functions",
+    "to": "t_logarithmic_derivative_of_l",
+    "role": "input",
+    "parameter_binding": {
+      "role": "ineffective zero-free region"
+    },
+    "used_in_theorem": "s_siegel_walfisz_theorem"
+  },
+  {
+    "id": "e_10659",
+    "from": "t_logarithmic_derivative_of_l",
+    "to": "s_siegel_walfisz_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "uniform bound for q \u2264 (log x)^A"
+    },
+    "used_in_theorem": "s_siegel_walfisz_theorem"
+  },
+  {
+    "id": "e_10660",
+    "from": "t_extraction_ap_via_characters",
+    "to": "s_siegel_walfisz_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "character sum decomposition"
+    },
+    "used_in_theorem": "s_siegel_walfisz_theorem"
+  },
+  {
+    "id": "e_10661",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_explicit_formula_psi_q_a",
+    "role": "output",
+    "parameter_binding": {
+      "result": "residue sum over zeros"
+    },
+    "used_in_theorem": "s_explicit_formula_psi_q_a"
+  },
+  {
+    "id": "e_10662",
+    "from": "t_extraction_ap_via_characters",
+    "to": "s_explicit_formula_psi_q_a",
+    "role": "output",
+    "parameter_binding": {
+      "result": "decomposition by \u03c7"
+    },
+    "used_in_theorem": "s_explicit_formula_psi_q_a"
+  },
+  {
+    "id": "e_10663",
+    "from": "s_dirichlet_l_function",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "L-function being integrated"
+    },
+    "used_in_theorem": "s_explicit_formula_psi_q_a"
+  },
+  {
+    "id": "e_10664",
+    "from": "t_explicit_formula_test_function",
+    "to": "s_weil_explicit_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weil_explicit_formula"
+  },
+  {
+    "id": "e_10665",
+    "from": "t_contour_integration_pnt",
+    "to": "s_von_koch_rh_prime_estimate",
+    "role": "output",
+    "parameter_binding": {
+      "result": "\u03c8(x) = x + O(x^{1/2} log\u00b2x)"
+    },
+    "used_in_theorem": "s_von_koch_rh_prime_estimate"
+  },
+  {
+    "id": "e_10666",
+    "from": "t_extraction_ap_via_characters",
+    "to": "s_rh_sharp_error_ap",
+    "role": "output",
+    "parameter_binding": {
+      "result": "conditional AP error"
+    },
+    "used_in_theorem": "s_rh_sharp_error_ap"
+  },
+  {
+    "id": "e_10667",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_conditional_bounds_on_zeta",
+    "role": "output",
+    "parameter_binding": {
+      "result": "conditional bound on |\u03b6|"
+    },
+    "used_in_theorem": "s_conditional_bounds_on_zeta"
+  },
+  {
+    "id": "e_10668",
+    "from": "t_explicit_formula_test_function",
+    "to": "s_conditional_estimate_mertens_function",
+    "role": "output",
+    "parameter_binding": {
+      "result": "M(x) = O(x^{1/2+\u03b5})"
+    },
+    "used_in_theorem": "s_conditional_estimate_mertens_function"
+  },
+  {
+    "id": "e_10669",
+    "from": "s_riemann_hypothesis",
+    "to": "t_explicit_formula_test_function",
+    "role": "input",
+    "parameter_binding": {
+      "role": "zero location assumption"
+    },
+    "used_in_theorem": "s_conditional_estimate_mertens_function"
+  },
+  {
+    "id": "e_10670",
+    "from": "t_contour_integration_pnt",
+    "to": "s_conditional_prime_gaps",
+    "role": "output",
+    "parameter_binding": {
+      "result": "p_{n+1}-p_n = O(\u221ap log p)"
+    },
+    "used_in_theorem": "s_conditional_prime_gaps"
+  },
+  {
+    "id": "e_10671",
+    "from": "t_extraction_ap_via_characters",
+    "to": "s_conditional_pi_large_q",
+    "role": "output",
+    "parameter_binding": {
+      "result": "effective for large q"
+    },
+    "used_in_theorem": "s_conditional_pi_large_q"
+  },
+  {
+    "id": "e_10672",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_zero_density_estimate",
+    "role": "output",
+    "parameter_binding": {
+      "result": "N(\u03c3,T) bound"
+    },
+    "used_in_theorem": "s_zero_density_estimate"
+  },
+  {
+    "id": "e_10673",
+    "from": "t_exponential_sum_technique",
+    "to": "s_ingham_density_estimate",
+    "role": "output",
+    "parameter_binding": {
+      "result": "3(1-\u03c3)/(2-\u03c3) exponent"
+    },
+    "used_in_theorem": "s_ingham_density_estimate"
+  },
+  {
+    "id": "e_10674",
+    "from": "t_mellin_transform_asymptotics",
+    "to": "s_hardy_theorem_zeros_critical_line",
+    "role": "output",
+    "parameter_binding": {
+      "result": "sign changes of \u039e(t)"
+    },
+    "used_in_theorem": "s_hardy_theorem_zeros_critical_line"
+  },
+  {
+    "id": "e_10675",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_proportion_zeros_critical_line",
+    "role": "output",
+    "parameter_binding": {
+      "result": "mollifier technique"
+    },
+    "used_in_theorem": "s_proportion_zeros_critical_line"
+  },
+  {
+    "id": "e_10676",
+    "from": "s_dirichlet_series",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "singularity on real axis"
+    },
+    "used_in_theorem": "s_landau_oscillation_theorem"
+  },
+  {
+    "id": "e_10677",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_landau_oscillation_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "sign changes from singularity"
+    },
+    "used_in_theorem": "s_landau_oscillation_theorem"
+  },
+  {
+    "id": "e_10678",
+    "from": "t_explicit_formula_test_function",
+    "to": "s_littlewood_omega_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "\u03a9\u00b1 from zeros"
+    },
+    "used_in_theorem": "s_littlewood_omega_theorem"
+  },
+  {
+    "id": "e_10679",
+    "from": "s_non_trivial_zeros",
+    "to": "t_explicit_formula_test_function",
+    "role": "input",
+    "parameter_binding": {
+      "role": "zeros causing oscillation"
+    },
+    "used_in_theorem": "s_littlewood_omega_theorem"
+  },
+  {
+    "id": "e_10680",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_oscillation_psi_minus_x",
+    "role": "output",
+    "parameter_binding": {
+      "result": "\u03a9\u00b1(\u221ax) from zeros on critical line"
+    },
+    "used_in_theorem": "s_oscillation_psi_minus_x"
+  },
+  {
+    "id": "e_10681",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_omega_result_mertens_function",
+    "role": "output",
+    "parameter_binding": {
+      "result": "M(x) = \u03a9\u00b1(x^{1/2})"
+    },
+    "used_in_theorem": "s_omega_result_mertens_function"
+  },
+  {
+    "id": "e_10682",
+    "from": "t_explicit_formula_test_function",
+    "to": "s_ingham_omega_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "general \u03a9-results"
+    },
+    "used_in_theorem": "s_ingham_omega_theorem"
+  },
+  {
+    "id": "e_10683",
+    "from": "s_bernoulli_number",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Bernoulli numbers B_{2n}"
+    },
+    "used_in_theorem": "s_zeta_at_positive_even_integers"
+  },
+  {
+    "id": "e_10684",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_zeta_at_positive_even_integers",
+    "role": "output",
+    "parameter_binding": {
+      "result": "\u03b6(2n) formula"
+    },
+    "used_in_theorem": "s_zeta_at_positive_even_integers"
+  },
+  {
+    "id": "e_10685",
+    "from": "t_contour_integration_in_ant",
+    "to": "s_weierstrass_product_gamma",
+    "role": "output",
+    "parameter_binding": {
+      "result": "infinite product for 1/\u0393"
+    },
+    "used_in_theorem": "s_weierstrass_product_gamma"
+  },
+  {
+    "id": "e_10686",
+    "from": "t_mellin_transform_asymptotics",
+    "to": "s_theta_transformation_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "\u03d1(1/t) = \u221at\u00b7\u03d1(t)"
+    },
+    "used_in_theorem": "s_theta_transformation_formula"
+  },
+  {
+    "id": "e_10687",
+    "from": "s_theta_function_number_theory",
+    "to": "t_mellin_transform_asymptotics",
+    "role": "input",
+    "parameter_binding": {
+      "role": "theta function"
+    },
+    "used_in_theorem": "s_theta_transformation_formula"
+  },
+  {
+    "id": "e_10688",
+    "from": "t_exponential_sum_technique",
+    "to": "s_vinogradov_korobov_zero_free_region",
+    "role": "output",
+    "parameter_binding": {
+      "result": "wider zero-free region"
+    },
+    "used_in_theorem": "s_vinogradov_korobov_zero_free_region"
+  },
+  {
+    "id": "e_10689",
+    "from": "s_divisor_function_sigma_alpha",
+    "to": "t_ramanujan_expansion",
+    "role": "input",
+    "parameter_binding": {
+      "role": "\u03c3_s(n) being expanded"
+    },
+    "used_in_theorem": "s_ramanujan_sum_formula_sigma"
+  },
+  {
+    "id": "e_10690",
+    "from": "t_ramanujan_expansion",
+    "to": "s_ramanujan_sum_formula_sigma",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Ramanujan sum series"
+    },
+    "used_in_theorem": "s_ramanujan_sum_formula_sigma"
+  },
+  {
+    "id": "e_10691",
+    "from": "t_exponential_sum_technique",
+    "to": "s_vinogradov_korobov_pnt_error",
+    "role": "output",
+    "parameter_binding": {
+      "result": "exp(-c(log x)^{3/5}...)"
+    },
+    "used_in_theorem": "s_vinogradov_korobov_pnt_error"
+  },
+  {
+    "id": "e_10692",
+    "from": "t_contour_integration_pnt",
+    "to": "s_vinogradov_korobov_pnt_error",
+    "role": "output",
+    "parameter_binding": {
+      "result": "PNT with V-K zero-free region"
+    },
+    "used_in_theorem": "s_vinogradov_korobov_pnt_error"
+  },
+  {
+    "id": "e_10693",
+    "from": "s_vinogradov_korobov_zero_free_region",
+    "to": "t_contour_integration_pnt",
+    "role": "input",
+    "parameter_binding": {
+      "role": "wider zero-free region"
+    },
+    "used_in_theorem": "s_vinogradov_korobov_pnt_error"
+  },
+  {
+    "id": "e_10694",
+    "from": "s_multiplicative_function",
+    "to": "t_riemann_stieltjes_partial_summation",
+    "role": "input",
+    "parameter_binding": {
+      "role": "|f(n)| \u2264 1 multiplicative"
+    },
+    "used_in_theorem": "s_halasz_theorem"
+  },
+  {
+    "id": "e_10695",
+    "from": "t_riemann_stieltjes_partial_summation",
+    "to": "s_halasz_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "mean value characterization"
+    },
+    "used_in_theorem": "s_halasz_theorem"
+  },
+  {
+    "id": "e_10696",
+    "from": "t_mellin_transform_asymptotics",
+    "to": "s_halasz_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Dirichlet series analysis"
+    },
+    "used_in_theorem": "s_halasz_theorem"
+  },
+  {
+    "id": "e_10697",
+    "from": "s_dirichlet_convolution",
+    "to": "t_mobius_inversion",
+    "role": "input",
+    "parameter_binding": {
+      "role": "convolution algebra"
+    },
+    "used_in_theorem": "s_dirichlet_series_multiplication_theorem"
+  },
+  {
+    "id": "e_10698",
+    "from": "t_mobius_inversion",
+    "to": "s_dirichlet_series_multiplication_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "F(s)G(s) = \u2211(f*g)(n)/n^s"
+    },
+    "used_in_theorem": "s_dirichlet_series_multiplication_theorem"
+  },
+  {
+    "id": "e_10699",
+    "from": "s_siegel_walfisz_theorem",
+    "to": "t_vaughan_identity",
+    "role": "input",
+    "parameter_binding": {
+      "role": "individual character bounds"
+    },
+    "used_in_theorem": "s_bombieri_vinogradov"
+  },
+  {
+    "id": "e_10700",
+    "from": "s_zero_free_region_l_functions",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "zero-free region"
+    },
+    "used_in_theorem": "s_pnt_arithmetic_progressions"
+  },
+  {
+    "id": "e_10701",
+    "from": "s_von_mangoldt_function",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "-\u03b6'/\u03b6 Dirichlet series"
+    },
+    "used_in_theorem": "s_explicit_formula_psi_q_a"
+  },
+  {
+    "id": "e_10702",
+    "from": "s_hadamard_product_for_xi",
+    "to": "t_explicit_formula_test_function",
+    "role": "input",
+    "parameter_binding": {
+      "role": "product over zeros"
+    },
+    "used_in_theorem": "s_weil_explicit_formula"
+  },
+  {
+    "id": "e_10703",
+    "from": "s_ingham_density_estimate",
+    "to": "t_exponential_sum_technique",
+    "role": "input",
+    "parameter_binding": {
+      "role": "density estimate input"
+    },
+    "used_in_theorem": "s_primes_in_short_intervals"
+  },
+  {
+    "id": "e_10704",
+    "from": "s_induced_dirichlet_character",
+    "to": "t_logarithmic_derivative_of_l",
+    "role": "input",
+    "parameter_binding": {
+      "role": "reduce to primitive"
+    },
+    "used_in_theorem": "s_zero_free_region_l_functions"
+  },
+  {
+    "id": "e_10705",
+    "from": "s_page_theorem",
+    "to": "t_logarithmic_derivative_of_l",
+    "role": "input",
+    "parameter_binding": {
+      "role": "exceptional modulus uniqueness"
+    },
+    "used_in_theorem": "s_siegel_walfisz_theorem"
+  },
+  {
+    "id": "e_10706",
+    "from": "s_legendre_sieve_formula",
+    "to": "t_selberg_sieve_method",
+    "role": "input",
+    "parameter_binding": {
+      "role": "combinatorial base"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10707",
+    "from": "s_weierstrass_product_gamma",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "\u0393 factor in \u03be"
+    },
+    "used_in_theorem": "s_hadamard_product_for_xi"
+  },
+  {
+    "id": "e_10708",
+    "from": "s_zeta_functional_equation",
+    "to": "t_mellin_transform_asymptotics",
+    "role": "input",
+    "parameter_binding": {
+      "role": "derived from theta transform"
+    },
+    "used_in_theorem": "s_theta_transformation_formula"
+  },
+  {
+    "id": "e_10709",
+    "from": "s_selberg_class",
+    "to": "t_pnt_from_wiener_ikehara",
+    "role": "input",
+    "parameter_binding": {
+      "role": "axiomatic L-function framework"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10710",
+    "from": "s_large_sieve_inequality",
+    "to": "t_vaughan_identity",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Type I/II sum estimation"
+    },
+    "used_in_theorem": "s_bombieri_vinogradov"
+  },
+  {
+    "id": "e_10711",
+    "from": "s_liouville_lambda_function",
+    "to": "t_mobius_inversion",
+    "role": "input",
+    "parameter_binding": {
+      "role": "\u03bb = \u03bc * |\u03bc|"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10712",
+    "from": "s_proportion_zeros_critical_line",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "proportion result"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10713",
+    "from": "t_selberg_sieve",
+    "to": "s_smooth_number_asymptotic",
+    "role": "output",
+    "parameter_binding": {
+      "application": "Buchstab iteration for \u03a8(x,y)"
+    },
+    "used_in_theorem": "s_smooth_number_asymptotic"
+  },
+  {
+    "id": "e_10714",
+    "from": "s_hardy_theorem_zeros_critical_line",
+    "to": "t_contour_integration_in_ant",
+    "role": "input",
+    "parameter_binding": {
+      "role": "infinitely many zeros on line"
+    },
+    "used_in_theorem": "s_proportion_zeros_critical_line"
+  },
+  {
+    "id": "e_10715",
+    "from": "s_polya_vinogradov_inequality",
+    "to": "t_extraction_ap_via_characters",
+    "role": "input",
+    "parameter_binding": {
+      "role": "character sum bound"
+    },
+    "used_in_theorem": "s_siegel_walfisz_theorem"
+  },
+  {
+    "id": "e_10716",
+    "from": "s_euler_product_zeta",
+    "to": "t_riemann_stieltjes_partial_summation",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Euler product for f(p)"
+    },
+    "used_in_theorem": "s_halasz_theorem"
+  },
+  {
+    "id": "e_10717",
+    "from": "s_bombieri_vinogradov",
+    "to": "t_vaughan_identity",
+    "role": "input",
+    "parameter_binding": {
+      "role": "BV theorem statement"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_10718",
+    "from": "s_mertens_function",
+    "to": "t_explicit_formula_test_function",
+    "role": "input",
+    "parameter_binding": {
+      "role": "M(x) representation"
+    },
+    "used_in_theorem": "s_omega_result_mertens_function"
+  },
+  {
+    "id": "e_10719",
+    "from": "s_prime_number_theorem",
+    "to": "t_exponential_sum_technique",
+    "role": "input",
+    "parameter_binding": {
+      "role": "baseline prime density"
+    },
+    "used_in_theorem": "s_primes_in_short_intervals"
+  }
+]
