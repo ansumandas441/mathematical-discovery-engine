@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MDE — 3D Knowledge Graph</title>
+<script src="https://unpkg.com/3d-force-graph@1"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #060612; color: #e1e4e8; }
+
+  #graph-container { width: 100%; height: 100%; }
+
+  /* Glassmorphism overlay controls */
+  #controls {
+    position: absolute; top: 0; left: 0; right: 0;
+    padding: 10px 16px;
+    background: rgba(6, 6, 18, 0.7);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    z-index: 10;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  }
+  #controls .title {
+    font-size: 14px; font-weight: 600; color: #f0f6fc; margin-right: 8px;
+    white-space: nowrap;
+  }
+  #controls .title small { font-weight: 400; opacity: 0.4; font-size: 11px; margin-left: 6px; }
+  #controls .group {
+    display: flex; gap: 6px; align-items: center;
+    padding: 3px 8px; background: rgba(255,255,255,0.04); border-radius: 6px;
+  }
+  #controls .group .label {
+    opacity: 0.4; font-size: 9px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700;
+  }
+  #controls label { display: flex; align-items: center; gap: 3px; cursor: pointer; user-select: none; font-size: 12px; }
+  #controls input[type="checkbox"] { accent-color: #58a6ff; }
+  #controls select, #controls input[type="text"], #controls button {
+    background: rgba(255,255,255,0.06); color: #c9d1d9; border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px; padding: 5px 10px; font-size: 11px;
+  }
+  #controls input[type="text"] { width: 190px; }
+  #controls input[type="text"]:focus { border-color: #58a6ff; outline: none; box-shadow: 0 0 0 2px rgba(88,166,255,0.25); }
+  #controls button { cursor: pointer; transition: background 0.15s; }
+  #controls button:hover { background: rgba(255,255,255,0.12); }
+
+  /* Details panel — slides in from right */
+  #details-panel {
+    position: absolute; top: 0; right: 0; bottom: 0; width: 320px;
+    background: rgba(13, 17, 23, 0.88);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255,255,255,0.06);
+    transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 15; overflow-y: auto; padding: 56px 16px 16px;
+  }
+  #details-panel.open { transform: translateX(0); }
+  #details-panel h3 {
+    font-size: 12px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.8px;
+    font-weight: 600; margin-bottom: 10px;
+  }
+  #details-panel .field { margin-bottom: 8px; font-size: 12px; line-height: 1.5; }
+  #details-panel .field .name {
+    color: #8b949e; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px;
+    display: block; margin-bottom: 1px; font-weight: 600;
+  }
+  #details-panel .field .value { color: #c9d1d9; }
+  #details-panel .field .value code {
+    background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 4px;
+    font-family: "SF Mono", Menlo, Monaco, monospace; font-size: 11px;
+  }
+  #details-panel .kind-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px;
+    font-weight: 600; text-transform: uppercase; margin-right: 6px;
+  }
+  .kind-axiom { background: #6e7681; color: white; }
+  .kind-state { background: #388bfd; color: white; }
+  .kind-theorem { background: #3fb950; color: white; }
+  .kind-technique { background: #da6f2b; color: white; }
+  #details-panel .action-btn {
+    margin-top: 8px; padding: 7px 12px; color: white; border: none; border-radius: 6px;
+    cursor: pointer; font-size: 12px; display: block; width: 100%; font-weight: 500;
+    transition: filter 0.15s;
+  }
+  #details-panel .action-btn:hover { filter: brightness(1.2); }
+  #details-panel .action-btn.explore { background: #388bfd; }
+  #details-panel .action-btn.close { background: rgba(255,255,255,0.08); margin-top: 12px; }
+  #details-panel .neighbors { margin-top: 4px; }
+  #details-panel .neighbors ul { padding-left: 16px; margin: 4px 0; max-height: 200px; overflow-y: auto; }
+  #details-panel .neighbors li { cursor: pointer; color: #58a6ff; padding: 2px 0; font-size: 12px; }
+  #details-panel .neighbors li:hover { color: #79c0ff; text-decoration: underline; }
+
+  /* Legend */
+  #legend {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 6px 16px;
+    background: rgba(6, 6, 18, 0.6);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    z-index: 10;
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    font-size: 11px; color: #8b949e;
+  }
+  #legend .item { display: flex; align-items: center; gap: 4px; }
+  #legend .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  #legend .stats { margin-left: auto; opacity: 0.7; }
+
+  /* Loading overlay */
+  #loading {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: #060612;
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    z-index: 100; transition: opacity 0.5s;
+  }
+  #loading.hidden { opacity: 0; pointer-events: none; }
+  #loading .spinner {
+    width: 36px; height: 36px; border: 3px solid rgba(255,255,255,0.08);
+    border-top-color: #58a6ff; border-radius: 50%;
+    animation: spin 0.8s linear infinite; margin-bottom: 14px;
+  }
+  #loading .text { color: #8b949e; font-size: 13px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Banner notifications */
+  #banner {
+    position: absolute; top: 56px; left: 16px;
+    background: rgba(56, 139, 253, 0.85); color: white;
+    padding: 8px 14px; border-radius: 8px; font-size: 12px;
+    z-index: 12; max-width: 520px; display: none;
+    backdrop-filter: blur(8px);
+  }
+  #banner.visible { display: block; }
+  #banner b { font-weight: 600; }
+</style>
+</head>
+<body>
+<div id="graph-container"></div>
+
+<div id="controls">
+  <span class="title">MDE Knowledge Graph <small id="header-stats"></small></span>
+  <div class="group">
+    <span class="label">Mode</span>
+    <select id="mode">
+      <option value="overview">Overview</option>
+      <option value="neighborhood">Neighborhood</option>
+    </select>
+  </div>
+  <div class="group" id="kind-filters">
+    <span class="label">Show</span>
+    <label><input type="checkbox" data-kind="axiom"> axiom</label>
+    <label><input type="checkbox" data-kind="state"> state</label>
+    <label><input type="checkbox" data-kind="theorem" checked> theorem</label>
+    <label><input type="checkbox" data-kind="technique" checked> technique</label>
+  </div>
+  <div class="group">
+    <span class="label">Cluster</span>
+    <select id="cluster"><option value="">all</option></select>
+  </div>
+  <input type="text" id="search" placeholder="Search nodes…">
+  <button id="resetBtn">Reset</button>
+</div>
+
+<div id="details-panel">
+  <h3>Node details</h3>
+  <div id="details-content"></div>
+</div>
+
+<div id="banner"></div>
+
+<div id="legend">
+  <span class="item"><span class="dot" style="background:#6e7681"></span> axiom</span>
+  <span class="item"><span class="dot" style="background:#4493f8"></span> state</span>
+  <span class="item"><span class="dot" style="background:#3fb950"></span> theorem</span>
+  <span class="item"><span class="dot" style="background:#f0883e"></span> technique</span>
+  <span style="opacity:0.5">Click node for details · Double-click to explore neighborhood · Scroll to zoom · Drag to orbit</span>
+  <span class="stats" id="stats"></span>
+</div>
+
+<div id="loading">
+  <div class="spinner"></div>
+  <div class="text">Loading knowledge graph…</div>
+</div>
+
+<script>
+(() => {
+  // ── CONSTANTS ──
+
+  const CLUSTERS = {
+    C1: "Experimental & numerical", C2: "Algebraic manipulation", C3: "Symmetry & invariants",
+    C4: "Approximation & limits", C5: "Abstraction & axiomatization", C6: "Topology & obstruction",
+    C7: "Self-reference & impossibility", C8: "Iteration & fixed points", C9: "Cross-field transfer",
+    C10: "Computer-assisted", C11: "Probabilistic & counting", C12: "Homological & categorical"
+  };
+
+  const CLUSTER_ALIAS = {
+    "01_experimental_and_numerical": "C1", "02_algebraic_manipulation": "C2",
+    "03_symmetry_and_invariants": "C3", "04_approximation_and_limits": "C4",
+    "05_abstraction_and_axiomatization": "C5", "06_topology_and_obstruction": "C6",
+    "07_self_reference_and_impossibility": "C7", "08_iteration_and_fixed_points": "C8",
+    "09_cross_field_transfer": "C9", "10_computer_and_collaboration": "C10",
+    "11_probabilistic_and_counting": "C11", "12_homological_and_categorical": "C12"
+  };
+
+  const CLUSTER_COLORS = {
+    C1: "#f97583", C2: "#d2a8ff", C3: "#79c0ff", C4: "#7ee787",
+    C5: "#e3b341", C6: "#f0883e", C7: "#ff7b72", C8: "#a5d6ff",
+    C9: "#d8b4fe", C10: "#56d364", C11: "#ffa657", C12: "#ff9bce"
+  };
+
+  const KIND_COLORS = {
+    axiom: "#6e7681",
+    state: "#4493f8",
+    theorem: "#3fb950",
+    technique: "#f0883e"
+  };
+
+  // ── STATE ──
+
+  let fullData = null;
+  let nodeIndex = {};
+  let fanIn = {}, fanOut = {};
+  let Graph = null;
+  let currentGraphData = { nodes: [], links: [] };
+  let highlightNodes = new Set();
+  let highlightLinks = new Set();
+  let hoverNode = null;
+  let selectedNode = null;
+  let neighborhoodCenter = null;
+
+  // ── HELPERS ──
+
+  function clusterOf(node) {
+    if (!node.cluster) return null;
+    const c = node.cluster;
+    const m = /^(?:C)?(\d+)$/.exec(c);
+    if (m) return "C" + parseInt(m[1]);
+    if (CLUSTER_ALIAS[c]) return CLUSTER_ALIAS[c];
+    const m2 = /^(\d+)/.exec(c);
+    if (m2) return "C" + parseInt(m2[1]);
+    return null;
+  }
+
+  function nodeColor(node) {
+    if (node.kind === "technique") {
+      const cl = clusterOf(node);
+      return (cl && CLUSTER_COLORS[cl]) || KIND_COLORS.technique;
+    }
+    return KIND_COLORS[node.kind] || KIND_COLORS.state;
+  }
+
+  function nodeVal(node) {
+    const fan = (fanIn[node.id] || 0) + (fanOut[node.id] || 0);
+    if (node.kind === "technique") return 4 + Math.min(30, Math.log2(fan + 1) * 4);
+    if (node.kind === "theorem") return 2 + Math.min(8, Math.log2(fan + 1) * 1.5);
+    if (node.kind === "state") return 1;
+    return 0.8;
+  }
+
+  function buildIndexes() {
+    nodeIndex = {};
+    fanIn = {};
+    fanOut = {};
+    for (const n of fullData.nodes) nodeIndex[n.id] = n;
+    for (const e of fullData.edges) {
+      fanIn[e.to] = (fanIn[e.to] || 0) + 1;
+      fanOut[e.from] = (fanOut[e.from] || 0) + 1;
+    }
+  }
+
+  function getNeighborIds(nodeId) {
+    const ids = new Set();
+    for (const e of fullData.edges) {
+      if (e.from === nodeId) ids.add(e.to);
+      if (e.to === nodeId) ids.add(e.from);
+    }
+    return ids;
+  }
+
+  function shortenLabel(name, max) {
+    max = max || 28;
+    if (!name) return "";
+    return name.length <= max ? name : name.slice(0, max - 1) + "…";
+  }
+
+  // ── DATA CONVERSION ──
+
+  function buildGraphData(nodeSet) {
+    const nodes = fullData.nodes
+      .filter(n => nodeSet.has(n.id))
+      .map(n => ({
+        id: n.id,
+        name: n.name || n.id,
+        kind: n.kind,
+        cluster: n.cluster,
+        description: n.description,
+        status: n.status,
+        fundamental: n.fundamental,
+        type_signature: n.type_signature,
+        function_signature: n.function_signature,
+        subgraph_ref: n.subgraph_ref,
+        aliases: n.aliases,
+        parameters: n.parameters,
+        toolbox_ref: n.toolbox_ref,
+        _color: nodeColor(n),
+        _val: nodeVal(n),
+        neighbors: [],
+        links: []
+      }));
+
+    const nodeMap = new Map(nodes.map(n => [n.id, n]));
+    const links = [];
+    for (const e of fullData.edges) {
+      if (nodeSet.has(e.from) && nodeSet.has(e.to)) {
+        const link = { source: e.from, target: e.to, role: e.role };
+        links.push(link);
+        const sn = nodeMap.get(e.from);
+        const tn = nodeMap.get(e.to);
+        if (sn && tn) {
+          sn.neighbors.push(tn);
+          tn.neighbors.push(sn);
+          sn.links.push(link);
+          tn.links.push(link);
+        }
+      }
+    }
+    return { nodes, links };
+  }
+
+  // ── FILTERING ──
+
+  function getFilteredNodeSet() {
+    const kindChecks = Array.from(document.querySelectorAll("#kind-filters input[type=checkbox]"));
+    const activeKinds = new Set(kindChecks.filter(c => c.checked).map(c => c.getAttribute("data-kind")));
+    const clusterPick = document.getElementById("cluster").value;
+    const searchText = document.getElementById("search").value.trim().toLowerCase();
+
+    const nodeSet = new Set();
+    for (const n of fullData.nodes) {
+      if (searchText) {
+        const hay = (n.id + " " + (n.name || "") + " " + (n.description || "") + " " + (n.aliases || []).join(" ")).toLowerCase();
+        if (hay.includes(searchText)) nodeSet.add(n.id);
+        continue;
+      }
+      if (!activeKinds.has(n.kind)) continue;
+      if (clusterPick && n.kind === "technique") {
+        if (clusterOf(n) !== clusterPick) continue;
+      }
+      nodeSet.add(n.id);
+    }
+    return nodeSet;
+  }
+
+  // ── GRAPH RENDERING ──
+
+  const MAX_NODES = 2500;
+
+  function renderGraph(data, centerNodeId) {
+    currentGraphData = data;
+    highlightNodes.clear();
+    highlightLinks.clear();
+    hoverNode = null;
+
+    if (!Graph) {
+      Graph = ForceGraph3D()(document.getElementById("graph-container"))
+        .backgroundColor("#060612")
+        .showNavInfo(false)
+        .nodeId("id")
+        .nodeLabel(n => `<div style="background:rgba(0,0,0,0.75);padding:4px 8px;border-radius:4px;font-size:12px;max-width:280px;border:1px solid ${n._color}44">
+          <b style="color:${n._color}">${n.name}</b><br>
+          <span style="opacity:0.6">${n.kind}${n.cluster ? " · " + n.cluster : ""}</span>
+          ${n.description ? "<br><span style='opacity:0.5;font-size:11px'>" + shortenLabel(n.description, 100) + "</span>" : ""}
+        </div>`)
+        .nodeColor(n => {
+          if (highlightNodes.size > 0) {
+            if (n === hoverNode) return "#ffffff";
+            if (highlightNodes.has(n)) return n._color;
+            return "rgba(40,40,60,0.4)";
+          }
+          return n._color;
+        })
+        .nodeVal(n => n._val)
+        .nodeOpacity(0.92)
+        .nodeResolution(12)
+        .linkSource("source")
+        .linkTarget("target")
+        .linkColor(link => {
+          if (highlightLinks.size > 0) {
+            return highlightLinks.has(link) ? "#58a6ff" : "rgba(255,255,255,0.01)";
+          }
+          return "rgba(255,255,255,0.04)";
+        })
+        .linkWidth(link => highlightLinks.has(link) ? 1.5 : 0.3)
+        .linkOpacity(0.6)
+        .linkDirectionalParticles(link => highlightLinks.has(link) ? 4 : 1)
+        .linkDirectionalParticleWidth(link => highlightLinks.has(link) ? 2.5 : 1.0)
+        .linkDirectionalParticleSpeed(0.004)
+        .linkDirectionalParticleColor(link => {
+          if (highlightLinks.has(link)) return "#58a6ff";
+          const src = typeof link.source === "object" ? link.source : null;
+          if (src && src.kind === "technique") return "rgba(240, 136, 62, 0.3)";
+          return "rgba(88, 166, 255, 0.2)";
+        })
+        .onNodeHover(node => {
+          document.body.style.cursor = node ? "pointer" : "default";
+          highlightNodes.clear();
+          highlightLinks.clear();
+          if (node) {
+            highlightNodes.add(node);
+            if (node.neighbors) node.neighbors.forEach(n => highlightNodes.add(n));
+            if (node.links) node.links.forEach(l => highlightLinks.add(l));
+          }
+          hoverNode = node || null;
+          updateHighlight();
+        })
+        .onNodeClick(node => {
+          if (node) {
+            selectedNode = node;
+            showDetails(node);
+            // Focus camera
+            const dist = 120;
+            const pos = node;
+            Graph.cameraPosition(
+              { x: pos.x + dist, y: pos.y + dist * 0.3, z: pos.z + dist },
+              pos,
+              1200
+            );
+          }
+        })
+        .onNodeDragEnd(node => {
+          node.fx = node.x;
+          node.fy = node.y;
+          node.fz = node.z;
+        })
+        .onBackgroundClick(() => {
+          closeDetails();
+        })
+        .warmupTicks(120)
+        .cooldownTicks(300)
+        .d3AlphaDecay(0.025)
+        .d3VelocityDecay(0.35);
+
+      // Auto-rotate camera
+      Graph.controls().autoRotate = true;
+      Graph.controls().autoRotateSpeed = 0.3;
+      // Stop auto-rotate on interaction
+      Graph.controls().addEventListener("start", () => { Graph.controls().autoRotate = false; });
+    }
+
+    Graph.graphData(data);
+
+    if (centerNodeId) {
+      setTimeout(() => {
+        const cn = data.nodes.find(n => n.id === centerNodeId);
+        if (cn) {
+          Graph.cameraPosition(
+            { x: cn.x + 150, y: cn.y + 60, z: cn.z + 150 },
+            cn, 1500
+          );
+        }
+      }, 2000);
+    }
+
+    updateStats(data);
+  }
+
+  function updateHighlight() {
+    Graph
+      .nodeColor(Graph.nodeColor())
+      .linkColor(Graph.linkColor())
+      .linkWidth(Graph.linkWidth())
+      .linkDirectionalParticles(Graph.linkDirectionalParticles())
+      .linkDirectionalParticleWidth(Graph.linkDirectionalParticleWidth())
+      .linkDirectionalParticleColor(Graph.linkDirectionalParticleColor());
+  }
+
+  // ── OVERVIEW MODE ──
+
+  function buildOverview() {
+    neighborhoodCenter = null;
+    const nodeSet = getFilteredNodeSet();
+    const banner = document.getElementById("banner");
+
+    if (nodeSet.size === 0) {
+      banner.textContent = "No nodes match current filters.";
+      banner.classList.add("visible");
+      return;
+    }
+    if (nodeSet.size > MAX_NODES) {
+      banner.innerHTML = `Filter matches <b>${nodeSet.size.toLocaleString()}</b> nodes (limit: ${MAX_NODES.toLocaleString()}). Narrow with search, cluster, or kind filters.`;
+      banner.classList.add("visible");
+      return;
+    }
+    banner.classList.remove("visible");
+
+    const data = buildGraphData(nodeSet);
+    renderGraph(data);
+  }
+
+  // ── NEIGHBORHOOD MODE ──
+
+  function buildNeighborhood(centerId) {
+    const banner = document.getElementById("banner");
+    if (!centerId) {
+      banner.innerHTML = "Search for a node name, then press Enter.";
+      banner.classList.add("visible");
+      return;
+    }
+
+    const center = nodeIndex[centerId];
+    if (!center) {
+      banner.innerHTML = `Node "${centerId}" not found.`;
+      banner.classList.add("visible");
+      return;
+    }
+
+    neighborhoodCenter = centerId;
+    let neighborIds = getNeighborIds(centerId);
+    neighborIds.add(centerId);
+
+    // Cap for mega-hub nodes
+    const CAP = 600;
+    if (neighborIds.size > CAP) {
+      const byPriority = { technique: 1, theorem: 2, state: 3, axiom: 4 };
+      const sorted = [...neighborIds].filter(id => id !== centerId)
+        .map(id => ({ id, p: byPriority[nodeIndex[id]?.kind] || 5, f: (fanIn[id]||0)+(fanOut[id]||0) }))
+        .sort((a, b) => a.p - b.p || b.f - a.f)
+        .slice(0, CAP - 1);
+      neighborIds = new Set([centerId, ...sorted.map(s => s.id)]);
+      banner.innerHTML = `<b>${center.name || centerId}</b> — showing ${neighborIds.size - 1} of ${neighborIds.size} neighbors (capped at ${CAP}).`;
+    } else {
+      banner.innerHTML = `<b>${center.name || centerId}</b> — ${neighborIds.size - 1} connected nodes.`;
+    }
+    banner.classList.add("visible");
+
+    const data = buildGraphData(neighborIds);
+    // Make center node bigger
+    const cn = data.nodes.find(n => n.id === centerId);
+    if (cn) {
+      cn._val = cn._val * 4;
+      cn._color = "#ffffff";
+    }
+
+    renderGraph(data, centerId);
+  }
+
+  function searchNeighborhood() {
+    const searchText = document.getElementById("search").value.trim().toLowerCase();
+    if (!searchText) return;
+    let best = null, bestScore = -1;
+    for (const n of fullData.nodes) {
+      const name = (n.name || "").toLowerCase();
+      const id = n.id.toLowerCase();
+      if (id === searchText || name === searchText) { best = n.id; break; }
+      if (name.includes(searchText) || id.includes(searchText)) {
+        const score = n.kind === "technique" ? 10 : (n.kind === "theorem" ? 8 : 5);
+        if (score > bestScore) { bestScore = score; best = n.id; }
+      }
+    }
+    if (best) buildNeighborhood(best);
+    else {
+      document.getElementById("banner").innerHTML = `No node matching "${searchText}".`;
+      document.getElementById("banner").classList.add("visible");
+    }
+  }
+
+  // ── DETAILS PANEL ──
+
+  function showDetails(node) {
+    const panel = document.getElementById("details-panel");
+    const box = document.getElementById("details-content");
+    const parts = [];
+
+    parts.push(`<div class="field"><span class="kind-badge kind-${node.kind}">${node.kind}</span><b>${node.name}</b></div>`);
+    parts.push(`<div class="field"><span class="name">id</span><span class="value"><code>${node.id}</code></span></div>`);
+    if (node.type_signature) parts.push(`<div class="field"><span class="name">type</span><span class="value"><code>${node.type_signature}</code></span></div>`);
+    if (node.function_signature) parts.push(`<div class="field"><span class="name">signature</span><span class="value"><code>${node.function_signature}</code></span></div>`);
+    if (node.cluster) parts.push(`<div class="field"><span class="name">cluster</span><span class="value">${node.cluster}${CLUSTERS[clusterOf(node)] ? " — " + CLUSTERS[clusterOf(node)] : ""}</span></div>`);
+    if (node.description) parts.push(`<div class="field"><span class="name">description</span><span class="value">${node.description}</span></div>`);
+    if (node.parameters && node.parameters.length) parts.push(`<div class="field"><span class="name">parameters</span><span class="value"><code>${node.parameters.join(", ")}</code></span></div>`);
+    if (node.aliases && node.aliases.length) parts.push(`<div class="field"><span class="name">aliases</span><span class="value"><code>${node.aliases.join(", ")}</code></span></div>`);
+    if (node.fundamental) parts.push(`<div class="field"><span class="value" style="color:#3fb950">★ fundamental axiom</span></div>`);
+    if (node.status === "disputed") parts.push(`<div class="field"><span class="value" style="color:#f85149">⚠ disputed</span></div>`);
+    if (node.status === "conjectured") parts.push(`<div class="field"><span class="value" style="color:#ffa657">conjectured</span></div>`);
+
+    const fi = fanIn[node.id] || 0;
+    const fo = fanOut[node.id] || 0;
+    parts.push(`<div class="field"><span class="name">connections</span><span class="value">${fi} in · ${fo} out · ${fi + fo} total</span></div>`);
+
+    // Neighbors in current view
+    if (node.neighbors && node.neighbors.length) {
+      const byKind = {};
+      for (const nb of node.neighbors) {
+        if (!byKind[nb.kind]) byKind[nb.kind] = [];
+        byKind[nb.kind].push(nb);
+      }
+      for (const [kind, items] of Object.entries(byKind).sort()) {
+        parts.push(`<div class="neighbors"><span class="name" style="color:${KIND_COLORS[kind]}">${kind} (${items.length})</span><ul>`);
+        for (const nb of items.slice(0, 25)) {
+          parts.push(`<li data-id="${nb.id}">${shortenLabel(nb.name, 32)}</li>`);
+        }
+        if (items.length > 25) parts.push(`<li style="color:#8b949e;cursor:default">… and ${items.length - 25} more</li>`);
+        parts.push(`</ul></div>`);
+      }
+    }
+
+    parts.push(`<button class="action-btn explore" data-id="${node.id}">Explore neighborhood (${fi + fo} nodes)</button>`);
+    parts.push(`<button class="action-btn close">Close</button>`);
+
+    box.innerHTML = parts.join("");
+    panel.classList.add("open");
+
+    // Wire neighbor clicks
+    box.querySelectorAll("[data-id]").forEach(el => {
+      el.addEventListener("click", () => {
+        const id = el.getAttribute("data-id");
+        if (el.classList.contains("explore") || el.classList.contains("action-btn")) {
+          document.getElementById("mode").value = "neighborhood";
+          document.getElementById("search").value = nodeIndex[id]?.name || id;
+          buildNeighborhood(id);
+          return;
+        }
+        // Navigate to neighbor
+        const target = currentGraphData.nodes.find(n => n.id === id);
+        if (target) {
+          selectedNode = target;
+          showDetails(target);
+          Graph.cameraPosition(
+            { x: target.x + 100, y: target.y + 40, z: target.z + 100 },
+            target, 800
+          );
+        }
+      });
+    });
+    box.querySelector(".close")?.addEventListener("click", closeDetails);
+  }
+
+  function closeDetails() {
+    document.getElementById("details-panel").classList.remove("open");
+    selectedNode = null;
+  }
+
+  // ── STATS ──
+
+  function updateStats(data) {
+    const total = fullData ? fullData.nodes.length : 0;
+    document.getElementById("stats").textContent =
+      `${data.nodes.length.toLocaleString()} / ${total.toLocaleString()} nodes · ${data.links.length.toLocaleString()} edges`;
+  }
+
+  function updateHeaderStats() {
+    const counts = { axiom: 0, state: 0, theorem: 0, technique: 0 };
+    for (const n of fullData.nodes) { if (counts[n.kind] !== undefined) counts[n.kind]++; }
+    document.getElementById("header-stats").textContent =
+      `${counts.theorem.toLocaleString()} theorems · ${counts.technique} techniques · ${fullData.nodes.length.toLocaleString()} nodes`;
+  }
+
+  // ── CONTROLS ──
+
+  function applyFilters() {
+    const mode = document.getElementById("mode").value;
+    if (mode === "overview") buildOverview();
+    else if (mode === "neighborhood") searchNeighborhood();
+  }
+
+  function wireControls() {
+    document.getElementById("mode").addEventListener("change", e => {
+      closeDetails();
+      document.getElementById("banner").classList.remove("visible");
+      if (e.target.value === "overview") buildOverview();
+      else if (e.target.value === "neighborhood") {
+        const search = document.getElementById("search").value.trim();
+        if (search) searchNeighborhood();
+        else {
+          document.getElementById("banner").innerHTML = "Type a node name and press Enter.";
+          document.getElementById("banner").classList.add("visible");
+        }
+      }
+    });
+
+    document.querySelectorAll("#kind-filters input").forEach(c => {
+      c.addEventListener("change", () => {
+        if (document.getElementById("mode").value === "overview") buildOverview();
+      });
+    });
+    document.getElementById("cluster").addEventListener("change", () => {
+      if (document.getElementById("mode").value === "overview") buildOverview();
+    });
+
+    let searchTimer = null;
+    const searchInput = document.getElementById("search");
+    searchInput.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        clearTimeout(searchTimer);
+        applyFilters();
+      }
+    });
+    searchInput.addEventListener("input", () => {
+      clearTimeout(searchTimer);
+      if (document.getElementById("mode").value === "overview") {
+        searchTimer = setTimeout(applyFilters, 350);
+      }
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      searchInput.value = "";
+      document.getElementById("cluster").value = "";
+      document.getElementById("mode").value = "overview";
+      document.querySelectorAll("#kind-filters input").forEach(c => {
+        c.checked = (c.getAttribute("data-kind") === "technique" || c.getAttribute("data-kind") === "theorem");
+      });
+      closeDetails();
+      document.getElementById("banner").classList.remove("visible");
+      neighborhoodCenter = null;
+      buildOverview();
+    });
+
+    // Populate cluster filter
+    for (const [id, name] of Object.entries(CLUSTERS)) {
+      const opt = document.createElement("option");
+      opt.value = id;
+      opt.textContent = `${id} — ${name}`;
+      document.getElementById("cluster").appendChild(opt);
+    }
+  }
+
+  // ── INIT ──
+
+  async function init() {
+    const loading = document.getElementById("loading");
+    try {
+      const r = await fetch("./knowledge_graph.json");
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      fullData = await r.json();
+    } catch (err) {
+      loading.querySelector(".text").textContent = "Failed to load: " + err.message;
+      loading.querySelector(".spinner").style.display = "none";
+      return;
+    }
+
+    buildIndexes();
+    updateHeaderStats();
+    wireControls();
+
+    loading.querySelector(".text").textContent = "Building 3D graph…";
+    await new Promise(r => setTimeout(r, 50));
+
+    buildOverview();
+
+    setTimeout(() => loading.classList.add("hidden"), 800);
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
