@@ -35,7 +35,7 @@ The key insight: instead of searching over all possible mathematical statements 
 
 ## How It Works
 
-Mathematical proof is path-finding through a finite directed graph. Nodes are mathematical states (axioms, intermediate results, theorems). Edges are techniques (the 62 operations cataloged across 12 clusters). An orchestrator LLM directs the search; worker LLMs attempt each technique application; a pruner eliminates impossible branches.
+Mathematical proof is path-finding through a finite directed graph. Nodes are mathematical states (axioms, intermediate results, theorems). Edges are techniques (the 240 operations cataloged across 12 clusters). An orchestrator LLM directs the search; worker LLMs attempt each technique application; a pruner eliminates impossible branches.
 
 ```
                     ┌──────────────────────┐
@@ -77,7 +77,7 @@ Mathematical proof is path-finding through a finite directed graph. Nodes are ma
 ### The Search Loop
 
 1. **Parse problem** — identify start nodes in the knowledge graph and define the goal state
-2. **Select techniques** — score all 62 techniques using a weighted heuristic
+2. **Select techniques** — score all 240 techniques using a weighted heuristic
 3. **Dispatch workers in parallel** — each worker applies ONE technique to ONE state, returns a new state with confidence and proof sketch
 4. **Prune** — kill branches violating impossibility theorems (Abel-Ruffini, Gödel, Turing, etc.); demote low-confidence branches
 5. **Check goal** — does the new state match the target?
@@ -278,7 +278,7 @@ python3 -m discovery_engine.discover --use-cli \
 
 ```
 Loading knowledge graph from knowledge_graph.json...
-Loaded in 0.8s — {'nodes': 6225, 'edges': 10556, 'techniques': 62}
+Loaded in 0.8s — {'nodes': 8542, 'edges': 12381, 'techniques': 240}
 Mode: LIVE (API)
   Orchestrator model: claude-sonnet-4-20250514
   Worker model:       claude-haiku-4-5-20251001
@@ -424,7 +424,7 @@ The knowledge graph is built from a companion report tracing ~100 pivotal theore
 | 6 | [`06_modern_contemporary.md`](06_modern_contemporary.md) | 1950 – present | Wiles, Perelman, computer-assisted proofs |
 | 7 | [`07_brief_catalog.md`](07_brief_catalog.md) | all | Abbreviated reference for remaining theorems |
 | 8 | [`08_epilogue.md`](08_epilogue.md) | — | Patterns in mathematical discovery |
-| 9 | [`09_discovery_techniques.md`](09_discovery_techniques.md) | cross-cutting | 62 techniques across 12 clusters |
+| 9 | [`09_discovery_techniques.md`](09_discovery_techniques.md) | cross-cutting | 240 techniques across 12 clusters |
 | 10 | [`10_toolbox.md`](10_toolbox.md) | cross-cutting | Function-style technique dictionary with Mermaid diagrams |
 | 11 | [`11_knowledge_graph.md`](11_knowledge_graph.md) | cross-cutting | Knowledge graph documentation |
 | 12 | [`12_ai_solvable_discoveries.md`](12_ai_solvable_discoveries.md) | 2026 | Recently solved problems traced through the graph |
