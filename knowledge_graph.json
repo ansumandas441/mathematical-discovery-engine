@@ -75,6 +75,12 @@
       "new_edge_count": 126,
       "skipped_existing": 9,
       "edge_errors": 0
+    },
+    "iwaniec_kowalski_integration": {
+      "date": "2026-05-28",
+      "new_node_count": 152,
+      "new_edge_count": 88,
+      "source": "iwaniec_kowalski_new_nodes.json"
     }
   },
   "nodes": [
@@ -70169,6 +70175,1555 @@
       "name": "Explicit zero-free region constant improvements",
       "type_signature": "",
       "description": "Numerical improvements to the classical zero-free region σ > 1 − 1/(R log t) for ζ(s), with the best explicit R values due to Ford, Kadiri, and others."
+    },
+    {
+      "id": "s_completely_additive_function",
+      "kind": "axiom",
+      "name": "Completely additive function",
+      "type_signature": "(ℤ₊ → ℂ)",
+      "description": "An arithmetic function f satisfying f(mn) = f(m) + f(n) for all m, n ≥ 1; equivalently f(p^a) = a·f(p), e.g. Ω(n) and log n.",
+      "aliases": [
+        "totally additive function"
+      ]
+    },
+    {
+      "id": "s_generalized_divisor_function_tau_k",
+      "kind": "axiom",
+      "name": "Generalized divisor function τ_k(n)",
+      "type_signature": "ℤ₊ → ℤ₊",
+      "description": "τ_k(n) = ∑_{n=n₁⋯nₖ} 1, the number of ordered k-fold factorizations of n; its Dirichlet series is ζ(s)^k.",
+      "aliases": [
+        "Piltz divisor function",
+        "d_k(n)",
+        "τ_k"
+      ]
+    },
+    {
+      "id": "t_selberg_delange_method",
+      "kind": "technique",
+      "name": "Selberg–Delange method",
+      "function_signature": "(Dirichlet series behaving like ζ(s)^z near s=1) → (asymptotic ∑_{n≤x} a_n ~ Cx(log x)^{z-1}/Γ(z))",
+      "description": "Obtains asymptotics for partial sums of Dirichlet series behaving like ζ(s)^z near s = 1 via contour integration around a Hankel contour.",
+      "aliases": [
+        "Selberg-Delange method"
+      ]
+    },
+    {
+      "id": "s_smoothed_perron_formula",
+      "kind": "theorem",
+      "name": "Smoothed Perron formula",
+      "type_signature": "",
+      "description": "A variant of Perron's formula using a smooth weight function to replace the sharp cutoff, yielding faster-decaying error terms via rapid decay of the Mellin transform of the weight.",
+      "aliases": [
+        "smooth Perron formula"
+      ]
+    },
+    {
+      "id": "t_dyadic_decomposition",
+      "kind": "technique",
+      "name": "Dyadic decomposition",
+      "function_signature": "(sum over [1,X]) → (O(log X) sums over dyadic blocks (N, 2N])",
+      "description": "Partitioning a sum over [1, X] into O(log X) blocks of the form (N, 2N], reducing estimates to those uniform in a parameter N.",
+      "aliases": [
+        "dyadic subdivision"
+      ]
+    },
+    {
+      "id": "t_smooth_partition_of_unity",
+      "kind": "technique",
+      "name": "Smooth partition of unity",
+      "function_signature": "(sharp cutoff) → (sum of smooth bumps with ∑ψ_j ≡ 1)",
+      "description": "A collection of smooth bump functions {ψ_j} with ∑_j ψ_j ≡ 1, used to decompose sums into pieces with controlled Mellin or Fourier transforms.",
+      "aliases": [
+        "smooth dyadic partition"
+      ]
+    },
+    {
+      "id": "t_heath_brown_identity",
+      "kind": "technique",
+      "name": "Heath-Brown's identity",
+      "function_signature": "(Λ(n) for n ≤ x) → (O(k²) multilinear Type I/II sums)",
+      "description": "Decomposes the von Mangoldt function into O(k) multilinear sums using k-fold applications of an identity involving μ and log, yielding flexible Type I and Type II sums.",
+      "aliases": [
+        "Heath-Brown decomposition"
+      ]
+    },
+    {
+      "id": "t_linnik_identity",
+      "kind": "technique",
+      "name": "Linnik's identity",
+      "function_signature": "(Λ(n)) → (alternating series of higher-order convolutions)",
+      "description": "Expresses Λ(n) as Λ = ∑_{k≥1} (−1)^{k−1}/k · (1∗⋯∗1 − ε)^{∗k} · log, converting prime sums into iterated convolution sums.",
+      "aliases": [
+        "Linnik decomposition"
+      ]
+    },
+    {
+      "id": "s_type_i_sum",
+      "kind": "axiom",
+      "name": "Type I sum",
+      "type_signature": "",
+      "description": "A sum of the form ∑_{m≤M} a_m ∑_{n: mn∈A} 1 where a_m are general coefficients and the inner sum is over a well-understood sequence.",
+      "aliases": [
+        "Type I estimate",
+        "linear sum"
+      ]
+    },
+    {
+      "id": "s_type_ii_sum",
+      "kind": "axiom",
+      "name": "Type II sum",
+      "type_signature": "",
+      "description": "A bilinear sum ∑_m ∑_n a_m b_n c(mn) where both variables carry nontrivial coefficients, requiring Cauchy–Schwarz or bilinear form techniques.",
+      "aliases": [
+        "Type II estimate",
+        "bilinear sum"
+      ]
+    },
+    {
+      "id": "s_wirsing_theorem",
+      "kind": "theorem",
+      "name": "Wirsing's theorem",
+      "type_signature": "",
+      "description": "For nonnegative multiplicative f with ∑_p f(p)/p ~ κ log log x, gives ∑_{n≤x} f(n) ~ Ce^{-γκ}/Γ(κ) · x(log x)^{κ-1} ∏_p(1+f(p)/p+⋯)(1-1/p)^κ.",
+      "aliases": [
+        "Wirsing mean value theorem"
+      ]
+    },
+    {
+      "id": "s_shiu_bound",
+      "kind": "theorem",
+      "name": "Shiu's bound",
+      "type_signature": "",
+      "description": "For multiplicative f with 0 ≤ f(n) ≤ τ(n)^A, gives ∑_{x<n≤x+y, n≡a(q)} f(n) ≪ (y/φ(q))exp(∑_{p≤x} f(p)/p) for y ≥ x^{1/2+ε}.",
+      "aliases": [
+        "Shiu's theorem"
+      ]
+    },
+    {
+      "id": "s_general_l_function_ik",
+      "kind": "axiom",
+      "name": "General L-function (Iwaniec–Kowalski framework)",
+      "type_signature": "",
+      "description": "An L-function satisfying: Euler product of degree d, analytic continuation, functional equation Λ(s) = εΛ̄(1−s) with gamma factors, and the Ramanujan bound |a(p)| ≤ d.",
+      "aliases": [
+        "standard L-function",
+        "IK axiomatic L-function"
+      ]
+    },
+    {
+      "id": "s_completed_l_function",
+      "kind": "axiom",
+      "name": "Completed L-function",
+      "type_signature": "",
+      "description": "Λ(s, π) = q^{s/2} ∏_j Γ_ℝ(s + μ_j) · L(s, π) incorporating conductor q and gamma factors, satisfying Λ(s) = ε Λ̄(1−s).",
+      "aliases": [
+        "Lambda function",
+        "Λ-function"
+      ]
+    },
+    {
+      "id": "s_root_number",
+      "kind": "axiom",
+      "name": "Root number",
+      "type_signature": "ℂ, |ε| = 1",
+      "description": "The complex number ε of absolute value 1 in the functional equation Λ(s) = εΛ̄(1−s); for self-dual L-functions ε = ±1, governing vanishing at the central point.",
+      "aliases": [
+        "epsilon factor",
+        "sign of functional equation"
+      ]
+    },
+    {
+      "id": "s_gamma_factors_functional_equation",
+      "kind": "axiom",
+      "name": "Gamma factors in functional equations",
+      "type_signature": "",
+      "description": "The archimedean part γ(s) = ∏_j Γ_ℝ(s + μ_j) of a completed L-function, where Γ_ℝ(s) = π^{−s/2}Γ(s/2), encoding the archimedean local factors.",
+      "aliases": [
+        "archimedean gamma factor"
+      ]
+    },
+    {
+      "id": "s_conductor_l_function",
+      "kind": "axiom",
+      "name": "Conductor of an L-function",
+      "type_signature": "ℤ₊",
+      "description": "The positive integer q(π) in the functional equation measuring arithmetic ramification; equals ∏_p p^{f_p} with f_p the local conductor exponents.",
+      "aliases": [
+        "arithmetic conductor",
+        "q(π)"
+      ]
+    },
+    {
+      "id": "s_analytic_conductor",
+      "kind": "axiom",
+      "name": "Analytic conductor",
+      "type_signature": "ℝ₊",
+      "description": "C(π) = q(π)∏_j(|μ_j|+3), the quantity governing convexity bounds, zero-free regions, and approximate functional equations of an L-function.",
+      "aliases": [
+        "C(π)",
+        "effective conductor"
+      ]
+    },
+    {
+      "id": "s_degree_l_function",
+      "kind": "axiom",
+      "name": "Degree of an L-function",
+      "type_signature": "ℤ₊",
+      "description": "The number d of Γ_ℝ-factors in the completed L-function; equals n for GL(n) automorphic L-functions, governing the growth rate and density of zeros.",
+      "aliases": [
+        "d(π)"
+      ]
+    },
+    {
+      "id": "s_convexity_bound_l_functions",
+      "kind": "theorem",
+      "name": "Convexity bound for L-functions",
+      "type_signature": "",
+      "description": "For an L-function of analytic conductor C, L(1/2+it) ≪ C(t)^{1/4+ε}, obtained from the Phragmén–Lindelöf principle applied to the functional equation.",
+      "aliases": [
+        "convexity estimate"
+      ]
+    },
+    {
+      "id": "s_subconvexity_bound",
+      "kind": "theorem",
+      "name": "Subconvexity bound",
+      "type_signature": "",
+      "description": "Any bound L(1/2, π) ≪ C(π)^{1/4−δ} for some δ > 0 breaking the convexity barrier; has applications to equidistribution and mass transfer.",
+      "aliases": [
+        "subconvex estimate",
+        "breaking convexity"
+      ]
+    },
+    {
+      "id": "s_grand_lindelof_hypothesis",
+      "kind": "axiom",
+      "name": "Grand Lindelöf hypothesis",
+      "type_signature": "",
+      "description": "The conjecture that L(1/2+it, π) ≪ C(π, t)^ε for every ε > 0 and every automorphic L-function; generalizes the Lindelöf hypothesis.",
+      "aliases": [
+        "GLH",
+        "generalized Lindelöf hypothesis"
+      ]
+    },
+    {
+      "id": "s_approximate_functional_equation",
+      "kind": "theorem",
+      "name": "Approximate functional equation",
+      "type_signature": "",
+      "description": "L(s) = ∑_{n≤x} a_n n^{−s} V(n/x) + ε(s)∑_{n≤y} ā_n n^{s−1} W(n/y) + remainder, expressing L(s) on the critical line as two finite sums of length ~√(q|t|).",
+      "aliases": [
+        "AFE"
+      ]
+    },
+    {
+      "id": "s_mean_value_theorem_dirichlet_polynomials",
+      "kind": "theorem",
+      "name": "Mean value theorem for Dirichlet polynomials",
+      "type_signature": "",
+      "description": "∫_0^T |∑_{n≤N} a_n n^{−it}|² dt = (T + O(N))∑|a_n|², the Montgomery–Vaughan form equating the L² norm over t to the sum of squared coefficients.",
+      "aliases": [
+        "Montgomery-Vaughan mean value theorem"
+      ]
+    },
+    {
+      "id": "s_montgomery_large_values",
+      "kind": "theorem",
+      "name": "Montgomery's mean value theorem for large values",
+      "type_signature": "",
+      "description": "Bounds the number R of well-spaced t-values where |∑ a_n n^{−it}| ≥ V: R ≪ (N+T)(∑|a_n|²)/V², controlling large values of Dirichlet polynomials.",
+      "aliases": [
+        "large values estimate"
+      ]
+    },
+    {
+      "id": "s_huxley_jutila_large_values",
+      "kind": "theorem",
+      "name": "Huxley–Jutila large values estimate",
+      "type_signature": "",
+      "description": "Refined bounds on the measure of t-values where a Dirichlet polynomial is large, improving Montgomery's estimate via mean-square and fourth-power moment methods.",
+      "aliases": [
+        "Jutila large values"
+      ]
+    },
+    {
+      "id": "s_fourth_moment_zeta",
+      "kind": "theorem",
+      "name": "Fourth moment of the Riemann zeta function",
+      "type_signature": "",
+      "description": "∫_0^T |ζ(1/2+it)|⁴ dt ~ (2π²)⁻¹ T(log T)⁴, proved by Ingham (1926); the highest moment of ζ(1/2+it) for which an asymptotic is known.",
+      "aliases": [
+        "Ingham fourth moment"
+      ]
+    },
+    {
+      "id": "s_second_moment_l_functions_characters",
+      "kind": "theorem",
+      "name": "Second moment of L-functions over characters",
+      "type_signature": "",
+      "description": "∑_{χ mod q} |L(1/2, χ)|² ~ (φ(q)/q)·q log q, the mean-square for central values of Dirichlet L-functions averaged over characters mod q.",
+      "aliases": [
+        "mean square of L(1/2,χ)"
+      ]
+    },
+    {
+      "id": "s_moments_l_functions_conjectural",
+      "kind": "axiom",
+      "name": "Moments of L-functions (conjectural asymptotics)",
+      "type_signature": "",
+      "description": "The conjecture that ∫_0^T |ζ(1/2+it)|^{2k} dt ~ c_k T(log T)^{k²} with c_k predicted by random matrix theory (Keating–Snaith).",
+      "aliases": [
+        "CFKRS moment conjecture",
+        "Keating-Snaith conjecture"
+      ]
+    },
+    {
+      "id": "s_hecke_l_function_grossencharakter",
+      "kind": "axiom",
+      "name": "Hecke L-function",
+      "type_signature": "",
+      "description": "L(s, λ) = ∑_𝔞 λ(𝔞)N(𝔞)^{−s} attached to a Hecke Grössencharakter λ of a number field, admitting Euler product, analytic continuation, and functional equation.",
+      "aliases": [
+        "Hecke Grössencharakter L-function"
+      ]
+    },
+    {
+      "id": "s_rankin_selberg_l_function",
+      "kind": "axiom",
+      "name": "Rankin–Selberg L-function",
+      "type_signature": "",
+      "description": "L(s, π × π') = ∏_p det(I − A_π(p) ⊗ A_{π'}(p) p^{−s})^{−1}, a degree-mn L-function for GL(m)×GL(n) forms with analytic continuation and functional equation.",
+      "aliases": [
+        "Rankin-Selberg convolution"
+      ]
+    },
+    {
+      "id": "s_kronecker_limit_formula",
+      "kind": "theorem",
+      "name": "Kronecker's limit formula",
+      "type_signature": "",
+      "description": "The Laurent expansion of the Epstein zeta function at s = 1 has constant term involving −π(γ + log 2 − log(√y|η(τ)|²)), connecting Eisenstein series to the Dedekind eta function.",
+      "aliases": [
+        "first Kronecker limit formula"
+      ]
+    },
+    {
+      "id": "s_sifting_function",
+      "kind": "axiom",
+      "name": "Sifting function S(A, P, z)",
+      "type_signature": "",
+      "description": "S(A, P, z) = |{a ∈ A : gcd(a, P(z)) = 1}| where P(z) = ∏_{p<z, p∈P} p, counting elements not divisible by any sifting prime below z.",
+      "aliases": [
+        "sieve sum",
+        "S(A,z)"
+      ]
+    },
+    {
+      "id": "s_sieve_dimension",
+      "kind": "axiom",
+      "name": "Sieve dimension",
+      "type_signature": "κ > 0",
+      "description": "The parameter κ such that ∑_{w≤p<z} g(p)log p = κ log(z/w) + O(1), governing sifting prime density; κ = 1 for the linear sieve, κ = 1/2 for binary quadratic forms.",
+      "aliases": [
+        "sifting density"
+      ]
+    },
+    {
+      "id": "s_buchstab_identity",
+      "kind": "theorem",
+      "name": "Buchstab's identity",
+      "type_signature": "",
+      "description": "S(A, P, z) = S(A, P, w) − ∑_{w≤p<z} S(A_p, P, p), recursively expressing the sifting function at level z in terms of lower levels.",
+      "aliases": [
+        "Buchstab recursion"
+      ]
+    },
+    {
+      "id": "s_linear_sieve",
+      "kind": "theorem",
+      "name": "Linear sieve (Iwaniec's formulation)",
+      "type_signature": "",
+      "description": "For sieve dimension κ = 1, S(A,P,z) = X·W(z){f(s)+O((log D)^{-1/3})} with s = log D/log z, where f and F solve the linear sieve differential-delay equations.",
+      "aliases": [
+        "Iwaniec linear sieve"
+      ]
+    },
+    {
+      "id": "s_sieve_limit_functions",
+      "kind": "axiom",
+      "name": "Sieve upper/lower bound functions F_κ(s), f_κ(s)",
+      "type_signature": "",
+      "description": "Continuous functions satisfying differential-delay equations giving best possible sieve bounds: f_κ(s)XV(z) ≤ S ≤ F_κ(s)XV(z) + remainder.",
+      "aliases": [
+        "sieve adjoint functions"
+      ]
+    },
+    {
+      "id": "t_rosser_iwaniec_sieve",
+      "kind": "technique",
+      "name": "Rosser–Iwaniec sieve (β-sieve)",
+      "function_signature": "(sifting function S(A,P,z), level D) → (optimal upper/lower bounds)",
+      "description": "A combinatorial sieve using Rosser's alternating truncation combined with Iwaniec's bilinear remainder estimates, achieving optimal bounds for the linear sieve.",
+      "aliases": [
+        "beta-sieve",
+        "β-sieve"
+      ]
+    },
+    {
+      "id": "s_parity_problem_sieve",
+      "kind": "axiom",
+      "name": "Parity problem in sieve theory",
+      "type_signature": "",
+      "description": "The obstruction that classical sieve methods cannot distinguish integers with even vs odd number of prime factors, preventing sieves from detecting primes in the main term.",
+      "aliases": [
+        "parity barrier",
+        "Selberg parity phenomenon"
+      ]
+    },
+    {
+      "id": "t_semilinear_sieve",
+      "kind": "technique",
+      "name": "Semilinear sieve (κ = 1/2)",
+      "function_signature": "(sieve problem of dimension 1/2) → (upper/lower bounds without parity obstruction)",
+      "description": "The sieve of dimension κ = 1/2, applicable to primes represented by binary quadratic forms; the lower bound becomes positive for s > 1.",
+      "aliases": [
+        "half-dimensional sieve"
+      ]
+    },
+    {
+      "id": "t_bombieri_asymptotic_sieve",
+      "kind": "technique",
+      "name": "Bombieri's asymptotic sieve",
+      "function_signature": "(sifting function with strong remainder estimates) → (asymptotic formula for primes)",
+      "description": "A sieve producing asymptotic formulas for sifting functions under strong equidistribution hypotheses, overcoming the parity problem.",
+      "aliases": [
+        "Bombieri sieve"
+      ]
+    },
+    {
+      "id": "t_asymptotic_sieve_for_primes",
+      "kind": "technique",
+      "name": "Asymptotic sieve for primes (Bombieri–Friedlander–Iwaniec)",
+      "function_signature": "(sequence A with bilinear remainder control) → (asymptotic for #{primes in A})",
+      "description": "Combines Bombieri's asymptotic sieve with bilinear form estimates to produce asymptotic formulas for primes in sequences, circumventing the parity problem.",
+      "aliases": [
+        "BFI sieve"
+      ]
+    },
+    {
+      "id": "s_level_of_distribution",
+      "kind": "axiom",
+      "name": "Level of distribution",
+      "type_signature": "ϑ ∈ (0, 1]",
+      "description": "The supremum ϑ such that ∑_{q≤x^ϑ-ε} max_{(a,q)=1} |A(x;q,a) − A(x)/φ(q)| ≪ A(x)/(log x)^B; the primes have ϑ = 1/2 by Bombieri–Vinogradov.",
+      "aliases": [
+        "exponent of distribution"
+      ]
+    },
+    {
+      "id": "s_well_factorable_function",
+      "kind": "axiom",
+      "name": "Well-factorable function",
+      "type_signature": "",
+      "description": "A function λ(d) is well-factorable of level D if for every D = D₁D₂ there exist λ₁, λ₂ with λ = λ₁∗λ₂, |λ_i| ≤ 1, and support at scale D_i; key to Iwaniec's bilinear sieve.",
+      "aliases": [
+        "well-factorable weights"
+      ]
+    },
+    {
+      "id": "t_switching_principle_sieve",
+      "kind": "technique",
+      "name": "Switching principle in sieve theory",
+      "function_signature": "(upper bound sieve result) → (lower bound for primes)",
+      "description": "Reversing roles of sifted set and sifting primes via Buchstab decomposition, exploiting different distributional properties to convert upper into lower bounds.",
+      "aliases": [
+        "Buchstab switching"
+      ]
+    },
+    {
+      "id": "t_van_der_corput_a_process",
+      "kind": "technique",
+      "name": "Van der Corput's A-process",
+      "function_signature": "(exponential sum with |f''| ≍ λ) → (bound O(Nλ^{1/2} + λ^{-1/2}))",
+      "description": "The second derivative test: if f'' is monotone and |f''(x)| ≍ λ, then ∑ e(f(n)) ≪ Nλ^{1/2} + λ^{-1/2}.",
+      "aliases": [
+        "van der Corput second derivative test",
+        "A-process"
+      ]
+    },
+    {
+      "id": "t_van_der_corput_b_process",
+      "kind": "technique",
+      "name": "Van der Corput's B-process",
+      "function_signature": "(exponential sum ∑ e(f(n))) → (dual sum via Poisson summation)",
+      "description": "Transforms ∑ e(f(n)) into a dual sum via Poisson summation, converting information about f' into a shorter dual sum.",
+      "aliases": [
+        "B-process",
+        "Poisson transform for exponential sums"
+      ]
+    },
+    {
+      "id": "t_method_of_exponent_pairs",
+      "kind": "technique",
+      "name": "Method of exponent pairs",
+      "function_signature": "(A- and B-processes iterated) → (family of admissible exponent pairs (k,ℓ))",
+      "description": "A framework for bounding exponential sums by iterating A-process (k,ℓ)→(k/(2k+2),(k+ℓ+1)/(2k+2)) and B-process (k,ℓ)→(ℓ-1/2,k+1/2).",
+      "aliases": [
+        "exponent pair method"
+      ]
+    },
+    {
+      "id": "s_exponent_pair",
+      "kind": "axiom",
+      "name": "Exponent pair (k, ℓ)",
+      "type_signature": "(k, ℓ) ∈ [0,1/2] × [1/2,1]",
+      "description": "A pair (k,ℓ) such that ∑_{n~N} e(f(n)) ≪ N^ℓ λ^k when |f^(j)| ≍ λ/N^j; the trivial pair is (0,1) and (1/2,1/2) from van der Corput.",
+      "aliases": [
+        "van der Corput exponent pair"
+      ]
+    },
+    {
+      "id": "t_vinogradov_method_exponential_sums",
+      "kind": "technique",
+      "name": "Vinogradov's method of exponential sums",
+      "function_signature": "(exponential sum with polynomial phase of degree k) → (bound via iterated Weyl differencing + Vinogradov mean value theorem)",
+      "description": "Bounds exponential sums using iterated Weyl differencing followed by Hölder's inequality and mean value estimates, producing the Vinogradov–Korobov zero-free region.",
+      "aliases": [
+        "Vinogradov exponential sum method"
+      ]
+    },
+    {
+      "id": "s_salie_sum",
+      "kind": "axiom",
+      "name": "Salié sum",
+      "type_signature": "",
+      "description": "S*(a,b;c) = ∑_{x mod c, (x,c)=1} (x/c)e((ax+bx̄)/c), the Kloosterman sum twisted by the Legendre symbol; evaluable in terms of Gauss sums when c is prime.",
+      "aliases": [
+        "Salié-Kloosterman sum"
+      ]
+    },
+    {
+      "id": "s_hyper_kloosterman_sum",
+      "kind": "axiom",
+      "name": "Hyper-Kloosterman sum",
+      "type_signature": "",
+      "description": "Kl_k(a;q) = ∑_{x₁⋯x_k ≡ a(q)} e((x₁+⋯+x_k)/q), the k-variable Kloosterman sum satisfying Deligne's bound |Kl_k(a;p)| ≤ k·p^{(k-1)/2}.",
+      "aliases": [
+        "generalized Kloosterman sum"
+      ]
+    },
+    {
+      "id": "t_stepanov_method",
+      "kind": "technique",
+      "name": "Stepanov's method",
+      "function_signature": "(curve C/𝔽_q) → (bound |C(𝔽_q)| via auxiliary polynomial)",
+      "description": "An elementary method bounding rational points on curves over finite fields by constructing an auxiliary polynomial vanishing to high order at each rational point.",
+      "aliases": [
+        "Stepanov auxiliary polynomial method"
+      ]
+    },
+    {
+      "id": "s_bombieri_proof_rh_curves",
+      "kind": "theorem",
+      "name": "Bombieri's proof of RH for curves",
+      "type_signature": "",
+      "description": "A simplified proof of the Riemann hypothesis for curves over finite fields using Stepanov's method and Riemann-Roch, avoiding Weil's algebraic geometry.",
+      "aliases": [
+        "Bombieri-Stepanov proof"
+      ]
+    },
+    {
+      "id": "t_square_sieve",
+      "kind": "technique",
+      "name": "Square sieve (Heath-Brown)",
+      "function_signature": "(sequence S) → (bound on #{n ∈ S : n = □} via character sums)",
+      "description": "Detects perfect squares in sequences via n is a square iff (n/p) = 1 for all primes p, applying Legendre symbols and the large sieve.",
+      "aliases": [
+        "Heath-Brown square sieve"
+      ]
+    },
+    {
+      "id": "t_bombieri_iwaniec_method",
+      "kind": "technique",
+      "name": "Bombieri–Iwaniec method",
+      "function_signature": "(exponential sum ∑ e(f(n))) → (improved bound via lattice point/large sieve)",
+      "description": "Bounds exponential sums by converting to a lattice point counting problem near a curve, then applying the large sieve to detect coincidences; yields exponent pair (9/56, 1/2+9/56).",
+      "aliases": [
+        "Bombieri-Iwaniec first spacing method"
+      ]
+    },
+    {
+      "id": "s_duality_principle_bilinear",
+      "kind": "theorem",
+      "name": "Duality principle for bilinear forms",
+      "type_signature": "",
+      "description": "The operator norm of a bilinear form equals its transpose norm; in the large sieve, interchanges the roles of the sequence and test points.",
+      "aliases": [
+        "bilinear duality",
+        "norm duality"
+      ]
+    },
+    {
+      "id": "s_dual_large_sieve_inequality",
+      "kind": "theorem",
+      "name": "Dual large sieve inequality",
+      "type_signature": "",
+      "description": "∑_n |∑_r b_r e(nα_r)|² ≤ (N + δ⁻¹)∑|b_r|² for δ-spaced α_r; the dual form of the large sieve.",
+      "aliases": [
+        "dual form of the large sieve"
+      ]
+    },
+    {
+      "id": "s_large_sieve_characters",
+      "kind": "theorem",
+      "name": "Large sieve inequality for Dirichlet characters",
+      "type_signature": "",
+      "description": "∑_{q≤Q} ∑*_{χ mod q} |∑_{n≤N} a_n χ(n)|² ≤ (N + Q² − 1)∑|a_n|², bounding mean squares of character sums over primitive characters.",
+      "aliases": [
+        "multiplicative large sieve"
+      ]
+    },
+    {
+      "id": "t_deshouillers_iwaniec_method",
+      "kind": "technique",
+      "name": "Deshouillers–Iwaniec method",
+      "function_signature": "(sums of Kloosterman sums) → (bounds via spectral theory + Kuznetsov formula)",
+      "description": "Combines Kloosterman sum estimates, spectral theory, and the Kuznetsov trace formula to bound bilinear forms in Kloosterman sums.",
+      "aliases": [
+        "Deshouillers-Iwaniec spectral method"
+      ]
+    },
+    {
+      "id": "t_linnik_dispersion_method",
+      "kind": "technique",
+      "name": "Linnik's dispersion method",
+      "function_signature": "(sum over arithmetic progression) → (variance estimate via Cauchy-Schwarz)",
+      "description": "Estimates ∑_q(∑_{n≡a(q)} f(n) − main)² by expanding the square and exchanging summation, reducing to bilinear sums.",
+      "aliases": [
+        "dispersion method"
+      ]
+    },
+    {
+      "id": "s_halasz_montgomery_inequality",
+      "kind": "theorem",
+      "name": "Halász–Montgomery inequality",
+      "type_signature": "",
+      "description": "For R well-spaced t_r: ∑_r |∑_n a_n n^{-it_r}|² ≤ (N + RT)(∑|a_n|²), a discrete mean value theorem for Dirichlet polynomials.",
+      "aliases": [
+        "Montgomery-Halász inequality"
+      ]
+    },
+    {
+      "id": "s_motohashi_formula",
+      "kind": "theorem",
+      "name": "Motohashi's formula",
+      "type_signature": "",
+      "description": "An exact identity relating the fourth moment of ζ(1/2+it) to a spectral sum over Maass forms, expressing ∫|ζ|⁴ in terms of Hecke eigenvalues.",
+      "aliases": [
+        "Motohashi spectral formula"
+      ]
+    },
+    {
+      "id": "s_gallagher_larger_sieve",
+      "kind": "theorem",
+      "name": "Gallagher's larger sieve",
+      "type_signature": "",
+      "description": "If S ⊂ [1,N] reduces to at most ν_p residue classes mod p for each p ∈ P, then |S| ≤ N(∑ log p)/(∑ ν_p log p/(p−ν_p+1)) − corrections.",
+      "aliases": [
+        "Gallagher sieve",
+        "the larger sieve"
+      ]
+    },
+    {
+      "id": "s_barban_davenport_halberstam_theorem",
+      "kind": "theorem",
+      "name": "Barban–Davenport–Halberstam theorem",
+      "type_signature": "",
+      "description": "∑_{q≤Q} ∑_{(a,q)=1} |ψ(x;q,a) − x/φ(q)|² ≪ xQ log x for Q ≤ x, an L² average bound on PNT errors in arithmetic progressions.",
+      "aliases": [
+        "BDH theorem"
+      ]
+    },
+    {
+      "id": "s_elliott_halberstam_conjecture",
+      "kind": "axiom",
+      "name": "Elliott–Halberstam conjecture",
+      "type_signature": "",
+      "description": "The conjecture that primes have level of distribution ϑ = 1 − ε; implies bounded gaps between primes by the Goldston–Pintz–Yıldırım method.",
+      "aliases": [
+        "EH conjecture"
+      ]
+    },
+    {
+      "id": "s_modular_group_sl2z",
+      "kind": "axiom",
+      "name": "Modular group SL₂(ℤ)",
+      "type_signature": "",
+      "description": "The group of 2×2 integer matrices with determinant 1, acting on the upper half-plane by Möbius transformations; the fundamental discrete symmetry group of modular forms.",
+      "aliases": [
+        "SL(2,Z)",
+        "full modular group"
+      ]
+    },
+    {
+      "id": "s_congruence_subgroup_gamma0",
+      "kind": "axiom",
+      "name": "Congruence subgroup Γ₀(N)",
+      "type_signature": "",
+      "description": "The subgroup of SL₂(ℤ) consisting of matrices whose lower-left entry is divisible by N, the standard level structure for Hecke theory.",
+      "aliases": [
+        "Gamma_0(N)",
+        "Hecke congruence subgroup"
+      ]
+    },
+    {
+      "id": "s_congruence_subgroup_gamma1",
+      "kind": "axiom",
+      "name": "Congruence subgroup Γ₁(N)",
+      "type_signature": "",
+      "description": "The subgroup of SL₂(ℤ) with lower-left entry ≡ 0 mod N and diagonal entries ≡ 1 mod N, parametrizing modular forms with Nebentypus.",
+      "aliases": [
+        "Gamma_1(N)"
+      ]
+    },
+    {
+      "id": "s_principal_congruence_subgroup",
+      "kind": "axiom",
+      "name": "Principal congruence subgroup Γ(N)",
+      "type_signature": "",
+      "description": "The kernel of SL₂(ℤ) → SL₂(ℤ/Nℤ); a subgroup of SL₂(ℤ) is a congruence subgroup iff it contains some Γ(N).",
+      "aliases": [
+        "Gamma(N)"
+      ]
+    },
+    {
+      "id": "s_nebentypus_character",
+      "kind": "axiom",
+      "name": "Nebentypus character",
+      "type_signature": "",
+      "description": "A Dirichlet character χ mod N in the transformation law f(γz) = χ(d)(cz+d)^k f(z) for forms on Γ₁(N), refining the level structure.",
+      "aliases": [
+        "Nebentypus"
+      ]
+    },
+    {
+      "id": "s_fundamental_domain_sl2z",
+      "kind": "axiom",
+      "name": "Fundamental domain for SL₂(ℤ)",
+      "type_signature": "",
+      "description": "The region F = {z ∈ H : |Re(z)| ≤ 1/2, |z| ≥ 1} for the action of SL₂(ℤ) on H, with hyperbolic area π/3.",
+      "aliases": [
+        "standard fundamental domain"
+      ]
+    },
+    {
+      "id": "s_cusps_of_congruence_subgroup",
+      "kind": "axiom",
+      "name": "Cusps of a congruence subgroup",
+      "type_signature": "",
+      "description": "The Γ-equivalence classes in ℙ¹(ℚ) = ℚ ∪ {∞}, forming the boundary points where Γ\\H is compactified to a Riemann surface.",
+      "aliases": [
+        "cusps",
+        "parabolic vertices"
+      ]
+    },
+    {
+      "id": "s_hyperbolic_laplacian",
+      "kind": "axiom",
+      "name": "Hyperbolic Laplacian on H",
+      "type_signature": "",
+      "description": "The Laplace-Beltrami operator Δ = −y²(∂²/∂x² + ∂²/∂y²) on the upper half-plane with Poincaré metric, commuting with SL₂(ℝ).",
+      "aliases": [
+        "Laplace-Beltrami operator on H"
+      ]
+    },
+    {
+      "id": "s_cusp_form",
+      "kind": "axiom",
+      "name": "Cusp form",
+      "type_signature": "",
+      "description": "A modular form of weight k and level N that vanishes at all cusps, spanning the subspace S_k(Γ) ⊂ M_k(Γ).",
+      "aliases": [
+        "cuspidal modular form",
+        "Spitzenform"
+      ]
+    },
+    {
+      "id": "s_slash_operator",
+      "kind": "axiom",
+      "name": "Slash operator |_k",
+      "type_signature": "",
+      "description": "The weight-k right action (f|_k γ)(z) = (cz+d)^{-k} f(γz) of GL₂⁺(ℝ) on functions on H, encoding the modular transformation law.",
+      "aliases": [
+        "slash operator",
+        "weight-k action"
+      ]
+    },
+    {
+      "id": "s_poincare_series_modular",
+      "kind": "axiom",
+      "name": "Poincaré series P_m(z, k, Γ)",
+      "type_signature": "",
+      "description": "P_m(z) = ∑_{γ ∈ Γ_∞\\Γ} e^{2πimγz}(cz+d)^{-k}, spanning cusp forms and satisfying ⟨f, P_m⟩ = c·a_f(m) for cusp forms f.",
+      "aliases": [
+        "Poincaré series for modular forms"
+      ]
+    },
+    {
+      "id": "s_petersson_inner_product",
+      "kind": "axiom",
+      "name": "Petersson inner product",
+      "type_signature": "",
+      "description": "⟨f,g⟩ = ∫_{Γ\\H} f(z)ḡ(z) y^k dμ(z) on cusp forms, making S_k(Γ) a Hilbert space with Hecke operators self-adjoint.",
+      "aliases": [
+        "Petersson scalar product"
+      ]
+    },
+    {
+      "id": "s_fourier_expansion_at_cusps",
+      "kind": "axiom",
+      "name": "Fourier expansion at cusps",
+      "type_signature": "",
+      "description": "The q-expansion f(z) = ∑_{n≥0} a_f(n)e^{2πinz/w} of a modular form at a cusp of width w; the expansion at each cusp determines the form.",
+      "aliases": [
+        "q-expansion"
+      ]
+    },
+    {
+      "id": "s_atkin_lehner_theory",
+      "kind": "theorem",
+      "name": "Atkin-Lehner theory",
+      "type_signature": "",
+      "description": "S_k(Γ₀(N)) = S_k^{old} ⊕ S_k^{new} with multiplicity-one for newforms, decomposing cusp forms into oldforms from lower levels and primitive newforms.",
+      "aliases": [
+        "newform-oldform decomposition"
+      ]
+    },
+    {
+      "id": "s_atkin_lehner_involution",
+      "kind": "axiom",
+      "name": "Atkin-Lehner involution W_Q",
+      "type_signature": "",
+      "description": "For Q || N, an involution on S_k(Γ₀(N)) normalizing Γ₀(N); newforms are eigenforms for all W_Q with eigenvalue ±1.",
+      "aliases": [
+        "Atkin-Lehner operator"
+      ]
+    },
+    {
+      "id": "s_fricke_involution",
+      "kind": "axiom",
+      "name": "Fricke involution W_N",
+      "type_signature": "",
+      "description": "The Atkin-Lehner involution z ↦ −1/(Nz) relating the functional equation of L(f,s) to its Fricke eigenvalue.",
+      "aliases": [
+        "Fricke operator"
+      ]
+    },
+    {
+      "id": "s_oldform",
+      "kind": "axiom",
+      "name": "Oldform",
+      "type_signature": "",
+      "description": "A form in S_k(Γ₀(N)) arising from lower level M | N via f(z) ↦ f(dz) for d | (N/M), spanning the old subspace.",
+      "aliases": [
+        "old form"
+      ]
+    },
+    {
+      "id": "s_conductor_of_modular_form",
+      "kind": "axiom",
+      "name": "Conductor of a modular form",
+      "type_signature": "",
+      "description": "The minimal level N such that a newform lives in S_k(Γ₀(N), χ), encoding the precise ramification data of the associated automorphic representation.",
+      "aliases": [
+        "level of a newform"
+      ]
+    },
+    {
+      "id": "s_dimension_formula_mk_sl2z",
+      "kind": "theorem",
+      "name": "Dimension formula for M_k(SL₂(ℤ))",
+      "type_signature": "",
+      "description": "dim M_k(SL₂(ℤ)) = ⌊k/12⌋ + 1 for even k ≥ 2 (with correction for k ≡ 2 mod 12), from the Riemann-Roch theorem on the genus-0 modular curve.",
+      "aliases": [
+        "dimension of modular forms for SL₂(ℤ)"
+      ]
+    },
+    {
+      "id": "s_dimension_formula_sk_gamma0",
+      "kind": "theorem",
+      "name": "Dimension formula for S_k(Γ₀(N))",
+      "type_signature": "",
+      "description": "dim S_k(Γ₀(N)) = (k−1)(g−1) + corrections from elliptic and parabolic elements, where g is the genus of X₀(N).",
+      "aliases": [
+        "Riemann-Roch dimension formula for cusp forms"
+      ]
+    },
+    {
+      "id": "s_theta_function_of_quadratic_form",
+      "kind": "axiom",
+      "name": "Theta function of a quadratic form",
+      "type_signature": "",
+      "description": "θ_Q(z) = ∑_{n ∈ ℤ^m} e^{2πiQ(n)z} for a positive definite quadratic form Q in m variables; a modular form of weight m/2 whose coefficients count representations by Q.",
+      "aliases": [
+        "theta series of a lattice"
+      ]
+    },
+    {
+      "id": "s_maass_form",
+      "kind": "axiom",
+      "name": "Maass form",
+      "type_signature": "",
+      "description": "A smooth Γ-automorphic eigenfunction of the hyperbolic Laplacian Δf = λf on H with at most polynomial growth at cusps.",
+      "aliases": [
+        "Maass wave form"
+      ]
+    },
+    {
+      "id": "s_maass_cusp_form",
+      "kind": "axiom",
+      "name": "Maass cusp form",
+      "type_signature": "",
+      "description": "A Maass form that decays exponentially at all cusps, belonging to the discrete cuspidal spectrum of the Laplacian on L²(Γ\\H).",
+      "aliases": [
+        "Maass cuspidal form"
+      ]
+    },
+    {
+      "id": "s_spectral_parameter_maass",
+      "kind": "axiom",
+      "name": "Spectral parameter r",
+      "type_signature": "",
+      "description": "The parameter r such that a Maass form has eigenvalue λ = 1/4 + r²; the Selberg conjecture asserts r ∈ ℝ for congruence subgroups.",
+      "aliases": [
+        "Maass spectral parameter"
+      ]
+    },
+    {
+      "id": "s_ramanujan_petersson_conjecture",
+      "kind": "theorem",
+      "name": "Ramanujan-Petersson conjecture",
+      "type_signature": "",
+      "description": "For holomorphic cuspidal newforms of weight k, |a_p(f)| ≤ 2p^{(k−1)/2} (Deligne); for Maass forms, |a_p| ≤ 2p^{1/2} (open, best bound from Kim-Sarnak).",
+      "aliases": [
+        "Ramanujan conjecture for modular forms"
+      ]
+    },
+    {
+      "id": "s_real_analytic_eisenstein_series",
+      "kind": "axiom",
+      "name": "Real-analytic Eisenstein series E(z,s)",
+      "type_signature": "",
+      "description": "E(z,s) = ∑_{γ ∈ Γ_∞\\Γ}(Im γz)^s for Re(s) > 1, continued meromorphically to all s, spanning the continuous spectrum of the Laplacian.",
+      "aliases": [
+        "non-holomorphic Eisenstein series"
+      ]
+    },
+    {
+      "id": "s_scattering_matrix_automorphic",
+      "kind": "axiom",
+      "name": "Scattering matrix for Γ\\H",
+      "type_signature": "",
+      "description": "The matrix Φ(s) relating constant terms of Eisenstein series at different cusps, satisfying Φ(s)Φ(1−s) = I, whose poles give the residual spectrum.",
+      "aliases": [
+        "scattering matrix",
+        "phi function"
+      ]
+    },
+    {
+      "id": "s_spectral_decomposition_l2_gamma_h",
+      "kind": "theorem",
+      "name": "Spectral decomposition of L²(Γ\\H)",
+      "type_signature": "",
+      "description": "L²(Γ\\H) = ℂ ⊕ V_cusp ⊕ V_res ⊕ V_cont, with V_cusp from Maass cusp forms, V_res from residues of Eisenstein series, and V_cont the continuous Eisenstein spectrum.",
+      "aliases": [
+        "Roelcke-Selberg spectral decomposition"
+      ]
+    },
+    {
+      "id": "s_discrete_spectrum_gamma_h",
+      "kind": "axiom",
+      "name": "Discrete spectrum of Γ\\H",
+      "type_signature": "",
+      "description": "The subspace of L²(Γ\\H) spanned by eigenfunctions with isolated eigenvalues: constants, Maass cusp forms, and residual Eisenstein contributions.",
+      "aliases": [
+        "cuspidal plus residual spectrum"
+      ]
+    },
+    {
+      "id": "s_continuous_spectrum_gamma_h",
+      "kind": "axiom",
+      "name": "Continuous spectrum of Γ\\H",
+      "type_signature": "",
+      "description": "The absolutely continuous part of the Laplacian spectrum on L²(Γ\\H), parametrized by Eisenstein series E(z, 1/2+it) for t ∈ ℝ, occupying [1/4, ∞).",
+      "aliases": [
+        "Eisenstein contribution"
+      ]
+    },
+    {
+      "id": "s_pre_trace_formula",
+      "kind": "theorem",
+      "name": "Pre-trace formula",
+      "type_signature": "",
+      "description": "∑_j h(r_j)|u_j(z)|² + (cont. part) = ∑_{γ ∈ Γ} k(u(z,γz)), the spectral expansion of an automorphic kernel, preceding the Selberg trace formula.",
+      "aliases": [
+        "automorphic kernel identity"
+      ]
+    },
+    {
+      "id": "s_selberg_zeta_function",
+      "kind": "axiom",
+      "name": "Selberg zeta function Z_Γ(s)",
+      "type_signature": "",
+      "description": "Z_Γ(s) = ∏_{γ₀} ∏_{k≥0}(1 − N(γ₀)^{−s−k}) over primitive hyperbolic classes, an entire function whose zeros encode eigenvalues of Δ on Γ\\H.",
+      "aliases": [
+        "Selberg zeta function"
+      ]
+    },
+    {
+      "id": "s_maass_selberg_relations",
+      "kind": "theorem",
+      "name": "Maass-Selberg relations",
+      "type_signature": "",
+      "description": "Inner product formulas for truncated Eisenstein series in terms of the scattering matrix, controlling the continuous spectrum contribution.",
+      "aliases": [
+        "Maass-Selberg formula"
+      ]
+    },
+    {
+      "id": "s_petersson_trace_formula",
+      "kind": "theorem",
+      "name": "Petersson trace formula",
+      "type_signature": "",
+      "description": "∑_f ā_f(m)a_f(n)/⟨f,f⟩ = δ_{m,n} + 2πi^{-k}∑_{c≡0(N)} c^{-1}S(m,n;c)J_{k-1}(4π√(mn)/c), relating Fourier coefficients to Kloosterman sums.",
+      "aliases": [
+        "Petersson-Kuznetsov formula"
+      ]
+    },
+    {
+      "id": "s_eichler_selberg_trace_formula",
+      "kind": "theorem",
+      "name": "Eichler-Selberg trace formula",
+      "type_signature": "",
+      "description": "An explicit formula for tr(T_n | S_k(Γ₀(N))) as a sum over conjugacy classes involving class numbers, totient values, and cusp/elliptic contributions.",
+      "aliases": [
+        "Selberg trace formula for Hecke operators"
+      ]
+    },
+    {
+      "id": "s_kuznetsov_trace_formula",
+      "kind": "theorem",
+      "name": "Kuznetsov trace formula",
+      "type_signature": "",
+      "description": "A sum formula relating spectral sums over Maass/holomorphic forms weighted by Fourier coefficients to geometric sums of Kloosterman sums via Bessel transforms.",
+      "aliases": [
+        "Kuznetsov sum formula",
+        "Bruggeman-Kuznetsov formula"
+      ]
+    },
+    {
+      "id": "s_voronoi_summation_formula",
+      "kind": "theorem",
+      "name": "Voronoi summation formula (GL(2))",
+      "type_signature": "",
+      "description": "Transforms ∑_n a_f(n)e(nα/q)g(n) for a GL(2) form into a dual sum with Kloosterman twists and Bessel integral transforms; the automorphic Poisson summation.",
+      "aliases": [
+        "Voronoi formula"
+      ]
+    },
+    {
+      "id": "s_l_function_of_modular_form",
+      "kind": "axiom",
+      "name": "L-function of a modular form",
+      "type_signature": "",
+      "description": "L(f,s) = ∑ a_f(n)n^{-s} for a Hecke eigenform f, admitting analytic continuation and functional equation Λ(f,s) = ε·Λ(f,k−s).",
+      "aliases": [
+        "standard L-function of f"
+      ]
+    },
+    {
+      "id": "s_euler_product_hecke_eigenform",
+      "kind": "theorem",
+      "name": "Euler product for Hecke eigenform L-function",
+      "type_signature": "",
+      "description": "L(f,s) = ∏_p(1 − a_p p^{-s} + χ(p)p^{k-1-2s})^{-1} for (p,N) = 1, with modified local factors at primes dividing the level.",
+      "aliases": [
+        "Hecke Euler product"
+      ]
+    },
+    {
+      "id": "t_rankin_selberg_method",
+      "kind": "technique",
+      "name": "Rankin-Selberg method",
+      "function_signature": "(cusp form f, Eisenstein series E(z,s)) → (Rankin-Selberg L-function L(f⊗ḡ,s))",
+      "description": "Unfolds ∫_{Γ\\H} f(z)ḡ(z)E(z,s)y^k dμ to obtain L(f⊗g,s), yielding analytic continuation and bounds for convolution L-functions.",
+      "aliases": [
+        "Rankin-Selberg unfolding"
+      ]
+    },
+    {
+      "id": "s_symmetric_square_l_function",
+      "kind": "axiom",
+      "name": "Symmetric square L-function L(sym²f, s)",
+      "type_signature": "",
+      "description": "The degree-3 L-function ∏_p(1−α²_p p^{-s})^{-1}(1−α_p β_p p^{-s})^{-1}(1−β²_p p^{-s})^{-1} whose analytic properties yield bounds toward Ramanujan.",
+      "aliases": [
+        "symmetric square lift"
+      ]
+    },
+    {
+      "id": "s_jacquet_langlands_correspondence",
+      "kind": "theorem",
+      "name": "Jacquet-Langlands correspondence",
+      "type_signature": "",
+      "description": "A bijection between automorphic representations of GL₂(𝔸) and those of quaternion algebra D×(𝔸) that are not one-dimensional, preserving L-functions.",
+      "aliases": [
+        "Jacquet-Langlands transfer"
+      ]
+    },
+    {
+      "id": "s_gelbart_jacquet_lift",
+      "kind": "theorem",
+      "name": "Gelbart-Jacquet lift",
+      "type_signature": "",
+      "description": "The functorial lift GL(2)→GL(3) corresponding to the symmetric square, proving L(sym²f,s) is automorphic on GL(3).",
+      "aliases": [
+        "symmetric square lift to GL(3)"
+      ]
+    },
+    {
+      "id": "s_gl_n_automorphic_form",
+      "kind": "axiom",
+      "name": "GL(n) automorphic form",
+      "type_signature": "",
+      "description": "A smooth function on GL_n(ℚ)\\GL_n(𝔸) satisfying moderate growth, K-finiteness, and Z(g_∞)-finiteness, generalizing classical modular forms.",
+      "aliases": [
+        "automorphic form on GL(n)"
+      ]
+    },
+    {
+      "id": "s_kirillov_model",
+      "kind": "axiom",
+      "name": "Kirillov model",
+      "type_signature": "",
+      "description": "A realization of a generic representation of GL₂(F) on functions on F×, obtained by restricting the Whittaker model to the diagonal torus.",
+      "aliases": [
+        "Kirillov space"
+      ]
+    },
+    {
+      "id": "s_strong_multiplicity_one_gl2",
+      "kind": "theorem",
+      "name": "Strong multiplicity one for GL(2)",
+      "type_signature": "",
+      "description": "Two cuspidal automorphic representations of GL(2) with isomorphic local components at all but finitely many places are globally isomorphic.",
+      "aliases": [
+        "strong multiplicity one theorem"
+      ]
+    },
+    {
+      "id": "s_twisted_l_function",
+      "kind": "axiom",
+      "name": "Twisted L-function L(f⊗χ, s)",
+      "type_signature": "",
+      "description": "L(f⊗χ,s) = ∑ a_f(n)χ(n)n^{-s} for a Hecke eigenform f and Dirichlet character χ, with functional equation involving the conductor of χ.",
+      "aliases": [
+        "character twist of L-function"
+      ]
+    },
+    {
+      "id": "s_satake_parameters",
+      "kind": "axiom",
+      "name": "Satake parameters",
+      "type_signature": "",
+      "description": "The pair (α_p, β_p) with α_p + β_p = a_f(p) and α_p β_p = χ(p)p^{k-1} parametrizing the unramified local factor at prime p via the Satake isomorphism.",
+      "aliases": [
+        "Langlands parameters at unramified primes"
+      ]
+    },
+    {
+      "id": "s_hecke_multiplicativity",
+      "kind": "theorem",
+      "name": "Hecke multiplicativity relations",
+      "type_signature": "",
+      "description": "a(m)a(n) = ∑_{d|(m,n)} χ(d)d^{k-1} a(mn/d²) for a Hecke eigenform, encoding the ring structure of Hecke operators.",
+      "aliases": [
+        "Hecke recursion"
+      ]
+    },
+    {
+      "id": "t_amplification_method",
+      "kind": "technique",
+      "name": "Amplification method",
+      "function_signature": "(target form f₀ in spectral family) → (subconvexity bound for L(f₀, 1/2))",
+      "description": "Constructs an amplifier large on a target form, applies spectral mean-value estimates to convert spectral information into pointwise L-function bounds.",
+      "aliases": [
+        "amplification technique"
+      ]
+    },
+    {
+      "id": "s_spectral_large_sieve",
+      "kind": "theorem",
+      "name": "Spectral large sieve inequality",
+      "type_signature": "",
+      "description": "∑_j |∑_n a_n ρ_j(n)|² ≤ (N + T²)∑|a_n|², bounding bilinear forms in Fourier coefficients of Maass forms, the spectral analogue of the classical large sieve.",
+      "aliases": [
+        "large sieve for automorphic forms"
+      ]
+    },
+    {
+      "id": "s_subconvexity_gl2",
+      "kind": "theorem",
+      "name": "Subconvexity for GL(2) L-functions",
+      "type_signature": "",
+      "description": "L(f, 1/2) ≪ C(f)^{1/4−δ} for some δ > 0, breaking the convexity bound; proved in various aspects by Iwaniec, Duke-Friedlander-Iwaniec, and Michel-Venkatesh.",
+      "aliases": [
+        "GL(2) subconvexity"
+      ]
+    },
+    {
+      "id": "t_spectral_mean_value_estimates",
+      "kind": "technique",
+      "name": "Mean value estimates via spectral methods",
+      "function_signature": "(spectral family of L-functions) → (moment asymptotics via Kuznetsov formula)",
+      "description": "Uses the spectral decomposition and Kuznetsov formula to evaluate moments of L-functions over spectral families.",
+      "aliases": [
+        "spectral moment method"
+      ]
+    },
+    {
+      "id": "s_spectral_reciprocity",
+      "kind": "theorem",
+      "name": "Spectral reciprocity formula",
+      "type_signature": "",
+      "description": "An identity relating moments of L-functions over one spectral family to moments over a dual family, transferring subconvexity between aspects.",
+      "aliases": [
+        "reciprocity formula"
+      ]
+    },
+    {
+      "id": "s_nonvanishing_l_functions_at_center",
+      "kind": "theorem",
+      "name": "Nonvanishing results for central L-values",
+      "type_signature": "",
+      "description": "L(f,1/2) ≠ 0 or L(f⊗χ,1/2) ≠ 0 for a positive proportion of forms/characters in a family, proved via mollified moments.",
+      "aliases": [
+        "nonvanishing at the central point"
+      ]
+    },
+    {
+      "id": "s_singular_integral_circle_method",
+      "kind": "axiom",
+      "name": "Singular integral (circle method)",
+      "type_signature": "",
+      "description": "The archimedean factor J(n) = ∫ δ(x₁^k+…+x_s^k − n) dx in the circle method asymptotic, measuring the real-analytic solution density.",
+      "aliases": [
+        "singular integral in Waring's problem"
+      ]
+    },
+    {
+      "id": "s_hua_inequality",
+      "kind": "theorem",
+      "name": "Hua's inequality",
+      "type_signature": "",
+      "description": "∫₀¹ |∑_{n≤N} e(αn^k)|^{2^k} dα ≪ N^{2^k − k + ε}, a mean value estimate for Weyl sums fundamental to the minor arc analysis in Waring's problem.",
+      "aliases": [
+        "Hua's lemma"
+      ]
+    },
+    {
+      "id": "s_hardy_littlewood_asymptotic_waring",
+      "kind": "theorem",
+      "name": "Hardy-Littlewood asymptotic for Waring's problem",
+      "type_signature": "",
+      "description": "R_{s,k}(n) = 𝔖(n)·J(n)·n^{s/k−1} + o(n^{s/k−1}) for s sufficiently large, where 𝔖 is the singular series and J the singular integral.",
+      "aliases": [
+        "Waring asymptotic formula"
+      ]
+    },
+    {
+      "id": "t_farey_dissection",
+      "kind": "technique",
+      "name": "Farey dissection",
+      "function_signature": "([0,1)) → (Farey arcs centered at a/q with q ≤ Q)",
+      "description": "Partition of [0,1) into arcs centered at Farey fractions of order Q, providing finer major/minor arc decomposition than the standard Hardy-Littlewood dissection.",
+      "aliases": [
+        "Farey arc decomposition"
+      ]
+    },
+    {
+      "id": "t_kloosterman_refinement",
+      "kind": "technique",
+      "name": "Kloosterman refinement (HLK method)",
+      "function_signature": "(major arc contributions) → (sums of Kloosterman sums S(m,n;c))",
+      "description": "The Hardy-Littlewood-Kloosterman method: major arc contributions yield Kloosterman sums whose cancellation (Weil bound) improves the error term.",
+      "aliases": [
+        "HLK method"
+      ]
+    },
+    {
+      "id": "t_delta_method",
+      "kind": "technique",
+      "name": "Delta method (Duke-Friedlander-Iwaniec)",
+      "function_signature": "(binary additive equation n = m) → (smooth delta detection via Kloosterman sums)",
+      "description": "Replaces the circle method's major/minor arc dissection with a smooth delta symbol built from Kloosterman sums, effective for binary problems.",
+      "aliases": [
+        "DFI delta method"
+      ]
+    },
+    {
+      "id": "s_huxley_zero_density_estimate",
+      "kind": "theorem",
+      "name": "Huxley's zero density estimate",
+      "type_signature": "",
+      "description": "N(σ,T) ≪ T^{12(1−σ)/5+ε} for σ ≥ 1/2, improving Ingham's estimate and implying primes in short intervals [x, x + x^{7/12+ε}].",
+      "aliases": [
+        "Huxley density estimate"
+      ]
+    },
+    {
+      "id": "s_jutila_zero_density_estimate",
+      "kind": "theorem",
+      "name": "Jutila's zero density estimate",
+      "type_signature": "",
+      "description": "Improved zero density bounds for Dirichlet L-functions uniform in the conductor q, with applications to primes in arithmetic progressions.",
+      "aliases": [
+        "Jutila density estimate"
+      ]
+    },
+    {
+      "id": "s_log_free_zero_density_estimate",
+      "kind": "theorem",
+      "name": "Log-free zero density estimate",
+      "type_signature": "",
+      "description": "∑_{χ mod q} N(σ,T,χ) ≪ (qT)^{A(1−σ)} without logarithmic factors, critical for the Bombieri-Vinogradov theorem.",
+      "aliases": [
+        "log-free density estimate"
+      ]
+    },
+    {
+      "id": "t_zero_detecting_polynomial",
+      "kind": "technique",
+      "name": "Zero-detecting polynomial",
+      "function_signature": "(zeros of L(s,χ)) → (mean value estimate for Dirichlet polynomial M(s)·L(s,χ))",
+      "description": "A Dirichlet polynomial M(s) chosen so M(s)L(s,χ) ≈ 1 near zeros, converting zero-counting into mean value estimates.",
+      "aliases": [
+        "zero detector"
+      ]
+    },
+    {
+      "id": "t_turan_power_sum_method",
+      "kind": "technique",
+      "name": "Turán's power sum method",
+      "function_signature": "(power sums of reciprocal zeros) → (lower bound detecting zeros)",
+      "description": "Bounds max_{1≤ν≤N} |∑ b_j z_j^ν| from below for |z_j| ≥ 1, applied to detect zeros of zeta functions via power sum analysis.",
+      "aliases": [
+        "power sum method"
+      ]
+    },
+    {
+      "id": "t_halasz_montgomery_method",
+      "kind": "technique",
+      "name": "Halász-Montgomery method",
+      "function_signature": "(Dirichlet polynomials near zeros) → (zero density estimates)",
+      "description": "Combines Halász's theorem on mean values with Montgomery's zero-detection, exploiting duality between zeros and prime distribution.",
+      "aliases": [
+        "Halász-Montgomery zero density method"
+      ]
+    },
+    {
+      "id": "s_gue_hypothesis",
+      "kind": "axiom",
+      "name": "GUE hypothesis for ζ(s) zeros",
+      "type_signature": "",
+      "description": "The conjecture that all local statistics of normalized zeros of ζ(s) match those of eigenvalues of large random matrices from the Gaussian Unitary Ensemble.",
+      "aliases": [
+        "random matrix theory connection",
+        "Katz-Sarnak philosophy"
+      ]
+    },
+    {
+      "id": "t_mollifier_method",
+      "kind": "technique",
+      "name": "Mollifier method",
+      "function_signature": "(ζ(s) on critical line) → (lower bound for proportion of zeros at Re(s)=1/2)",
+      "description": "Multiplies ζ(s) by M(s) ≈ 1/ζ(s) to smooth zeros, then analyzes moments of ζ·M on Re(s)=1/2 to bound zeros on the critical line.",
+      "aliases": [
+        "mollification technique"
+      ]
+    },
+    {
+      "id": "t_levinson_method",
+      "kind": "technique",
+      "name": "Levinson's method",
+      "function_signature": "(mollifier involving ζ'(s)) → (≥1/3 of zeros on critical line)",
+      "description": "A refinement of the mollifier method using ζ'/ζ to prove that at least 1/3 of nontrivial zeros of ζ(s) lie on the critical line.",
+      "aliases": [
+        "Levinson's theorem on zeros"
+      ]
+    },
+    {
+      "id": "s_deuring_heilbronn_repulsion",
+      "kind": "theorem",
+      "name": "Deuring-Heilbronn repulsion phenomenon",
+      "type_signature": "",
+      "description": "A real zero β₁ of L(s,χ₁) near 1 forces all other L-functions to have enlarged zero-free regions near 1, with explicit repulsion depending on 1 − β₁.",
+      "aliases": [
+        "Deuring-Heilbronn phenomenon",
+        "zero repulsion"
+      ]
+    },
+    {
+      "id": "s_linnik_constant",
+      "kind": "axiom",
+      "name": "Linnik's constant",
+      "type_signature": "",
+      "description": "The infimum L such that the least prime p ≡ a mod q satisfies p ≪ q^L; currently known L ≤ 5 (Xylouris, 2011), and L = 2+ε under GRH.",
+      "aliases": [
+        "Linnik constant L"
+      ]
+    },
+    {
+      "id": "s_fouvry_theorem",
+      "kind": "theorem",
+      "name": "Fouvry's theorem",
+      "type_signature": "",
+      "description": "A Bombieri-Vinogradov type result with level of distribution beyond x^{1/2}: for a positive proportion of moduli q ≤ x^{4/7−ε}, the PNT error satisfies strong average bounds.",
+      "aliases": [
+        "Fouvry-Iwaniec level of distribution"
+      ]
+    },
+    {
+      "id": "s_duke_equidistribution",
+      "kind": "theorem",
+      "name": "Duke's theorem (equidistribution of CM points)",
+      "type_signature": "",
+      "description": "CM points of discriminant −D and closed geodesics of discriminant D become equidistributed on SL₂(ℤ)\\H as D → ∞, proved via subconvexity for half-integral weight L-functions.",
+      "aliases": [
+        "Duke's equidistribution theorem"
+      ]
+    },
+    {
+      "id": "s_subconvexity_implies_equidistribution",
+      "kind": "theorem",
+      "name": "Subconvexity implies equidistribution",
+      "type_signature": "",
+      "description": "Subconvexity L(f⊗χ_D, 1/2) ≪ D^{1/4−δ} implies equidistribution of associated arithmetic objects via Weyl's criterion applied to spectral test functions.",
+      "aliases": [
+        "subconvexity-equidistribution paradigm"
+      ]
+    },
+    {
+      "id": "s_erdos_turan_inequality",
+      "kind": "theorem",
+      "name": "Erdős-Turán inequality",
+      "type_signature": "",
+      "description": "D_N ≤ C(1/H + ∑_{h=1}^H (1/h)|∑_{n≤N} e(hω_n)|/N) for any H ≥ 1, bounding discrepancy by exponential sums.",
+      "aliases": [
+        "Erdős-Turán discrepancy inequality"
+      ]
+    },
+    {
+      "id": "s_discrepancy_of_sequence",
+      "kind": "axiom",
+      "name": "Discrepancy of a sequence",
+      "type_signature": "",
+      "description": "D_N = sup_{[a,b)} |#{n ≤ N : ω_n ∈ [a,b)}/N − (b−a)|, the quantitative deviation from uniform distribution.",
+      "aliases": [
+        "discrepancy",
+        "star discrepancy"
+      ]
+    },
+    {
+      "id": "s_friedlander_iwaniec_theorem",
+      "kind": "theorem",
+      "name": "Friedlander-Iwaniec theorem",
+      "type_signature": "",
+      "description": "There are infinitely many primes of the form a² + b⁴, proved using the half-dimensional sieve, bilinear forms, and automorphic techniques.",
+      "aliases": [
+        "primes of the form a²+b⁴"
+      ]
+    },
+    {
+      "id": "t_half_dimensional_sieve",
+      "kind": "technique",
+      "name": "Iwaniec's half-dimensional sieve",
+      "function_signature": "(thin sequence with κ=1/2 sieve dimension) → (prime detection via bilinear structure)",
+      "description": "A sieve achieving dimension κ = 1/2 by exploiting bilinear structure in error terms, detecting primes where the linear sieve has parity obstruction.",
+      "aliases": [
+        "half-dimensional sieve"
+      ]
+    },
+    {
+      "id": "s_shifted_convolution_sums",
+      "kind": "axiom",
+      "name": "Shifted convolution sums",
+      "type_signature": "",
+      "description": "Sums ∑_n a_f(n)a_g(n+h) for automorphic coefficients, estimated via spectral methods or the delta method with applications to subconvexity.",
+      "aliases": [
+        "shifted convolution problem"
+      ]
+    },
+    {
+      "id": "s_additive_divisor_problem",
+      "kind": "axiom",
+      "name": "Additive divisor problem",
+      "type_signature": "",
+      "description": "The estimation of ∑_{n≤x} d(n)d(n+h), a prototype shifted convolution sum controlled by spectral theory of automorphic forms.",
+      "aliases": [
+        "binary additive divisor problem"
+      ]
+    },
+    {
+      "id": "s_hecke_converse_theorem",
+      "kind": "theorem",
+      "name": "Hecke's converse theorem",
+      "type_signature": "",
+      "description": "A Dirichlet series with Euler product and the standard functional equation Λ(s) = εΛ(k−s) necessarily arises from a modular form of weight k for SL₂(ℤ).",
+      "aliases": [
+        "Hecke's inverse Mellin theorem"
+      ]
+    },
+    {
+      "id": "s_weil_converse_theorem",
+      "kind": "theorem",
+      "name": "Weil's converse theorem",
+      "type_signature": "",
+      "description": "If L(s,χ) = ∑ a_n χ(n)n^{-s} satisfies functional equations for sufficiently many twists χ, then ∑ a_n q^n is a modular form of the predicted level and character.",
+      "aliases": [
+        "Weil's converse theorem for GL(2)"
+      ]
+    },
+    {
+      "id": "s_holomorphic_modular_form_formal",
+      "kind": "axiom",
+      "name": "Holomorphic modular form (weight k, level N)",
+      "type_signature": "",
+      "description": "A holomorphic f: H → ℂ with f|_k γ = χ(d)f for all γ ∈ Γ₀(N) and holomorphic at all cusps; M_k(Γ₀(N),χ) is finite-dimensional.",
+      "aliases": [
+        "classical modular form"
+      ]
+    },
+    {
+      "id": "s_eisenstein_series_nebentypus",
+      "kind": "axiom",
+      "name": "Eisenstein series with Nebentypus",
+      "type_signature": "",
+      "description": "Eisenstein series E_k(z,χ,ψ) = ∑ χ(c)ψ(d)(cz+d)^{-k} for characters χ,ψ with χψ(-1) = (-1)^k, spanning the Eisenstein subspace of M_k(Γ₁(N)).",
+      "aliases": [
+        "Eisenstein series with character"
+      ]
+    },
+    {
+      "id": "s_ramanujan_conjecture_gl2",
+      "kind": "axiom",
+      "name": "Ramanujan conjecture for GL(2)",
+      "type_signature": "",
+      "description": "The conjecture that for a cuspidal π of GL(2)/ℚ, all unramified local components are tempered; equivalently |α_p| = |β_p| = 1 at Satake parameters.",
+      "aliases": [
+        "Ramanujan-Petersson conjecture"
+      ]
     }
   ],
   "edges": [
@@ -183407,6 +184962,710 @@
         "role": "baseline prime density"
       },
       "used_in_theorem": "s_primes_in_short_intervals"
+    },
+    {
+      "id": "e_12549",
+      "from": "s_perron_formula",
+      "to": "t_selberg_delange_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12550",
+      "from": "s_riemann_zeta_function",
+      "to": "t_selberg_delange_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12551",
+      "from": "t_selberg_delange_method",
+      "to": "s_wirsing_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12552",
+      "from": "s_von_mangoldt_function",
+      "to": "t_heath_brown_identity",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12553",
+      "from": "s_mobius_function",
+      "to": "t_heath_brown_identity",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12554",
+      "from": "t_heath_brown_identity",
+      "to": "s_type_i_sum",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12555",
+      "from": "t_heath_brown_identity",
+      "to": "s_type_ii_sum",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12556",
+      "from": "s_von_mangoldt_function",
+      "to": "t_linnik_identity",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12557",
+      "from": "t_linnik_identity",
+      "to": "s_type_i_sum",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12558",
+      "from": "t_linnik_identity",
+      "to": "s_type_ii_sum",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12559",
+      "from": "t_vaughan_identity",
+      "to": "s_type_i_sum",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12560",
+      "from": "t_vaughan_identity",
+      "to": "s_type_ii_sum",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12561",
+      "from": "s_sifting_function",
+      "to": "t_rosser_iwaniec_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12562",
+      "from": "s_sieve_dimension",
+      "to": "t_rosser_iwaniec_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12563",
+      "from": "s_buchstab_identity",
+      "to": "t_rosser_iwaniec_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12564",
+      "from": "t_rosser_iwaniec_sieve",
+      "to": "s_linear_sieve",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12565",
+      "from": "t_rosser_iwaniec_sieve",
+      "to": "s_sieve_limit_functions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12566",
+      "from": "s_sifting_function",
+      "to": "t_semilinear_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12567",
+      "from": "s_sieve_dimension",
+      "to": "t_semilinear_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12568",
+      "from": "t_semilinear_sieve",
+      "to": "s_friedlander_iwaniec_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12569",
+      "from": "s_level_of_distribution",
+      "to": "t_bombieri_asymptotic_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12570",
+      "from": "s_bombieri_vinogradov",
+      "to": "t_bombieri_asymptotic_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12571",
+      "from": "t_bombieri_asymptotic_sieve",
+      "to": "s_chen_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12572",
+      "from": "s_type_i_sum",
+      "to": "t_asymptotic_sieve_for_primes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12573",
+      "from": "s_type_ii_sum",
+      "to": "t_asymptotic_sieve_for_primes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12574",
+      "from": "s_level_of_distribution",
+      "to": "t_asymptotic_sieve_for_primes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12575",
+      "from": "s_parity_problem_sieve",
+      "to": "t_asymptotic_sieve_for_primes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12576",
+      "from": "t_asymptotic_sieve_for_primes",
+      "to": "s_friedlander_iwaniec_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12577",
+      "from": "s_exponential_sum",
+      "to": "t_van_der_corput_a_process",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12578",
+      "from": "t_van_der_corput_a_process",
+      "to": "s_exponent_pair",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12579",
+      "from": "s_exponential_sum",
+      "to": "t_van_der_corput_b_process",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12580",
+      "from": "t_van_der_corput_b_process",
+      "to": "s_exponent_pair",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12581",
+      "from": "s_exponent_pair",
+      "to": "t_method_of_exponent_pairs",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12582",
+      "from": "t_method_of_exponent_pairs",
+      "to": "s_exponent_pair",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12583",
+      "from": "s_vinogradov_mean_value_theorem",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12584",
+      "from": "t_vinogradov_method_exponential_sums",
+      "to": "s_vinogradov_korobov_zero_free_region",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12585",
+      "from": "s_riemann_hypothesis_for_curves",
+      "to": "t_stepanov_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12586",
+      "from": "t_stepanov_method",
+      "to": "s_bombieri_proof_rh_curves",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12587",
+      "from": "s_large_sieve_inequality",
+      "to": "t_square_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12588",
+      "from": "t_square_sieve",
+      "to": "s_friedlander_iwaniec_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12589",
+      "from": "s_large_sieve_inequality",
+      "to": "t_bombieri_iwaniec_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12590",
+      "from": "s_exponent_pair",
+      "to": "t_bombieri_iwaniec_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12591",
+      "from": "t_bombieri_iwaniec_method",
+      "to": "s_exponent_pair",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12592",
+      "from": "s_kloosterman_sum",
+      "to": "t_deshouillers_iwaniec_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12593",
+      "from": "s_kuznetsov_trace_formula",
+      "to": "t_deshouillers_iwaniec_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12594",
+      "from": "t_deshouillers_iwaniec_method",
+      "to": "s_fouvry_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12595",
+      "from": "s_bombieri_vinogradov",
+      "to": "t_linnik_dispersion_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12596",
+      "from": "t_linnik_dispersion_method",
+      "to": "s_fouvry_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12597",
+      "from": "s_spectral_large_sieve",
+      "to": "t_amplification_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12598",
+      "from": "s_l_function_of_modular_form",
+      "to": "t_amplification_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12599",
+      "from": "t_amplification_method",
+      "to": "s_subconvexity_gl2",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12600",
+      "from": "s_kuznetsov_trace_formula",
+      "to": "t_spectral_mean_value_estimates",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12601",
+      "from": "s_spectral_decomposition_l2_gamma_h",
+      "to": "t_spectral_mean_value_estimates",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12602",
+      "from": "t_spectral_mean_value_estimates",
+      "to": "s_nonvanishing_l_functions_at_center",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12603",
+      "from": "t_spectral_mean_value_estimates",
+      "to": "s_fourth_moment_zeta",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12604",
+      "from": "s_real_analytic_eisenstein_series",
+      "to": "t_rankin_selberg_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12605",
+      "from": "s_cusp_form",
+      "to": "t_rankin_selberg_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12606",
+      "from": "s_petersson_inner_product",
+      "to": "t_rankin_selberg_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12607",
+      "from": "t_rankin_selberg_method",
+      "to": "s_rankin_selberg_l_function",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12608",
+      "from": "s_exponential_sum",
+      "to": "t_farey_dissection",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12609",
+      "from": "t_farey_dissection",
+      "to": "s_singular_integral_circle_method",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12610",
+      "from": "s_kloosterman_sum",
+      "to": "t_kloosterman_refinement",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12611",
+      "from": "t_kloosterman_refinement",
+      "to": "s_hardy_littlewood_asymptotic_waring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12612",
+      "from": "s_kloosterman_sum",
+      "to": "t_delta_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12613",
+      "from": "s_voronoi_summation_formula",
+      "to": "t_delta_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12614",
+      "from": "t_delta_method",
+      "to": "s_shifted_convolution_sums",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12615",
+      "from": "s_mean_value_theorem_dirichlet_polynomials",
+      "to": "t_zero_detecting_polynomial",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12616",
+      "from": "t_zero_detecting_polynomial",
+      "to": "s_huxley_zero_density_estimate",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12617",
+      "from": "t_zero_detecting_polynomial",
+      "to": "s_log_free_zero_density_estimate",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12618",
+      "from": "s_riemann_zeta_function",
+      "to": "t_turan_power_sum_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12619",
+      "from": "t_turan_power_sum_method",
+      "to": "s_deuring_heilbronn_repulsion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12620",
+      "from": "s_halasz_montgomery_inequality",
+      "to": "t_halasz_montgomery_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12621",
+      "from": "s_large_sieve_inequality",
+      "to": "t_halasz_montgomery_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12622",
+      "from": "t_halasz_montgomery_method",
+      "to": "s_huxley_zero_density_estimate",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12623",
+      "from": "s_approximate_functional_equation",
+      "to": "t_mollifier_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12624",
+      "from": "s_mean_value_theorem_dirichlet_polynomials",
+      "to": "t_mollifier_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12625",
+      "from": "t_mollifier_method",
+      "to": "s_nonvanishing_l_functions_at_center",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12626",
+      "from": "s_approximate_functional_equation",
+      "to": "t_levinson_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12627",
+      "from": "s_riemann_zeta_function",
+      "to": "t_levinson_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12628",
+      "from": "t_levinson_method",
+      "to": "s_proportion_zeros_critical_line",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12629",
+      "from": "s_sifting_function",
+      "to": "t_half_dimensional_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12630",
+      "from": "s_sieve_dimension",
+      "to": "t_half_dimensional_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12631",
+      "from": "t_half_dimensional_sieve",
+      "to": "s_friedlander_iwaniec_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12632",
+      "from": "s_buchstab_identity",
+      "to": "t_switching_principle_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12633",
+      "from": "t_switching_principle_sieve",
+      "to": "s_chen_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12634",
+      "from": "t_circle_method",
+      "to": "s_hardy_littlewood_asymptotic_waring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12635",
+      "from": "t_circle_method",
+      "to": "s_singular_integral_circle_method",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12636",
+      "from": "t_selberg_sieve",
+      "to": "s_sieve_limit_functions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
     }
   ],
   "subgraphs": [
