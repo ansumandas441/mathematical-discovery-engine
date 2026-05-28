@@ -9,6 +9,12 @@
 [![GitHub stars](https://img.shields.io/github/stars/ansumandas441/mathematical-discovery-engine?style=social)](https://github.com/ansumandas441/mathematical-discovery-engine)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ansumandas441/mathematical-discovery-engine/pulls)
 
+<p align="center">
+  <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph — 8,542 mathematical nodes connected by 12,381 edges" width="720">
+  <br>
+  <sub>8,542 nodes · 12,381 edges · 240 proof techniques · 2,213 theorems — explore the full graph in 3D</sub>
+</p>
+
 ## What This Repository Does
 
 This repository is an attempt to **encode the structure of mathematical knowledge and use it to discover new theorems automatically**.
@@ -346,29 +352,52 @@ Stats: {"iterations": 15, "worker_calls": 47, "pruned": 12, "goal_found": true}
 
 ---
 
-## Interactive Graph Viewer
+## Interactive 3D Graph Viewer
 
-`graph_viewer.html` renders the full 8,542-node knowledge graph in a browser using vis-network.
+The entire knowledge graph is explorable in an interactive 3D visualization — orbit, zoom, click, and trace the connections between axioms, techniques, and theorems.
 
-```bash
-./serve_viewer.sh       # starts python3 -m http.server 8765 and opens the viewer
-```
+<p align="center">
+  <a href="assets/knowledge_graph_3d.mp4">
+    <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph Viewer" width="680">
+  </a>
+  <br>
+  <sub>Click to view full video · Nodes glow by type · Particles flow along proof paths</sub>
+</p>
 
-Or manually:
+**TL;DR:** Every node is a mathematical object (axiom, state, theorem, or technique). Every edge is a logical dependency. Hover a node to see its connections light up. Double-click to explore its neighborhood. Particles flowing along edges show the direction of mathematical reasoning — from axioms through techniques to theorems.
+
+### Quick start
 
 ```bash
 python3 -m http.server 8765
-open http://localhost:8765/graph_viewer.html
+open http://localhost:8765/graph_viewer_3d.html    # 3D viewer (recommended)
+open http://localhost:8765/graph_viewer.html        # 2D viewer (lighter)
 ```
 
-Opening the HTML file directly (`file://`) will not work — `fetch()` of `knowledge_graph.json` is blocked by the browser's same-origin policy.
+Opening HTML files directly (`file://`) won't work — `fetch()` of `knowledge_graph.json` is blocked by the browser's same-origin policy. Use a local server.
 
-Features:
-- Filter by kind (axiom / state / theorem / technique) and cluster
-- Search by name or ID
-- Click a node to see details and neighbors
-- Double-click a compound technique to open its subgraph
-- Subgraph browser mode for the 12 composite technique elaborations
+### What you can do
+
+| Action | How |
+|---|---|
+| **Orbit & zoom** | Drag to rotate, scroll to zoom, right-drag to pan |
+| **Inspect a node** | Click — details panel slides in with description, connections, cluster |
+| **Explore neighborhood** | Double-click any node — see it + all its connections in a focused view |
+| **Filter by kind** | Toggle axiom / state / theorem / technique checkboxes |
+| **Filter by cluster** | Select one of 12 technique clusters (e.g. "Symmetry & invariants") |
+| **Search** | Type any name or ID, press Enter |
+| **Neighborhood mode** | Switch mode dropdown — search a node to center the graph on it |
+
+### Visual encoding
+
+| Element | Meaning |
+|---|---|
+| **Gray dots** | Axioms — foundational definitions and objects |
+| **Blue dots** | States — intermediate results |
+| **Green stars** | Theorems — proved results |
+| **Colored diamonds** | Techniques — sized by number of connections, colored by cluster |
+| **Flowing particles** | Direction of logical dependency (axiom → technique → theorem) |
+| **Bright edges on hover** | Direct connections to the hovered node |
 
 ---
 
