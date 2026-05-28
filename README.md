@@ -1,5 +1,14 @@
 # Mathematical Discovery Engine
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Knowledge Graph Nodes](https://img.shields.io/badge/Nodes-8%2C542-brightgreen.svg)](#knowledge-graph)
+[![Knowledge Graph Edges](https://img.shields.io/badge/Edges-12%2C381-brightgreen.svg)](#knowledge-graph)
+[![Proof Techniques](https://img.shields.io/badge/Techniques-240-orange.svg)](#knowledge-graph)
+[![Theorems](https://img.shields.io/badge/Theorems-2%2C213-purple.svg)](#knowledge-graph)
+[![GitHub stars](https://img.shields.io/github/stars/ansumandas441/mathematical-discovery-engine?style=social)](https://github.com/ansumandas441/mathematical-discovery-engine)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ansumandas441/mathematical-discovery-engine/pulls)
+
 ## What This Repository Does
 
 This repository is an attempt to **encode the structure of mathematical knowledge and use it to discover new theorems automatically**.
@@ -10,11 +19,11 @@ This project does three things:
 
 1. **Collects the knowledge.** A detailed report covering ~100 of the most consequential theorems in mathematics — from Pythagoras through Perelman — with the discovery context, motivation, thought process, and proof ideas behind each. The report spans 13 chapters organized chronologically, drawing from primary sources (Euler's letters, Gauss's diaries, Ramanujan's notebooks, Wiles's interviews) where they survive.
 
-2. **Builds a knowledge graph.** The report is distilled into a structured directed graph: 6,225 nodes (1,571 axioms, 2,925 intermediate states, 1,667 theorems, 62 techniques) connected by 10,556 edges. Each technique has a formal signature — inputs, process, outputs, preconditions — organized into 12 clusters (algebraic manipulation, symmetry & invariants, cross-field transfer, topology & obstruction, etc.). The graph captures not just *what* is true, but *how* each truth was reached from earlier ones.
+2. **Builds a knowledge graph.** The report is distilled into a structured directed graph: 8,542 nodes (2,242 axioms, 3,847 intermediate states, 2,213 theorems, 240 techniques) connected by 12,381 edges. Each technique has a formal signature — inputs, process, outputs, preconditions — organized into 12 clusters (algebraic manipulation, symmetry & invariants, cross-field transfer, topology & obstruction, etc.). The graph captures not just *what* is true, but *how* each truth was reached from earlier ones.
 
 3. **Proposes and implements a discovery engine.** Mathematical proof is reframed as **path-finding through this finite graph**. An orchestrator LLM selects which techniques to try; worker LLMs attempt each technique application in parallel; a pruner eliminates impossible branches using known impossibility theorems (Abel-Ruffini, Gödel, Turing). The search tree grows until a path from the starting axioms to the goal theorem is found — or the frontier is exhausted.
 
-The key insight: instead of searching over all possible mathematical statements (infinite), the engine searches over **compositions of 62 known techniques applied to 6,225 known states** (finite, tractable). Each solved problem adds new edges back to the graph, creating a self-improving system.
+The key insight: instead of searching over all possible mathematical statements (infinite), the engine searches over **compositions of 240 known techniques applied to 8,542 known states** (finite, tractable). Each solved problem adds new edges back to the graph, creating a self-improving system.
 
 ---
 
@@ -124,11 +133,11 @@ The graph ships as `knowledge_graph.json` (5 MB) in the repo root. No separate d
 
 | Metric | Count |
 |---|---|
-| Axiom nodes | 1,571 |
-| State nodes | 2,925 |
-| Theorem nodes | 1,667 |
-| Technique nodes | 62 |
-| Total edges | 10,556 |
+| Axiom nodes | 2,242 |
+| State nodes | 3,847 |
+| Theorem nodes | 2,213 |
+| Technique nodes | 240 |
+| Total edges | 12,381 |
 
 ---
 
@@ -339,7 +348,7 @@ Stats: {"iterations": 15, "worker_calls": 47, "pruned": 12, "goal_found": true}
 
 ## Interactive Graph Viewer
 
-`graph_viewer.html` renders the full 6,225-node knowledge graph in a browser using vis-network.
+`graph_viewer.html` renders the full 8,542-node knowledge graph in a browser using vis-network.
 
 ```bash
 ./serve_viewer.sh       # starts python3 -m http.server 8765 and opens the viewer
@@ -400,8 +409,8 @@ If you use this work in your research, please cite:
   title        = {Mathematical Discovery Engine: Automated Theorem Discovery via Knowledge Graphs},
   year         = {2026},
   url          = {https://github.com/ansumandas441/mathematical-discovery-engine},
-  note         = {ORCID: 0000-0001-9695-9408. Knowledge graph of 6,225
-                  mathematical nodes and 10,556 edges with an
+  note         = {ORCID: 0000-0001-9695-9408. Knowledge graph of 8,542
+                  mathematical nodes and 12,381 edges with an
                   LLM-orchestrated proof search engine}
 }
 ```
