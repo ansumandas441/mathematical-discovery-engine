@@ -1,0 +1,653 @@
+[
+  {
+    "id": "a_lie_algebra_homomorphism",
+    "kind": "axiom",
+    "name": "Lie algebra homomorphism",
+    "description": "A linear map \u03c6: g \u2192 h between Lie algebras satisfying \u03c6([x,y]) = [\u03c6(x),\u03c6(y)] for all x,y in g.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_lie_subalgebra",
+    "kind": "axiom",
+    "name": "Lie subalgebra",
+    "description": "A vector subspace h of a Lie algebra g that is closed under the Lie bracket, i.e., [h,h] \u2286 h.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_ideal_of_a_lie_algebra",
+    "kind": "axiom",
+    "name": "Ideal of a Lie algebra",
+    "description": "A Lie subalgebra a of g such that [g,a] \u2286 a, making it the kernel of some Lie algebra homomorphism.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_quotient_lie_algebra",
+    "kind": "state",
+    "name": "Quotient Lie algebra",
+    "description": "For an ideal a of g, the vector space g/a equipped with the bracket [x+a, y+a] = [x,y]+a, yielding a well-defined Lie algebra structure.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_center_of_a_lie_algebra",
+    "kind": "state",
+    "name": "Center of a Lie algebra",
+    "description": "The ideal z(g) = {x \u2208 g : [x,y] = 0 for all y \u2208 g}, consisting of elements that bracket trivially with all of g.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_derived_subalgebra",
+    "kind": "state",
+    "name": "Derived subalgebra (commutator subalgebra)",
+    "description": "The ideal [g,g] = D(g) spanned by all brackets [x,y], measuring the failure of g to be abelian.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_derived_series",
+    "kind": "state",
+    "name": "Derived series",
+    "description": "The descending sequence D\u2070(g) = g, D\u207f\u207a\u00b9(g) = [D\u207f(g), D\u207f(g)] obtained by iterating the derived subalgebra construction.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_abelian_lie_algebra",
+    "kind": "axiom",
+    "name": "Abelian Lie algebra",
+    "description": "A Lie algebra g in which [x,y] = 0 for all x,y, equivalently g = z(g), so the bracket is identically zero.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_solvable_lie_algebra",
+    "kind": "axiom",
+    "name": "Solvable Lie algebra",
+    "description": "A Lie algebra g whose derived series terminates at zero, i.e., D\u207f(g) = 0 for some n, generalizing commutativity in a hierarchical sense.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_nilpotent_lie_algebra",
+    "kind": "axiom",
+    "name": "Nilpotent Lie algebra",
+    "description": "A Lie algebra g whose lower central series terminates at zero, i.e., C\u207f(g) = 0 for some n, meaning iterated bracketing with g eventually kills everything.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_radical_of_a_lie_algebra",
+    "kind": "state",
+    "name": "Radical of a Lie algebra",
+    "description": "The unique maximal solvable ideal rad(g) of a finite-dimensional Lie algebra g, which contains every solvable ideal.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_simple_lie_algebra",
+    "kind": "axiom",
+    "name": "Simple Lie algebra",
+    "description": "A non-abelian Lie algebra whose only ideals are 0 and itself, serving as the irreducible building blocks of semisimple Lie algebras.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_lie_s_theorem",
+    "kind": "theorem",
+    "name": "Lie's theorem",
+    "description": "If g is a solvable Lie algebra over an algebraically closed field of characteristic zero and V is a finite-dimensional g-module, then there exists a common eigenvector for all elements of g acting on V.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_cartan_s_criterion_for_solvability",
+    "kind": "theorem",
+    "name": "Cartan's criterion for solvability",
+    "description": "A finite-dimensional Lie algebra g over a field of characteristic zero is solvable if and only if B(x,y) = 0 for all x \u2208 g and y \u2208 [g,g], where B is the Killing form.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_cartan_s_criterion_for_semisimplicity",
+    "kind": "theorem",
+    "name": "Cartan's criterion for semisimplicity",
+    "description": "A finite-dimensional Lie algebra g over a field of characteristic zero is semisimple if and only if its Killing form is non-degenerate.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_levi_decomposition",
+    "kind": "theorem",
+    "name": "Levi decomposition",
+    "description": "Every finite-dimensional Lie algebra g over a field of characteristic zero is a semidirect product g = rad(g) \u22ca s where s is a semisimple subalgebra (called a Levi factor), and any two Levi factors are conjugate.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_poincar_birkhoff_witt_theorem",
+    "kind": "theorem",
+    "name": "Poincar\u00e9-Birkhoff-Witt theorem",
+    "description": "If {x\u2081,...,x\u2099} is an ordered basis of g, then the monomials x\u2081^{a\u2081}\u00b7\u00b7\u00b7x\u2099^{a\u2099} form a basis of U(g), proving the canonical map g \u2192 U(g) is injective.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_normalizer_of_a_subalgebra",
+    "kind": "state",
+    "name": "Normalizer of a subalgebra",
+    "description": "For a subalgebra h of g, the subalgebra N_g(h) = {x \u2208 g : [x,h] \u2286 h}, the largest subalgebra of g in which h is an ideal.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_centralizer_in_a_lie_algebra",
+    "kind": "state",
+    "name": "Centralizer in a Lie algebra",
+    "description": "For a subset S of g, the subalgebra C_g(S) = {x \u2208 g : [x,s] = 0 for all s \u2208 S}, consisting of elements commuting with all of S.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_semidirect_product_of_lie_algebras",
+    "kind": "state",
+    "name": "Semidirect product of Lie algebras",
+    "description": "Given Lie algebras h and a with a representation \u03c1: h \u2192 der(a), the vector space h \u2295 a with bracket [(h\u2081,a\u2081),(h\u2082,a\u2082)] = ([h\u2081,h\u2082], [a\u2081,a\u2082]+\u03c1(h\u2081)a\u2082\u2212\u03c1(h\u2082)a\u2081).",
+    "type_signature": ""
+  },
+  {
+    "id": "a_derivation_of_a_lie_algebra",
+    "kind": "axiom",
+    "name": "Derivation of a Lie algebra",
+    "description": "A linear map D: g \u2192 g satisfying D([x,y]) = [D(x),y] + [x,D(y)], with inner derivations being those of the form ad(x).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_whitehead_first_lemma",
+    "kind": "theorem",
+    "name": "Whitehead's lemma (first)",
+    "description": "For a semisimple Lie algebra g over a field of characteristic zero and a finite-dimensional g-module V, every derivation from g to V is inner, i.e., H\u00b9(g,V) = 0.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_whitehead_second_lemma",
+    "kind": "theorem",
+    "name": "Whitehead's lemma (second)",
+    "description": "For a semisimple Lie algebra g over characteristic zero and a finite-dimensional g-module V, every extension of g by V splits, i.e., H\u00b2(g,V) = 0.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_jordan_decomposition_in_a_lie_algebra",
+    "kind": "state",
+    "name": "Jordan decomposition in a Lie algebra",
+    "description": "In a semisimple Lie algebra g over a perfect field, each element x has a unique decomposition x = x\u209b + x\u2099 with x\u209b semisimple, x\u2099 nilpotent, and [x\u209b,x\u2099] = 0, compatible with any faithful representation.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_invariant_bilinear_form",
+    "kind": "axiom",
+    "name": "Invariant bilinear form",
+    "description": "A bilinear form B on g satisfying B([x,y],z) = B(x,[y,z]) for all x,y,z \u2208 g, with the Killing form being the canonical example.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_free_lie_algebra",
+    "kind": "axiom",
+    "name": "Free Lie algebra",
+    "description": "The Lie algebra L(X) freely generated by a set X, characterized by the universal property that any map X \u2192 g to a Lie algebra extends uniquely to a homomorphism L(X) \u2192 g.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_witt_formula",
+    "kind": "theorem",
+    "name": "Witt formula",
+    "description": "The dimension of the degree-n homogeneous component of the free Lie algebra on q generators is (1/n)\u2211_{d|n} \u03bc(d)q^{n/d}, where \u03bc is the M\u00f6bius function.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_baker_campbell_hausdorff_formula",
+    "kind": "theorem",
+    "name": "Baker-Campbell-Hausdorff formula",
+    "description": "For elements x,y in a complete filtered Lie algebra (or in a neighborhood of identity in a Lie group), log(e\u02e3e\u02b8) = x + y + \u00bd[x,y] + 1/12([x,[x,y]]+[y,[y,x]]) + \u00b7\u00b7\u00b7, expressing the group product in terms of iterated Lie brackets.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_lie_group_homomorphism",
+    "kind": "axiom",
+    "name": "Lie group homomorphism",
+    "description": "A smooth group homomorphism between Lie groups, whose differential at the identity is a Lie algebra homomorphism.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_lie_algebra_of_a_lie_group",
+    "kind": "state",
+    "name": "Lie algebra of a Lie group",
+    "description": "The tangent space at the identity g = T_eG equipped with the Lie bracket inherited from left-invariant vector fields, functorially associated to the Lie group G.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_lie_subgroup",
+    "kind": "state",
+    "name": "Lie subgroup",
+    "description": "A subgroup H of a Lie group G that is an immersed submanifold (or, in the closed case, an embedded submanifold) carrying an induced Lie group structure.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_closed_subgroup_theorem",
+    "kind": "theorem",
+    "name": "Closed subgroup theorem (Cartan's theorem)",
+    "description": "Every closed subgroup of a Lie group is an embedded Lie subgroup, i.e., it automatically inherits a smooth manifold structure making it a Lie group in the subspace topology.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_quotient_of_a_lie_group",
+    "kind": "state",
+    "name": "Quotient of a Lie group",
+    "description": "For a closed normal subgroup N of G, the quotient G/N carries a unique Lie group structure making the projection G \u2192 G/N a smooth surjective homomorphism with Lie algebra g/n.",
+    "type_signature": ""
+  },
+  {
+    "id": "t_lie_functor",
+    "kind": "technique",
+    "name": "Lie functor",
+    "description": "The functor Lie: LieGrp \u2192 LieAlg sending each Lie group to its Lie algebra and each homomorphism to its differential at the identity, providing the algebraic linearization of group theory.",
+    "function_signature": "(Input) \u2192 (Output)"
+  },
+  {
+    "id": "t_integration_of_lie_algebra_homomorphisms",
+    "kind": "technique",
+    "name": "Integration of Lie algebra homomorphisms",
+    "description": "The process of lifting a Lie algebra homomorphism g \u2192 h to a Lie group homomorphism G \u2192 H when G is simply connected, by using the exponential map and path-lifting.",
+    "function_signature": "(Input) \u2192 (Output)"
+  },
+  {
+    "id": "a_coxeter_group",
+    "kind": "axiom",
+    "name": "Coxeter group",
+    "description": "A group W with a presentation \u27e8s\u2081,...,s\u2099 | (s\u1d62s\u2c7c)^{m\u1d62\u2c7c} = 1\u27e9 where m\u1d62\u1d62 = 1 and m\u1d62\u2c7c = m\u2c7c\u1d62 \u2265 2 (or \u221e), abstracting the structure of reflection groups.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_coxeter_matrix",
+    "kind": "axiom",
+    "name": "Coxeter matrix",
+    "description": "A symmetric matrix M = (m\u1d62\u2c7c) with m\u1d62\u1d62 = 1 and m\u1d62\u2c7c \u2208 {2,3,...,\u221e} for i\u2260j, encoding the orders of products of pairs of generators in a Coxeter group.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_coxeter_graph",
+    "kind": "state",
+    "name": "Coxeter graph",
+    "description": "A labeled graph with vertices indexed by generators of a Coxeter group, edges connecting pairs with m\u1d62\u2c7c \u2265 3, and edge labels m\u1d62\u2c7c when m\u1d62\u2c7c \u2265 4, encoding the Coxeter matrix.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_exchange_property",
+    "kind": "theorem",
+    "name": "Exchange property",
+    "description": "In a Coxeter group, if \u2113(sw) < \u2113(w) for a simple reflection s, then there exists an index i such that sw = s\u2081\u00b7\u00b7\u00b7\u015d\u1d62\u00b7\u00b7\u00b7s\u2096 (omitting s\u1d62) for any reduced expression w = s\u2081\u00b7\u00b7\u00b7s\u2096.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_deletion_property",
+    "kind": "theorem",
+    "name": "Deletion property",
+    "description": "In a Coxeter group, any non-reduced expression s\u2081\u00b7\u00b7\u00b7s\u2096 can be shortened by deleting an even number of factors to obtain a reduced expression for the same element.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_tits_system",
+    "kind": "axiom",
+    "name": "Tits system (BN-pair)",
+    "description": "A group G with subgroups B and N such that B \u2229 N = T is normal in N, W = N/T is a Coxeter group with generators S, and the axioms BwB\u00b7BsB \u2286 BwsB \u222a BwB and sBs\u207b\u00b9 \u2284 B hold for all w \u2208 W, s \u2208 S.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_parabolic_subgroup_of_a_coxeter_group",
+    "kind": "state",
+    "name": "Parabolic subgroup of a Coxeter group",
+    "description": "For a subset J \u2286 S of simple reflections, the subgroup W_J generated by J, which is itself a Coxeter group with Coxeter matrix restricted to J.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_coxeter_complex",
+    "kind": "state",
+    "name": "Coxeter complex",
+    "description": "The simplicial complex associated to a Coxeter group W whose simplices are cosets of parabolic subgroups of W, serving as the building block (apartment) of a Tits building.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_matsumoto_s_theorem",
+    "kind": "theorem",
+    "name": "Matsumoto's theorem",
+    "description": "Any two reduced expressions for the same element of a Coxeter group are related by a sequence of braid relations s\u1d62s\u2c7cs\u1d62\u00b7\u00b7\u00b7 = s\u2c7cs\u1d62s\u2c7c\u00b7\u00b7\u00b7 (m\u1d62\u2c7c factors each side), without requiring insertion/deletion.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_strong_exchange_property",
+    "kind": "theorem",
+    "name": "Strong exchange property",
+    "description": "In a Coxeter group, if \u2113(tw) < \u2113(w) for a reflection t (not necessarily simple), then t can replace one of the factors in any reduced expression for w.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_classification_of_finite_coxeter_groups",
+    "kind": "theorem",
+    "name": "Classification of finite Coxeter groups",
+    "description": "The irreducible finite Coxeter groups are exactly the types A\u2099, B\u2099, D\u2099, E\u2086, E\u2087, E\u2088, F\u2084, G\u2082 (crystallographic, i.e., Weyl groups) together with H\u2083, H\u2084, and I\u2082(m) (non-crystallographic).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_coroot",
+    "kind": "state",
+    "name": "Coroot",
+    "description": "For a root \u03b1, the coroot \u03b1\u2228 = 2\u03b1/\u27e8\u03b1,\u03b1\u27e9, such that the reflection s_\u03b1(\u03b2) = \u03b2 \u2212 \u27e8\u03b2,\u03b1\u2228\u27e9\u03b1, and the coroots form the dual root system.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_cartan_matrix",
+    "kind": "state",
+    "name": "Cartan matrix",
+    "description": "The n\u00d7n integer matrix A = (a\u1d62\u2c7c) where a\u1d62\u2c7c = \u27e8\u03b1\u1d62,\u03b1\u2c7c\u2228\u27e9 for simple roots \u03b1\u1d62,\u03b1\u2c7c, satisfying a\u1d62\u1d62 = 2, a\u1d62\u2c7c \u2264 0 for i\u2260j, and a\u1d62\u2c7c = 0 iff a\u2c7c\u1d62 = 0, determining the root system up to isomorphism.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_classification_of_irreducible_root_systems",
+    "kind": "theorem",
+    "name": "Classification of irreducible root systems",
+    "description": "The connected Dynkin diagrams (equivalently irreducible root systems) are exactly A\u2099 (n\u22651), B\u2099 (n\u22652), C\u2099 (n\u22653), D\u2099 (n\u22654), E\u2086, E\u2087, E\u2088, F\u2084, and G\u2082.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_weyl_chamber",
+    "kind": "state",
+    "name": "Weyl chamber",
+    "description": "A connected component of E \\ \u222a_{\u03b1\u2208\u03a6} H_\u03b1 where H_\u03b1 = ker(\u03b1), forming a fundamental domain for the W-action; the dominant chamber is the one defined by \u27e8\u00b7,\u03b1\u1d62\u2228\u27e9 > 0 for all simple \u03b1\u1d62.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_root_lattice",
+    "kind": "state",
+    "name": "Root lattice",
+    "description": "The Z-span Q = Z\u03a6 of the root system in E, a sublattice of the weight lattice, with the quotient P/Q being a finite group isomorphic to the center of the simply connected group.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_fundamental_weights",
+    "kind": "state",
+    "name": "Fundamental weights",
+    "description": "The basis {\u03c9\u2081,...,\u03c9\u2099} of the weight lattice P dual to the simple coroots, defined by \u27e8\u03c9\u1d62,\u03b1\u2c7c\u2228\u27e9 = \u03b4\u1d62\u2c7c, indexing the vertices of the fundamental Weyl chamber.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_extended_dynkin_diagram",
+    "kind": "state",
+    "name": "Extended (affine) Dynkin diagram",
+    "description": "The Dynkin diagram augmented by an additional node corresponding to the negative of the highest root \u2212\u03b8, classifying affine root systems and appearing in the theory of loop algebras.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_affine_root_system",
+    "kind": "state",
+    "name": "Affine root system",
+    "description": "An infinite root system on an affine space obtained by adding integer translates \u03b1 + n\u03b4 of roots of a finite root system, whose Weyl group is the affine Weyl group acting by reflections in affine hyperplanes.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_affine_weyl_group",
+    "kind": "state",
+    "name": "Affine Weyl group",
+    "description": "The infinite Coxeter group generated by reflections in affine hyperplanes H_{\u03b1,n} = {x : \u27e8x,\u03b1\u27e9 = n}, isomorphic to the semidirect product W \u22c9 Q\u2228 of the Weyl group with the coroot lattice.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_alcove",
+    "kind": "state",
+    "name": "Alcove",
+    "description": "A connected component of the complement of all affine reflecting hyperplanes, forming a fundamental domain for the affine Weyl group; the fundamental alcove is a simplex.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_root_space_decomposition",
+    "kind": "state",
+    "name": "Root space decomposition",
+    "description": "For a semisimple Lie algebra g with Cartan subalgebra h, the decomposition g = h \u2295 (\u2295_{\u03b1\u2208\u03a6} g_\u03b1) where g_\u03b1 = {x \u2208 g : [h,x] = \u03b1(h)x for all h \u2208 h} and \u03a6 \u2282 h* is the root system.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_chevalley_basis",
+    "kind": "state",
+    "name": "Chevalley basis",
+    "description": "A basis {h\u1d62, e_\u03b1} of a semisimple Lie algebra with integer structure constants, consisting of coroots h\u1d62 = \u03b1\u1d62\u2228 in h and root vectors e_\u03b1 \u2208 g_\u03b1 satisfying [e_\u03b1, e_{-\u03b1}] = \u03b1\u2228 and specific sign conventions.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_conjugacy_of_cartan_subalgebras",
+    "kind": "theorem",
+    "name": "Conjugacy of Cartan subalgebras",
+    "description": "Any two Cartan subalgebras of a finite-dimensional Lie algebra over an algebraically closed field of characteristic zero are conjugate by an inner automorphism of g.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_sl2_triple",
+    "kind": "state",
+    "name": "sl\u2082-triple",
+    "description": "A triple (e,h,f) in a Lie algebra satisfying [h,e] = 2e, [h,f] = \u22122f, [e,f] = h, spanning a subalgebra isomorphic to sl(2), with one such triple for each root.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_jacobson_morozov_theorem",
+    "kind": "theorem",
+    "name": "Jacobson-Morozov theorem",
+    "description": "In a semisimple Lie algebra over a field of characteristic zero, every nilpotent element e can be embedded in an sl\u2082-triple (e,h,f), and the sl\u2082-triples for a given nilpotent orbit are conjugate.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_split_semisimple_lie_algebra",
+    "kind": "axiom",
+    "name": "Split semisimple Lie algebra",
+    "description": "A semisimple Lie algebra g over a field k possessing a splitting Cartan subalgebra h such that all roots are in k (not just in the algebraic closure), equivalently g is an inner form.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_parabolic_subalgebra",
+    "kind": "state",
+    "name": "Parabolic subalgebra",
+    "description": "A subalgebra p of g containing a Borel subalgebra, classified by subsets of simple roots and corresponding to parabolic subgroups in the group setting.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_kostant_multiplicity_formula",
+    "kind": "theorem",
+    "name": "Kostant multiplicity formula",
+    "description": "The multiplicity of weight \u03bc in L(\u03bb) is dim L(\u03bb)_\u03bc = \u2211_{w\u2208W} \u03b5(w) P(w(\u03bb+\u03c1) \u2212 (\u03bc+\u03c1)) where P is the Kostant partition function counting expressions as sums of positive roots.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_kostant_partition_function",
+    "kind": "state",
+    "name": "Kostant partition function",
+    "description": "The function P(\u03bd) counting the number of ways to write \u03bd as an unordered sum of positive roots (with repetition), appearing in weight multiplicity formulas.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_freudenthal_s_formula",
+    "kind": "theorem",
+    "name": "Freudenthal's formula",
+    "description": "A recursive formula computing the multiplicity of a weight \u03bc in L(\u03bb) using the inner product of weights and the multiplicities of higher weights, derived from the Casimir operator.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_existence_theorem_for_semisimple_lie_algebras",
+    "kind": "theorem",
+    "name": "Existence theorem for semisimple Lie algebras",
+    "description": "For every Cartan matrix (equivalently every Dynkin diagram), there exists a unique (up to isomorphism) semisimple Lie algebra over an algebraically closed field of characteristic zero having that Cartan matrix.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_serre_s_presentation",
+    "kind": "theorem",
+    "name": "Serre's presentation (Serre relations)",
+    "description": "A semisimple Lie algebra is the quotient of the free Lie algebra on generators {e\u1d62, f\u1d62, h\u1d62} by the relations [h\u1d62,h\u2c7c]=0, [h\u1d62,e\u2c7c]=a\u1d62\u2c7ce\u2c7c, [h\u1d62,f\u2c7c]=\u2212a\u1d62\u2c7cf\u2c7c, [e\u1d62,f\u2c7c]=\u03b4\u1d62\u2c7ch\u1d62, and (ad e\u1d62)^{1\u2212a\u1d62\u2c7c}(e\u2c7c)=0 (and similarly for f).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_maximal_torus",
+    "kind": "state",
+    "name": "Maximal torus",
+    "description": "A maximal connected abelian subgroup T of a compact Lie group G, isomorphic to (S\u00b9)\u02b3 where r = rank(G); every element of G is conjugate to an element of T.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_conjugacy_of_maximal_tori",
+    "kind": "theorem",
+    "name": "Conjugacy of maximal tori",
+    "description": "Any two maximal tori in a compact Lie group are conjugate by an inner automorphism, so the rank and the Weyl group N_G(T)/T are well-defined invariants.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_compact_real_form",
+    "kind": "state",
+    "name": "Compact real form",
+    "description": "A compact real Lie subalgebra g_u of a complex semisimple Lie algebra g_C such that g_C = g_u \u2297_R C, unique up to conjugacy; its Killing form is negative definite.",
+    "type_signature": ""
+  },
+  {
+    "id": "t_weyl_s_unitary_trick",
+    "kind": "technique",
+    "name": "Weyl's unitary trick",
+    "description": "The technique of proving results for a complex semisimple Lie algebra by passing to its compact real form, where integration over the compact group via Haar measure and averaging yields complete reducibility and other results.",
+    "function_signature": "(Input) \u2192 (Output)"
+  },
+  {
+    "id": "a_banach_algebra",
+    "kind": "axiom",
+    "name": "Banach algebra",
+    "description": "A complete normed algebra A over C (or R) satisfying \u2016xy\u2016 \u2264 \u2016x\u2016\u00b7\u2016y\u2016, providing the analytic framework for spectral theory and operator algebras.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_spectral_radius_formula",
+    "kind": "theorem",
+    "name": "Spectral radius formula (Gelfand's formula)",
+    "description": "In a Banach algebra, the spectral radius satisfies r(a) = lim_{n\u2192\u221e} \u2016a\u207f\u2016^{1/n} = inf_{n\u22651} \u2016a\u207f\u2016^{1/n}, providing a formula for the spectral radius purely in terms of the norm.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_resolvent_identity",
+    "kind": "theorem",
+    "name": "Resolvent identity",
+    "description": "For \u03bb,\u03bc in the resolvent set, R(\u03bb,a) \u2212 R(\u03bc,a) = (\u03bc\u2212\u03bb)R(\u03bb,a)R(\u03bc,a), and the resolvent is an analytic function of \u03bb vanishing at infinity.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_character",
+    "kind": "axiom",
+    "name": "Character (multiplicative linear functional)",
+    "description": "A nonzero algebra homomorphism \u03c7: A \u2192 C from a commutative Banach algebra A, necessarily continuous with \u2016\u03c7\u2016 = 1 and \u03c7(1) = 1, forming the points of the Gelfand spectrum.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_gelfand_spectrum",
+    "kind": "state",
+    "name": "Gelfand spectrum (maximal ideal space)",
+    "description": "The set \u03a9(A) of all characters of a commutative unital Banach algebra A, equipped with the weak-* topology making it a compact Hausdorff space; maximal ideals correspond bijectively to characters via ker(\u03c7).",
+    "type_signature": ""
+  },
+  {
+    "id": "a_c_star_identity",
+    "kind": "axiom",
+    "name": "C*-identity",
+    "description": "The norm condition \u2016a*a\u2016 = \u2016a\u2016\u00b2 characterizing C*-algebras, from which it follows that \u2016a*\u2016 = \u2016a\u2016 and the norm is uniquely determined by the algebraic structure.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_state_on_c_star_algebra",
+    "kind": "axiom",
+    "name": "State on a C*-algebra",
+    "description": "A positive linear functional \u03c6: A \u2192 C with \u2016\u03c6\u2016 = 1 (or \u03c6(1) = 1 in the unital case), serving as a noncommutative probability measure and providing the input for the GNS construction.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_cyclic_vector",
+    "kind": "axiom",
+    "name": "Cyclic vector",
+    "description": "A vector \u03be in a Hilbert space H such that \u03c0(A)\u03be is dense in H for a representation \u03c0 of A, ensuring the representation is determined by the state \u03c6(a) = \u27e8\u03c0(a)\u03be,\u03be\u27e9.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_spectral_mapping_theorem",
+    "kind": "theorem",
+    "name": "Spectral mapping theorem",
+    "description": "For a continuous function f and a normal element a of a C*-algebra, \u03c3(f(a)) = f(\u03c3(a)), so the spectrum of f(a) is the image of the spectrum of a under f.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_unitization_of_c_star_algebra",
+    "kind": "state",
+    "name": "Unitization of a C*-algebra",
+    "description": "For a non-unital C*-algebra A, the C*-algebra \u00c3 = A \u2295 C with multiplication (a,\u03bb)(b,\u03bc) = (ab+\u03bbb+\u03bca, \u03bb\u03bc) and a suitable norm making it a unital C*-algebra containing A as a maximal ideal.",
+    "type_signature": ""
+  },
+  {
+    "id": "a_locally_compact_group",
+    "kind": "axiom",
+    "name": "Locally compact group",
+    "description": "A topological group whose underlying topology is locally compact and Hausdorff, providing the natural setting for abstract harmonic analysis with the existence of Haar measure.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_convolution_product",
+    "kind": "state",
+    "name": "Convolution product",
+    "description": "The binary operation (f*g)(x) = \u222b_G f(y)g(y\u207b\u00b9x)dy on L\u00b9(G), making it a Banach algebra; for abelian groups, the Gelfand transform of L\u00b9(G) is the Fourier transform.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_modular_function",
+    "kind": "state",
+    "name": "Modular function",
+    "description": "The continuous homomorphism \u0394: G \u2192 R\u208a* relating left and right Haar measures by d(\u03bc_right) = \u0394(g)d(\u03bc_left), with G unimodular when \u0394 \u2261 1 (e.g., compact, abelian, or semisimple groups).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_group_c_star_algebra",
+    "kind": "state",
+    "name": "Group C*-algebra C*(G)",
+    "description": "The completion of L\u00b9(G) with respect to the norm \u2016f\u2016_{C*} = sup_\u03c0 \u2016\u03c0(f)\u2016 where the supremum is over all *-representations of L\u00b9(G), whose representations correspond bijectively to unitary representations of G.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_spectral_theorem_for_bounded_normal_operators",
+    "kind": "theorem",
+    "name": "Spectral theorem for bounded normal operators",
+    "description": "For a bounded normal operator T on a Hilbert space, there exists a unique spectral measure E on \u03c3(T) such that T = \u222b_{\u03c3(T)} \u03bb dE(\u03bb), establishing a bijection between normal operators and spectral measures on compact subsets of C.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_spectral_theorem_for_commuting_normal_operators",
+    "kind": "theorem",
+    "name": "Spectral theorem for commuting normal operators",
+    "description": "A finite family of pairwise commuting bounded normal operators on a Hilbert space has a joint spectral measure E on the product of their spectra, simultaneously diagonalizing all operators as T_k = \u222b \u03bb_k dE(\u03bb\u2081,...,\u03bb\u2099).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_snag_theorem",
+    "kind": "theorem",
+    "name": "SNAG theorem (Stone-Naimark-Ambrose-Godement)",
+    "description": "Every strongly continuous unitary representation of a locally compact abelian group G on a Hilbert space is of the form \u03c0(g) = \u222b_\u011c \u03c7(g) dE(\u03c7) for a unique spectral measure E on the Pontryagin dual \u011c.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_type_decomposition_of_von_neumann_algebras",
+    "kind": "theorem",
+    "name": "Type decomposition of von Neumann algebras",
+    "description": "Every von Neumann algebra decomposes uniquely as a direct sum of type I, type II\u2081, type II_\u221e, and type III factors, classified by the structure of their projection lattices.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_holomorphic_functional_calculus",
+    "kind": "theorem",
+    "name": "Holomorphic functional calculus",
+    "description": "For an element a of a unital Banach algebra and f holomorphic on a neighborhood of \u03c3(a), f(a) = (1/2\u03c0i)\u222e_\u0393 f(\u03bb)(\u03bb\u2212a)\u207b\u00b9d\u03bb defines an algebra homomorphism from the algebra of germs of holomorphic functions on \u03c3(a) to A.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_fell_topology",
+    "kind": "state",
+    "name": "Fell topology",
+    "description": "The topology on the set of irreducible representations of a C*-algebra (or locally compact group) defined by convergence of states, making the unitary dual a (generally non-Hausdorff) topological space.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_spectral_permanence",
+    "kind": "theorem",
+    "name": "Spectral permanence",
+    "description": "If B is a closed *-subalgebra of a C*-algebra A and a \u2208 B, then \u03c3_B(a) = \u03c3_A(a); the spectrum of an element does not change when computed in a C*-subalgebra.",
+    "type_signature": ""
+  }
+]

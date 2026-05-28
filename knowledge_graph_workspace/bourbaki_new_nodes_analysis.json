@@ -1,0 +1,632 @@
+[
+  {
+    "id": "s_derivative_of_a_vectorvalued_function",
+    "kind": "axiom",
+    "name": "Derivative of a vector-valued function",
+    "description": "For a function f mapping an interval of R into a normed vector space E, the derivative at a point x₀ is the limit of (f(x) - f(x₀))/(x - x₀) as x → x₀, when this limit exists in E.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_differentiability",
+    "kind": "axiom",
+    "name": "Differentiability",
+    "description": "A function f is differentiable at x₀ if there exists a continuous linear map L such that f(x₀ + h) = f(x₀) + L(h) + o(h) as h → 0.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_linearity_of_differentiation",
+    "kind": "theorem",
+    "name": "Linearity of differentiation",
+    "description": "The derivative operator is linear: (αf + βg)' = αf' + βg' for differentiable functions f, g and scalars α, β.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_product_rule",
+    "kind": "theorem",
+    "name": "Product rule (Leibniz rule)",
+    "description": "If f and g are differentiable real-valued functions, then (fg)' = f'g + fg'.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_chain_rule",
+    "kind": "theorem",
+    "name": "Chain rule",
+    "description": "If g is differentiable at x₀ and f is differentiable at g(x₀), then f ∘ g is differentiable at x₀ with derivative f'(g(x₀)) · g'(x₀).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_derivative_of_the_inverse_function",
+    "kind": "theorem",
+    "name": "Derivative of the inverse function",
+    "description": "If f is a continuous bijection differentiable at x₀ with f'(x₀) ≠ 0, then f⁻¹ is differentiable at f(x₀) with derivative 1/f'(x₀).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_monotonicity_criterion_via_derivative",
+    "kind": "theorem",
+    "name": "Monotonicity criterion via derivative",
+    "description": "A differentiable function f on an interval is non-decreasing if and only if f'(x) ≥ 0 for all x in the interval.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_convexity_criterion_via_second_derivative",
+    "kind": "theorem",
+    "name": "Convexity criterion via second derivative",
+    "description": "A twice-differentiable function f on an interval is convex if and only if f''(x) ≥ 0 for all x in the interval.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_higherorder_derivative",
+    "kind": "axiom",
+    "name": "Higher-order derivative",
+    "description": "The n-th derivative f⁽ⁿ⁾ is defined inductively as the derivative of f⁽ⁿ⁻¹⁾, when it exists.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_leibniz_formula_for_nth_derivative_of_a_product",
+    "kind": "theorem",
+    "name": "Leibniz formula for n-th derivative of a product",
+    "description": "The n-th derivative of a product fg equals Σₖ₌₀ⁿ C(n,k) f⁽ᵏ⁾g⁽ⁿ⁻ᵏ⁾.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_regulated_function",
+    "kind": "axiom",
+    "name": "Regulated function",
+    "description": "A function f from an interval I into a Banach space E is regulated if it has a left limit and a right limit at every point of I, equivalently if it is a uniform limit of step functions.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_step_function",
+    "kind": "axiom",
+    "name": "Step function",
+    "description": "A function on an interval that takes only finitely many values, each on a sub-interval of a finite partition.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_integral_of_a_regulated_function",
+    "kind": "axiom",
+    "name": "Integral of a regulated function",
+    "description": "The integral of a regulated function f is defined as the limit of integrals of step functions converging uniformly to f, and this limit is independent of the approximating sequence.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_primitive",
+    "kind": "axiom",
+    "name": "Primitive (antiderivative)",
+    "description": "A primitive of a function f on an interval I is a function F such that F' = f on I.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_integration_by_parts",
+    "kind": "theorem",
+    "name": "Integration by parts",
+    "description": "If f and g are continuously differentiable on [a,b], then ∫ₐᵇ f'(t)g(t) dt = f(b)g(b) - f(a)g(a) - ∫ₐᵇ f(t)g'(t) dt.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_change_of_variables_in_integrals",
+    "kind": "theorem",
+    "name": "Change of variables in integrals",
+    "description": "If φ is a C¹ diffeomorphism and f is regulated, then ∫_{φ(a)}^{φ(b)} f(t) dt = ∫ₐᵇ f(φ(u)) φ'(u) du.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_integral_remainder_for_taylors_formula",
+    "kind": "theorem",
+    "name": "Integral remainder for Taylor's formula",
+    "description": "If f is of class Cⁿ⁺¹, the remainder in the n-th order Taylor expansion equals (1/n!) ∫₀ʰ (h-t)ⁿ f⁽ⁿ⁺¹⁾(x₀+t) dt.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_uniform_convergence_and_integration",
+    "kind": "theorem",
+    "name": "Uniform convergence and integration",
+    "description": "If a sequence of regulated functions converges uniformly to f, then f is regulated and the integral of the limit equals the limit of the integrals.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_improper_integral",
+    "kind": "axiom",
+    "name": "Improper integral (convergent integral on unbounded interval)",
+    "description": "The integral ∫ₐ^∞ f(t) dt is defined as limₓ→∞ ∫ₐˣ f(t) dt when this limit exists.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_absolute_convergence_of_improper_integrals",
+    "kind": "theorem",
+    "name": "Absolute convergence of improper integrals",
+    "description": "If ∫ₐ^∞ ‖f(t)‖ dt converges, then ∫ₐ^∞ f(t) dt converges and ‖∫ₐ^∞ f(t) dt‖ ≤ ∫ₐ^∞ ‖f(t)‖ dt.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_power_function_x",
+    "kind": "axiom",
+    "name": "Power function x^α",
+    "description": "For x > 0 and α ∈ R, defined as x^α = exp(α log x), extending integer powers to all real exponents.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_number",
+    "kind": "axiom",
+    "name": "Number π",
+    "description": "Defined as twice the smallest positive zero of cosine, establishing the period 2π of the trigonometric functions.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_inverse_trigonometric_functions",
+    "kind": "axiom",
+    "name": "Inverse trigonometric functions (arcsin, arccos, arctan)",
+    "description": "The inverse functions of sin, cos, tan restricted to appropriate intervals where they are bijective, with derivatives 1/√(1-x²), -1/√(1-x²), 1/(1+x²) respectively.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_hyperbolic_functions",
+    "kind": "axiom",
+    "name": "Hyperbolic functions (sinh, cosh, tanh)",
+    "description": "Defined as sinh(x) = (eˣ - e⁻ˣ)/2, cosh(x) = (eˣ + e⁻ˣ)/2, tanh(x) = sinh(x)/cosh(x), satisfying the identity cosh²(x) - sinh²(x) = 1.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_inverse_hyperbolic_functions",
+    "kind": "axiom",
+    "name": "Inverse hyperbolic functions",
+    "description": "The inverses of sinh, cosh|[0,∞), tanh, expressible in terms of logarithm: arsinh(x) = log(x + √(x²+1)).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_analyticity_of_elementary_functions",
+    "kind": "theorem",
+    "name": "Analyticity of elementary functions",
+    "description": "The functions exp, log, sin, cos, and their inverses are all real-analytic on their domains of definition, represented by convergent power series.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_growth_comparison_of_elementary_functions",
+    "kind": "theorem",
+    "name": "Growth comparison of elementary functions",
+    "description": "As x → +∞, for any α > 0 and β > 0: (log x)^α = o(x^β) and x^β = o(e^{αx}), establishing the asymptotic hierarchy log ≪ polynomial ≪ exponential.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_lipschitz_condition",
+    "kind": "axiom",
+    "name": "Lipschitz condition",
+    "description": "A function f(t, y) satisfies a Lipschitz condition in y if ‖f(t, y₁) - f(t, y₂)‖ ≤ K‖y₁ - y₂‖ for some constant K and all (t, yᵢ) in the domain.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_integral_equation_formulation_of_ode",
+    "kind": "state",
+    "name": "Integral equation formulation of ODE",
+    "description": "The initial value problem y' = f(t,y), y(t₀) = y₀ is equivalent to the integral equation y(t) = y₀ + ∫_{t₀}^t f(s, y(s)) ds.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_maximal_solution_of_an_ode",
+    "kind": "axiom",
+    "name": "Maximal solution of an ODE",
+    "description": "A solution defined on a maximal interval of existence that cannot be extended to a larger interval, whose existence is guaranteed by Zorn's lemma from local solutions.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_blowup_criterion",
+    "kind": "theorem",
+    "name": "Blow-up criterion (escape to boundary)",
+    "description": "If the maximal interval of existence of a solution is bounded, then the solution leaves every compact subset of the domain of f, i.e., ‖y(t)‖ → ∞ or the solution approaches the boundary.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_linear_ordinary_differential_equation",
+    "kind": "axiom",
+    "name": "Linear ordinary differential equation",
+    "description": "An ODE of the form y' = A(t)y + b(t), where A(t) is a continuous matrix-valued function and b(t) is continuous, whose solutions form an affine subspace.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_homogeneous_linear_ode",
+    "kind": "axiom",
+    "name": "Homogeneous linear ODE",
+    "description": "A linear ODE of the form y' = A(t)y (with b = 0) whose solutions form a vector space of dimension equal to the order of the system.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_fundamental_matrix",
+    "kind": "state",
+    "name": "Fundamental matrix (resolvent)",
+    "description": "A matrix-valued function Φ(t) whose columns form a basis of solutions of y' = A(t)y, satisfying Φ' = A(t)Φ with Φ(t₀) = I.",
+    "type_signature": ""
+  },
+  {
+    "id": "t_variation_of_constants",
+    "kind": "technique",
+    "name": "Variation of constants (variation of parameters)",
+    "description": "A method to solve the non-homogeneous equation y' = A(t)y + b(t) by writing y(t) = Φ(t)c(t) where Φ is the fundamental matrix, leading to c'(t) = Φ(t)⁻¹b(t).",
+    "function_signature": "(Non-homogeneous linear ODE, Fundamental matrix) → (Particular solution)"
+  },
+  {
+    "id": "s_linear_ode_with_constant_coefficients",
+    "kind": "state",
+    "name": "Linear ODE with constant coefficients",
+    "description": "The system y' = Ay with A constant has the explicit solution y(t) = e^{tA}y₀, reducible via Jordan normal form to exponential-polynomial expressions.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_differentiable_dependence_on_parameters",
+    "kind": "theorem",
+    "name": "Differentiable dependence on parameters",
+    "description": "If f(t, y, λ) is Cᵏ in all variables, then the solution y(t, λ) of y' = f(t, y, λ) is Cᵏ in the parameter λ.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_lagrange_remainder",
+    "kind": "state",
+    "name": "Lagrange remainder",
+    "description": "For f of class Cⁿ⁺¹, the remainder Rₙ(h) = f⁽ⁿ⁺¹⁾(x₀ + θh) hⁿ⁺¹/(n+1)! for some θ ∈ (0,1).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_asymptotic_expansion",
+    "kind": "axiom",
+    "name": "Asymptotic expansion",
+    "description": "A formal series Σ aₙφₙ(x) is an asymptotic expansion of f(x) as x → x₀ if f(x) - Σₖ₌₀ⁿ aₖφₖ(x) = o(φₙ(x)) for each n, where (φₙ) is an asymptotic scale.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_asymptotic_scale",
+    "kind": "axiom",
+    "name": "Asymptotic scale",
+    "description": "A sequence of functions (φₙ) such that φₙ₊₁(x) = o(φₙ(x)) as x → x₀, providing a graded comparison framework for the growth or decay of functions.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_littleo_and_bigo_notation",
+    "kind": "axiom",
+    "name": "Little-o and big-O notation",
+    "description": "f = o(g) means f/g → 0 and f = O(g) means |f/g| is bounded, as x approaches a specified limit, providing a calculus of asymptotic comparison.",
+    "type_signature": ""
+  },
+  {
+    "id": "t_asymptotic_comparison_of_functions",
+    "kind": "technique",
+    "name": "Asymptotic comparison of functions",
+    "description": "The systematic use of asymptotic expansions and asymptotic scales to compare functions' growth rates, compute limits of indeterminate forms, and approximate functions near singular points.",
+    "function_signature": "(Functions near a point) → (Asymptotic ordering and expansions)"
+  },
+  {
+    "id": "s_bernoulli_numbers",
+    "kind": "axiom",
+    "name": "Bernoulli numbers",
+    "description": "The sequence of rational numbers Bₙ defined by the generating function t/(eᵗ - 1) = Σₙ₌₀^∞ Bₙ tⁿ/n!, with B₀ = 1, B₁ = -1/2, and B₂ₖ₊₁ = 0 for k ≥ 1.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_bernoulli_polynomials",
+    "kind": "axiom",
+    "name": "Bernoulli polynomials",
+    "description": "Polynomials Bₙ(x) defined by the generating function te^{xt}/(eᵗ - 1) = Σₙ₌₀^∞ Bₙ(x) tⁿ/n!, satisfying Bₙ'(x) = nBₙ₋₁(x) and Bₙ(0) = Bₙ.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_eulermaclaurin_summation_formula",
+    "kind": "theorem",
+    "name": "Euler-Maclaurin summation formula",
+    "description": "Relates a sum Σₖ₌ₐᵇ f(k) to the integral ∫ₐᵇ f(t) dt plus correction terms involving Bernoulli numbers and derivatives of f at the endpoints, with a remainder expressible as an integral involving Bernoulli polynomials.",
+    "type_signature": ""
+  },
+  {
+    "id": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "kind": "technique",
+    "name": "Summation of divergent series by Euler-Maclaurin",
+    "description": "Using the Euler-Maclaurin formula to assign finite values to formally divergent sums by analytic continuation, yielding values for ζ(-n) in terms of Bernoulli numbers.",
+    "function_signature": "(Divergent series, Euler-Maclaurin formula) → (Regularized finite value)"
+  },
+  {
+    "id": "s_asymptotic_expansion_of_the_gamma_function",
+    "kind": "state",
+    "name": "Asymptotic expansion of the gamma function",
+    "description": "The Stirling series Γ(x) ~ √(2π) x^{x-1/2} e^{-x} (1 + Σₖ₌₁^∞ cₖ/x^k), an asymptotic expansion for x → +∞ with coefficients expressible via Bernoulli numbers.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_beta_function",
+    "kind": "state",
+    "name": "Beta function",
+    "description": "Defined as B(p,q) = ∫₀¹ t^{p-1}(1-t)^{q-1} dt for p, q > 0, related to the gamma function by B(p,q) = Γ(p)Γ(q)/Γ(p+q).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_digamma_function",
+    "kind": "state",
+    "name": "Digamma function",
+    "description": "The logarithmic derivative ψ(x) = Γ'(x)/Γ(x) = (d/dx) log Γ(x), whose asymptotic expansion involves Bernoulli numbers: ψ(x) ~ log x - 1/(2x) - Σₖ₌₁^∞ B₂ₖ/(2k·x²ᵏ).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_abscissa_of_convergence",
+    "kind": "axiom",
+    "name": "Abscissa of convergence",
+    "description": "The infimum σ₀ of real numbers σ such that the Laplace integral ∫₀^∞ e^{-σt} f(t) dt converges, establishing a half-plane Re(s) > σ₀ of convergence.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_abscissa_of_absolute_convergence",
+    "kind": "axiom",
+    "name": "Abscissa of absolute convergence",
+    "description": "The infimum σₐ of real numbers σ such that ∫₀^∞ e^{-σt} |f(t)| dt converges, always satisfying σ₀ ≤ σₐ ≤ σ₀ + 1 for locally integrable f.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_laplace_transform_of_derivatives",
+    "kind": "theorem",
+    "name": "Laplace transform of derivatives",
+    "description": "L{f'}(s) = sL{f}(s) - f(0⁺), and more generally L{f⁽ⁿ⁾}(s) = sⁿL{f}(s) - Σₖ₌₀ⁿ⁻¹ sⁿ⁻¹⁻ᵏ f⁽ᵏ⁾(0⁺), converting differential equations to algebraic equations.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_laplace_transform_of_convolutions",
+    "kind": "theorem",
+    "name": "Laplace transform of convolutions",
+    "description": "L{f * g}(s) = L{f}(s) · L{g}(s), where (f * g)(t) = ∫₀ᵗ f(t-u) g(u) du, converting convolution to pointwise multiplication.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_inversion_formula_for_laplace_transform",
+    "kind": "theorem",
+    "name": "Inversion formula for Laplace transform",
+    "description": "Under suitable conditions, f(t) = (1/2πi) ∫_{c-i∞}^{c+i∞} e^{st} L{f}(s) ds for c > σ₀, recovering f from its Laplace transform via a Bromwich contour integral.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_uniqueness_theorem_for_laplace_transform",
+    "kind": "theorem",
+    "name": "Uniqueness theorem for Laplace transform",
+    "description": "If L{f}(s) = L{g}(s) for all s in a half-plane and f, g are continuous, then f = g, establishing injectivity of the Laplace transform on continuous functions.",
+    "type_signature": ""
+  },
+  {
+    "id": "t_application_of_laplace_transform_to_linear_ode",
+    "kind": "technique",
+    "name": "Application of Laplace transform to linear ODE",
+    "description": "Converting a linear ODE with constant coefficients and initial conditions to an algebraic equation via Laplace transform, solving algebraically, then inverting to obtain the solution.",
+    "function_signature": "(Linear ODE with initial conditions) → (Algebraic equation → Solution via inversion)"
+  },
+  {
+    "id": "s_valued_field",
+    "kind": "axiom",
+    "name": "Valued field",
+    "description": "A field K equipped with an absolute value |·|: K → R₊ satisfying |xy| = |x||y| and the triangle inequality, inducing a metric topology on K.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_neighborhood_of_zero",
+    "kind": "axiom",
+    "name": "Neighborhood of zero (fundamental system)",
+    "description": "In a TVS, the topology is entirely determined by a fundamental system of neighborhoods of the origin, which must be absorbing, balanced sets; translations then give the full topology.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_absorbing_set",
+    "kind": "axiom",
+    "name": "Absorbing set",
+    "description": "A subset A of a vector space E such that for every x ∈ E there exists λ₀ > 0 with x ∈ λA for all |λ| ≥ λ₀.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_balanced_set",
+    "kind": "axiom",
+    "name": "Balanced set",
+    "description": "A subset B of a vector space E such that λB ⊆ B for all scalars λ with |λ| ≤ 1.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_bounded_set_in_a_tvs",
+    "kind": "axiom",
+    "name": "Bounded set in a TVS",
+    "description": "A subset B of a TVS E is bounded if for every neighborhood V of 0, there exists λ > 0 such that B ⊆ λV, equivalently if B is absorbed by every neighborhood of zero.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_metrizable_tvs",
+    "kind": "state",
+    "name": "Metrizable TVS",
+    "description": "A TVS whose topology is metrizable, which occurs if and only if it has a countable fundamental system of neighborhoods of zero, in which case it can be metrized by a translation-invariant metric.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_normable_tvs",
+    "kind": "state",
+    "name": "Normable TVS",
+    "description": "A TVS whose topology can be defined by a single norm, characterized by having a bounded convex neighborhood of zero.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_completeness_of_a_tvs",
+    "kind": "axiom",
+    "name": "Completeness of a TVS",
+    "description": "A TVS is complete if every Cauchy net (or Cauchy filter) converges; a complete metrizable locally convex space is a Fréchet space.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_topological_direct_sum_of_tvs",
+    "kind": "state",
+    "name": "Topological direct sum of TVS",
+    "description": "A TVS E is a topological direct sum of subspaces E₁ and E₂ if the map (x₁, x₂) ↦ x₁ + x₂ is a topological isomorphism from E₁ × E₂ to E.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_quotient_tvs",
+    "kind": "state",
+    "name": "Quotient TVS",
+    "description": "For a closed subspace F of a TVS E, the quotient E/F with the quotient topology is again a TVS, and E/F is Hausdorff if and only if F is closed.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_product_of_tvs",
+    "kind": "state",
+    "name": "Product of TVS",
+    "description": "The Cartesian product Πᵢ Eᵢ of TVS equipped with the product topology is again a TVS, and it is locally convex (resp. complete) if each factor is.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_minkowski_functional",
+    "kind": "axiom",
+    "name": "Minkowski functional (gauge)",
+    "description": "For a convex absorbing set C containing 0, the Minkowski functional is p_C(x) = inf{λ > 0 : x ∈ λC}, which is a sublinear function and a seminorm when C is balanced.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_strict_separation_theorem",
+    "kind": "theorem",
+    "name": "Strict separation theorem",
+    "description": "If A is a closed convex set and B is a compact convex set in a locally convex space with A ∩ B = ∅, then there exists a continuous linear functional strictly separating them: sup_{a∈A} f(a) < inf_{b∈B} f(b).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_supporting_hyperplane_theorem",
+    "kind": "theorem",
+    "name": "Supporting hyperplane theorem",
+    "description": "At every boundary point of a closed convex set in a locally convex space, there exists a closed hyperplane containing the point and having the convex set on one side.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_bipolar_theorem",
+    "kind": "theorem",
+    "name": "Bipolar theorem",
+    "description": "For a subset A of a locally convex space, the bipolar A°° equals the closed convex balanced hull of A.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_space_of_continuous_linear_maps_l",
+    "kind": "axiom",
+    "name": "Space of continuous linear maps L(E, F)",
+    "description": "The vector space of all continuous linear maps from a TVS E to a TVS F, which can be given various topologies depending on the notion of convergence desired.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_topology_of_bounded_convergence",
+    "kind": "axiom",
+    "name": "Topology of bounded convergence (strong topology on L(E,F))",
+    "description": "The topology on L(E,F) of uniform convergence on bounded subsets of E, making L(E,F) into a locally convex space when F is locally convex.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_topology_of_pointwise_convergence",
+    "kind": "axiom",
+    "name": "Topology of pointwise convergence (weak topology on L(E,F))",
+    "description": "The coarsest topology on L(E,F) making all evaluation maps u ↦ u(x) continuous, also called the simple topology.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_topology_of_compact_convergence",
+    "kind": "axiom",
+    "name": "Topology of compact convergence",
+    "description": "The topology on L(E,F) of uniform convergence on compact subsets of E, intermediate between pointwise and bounded convergence.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_barrelled_space",
+    "kind": "axiom",
+    "name": "Barrelled space",
+    "description": "A locally convex space in which every barrel (closed, convex, balanced, absorbing set) is a neighborhood of zero; every Fréchet space and every Baire locally convex space is barrelled.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_barrel",
+    "kind": "axiom",
+    "name": "Barrel",
+    "description": "A subset of a TVS that is closed, convex, balanced, and absorbing.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_weak_topology",
+    "kind": "axiom",
+    "name": "Weak-* topology σ(E', E)",
+    "description": "The weak topology on the dual E' of a TVS E induced by the duality ⟨E', E⟩, under which E' is a locally convex space and E embeds canonically into (E')'.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_mackey_topology",
+    "kind": "axiom",
+    "name": "Mackey topology τ(E, F)",
+    "description": "The finest locally convex topology on E consistent with the duality ⟨E, F⟩, defined as the topology of uniform convergence on σ(F, E)-compact convex balanced subsets of F.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_semireflexive_space",
+    "kind": "axiom",
+    "name": "Semi-reflexive space",
+    "description": "A locally convex space E is semi-reflexive if the canonical map J: E → E'' is surjective (algebraic isomorphism), without requiring it to be a homeomorphism.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_strong_topology",
+    "kind": "axiom",
+    "name": "Strong topology β(E', E)",
+    "description": "The topology on E' of uniform convergence on all bounded subsets of E, making E' a locally convex space called the strong dual.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_grothendieck_completion_theorem",
+    "kind": "theorem",
+    "name": "Grothendieck completion theorem",
+    "description": "Every Hausdorff locally convex space has a completion that is unique up to topological isomorphism, constructed as a subspace of the algebraic dual of E' with the topology of uniform convergence on equicontinuous sets.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_transpose_of_a_continuous_linear_map",
+    "kind": "state",
+    "name": "Transpose (adjoint) of a continuous linear map",
+    "description": "For u: E → F continuous linear, the transpose ᵗu: F' → E' is defined by ⟨ᵗu(f), x⟩ = ⟨f, u(x)⟩, and ᵗu is continuous for the weak-* and strong topologies.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_weak_compactness_and_completeness",
+    "kind": "theorem",
+    "name": "Weak compactness and completeness",
+    "description": "In a complete locally convex space, a closed bounded set is weakly compact if and only if every bounded sequence has a weakly convergent subsequence.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_parallelogram_law",
+    "kind": "theorem",
+    "name": "Parallelogram law",
+    "description": "In an inner product space, ‖x+y‖² + ‖x-y‖² = 2(‖x‖² + ‖y‖²), and a normed space satisfying this identity is an inner product space (Jordan-von Neumann theorem).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_orthogonality",
+    "kind": "axiom",
+    "name": "Orthogonality",
+    "description": "Two elements x, y of an inner product space are orthogonal (x ⊥ y) if ⟨x,y⟩ = 0; a set S is orthogonal if its elements are pairwise orthogonal.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_orthogonal_projection_theorem",
+    "kind": "theorem",
+    "name": "Orthogonal projection theorem",
+    "description": "For every closed subspace M of a Hilbert space H, each x ∈ H has a unique decomposition x = m + m⊥ with m ∈ M and m⊥ ∈ M⊥, and m is the unique best approximation of x from M.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_orthonormal_system",
+    "kind": "axiom",
+    "name": "Orthonormal system",
+    "description": "A family (eᵢ) in a Hilbert space such that ⟨eᵢ, eⱼ⟩ = δᵢⱼ (Kronecker delta), i.e., pairwise orthogonal unit vectors.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_normal_operator",
+    "kind": "axiom",
+    "name": "Normal operator",
+    "description": "A bounded linear operator T on a Hilbert space satisfying T*T = TT*, implying the spectral theorem applies.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_direct_sum_of_hilbert_spaces",
+    "kind": "state",
+    "name": "Direct sum of Hilbert spaces",
+    "description": "The Hilbert space direct sum ⊕ᵢ Hᵢ consists of families (xᵢ) with xᵢ ∈ Hᵢ and Σᵢ ‖xᵢ‖² < ∞, equipped with the inner product ⟨(xᵢ),(yᵢ)⟩ = Σᵢ ⟨xᵢ,yᵢ⟩.",
+    "type_signature": ""
+  }
+]

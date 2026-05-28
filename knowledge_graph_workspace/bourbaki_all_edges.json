@@ -1,0 +1,6190 @@
+[
+  {
+    "id": "e_11539",
+    "from": "s_formal_language",
+    "to": "t_modus_ponens",
+    "role": "input",
+    "parameter_binding": {
+      "role": "well-formed relations"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11540",
+    "from": "s_deductive_system",
+    "to": "t_modus_ponens",
+    "role": "input",
+    "parameter_binding": {
+      "role": "framework for proofs"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11541",
+    "from": "s_axiom_scheme_of_substitution",
+    "to": "t_modus_ponens",
+    "role": "input",
+    "parameter_binding": {
+      "role": "substitution rule"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11542",
+    "from": "t_modus_ponens",
+    "to": "s_deductive_system",
+    "role": "output",
+    "parameter_binding": {
+      "derivation": "produces theorems within the system"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11543",
+    "from": "s_well_ordered_set",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "well-ordering of naturals"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11544",
+    "from": "s_order_on_naturals",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "natural number ordering"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11545",
+    "from": "t_mathematical_induction",
+    "to": "s_arithmetic_of_naturals",
+    "role": "output",
+    "parameter_binding": {
+      "result": "arithmetic properties proved"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11546",
+    "from": "t_mathematical_induction",
+    "to": "s_finite_set",
+    "role": "output",
+    "parameter_binding": {
+      "result": "properties of finite sets"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11547",
+    "from": "s_well_ordered_set",
+    "to": "t_transfinite_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "well-ordered set"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11548",
+    "from": "s_chain",
+    "to": "t_transfinite_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "chain in a partial order"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11549",
+    "from": "t_transfinite_induction",
+    "to": "s_hausdorff_maximality_principle",
+    "role": "output",
+    "parameter_binding": {
+      "result": "maximal chain existence"
+    },
+    "used_in_theorem": "s_hausdorff_maximality_principle"
+  },
+  {
+    "id": "e_11550",
+    "from": "s_function",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {
+      "role": "map to decompose"
+    },
+    "used_in_theorem": "s_canonical_decomposition_of_map"
+  },
+  {
+    "id": "e_11551",
+    "from": "s_equivalence_class",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {
+      "role": "quotient by kernel"
+    },
+    "used_in_theorem": "s_canonical_decomposition_of_map"
+  },
+  {
+    "id": "e_11552",
+    "from": "s_injection",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {
+      "role": "injective component"
+    },
+    "used_in_theorem": "s_canonical_decomposition_of_map"
+  },
+  {
+    "id": "e_11553",
+    "from": "s_surjection",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {
+      "role": "surjective component"
+    },
+    "used_in_theorem": "s_canonical_decomposition_of_map"
+  },
+  {
+    "id": "e_11554",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_canonical_decomposition_of_map",
+    "role": "output",
+    "parameter_binding": {
+      "result": "f = i o b o s"
+    },
+    "used_in_theorem": "s_canonical_decomposition_of_map"
+  },
+  {
+    "id": "e_11555",
+    "from": "s_preorder",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "partially ordered set"
+    },
+    "used_in_theorem": "s_hausdorff_maximality_principle"
+  },
+  {
+    "id": "e_11556",
+    "from": "t_compactness_argument",
+    "to": "s_hausdorff_maximality_principle",
+    "role": "output",
+    "parameter_binding": {
+      "result": "maximal chain"
+    },
+    "used_in_theorem": "s_hausdorff_maximality_principle"
+  },
+  {
+    "id": "e_11557",
+    "from": "s_function",
+    "to": "t_diagonalize",
+    "role": "input",
+    "parameter_binding": {
+      "role": "hypothetical bijection S -> P(S)"
+    },
+    "used_in_theorem": "s_cantor_theorem_power_set"
+  },
+  {
+    "id": "e_11558",
+    "from": "s_axiom_of_separation",
+    "to": "t_diagonalize",
+    "role": "input",
+    "parameter_binding": {
+      "role": "form set {x in S : x not in f(x)}"
+    },
+    "used_in_theorem": "s_cantor_theorem_power_set"
+  },
+  {
+    "id": "e_11559",
+    "from": "t_diagonalize",
+    "to": "s_cantor_theorem_power_set",
+    "role": "output",
+    "parameter_binding": {
+      "result": "no surjection S -> P(S)"
+    },
+    "used_in_theorem": "s_cantor_theorem_power_set"
+  },
+  {
+    "id": "e_11560",
+    "from": "s_well_ordered_set",
+    "to": "t_transfinite_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "well-ordered sets to compare"
+    },
+    "used_in_theorem": "s_comparability_well_ordered"
+  },
+  {
+    "id": "e_11561",
+    "from": "s_initial_segment",
+    "to": "t_transfinite_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "initial segments"
+    },
+    "used_in_theorem": "s_comparability_well_ordered"
+  },
+  {
+    "id": "e_11562",
+    "from": "t_transfinite_induction",
+    "to": "s_comparability_well_ordered",
+    "role": "output",
+    "parameter_binding": {
+      "result": "one is isomorphic to an initial segment of other"
+    },
+    "used_in_theorem": "s_comparability_well_ordered"
+  },
+  {
+    "id": "e_11563",
+    "from": "s_species_of_structures",
+    "to": "t_transport_of_structures",
+    "role": "input",
+    "parameter_binding": {
+      "role": "species to transport"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11564",
+    "from": "s_bijection",
+    "to": "t_transport_of_structures",
+    "role": "input",
+    "parameter_binding": {
+      "role": "bijection between sets"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11565",
+    "from": "s_isomorphism_of_structures",
+    "to": "t_transport_of_structures",
+    "role": "input",
+    "parameter_binding": {
+      "role": "isomorphism witness"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11566",
+    "from": "t_transport_of_structures",
+    "to": "s_induced_structure",
+    "role": "output",
+    "parameter_binding": {
+      "result": "induced structure on target"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11567",
+    "from": "t_transport_of_structures",
+    "to": "s_product_structure",
+    "role": "output",
+    "parameter_binding": {
+      "result": "product structure"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11568",
+    "from": "t_transport_of_structures",
+    "to": "s_quotient_structure",
+    "role": "output",
+    "parameter_binding": {
+      "result": "quotient structure"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11569",
+    "from": "s_filter",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "filter on domain"
+    },
+    "used_in_theorem": "s_continuity_via_filters"
+  },
+  {
+    "id": "e_11570",
+    "from": "s_continuous_map",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "continuous map"
+    },
+    "used_in_theorem": "s_continuity_via_filters"
+  },
+  {
+    "id": "e_11571",
+    "from": "s_convergence_of_filter",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "filter convergence"
+    },
+    "used_in_theorem": "s_continuity_via_filters"
+  },
+  {
+    "id": "e_11572",
+    "from": "t_compactness_argument",
+    "to": "s_continuity_via_filters",
+    "role": "output",
+    "parameter_binding": {
+      "result": "f continuous iff f(filter) -> f(limit)"
+    },
+    "used_in_theorem": "s_continuity_via_filters"
+  },
+  {
+    "id": "e_11573",
+    "from": "s_quasi_compact_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "quasi-compact space"
+    },
+    "used_in_theorem": "s_finite_intersection_property"
+  },
+  {
+    "id": "e_11574",
+    "from": "s_filter",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "filter with FIP"
+    },
+    "used_in_theorem": "s_finite_intersection_property"
+  },
+  {
+    "id": "e_11575",
+    "from": "t_compactness_argument",
+    "to": "s_finite_intersection_property",
+    "role": "output",
+    "parameter_binding": {
+      "result": "compact iff every filter has cluster point"
+    },
+    "used_in_theorem": "s_finite_intersection_property"
+  },
+  {
+    "id": "e_11576",
+    "from": "s_quasi_compact_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "compact domain"
+    },
+    "used_in_theorem": "s_continuous_image_compact"
+  },
+  {
+    "id": "e_11577",
+    "from": "s_continuous_map",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "continuous surjection"
+    },
+    "used_in_theorem": "s_continuous_image_compact"
+  },
+  {
+    "id": "e_11578",
+    "from": "t_compactness_argument",
+    "to": "s_continuous_image_compact",
+    "role": "output",
+    "parameter_binding": {
+      "result": "image is compact"
+    },
+    "used_in_theorem": "s_continuous_image_compact"
+  },
+  {
+    "id": "e_11579",
+    "from": "s_quasi_compact_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "compact ambient space"
+    },
+    "used_in_theorem": "s_closed_subset_compact"
+  },
+  {
+    "id": "e_11580",
+    "from": "t_compactness_argument",
+    "to": "s_closed_subset_compact",
+    "role": "output",
+    "parameter_binding": {
+      "result": "closed subset is compact"
+    },
+    "used_in_theorem": "s_closed_subset_compact"
+  },
+  {
+    "id": "e_11581",
+    "from": "s_quasi_compact_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "compact space"
+    },
+    "used_in_theorem": "s_compact_hausdorff_normal"
+  },
+  {
+    "id": "e_11582",
+    "from": "s_hausdorff_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Hausdorff property"
+    },
+    "used_in_theorem": "s_compact_hausdorff_normal"
+  },
+  {
+    "id": "e_11583",
+    "from": "t_compactness_argument",
+    "to": "s_compact_hausdorff_normal",
+    "role": "output",
+    "parameter_binding": {
+      "result": "compact Hausdorff is normal"
+    },
+    "used_in_theorem": "s_compact_hausdorff_normal"
+  },
+  {
+    "id": "e_11584",
+    "from": "s_quasi_compact_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "compact domain"
+    },
+    "used_in_theorem": "s_compact_to_hausdorff_homeomorphism"
+  },
+  {
+    "id": "e_11585",
+    "from": "s_hausdorff_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Hausdorff codomain"
+    },
+    "used_in_theorem": "s_compact_to_hausdorff_homeomorphism"
+  },
+  {
+    "id": "e_11586",
+    "from": "s_bijection",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "continuous bijection"
+    },
+    "used_in_theorem": "s_compact_to_hausdorff_homeomorphism"
+  },
+  {
+    "id": "e_11587",
+    "from": "t_compactness_argument",
+    "to": "s_compact_to_hausdorff_homeomorphism",
+    "role": "output",
+    "parameter_binding": {
+      "result": "is homeomorphism"
+    },
+    "used_in_theorem": "s_compact_to_hausdorff_homeomorphism"
+  },
+  {
+    "id": "e_11588",
+    "from": "s_second_countable_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "second-countable space"
+    },
+    "used_in_theorem": "s_second_countable_lindelof"
+  },
+  {
+    "id": "e_11589",
+    "from": "t_compactness_argument",
+    "to": "s_second_countable_lindelof",
+    "role": "output",
+    "parameter_binding": {
+      "result": "is Lindelof"
+    },
+    "used_in_theorem": "s_second_countable_lindelof"
+  },
+  {
+    "id": "e_11590",
+    "from": "t_compactness_argument",
+    "to": "s_lindelof_space",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Lindelof space obtained"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11591",
+    "from": "s_complete_uniform_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "complete uniform space"
+    },
+    "used_in_theorem": "s_compact_complete_totally_bounded"
+  },
+  {
+    "id": "e_11592",
+    "from": "s_cauchy_filter",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Cauchy filter convergence"
+    },
+    "used_in_theorem": "s_compact_complete_totally_bounded"
+  },
+  {
+    "id": "e_11593",
+    "from": "t_compactness_argument",
+    "to": "s_compact_complete_totally_bounded",
+    "role": "output",
+    "parameter_binding": {
+      "result": "compact iff complete and totally bounded"
+    },
+    "used_in_theorem": "s_compact_complete_totally_bounded"
+  },
+  {
+    "id": "e_11594",
+    "from": "s_quasi_compact_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "compact metric space"
+    },
+    "used_in_theorem": "s_lebesgue_covering_lemma"
+  },
+  {
+    "id": "e_11595",
+    "from": "t_compactness_argument",
+    "to": "s_lebesgue_covering_lemma",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Lebesgue number exists"
+    },
+    "used_in_theorem": "s_lebesgue_covering_lemma"
+  },
+  {
+    "id": "e_11596",
+    "from": "s_locally_finite_family",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "locally finite refinement"
+    },
+    "used_in_theorem": "s_metrizable_paracompact"
+  },
+  {
+    "id": "e_11597",
+    "from": "s_refinement_of_cover",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "open cover to refine"
+    },
+    "used_in_theorem": "s_metrizable_paracompact"
+  },
+  {
+    "id": "e_11598",
+    "from": "t_compactness_argument",
+    "to": "s_metrizable_paracompact",
+    "role": "output",
+    "parameter_binding": {
+      "result": "metrizable implies paracompact"
+    },
+    "used_in_theorem": "s_metrizable_paracompact"
+  },
+  {
+    "id": "e_11599",
+    "from": "s_completely_regular_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "completely regular space"
+    },
+    "used_in_theorem": "s_paracompact_partition_unity"
+  },
+  {
+    "id": "e_11600",
+    "from": "s_locally_finite_family",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "locally finite partition"
+    },
+    "used_in_theorem": "s_paracompact_partition_unity"
+  },
+  {
+    "id": "e_11601",
+    "from": "t_compactness_argument",
+    "to": "s_paracompact_partition_unity",
+    "role": "output",
+    "parameter_binding": {
+      "result": "partition of unity exists"
+    },
+    "used_in_theorem": "s_paracompact_partition_unity"
+  },
+  {
+    "id": "e_11602",
+    "from": "s_continuous_map",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "continuous functions f_n"
+    },
+    "used_in_theorem": "s_uniform_limit_continuity"
+  },
+  {
+    "id": "e_11603",
+    "from": "s_topology_uniform_convergence",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "uniform convergence"
+    },
+    "used_in_theorem": "s_uniform_limit_continuity"
+  },
+  {
+    "id": "e_11604",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_uniform_limit_continuity",
+    "role": "output",
+    "parameter_binding": {
+      "result": "limit is continuous"
+    },
+    "used_in_theorem": "s_uniform_limit_continuity"
+  },
+  {
+    "id": "e_11605",
+    "from": "s_complete_uniform_space",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "complete codomain"
+    },
+    "used_in_theorem": "s_completeness_function_spaces"
+  },
+  {
+    "id": "e_11606",
+    "from": "s_topology_uniform_convergence",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "uniform convergence topology"
+    },
+    "used_in_theorem": "s_completeness_function_spaces"
+  },
+  {
+    "id": "e_11607",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_completeness_function_spaces",
+    "role": "output",
+    "parameter_binding": {
+      "result": "function space is complete"
+    },
+    "used_in_theorem": "s_completeness_function_spaces"
+  },
+  {
+    "id": "e_11608",
+    "from": "s_compact_open_topology",
+    "to": "t_structural_isomorphism",
+    "role": "input",
+    "parameter_binding": {
+      "role": "compact-open topology"
+    },
+    "used_in_theorem": "s_exponential_law_function_spaces"
+  },
+  {
+    "id": "e_11609",
+    "from": "s_evaluation_map",
+    "to": "t_structural_isomorphism",
+    "role": "input",
+    "parameter_binding": {
+      "role": "evaluation map"
+    },
+    "used_in_theorem": "s_exponential_law_function_spaces"
+  },
+  {
+    "id": "e_11610",
+    "from": "t_structural_isomorphism",
+    "to": "s_exponential_law_function_spaces",
+    "role": "output",
+    "parameter_binding": {
+      "result": "C(X×Y,Z) ≅ C(X, C(Y,Z))"
+    },
+    "used_in_theorem": "s_exponential_law_function_spaces"
+  },
+  {
+    "id": "e_11611",
+    "from": "s_complete_uniform_space",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "complete target space"
+    },
+    "used_in_theorem": "s_universal_property_completion"
+  },
+  {
+    "id": "e_11612",
+    "from": "s_uniformly_continuous_map",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "uniformly continuous map to extend"
+    },
+    "used_in_theorem": "s_universal_property_completion"
+  },
+  {
+    "id": "e_11613",
+    "from": "s_completion_of_uniform_space",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "completed space"
+    },
+    "used_in_theorem": "s_universal_property_completion"
+  },
+  {
+    "id": "e_11614",
+    "from": "t_auxiliary_construction",
+    "to": "s_universal_property_completion",
+    "role": "output",
+    "parameter_binding": {
+      "result": "unique extension to completion"
+    },
+    "used_in_theorem": "s_universal_property_completion"
+  },
+  {
+    "id": "e_11615",
+    "from": "s_subgroup_topology",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "topological group structure"
+    },
+    "used_in_theorem": "s_closure_of_subgroup"
+  },
+  {
+    "id": "e_11616",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_closure_of_subgroup",
+    "role": "output",
+    "parameter_binding": {
+      "result": "closure(H) is a subgroup"
+    },
+    "used_in_theorem": "s_closure_of_subgroup"
+  },
+  {
+    "id": "e_11617",
+    "from": "s_neighborhood_base_identity",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "neighborhood base at identity"
+    },
+    "used_in_theorem": "s_open_subgroup_theorem"
+  },
+  {
+    "id": "e_11618",
+    "from": "s_subgroup_topology",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "subgroup in topological group"
+    },
+    "used_in_theorem": "s_open_subgroup_theorem"
+  },
+  {
+    "id": "e_11619",
+    "from": "t_compactness_argument",
+    "to": "s_open_subgroup_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "open subgroup is closed, finite index"
+    },
+    "used_in_theorem": "s_open_subgroup_theorem"
+  },
+  {
+    "id": "e_11620",
+    "from": "s_completeness_of_R",
+    "to": "t_proof_by_contradiction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "completeness of R"
+    },
+    "used_in_theorem": "s_archimedean_property"
+  },
+  {
+    "id": "e_11621",
+    "from": "t_proof_by_contradiction",
+    "to": "s_archimedean_property",
+    "role": "output",
+    "parameter_binding": {
+      "result": "N has no upper bound in R"
+    },
+    "used_in_theorem": "s_archimedean_property"
+  },
+  {
+    "id": "e_11622",
+    "from": "s_archimedean_property",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Archimedean property"
+    },
+    "used_in_theorem": "s_density_of_Q_in_R"
+  },
+  {
+    "id": "e_11623",
+    "from": "s_completeness_of_R",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "completeness"
+    },
+    "used_in_theorem": "s_density_of_Q_in_R"
+  },
+  {
+    "id": "e_11624",
+    "from": "t_auxiliary_construction",
+    "to": "s_density_of_Q_in_R",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Q is dense in R"
+    },
+    "used_in_theorem": "s_density_of_Q_in_R"
+  },
+  {
+    "id": "e_11625",
+    "from": "s_completeness_of_R",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "least upper bound property"
+    },
+    "used_in_theorem": "s_monotone_convergence_sequences"
+  },
+  {
+    "id": "e_11626",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_monotone_convergence_sequences",
+    "role": "output",
+    "parameter_binding": {
+      "result": "bounded monotone sequence converges"
+    },
+    "used_in_theorem": "s_monotone_convergence_sequences"
+  },
+  {
+    "id": "e_11627",
+    "from": "s_normed_vector_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "finite-dimensional normed space"
+    },
+    "used_in_theorem": "s_equivalent_norms_theorem"
+  },
+  {
+    "id": "e_11628",
+    "from": "s_euclidean_topology_Rn",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "compactness of unit sphere in R^n"
+    },
+    "used_in_theorem": "s_equivalent_norms_theorem"
+  },
+  {
+    "id": "e_11629",
+    "from": "t_compactness_argument",
+    "to": "s_equivalent_norms_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "all norms equivalent in finite dim"
+    },
+    "used_in_theorem": "s_equivalent_norms_theorem"
+  },
+  {
+    "id": "e_11630",
+    "from": "s_differentiability",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "differentiable maps f, g"
+    },
+    "used_in_theorem": "s_chain_rule"
+  },
+  {
+    "id": "e_11631",
+    "from": "s_composition_of_functions",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "composition g∘f"
+    },
+    "used_in_theorem": "s_chain_rule"
+  },
+  {
+    "id": "e_11632",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_chain_rule",
+    "role": "output",
+    "parameter_binding": {
+      "result": "(g∘f)' = g'(f(x))·f'(x)"
+    },
+    "used_in_theorem": "s_chain_rule"
+  },
+  {
+    "id": "e_11633",
+    "from": "s_differentiability",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "differentiable functions f, g"
+    },
+    "used_in_theorem": "s_product_rule"
+  },
+  {
+    "id": "e_11634",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_product_rule",
+    "role": "output",
+    "parameter_binding": {
+      "result": "(fg)' = f'g + fg'"
+    },
+    "used_in_theorem": "s_product_rule"
+  },
+  {
+    "id": "e_11635",
+    "from": "s_differentiability",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "differentiable functions"
+    },
+    "used_in_theorem": "s_linearity_of_differentiation"
+  },
+  {
+    "id": "e_11636",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_linearity_of_differentiation",
+    "role": "output",
+    "parameter_binding": {
+      "result": "(af+bg)' = af'+bg'"
+    },
+    "used_in_theorem": "s_linearity_of_differentiation"
+  },
+  {
+    "id": "e_11637",
+    "from": "s_inverse_function",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "invertible function"
+    },
+    "used_in_theorem": "s_derivative_of_the_inverse_function"
+  },
+  {
+    "id": "e_11638",
+    "from": "s_differentiability",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "differentiable bijection"
+    },
+    "used_in_theorem": "s_derivative_of_the_inverse_function"
+  },
+  {
+    "id": "e_11639",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_derivative_of_the_inverse_function",
+    "role": "output",
+    "parameter_binding": {
+      "result": "(f^{-1})' = 1/f'(f^{-1})"
+    },
+    "used_in_theorem": "s_derivative_of_the_inverse_function"
+  },
+  {
+    "id": "e_11640",
+    "from": "s_higherorder_derivative",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "higher-order derivatives"
+    },
+    "used_in_theorem": "s_leibniz_formula_for_nth_derivative_of_a_product"
+  },
+  {
+    "id": "e_11641",
+    "from": "s_product_rule",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "base case: product rule"
+    },
+    "used_in_theorem": "s_leibniz_formula_for_nth_derivative_of_a_product"
+  },
+  {
+    "id": "e_11642",
+    "from": "t_mathematical_induction",
+    "to": "s_leibniz_formula_for_nth_derivative_of_a_product",
+    "role": "output",
+    "parameter_binding": {
+      "result": "n-th derivative of product formula"
+    },
+    "used_in_theorem": "s_leibniz_formula_for_nth_derivative_of_a_product"
+  },
+  {
+    "id": "e_11643",
+    "from": "s_differentiability",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "differentiable function on interval"
+    },
+    "used_in_theorem": "s_monotonicity_criterion_via_derivative"
+  },
+  {
+    "id": "e_11644",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_monotonicity_criterion_via_derivative",
+    "role": "output",
+    "parameter_binding": {
+      "result": "f'>=0 iff f increasing"
+    },
+    "used_in_theorem": "s_monotonicity_criterion_via_derivative"
+  },
+  {
+    "id": "e_11645",
+    "from": "s_integral_of_a_regulated_function",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "integral"
+    },
+    "used_in_theorem": "s_integration_by_parts"
+  },
+  {
+    "id": "e_11646",
+    "from": "s_product_rule",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "product rule applied"
+    },
+    "used_in_theorem": "s_integration_by_parts"
+  },
+  {
+    "id": "e_11647",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_integration_by_parts",
+    "role": "output",
+    "parameter_binding": {
+      "result": "∫fg' = fg - ∫f'g"
+    },
+    "used_in_theorem": "s_integration_by_parts"
+  },
+  {
+    "id": "e_11648",
+    "from": "s_integral_of_a_regulated_function",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "integral to transform"
+    },
+    "used_in_theorem": "s_change_of_variables_in_integrals"
+  },
+  {
+    "id": "e_11649",
+    "from": "s_chain_rule",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "chain rule for substitution"
+    },
+    "used_in_theorem": "s_change_of_variables_in_integrals"
+  },
+  {
+    "id": "e_11650",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_change_of_variables_in_integrals",
+    "role": "output",
+    "parameter_binding": {
+      "result": "∫f(g(x))g'(x)dx = ∫f(u)du"
+    },
+    "used_in_theorem": "s_change_of_variables_in_integrals"
+  },
+  {
+    "id": "e_11651",
+    "from": "s_higherorder_derivative",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "n-th derivative"
+    },
+    "used_in_theorem": "s_integral_remainder_for_taylors_formula"
+  },
+  {
+    "id": "e_11652",
+    "from": "s_integration_by_parts",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "repeated integration by parts"
+    },
+    "used_in_theorem": "s_integral_remainder_for_taylors_formula"
+  },
+  {
+    "id": "e_11653",
+    "from": "t_mathematical_induction",
+    "to": "s_integral_remainder_for_taylors_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "integral form of Taylor remainder"
+    },
+    "used_in_theorem": "s_integral_remainder_for_taylors_formula"
+  },
+  {
+    "id": "e_11654",
+    "from": "s_uniform_limit_continuity",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "uniform convergence"
+    },
+    "used_in_theorem": "s_uniform_convergence_and_integration"
+  },
+  {
+    "id": "e_11655",
+    "from": "s_integral_of_a_regulated_function",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "integrals of f_n"
+    },
+    "used_in_theorem": "s_uniform_convergence_and_integration"
+  },
+  {
+    "id": "e_11656",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_uniform_convergence_and_integration",
+    "role": "output",
+    "parameter_binding": {
+      "result": "∫lim f_n = lim ∫f_n"
+    },
+    "used_in_theorem": "s_uniform_convergence_and_integration"
+  },
+  {
+    "id": "e_11657",
+    "from": "s_homogeneous_linear_ode",
+    "to": "t_variation_of_constants",
+    "role": "input",
+    "parameter_binding": {
+      "role": "homogeneous solution"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11658",
+    "from": "s_fundamental_matrix",
+    "to": "t_variation_of_constants",
+    "role": "input",
+    "parameter_binding": {
+      "role": "fundamental matrix"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11659",
+    "from": "s_linear_ordinary_differential_equation",
+    "to": "t_variation_of_constants",
+    "role": "input",
+    "parameter_binding": {
+      "role": "non-homogeneous ODE"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11660",
+    "from": "t_variation_of_constants",
+    "to": "s_linear_ode_with_constant_coefficients",
+    "role": "output",
+    "parameter_binding": {
+      "result": "particular solution"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11661",
+    "from": "s_fundamental_matrix",
+    "to": "t_variation_of_constants",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Wronskian"
+    },
+    "used_in_theorem": "s_abels_liouville_formula"
+  },
+  {
+    "id": "e_11662",
+    "from": "t_variation_of_constants",
+    "to": "s_abels_liouville_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "det(Phi) formula"
+    },
+    "used_in_theorem": "s_abels_liouville_formula"
+  },
+  {
+    "id": "e_11663",
+    "from": "s_maximal_solution_of_an_ode",
+    "to": "t_picard_iteration",
+    "role": "input",
+    "parameter_binding": {
+      "role": "maximal solution"
+    },
+    "used_in_theorem": "s_blowup_criterion"
+  },
+  {
+    "id": "e_11664",
+    "from": "t_picard_iteration",
+    "to": "s_blowup_criterion",
+    "role": "output",
+    "parameter_binding": {
+      "result": "solution escapes every compact"
+    },
+    "used_in_theorem": "s_blowup_criterion"
+  },
+  {
+    "id": "e_11665",
+    "from": "s_lipschitz_condition",
+    "to": "t_picard_iteration",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lipschitz condition"
+    },
+    "used_in_theorem": "s_differentiable_dependence_on_parameters"
+  },
+  {
+    "id": "e_11666",
+    "from": "s_maximal_solution_of_an_ode",
+    "to": "t_picard_iteration",
+    "role": "input",
+    "parameter_binding": {
+      "role": "ODE solution"
+    },
+    "used_in_theorem": "s_differentiable_dependence_on_parameters"
+  },
+  {
+    "id": "e_11667",
+    "from": "t_picard_iteration",
+    "to": "s_differentiable_dependence_on_parameters",
+    "role": "output",
+    "parameter_binding": {
+      "result": "solution depends smoothly on parameters"
+    },
+    "used_in_theorem": "s_differentiable_dependence_on_parameters"
+  },
+  {
+    "id": "e_11668",
+    "from": "s_littleo_and_bigo_notation",
+    "to": "t_asymptotic_comparison_of_functions",
+    "role": "input",
+    "parameter_binding": {
+      "role": "asymptotic notation"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11669",
+    "from": "s_asymptotic_expansion",
+    "to": "t_asymptotic_comparison_of_functions",
+    "role": "input",
+    "parameter_binding": {
+      "role": "asymptotic expansion"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11670",
+    "from": "s_asymptotic_scale",
+    "to": "t_asymptotic_comparison_of_functions",
+    "role": "input",
+    "parameter_binding": {
+      "role": "comparison scale"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11671",
+    "from": "t_asymptotic_comparison_of_functions",
+    "to": "s_lagrange_remainder",
+    "role": "output",
+    "parameter_binding": {
+      "result": "order of Taylor remainder"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11672",
+    "from": "t_asymptotic_comparison_of_functions",
+    "to": "s_growth_comparison_of_elementary_functions",
+    "role": "output",
+    "parameter_binding": {
+      "result": "exp >> x^a >> log"
+    },
+    "used_in_theorem": "s_growth_comparison_of_elementary_functions"
+  },
+  {
+    "id": "e_11673",
+    "from": "s_bernoulli_numbers",
+    "to": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Bernoulli numbers"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11674",
+    "from": "s_bernoulli_polynomials",
+    "to": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Bernoulli polynomials"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11675",
+    "from": "s_integral_of_a_regulated_function",
+    "to": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "role": "input",
+    "parameter_binding": {
+      "role": "integral approximation"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11676",
+    "from": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "to": "s_eulermaclaurin_summation_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Euler-Maclaurin formula"
+    },
+    "used_in_theorem": "s_eulermaclaurin_summation_formula"
+  },
+  {
+    "id": "e_11677",
+    "from": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "to": "s_asymptotic_expansion_of_the_gamma_function",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Stirling's expansion"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11678",
+    "from": "s_linear_ordinary_differential_equation",
+    "to": "t_application_of_laplace_transform_to_linear_ode",
+    "role": "input",
+    "parameter_binding": {
+      "role": "linear ODE with initial conditions"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11679",
+    "from": "s_abscissa_of_convergence",
+    "to": "t_application_of_laplace_transform_to_linear_ode",
+    "role": "input",
+    "parameter_binding": {
+      "role": "convergence region"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11680",
+    "from": "t_application_of_laplace_transform_to_linear_ode",
+    "to": "s_laplace_transform_of_derivatives",
+    "role": "output",
+    "parameter_binding": {
+      "result": "transform of derivatives"
+    },
+    "used_in_theorem": "s_laplace_transform_of_derivatives"
+  },
+  {
+    "id": "e_11681",
+    "from": "t_application_of_laplace_transform_to_linear_ode",
+    "to": "s_laplace_transform_of_convolutions",
+    "role": "output",
+    "parameter_binding": {
+      "result": "convolution theorem"
+    },
+    "used_in_theorem": "s_laplace_transform_of_convolutions"
+  },
+  {
+    "id": "e_11682",
+    "from": "t_application_of_laplace_transform_to_linear_ode",
+    "to": "s_inversion_formula_for_laplace_transform",
+    "role": "output",
+    "parameter_binding": {
+      "result": "inversion formula"
+    },
+    "used_in_theorem": "s_inversion_formula_for_laplace_transform"
+  },
+  {
+    "id": "e_11683",
+    "from": "t_application_of_laplace_transform_to_linear_ode",
+    "to": "s_uniqueness_theorem_for_laplace_transform",
+    "role": "output",
+    "parameter_binding": {
+      "result": "uniqueness"
+    },
+    "used_in_theorem": "s_uniqueness_theorem_for_laplace_transform"
+  },
+  {
+    "id": "e_11684",
+    "from": "s_left_right_module",
+    "to": "t_extension_of_scalars",
+    "role": "input",
+    "parameter_binding": {
+      "role": "A-module M"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11685",
+    "from": "t_extension_of_scalars",
+    "to": "s_polynomial_ring_several_variables",
+    "role": "output",
+    "parameter_binding": {
+      "result": "polynomial ring as extended scalars"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11686",
+    "from": "t_extension_of_scalars",
+    "to": "s_simple_algebraic_extension",
+    "role": "output",
+    "parameter_binding": {
+      "result": "simple extension as K[X]/(p)"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11687",
+    "from": "s_polynomial_ring_several_variables",
+    "to": "t_partial_fraction_decomposition",
+    "role": "input",
+    "parameter_binding": {
+      "role": "polynomial ring K[X]"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11688",
+    "from": "s_irreducible_polynomial",
+    "to": "t_partial_fraction_decomposition",
+    "role": "input",
+    "parameter_binding": {
+      "role": "irreducible factors"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11689",
+    "from": "s_gcd_of_polynomials",
+    "to": "t_partial_fraction_decomposition",
+    "role": "input",
+    "parameter_binding": {
+      "role": "GCD computation"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11690",
+    "from": "t_partial_fraction_decomposition",
+    "to": "s_beta_function",
+    "role": "output",
+    "parameter_binding": {
+      "result": "partial fractions of rational function"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11691",
+    "from": "s_polynomial_ring_several_variables",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {
+      "role": "polynomial to divide"
+    },
+    "used_in_theorem": "s_euclidean_division_polynomials"
+  },
+  {
+    "id": "e_11692",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_euclidean_division_polynomials",
+    "role": "output",
+    "parameter_binding": {
+      "result": "f = qg + r, deg r < deg g"
+    },
+    "used_in_theorem": "s_euclidean_division_polynomials"
+  },
+  {
+    "id": "e_11693",
+    "from": "s_root_of_a_polynomial",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {
+      "role": "root of polynomial"
+    },
+    "used_in_theorem": "s_factor_theorem"
+  },
+  {
+    "id": "e_11694",
+    "from": "s_euclidean_division_polynomials",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Euclidean division"
+    },
+    "used_in_theorem": "s_factor_theorem"
+  },
+  {
+    "id": "e_11695",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_factor_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "f(a)=0 iff (X-a)|f"
+    },
+    "used_in_theorem": "s_factor_theorem"
+  },
+  {
+    "id": "e_11696",
+    "from": "s_irreducible_polynomial",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "irreducible elements"
+    },
+    "used_in_theorem": "s_unique_factorization_in_kx"
+  },
+  {
+    "id": "e_11697",
+    "from": "s_euclidean_division_polynomials",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Euclidean algorithm"
+    },
+    "used_in_theorem": "s_unique_factorization_in_kx"
+  },
+  {
+    "id": "e_11698",
+    "from": "t_mathematical_induction",
+    "to": "s_unique_factorization_in_kx",
+    "role": "output",
+    "parameter_binding": {
+      "result": "unique factorization"
+    },
+    "used_in_theorem": "s_unique_factorization_in_kx"
+  },
+  {
+    "id": "e_11699",
+    "from": "s_simple_algebraic_extension",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "field extension"
+    },
+    "used_in_theorem": "s_tower_law"
+  },
+  {
+    "id": "e_11700",
+    "from": "s_basis_of_a_module",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "basis as vector space"
+    },
+    "used_in_theorem": "s_tower_law"
+  },
+  {
+    "id": "e_11701",
+    "from": "t_mathematical_induction",
+    "to": "s_tower_law",
+    "role": "output",
+    "parameter_binding": {
+      "result": "[L:K] = [L:F][F:K]"
+    },
+    "used_in_theorem": "s_tower_law"
+  },
+  {
+    "id": "e_11702",
+    "from": "s_algebraic_element",
+    "to": "t_transfinite_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "algebraic elements"
+    },
+    "used_in_theorem": "s_existence_uniqueness_algebraic_closure"
+  },
+  {
+    "id": "e_11703",
+    "from": "s_irreducible_polynomial",
+    "to": "t_transfinite_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "irreducible polynomials to adjoin"
+    },
+    "used_in_theorem": "s_existence_uniqueness_algebraic_closure"
+  },
+  {
+    "id": "e_11704",
+    "from": "t_transfinite_induction",
+    "to": "s_existence_uniqueness_algebraic_closure",
+    "role": "output",
+    "parameter_binding": {
+      "result": "algebraic closure exists and is unique"
+    },
+    "used_in_theorem": "s_existence_uniqueness_algebraic_closure"
+  },
+  {
+    "id": "e_11705",
+    "from": "s_support_of_a_module",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "support of module"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11706",
+    "from": "s_noetherian_module",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Noetherian module"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11707",
+    "from": "t_local_global_principle",
+    "to": "s_uniqueness_primary_decomposition",
+    "role": "output",
+    "parameter_binding": {
+      "result": "primary decomposition via localization"
+    },
+    "used_in_theorem": "s_uniqueness_primary_decomposition"
+  },
+  {
+    "id": "e_11708",
+    "from": "s_faithfully_flat_module",
+    "to": "t_faithfully_flat_descent",
+    "role": "input",
+    "parameter_binding": {
+      "role": "faithfully flat morphism"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11709",
+    "from": "s_left_right_module",
+    "to": "t_faithfully_flat_descent",
+    "role": "input",
+    "parameter_binding": {
+      "role": "module to descend"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11710",
+    "from": "t_faithfully_flat_descent",
+    "to": "s_lying_over_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "primes lie over via flat morphism"
+    },
+    "used_in_theorem": "s_lying_over_theorem"
+  },
+  {
+    "id": "e_11711",
+    "from": "s_noetherian_module",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Noetherian local ring"
+    },
+    "used_in_theorem": "s_dimension_theorem_noetherian_local"
+  },
+  {
+    "id": "e_11712",
+    "from": "s_system_of_parameters",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "system of parameters"
+    },
+    "used_in_theorem": "s_dimension_theorem_noetherian_local"
+  },
+  {
+    "id": "e_11713",
+    "from": "t_local_global_principle",
+    "to": "s_dimension_theorem_noetherian_local",
+    "role": "output",
+    "parameter_binding": {
+      "result": "dim = min generators of m-primary ideal"
+    },
+    "used_in_theorem": "s_dimension_theorem_noetherian_local"
+  },
+  {
+    "id": "e_11714",
+    "from": "s_minkowski_functional",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Minkowski functional"
+    },
+    "used_in_theorem": "s_strict_separation_theorem"
+  },
+  {
+    "id": "e_11715",
+    "from": "s_bounded_set_in_a_tvs",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {
+      "role": "convex sets to separate"
+    },
+    "used_in_theorem": "s_strict_separation_theorem"
+  },
+  {
+    "id": "e_11716",
+    "from": "t_convex_optimization",
+    "to": "s_strict_separation_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "strict separation by hyperplane"
+    },
+    "used_in_theorem": "s_strict_separation_theorem"
+  },
+  {
+    "id": "e_11717",
+    "from": "s_minkowski_functional",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {
+      "role": "gauge functional"
+    },
+    "used_in_theorem": "s_supporting_hyperplane_theorem"
+  },
+  {
+    "id": "e_11718",
+    "from": "t_convex_optimization",
+    "to": "s_supporting_hyperplane_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "supporting hyperplane exists"
+    },
+    "used_in_theorem": "s_supporting_hyperplane_theorem"
+  },
+  {
+    "id": "e_11719",
+    "from": "s_weak_topology",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {
+      "role": "weak topology"
+    },
+    "used_in_theorem": "s_bipolar_theorem"
+  },
+  {
+    "id": "e_11720",
+    "from": "s_balanced_set",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {
+      "role": "absolutely convex set"
+    },
+    "used_in_theorem": "s_bipolar_theorem"
+  },
+  {
+    "id": "e_11721",
+    "from": "t_duality",
+    "to": "s_bipolar_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "A°° = closed convex hull"
+    },
+    "used_in_theorem": "s_bipolar_theorem"
+  },
+  {
+    "id": "e_11722",
+    "from": "s_normed_vector_space",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "normed space"
+    },
+    "used_in_theorem": "s_parallelogram_law"
+  },
+  {
+    "id": "e_11723",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_parallelogram_law",
+    "role": "output",
+    "parameter_binding": {
+      "result": "norm comes from inner product iff parallelogram law"
+    },
+    "used_in_theorem": "s_parallelogram_law"
+  },
+  {
+    "id": "e_11724",
+    "from": "s_orthogonality",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {
+      "role": "orthogonality in Hilbert space"
+    },
+    "used_in_theorem": "s_orthogonal_projection_theorem"
+  },
+  {
+    "id": "e_11725",
+    "from": "t_convex_optimization",
+    "to": "s_orthogonal_projection_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "projection onto closed convex set"
+    },
+    "used_in_theorem": "s_orthogonal_projection_theorem"
+  },
+  {
+    "id": "e_11726",
+    "from": "s_regulated_function",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {
+      "role": "positive linear functional"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11727",
+    "from": "s_integral_of_a_regulated_function",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {
+      "role": "initial integral"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11728",
+    "from": "t_daniell_integral_approach",
+    "to": "s_integrable_function_lebesgue",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Lebesgue integrable functions"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11729",
+    "from": "t_daniell_integral_approach",
+    "to": "s_lp_space",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Lp spaces"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11730",
+    "from": "t_daniell_integral_approach",
+    "to": "s_negligible_set",
+    "role": "output",
+    "parameter_binding": {
+      "result": "null sets"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11731",
+    "from": "s_mu_measurable_function_bourbaki",
+    "to": "t_approximation_by_continuous_functions",
+    "role": "input",
+    "parameter_binding": {
+      "role": "measurable function"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11732",
+    "from": "s_bounded_radon_measure",
+    "to": "t_approximation_by_continuous_functions",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Radon measure"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11733",
+    "from": "t_approximation_by_continuous_functions",
+    "to": "s_dense_subspaces_of_lp",
+    "role": "output",
+    "parameter_binding": {
+      "result": "C_c dense in Lp"
+    },
+    "used_in_theorem": "s_dense_subspaces_of_lp"
+  },
+  {
+    "id": "e_11734",
+    "from": "t_approximation_by_continuous_functions",
+    "to": "s_regularity_of_radon_measures",
+    "role": "output",
+    "parameter_binding": {
+      "result": "regularity"
+    },
+    "used_in_theorem": "s_regularity_of_radon_measures"
+  },
+  {
+    "id": "e_11735",
+    "from": "s_product_measure",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {
+      "role": "product measure"
+    },
+    "used_in_theorem": "s_tonellis_theorem"
+  },
+  {
+    "id": "e_11736",
+    "from": "s_mu_measurable_function_bourbaki",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {
+      "role": "measurable function"
+    },
+    "used_in_theorem": "s_tonellis_theorem"
+  },
+  {
+    "id": "e_11737",
+    "from": "t_daniell_integral_approach",
+    "to": "s_tonellis_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "iterated integrals equal"
+    },
+    "used_in_theorem": "s_tonellis_theorem"
+  },
+  {
+    "id": "e_11738",
+    "from": "s_conjugate_exponents",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {
+      "role": "conjugate exponents p,q"
+    },
+    "used_in_theorem": "s_youngs_inequality_for_products"
+  },
+  {
+    "id": "e_11739",
+    "from": "t_convex_optimization",
+    "to": "s_youngs_inequality_for_products",
+    "role": "output",
+    "parameter_binding": {
+      "result": "ab <= a^p/p + b^q/q"
+    },
+    "used_in_theorem": "s_youngs_inequality_for_products"
+  },
+  {
+    "id": "e_11740",
+    "from": "s_left_invariance_of_haar_measure",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Haar measure"
+    },
+    "used_in_theorem": "s_weils_formula"
+  },
+  {
+    "id": "e_11741",
+    "from": "s_quotient_group_topology",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {
+      "role": "quotient group"
+    },
+    "used_in_theorem": "s_weils_formula"
+  },
+  {
+    "id": "e_11742",
+    "from": "t_daniell_integral_approach",
+    "to": "s_weils_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "quotient integral formula"
+    },
+    "used_in_theorem": "s_weils_formula"
+  },
+  {
+    "id": "e_11743",
+    "from": "s_fourier_transform_on_lca_groups",
+    "to": "t_fourier_transform",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Fourier transform on LCA"
+    },
+    "used_in_theorem": "s_fourier_inversion_formula_lca"
+  },
+  {
+    "id": "e_11744",
+    "from": "s_pontryagin_dual_group",
+    "to": "t_fourier_transform",
+    "role": "input",
+    "parameter_binding": {
+      "role": "dual group"
+    },
+    "used_in_theorem": "s_fourier_inversion_formula_lca"
+  },
+  {
+    "id": "e_11745",
+    "from": "t_fourier_transform",
+    "to": "s_fourier_inversion_formula_lca",
+    "role": "output",
+    "parameter_binding": {
+      "result": "inversion formula"
+    },
+    "used_in_theorem": "s_fourier_inversion_formula_lca"
+  },
+  {
+    "id": "e_11746",
+    "from": "s_lie_group_homomorphism",
+    "to": "t_lie_functor",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lie group homomorphism"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11747",
+    "from": "t_lie_functor",
+    "to": "s_lie_algebra_of_a_lie_group",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Lie algebra of Lie group"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11748",
+    "from": "t_lie_functor",
+    "to": "s_lie_algebra_homomorphism",
+    "role": "output",
+    "parameter_binding": {
+      "result": "induced Lie algebra homomorphism"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11749",
+    "from": "s_lie_algebra_homomorphism",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lie algebra homomorphism"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11750",
+    "from": "s_baker_campbell_hausdorff_formula",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {
+      "role": "BCH formula"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11751",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_lie_group_homomorphism",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Lie group homomorphism"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11752",
+    "from": "s_lie_subgroup",
+    "to": "t_lie_functor",
+    "role": "input",
+    "parameter_binding": {
+      "role": "closed subgroup"
+    },
+    "used_in_theorem": "s_closed_subgroup_theorem"
+  },
+  {
+    "id": "e_11753",
+    "from": "t_lie_functor",
+    "to": "s_closed_subgroup_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "closed subgroup is a Lie subgroup"
+    },
+    "used_in_theorem": "s_closed_subgroup_theorem"
+  },
+  {
+    "id": "e_11754",
+    "from": "s_solvable_lie_algebra",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {
+      "role": "solvable Lie algebra"
+    },
+    "used_in_theorem": "s_lie_s_theorem"
+  },
+  {
+    "id": "e_11755",
+    "from": "t_character_methods",
+    "to": "s_lie_s_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "common eigenvector exists"
+    },
+    "used_in_theorem": "s_lie_s_theorem"
+  },
+  {
+    "id": "e_11756",
+    "from": "s_solvable_lie_algebra",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lie algebra to test"
+    },
+    "used_in_theorem": "s_cartan_s_criterion_for_solvability"
+  },
+  {
+    "id": "e_11757",
+    "from": "s_invariant_bilinear_form",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Killing form"
+    },
+    "used_in_theorem": "s_cartan_s_criterion_for_solvability"
+  },
+  {
+    "id": "e_11758",
+    "from": "t_character_methods",
+    "to": "s_cartan_s_criterion_for_solvability",
+    "role": "output",
+    "parameter_binding": {
+      "result": "solvable iff Killing form vanishes on derived"
+    },
+    "used_in_theorem": "s_cartan_s_criterion_for_solvability"
+  },
+  {
+    "id": "e_11759",
+    "from": "s_invariant_bilinear_form",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Killing form"
+    },
+    "used_in_theorem": "s_cartan_s_criterion_for_semisimplicity"
+  },
+  {
+    "id": "e_11760",
+    "from": "s_simple_lie_algebra",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {
+      "role": "simple Lie algebra"
+    },
+    "used_in_theorem": "s_cartan_s_criterion_for_semisimplicity"
+  },
+  {
+    "id": "e_11761",
+    "from": "t_character_methods",
+    "to": "s_cartan_s_criterion_for_semisimplicity",
+    "role": "output",
+    "parameter_binding": {
+      "result": "semisimple iff Killing form nondegenerate"
+    },
+    "used_in_theorem": "s_cartan_s_criterion_for_semisimplicity"
+  },
+  {
+    "id": "e_11762",
+    "from": "s_radical_of_a_lie_algebra",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "radical of Lie algebra"
+    },
+    "used_in_theorem": "s_levi_decomposition"
+  },
+  {
+    "id": "e_11763",
+    "from": "s_solvable_lie_algebra",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "solvable radical"
+    },
+    "used_in_theorem": "s_levi_decomposition"
+  },
+  {
+    "id": "e_11764",
+    "from": "t_auxiliary_construction",
+    "to": "s_levi_decomposition",
+    "role": "output",
+    "parameter_binding": {
+      "result": "g = s ⋉ rad(g)"
+    },
+    "used_in_theorem": "s_levi_decomposition"
+  },
+  {
+    "id": "e_11765",
+    "from": "s_compact_real_form",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {
+      "role": "compact real form"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11766",
+    "from": "s_simple_lie_algebra",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {
+      "role": "semisimple Lie algebra"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11767",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_conjugacy_of_maximal_tori",
+    "role": "output",
+    "parameter_binding": {
+      "result": "maximal tori conjugate"
+    },
+    "used_in_theorem": "s_conjugacy_of_maximal_tori"
+  },
+  {
+    "id": "e_11768",
+    "from": "s_root_space_decomposition",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "root space decomposition"
+    },
+    "used_in_theorem": "s_conjugacy_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_11769",
+    "from": "t_auxiliary_construction",
+    "to": "s_conjugacy_of_cartan_subalgebras",
+    "role": "output",
+    "parameter_binding": {
+      "result": "all Cartan subalgebras conjugate"
+    },
+    "used_in_theorem": "s_conjugacy_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_11770",
+    "from": "s_cartan_matrix",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Cartan matrix"
+    },
+    "used_in_theorem": "s_serre_s_presentation"
+  },
+  {
+    "id": "e_11771",
+    "from": "s_chevalley_basis",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Chevalley basis"
+    },
+    "used_in_theorem": "s_serre_s_presentation"
+  },
+  {
+    "id": "e_11772",
+    "from": "t_auxiliary_construction",
+    "to": "s_serre_s_presentation",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Serre relations generate g"
+    },
+    "used_in_theorem": "s_serre_s_presentation"
+  },
+  {
+    "id": "e_11773",
+    "from": "s_cartan_matrix",
+    "to": "t_finite_case_check",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Cartan matrix constraints"
+    },
+    "used_in_theorem": "s_classification_of_irreducible_root_systems"
+  },
+  {
+    "id": "e_11774",
+    "from": "s_coroot",
+    "to": "t_finite_case_check",
+    "role": "input",
+    "parameter_binding": {
+      "role": "coroot system"
+    },
+    "used_in_theorem": "s_classification_of_irreducible_root_systems"
+  },
+  {
+    "id": "e_11775",
+    "from": "t_finite_case_check",
+    "to": "s_classification_of_irreducible_root_systems",
+    "role": "output",
+    "parameter_binding": {
+      "result": "A_n, B_n, C_n, D_n, E_6, E_7, E_8, F_4, G_2"
+    },
+    "used_in_theorem": "s_classification_of_irreducible_root_systems"
+  },
+  {
+    "id": "e_11776",
+    "from": "s_coxeter_matrix",
+    "to": "t_finite_case_check",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Coxeter matrix"
+    },
+    "used_in_theorem": "s_classification_of_finite_coxeter_groups"
+  },
+  {
+    "id": "e_11777",
+    "from": "s_coxeter_graph",
+    "to": "t_finite_case_check",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Coxeter graph"
+    },
+    "used_in_theorem": "s_classification_of_finite_coxeter_groups"
+  },
+  {
+    "id": "e_11778",
+    "from": "t_finite_case_check",
+    "to": "s_classification_of_finite_coxeter_groups",
+    "role": "output",
+    "parameter_binding": {
+      "result": "finite Coxeter groups classified"
+    },
+    "used_in_theorem": "s_classification_of_finite_coxeter_groups"
+  },
+  {
+    "id": "e_11779",
+    "from": "s_lie_subalgebra",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lie algebra"
+    },
+    "used_in_theorem": "s_poincare_birkhoff_witt_theorem"
+  },
+  {
+    "id": "e_11780",
+    "from": "t_mathematical_induction",
+    "to": "s_poincare_birkhoff_witt_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "PBW basis of U(g)"
+    },
+    "used_in_theorem": "s_poincare_birkhoff_witt_theorem"
+  },
+  {
+    "id": "e_11781",
+    "from": "s_banach_algebra",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Banach algebra element"
+    },
+    "used_in_theorem": "s_spectral_radius_formula"
+  },
+  {
+    "id": "e_11782",
+    "from": "s_resolvent_of_an_operator",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "resolvent"
+    },
+    "used_in_theorem": "s_spectral_radius_formula"
+  },
+  {
+    "id": "e_11783",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_spectral_radius_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "r(a) = lim ||a^n||^{1/n}"
+    },
+    "used_in_theorem": "s_spectral_radius_formula"
+  },
+  {
+    "id": "e_11784",
+    "from": "s_banach_algebra",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Banach algebra"
+    },
+    "used_in_theorem": "s_spectral_mapping_theorem"
+  },
+  {
+    "id": "e_11785",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_spectral_mapping_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "sigma(f(a)) = f(sigma(a))"
+    },
+    "used_in_theorem": "s_spectral_mapping_theorem"
+  },
+  {
+    "id": "e_11786",
+    "from": "s_banach_algebra",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Banach algebra"
+    },
+    "used_in_theorem": "s_holomorphic_functional_calculus"
+  },
+  {
+    "id": "e_11787",
+    "from": "s_resolvent_of_an_operator",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "resolvent function"
+    },
+    "used_in_theorem": "s_holomorphic_functional_calculus"
+  },
+  {
+    "id": "e_11788",
+    "from": "t_auxiliary_construction",
+    "to": "s_holomorphic_functional_calculus",
+    "role": "output",
+    "parameter_binding": {
+      "result": "f(a) = (1/2πi)∮f(z)(z-a)^{-1}dz"
+    },
+    "used_in_theorem": "s_holomorphic_functional_calculus"
+  },
+  {
+    "id": "e_11789",
+    "from": "s_normal_operator",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {
+      "role": "normal operator"
+    },
+    "used_in_theorem": "s_spectral_theorem_for_bounded_normal_operators"
+  },
+  {
+    "id": "e_11790",
+    "from": "s_c_star_identity",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {
+      "role": "C*-identity"
+    },
+    "used_in_theorem": "s_spectral_theorem_for_bounded_normal_operators"
+  },
+  {
+    "id": "e_11791",
+    "from": "t_gns_construction_method",
+    "to": "s_spectral_theorem_for_bounded_normal_operators",
+    "role": "output",
+    "parameter_binding": {
+      "result": "spectral decomposition"
+    },
+    "used_in_theorem": "s_spectral_theorem_for_bounded_normal_operators"
+  },
+  {
+    "id": "e_11792",
+    "from": "s_resolvent_of_an_operator",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "resolvent operators"
+    },
+    "used_in_theorem": "s_resolvent_identity"
+  },
+  {
+    "id": "e_11793",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_resolvent_identity",
+    "role": "output",
+    "parameter_binding": {
+      "result": "R(λ)-R(μ) = (μ-λ)R(λ)R(μ)"
+    },
+    "used_in_theorem": "s_resolvent_identity"
+  },
+  {
+    "id": "e_11794",
+    "from": "s_non_degenerate_form",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "non-degenerate form"
+    },
+    "used_in_theorem": "s_witt_theorem"
+  },
+  {
+    "id": "e_11795",
+    "from": "s_symmetric_bilinear_form",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "bilinear form"
+    },
+    "used_in_theorem": "s_witt_theorem"
+  },
+  {
+    "id": "e_11796",
+    "from": "t_auxiliary_construction",
+    "to": "s_witt_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "isometry extends to whole space"
+    },
+    "used_in_theorem": "s_witt_theorem"
+  },
+  {
+    "id": "e_11797",
+    "from": "s_left_right_module",
+    "to": "t_extension_of_scalars",
+    "role": "input",
+    "parameter_binding": {
+      "role": "modules"
+    },
+    "used_in_theorem": "s_right_exactness_of_tensor_product"
+  },
+  {
+    "id": "e_11798",
+    "from": "t_extension_of_scalars",
+    "to": "s_right_exactness_of_tensor_product",
+    "role": "output",
+    "parameter_binding": {
+      "result": "tensor product is right exact"
+    },
+    "used_in_theorem": "s_right_exactness_of_tensor_product"
+  },
+  {
+    "id": "e_11799",
+    "from": "s_noetherian_module",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Noetherian domain"
+    },
+    "used_in_theorem": "s_unique_factorization_ideals_dedekind"
+  },
+  {
+    "id": "e_11800",
+    "from": "s_invertible_ideal",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "invertible ideals"
+    },
+    "used_in_theorem": "s_unique_factorization_ideals_dedekind"
+  },
+  {
+    "id": "e_11801",
+    "from": "t_local_global_principle",
+    "to": "s_unique_factorization_ideals_dedekind",
+    "role": "output",
+    "parameter_binding": {
+      "result": "unique factorization into primes"
+    },
+    "used_in_theorem": "s_unique_factorization_ideals_dedekind"
+  },
+  {
+    "id": "e_11802",
+    "from": "s_valuation_ring",
+    "to": "t_extension_of_scalars",
+    "role": "input",
+    "parameter_binding": {
+      "role": "valuation ring"
+    },
+    "used_in_theorem": "s_extension_of_valuations"
+  },
+  {
+    "id": "e_11803",
+    "from": "s_integral_element",
+    "to": "t_extension_of_scalars",
+    "role": "input",
+    "parameter_binding": {
+      "role": "integral closure"
+    },
+    "used_in_theorem": "s_extension_of_valuations"
+  },
+  {
+    "id": "e_11804",
+    "from": "t_extension_of_scalars",
+    "to": "s_extension_of_valuations",
+    "role": "output",
+    "parameter_binding": {
+      "result": "valuation extends to field extension"
+    },
+    "used_in_theorem": "s_extension_of_valuations"
+  },
+  {
+    "id": "e_11805",
+    "from": "s_filter_base",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "filter base for convergence"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11806",
+    "from": "s_cluster_point_of_filter",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "cluster point"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11807",
+    "from": "s_hausdorff_space",
+    "to": "t_proof_by_contradiction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Hausdorff separation"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11808",
+    "from": "s_uniform_space",
+    "to": "t_contraction_fixed_point",
+    "role": "input",
+    "parameter_binding": {
+      "role": "uniform space structure"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11809",
+    "from": "s_cauchy_filter",
+    "to": "t_contraction_fixed_point",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Cauchy filter for completeness"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11810",
+    "from": "t_contraction_fixed_point",
+    "to": "s_completion_of_uniform_space",
+    "role": "output",
+    "parameter_binding": {
+      "result": "completed uniform space"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11811",
+    "from": "s_connected_space",
+    "to": "t_proof_by_contradiction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "connected space"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11812",
+    "from": "t_proof_by_contradiction",
+    "to": "s_connected_component",
+    "role": "output",
+    "parameter_binding": {
+      "result": "connected components partition the space"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11813",
+    "from": "s_lipschitz_condition",
+    "to": "t_picard_iteration",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lipschitz condition for ODE"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11814",
+    "from": "t_picard_iteration",
+    "to": "s_maximal_solution_of_an_ode",
+    "role": "output",
+    "parameter_binding": {
+      "result": "unique maximal solution"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11815",
+    "from": "s_noetherian_module",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {
+      "role": "ascending chain condition"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11816",
+    "from": "s_artinian_module",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {
+      "role": "descending chain condition"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11817",
+    "from": "t_induction_on_invariants",
+    "to": "s_elementary_divisors",
+    "role": "output",
+    "parameter_binding": {
+      "result": "elementary divisors"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11818",
+    "from": "s_regular_sequence",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "regular sequence"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11819",
+    "from": "t_local_global_principle",
+    "to": "s_depth",
+    "role": "output",
+    "parameter_binding": {
+      "result": "depth of module"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11820",
+    "from": "t_local_global_principle",
+    "to": "s_depth_lemma",
+    "role": "output",
+    "parameter_binding": {
+      "result": "depth lemma"
+    },
+    "used_in_theorem": "s_depth_lemma"
+  },
+  {
+    "id": "e_11821",
+    "from": "s_power_function",
+    "to": "t_asymptotic_comparison_of_functions",
+    "role": "input",
+    "parameter_binding": {
+      "role": "power function"
+    },
+    "used_in_theorem": "s_analyticity_of_elementary_functions"
+  },
+  {
+    "id": "e_11822",
+    "from": "t_asymptotic_comparison_of_functions",
+    "to": "s_analyticity_of_elementary_functions",
+    "role": "output",
+    "parameter_binding": {
+      "result": "elementary functions are analytic"
+    },
+    "used_in_theorem": "s_analyticity_of_elementary_functions"
+  },
+  {
+    "id": "e_11823",
+    "from": "s_equipotence",
+    "to": "t_transfinite_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "cardinality comparison"
+    },
+    "used_in_theorem": "s_absorption_infinite_cardinals"
+  },
+  {
+    "id": "e_11824",
+    "from": "t_transfinite_induction",
+    "to": "s_absorption_infinite_cardinals",
+    "role": "output",
+    "parameter_binding": {
+      "result": "kappa + kappa = kappa * kappa = kappa"
+    },
+    "used_in_theorem": "s_absorption_infinite_cardinals"
+  },
+  {
+    "id": "e_11825",
+    "from": "s_one_sided_limits",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "liminf/limsup"
+    },
+    "used_in_theorem": "s_semicontinuity_liminf_limsup"
+  },
+  {
+    "id": "e_11826",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_semicontinuity_liminf_limsup",
+    "role": "output",
+    "parameter_binding": {
+      "result": "lsc iff f <= liminf"
+    },
+    "used_in_theorem": "s_semicontinuity_liminf_limsup"
+  },
+  {
+    "id": "e_11827",
+    "from": "s_algebraic_element",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {
+      "role": "field automorphisms"
+    },
+    "used_in_theorem": "s_artin_theorem_on_characters"
+  },
+  {
+    "id": "e_11828",
+    "from": "t_character_methods",
+    "to": "s_artin_theorem_on_characters",
+    "role": "output",
+    "parameter_binding": {
+      "result": "distinct characters are linearly independent"
+    },
+    "used_in_theorem": "s_artin_theorem_on_characters"
+  },
+  {
+    "id": "e_11829",
+    "from": "s_completeness_of_a_tvs",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "TVS completeness"
+    },
+    "used_in_theorem": "s_grothendieck_completion_theorem"
+  },
+  {
+    "id": "e_11830",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_grothendieck_completion_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "completion of TVS"
+    },
+    "used_in_theorem": "s_grothendieck_completion_theorem"
+  },
+  {
+    "id": "e_11831",
+    "from": "s_lie_subalgebra",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lie bracket iterations"
+    },
+    "used_in_theorem": "s_baker_campbell_hausdorff_formula"
+  },
+  {
+    "id": "e_11832",
+    "from": "t_mathematical_induction",
+    "to": "s_baker_campbell_hausdorff_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "log(exp(X)exp(Y)) = X+Y+[X,Y]/2+..."
+    },
+    "used_in_theorem": "s_baker_campbell_hausdorff_formula"
+  },
+  {
+    "id": "e_11833",
+    "from": "s_locally_compact_group",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {
+      "role": "locally compact group"
+    },
+    "used_in_theorem": "s_snag_theorem"
+  },
+  {
+    "id": "e_11834",
+    "from": "s_orthonormal_system",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {
+      "role": "unitary representation"
+    },
+    "used_in_theorem": "s_snag_theorem"
+  },
+  {
+    "id": "e_11835",
+    "from": "t_gns_construction_method",
+    "to": "s_snag_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "spectral decomposition of unitary rep"
+    },
+    "used_in_theorem": "s_snag_theorem"
+  },
+  {
+    "id": "e_11836",
+    "from": "s_normal_operator",
+    "to": "t_svd_and_spectral_decomposition",
+    "role": "input",
+    "parameter_binding": {
+      "role": "von Neumann algebra"
+    },
+    "used_in_theorem": "s_type_decomposition_of_von_neumann_algebras"
+  },
+  {
+    "id": "e_11837",
+    "from": "t_svd_and_spectral_decomposition",
+    "to": "s_type_decomposition_of_von_neumann_algebras",
+    "role": "output",
+    "parameter_binding": {
+      "result": "type I, II, III decomposition"
+    },
+    "used_in_theorem": "s_type_decomposition_of_von_neumann_algebras"
+  },
+  {
+    "id": "e_11838",
+    "from": "s_change_of_variables_in_integrals",
+    "to": "t_approximation_by_continuous_functions",
+    "role": "input",
+    "parameter_binding": {
+      "role": "1D change of variables"
+    },
+    "used_in_theorem": "s_change_of_variables_formula_rn"
+  },
+  {
+    "id": "e_11839",
+    "from": "s_integrable_function_lebesgue",
+    "to": "t_approximation_by_continuous_functions",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lebesgue integrable function"
+    },
+    "used_in_theorem": "s_change_of_variables_formula_rn"
+  },
+  {
+    "id": "e_11840",
+    "from": "t_approximation_by_continuous_functions",
+    "to": "s_change_of_variables_formula_rn",
+    "role": "output",
+    "parameter_binding": {
+      "result": "∫f(φ(x))|det Dφ|dx = ∫f(y)dy"
+    },
+    "used_in_theorem": "s_change_of_variables_formula_rn"
+  },
+  {
+    "id": "e_11841",
+    "from": "s_injective_hull",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {
+      "role": "injective hull of residue field"
+    },
+    "used_in_theorem": "s_matlis_duality"
+  },
+  {
+    "id": "e_11842",
+    "from": "s_artinian_module",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Artinian module"
+    },
+    "used_in_theorem": "s_matlis_duality"
+  },
+  {
+    "id": "e_11843",
+    "from": "t_duality",
+    "to": "s_matlis_duality",
+    "role": "output",
+    "parameter_binding": {
+      "result": "duality between Artinian and Noetherian"
+    },
+    "used_in_theorem": "s_matlis_duality"
+  },
+  {
+    "id": "e_11844",
+    "from": "s_dualizing_module",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {
+      "role": "dualizing module"
+    },
+    "used_in_theorem": "s_local_duality_theorem"
+  },
+  {
+    "id": "e_11845",
+    "from": "s_depth",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {
+      "role": "local cohomology"
+    },
+    "used_in_theorem": "s_local_duality_theorem"
+  },
+  {
+    "id": "e_11846",
+    "from": "t_duality",
+    "to": "s_local_duality_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "H^i_m dualizes Ext"
+    },
+    "used_in_theorem": "s_local_duality_theorem"
+  },
+  {
+    "id": "e_11847",
+    "from": "s_injective_hull",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "injective modules"
+    },
+    "used_in_theorem": "s_bass_theorem"
+  },
+  {
+    "id": "e_11848",
+    "from": "s_noetherian_module",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Noetherian ring"
+    },
+    "used_in_theorem": "s_bass_theorem"
+  },
+  {
+    "id": "e_11849",
+    "from": "t_local_global_principle",
+    "to": "s_bass_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Noetherian iff direct sum of injectives is injective"
+    },
+    "used_in_theorem": "s_bass_theorem"
+  },
+  {
+    "id": "e_11850",
+    "from": "s_regular_sequence",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "regular local ring"
+    },
+    "used_in_theorem": "s_regular_rings_finite_global_dimension"
+  },
+  {
+    "id": "e_11851",
+    "from": "t_local_global_principle",
+    "to": "s_regular_rings_finite_global_dimension",
+    "role": "output",
+    "parameter_binding": {
+      "result": "gl.dim = Krull dim"
+    },
+    "used_in_theorem": "s_regular_rings_finite_global_dimension"
+  },
+  {
+    "id": "e_11852",
+    "from": "s_polynomial_ring_several_variables",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {
+      "role": "power series ring"
+    },
+    "used_in_theorem": "s_weierstrass_division_theorem"
+  },
+  {
+    "id": "e_11853",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_weierstrass_division_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "f = qg + r in power series ring"
+    },
+    "used_in_theorem": "s_weierstrass_division_theorem"
+  },
+  {
+    "id": "e_11854",
+    "from": "s_banach_algebra",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "closed subalgebra"
+    },
+    "used_in_theorem": "s_spectral_permanence"
+  },
+  {
+    "id": "e_11855",
+    "from": "s_c_star_identity",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "C*-identity"
+    },
+    "used_in_theorem": "s_spectral_permanence"
+  },
+  {
+    "id": "e_11856",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_spectral_permanence",
+    "role": "output",
+    "parameter_binding": {
+      "result": "spectrum in subalgebra = spectrum in algebra"
+    },
+    "used_in_theorem": "s_spectral_permanence"
+  },
+  {
+    "id": "e_11857",
+    "from": "s_improper_integral",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "improper integral"
+    },
+    "used_in_theorem": "s_absolute_convergence_of_improper_integrals"
+  },
+  {
+    "id": "e_11858",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_absolute_convergence_of_improper_integrals",
+    "role": "output",
+    "parameter_binding": {
+      "result": "absolute convergence implies convergence"
+    },
+    "used_in_theorem": "s_absolute_convergence_of_improper_integrals"
+  },
+  {
+    "id": "e_11859",
+    "from": "s_finer_coarser_topologies",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "pointwise ordering of functions"
+    },
+    "used_in_theorem": "s_sup_lsc_functions"
+  },
+  {
+    "id": "e_11860",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_sup_lsc_functions",
+    "role": "output",
+    "parameter_binding": {
+      "result": "sup of lsc functions is lsc"
+    },
+    "used_in_theorem": "s_sup_lsc_functions"
+  },
+  {
+    "id": "e_11861",
+    "from": "s_higherorder_derivative",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "role": "second derivative"
+    },
+    "used_in_theorem": "s_convexity_criterion_via_second_derivative"
+  },
+  {
+    "id": "e_11862",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_convexity_criterion_via_second_derivative",
+    "role": "output",
+    "parameter_binding": {
+      "result": "f'' >= 0 iff f convex"
+    },
+    "used_in_theorem": "s_convexity_criterion_via_second_derivative"
+  },
+  {
+    "id": "e_11863",
+    "from": "s_conjugate_exponents",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {
+      "role": "exponents"
+    },
+    "used_in_theorem": "s_logconvexity_of_lp_norms"
+  },
+  {
+    "id": "e_11864",
+    "from": "s_lp_space",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lp space"
+    },
+    "used_in_theorem": "s_logconvexity_of_lp_norms"
+  },
+  {
+    "id": "e_11865",
+    "from": "t_convex_optimization",
+    "to": "s_logconvexity_of_lp_norms",
+    "role": "output",
+    "parameter_binding": {
+      "result": "Lp norms are log-convex"
+    },
+    "used_in_theorem": "s_logconvexity_of_lp_norms"
+  },
+  {
+    "id": "e_11866",
+    "from": "s_weak_topology",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "weak topology"
+    },
+    "used_in_theorem": "s_weak_compactness_and_completeness"
+  },
+  {
+    "id": "e_11867",
+    "from": "s_semireflexive_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "semi-reflexive space"
+    },
+    "used_in_theorem": "s_weak_compactness_and_completeness"
+  },
+  {
+    "id": "e_11868",
+    "from": "t_compactness_argument",
+    "to": "s_weak_compactness_and_completeness",
+    "role": "output",
+    "parameter_binding": {
+      "result": "weak compactness iff semi-reflexive"
+    },
+    "used_in_theorem": "s_weak_compactness_and_completeness"
+  },
+  {
+    "id": "e_11869",
+    "from": "s_krull_valuation",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "independent valuations"
+    },
+    "used_in_theorem": "s_approximation_theorem_valuations"
+  },
+  {
+    "id": "e_11870",
+    "from": "t_auxiliary_construction",
+    "to": "s_approximation_theorem_valuations",
+    "role": "output",
+    "parameter_binding": {
+      "result": "simultaneous approximation by element"
+    },
+    "used_in_theorem": "s_approximation_theorem_valuations"
+  },
+  {
+    "id": "e_11871",
+    "from": "s_dimension_theorem_noetherian_local",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Krull dimension"
+    },
+    "used_in_theorem": "s_dimension_of_polynomial_rings"
+  },
+  {
+    "id": "e_11872",
+    "from": "s_polynomial_ring_several_variables",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "polynomial ring"
+    },
+    "used_in_theorem": "s_dimension_of_polynomial_rings"
+  },
+  {
+    "id": "e_11873",
+    "from": "t_mathematical_induction",
+    "to": "s_dimension_of_polynomial_rings",
+    "role": "output",
+    "parameter_binding": {
+      "result": "dim R[X] = dim R + 1"
+    },
+    "used_in_theorem": "s_dimension_of_polynomial_rings"
+  },
+  {
+    "id": "e_11874",
+    "from": "s_regular_sequence",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {
+      "role": "regular sequence"
+    },
+    "used_in_theorem": "s_unmixedness_theorem"
+  },
+  {
+    "id": "e_11875",
+    "from": "t_local_global_principle",
+    "to": "s_unmixedness_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "associated primes have same height"
+    },
+    "used_in_theorem": "s_unmixedness_theorem"
+  },
+  {
+    "id": "e_11876",
+    "from": "s_invariant_bilinear_form",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Killing form"
+    },
+    "used_in_theorem": "s_whitehead_first_lemma"
+  },
+  {
+    "id": "e_11877",
+    "from": "s_cartan_s_criterion_for_semisimplicity",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "semisimplicity criterion"
+    },
+    "used_in_theorem": "s_whitehead_first_lemma"
+  },
+  {
+    "id": "e_11878",
+    "from": "t_auxiliary_construction",
+    "to": "s_whitehead_first_lemma",
+    "role": "output",
+    "parameter_binding": {
+      "result": "H^1(g, V) = 0 for semisimple g"
+    },
+    "used_in_theorem": "s_whitehead_first_lemma"
+  },
+  {
+    "id": "e_11879",
+    "from": "s_whitehead_first_lemma",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "first Whitehead lemma"
+    },
+    "used_in_theorem": "s_whitehead_second_lemma"
+  },
+  {
+    "id": "e_11880",
+    "from": "t_auxiliary_construction",
+    "to": "s_whitehead_second_lemma",
+    "role": "output",
+    "parameter_binding": {
+      "result": "H^2(g, V) = 0 for semisimple g"
+    },
+    "used_in_theorem": "s_whitehead_second_lemma"
+  },
+  {
+    "id": "e_11881",
+    "from": "s_sl2_triple",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "sl2 triple"
+    },
+    "used_in_theorem": "s_jacobson_morozov_theorem"
+  },
+  {
+    "id": "e_11882",
+    "from": "t_auxiliary_construction",
+    "to": "s_jacobson_morozov_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "nilpotent embeds in sl2 triple"
+    },
+    "used_in_theorem": "s_jacobson_morozov_theorem"
+  },
+  {
+    "id": "e_11883",
+    "from": "s_root_space_decomposition",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {
+      "role": "root space decomposition"
+    },
+    "used_in_theorem": "s_kostant_multiplicity_formula"
+  },
+  {
+    "id": "e_11884",
+    "from": "s_kostant_partition_function",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {
+      "role": "partition function"
+    },
+    "used_in_theorem": "s_kostant_multiplicity_formula"
+  },
+  {
+    "id": "e_11885",
+    "from": "s_fundamental_weights",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {
+      "role": "fundamental weights"
+    },
+    "used_in_theorem": "s_kostant_multiplicity_formula"
+  },
+  {
+    "id": "e_11886",
+    "from": "t_character_methods",
+    "to": "s_kostant_multiplicity_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "weight multiplicity formula"
+    },
+    "used_in_theorem": "s_kostant_multiplicity_formula"
+  },
+  {
+    "id": "e_11887",
+    "from": "s_root_space_decomposition",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "root system"
+    },
+    "used_in_theorem": "s_freudenthal_s_formula"
+  },
+  {
+    "id": "e_11888",
+    "from": "s_invariant_bilinear_form",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Killing form"
+    },
+    "used_in_theorem": "s_freudenthal_s_formula"
+  },
+  {
+    "id": "e_11889",
+    "from": "t_mathematical_induction",
+    "to": "s_freudenthal_s_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "recursive weight multiplicity formula"
+    },
+    "used_in_theorem": "s_freudenthal_s_formula"
+  },
+  {
+    "id": "e_11890",
+    "from": "s_cartan_matrix",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Cartan matrix"
+    },
+    "used_in_theorem": "s_existence_theorem_for_semisimple_lie_algebras"
+  },
+  {
+    "id": "e_11891",
+    "from": "s_serre_s_presentation",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Serre relations"
+    },
+    "used_in_theorem": "s_existence_theorem_for_semisimple_lie_algebras"
+  },
+  {
+    "id": "e_11892",
+    "from": "t_auxiliary_construction",
+    "to": "s_existence_theorem_for_semisimple_lie_algebras",
+    "role": "output",
+    "parameter_binding": {
+      "result": "semisimple Lie algebra exists for each root system"
+    },
+    "used_in_theorem": "s_existence_theorem_for_semisimple_lie_algebras"
+  },
+  {
+    "id": "e_11893",
+    "from": "s_coxeter_group",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Coxeter group"
+    },
+    "used_in_theorem": "s_exchange_property"
+  },
+  {
+    "id": "e_11894",
+    "from": "t_mathematical_induction",
+    "to": "s_exchange_property",
+    "role": "output",
+    "parameter_binding": {
+      "result": "exchange property holds"
+    },
+    "used_in_theorem": "s_exchange_property"
+  },
+  {
+    "id": "e_11895",
+    "from": "s_coxeter_group",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Coxeter group word"
+    },
+    "used_in_theorem": "s_deletion_property"
+  },
+  {
+    "id": "e_11896",
+    "from": "t_mathematical_induction",
+    "to": "s_deletion_property",
+    "role": "output",
+    "parameter_binding": {
+      "result": "deletion property holds"
+    },
+    "used_in_theorem": "s_deletion_property"
+  },
+  {
+    "id": "e_11897",
+    "from": "s_coxeter_group",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Coxeter group"
+    },
+    "used_in_theorem": "s_matsumoto_s_theorem"
+  },
+  {
+    "id": "e_11898",
+    "from": "s_exchange_property",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {
+      "role": "exchange property"
+    },
+    "used_in_theorem": "s_matsumoto_s_theorem"
+  },
+  {
+    "id": "e_11899",
+    "from": "t_auxiliary_construction",
+    "to": "s_matsumoto_s_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "reduced expressions related by braid relations"
+    },
+    "used_in_theorem": "s_matsumoto_s_theorem"
+  },
+  {
+    "id": "e_11900",
+    "from": "s_left_invariance_of_haar_measure",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Haar measure on G"
+    },
+    "used_in_theorem": "s_integration_formula_for_quotient_groups"
+  },
+  {
+    "id": "e_11901",
+    "from": "t_daniell_integral_approach",
+    "to": "s_integration_formula_for_quotient_groups",
+    "role": "output",
+    "parameter_binding": {
+      "result": "∫_G = ∫_{G/H} ∫_H"
+    },
+    "used_in_theorem": "s_integration_formula_for_quotient_groups"
+  },
+  {
+    "id": "e_11902",
+    "from": "s_suslin_space",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Suslin (analytic) space"
+    },
+    "used_in_theorem": "s_choquet_capacitability_theorem"
+  },
+  {
+    "id": "e_11903",
+    "from": "t_compactness_argument",
+    "to": "s_choquet_capacitability_theorem",
+    "role": "output",
+    "parameter_binding": {
+      "result": "analytic sets are capacitable"
+    },
+    "used_in_theorem": "s_choquet_capacitability_theorem"
+  },
+  {
+    "id": "e_11904",
+    "from": "s_free_lie_algebra",
+    "to": "t_character_decomposition_count",
+    "role": "input",
+    "parameter_binding": {
+      "role": "free Lie algebra"
+    },
+    "used_in_theorem": "s_witt_formula"
+  },
+  {
+    "id": "e_11905",
+    "from": "t_character_decomposition_count",
+    "to": "s_witt_formula",
+    "role": "output",
+    "parameter_binding": {
+      "result": "dimension of graded components"
+    },
+    "used_in_theorem": "s_witt_formula"
+  },
+  {
+    "id": "e_11906",
+    "from": "t_extension_of_scalars",
+    "to": "s_tensor_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11907",
+    "from": "s_euclidean_division_polynomials",
+    "to": "t_partial_fraction_decomposition",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_euclidean_division_polynomials"
+  },
+  {
+    "id": "e_11908",
+    "from": "t_partial_fraction_decomposition",
+    "to": "s_elementary_divisors",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11909",
+    "from": "t_faithfully_flat_descent",
+    "to": "s_flat_module",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11910",
+    "from": "t_faithfully_flat_descent",
+    "to": "s_right_exactness_of_tensor_product",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_right_exactness_of_tensor_product"
+  },
+  {
+    "id": "e_11911",
+    "from": "t_daniell_integral_approach",
+    "to": "s_mu_measurable_function_bourbaki",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11912",
+    "from": "t_daniell_integral_approach",
+    "to": "s_upper_integral",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11913",
+    "from": "t_daniell_integral_approach",
+    "to": "s_regularity_of_radon_measures",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_regularity_of_radon_measures"
+  },
+  {
+    "id": "e_11914",
+    "from": "s_integrable_function_lebesgue",
+    "to": "t_approximation_by_continuous_functions",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11915",
+    "from": "s_lp_space",
+    "to": "t_approximation_by_continuous_functions",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11916",
+    "from": "t_approximation_by_continuous_functions",
+    "to": "s_convergence_in_measure",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11917",
+    "from": "t_variation_of_constants",
+    "to": "s_integral_equation_formulation_of_ode",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11918",
+    "from": "t_asymptotic_comparison_of_functions",
+    "to": "s_asymptotic_expansion_of_the_gamma_function",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11919",
+    "from": "s_eulermaclaurin_summation_formula",
+    "to": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_eulermaclaurin_summation_formula"
+  },
+  {
+    "id": "e_11920",
+    "from": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "to": "s_digamma_function",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11921",
+    "from": "s_linear_ode_with_constant_coefficients",
+    "to": "t_application_of_laplace_transform_to_linear_ode",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11922",
+    "from": "s_laplace_transform_of_derivatives",
+    "to": "t_application_of_laplace_transform_to_linear_ode",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_laplace_transform_of_derivatives"
+  },
+  {
+    "id": "e_11923",
+    "from": "s_lie_group",
+    "to": "t_lie_functor",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11924",
+    "from": "s_lie_algebra_of_a_lie_group",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11925",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_quotient_of_a_lie_group",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11926",
+    "from": "s_semisimple_lie_algebra",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11927",
+    "from": "s_haar_measure_on_G",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11928",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_semisimple_module",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11929",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_invariant_bilinear_form",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_11930",
+    "from": "s_polynomial_ring",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_euclidean_division_polynomials"
+  },
+  {
+    "id": "e_11931",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_unique_factorization_in_kx",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unique_factorization_in_kx"
+  },
+  {
+    "id": "e_11932",
+    "from": "s_simple_algebraic_extension",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_tower_law"
+  },
+  {
+    "id": "e_11933",
+    "from": "t_proof_by_induction",
+    "to": "s_tower_law",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_tower_law"
+  },
+  {
+    "id": "e_11934",
+    "from": "s_noetherian_ring_R",
+    "to": "t_ideal_arithmetic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniqueness_primary_decomposition"
+  },
+  {
+    "id": "e_11935",
+    "from": "s_associated_prime",
+    "to": "t_ideal_arithmetic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniqueness_primary_decomposition"
+  },
+  {
+    "id": "e_11936",
+    "from": "t_ideal_arithmetic",
+    "to": "s_uniqueness_primary_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniqueness_primary_decomposition"
+  },
+  {
+    "id": "e_11937",
+    "from": "s_integral_element",
+    "to": "t_localization_at_prime",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lying_over_theorem"
+  },
+  {
+    "id": "e_11938",
+    "from": "t_localization_at_prime",
+    "to": "s_lying_over_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lying_over_theorem"
+  },
+  {
+    "id": "e_11939",
+    "from": "s_krull_valuation",
+    "to": "t_descent_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_extension_of_valuations"
+  },
+  {
+    "id": "e_11940",
+    "from": "t_descent_method",
+    "to": "s_extension_of_valuations",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_extension_of_valuations"
+  },
+  {
+    "id": "e_11941",
+    "from": "s_dedekind_domain",
+    "to": "t_ideal_arithmetic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unique_factorization_ideals_dedekind"
+  },
+  {
+    "id": "e_11942",
+    "from": "t_ideal_arithmetic",
+    "to": "s_unique_factorization_ideals_dedekind",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unique_factorization_ideals_dedekind"
+  },
+  {
+    "id": "e_11943",
+    "from": "s_noetherian_local_ring",
+    "to": "t_localization_at_prime",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_dimension_theorem_noetherian_local"
+  },
+  {
+    "id": "e_11944",
+    "from": "s_hilbert_function",
+    "to": "t_localization_at_prime",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_dimension_theorem_noetherian_local"
+  },
+  {
+    "id": "e_11945",
+    "from": "t_localization_at_prime",
+    "to": "s_dimension_theorem_noetherian_local",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_dimension_theorem_noetherian_local"
+  },
+  {
+    "id": "e_11946",
+    "from": "s_polynomial_ring_several_variables",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_dimension_of_polynomial_rings"
+  },
+  {
+    "id": "e_11947",
+    "from": "t_proof_by_induction",
+    "to": "s_dimension_of_polynomial_rings",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_dimension_of_polynomial_rings"
+  },
+  {
+    "id": "e_11948",
+    "from": "s_depth",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_depth_lemma"
+  },
+  {
+    "id": "e_11949",
+    "from": "s_regular_sequence",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_depth_lemma"
+  },
+  {
+    "id": "e_11950",
+    "from": "s_regular_local_ring",
+    "to": "t_localization_at_prime",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_regular_rings_finite_global_dimension"
+  },
+  {
+    "id": "e_11951",
+    "from": "t_localization_at_prime",
+    "to": "s_regular_rings_finite_global_dimension",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_regular_rings_finite_global_dimension"
+  },
+  {
+    "id": "e_11952",
+    "from": "s_noetherian_local_ring",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_matlis_duality"
+  },
+  {
+    "id": "e_11953",
+    "from": "s_injective_module",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_matlis_duality"
+  },
+  {
+    "id": "e_11954",
+    "from": "s_cohen_macaulay_ring",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_local_duality_theorem"
+  },
+  {
+    "id": "e_11955",
+    "from": "s_noetherian_ring_R",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bass_theorem"
+  },
+  {
+    "id": "e_11956",
+    "from": "s_cohen_macaulay_ring",
+    "to": "t_localization_at_prime",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unmixedness_theorem"
+  },
+  {
+    "id": "e_11957",
+    "from": "t_localization_at_prime",
+    "to": "s_unmixedness_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unmixedness_theorem"
+  },
+  {
+    "id": "e_11958",
+    "from": "s_krull_valuation",
+    "to": "t_local_global_principle",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_approximation_theorem_valuations"
+  },
+  {
+    "id": "e_11959",
+    "from": "t_local_global_principle",
+    "to": "s_approximation_theorem_valuations",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_approximation_theorem_valuations"
+  },
+  {
+    "id": "e_11960",
+    "from": "s_primitive",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integration_by_parts"
+  },
+  {
+    "id": "e_11961",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_integration_by_parts",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integration_by_parts"
+  },
+  {
+    "id": "e_11962",
+    "from": "s_integral_of_a_regulated_function",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_change_of_variables_in_integrals"
+  },
+  {
+    "id": "e_11963",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_change_of_variables_in_integrals",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_change_of_variables_in_integrals"
+  },
+  {
+    "id": "e_11964",
+    "from": "s_higherorder_derivative",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_remainder_for_taylors_formula"
+  },
+  {
+    "id": "e_11965",
+    "from": "t_proof_by_induction",
+    "to": "s_integral_remainder_for_taylors_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_remainder_for_taylors_formula"
+  },
+  {
+    "id": "e_11966",
+    "from": "s_maximal_solution_of_an_ode",
+    "to": "t_proof_by_contradiction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_blowup_criterion"
+  },
+  {
+    "id": "e_11967",
+    "from": "t_proof_by_contradiction",
+    "to": "s_blowup_criterion",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_blowup_criterion"
+  },
+  {
+    "id": "e_11968",
+    "from": "s_lipschitz_condition",
+    "to": "t_contraction_fixed_point",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_differentiable_dependence_on_parameters"
+  },
+  {
+    "id": "e_11969",
+    "from": "t_contraction_fixed_point",
+    "to": "s_differentiable_dependence_on_parameters",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_differentiable_dependence_on_parameters"
+  },
+  {
+    "id": "e_11970",
+    "from": "s_bernoulli_numbers",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_eulermaclaurin_summation_formula"
+  },
+  {
+    "id": "e_11971",
+    "from": "t_proof_by_induction",
+    "to": "s_eulermaclaurin_summation_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_eulermaclaurin_summation_formula"
+  },
+  {
+    "id": "e_11972",
+    "from": "s_lebesgue_measure_on_Rn",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_change_of_variables_formula_rn"
+  },
+  {
+    "id": "e_11973",
+    "from": "t_daniell_integral_approach",
+    "to": "s_change_of_variables_formula_rn",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_change_of_variables_formula_rn"
+  },
+  {
+    "id": "e_11974",
+    "from": "s_bounded_radon_measure",
+    "to": "t_approximation_by_continuous_functions",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_regularity_of_radon_measures"
+  },
+  {
+    "id": "e_11975",
+    "from": "s_lp_space",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_logconvexity_of_lp_norms"
+  },
+  {
+    "id": "e_11976",
+    "from": "s_conjugate_exponents",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_logconvexity_of_lp_norms"
+  },
+  {
+    "id": "e_11977",
+    "from": "t_duality",
+    "to": "s_logconvexity_of_lp_norms",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_logconvexity_of_lp_norms"
+  },
+  {
+    "id": "e_11978",
+    "from": "s_conjugate_exponents",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_youngs_inequality_for_products"
+  },
+  {
+    "id": "e_11979",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_youngs_inequality_for_products",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_youngs_inequality_for_products"
+  },
+  {
+    "id": "e_11980",
+    "from": "s_locally_compact_group",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weils_formula"
+  },
+  {
+    "id": "e_11981",
+    "from": "s_suslin_space",
+    "to": "t_daniell_integral_approach",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_choquet_capacitability_theorem"
+  },
+  {
+    "id": "e_11982",
+    "from": "t_daniell_integral_approach",
+    "to": "s_choquet_capacitability_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_choquet_capacitability_theorem"
+  },
+  {
+    "id": "e_11983",
+    "from": "s_associative_algebra",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_poincare_birkhoff_witt_theorem"
+  },
+  {
+    "id": "e_11984",
+    "from": "t_proof_by_induction",
+    "to": "s_poincare_birkhoff_witt_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_poincare_birkhoff_witt_theorem"
+  },
+  {
+    "id": "e_11985",
+    "from": "s_solvable_lie_algebra",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lie_s_theorem"
+  },
+  {
+    "id": "e_11986",
+    "from": "t_proof_by_induction",
+    "to": "s_lie_s_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lie_s_theorem"
+  },
+  {
+    "id": "e_11987",
+    "from": "s_invariant_bilinear_form",
+    "to": "t_diagonalize",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cartan_s_criterion_for_solvability"
+  },
+  {
+    "id": "e_11988",
+    "from": "t_diagonalize",
+    "to": "s_cartan_s_criterion_for_solvability",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cartan_s_criterion_for_solvability"
+  },
+  {
+    "id": "e_11989",
+    "from": "s_invariant_bilinear_form",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cartan_s_criterion_for_semisimplicity"
+  },
+  {
+    "id": "e_11990",
+    "from": "t_duality",
+    "to": "s_cartan_s_criterion_for_semisimplicity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cartan_s_criterion_for_semisimplicity"
+  },
+  {
+    "id": "e_11991",
+    "from": "s_radical_of_a_lie_algebra",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_levi_decomposition"
+  },
+  {
+    "id": "e_11992",
+    "from": "t_proof_by_induction",
+    "to": "s_levi_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_levi_decomposition"
+  },
+  {
+    "id": "e_11993",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_whitehead_first_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_whitehead_first_lemma"
+  },
+  {
+    "id": "e_11994",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_whitehead_second_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_whitehead_second_lemma"
+  },
+  {
+    "id": "e_11995",
+    "from": "s_lie_algebra_of_a_lie_group",
+    "to": "t_lie_functor",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_baker_campbell_hausdorff_formula"
+  },
+  {
+    "id": "e_11996",
+    "from": "t_lie_functor",
+    "to": "s_baker_campbell_hausdorff_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_baker_campbell_hausdorff_formula"
+  },
+  {
+    "id": "e_11997",
+    "from": "s_free_lie_algebra",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_witt_formula"
+  },
+  {
+    "id": "e_11998",
+    "from": "t_proof_by_induction",
+    "to": "s_witt_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_witt_formula"
+  },
+  {
+    "id": "e_11999",
+    "from": "s_cartan_subalgebra",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugacy_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_12000",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_conjugacy_of_cartan_subalgebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugacy_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_12001",
+    "from": "s_sl2_triple",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_jacobson_morozov_theorem"
+  },
+  {
+    "id": "e_12002",
+    "from": "t_proof_by_induction",
+    "to": "s_jacobson_morozov_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_jacobson_morozov_theorem"
+  },
+  {
+    "id": "e_12003",
+    "from": "s_root_system",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_classification_of_irreducible_root_systems"
+  },
+  {
+    "id": "e_12004",
+    "from": "s_cartan_matrix",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_classification_of_irreducible_root_systems"
+  },
+  {
+    "id": "e_12005",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_classification_of_irreducible_root_systems",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_classification_of_irreducible_root_systems"
+  },
+  {
+    "id": "e_12006",
+    "from": "s_coxeter_group",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_classification_of_finite_coxeter_groups"
+  },
+  {
+    "id": "e_12007",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_classification_of_finite_coxeter_groups",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_classification_of_finite_coxeter_groups"
+  },
+  {
+    "id": "e_12008",
+    "from": "s_coxeter_group",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_exchange_property"
+  },
+  {
+    "id": "e_12009",
+    "from": "t_proof_by_induction",
+    "to": "s_exchange_property",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_exchange_property"
+  },
+  {
+    "id": "e_12010",
+    "from": "s_split_semisimple_lie_algebra",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_serre_s_presentation"
+  },
+  {
+    "id": "e_12011",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_serre_s_presentation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_serre_s_presentation"
+  },
+  {
+    "id": "e_12012",
+    "from": "s_cartan_matrix",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_theorem_for_semisimple_lie_algebras"
+  },
+  {
+    "id": "e_12013",
+    "from": "t_proof_by_induction",
+    "to": "s_existence_theorem_for_semisimple_lie_algebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_theorem_for_semisimple_lie_algebras"
+  },
+  {
+    "id": "e_12014",
+    "from": "s_root_system",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kostant_multiplicity_formula"
+  },
+  {
+    "id": "e_12015",
+    "from": "s_root_system",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_freudenthal_s_formula"
+  },
+  {
+    "id": "e_12016",
+    "from": "t_proof_by_induction",
+    "to": "s_freudenthal_s_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_freudenthal_s_formula"
+  },
+  {
+    "id": "e_12017",
+    "from": "s_maximal_torus",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugacy_of_maximal_tori"
+  },
+  {
+    "id": "e_12018",
+    "from": "s_banach_algebra",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_mapping_theorem"
+  },
+  {
+    "id": "e_12019",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_spectral_mapping_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_mapping_theorem"
+  },
+  {
+    "id": "e_12020",
+    "from": "s_resolvent_of_an_operator",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_holomorphic_functional_calculus"
+  },
+  {
+    "id": "e_12021",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_holomorphic_functional_calculus",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_holomorphic_functional_calculus"
+  },
+  {
+    "id": "e_12022",
+    "from": "s_von_neumann_algebra_M",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_type_decomposition_of_von_neumann_algebras"
+  },
+  {
+    "id": "e_12023",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_type_decomposition_of_von_neumann_algebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_type_decomposition_of_von_neumann_algebras"
+  },
+  {
+    "id": "e_12024",
+    "from": "s_minkowski_functional",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_strict_separation_theorem"
+  },
+  {
+    "id": "e_12025",
+    "from": "t_duality",
+    "to": "s_strict_separation_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_strict_separation_theorem"
+  },
+  {
+    "id": "e_12026",
+    "from": "s_barrelled_space",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_grothendieck_completion_theorem"
+  },
+  {
+    "id": "e_12027",
+    "from": "t_duality",
+    "to": "s_grothendieck_completion_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_grothendieck_completion_theorem"
+  },
+  {
+    "id": "e_12028",
+    "from": "s_orthogonality",
+    "to": "t_projection_to_subspace",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_orthogonal_projection_theorem"
+  },
+  {
+    "id": "e_12029",
+    "from": "s_hilbert_space",
+    "to": "t_projection_to_subspace",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_orthogonal_projection_theorem"
+  },
+  {
+    "id": "e_12030",
+    "from": "t_projection_to_subspace",
+    "to": "s_orthogonal_projection_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_orthogonal_projection_theorem"
+  },
+  {
+    "id": "e_12031",
+    "from": "s_non_degenerate_form",
+    "to": "t_structural_isomorphism",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_witt_theorem"
+  },
+  {
+    "id": "e_12032",
+    "from": "s_symmetric_bilinear_form",
+    "to": "t_structural_isomorphism",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_witt_theorem"
+  },
+  {
+    "id": "e_12033",
+    "from": "t_structural_isomorphism",
+    "to": "s_witt_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_witt_theorem"
+  },
+  {
+    "id": "e_12034",
+    "from": "s_separable_polynomial",
+    "to": "t_galois_correspondence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12035",
+    "from": "s_normal_extension",
+    "to": "t_galois_correspondence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12036",
+    "from": "t_galois_correspondence",
+    "to": "s_artin_theorem_on_characters",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_artin_theorem_on_characters"
+  },
+  {
+    "id": "e_12037",
+    "from": "t_galois_correspondence",
+    "to": "s_norm_and_trace_of_field_extension",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12038",
+    "from": "s_character_of_a_representation",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12039",
+    "from": "s_semisimple_ring",
+    "to": "t_double_centralizer_decompose",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12040",
+    "from": "t_double_centralizer_decompose",
+    "to": "s_simple_ring",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12041",
+    "from": "s_primary_ideal",
+    "to": "t_ideal_arithmetic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12042",
+    "from": "s_tight_measure",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12043",
+    "from": "s_state_on_c_star_algebra",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12044",
+    "from": "s_derivative_of_a_vectorvalued_function",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12045",
+    "from": "s_continuous_map",
+    "to": "t_picard_iteration",
+    "role": "input",
+    "parameter_binding": {
+      "role": "Lipschitz continuity for contraction"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12046",
+    "from": "t_mathematical_induction",
+    "to": "s_leibniz_formula_for_nth_derivative_of_a_product",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12047",
+    "from": "s_chain_rule",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {
+      "context": "composition decomposition"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12048",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_chain_rule",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12049",
+    "from": "s_bijection",
+    "to": "t_reductio_ad_absurdum",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_derivative_of_the_inverse_function"
+  },
+  {
+    "id": "e_12050",
+    "from": "t_reductio_ad_absurdum",
+    "to": "s_derivative_of_the_inverse_function",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12051",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_monotonicity_criterion_via_derivative",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12052",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_convexity_criterion_via_second_derivative",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12053",
+    "from": "s_differentiability",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {
+      "context": "iterated differentiation"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12054",
+    "from": "t_proof_by_induction",
+    "to": "s_higherorder_derivative",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12055",
+    "from": "s_step_function",
+    "to": "t_approximation_by_continuous_functions",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12056",
+    "from": "t_approximation_by_continuous_functions",
+    "to": "s_regulated_function",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12057",
+    "from": "s_regulated_function",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "context": "limit of step function integrals"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12058",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_integral_of_a_regulated_function",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12059",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_integration_by_parts",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12060",
+    "from": "s_integration_by_parts",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_remainder_for_taylors_formula"
+  },
+  {
+    "id": "e_12061",
+    "from": "t_proof_by_induction",
+    "to": "s_integral_remainder_for_taylors_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12062",
+    "from": "s_topology_uniform_convergence",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniform_convergence_and_integration"
+  },
+  {
+    "id": "e_12063",
+    "from": "s_integral_of_a_regulated_function",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {
+      "context": "limit of definite integrals"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12064",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_uniform_convergence_and_integration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12065",
+    "from": "s_improper_integral",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {
+      "context": "comparison test"
+    },
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12066",
+    "from": "t_compactness_argument",
+    "to": "s_absolute_convergence_of_improper_integrals",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12067",
+    "from": "s_integral_remainder_for_taylors_formula",
+    "to": "t_exhaustion_squeeze",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_analyticity_of_elementary_functions"
+  },
+  {
+    "id": "e_12068",
+    "from": "t_exhaustion_squeeze",
+    "to": "s_analyticity_of_elementary_functions",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12069",
+    "from": "s_power_function_x",
+    "to": "t_asymptotic_comparison_of_functions",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_growth_comparison_of_elementary_functions"
+  },
+  {
+    "id": "e_12070",
+    "from": "t_asymptotic_comparison_of_functions",
+    "to": "s_growth_comparison_of_elementary_functions",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12071",
+    "from": "s_integral_of_a_regulated_function",
+    "to": "t_picard_iteration",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12072",
+    "from": "t_picard_iteration",
+    "to": "s_integral_equation_formulation_of_ode",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12073",
+    "from": "t_contraction_fixed_point",
+    "to": "s_maximal_solution_of_an_ode",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12074",
+    "from": "s_maximal_solution_of_an_ode",
+    "to": "t_reductio_ad_absurdum",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_blowup_criterion"
+  },
+  {
+    "id": "e_12075",
+    "from": "t_reductio_ad_absurdum",
+    "to": "s_blowup_criterion",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12076",
+    "from": "t_variation_of_constants",
+    "to": "s_homogeneous_linear_ode",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12077",
+    "from": "t_variation_of_constants",
+    "to": "s_linear_ordinary_differential_equation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12078",
+    "from": "s_characteristic_polynomial",
+    "to": "t_diagonalize",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12079",
+    "from": "t_diagonalize",
+    "to": "s_linear_ode_with_constant_coefficients",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12080",
+    "from": "s_fundamental_matrix",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_abels_liouville_formula"
+  },
+  {
+    "id": "e_12081",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_abels_liouville_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12082",
+    "from": "t_contraction_fixed_point",
+    "to": "s_differentiable_dependence_on_parameters",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12083",
+    "from": "t_asymptotic_comparison_of_functions",
+    "to": "s_asymptotic_expansion",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12084",
+    "from": "s_bernoulli_polynomials",
+    "to": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_eulermaclaurin_summation_formula"
+  },
+  {
+    "id": "e_12085",
+    "from": "s_integration_by_parts",
+    "to": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_eulermaclaurin_summation_formula"
+  },
+  {
+    "id": "e_12086",
+    "from": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "to": "s_eulermaclaurin_summation_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12087",
+    "from": "s_eulermaclaurin_summation_formula",
+    "to": "t_summation_of_divergent_series_by_eulermaclaurin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12088",
+    "from": "s_asymptotic_expansion_of_the_gamma_function",
+    "to": "t_asymptotic_comparison_of_functions",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12089",
+    "from": "s_abscissa_of_absolute_convergence",
+    "to": "t_application_of_laplace_transform_to_linear_ode",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12090",
+    "from": "s_differentiability",
+    "to": "t_application_of_laplace_transform_to_linear_ode",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_laplace_transform_of_derivatives"
+  },
+  {
+    "id": "e_12091",
+    "from": "t_application_of_laplace_transform_to_linear_ode",
+    "to": "s_laplace_transform_of_derivatives",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12092",
+    "from": "s_integral_of_a_regulated_function",
+    "to": "t_application_of_laplace_transform_to_linear_ode",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_laplace_transform_of_convolutions"
+  },
+  {
+    "id": "e_12093",
+    "from": "t_application_of_laplace_transform_to_linear_ode",
+    "to": "s_laplace_transform_of_convolutions",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12094",
+    "from": "s_laplace_transform_of_derivatives",
+    "to": "t_fourier_transform",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_inversion_formula_for_laplace_transform"
+  },
+  {
+    "id": "e_12095",
+    "from": "t_fourier_transform",
+    "to": "s_inversion_formula_for_laplace_transform",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12096",
+    "from": "s_abscissa_of_convergence",
+    "to": "t_reductio_ad_absurdum",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniqueness_theorem_for_laplace_transform"
+  },
+  {
+    "id": "e_12097",
+    "from": "t_reductio_ad_absurdum",
+    "to": "s_uniqueness_theorem_for_laplace_transform",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12098",
+    "from": "s_minkowski_functional",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bipolar_theorem"
+  },
+  {
+    "id": "e_12099",
+    "from": "t_duality",
+    "to": "s_strict_separation_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12100",
+    "from": "t_duality",
+    "to": "s_supporting_hyperplane_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12101",
+    "from": "t_duality",
+    "to": "s_bipolar_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12102",
+    "from": "s_completeness_of_a_tvs",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_grothendieck_completion_theorem"
+  },
+  {
+    "id": "e_12103",
+    "from": "s_bounded_set_in_a_tvs",
+    "to": "t_projection_to_subspace",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12104",
+    "from": "s_barrel",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12105",
+    "from": "t_compactness_argument",
+    "to": "s_barrelled_space",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12106",
+    "from": "s_space_of_continuous_linear_maps_l",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12107",
+    "from": "t_duality",
+    "to": "s_weak_topology",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12108",
+    "from": "s_weak_topology",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12109",
+    "from": "t_duality",
+    "to": "s_mackey_topology",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12110",
+    "from": "t_compactness_argument",
+    "to": "s_grothendieck_completion_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12111",
+    "from": "t_duality",
+    "to": "s_transpose_of_a_continuous_linear_map",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12112",
+    "from": "t_compactness_argument",
+    "to": "s_weak_compactness_and_completeness",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12113",
+    "from": "s_inner_product_space",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_parallelogram_law"
+  },
+  {
+    "id": "e_12114",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_parallelogram_law",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12115",
+    "from": "t_projection_to_subspace",
+    "to": "s_orthogonal_projection_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12116",
+    "from": "s_orthonormal_system",
+    "to": "t_svd_and_spectral_decomposition",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12117",
+    "from": "s_normal_operator",
+    "to": "t_svd_and_spectral_decomposition",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_theorem_self_adjoint"
+  },
+  {
+    "id": "e_12118",
+    "from": "s_lie_algebra_homomorphism",
+    "to": "t_structural_isomorphism",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12119",
+    "from": "t_structural_isomorphism",
+    "to": "s_quotient_lie_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12120",
+    "from": "s_derived_subalgebra",
+    "to": "t_proof_by_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12121",
+    "from": "s_derived_series",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12122",
+    "from": "t_induction_on_invariants",
+    "to": "s_solvable_lie_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12123",
+    "from": "t_induction_on_invariants",
+    "to": "s_nilpotent_lie_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12124",
+    "from": "s_radical_of_a_lie_algebra",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_levi_decomposition"
+  },
+  {
+    "id": "e_12125",
+    "from": "s_tensor_algebra",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_poincare_birkhoff_witt_theorem"
+  },
+  {
+    "id": "e_12126",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_poincare_birkhoff_witt_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12127",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_poincar_birkhoff_witt_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12128",
+    "from": "s_free_lie_algebra",
+    "to": "t_mathematical_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_witt_formula"
+  },
+  {
+    "id": "e_12129",
+    "from": "t_mathematical_induction",
+    "to": "s_witt_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12130",
+    "from": "s_solvable_lie_algebra",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lie_s_theorem"
+  },
+  {
+    "id": "e_12131",
+    "from": "t_induction_on_invariants",
+    "to": "s_lie_s_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12132",
+    "from": "s_solvable_lie_algebra",
+    "to": "t_duality",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cartan_s_criterion_for_solvability"
+  },
+  {
+    "id": "e_12133",
+    "from": "t_duality",
+    "to": "s_cartan_s_criterion_for_solvability",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12134",
+    "from": "t_duality",
+    "to": "s_cartan_s_criterion_for_semisimplicity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12135",
+    "from": "s_simple_lie_algebra",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_levi_decomposition"
+  },
+  {
+    "id": "e_12136",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_levi_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12137",
+    "from": "s_semisimple_lie_algebra",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_whitehead_first_lemma"
+  },
+  {
+    "id": "e_12138",
+    "from": "t_induction_on_invariants",
+    "to": "s_whitehead_first_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12139",
+    "from": "t_induction_on_invariants",
+    "to": "s_whitehead_second_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12140",
+    "from": "s_ideal_of_lie_algebra",
+    "to": "t_structural_isomorphism",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12141",
+    "from": "t_structural_isomorphism",
+    "to": "s_semidirect_product_of_lie_algebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12142",
+    "from": "s_semisimple_lie_algebra",
+    "to": "t_diagonalize",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12143",
+    "from": "t_diagonalize",
+    "to": "s_jordan_decomposition_in_a_lie_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12144",
+    "from": "s_free_lie_algebra",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_baker_campbell_hausdorff_formula"
+  },
+  {
+    "id": "e_12145",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_baker_campbell_hausdorff_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12146",
+    "from": "s_lie_group",
+    "to": "t_lie_functor",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_closed_subgroup_theorem"
+  },
+  {
+    "id": "e_12147",
+    "from": "t_lie_functor",
+    "to": "s_lie_subgroup",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12148",
+    "from": "t_lie_functor",
+    "to": "s_closed_subgroup_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12149",
+    "from": "s_lie_subgroup",
+    "to": "t_lie_functor",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12150",
+    "from": "t_lie_functor",
+    "to": "s_quotient_of_a_lie_group",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12151",
+    "from": "s_semisimple_lie_algebra",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_complete_reducibility_theorem"
+  },
+  {
+    "id": "e_12152",
+    "from": "s_compact_real_form",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_complete_reducibility_theorem"
+  },
+  {
+    "id": "e_12153",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_weyl_complete_reducibility_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12154",
+    "from": "t_lie_functor",
+    "to": "s_maximal_torus",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12155",
+    "from": "s_maximal_torus",
+    "to": "t_lie_functor",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugacy_of_maximal_tori"
+  },
+  {
+    "id": "e_12156",
+    "from": "t_lie_functor",
+    "to": "s_conjugacy_of_maximal_tori",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12157",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_compact_real_form",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12158",
+    "from": "s_coxeter_group",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {
+      "invariant": "length"
+    },
+    "used_in_theorem": "s_exchange_property"
+  },
+  {
+    "id": "e_12159",
+    "from": "t_induction_on_invariants",
+    "to": "s_exchange_property",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12160",
+    "from": "t_induction_on_invariants",
+    "to": "s_deletion_property",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12161",
+    "from": "s_exchange_property",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_strong_exchange_property"
+  },
+  {
+    "id": "e_12162",
+    "from": "t_induction_on_invariants",
+    "to": "s_strong_exchange_property",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12163",
+    "from": "s_coxeter_group",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_matsumoto_s_theorem"
+  },
+  {
+    "id": "e_12164",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_matsumoto_s_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12165",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_tits_system",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12166",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_parabolic_subgroup_of_a_coxeter_group",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12167",
+    "from": "s_coxeter_group",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12168",
+    "from": "s_coxeter_graph",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_classification_of_finite_coxeter_groups"
+  },
+  {
+    "id": "e_12169",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_classification_of_finite_coxeter_groups",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12170",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_cartan_matrix",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12171",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_classification_of_irreducible_root_systems",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12172",
+    "from": "s_coroot",
+    "to": "t_auxiliary_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12173",
+    "from": "t_auxiliary_construction",
+    "to": "s_weyl_chamber",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12174",
+    "from": "t_duality",
+    "to": "s_fundamental_weights",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12175",
+    "from": "t_auxiliary_construction",
+    "to": "s_extended_dynkin_diagram",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12176",
+    "from": "t_auxiliary_construction",
+    "to": "s_affine_root_system",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12177",
+    "from": "t_diagonalize",
+    "to": "s_root_space_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12178",
+    "from": "s_sl2_triple",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_jacobson_morozov_theorem"
+  },
+  {
+    "id": "e_12179",
+    "from": "s_nilpotent_lie_algebra",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_jacobson_morozov_theorem"
+  },
+  {
+    "id": "e_12180",
+    "from": "t_induction_on_invariants",
+    "to": "s_jacobson_morozov_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12181",
+    "from": "s_root_space_decomposition",
+    "to": "t_induction_on_invariants",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugacy_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_12182",
+    "from": "t_induction_on_invariants",
+    "to": "s_conjugacy_of_cartan_subalgebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12183",
+    "from": "t_auxiliary_construction",
+    "to": "s_existence_theorem_for_semisimple_lie_algebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12184",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_serre_s_presentation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12185",
+    "from": "t_character_methods",
+    "to": "s_kostant_multiplicity_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12186",
+    "from": "s_root_lattice",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12187",
+    "from": "t_character_methods",
+    "to": "s_kostant_partition_function",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12188",
+    "from": "t_induction_on_invariants",
+    "to": "s_freudenthal_s_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12189",
+    "from": "s_dominant_integral_weight",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_highest_weight_theorem"
+  },
+  {
+    "id": "e_12190",
+    "from": "s_banach_algebra",
+    "to": "t_svd_and_spectral_decomposition",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12191",
+    "from": "s_resolvent_of_an_operator",
+    "to": "t_reduce_to_canonical_form",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_resolvent_identity"
+  },
+  {
+    "id": "e_12192",
+    "from": "t_reduce_to_canonical_form",
+    "to": "s_resolvent_identity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12193",
+    "from": "s_resolvent_of_an_operator",
+    "to": "t_svd_and_spectral_decomposition",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_radius_formula"
+  },
+  {
+    "id": "e_12194",
+    "from": "t_svd_and_spectral_decomposition",
+    "to": "s_spectral_radius_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12195",
+    "from": "t_duality",
+    "to": "s_character",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12196",
+    "from": "t_duality",
+    "to": "s_gelfand_spectrum",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12197",
+    "from": "t_svd_and_spectral_decomposition",
+    "to": "s_spectral_mapping_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12198",
+    "from": "s_c_star_identity",
+    "to": "t_svd_and_spectral_decomposition",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_theorem_for_bounded_normal_operators"
+  },
+  {
+    "id": "e_12199",
+    "from": "t_duality",
+    "to": "s_state_on_c_star_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12200",
+    "from": "s_cyclic_vector",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12201",
+    "from": "t_gns_construction_method",
+    "to": "s_spectral_theorem_for_bounded_normal_operators",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12202",
+    "from": "t_svd_and_spectral_decomposition",
+    "to": "s_holomorphic_functional_calculus",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12203",
+    "from": "s_holomorphic_functional_calculus",
+    "to": "t_svd_and_spectral_decomposition",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_permanence"
+  },
+  {
+    "id": "e_12204",
+    "from": "t_svd_and_spectral_decomposition",
+    "to": "s_spectral_permanence",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12205",
+    "from": "t_svd_and_spectral_decomposition",
+    "to": "s_spectral_theorem_for_bounded_normal_operators",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12206",
+    "from": "s_spectral_theorem_for_bounded_normal_operators",
+    "to": "t_svd_and_spectral_decomposition",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_theorem_for_commuting_normal_operators"
+  },
+  {
+    "id": "e_12207",
+    "from": "t_svd_and_spectral_decomposition",
+    "to": "s_spectral_theorem_for_commuting_normal_operators",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12208",
+    "from": "t_gns_construction_method",
+    "to": "s_group_c_star_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12209",
+    "from": "s_pontryagin_dual_group",
+    "to": "t_fourier_transform",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_snag_theorem"
+  },
+  {
+    "id": "e_12210",
+    "from": "s_group_c_star_algebra",
+    "to": "t_fourier_transform",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_snag_theorem"
+  },
+  {
+    "id": "e_12211",
+    "from": "t_fourier_transform",
+    "to": "s_snag_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12212",
+    "from": "t_svd_and_spectral_decomposition",
+    "to": "s_type_decomposition_of_von_neumann_algebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12213",
+    "from": "t_lie_functor",
+    "to": "s_lie_subalgebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12214",
+    "from": "s_lie_algebra_of_a_lie_group",
+    "to": "t_character_methods",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12215",
+    "from": "s_irreducible_representation",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12216",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_peter_weyl_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12217",
+    "from": "s_fourier_transform_on_lca_groups",
+    "to": "t_fourier_transform",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_12218",
+    "from": "t_fourier_transform",
+    "to": "s_fourier_inversion_formula_lca",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  }
+]

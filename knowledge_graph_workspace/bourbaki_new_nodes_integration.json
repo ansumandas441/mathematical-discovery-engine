@@ -1,0 +1,401 @@
+[
+  {
+    "id": "s_youngs_inequality_for_products",
+    "kind": "theorem",
+    "name": "Young's inequality for products",
+    "type_signature": "",
+    "description": "For a, b >= 0 and conjugate exponents p, q (1/p + 1/q = 1): ab <= a^p/p + b^q/q, with equality iff a^p = b^q."
+  },
+  {
+    "id": "s_conjugate_exponents",
+    "kind": "axiom",
+    "name": "Conjugate exponents",
+    "type_signature": "",
+    "description": "A pair (p, q) with 1 <= p, q <= infinity satisfying 1/p + 1/q = 1, fundamental to Lp space duality and Holder's inequality."
+  },
+  {
+    "id": "s_logconvexity_of_lp_norms",
+    "kind": "theorem",
+    "name": "Log-convexity of Lp norms (Riesz interpolation inequality)",
+    "type_signature": "",
+    "description": "For 1 <= p1 <= p <= p2 <= infinity, if f in Lp1 cap Lp2, then f in Lp and ||f||_p <= ||f||_{p1}^theta ||f||_{p2}^{1-theta} where 1/p = theta/p1 + (1-theta)/p2."
+  },
+  {
+    "id": "s_bounded_radon_measure",
+    "kind": "axiom",
+    "name": "Bounded Radon measure",
+    "type_signature": "",
+    "description": "A Radon measure mu on X that extends to a continuous linear form on C_0(X), equivalently one with finite total variation |mu|(X) < infinity."
+  },
+  {
+    "id": "s_support_of_a_measure",
+    "kind": "axiom",
+    "name": "Support of a measure",
+    "type_signature": "",
+    "description": "The smallest closed set F such that mu(f) = 0 for every continuous function f with compact support contained in X \\ F."
+  },
+  {
+    "id": "s_total_variation_measure",
+    "kind": "state",
+    "name": "Total variation measure",
+    "type_signature": "",
+    "description": "For a complex Radon measure mu, the positive measure |mu| defined by |mu|(f) = sup{|mu(g)| : |g| <= f, g in K(X)} for f >= 0, making bounded measures a Banach space under ||mu|| = |mu|(X)."
+  },
+  {
+    "id": "s_vague_topology_on_measures",
+    "kind": "axiom",
+    "name": "Vague topology on measures",
+    "type_signature": "",
+    "description": "The weak-* topology sigma(M(X), K(X)) on the space of Radon measures, where mu_n -> mu vaguely iff mu_n(f) -> mu(f) for all f in K(X)."
+  },
+  {
+    "id": "s_dirac_measure",
+    "kind": "axiom",
+    "name": "Dirac measure",
+    "type_signature": "",
+    "description": "The measure delta_x defined by delta_x(f) = f(x) for a point x in X, the atomic probability measure concentrated at a single point."
+  },
+  {
+    "id": "s_image_measure_pushforward",
+    "kind": "state",
+    "name": "Image measure (pushforward measure)",
+    "type_signature": "",
+    "description": "For a proper continuous map phi: X -> Y and a measure mu on X, the image measure phi_*(mu) on Y defined by phi_*(mu)(f) = mu(f o phi)."
+  },
+  {
+    "id": "s_regularity_of_radon_measures",
+    "kind": "theorem",
+    "name": "Regularity of Radon measures",
+    "type_signature": "",
+    "description": "Every Radon measure on a locally compact space is inner regular (approximable from below by compact sets) and outer regular (approximable from above by open sets) on sigma-finite measurable sets."
+  },
+  {
+    "id": "s_upper_integral",
+    "kind": "state",
+    "name": "Upper integral",
+    "type_signature": "",
+    "description": "For a positive measure mu and a lower semicontinuous function f >= 0, defined as mu*(f) = sup{mu(g) : g in K(X), 0 <= g <= f}, extending integration beyond continuous functions."
+  },
+  {
+    "id": "s_mu_measurable_function_bourbaki",
+    "kind": "axiom",
+    "name": "Measurable function (Bourbaki, mu-measurable)",
+    "type_signature": "",
+    "description": "A function f: X -> R is mu-measurable if for every compact K and epsilon > 0, there exists compact K' subset K with mu(K \\ K') < epsilon such that f|_{K'} is continuous (Lusin characterization)."
+  },
+  {
+    "id": "s_integrable_function_lebesgue",
+    "kind": "axiom",
+    "name": "Integrable function (Lebesgue integrable)",
+    "type_signature": "",
+    "description": "A measurable function f is mu-integrable if integral |f| dmu < infinity, where the integral is defined via the Daniell construction extending from continuous functions with compact support."
+  },
+  {
+    "id": "s_negligible_set",
+    "kind": "axiom",
+    "name": "Negligible set (mu-null set)",
+    "type_signature": "",
+    "description": "A set N subset X is mu-negligible if mu*(chi_N) = 0, equivalently if it is contained in an open set of arbitrarily small measure."
+  },
+  {
+    "id": "s_lp_space",
+    "kind": "axiom",
+    "name": "Lp space (1 <= p < infinity)",
+    "type_signature": "",
+    "description": "The Banach space of equivalence classes of measurable functions f with integral |f|^p dmu < infinity, modulo equality a.e., with norm ||f||_p = (integral |f|^p dmu)^{1/p}."
+  },
+  {
+    "id": "s_l_infinity_space",
+    "kind": "axiom",
+    "name": "L-infinity space",
+    "type_signature": "",
+    "description": "The Banach space of equivalence classes of essentially bounded measurable functions, with norm ||f||_infinity = ess sup |f| = inf{M : |f| <= M a.e.}."
+  },
+  {
+    "id": "s_dense_subspaces_of_lp",
+    "kind": "theorem",
+    "name": "Dense subspaces of Lp",
+    "type_signature": "",
+    "description": "For 1 <= p < infinity, the space K(X) of continuous functions with compact support is dense in Lp(mu), as is the space of simple functions."
+  },
+  {
+    "id": "s_essential_supremum",
+    "kind": "axiom",
+    "name": "Essential supremum",
+    "type_signature": "",
+    "description": "The essential supremum of a measurable function f is ess sup f = inf{M in R : f <= M a.e.}, the smallest a.e. upper bound."
+  },
+  {
+    "id": "s_convergence_in_measure",
+    "kind": "axiom",
+    "name": "Convergence in measure",
+    "type_signature": "",
+    "description": "A sequence (f_n) converges to f in measure if for every epsilon > 0, mu({x : |f_n(x) - f(x)| > epsilon}) -> 0; Lp convergence implies convergence in measure."
+  },
+  {
+    "id": "s_product_measure",
+    "kind": "axiom",
+    "name": "Product measure",
+    "type_signature": "",
+    "description": "For sigma-finite measures mu on X and nu on Y, the unique measure mu tensor nu on X x Y satisfying (mu tensor nu)(A x B) = mu(A) nu(B) for measurable rectangles."
+  },
+  {
+    "id": "s_tonellis_theorem",
+    "kind": "theorem",
+    "name": "Tonelli's theorem",
+    "type_signature": "",
+    "description": "If f is a non-negative measurable function on X x Y, then integral f d(mu tensor nu) = integral integral f(x,y) dmu(x) dnu(y), with iterated integrals equal without assuming integrability."
+  },
+  {
+    "id": "s_change_of_variables_formula_rn",
+    "kind": "theorem",
+    "name": "Change of variables formula (integration on Rn)",
+    "type_signature": "",
+    "description": "If phi: U -> V is a C1 diffeomorphism between open sets in Rn, then integral_V f(y) dy = integral_U f(phi(x)) |det J_phi(x)| dx for integrable f."
+  },
+  {
+    "id": "s_bochner_integral",
+    "kind": "axiom",
+    "name": "Bochner integral",
+    "type_signature": "",
+    "description": "The integral of a strongly measurable function f: X -> E (E a Banach space) with integral ||f|| dmu < infinity, defined as the limit of integrals of simple functions; f is Bochner integrable iff ||f|| is Lebesgue integrable."
+  },
+  {
+    "id": "s_strongly_measurable_function",
+    "kind": "axiom",
+    "name": "Strongly measurable function",
+    "type_signature": "",
+    "description": "A function f: X -> E (E separable Banach space) is strongly measurable if it is the a.e. limit of a sequence of simple (measurable, finitely-valued) functions."
+  },
+  {
+    "id": "s_vector_valued_measure",
+    "kind": "axiom",
+    "name": "Vector-valued measure (vector measure)",
+    "type_signature": "",
+    "description": "A countably additive map mu: Sigma -> E from a sigma-algebra into a Banach space, generalizing scalar measures."
+  },
+  {
+    "id": "s_radon_nikodym_derivative",
+    "kind": "state",
+    "name": "Radon-Nikodym derivative (density)",
+    "type_signature": "",
+    "description": "The a.e. unique measurable function dnu/dmu satisfying nu(A) = integral_A (dnu/dmu) dmu for all measurable sets A, existing when nu << mu and both are sigma-finite."
+  },
+  {
+    "id": "s_left_invariance_of_haar_measure",
+    "kind": "axiom",
+    "name": "Left invariance of Haar measure",
+    "type_signature": "",
+    "description": "A measure mu on a topological group G is left-invariant if mu(gA) = mu(A) for all g in G and all measurable A, equivalently integral f(g^{-1}x) dmu(x) = integral f(x) dmu(x)."
+  },
+  {
+    "id": "s_right_haar_measure",
+    "kind": "state",
+    "name": "Right Haar measure",
+    "type_signature": "",
+    "description": "A right-invariant positive Radon measure on G, related to left Haar measure via the modular function: d mu_r(x) = Delta(x^{-1}) d mu_l(x)."
+  },
+  {
+    "id": "s_modular_function_of_locally_compact_group",
+    "kind": "axiom",
+    "name": "Modular function",
+    "type_signature": "",
+    "description": "The continuous homomorphism Delta: G -> R_+* defined by mu(Ag) = Delta(g) mu(A) for left Haar measure mu, measuring the failure of left Haar measure to be right-invariant."
+  },
+  {
+    "id": "s_unimodular_group",
+    "kind": "axiom",
+    "name": "Unimodular group",
+    "type_signature": "",
+    "description": "A locally compact group whose modular function is identically 1, so left and right Haar measures coincide; includes all compact groups, abelian groups, and semisimple Lie groups."
+  },
+  {
+    "id": "s_haar_measure_on_compact_groups",
+    "kind": "state",
+    "name": "Haar measure on compact groups",
+    "type_signature": "",
+    "description": "On a compact group, the Haar measure is both left- and right-invariant (unimodular) and can be normalized to a probability measure with mu(G) = 1."
+  },
+  {
+    "id": "s_integration_formula_for_quotient_groups",
+    "kind": "theorem",
+    "name": "Integration formula for quotient groups",
+    "type_signature": "",
+    "description": "If H is a closed subgroup of G with Haar measures mu_G, mu_H, and G/H admits an invariant measure, then integral_G f dmu_G = integral_{G/H} (integral_H f(xh) dmu_H(h)) dmu_{G/H}(xH)."
+  },
+  {
+    "id": "s_weils_formula",
+    "kind": "theorem",
+    "name": "Weil's formula (quotient integral formula)",
+    "type_signature": "",
+    "description": "A G-invariant measure on the quotient space G/H exists if and only if Delta_G|_H = Delta_H, and when it exists it is unique up to a positive scalar."
+  },
+  {
+    "id": "s_convolution_of_measures",
+    "kind": "axiom",
+    "name": "Convolution of measures",
+    "type_signature": "",
+    "description": "For bounded Radon measures mu and nu on a locally compact group G, the convolution (mu * nu)(f) = integral integral f(xy) dmu(x) dnu(y), making bounded measures a Banach algebra."
+  },
+  {
+    "id": "s_convolution_of_functions_on_a_group",
+    "kind": "axiom",
+    "name": "Convolution of functions on a group",
+    "type_signature": "",
+    "description": "For f, g in L1(G), the convolution (f * g)(x) = integral_G f(xy^{-1}) g(y) dmu(y) with respect to left Haar measure, making L1(G) a Banach algebra."
+  },
+  {
+    "id": "s_approximate_identity_in_group_algebra",
+    "kind": "state",
+    "name": "Approximate identity in L1(G)",
+    "type_signature": "",
+    "description": "A net (e_i) in L1(G) with integral e_i dmu = 1 and support shrinking to {e} such that e_i * f -> f in L1 norm for all f, replacing the absent unit element."
+  },
+  {
+    "id": "s_character_of_a_representation",
+    "kind": "axiom",
+    "name": "Character of a representation",
+    "type_signature": "",
+    "description": "The character of a finite-dimensional representation pi is the function chi_pi(g) = tr(pi(g)), a continuous class function that determines the representation up to equivalence."
+  },
+  {
+    "id": "s_convolution_algebra_of_measures",
+    "kind": "state",
+    "name": "Convolution algebra of measures M(G)",
+    "type_signature": "",
+    "description": "The Banach space of bounded Radon measures on G with convolution as multiplication and total variation as norm, forming a unital Banach algebra with unit delta_e."
+  },
+  {
+    "id": "s_integrated_representation",
+    "kind": "state",
+    "name": "Integrated representation",
+    "type_signature": "",
+    "description": "For a unitary representation pi of G on H, the integrated form pi~: L1(G) -> B(H) defined by pi~(f) = integral_G f(g) pi(g) dmu(g) is a non-degenerate *-representation of the group algebra."
+  },
+  {
+    "id": "s_fourier_transform_on_lca_groups",
+    "kind": "state",
+    "name": "Fourier transform on locally compact abelian groups",
+    "type_signature": "",
+    "description": "For f in L1(G), the Fourier transform f_hat(chi) = integral_G f(g) overline{chi(g)} dmu(g) for chi in G_hat, mapping L1(G) to C_0(G_hat) and satisfying (f * g)^ = f_hat g_hat."
+  },
+  {
+    "id": "s_fourier_inversion_formula_lca",
+    "kind": "theorem",
+    "name": "Fourier inversion formula (LCA groups)",
+    "type_signature": "",
+    "description": "Under appropriate normalization of Haar measures, if f in L1(G) and f_hat in L1(G_hat), then f(g) = integral_{G_hat} f_hat(chi) chi(g) d mu_hat(chi) for a.e. g."
+  },
+  {
+    "id": "s_tight_measure",
+    "kind": "axiom",
+    "name": "Tight measure",
+    "type_signature": "",
+    "description": "A Borel measure mu on a topological space X is tight if for every epsilon > 0, there exists a compact set K with mu(X \\ K) < epsilon."
+  },
+  {
+    "id": "s_weak_convergence_of_measures",
+    "kind": "axiom",
+    "name": "Weak convergence of measures (narrow convergence)",
+    "type_signature": "",
+    "description": "A sequence of measures mu_n converges weakly to mu if integral f dmu_n -> integral f dmu for all bounded continuous functions f."
+  },
+  {
+    "id": "s_regular_borel_measure",
+    "kind": "axiom",
+    "name": "Regular Borel measure",
+    "type_signature": "",
+    "description": "A Borel measure that is both inner regular (mu(A) = sup{mu(K) : K subset A compact}) and outer regular (mu(A) = inf{mu(U) : U supset A open}) on all measurable sets."
+  },
+  {
+    "id": "s_inner_regularity",
+    "kind": "axiom",
+    "name": "Inner regularity",
+    "type_signature": "",
+    "description": "A measure mu is inner regular on a measurable set A if mu(A) = sup{mu(K) : K subset A, K compact}."
+  },
+  {
+    "id": "s_outer_regularity",
+    "kind": "axiom",
+    "name": "Outer regularity",
+    "type_signature": "",
+    "description": "A measure mu is outer regular on a measurable set A if mu(A) = inf{mu(U) : A subset U, U open}."
+  },
+  {
+    "id": "s_suslin_space",
+    "kind": "axiom",
+    "name": "Suslin space (analytic space)",
+    "type_signature": "",
+    "description": "A Hausdorff topological space that is the continuous image of a Polish space; every Borel subset of a Polish space is Suslin, and measures on Suslin spaces have strong regularity properties."
+  },
+  {
+    "id": "s_choquet_capacitability_theorem",
+    "kind": "theorem",
+    "name": "Choquet capacitability theorem",
+    "type_signature": "",
+    "description": "In a Suslin space, every analytic set is capacitable, meaning its outer measure equals the supremum of measures of compact subsets, extending inner regularity to analytic sets."
+  },
+  {
+    "id": "t_daniell_integral_approach",
+    "kind": "technique",
+    "name": "Daniell integral approach",
+    "function_signature": "(Positive linear functional on lattice of functions) -> (Complete measure and integration theory)",
+    "description": "Bourbaki's method of defining integration starting from a positive linear functional on a lattice of functions, then extending via upper integrals and completion, rather than from a measure on sets."
+  },
+  {
+    "id": "t_approximation_by_continuous_functions",
+    "kind": "technique",
+    "name": "Approximation by continuous functions",
+    "function_signature": "(Measurable or integrable function, epsilon > 0) -> (Continuous function with compact support within epsilon)",
+    "description": "The systematic use of Urysohn's lemma and partitions of unity to approximate measurable or integrable functions by continuous functions with compact support."
+  },
+  {
+    "id": "s_inductive_limit_topology",
+    "kind": "axiom",
+    "name": "Inductive limit topology",
+    "type_signature": "",
+    "description": "The finest locally convex topology on K(X) = union_K C(K) making all inclusion maps C(K) -> K(X) continuous, used in Bourbaki's definition of Radon measures."
+  },
+  {
+    "id": "s_abels_liouville_formula",
+    "kind": "theorem",
+    "name": "Abel-Liouville formula (Wronskian formula)",
+    "type_signature": "",
+    "description": "The Wronskian of solutions of y' = A(t)y satisfies W(t) = W(t_0) exp(integral_{t_0}^t tr A(s) ds), showing it is either identically zero or never zero."
+  },
+  {
+    "id": "s_pontryagin_dual_group",
+    "kind": "axiom",
+    "name": "Pontryagin dual group",
+    "type_signature": "",
+    "description": "For a locally compact abelian group G, the dual group G_hat = Hom(G, T) is the group of continuous homomorphisms from G to the circle group T, equipped with the compact-open topology."
+  },
+  {
+    "id": "s_spectral_radius_formula",
+    "kind": "theorem",
+    "name": "Spectral radius formula",
+    "type_signature": "",
+    "description": "For a bounded linear operator T on a Banach space, the spectral radius r(T) = lim ||T^n||^{1/n} = inf ||T^n||^{1/n}."
+  },
+  {
+    "id": "s_resolvent_of_an_operator",
+    "kind": "state",
+    "name": "Resolvent of an operator",
+    "type_signature": "",
+    "description": "For lambda not in sigma(T), the resolvent R(lambda,T) = (lambda I - T)^{-1} is a bounded operator depending analytically on lambda, satisfying the resolvent identity R(lambda) - R(mu) = (mu - lambda)R(lambda)R(mu)."
+  },
+  {
+    "id": "s_pettis_integral",
+    "kind": "axiom",
+    "name": "Pettis integral (weak integral)",
+    "type_signature": "",
+    "description": "A vector x in E is the Pettis integral of f: X -> E if <x, x'> = integral <f, x'> dmu for all x' in E'; weaker than Bochner, requiring only scalar measurability."
+  },
+  {
+    "id": "s_convolution_semigroup",
+    "kind": "state",
+    "name": "Convolution semigroup",
+    "type_signature": "",
+    "description": "A family (mu_t)_{t>=0} of probability measures on a locally compact group satisfying mu_s * mu_t = mu_{s+t} and mu_0 = delta_e, modeling diffusion and Markov processes on groups."
+  }
+]

@@ -1,0 +1,1164 @@
+[
+  {
+    "id": "s_formal_language",
+    "kind": "axiom",
+    "name": "Formal language",
+    "description": "A precisely specified system of signs, assemblies (terms and relations), and syntactic rules for constructing well-formed expressions.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_quantifier",
+    "kind": "axiom",
+    "name": "Quantifier (universal, existential)",
+    "description": "The operators for-all and exists that bind a variable in a relation to express universal or existential properties.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_axiom_scheme_of_substitution",
+    "kind": "axiom",
+    "name": "Axiom scheme of substitution (logic)",
+    "description": "The logical scheme permitting replacement of a free variable by a term in any well-formed relation, subject to no variable capture.",
+    "type_signature": ""
+  },
+  {
+    "id": "t_modus_ponens",
+    "kind": "technique",
+    "name": "Modus ponens",
+    "description": "The fundamental rule of inference: from A and A => B, deduce B.",
+    "function_signature": "(A, A => B) -> B"
+  },
+  {
+    "id": "s_deductive_system",
+    "kind": "axiom",
+    "name": "Deductive system",
+    "description": "The formal framework of proofs as finite sequences of relations, each an axiom or derived by rules of inference; a theorem is the final relation.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_hilbert_epsilon_operator",
+    "kind": "axiom",
+    "name": "Hilbert epsilon operator (tau-operator)",
+    "description": "A term-forming operator tau_x(R) selecting an object satisfying relation R if one exists, used to eliminate quantifiers and formalize choice at the logical level.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_axiom_of_the_empty_set",
+    "kind": "axiom",
+    "name": "Axiom of the empty set",
+    "description": "There exists a set having no elements, denoted empty-set.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_axiom_of_pairing",
+    "kind": "axiom",
+    "name": "Axiom of pairing",
+    "description": "For any two objects a, b, there exists a set {a, b} whose only elements are a and b.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_axiom_of_separation",
+    "kind": "axiom",
+    "name": "Axiom scheme of separation (comprehension)",
+    "description": "For any set A and property P(x), there exists the set {x in A : P(x)} of exactly those elements of A satisfying P.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_axiom_of_union",
+    "kind": "axiom",
+    "name": "Axiom of union",
+    "description": "For any set of sets F, there exists a set whose elements are exactly those belonging to at least one member of F.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_axiom_of_infinity",
+    "kind": "axiom",
+    "name": "Axiom of infinity",
+    "description": "There exists a set containing the empty set and closed under the successor operation x -> x u {x}, guaranteeing the existence of an infinite set.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_set_membership",
+    "kind": "axiom",
+    "name": "Set membership (element-of relation)",
+    "description": "The primitive binary relation x in A asserting that x is an element of the set A.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_subset_inclusion",
+    "kind": "axiom",
+    "name": "Subset (inclusion)",
+    "description": "A subset-of B means every element of A is an element of B, defining the inclusion partial order on sets.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_set_intersection",
+    "kind": "state",
+    "name": "Set intersection",
+    "description": "A cap B = {x : x in A and x in B}, the set of elements common to both A and B.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_set_union",
+    "kind": "state",
+    "name": "Set union (binary)",
+    "description": "A cup B = {x : x in A or x in B}, the set of elements belonging to at least one of A, B.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_set_complement",
+    "kind": "state",
+    "name": "Set complement (difference)",
+    "description": "A \\ B = {x in A : x not in B}, the set of elements in A but not in B.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_symmetric_difference",
+    "kind": "state",
+    "name": "Symmetric difference",
+    "description": "A triangle B = (A \\ B) u (B \\ A), the set of elements belonging to exactly one of A, B.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_ordered_pair",
+    "kind": "axiom",
+    "name": "Ordered pair",
+    "description": "The object (a, b) defined via Kuratowski encoding such that (a,b) = (c,d) iff a = c and b = d.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_cartesian_product",
+    "kind": "state",
+    "name": "Cartesian product",
+    "description": "A x B = {(a, b) : a in A, b in B}, the set of all ordered pairs with first component in A and second in B.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_relation",
+    "kind": "axiom",
+    "name": "Relation (graph of a relation)",
+    "description": "A subset R of A x B; one writes xRy to mean (x, y) in R.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_function",
+    "kind": "axiom",
+    "name": "Function (map, mapping)",
+    "description": "A relation f subset A x B such that for every a in A there exists exactly one b in B with (a, b) in f, written f : A -> B.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_injection",
+    "kind": "axiom",
+    "name": "Injection (one-to-one map)",
+    "description": "A function f : A -> B such that f(a1) = f(a2) implies a1 = a2.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_surjection",
+    "kind": "axiom",
+    "name": "Surjection (onto map)",
+    "description": "A function f : A -> B such that for every b in B there exists a in A with f(a) = b.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_bijection",
+    "kind": "axiom",
+    "name": "Bijection",
+    "description": "A function that is both injective and surjective, establishing a one-to-one correspondence.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_composition_of_functions",
+    "kind": "state",
+    "name": "Composition of functions",
+    "description": "Given f : A -> B and g : B -> C, the composite g o f : A -> C defined by (g o f)(a) = g(f(a)).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_inverse_function",
+    "kind": "state",
+    "name": "Inverse function",
+    "description": "For a bijection f : A -> B, the unique function f^{-1} : B -> A satisfying f^{-1} o f = id_A and f o f^{-1} = id_B.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_image_and_preimage",
+    "kind": "state",
+    "name": "Image and preimage",
+    "description": "For f : A -> B, the direct image f(S) = {f(x) : x in S} and the inverse image f^{-1}(T) = {x in A : f(x) in T}.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_restriction_of_function",
+    "kind": "state",
+    "name": "Restriction and extension of a function",
+    "description": "The restriction f|_S of f : A -> B to S subset A; an extension of g : S -> B is any f : A -> B with f|_S = g.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_family_of_sets",
+    "kind": "axiom",
+    "name": "Family of sets (indexed family)",
+    "description": "A function i -> A_i from an index set I to a collection of sets, written (A_i)_{i in I}.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_generalized_union_intersection",
+    "kind": "state",
+    "name": "Generalized union and intersection",
+    "description": "For a family (A_i)_{i in I}, the union U_{i in I} A_i and intersection cap_{i in I} A_i, generalizing binary operations to arbitrary index sets.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_generalized_cartesian_product",
+    "kind": "state",
+    "name": "Generalized Cartesian product (product of a family)",
+    "description": "Product_{i in I} A_i, the set of all choice functions on the family, each selecting an element from A_i for every i.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_equivalence_relation",
+    "kind": "axiom",
+    "name": "Equivalence relation",
+    "description": "A relation R on a set A that is reflexive, symmetric, and transitive.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_equivalence_class",
+    "kind": "state",
+    "name": "Equivalence class",
+    "description": "For an equivalence relation R on A, the class [a] = {x in A : xRa}.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_quotient_set",
+    "kind": "state",
+    "name": "Quotient set",
+    "description": "A/R = {[a] : a in A}, the set of all equivalence classes, with canonical surjection pi : A -> A/R.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_canonical_decomposition_of_map",
+    "kind": "theorem",
+    "name": "Canonical decomposition of a map",
+    "description": "Every function f : A -> B factors uniquely as A -> A/~ -> f(A) -> B (surjection, bijection, inclusion).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_partition_of_a_set",
+    "kind": "state",
+    "name": "Partition of a set",
+    "description": "A family of pairwise disjoint nonempty subsets whose union is A, in canonical bijection with equivalence relations on A.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_diagonal_of_a_product",
+    "kind": "state",
+    "name": "Diagonal of a product",
+    "description": "Delta_A = {(a, a) : a in A} subset A x A, the graph of the identity function.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_projection_map",
+    "kind": "state",
+    "name": "Projection map",
+    "description": "The canonical surjections pr_1 : A x B -> A and pr_2 : A x B -> B extracting components of an ordered pair.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_preorder",
+    "kind": "axiom",
+    "name": "Preorder (quasi-order)",
+    "description": "A reflexive and transitive relation, not necessarily antisymmetric; the quotient by the associated equivalence is a partial order.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_strict_partial_order",
+    "kind": "state",
+    "name": "Strict partial order",
+    "description": "The irreflexive and transitive relation < derived from <= by x < y iff x <= y and x != y.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_greatest_least_element",
+    "kind": "state",
+    "name": "Greatest element and least element",
+    "description": "In a poset, a greatest (resp. least) element a satisfies x <= a (resp. a <= x) for all x.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_supremum_infimum",
+    "kind": "state",
+    "name": "Supremum and infimum",
+    "description": "sup S is the least upper bound of S; inf S is the greatest lower bound of S, when they exist.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_lattice",
+    "kind": "axiom",
+    "name": "Lattice",
+    "description": "A poset in which every pair of elements has both a supremum (join) and an infimum (meet).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_complete_lattice",
+    "kind": "axiom",
+    "name": "Complete lattice",
+    "description": "A poset in which every subset has a supremum and an infimum.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_directed_set",
+    "kind": "axiom",
+    "name": "Directed set",
+    "description": "A nonempty preordered set in which every finite subset has an upper bound.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_order_preserving_map",
+    "kind": "axiom",
+    "name": "Increasing (order-preserving) map",
+    "description": "A function f between posets such that x <= y implies f(x) <= f(y).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_order_isomorphism",
+    "kind": "axiom",
+    "name": "Order isomorphism",
+    "description": "A bijection f between posets such that both f and f^{-1} are order-preserving.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_chain",
+    "kind": "state",
+    "name": "Chain (totally ordered subset)",
+    "description": "A subset of a poset that is totally ordered under the induced order.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_well_ordered_set",
+    "kind": "axiom",
+    "name": "Well-ordered set",
+    "description": "A totally ordered set in which every nonempty subset has a least element.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_hausdorff_maximality_principle",
+    "kind": "theorem",
+    "name": "Hausdorff maximality principle",
+    "description": "Every partially ordered set contains a maximal chain; equivalent to axiom of choice.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_initial_segment",
+    "kind": "state",
+    "name": "Initial segment (section)",
+    "description": "In a well-ordered set W, the set S_a = {x in W : x < a} of all elements strictly preceding a.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_comparability_well_ordered",
+    "kind": "theorem",
+    "name": "Comparability of well-ordered sets",
+    "description": "Any two well-ordered sets are comparable: one is order-isomorphic to an initial segment of the other.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_cantor_theorem_power_set",
+    "kind": "theorem",
+    "name": "Cantor's theorem",
+    "description": "For any set A, there is no surjection from A onto P(A); equivalently |A| < |P(A)|.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_equipotence",
+    "kind": "state",
+    "name": "Equipotence (equinumerosity)",
+    "description": "Two sets are equipotent if there exists a bijection between them.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_finite_set",
+    "kind": "axiom",
+    "name": "Finite set",
+    "description": "A set equipotent to some natural number {0, 1, ..., n-1}.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_countable_set",
+    "kind": "axiom",
+    "name": "Countable set (denumerable)",
+    "description": "A set equipotent to a subset of the natural numbers; countably infinite if equipotent to N.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_disjoint_union",
+    "kind": "state",
+    "name": "Disjoint union (coproduct of sets)",
+    "description": "A disjoint-union B = (A x {0}) u (B x {1}), a union keeping copies distinct even when they overlap.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_absorption_infinite_cardinals",
+    "kind": "theorem",
+    "name": "Absorption law for infinite cardinals",
+    "description": "For an infinite cardinal kappa, kappa + kappa = kappa * kappa = kappa.",
+    "type_signature": ""
+  },
+  {
+    "id": "t_mathematical_induction",
+    "kind": "technique",
+    "name": "Mathematical induction",
+    "description": "If P(0) holds and P(n) => P(n+1), then P(n) holds for all natural numbers n.",
+    "function_signature": "(P(0), P(n) => P(n+1)) -> forall n. P(n)"
+  },
+  {
+    "id": "s_arithmetic_of_naturals",
+    "kind": "state",
+    "name": "Arithmetic of natural numbers",
+    "description": "Addition and multiplication on N defined by recursion, satisfying commutativity, associativity, distributivity.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_order_on_naturals",
+    "kind": "state",
+    "name": "Order on natural numbers",
+    "description": "The total order on N where m <= n iff m subset n (as sets), making (N, <=) a well-ordered set.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_species_of_structures",
+    "kind": "axiom",
+    "name": "Species of structures",
+    "description": "Bourbaki's formal specification: base sets, auxiliary sets, typification via echelon construction, and an axiom invariant under transport.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_echelon_construction_type",
+    "kind": "state",
+    "name": "Echelon construction type",
+    "description": "A set obtained from base sets by iterated application of power set and Cartesian product, providing the type of a structure.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_isomorphism_of_structures",
+    "kind": "axiom",
+    "name": "Isomorphism of structures",
+    "description": "A bijection between base sets of two structures of the same species that transports one structure to the other.",
+    "type_signature": ""
+  },
+  {
+    "id": "t_transport_of_structures",
+    "kind": "technique",
+    "name": "Transport of structures",
+    "description": "Transferring a structure from one set to another via a bijection, preserving all structural axioms.",
+    "function_signature": "(Structure on A, Bijection A -> B) -> Structure on B"
+  },
+  {
+    "id": "s_induced_structure",
+    "kind": "state",
+    "name": "Induced structure (substructure)",
+    "description": "The structure inherited by a subset of the base set, obtained by restricting the structural data.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_product_structure",
+    "kind": "state",
+    "name": "Product structure",
+    "description": "The structure on a Cartesian product obtained by combining the structures on each factor componentwise.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_quotient_structure",
+    "kind": "state",
+    "name": "Quotient structure",
+    "description": "The structure induced on a quotient set A/R when the equivalence relation R is compatible with the given structure.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_initial_structure",
+    "kind": "state",
+    "name": "Initial structure",
+    "description": "The coarsest structure on a set making a given family of maps into structured sets into morphisms.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_final_structure",
+    "kind": "state",
+    "name": "Final structure",
+    "description": "The finest structure on a set making a given family of maps from structured sets into morphisms.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_morphism_of_structures",
+    "kind": "axiom",
+    "name": "Morphism (of a species of structures)",
+    "description": "A map between base sets that respects the structural data; the precise definition depends on the species.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_neighborhood_filter",
+    "kind": "state",
+    "name": "Neighborhood filter",
+    "description": "The filter V(x) of all neighborhoods of a point x in a topological space, whose properties characterize the topology.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_filter",
+    "kind": "axiom",
+    "name": "Filter",
+    "description": "A nonempty collection of subsets of a set X, closed under finite intersection and supersets, and not containing the empty set.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_filter_base",
+    "kind": "axiom",
+    "name": "Filter base (basis of a filter)",
+    "description": "A nonempty collection of nonempty subsets such that any two members contain a common refinement; it generates a filter.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_convergence_of_filter",
+    "kind": "axiom",
+    "name": "Convergence of a filter",
+    "description": "A filter F on a topological space converges to x if F is finer than the neighborhood filter of x, i.e., V(x) subset F.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_cluster_point_of_filter",
+    "kind": "state",
+    "name": "Cluster point of a filter",
+    "description": "A point x such that every neighborhood of x meets every set in the filter.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_boundary",
+    "kind": "state",
+    "name": "Boundary (frontier) of a set",
+    "description": "dA = cl(A) cap cl(X \\ A), the set of points in the closure of A that are not in its interior.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_continuous_map",
+    "kind": "axiom",
+    "name": "Continuous map",
+    "description": "A function f : X -> Y between topological spaces such that the preimage of every open set in Y is open in X.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_open_map",
+    "kind": "axiom",
+    "name": "Open map and closed map",
+    "description": "A map sending open (resp. closed) sets to open (resp. closed) sets.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_subspace_topology",
+    "kind": "axiom",
+    "name": "Subspace topology (induced topology)",
+    "description": "The topology on a subset A of X whose open sets are intersections of open sets of X with A.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_initial_topology",
+    "kind": "axiom",
+    "name": "Initial topology",
+    "description": "The coarsest topology on X making a given family of maps f_i : X -> Y_i continuous, with subbase {f_i^{-1}(U_i)}.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_final_topology",
+    "kind": "axiom",
+    "name": "Final topology",
+    "description": "The finest topology on Y making a given family of maps g_i : X_i -> Y continuous.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_hausdorff_space",
+    "kind": "axiom",
+    "name": "Hausdorff space (T2)",
+    "description": "A topological space in which any two distinct points have disjoint neighborhoods.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_t1_space",
+    "kind": "axiom",
+    "name": "T1 space",
+    "description": "A topological space in which every singleton {x} is closed.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_regular_space",
+    "kind": "axiom",
+    "name": "Regular space (T3)",
+    "description": "A T1 space in which each point and disjoint closed set can be separated by disjoint open sets.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_completely_regular_space",
+    "kind": "axiom",
+    "name": "Completely regular space (Tychonoff, T3.5)",
+    "description": "A T1 space in which points and disjoint closed sets can be separated by continuous real-valued functions.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_limit_of_function",
+    "kind": "axiom",
+    "name": "Limit of a function",
+    "description": "f(x) -> l as x -> a along a filter means the image filter converges to l, unifying all notions of limit.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_net",
+    "kind": "axiom",
+    "name": "Net (Moore-Smith sequence)",
+    "description": "A function from a directed set into a topological space, generalizing sequences.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_connected_space",
+    "kind": "axiom",
+    "name": "Connected space",
+    "description": "A topological space that cannot be expressed as the union of two disjoint nonempty open sets.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_connected_component",
+    "kind": "state",
+    "name": "Connected component",
+    "description": "The maximal connected subset containing a given point; connected components partition the space into closed sets.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_locally_connected_space",
+    "kind": "axiom",
+    "name": "Locally connected space",
+    "description": "A space in which every point has a neighborhood base consisting of connected open sets.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_second_countable_space",
+    "kind": "axiom",
+    "name": "Second-countable space",
+    "description": "A topological space possessing a countable base for its topology.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_first_countable_space",
+    "kind": "axiom",
+    "name": "First-countable space",
+    "description": "A topological space in which every point has a countable neighborhood base.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_separable_space",
+    "kind": "axiom",
+    "name": "Separable space",
+    "description": "A topological space containing a countable dense subset.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_uniform_space",
+    "kind": "axiom",
+    "name": "Uniform space (uniformity)",
+    "description": "A set X equipped with a filter on X x X (entourages) containing the diagonal, symmetric, and satisfying the triangle condition.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_entourage",
+    "kind": "axiom",
+    "name": "Entourage (surrounding)",
+    "description": "A member V of the uniformity; V[x] = {y : (x,y) in V} is the V-neighborhood of x.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_uniform_topology",
+    "kind": "state",
+    "name": "Uniform topology",
+    "description": "The topology on a uniform space where U is open iff for each x in U there exists entourage V with V[x] subset U.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_uniformly_continuous_map",
+    "kind": "axiom",
+    "name": "Uniformly continuous map",
+    "description": "A function f between uniform spaces such that for every entourage W of Y, (f x f)^{-1}(W) is an entourage of X.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_cauchy_filter",
+    "kind": "axiom",
+    "name": "Cauchy filter",
+    "description": "A filter on a uniform space such that for every entourage V, there exists F in the filter with F x F subset V.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_complete_uniform_space",
+    "kind": "axiom",
+    "name": "Complete uniform space",
+    "description": "A uniform space in which every Cauchy filter converges.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_completion_of_uniform_space",
+    "kind": "state",
+    "name": "Completion of a uniform space",
+    "description": "A complete Hausdorff uniform space X-hat with uniformly continuous dense embedding X -> X-hat, unique up to uniform isomorphism.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_uniform_isomorphism",
+    "kind": "axiom",
+    "name": "Uniform isomorphism",
+    "description": "A bijection f between uniform spaces such that both f and f^{-1} are uniformly continuous.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_product_uniformity",
+    "kind": "state",
+    "name": "Product uniformity",
+    "description": "The coarsest uniformity on the product making all projections uniformly continuous.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_induced_uniformity",
+    "kind": "state",
+    "name": "Induced uniformity (subspace uniformity)",
+    "description": "The uniformity on a subset A induced by restricting entourages to A x A.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_minimal_cauchy_filter",
+    "kind": "state",
+    "name": "Minimal Cauchy filter",
+    "description": "A Cauchy filter minimal among all Cauchy filters, used in the construction of completions.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_left_uniform_structure_topgrp",
+    "kind": "state",
+    "name": "Left uniform structure on a topological group",
+    "description": "The uniformity on G with entourage base {(x,y) : x^{-1}y in V} where V ranges over identity neighborhoods.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_subgroup_topology",
+    "kind": "state",
+    "name": "Subgroup topology",
+    "description": "The subspace topology on a subgroup H of a topological group G, making H a topological group.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_quotient_group_topology",
+    "kind": "state",
+    "name": "Quotient group topology",
+    "description": "The quotient topology on G/H for a normal subgroup H, making G/H a topological group and projection open.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_closure_of_subgroup",
+    "kind": "theorem",
+    "name": "Closure of a subgroup",
+    "description": "The closure of a subgroup in a topological group is again a subgroup; the closure of a normal subgroup is normal.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_neighborhood_base_identity",
+    "kind": "state",
+    "name": "Neighborhood base at the identity",
+    "description": "A topological group's topology is completely determined by a neighborhood base at identity e, since translation is a homeomorphism.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_open_subgroup_theorem",
+    "kind": "theorem",
+    "name": "Open subgroup theorem",
+    "description": "Every open subgroup of a topological group is also closed; every subgroup containing an open subgroup is open.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_completion_of_topological_group",
+    "kind": "state",
+    "name": "Completion of a topological group",
+    "description": "The Hausdorff completion of a topological group carries a canonical topological group structure.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_completeness_of_R",
+    "kind": "axiom",
+    "name": "Completeness of R (least upper bound property)",
+    "description": "Every nonempty subset of R bounded above has a least upper bound (supremum) in R.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_archimedean_property",
+    "kind": "theorem",
+    "name": "Archimedean property",
+    "description": "For any real x > 0 and y, there exists natural n with nx > y; equivalently, Z is unbounded in R.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_density_of_Q_in_R",
+    "kind": "theorem",
+    "name": "Density of Q in R",
+    "description": "Between any two distinct real numbers there exists a rational number; Q is dense in R.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_order_topology_on_R",
+    "kind": "state",
+    "name": "Order topology on R",
+    "description": "The topology on R generated by open intervals (a, b), coinciding with the metric topology from |x - y|.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_extended_real_line",
+    "kind": "state",
+    "name": "Extended real line",
+    "description": "R-bar = R u {-inf, +inf}, a compact totally ordered space extending R with two points at infinity.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_absolute_value_on_R",
+    "kind": "state",
+    "name": "Absolute value (on R)",
+    "description": "The function |x| = max(x, -x) on R, defining the standard metric d(x,y) = |x - y|.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_monotone_convergence_sequences",
+    "kind": "theorem",
+    "name": "Monotone convergence for sequences in R",
+    "description": "Every bounded monotone sequence in R converges to its supremum (if increasing) or infimum (if decreasing).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_one_sided_limits",
+    "kind": "state",
+    "name": "Right and left limits",
+    "description": "For a real function, f(a+) = lim_{x->a, x>a} f(x) and f(a-) = lim_{x->a, x<a} f(x).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_power_function",
+    "kind": "state",
+    "name": "Power function",
+    "description": "x^alpha = exp(alpha ln x) for x > 0, extending integer powers to arbitrary real exponents.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_euclidean_topology_Rn",
+    "kind": "axiom",
+    "name": "Euclidean topology on R^n",
+    "description": "The product topology on R^n, equivalently the metric topology from the Euclidean norm.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_normed_vector_space",
+    "kind": "axiom",
+    "name": "Normed vector space (over R)",
+    "description": "A real vector space equipped with a norm satisfying positive definiteness, homogeneity, and the triangle inequality.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_metric_uniformity",
+    "kind": "state",
+    "name": "Metric uniformity",
+    "description": "The uniformity on a metric space with entourage base {(x,y) : d(x,y) < epsilon} for epsilon > 0.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_equivalent_norms_theorem",
+    "kind": "theorem",
+    "name": "Equivalent norms on finite-dimensional spaces",
+    "description": "On a finite-dimensional real vector space, all norms are equivalent, inducing the same topology.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_projective_limit",
+    "kind": "state",
+    "name": "Projective limit (inverse limit)",
+    "description": "For a directed inverse system with connecting morphisms, the subspace of the product consisting of compatible threads.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_inductive_limit",
+    "kind": "state",
+    "name": "Inductive limit (direct limit)",
+    "description": "For a directed system with connecting morphisms, the quotient of the disjoint union identifying elements related by morphisms.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_solenoid",
+    "kind": "state",
+    "name": "Solenoid",
+    "description": "The projective limit of the inverse system ... -> S^1 ->^{xn} S^1, a compact connected abelian group not locally connected.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_profinite_group",
+    "kind": "state",
+    "name": "Profinite group",
+    "description": "A topological group that is a projective limit of finite discrete groups; equivalently, compact totally disconnected Hausdorff.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_quasi_compact_space",
+    "kind": "axiom",
+    "name": "Quasi-compact space",
+    "description": "A topological space (not necessarily Hausdorff) in which every open cover has a finite subcover; Bourbaki reserves 'compact' for Hausdorff.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_finite_intersection_property",
+    "kind": "theorem",
+    "name": "Finite intersection property characterization of compactness",
+    "description": "A space is compact iff every collection of closed sets with the finite intersection property has nonempty intersection.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_continuous_image_compact",
+    "kind": "theorem",
+    "name": "Continuous image of compact is compact",
+    "description": "The continuous image of a compact space is compact.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_closed_subset_compact",
+    "kind": "theorem",
+    "name": "Closed subsets of compact spaces are compact",
+    "description": "Every closed subset of a compact space is compact; every compact subset of a Hausdorff space is closed.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_compact_hausdorff_normal",
+    "kind": "theorem",
+    "name": "Compact Hausdorff implies normal",
+    "description": "Every compact Hausdorff space is normal (T4).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_compact_to_hausdorff_homeomorphism",
+    "kind": "theorem",
+    "name": "Continuous bijection from compact to Hausdorff is homeomorphism",
+    "description": "A continuous bijection from a compact space to a Hausdorff space is automatically a homeomorphism.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_proper_map",
+    "kind": "axiom",
+    "name": "Proper map",
+    "description": "A continuous map f : X -> Y such that preimages of compact sets are compact (equivalently, f x id_Z is closed for every Z).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_locally_finite_family",
+    "kind": "axiom",
+    "name": "Locally finite family",
+    "description": "A family of subsets such that every point has a neighborhood meeting only finitely many members.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_refinement_of_cover",
+    "kind": "axiom",
+    "name": "Refinement of a cover",
+    "description": "A cover {V_j} refines {U_i} if every V_j is contained in some U_i.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_metrizable_paracompact",
+    "kind": "theorem",
+    "name": "Paracompactness of metrizable spaces (Stone's theorem)",
+    "description": "Every metrizable space is paracompact; every open cover has a sigma-discrete open refinement.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_nowhere_dense_set",
+    "kind": "axiom",
+    "name": "Nowhere dense set",
+    "description": "A set whose closure has empty interior.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_meager_set",
+    "kind": "state",
+    "name": "Meager set (first category)",
+    "description": "A countable union of nowhere dense sets; by Baire's theorem, a complete metric space is not meager in itself.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_semicontinuity_liminf_limsup",
+    "kind": "theorem",
+    "name": "Characterization of semicontinuity via liminf/limsup",
+    "description": "f is lower semicontinuous at x iff f(x) <= lim inf_{y->x} f(y); upper iff f(x) >= lim sup_{y->x} f(y).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_sup_lsc_functions",
+    "kind": "theorem",
+    "name": "Supremum of lower semicontinuous functions",
+    "description": "The pointwise supremum of any family of lower semicontinuous functions is lower semicontinuous.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_paracompact_partition_unity",
+    "kind": "theorem",
+    "name": "Paracompactness and partitions of unity",
+    "description": "A Hausdorff space is paracompact iff every open cover admits a subordinate partition of unity.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_lindelof_space",
+    "kind": "axiom",
+    "name": "Lindelof space",
+    "description": "A topological space in which every open cover has a countable subcover.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_second_countable_lindelof",
+    "kind": "theorem",
+    "name": "Second-countable implies Lindelof",
+    "description": "Every second-countable space is Lindelof, separable, and hereditarily Lindelof.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_compact_open_topology",
+    "kind": "axiom",
+    "name": "Compact-open topology",
+    "description": "The topology on C(X,Y) generated by subbasic sets {f : f(K) subset U} where K compact and U open.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_topology_uniform_convergence",
+    "kind": "axiom",
+    "name": "Topology of uniform convergence",
+    "description": "The topology on function spaces defined by the uniformity: f and g are V-close if (f(x),g(x)) in V for all x.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_topology_compact_convergence",
+    "kind": "state",
+    "name": "Topology of compact convergence",
+    "description": "The topology on C(X,Y) defined by uniform convergence on each compact subset of X.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_pointwise_convergence_topology",
+    "kind": "state",
+    "name": "Pointwise convergence topology",
+    "description": "The topology on Y^X induced by the product topology; convergence means convergence at each point.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_evaluation_map",
+    "kind": "state",
+    "name": "Evaluation map",
+    "description": "The map ev : C(X,Y) x X -> Y defined by ev(f,x) = f(x); continuous when C(X,Y) has the compact-open topology and X is locally compact.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_exponential_law_function_spaces",
+    "kind": "theorem",
+    "name": "Exponential law for function spaces",
+    "description": "For locally compact Hausdorff X, C(X x Y, Z) -> C(Y, C(X,Z)) by currying is a homeomorphism under compact-open topology.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_uniform_limit_continuity",
+    "kind": "theorem",
+    "name": "Uniform limit of continuous functions is continuous",
+    "description": "C(X,Y) is closed in Y^X under the topology of uniform convergence when Y is Hausdorff.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_completeness_function_spaces",
+    "kind": "theorem",
+    "name": "Completeness of function spaces",
+    "description": "If Y is a complete uniform space, the space of bounded uniformly continuous functions X -> Y is complete under uniform convergence.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_filter_generated_by_base",
+    "kind": "state",
+    "name": "Filter generated by a base",
+    "description": "The unique smallest filter containing a given filter base, consisting of all supersets of members of the base.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_finer_coarser_topologies",
+    "kind": "axiom",
+    "name": "Finer and coarser topologies",
+    "description": "Topology T1 is finer than T2 if T2 subset T1; the identity (X,T1) -> (X,T2) is then continuous.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_discrete_indiscrete_topology",
+    "kind": "state",
+    "name": "Discrete and indiscrete topologies",
+    "description": "The finest topology (every subset open) and the coarsest topology ({empty, X} only) on a set X.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_clopen_set",
+    "kind": "state",
+    "name": "Clopen set",
+    "description": "A set that is simultaneously open and closed; a space is connected iff its only clopen sets are empty and X.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_sigma_compact_space",
+    "kind": "axiom",
+    "name": "Sigma-compact space",
+    "description": "A topological space that is a countable union of compact subsets.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_cauchy_sequence",
+    "kind": "state",
+    "name": "Cauchy sequence",
+    "description": "A sequence (x_n) in a metric/uniform space such that for every entourage V, there exists N with (x_m, x_n) in V for all m, n >= N.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_pseudometric_uniformity",
+    "kind": "state",
+    "name": "Pseudometric uniformity",
+    "description": "A pseudometric (allowing d(x,y)=0 for x != y) generates a uniformity; the associated topology need not be Hausdorff.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_continuity_via_filters",
+    "kind": "theorem",
+    "name": "Continuity via filters",
+    "description": "A map f : X -> Y is continuous at x iff the image filter of the neighborhood filter of x converges to f(x).",
+    "type_signature": ""
+  },
+  {
+    "id": "s_universal_property_completion",
+    "kind": "theorem",
+    "name": "Universal property of completion",
+    "description": "Every uniformly continuous map from X to a complete Hausdorff uniform space extends uniquely through X -> X-hat.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_compact_complete_totally_bounded",
+    "kind": "theorem",
+    "name": "Compactness equals complete and totally bounded",
+    "description": "A uniform space is compact iff it is complete and totally bounded.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_lebesgue_covering_lemma",
+    "kind": "theorem",
+    "name": "Lebesgue covering lemma",
+    "description": "For every open cover of a compact metric space, there exists delta > 0 such that every subset of diameter < delta lies in some member.",
+    "type_signature": ""
+  },
+  {
+    "id": "s_topological_embedding",
+    "kind": "axiom",
+    "name": "Topological embedding",
+    "description": "An injective continuous map f : X -> Y that is a homeomorphism onto its image f(X) with the subspace topology.",
+    "type_signature": ""
+  }
+]

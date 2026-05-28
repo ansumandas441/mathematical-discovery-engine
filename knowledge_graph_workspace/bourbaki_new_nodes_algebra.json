@@ -1,0 +1,842 @@
+[
+  {
+    "id": "s_monoid",
+    "kind": "axiom",
+    "name": "Monoid",
+    "type_signature": "",
+    "description": "A set equipped with an associative binary operation possessing an identity element."
+  },
+  {
+    "id": "s_group",
+    "kind": "axiom",
+    "name": "Group",
+    "type_signature": "",
+    "description": "A monoid in which every element is invertible."
+  },
+  {
+    "id": "s_characteristic_of_a_ring",
+    "kind": "state",
+    "name": "Characteristic of a ring",
+    "type_signature": "",
+    "description": "The nonnegative generator of the kernel of the unique ring homomorphism Z -> A."
+  },
+  {
+    "id": "s_opposite_ring",
+    "kind": "state",
+    "name": "Opposite ring",
+    "type_signature": "",
+    "description": "For a ring A, the ring A^op with the same additive group but reversed multiplication a *' b = ba."
+  },
+  {
+    "id": "s_left_right_module",
+    "kind": "axiom",
+    "name": "Left module / right module",
+    "type_signature": "",
+    "description": "A module where scalars act on the left (resp. right), with axiom (ab)x = a(bx) for left modules and x(ab) = (xa)b for right modules."
+  },
+  {
+    "id": "s_basis_of_a_module",
+    "kind": "axiom",
+    "name": "Basis of a module",
+    "type_signature": "",
+    "description": "A family of elements such that every element of the module can be written uniquely as a finite linear combination of them."
+  },
+  {
+    "id": "s_rank_of_a_linear_map",
+    "kind": "state",
+    "name": "Rank of a linear map",
+    "type_signature": "",
+    "description": "The dimension of the image of a linear map between vector spaces."
+  },
+  {
+    "id": "s_direct_sum_decomposition",
+    "kind": "state",
+    "name": "Direct sum decomposition",
+    "type_signature": "",
+    "description": "A module M is a direct sum of submodules M_1,...,M_n if the canonical map M_1 + ... + M_n -> M is an isomorphism."
+  },
+  {
+    "id": "s_noetherian_module",
+    "kind": "axiom",
+    "name": "Noetherian module",
+    "type_signature": "",
+    "description": "A module satisfying the ascending chain condition on submodules, equivalently every submodule is finitely generated."
+  },
+  {
+    "id": "s_artinian_module",
+    "kind": "axiom",
+    "name": "Artinian module",
+    "type_signature": "",
+    "description": "A module satisfying the descending chain condition on submodules."
+  },
+  {
+    "id": "s_annihilator",
+    "kind": "state",
+    "name": "Annihilator",
+    "type_signature": "",
+    "description": "For a submodule N of M, the ideal Ann(N) = {a in A : aN = 0}; dually for an ideal I, Ann_M(I) = {x in M : Ix = 0}."
+  },
+  {
+    "id": "s_multilinear_map",
+    "kind": "axiom",
+    "name": "Multilinear map",
+    "type_signature": "",
+    "description": "A map f: M_1 x ... x M_n -> N that is linear in each variable when the others are held fixed."
+  },
+  {
+    "id": "s_right_exactness_of_tensor_product",
+    "kind": "theorem",
+    "name": "Right exactness of tensor product",
+    "type_signature": "",
+    "description": "The functor M tensor_A (-) is right exact: it preserves cokernels and direct sums but not injections in general."
+  },
+  {
+    "id": "s_tensor_algebra",
+    "kind": "state",
+    "name": "Tensor algebra",
+    "type_signature": "",
+    "description": "The graded algebra T(M) = direct_sum_{n>=0} M^{tensor n} with concatenation multiplication, universal for linear maps from M to associative algebras."
+  },
+  {
+    "id": "s_exterior_product",
+    "kind": "state",
+    "name": "Exterior product (wedge product)",
+    "type_signature": "",
+    "description": "The product in the exterior algebra, denoted x wedge y, satisfying x wedge x = 0 and x wedge y = -y wedge x."
+  },
+  {
+    "id": "s_exterior_power",
+    "kind": "state",
+    "name": "Exterior power",
+    "type_signature": "",
+    "description": "The p-th component Lambda^p(M) of the exterior algebra, the quotient of M^{tensor p} by tensors with a repeated factor."
+  },
+  {
+    "id": "s_symmetric_algebra",
+    "kind": "state",
+    "name": "Symmetric algebra",
+    "type_signature": "",
+    "description": "The quotient S(M) = T(M)/<x tensor y - y tensor x>, a graded commutative algebra universal for linear maps from M to commutative algebras."
+  },
+  {
+    "id": "s_symmetric_power",
+    "kind": "state",
+    "name": "Symmetric power",
+    "type_signature": "",
+    "description": "The p-th component S^p(M) of the symmetric algebra, the quotient of M^{tensor p} by differences of permuted tensors."
+  },
+  {
+    "id": "s_graded_algebra",
+    "kind": "axiom",
+    "name": "Graded algebra",
+    "type_signature": "",
+    "description": "An algebra A with a direct sum decomposition A = direct_sum_{n>=0} A_n such that A_m * A_n subset A_{m+n}."
+  },
+  {
+    "id": "t_extension_of_scalars",
+    "kind": "technique",
+    "name": "Extension of scalars",
+    "function_signature": "(A-module M, ring hom A -> B) -> B-module M tensor_A B",
+    "description": "Constructs a B-module from an A-module M and a ring homomorphism A -> B via the tensor product M tensor_A B."
+  },
+  {
+    "id": "s_polynomial_ring_several_variables",
+    "kind": "state",
+    "name": "Polynomial ring in several variables",
+    "type_signature": "",
+    "description": "The ring A[X_1,...,X_n] defined inductively as A[X_1,...,X_{n-1}][X_n], or as formal sums over multi-indices."
+  },
+  {
+    "id": "s_euclidean_division_polynomials",
+    "kind": "theorem",
+    "name": "Euclidean division for polynomials",
+    "type_signature": "",
+    "description": "For f, g in K[X] with g nonzero and K a field, there exist unique q, r with f = qg + r and deg(r) < deg(g)."
+  },
+  {
+    "id": "s_root_of_a_polynomial",
+    "kind": "axiom",
+    "name": "Root of a polynomial",
+    "type_signature": "",
+    "description": "An element alpha in an extension of the coefficient ring such that f(alpha) = 0."
+  },
+  {
+    "id": "s_factor_theorem",
+    "kind": "theorem",
+    "name": "Factor theorem",
+    "type_signature": "",
+    "description": "An element alpha is a root of f in K[X] if and only if (X - alpha) divides f."
+  },
+  {
+    "id": "s_irreducible_polynomial",
+    "kind": "axiom",
+    "name": "Irreducible polynomial",
+    "type_signature": "",
+    "description": "A nonconstant polynomial that cannot be written as a product of two polynomials of lower degree."
+  },
+  {
+    "id": "s_unique_factorization_in_kx",
+    "kind": "theorem",
+    "name": "Unique factorization in K[X]",
+    "type_signature": "",
+    "description": "The polynomial ring K[X] over a field K is a UFD: every nonconstant polynomial factors uniquely into irreducibles up to units."
+  },
+  {
+    "id": "s_gcd_of_polynomials",
+    "kind": "state",
+    "name": "Greatest common divisor of polynomials",
+    "type_signature": "",
+    "description": "The monic polynomial of greatest degree dividing two given polynomials, computable by the Euclidean algorithm."
+  },
+  {
+    "id": "t_partial_fraction_decomposition",
+    "kind": "technique",
+    "name": "Partial fraction decomposition",
+    "function_signature": "(rational fraction in K(X)) -> polynomial + sum of a_ij/(X - alpha_i)^j",
+    "description": "Expresses a rational fraction as a polynomial plus a sum of terms with prime-power denominators via the Chinese remainder theorem."
+  },
+  {
+    "id": "s_algebraic_element",
+    "kind": "axiom",
+    "name": "Algebraic element",
+    "type_signature": "",
+    "description": "An element alpha in L that is a root of some nonzero polynomial in K[X]."
+  },
+  {
+    "id": "s_transcendental_element",
+    "kind": "axiom",
+    "name": "Transcendental element",
+    "type_signature": "",
+    "description": "An element alpha in L that is not algebraic over K."
+  },
+  {
+    "id": "s_simple_algebraic_extension",
+    "kind": "state",
+    "name": "Simple algebraic extension",
+    "type_signature": "",
+    "description": "An extension K(alpha)/K generated by a single algebraic element alpha, isomorphic to K[X]/(minimal polynomial of alpha)."
+  },
+  {
+    "id": "s_tower_law",
+    "kind": "theorem",
+    "name": "Tower law (multiplicativity of degrees)",
+    "type_signature": "",
+    "description": "If K subset L subset M are field extensions, then [M:K] = [M:L]*[L:K]."
+  },
+  {
+    "id": "s_existence_uniqueness_algebraic_closure",
+    "kind": "theorem",
+    "name": "Existence and uniqueness of algebraic closure",
+    "type_signature": "",
+    "description": "Every field admits an algebraic closure, and any two algebraic closures are isomorphic (though not canonically)."
+  },
+  {
+    "id": "s_separable_polynomial",
+    "kind": "axiom",
+    "name": "Separable polynomial",
+    "type_signature": "",
+    "description": "A polynomial whose roots in an algebraic closure are all distinct, equivalently gcd(f, f') = 1."
+  },
+  {
+    "id": "s_inseparable_extension",
+    "kind": "axiom",
+    "name": "Inseparable extension / purely inseparable extension",
+    "type_signature": "",
+    "description": "An algebraic extension that is not separable; purely inseparable if every element has minimal polynomial X^{p^n} - a in characteristic p."
+  },
+  {
+    "id": "s_perfect_field",
+    "kind": "axiom",
+    "name": "Perfect field",
+    "type_signature": "",
+    "description": "A field of characteristic 0, or of characteristic p in which the Frobenius endomorphism x -> x^p is surjective."
+  },
+  {
+    "id": "s_normal_extension",
+    "kind": "axiom",
+    "name": "Normal extension",
+    "type_signature": "",
+    "description": "An algebraic extension L/K such that every irreducible polynomial in K[X] with a root in L splits completely in L."
+  },
+  {
+    "id": "s_transcendence_basis",
+    "kind": "state",
+    "name": "Transcendence basis",
+    "type_signature": "",
+    "description": "A maximal algebraically independent subset of L over K, such that L is algebraic over K(B)."
+  },
+  {
+    "id": "s_norm_and_trace_of_field_extension",
+    "kind": "state",
+    "name": "Norm and trace of a field extension",
+    "type_signature": "",
+    "description": "For a finite extension L/K and alpha in L, N_{L/K}(alpha) = det(mult. by alpha) and Tr_{L/K}(alpha) = trace(mult. by alpha) as K-linear endomorphisms."
+  },
+  {
+    "id": "s_artin_theorem_on_characters",
+    "kind": "theorem",
+    "name": "Artin's theorem on characters",
+    "type_signature": "",
+    "description": "Distinct characters (homomorphisms) from a group to the multiplicative group of a field are linearly independent over that field."
+  },
+  {
+    "id": "s_totally_ordered_group",
+    "kind": "axiom",
+    "name": "Totally ordered group",
+    "type_signature": "",
+    "description": "A group equipped with a total order compatible with the group operation: x <= y implies xz <= yz and zx <= zy."
+  },
+  {
+    "id": "s_archimedean_ordered_group",
+    "kind": "axiom",
+    "name": "Archimedean ordered group",
+    "type_signature": "",
+    "description": "A totally ordered group in which for any positive a, b there exists n in Z with na > b, equivalently embeddable in (R,+)."
+  },
+  {
+    "id": "s_krull_valuation",
+    "kind": "axiom",
+    "name": "Valuation (Krull valuation)",
+    "type_signature": "",
+    "description": "A map v: K* -> Gamma to a totally ordered abelian group satisfying v(xy) = v(x) + v(y) and v(x+y) >= min(v(x),v(y))."
+  },
+  {
+    "id": "s_absolute_value_on_a_field",
+    "kind": "axiom",
+    "name": "Absolute value on a field",
+    "type_signature": "",
+    "description": "A map |*|: K -> R_{>=0} satisfying |x| = 0 iff x = 0, |xy| = |x||y|, and |x+y| <= |x|+|y|."
+  },
+  {
+    "id": "s_convex_subgroup",
+    "kind": "axiom",
+    "name": "Convex subgroup",
+    "type_signature": "",
+    "description": "A subgroup H of a totally ordered group G such that if a <= x <= b with a,b in H then x in H."
+  },
+  {
+    "id": "s_elementary_divisors",
+    "kind": "state",
+    "name": "Elementary divisors",
+    "type_signature": "",
+    "description": "The prime power factors in the primary decomposition of a finitely generated module over a PID, determining its isomorphism class."
+  },
+  {
+    "id": "s_characteristic_polynomial",
+    "kind": "state",
+    "name": "Characteristic polynomial",
+    "type_signature": "",
+    "description": "For a matrix A or endomorphism u, the polynomial chi(X) = det(XI - A) whose roots are the eigenvalues with algebraic multiplicities."
+  },
+  {
+    "id": "s_minimal_polynomial_of_endomorphism",
+    "kind": "state",
+    "name": "Minimal polynomial of an endomorphism",
+    "type_signature": "",
+    "description": "The monic generator of the annihilator ideal of the K[X]-module defined by the endomorphism, dividing the characteristic polynomial."
+  },
+  {
+    "id": "s_torsion_submodule",
+    "kind": "state",
+    "name": "Torsion submodule",
+    "type_signature": "",
+    "description": "For a module M over an integral domain A, the submodule Tors(M) = {m in M : am = 0 for some nonzero a in A}."
+  },
+  {
+    "id": "s_torsion_free_module",
+    "kind": "axiom",
+    "name": "Torsion-free module",
+    "type_signature": "",
+    "description": "A module M over an integral domain such that Tors(M) = 0, i.e., am = 0 with a nonzero implies m = 0."
+  },
+  {
+    "id": "s_semisimple_module",
+    "kind": "axiom",
+    "name": "Semisimple module",
+    "type_signature": "",
+    "description": "A module that is a direct sum of simple modules, equivalently every submodule is a direct summand."
+  },
+  {
+    "id": "s_semisimple_ring",
+    "kind": "axiom",
+    "name": "Semisimple ring",
+    "type_signature": "",
+    "description": "A ring that is semisimple as a module over itself, equivalently an Artinian ring with zero Jacobson radical."
+  },
+  {
+    "id": "s_simple_ring",
+    "kind": "axiom",
+    "name": "Simple ring",
+    "type_signature": "",
+    "description": "A ring with no two-sided ideals other than 0 and itself (and with R^2 nonzero)."
+  },
+  {
+    "id": "s_symmetric_bilinear_form",
+    "kind": "axiom",
+    "name": "Symmetric bilinear form",
+    "type_signature": "",
+    "description": "A bilinear form Phi with Phi(x,y) = Phi(y,x) for all x,y."
+  },
+  {
+    "id": "s_alternating_bilinear_form",
+    "kind": "axiom",
+    "name": "Alternating bilinear form",
+    "type_signature": "",
+    "description": "A bilinear form Phi with Phi(x,x) = 0 for all x, hence Phi(x,y) = -Phi(y,x)."
+  },
+  {
+    "id": "s_sesquilinear_form",
+    "kind": "axiom",
+    "name": "Sesquilinear form",
+    "type_signature": "",
+    "description": "A map Phi: M x M -> K that is linear in one variable and conjugate-linear with respect to an involution in the other."
+  },
+  {
+    "id": "s_hermitian_form",
+    "kind": "axiom",
+    "name": "Hermitian form",
+    "type_signature": "",
+    "description": "A sesquilinear form Phi satisfying Phi(y,x) = sigma(Phi(x,y)) where sigma is the given involution."
+  },
+  {
+    "id": "s_non_degenerate_form",
+    "kind": "axiom",
+    "name": "Non-degenerate form",
+    "type_signature": "",
+    "description": "A bilinear or quadratic form for which the canonical map M -> M* is injective, equivalently the radical is zero."
+  },
+  {
+    "id": "s_radical_of_a_form",
+    "kind": "state",
+    "name": "Radical of a form",
+    "type_signature": "",
+    "description": "The submodule rad(Phi) = {x in M : Phi(x,y) = 0 for all y in M}, the kernel of the map M -> M* induced by the form."
+  },
+  {
+    "id": "s_orthogonal_complement",
+    "kind": "state",
+    "name": "Orthogonal complement",
+    "type_signature": "",
+    "description": "For a subset S of M with bilinear form, the submodule S^perp = {y in M : Phi(x,y) = 0 for all x in S}."
+  },
+  {
+    "id": "s_witt_theorem",
+    "kind": "theorem",
+    "name": "Witt's theorem",
+    "type_signature": "",
+    "description": "An isometry between non-degenerate subspaces of a regular quadratic space extends to an isometry of the whole space."
+  },
+  {
+    "id": "s_witt_group",
+    "kind": "state",
+    "name": "Witt group",
+    "type_signature": "",
+    "description": "The group W(K) of isometry classes of non-degenerate quadratic forms over K modulo hyperbolic forms, with orthogonal sum."
+  },
+  {
+    "id": "s_hyperbolic_plane_quadratic",
+    "kind": "state",
+    "name": "Hyperbolic plane (quadratic forms)",
+    "type_signature": "",
+    "description": "A non-degenerate quadratic module of dimension 2 with basis {e,f} satisfying q(e) = q(f) = 0 and Phi(e,f) = 1."
+  },
+  {
+    "id": "s_symplectic_group",
+    "kind": "state",
+    "name": "Symplectic group",
+    "type_signature": "",
+    "description": "The group Sp(M,Phi) of linear maps preserving a non-degenerate alternating bilinear form."
+  },
+  {
+    "id": "s_spin_group",
+    "kind": "state",
+    "name": "Spin group",
+    "type_signature": "",
+    "description": "The double cover Spin(n) of SO(n) constructed inside the even part of the Clifford algebra, kernel of the spinor norm on the special Clifford group."
+  },
+  {
+    "id": "s_spinor_norm",
+    "kind": "state",
+    "name": "Spinor norm",
+    "type_signature": "",
+    "description": "A homomorphism from the orthogonal group to K*/K*^2 defined via the Clifford algebra, measuring the signed length of reflections composing an isometry."
+  },
+  {
+    "id": "s_associative_algebra",
+    "kind": "axiom",
+    "name": "Associative algebra",
+    "type_signature": "",
+    "description": "A ring A that is also a module over a commutative ring K, with K acting centrally: k(ab) = (ka)b = a(kb)."
+  },
+  {
+    "id": "s_lie_subalgebra",
+    "kind": "axiom",
+    "name": "Lie subalgebra",
+    "type_signature": "",
+    "description": "A submodule of a Lie algebra closed under the Lie bracket."
+  },
+  {
+    "id": "s_ideal_of_lie_algebra",
+    "kind": "axiom",
+    "name": "Ideal of a Lie algebra",
+    "type_signature": "",
+    "description": "A Lie subalgebra h of g such that [g,h] subset h."
+  },
+  {
+    "id": "s_commutator_lie_algebra",
+    "kind": "state",
+    "name": "Commutator Lie algebra",
+    "type_signature": "",
+    "description": "For an associative algebra A, the Lie algebra A^- with bracket [a,b] = ab - ba."
+  },
+  {
+    "id": "s_poincare_birkhoff_witt_theorem",
+    "kind": "theorem",
+    "name": "Poincare-Birkhoff-Witt theorem",
+    "type_signature": "",
+    "description": "The canonical map g -> U(g) is injective, and ordered monomials of a basis form a basis of the universal enveloping algebra."
+  },
+  {
+    "id": "s_free_lie_algebra",
+    "kind": "state",
+    "name": "Free Lie algebra",
+    "type_signature": "",
+    "description": "The Lie algebra L(X) on a set X satisfying the universal property that every map X -> g extends uniquely to a homomorphism L(X) -> g."
+  },
+  {
+    "id": "s_nilpotent_lie_algebra",
+    "kind": "axiom",
+    "name": "Nilpotent Lie algebra",
+    "type_signature": "",
+    "description": "A Lie algebra whose lower central series g supset [g,g] supset [g,[g,g]] supset ... terminates at 0 in finitely many steps."
+  },
+  {
+    "id": "s_solvable_lie_algebra",
+    "kind": "axiom",
+    "name": "Solvable Lie algebra",
+    "type_signature": "",
+    "description": "A Lie algebra whose derived series g supset [g,g] supset [[g,g],[g,g]] supset ... terminates at 0 in finitely many steps."
+  },
+  {
+    "id": "s_abelian_lie_algebra",
+    "kind": "axiom",
+    "name": "Abelian Lie algebra",
+    "type_signature": "",
+    "description": "A Lie algebra in which [x,y] = 0 for all x,y."
+  },
+  {
+    "id": "s_faithfully_flat_module",
+    "kind": "axiom",
+    "name": "Faithfully flat module",
+    "type_signature": "",
+    "description": "A flat A-module M such that M tensor_A N = 0 implies N = 0, equivalently M tensor_A (-) reflects exactness."
+  },
+  {
+    "id": "t_faithfully_flat_descent",
+    "kind": "technique",
+    "name": "Faithfully flat descent",
+    "function_signature": "(Module or algebra over A, faithfully flat A -> B) -> descended properties over A",
+    "description": "Deduces properties of modules or algebras over A from their base change to a faithfully flat extension B."
+  },
+  {
+    "id": "t_local_global_principle",
+    "kind": "technique",
+    "name": "Local-global principle",
+    "function_signature": "(Property of module M) -> (Property holds iff it holds at all localizations M_p)",
+    "description": "A property of modules holds globally iff it holds after localization at every prime ideal."
+  },
+  {
+    "id": "s_support_of_a_module",
+    "kind": "state",
+    "name": "Support of a module",
+    "type_signature": "",
+    "description": "The set Supp(M) = {p in Spec(A) : M_p nonzero}, a closed subset of Spec(A) when M is finitely generated."
+  },
+  {
+    "id": "s_associated_graded",
+    "kind": "state",
+    "name": "Associated graded ring/module",
+    "type_signature": "",
+    "description": "For a filtered ring A, the graded ring gr(A) = direct_sum_n A_n/A_{n+1}, capturing the leading term structure."
+  },
+  {
+    "id": "s_filtered_ring",
+    "kind": "axiom",
+    "name": "Filtered ring",
+    "type_signature": "",
+    "description": "A ring equipped with a decreasing sequence of ideals ... supset F_n supset F_{n+1} supset ... compatible with multiplication: F_m * F_n subset F_{m+n}."
+  },
+  {
+    "id": "s_i_adic_filtration",
+    "kind": "state",
+    "name": "I-adic filtration",
+    "type_signature": "",
+    "description": "The filtration of a ring A by powers of an ideal I: F_n = I^n."
+  },
+  {
+    "id": "s_i_adic_topology",
+    "kind": "state",
+    "name": "I-adic topology",
+    "type_signature": "",
+    "description": "The linear topology on a ring or module defined by powers of an ideal I, where {I^n} forms a neighborhood base of 0."
+  },
+  {
+    "id": "s_hilbert_function",
+    "kind": "state",
+    "name": "Hilbert function / Hilbert-Samuel function",
+    "type_signature": "",
+    "description": "For a graded module M, H(n) = dim_k(M_n); for I-adic filtrations, H_I(n) = length(M/I^{n+1}M), both eventually polynomial."
+  },
+  {
+    "id": "s_primary_ideal",
+    "kind": "axiom",
+    "name": "Primary ideal",
+    "type_signature": "",
+    "description": "An ideal q such that if ab in q and a not in q then b^n in q for some n, equivalently A/q has every zero-divisor nilpotent."
+  },
+  {
+    "id": "s_uniqueness_primary_decomposition",
+    "kind": "theorem",
+    "name": "Uniqueness theorems for primary decomposition",
+    "type_signature": "",
+    "description": "The associated primes and primary components for minimal primes are uniquely determined; embedded components may not be unique."
+  },
+  {
+    "id": "s_integral_element",
+    "kind": "axiom",
+    "name": "Integral element",
+    "type_signature": "",
+    "description": "An element b of a ring extension B supset A is integral over A if it satisfies a monic polynomial with coefficients in A."
+  },
+  {
+    "id": "s_lying_over_theorem",
+    "kind": "theorem",
+    "name": "Lying-over theorem",
+    "type_signature": "",
+    "description": "If A subset B is an integral extension, then for every prime ideal p of A there exists a prime ideal q of B with q intersect A = p."
+  },
+  {
+    "id": "s_valuation_ring",
+    "kind": "axiom",
+    "name": "Valuation ring",
+    "type_signature": "",
+    "description": "An integral domain A such that for every nonzero element x of its fraction field, either x in A or x^{-1} in A."
+  },
+  {
+    "id": "s_place_of_a_valuation",
+    "kind": "state",
+    "name": "Place",
+    "type_signature": "",
+    "description": "An equivalence class of valuations on a field, or a homomorphism from a valuation ring to a field together with infinity."
+  },
+  {
+    "id": "s_uniformizer",
+    "kind": "state",
+    "name": "Uniformizer",
+    "type_signature": "",
+    "description": "A generator of the maximal ideal of a DVR, equivalently an element of valuation 1."
+  },
+  {
+    "id": "s_rank_of_a_valuation",
+    "kind": "state",
+    "name": "Rank of a valuation",
+    "type_signature": "",
+    "description": "The Krull dimension of the associated valuation ring, equivalently the order type of convex subgroups of the value group."
+  },
+  {
+    "id": "s_henselian_ring",
+    "kind": "axiom",
+    "name": "Henselian ring",
+    "type_signature": "",
+    "description": "A local ring satisfying the conclusion of Hensel's lemma, equivalently every finite algebra over it is a product of local algebras."
+  },
+  {
+    "id": "s_ramification_index_and_residue_degree",
+    "kind": "state",
+    "name": "Ramification index and residue degree",
+    "type_signature": "",
+    "description": "For a valued field extension L/K, e = [v(L*):v(K*)] and f = [kappa_L:kappa_K]; the fundamental inequality gives ef <= [L:K]."
+  },
+  {
+    "id": "s_extension_of_valuations",
+    "kind": "theorem",
+    "name": "Extension of valuations",
+    "type_signature": "",
+    "description": "Every valuation on a field K extends to any algebraic extension L of K, with at most [L:K] extensions."
+  },
+  {
+    "id": "s_principal_divisor",
+    "kind": "state",
+    "name": "Principal divisor",
+    "type_signature": "",
+    "description": "The divisor div(f) associated to a nonzero element f of the fraction field, defined as sum_v v(f)*[v] over height-1 primes."
+  },
+  {
+    "id": "s_factorial_ring",
+    "kind": "axiom",
+    "name": "Factorial ring (UFD)",
+    "type_signature": "",
+    "description": "An integral domain with unique factorization into irreducibles; equivalently a Noetherian integrally closed domain with trivial divisor class group."
+  },
+  {
+    "id": "s_invertible_ideal",
+    "kind": "state",
+    "name": "Invertible ideal",
+    "type_signature": "",
+    "description": "A fractional ideal I such that I*I^{-1} = A where I^{-1} = {x in K : xI subset A}; equivalently a locally principal fractional ideal."
+  },
+  {
+    "id": "s_unique_factorization_ideals_dedekind",
+    "kind": "theorem",
+    "name": "Unique factorization of ideals in Dedekind domains",
+    "type_signature": "",
+    "description": "In a Dedekind domain, every nonzero ideal factors uniquely as a product of prime ideals."
+  },
+  {
+    "id": "s_approximation_theorem_valuations",
+    "kind": "theorem",
+    "name": "Approximation theorem for valuations",
+    "type_signature": "",
+    "description": "Given finitely many independent valuations and target elements, one can find x simultaneously approximating each target."
+  },
+  {
+    "id": "s_system_of_parameters",
+    "kind": "state",
+    "name": "System of parameters",
+    "type_signature": "",
+    "description": "In a Noetherian local ring of dimension d, a sequence of d elements whose generated ideal is m-primary."
+  },
+  {
+    "id": "s_dimension_theorem_noetherian_local",
+    "kind": "theorem",
+    "name": "Dimension theorem for Noetherian local rings",
+    "type_signature": "",
+    "description": "The Krull dimension equals the degree of the Hilbert-Samuel polynomial, equals the minimum number of generators of an m-primary ideal."
+  },
+  {
+    "id": "s_dimension_of_polynomial_rings",
+    "kind": "theorem",
+    "name": "Dimension of polynomial rings",
+    "type_signature": "",
+    "description": "If A is a Noetherian ring, then dim(A[X]) = dim(A) + 1."
+  },
+  {
+    "id": "s_catenary_ring",
+    "kind": "axiom",
+    "name": "Catenary ring",
+    "type_signature": "",
+    "description": "A Noetherian ring in which all maximal chains of primes between any pair p subset q have the same length."
+  },
+  {
+    "id": "s_universally_catenary_ring",
+    "kind": "axiom",
+    "name": "Universally catenary ring",
+    "type_signature": "",
+    "description": "A Noetherian ring A such that every finitely generated A-algebra is catenary."
+  },
+  {
+    "id": "s_unmixedness_theorem",
+    "kind": "theorem",
+    "name": "Unmixedness theorem",
+    "type_signature": "",
+    "description": "In a Cohen-Macaulay ring, every ideal generated by height-many elements is unmixed (all associated primes are minimal of equal height)."
+  },
+  {
+    "id": "s_multiplicity_of_local_ring",
+    "kind": "state",
+    "name": "Multiplicity of a local ring",
+    "type_signature": "",
+    "description": "The normalized leading coefficient of the Hilbert-Samuel polynomial, measuring algebraic multiplicity; equals 1 for regular local rings."
+  },
+  {
+    "id": "s_coefficient_field",
+    "kind": "state",
+    "name": "Coefficient field / coefficient ring",
+    "type_signature": "",
+    "description": "A subfield or complete DVR of a complete local ring mapping isomorphically to the residue field, guaranteed by the Cohen structure theorem."
+  },
+  {
+    "id": "s_weierstrass_division_theorem",
+    "kind": "theorem",
+    "name": "Weierstrass division theorem",
+    "type_signature": "",
+    "description": "Division with remainder by a Weierstrass polynomial in k[[X_1,...,X_n]]: unique q and r with deg_{X_n}(r) < d."
+  },
+  {
+    "id": "s_nagata_ring",
+    "kind": "axiom",
+    "name": "Nagata ring (Japanese ring)",
+    "type_signature": "",
+    "description": "A Noetherian domain whose integral closure in any finite extension of its fraction field is a finite module."
+  },
+  {
+    "id": "s_excellent_ring",
+    "kind": "axiom",
+    "name": "Excellent ring",
+    "type_signature": "",
+    "description": "A universally catenary Noetherian ring with geometrically regular formal fibers and open regular locus; complete local rings are excellent."
+  },
+  {
+    "id": "s_depth",
+    "kind": "state",
+    "name": "Depth",
+    "type_signature": "",
+    "description": "The length of a maximal regular sequence in m on a finitely generated module over a Noetherian local ring, equivalently the smallest i with Ext^i(k,M) nonzero."
+  },
+  {
+    "id": "s_regular_sequence",
+    "kind": "axiom",
+    "name": "Regular sequence",
+    "type_signature": "",
+    "description": "A sequence x_1,...,x_n such that x_i is a non-zero-divisor on M/(x_1,...,x_{i-1})M for each i, and the quotient is nonzero."
+  },
+  {
+    "id": "s_depth_lemma",
+    "kind": "theorem",
+    "name": "Depth lemma",
+    "type_signature": "",
+    "description": "For a short exact sequence 0 -> M' -> M -> M'' -> 0, depth(M) >= min(depth(M'), depth(M'') + 1)."
+  },
+  {
+    "id": "s_injective_hull",
+    "kind": "state",
+    "name": "Injective hull (injective envelope)",
+    "type_signature": "",
+    "description": "The minimal injective module containing M as an essential submodule, unique up to isomorphism."
+  },
+  {
+    "id": "s_matlis_duality",
+    "kind": "theorem",
+    "name": "Matlis duality",
+    "type_signature": "",
+    "description": "Over a complete Noetherian local ring, Hom(-,E(k)) gives an anti-equivalence between finitely generated and Artinian modules."
+  },
+  {
+    "id": "s_dualizing_module",
+    "kind": "state",
+    "name": "Dualizing module (canonical module)",
+    "type_signature": "",
+    "description": "A finitely generated module over a Cohen-Macaulay local ring satisfying local duality via Ext and local cohomology."
+  },
+  {
+    "id": "s_local_duality_theorem",
+    "kind": "theorem",
+    "name": "Local duality theorem",
+    "type_signature": "",
+    "description": "For a complete Noetherian local ring of dimension d with dualizing module omega, H^i_m(M)^v isomorphic to Ext^{d-i}(M, omega)."
+  },
+  {
+    "id": "s_regular_rings_finite_global_dimension",
+    "kind": "theorem",
+    "name": "Regular rings have finite global dimension",
+    "type_signature": "",
+    "description": "A Noetherian local ring is regular iff it has finite global dimension, and then gl.dim(A) = dim(A)."
+  },
+  {
+    "id": "s_bass_theorem",
+    "kind": "theorem",
+    "name": "Bass's theorem",
+    "type_signature": "",
+    "description": "A Noetherian local ring is Gorenstein iff it has finite injective dimension, and then inj.dim(A) = dim(A)."
+  }
+]
