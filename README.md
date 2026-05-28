@@ -10,7 +10,9 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ansumandas441/mathematical-discovery-engine/pulls)
 
 <p align="center">
-  <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph — 8,542 mathematical nodes connected by 12,381 edges" width="720">
+  <video src="https://github.com/ansumandas441/mathematical-discovery-engine/releases/download/v0.1.0/knowledge_graph_3d.mp4" controls muted autoplay loop width="720">
+    Your browser does not support video. <a href="https://github.com/ansumandas441/mathematical-discovery-engine/releases/download/v0.1.0/knowledge_graph_3d.mp4">Download the video</a>.
+  </video>
   <br>
   <sub>8,542 nodes · 12,381 edges · 240 proof techniques · 2,213 theorems — explore the full graph in 3D</sub>
 </p>
@@ -357,11 +359,11 @@ Stats: {"iterations": 15, "worker_calls": 47, "pruned": 12, "goal_found": true}
 The entire knowledge graph is explorable in an interactive 3D visualization — orbit, zoom, click, and trace the connections between axioms, techniques, and theorems.
 
 <p align="center">
-  <a href="https://github.com/ansumandas441/mathematical-discovery-engine/releases/download/v0.1.0/knowledge_graph_3d.mp4">
-    <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph Viewer" width="680">
-  </a>
+  <video src="https://github.com/ansumandas441/mathematical-discovery-engine/releases/download/v0.1.0/knowledge_graph_3d.mp4" controls muted autoplay loop width="680">
+    Your browser does not support video. <a href="https://github.com/ansumandas441/mathematical-discovery-engine/releases/download/v0.1.0/knowledge_graph_3d.mp4">Download the video</a>.
+  </video>
   <br>
-  <sub>Click to view full video · Nodes glow by type · Particles flow along proof paths</sub>
+  <sub>Nodes glow by type · Particles flow along proof paths · Hover to highlight connections</sub>
 </p>
 
 **TL;DR:** Every node is a mathematical object (axiom, state, theorem, or technique). Every edge is a logical dependency. Hover a node to see its connections light up. Double-click to explore its neighborhood. Particles flowing along edges show the direction of mathematical reasoning — from axioms through techniques to theorems.
