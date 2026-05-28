@@ -350,7 +350,7 @@
 
   // ── GRAPH RENDERING ──
 
-  const MAX_NODES = 2500;
+  const MAX_NODES = 6000;
 
   function renderGraph(data, centerNodeId) {
     currentGraphData = data;
@@ -383,20 +383,23 @@
         .linkTarget("target")
         .linkColor(link => {
           if (highlightLinks.size > 0) {
-            return highlightLinks.has(link) ? "#58a6ff" : "rgba(255,255,255,0.01)";
+            return highlightLinks.has(link) ? "#58a6ff" : "rgba(255,255,255,0.03)";
           }
-          return "rgba(255,255,255,0.04)";
+          const src = typeof link.source === "object" ? link.source : nodeIndex[link.source];
+          const tgt = typeof link.target === "object" ? link.target : nodeIndex[link.target];
+          if (src?.kind === "technique" || tgt?.kind === "technique") return "rgba(240, 136, 62, 0.15)";
+          return "rgba(140, 160, 200, 0.12)";
         })
-        .linkWidth(link => highlightLinks.has(link) ? 1.5 : 0.3)
-        .linkOpacity(0.6)
+        .linkWidth(link => highlightLinks.has(link) ? 3 : 1.0)
+        .linkOpacity(0.8)
         .linkDirectionalParticles(link => highlightLinks.has(link) ? 4 : 1)
         .linkDirectionalParticleWidth(link => highlightLinks.has(link) ? 2.5 : 1.0)
         .linkDirectionalParticleSpeed(0.004)
         .linkDirectionalParticleColor(link => {
-          if (highlightLinks.has(link)) return "#58a6ff";
+          if (highlightLinks.has(link)) return "#79c0ff";
           const src = typeof link.source === "object" ? link.source : null;
-          if (src && src.kind === "technique") return "rgba(240, 136, 62, 0.3)";
-          return "rgba(88, 166, 255, 0.2)";
+          if (src && src.kind === "technique") return "rgba(240, 136, 62, 0.6)";
+          return "rgba(120, 180, 255, 0.5)";
         })
         .onNodeHover(node => {
           document.body.style.cursor = node ? "pointer" : "default";
@@ -483,14 +486,33 @@
       banner.classList.add("visible");
       return;
     }
-    if (nodeSet.size > MAX_NODES) {
-      banner.innerHTML = `Filter matches <b>${nodeSet.size.toLocaleString()}</b> nodes (limit: ${MAX_NODES.toLocaleString()}). Narrow with search, cluster, or kind filters.`;
-      banner.classList.add("visible");
-      return;
-    }
-    banner.classList.remove("visible");
 
-    const data = buildGraphData(nodeSet);
+    let finalSet = nodeSet;
+    if (nodeSet.size > MAX_NODES) {
+      // Sample: keep all techniques+theorems, then fill with highest-connectivity states/axioms
+      const keep = new Set();
+      const overflow = [];
+      for (const id of nodeSet) {
+        const n = nodeIndex[id];
+        if (n.kind === "technique" || n.kind === "theorem") {
+          keep.add(id);
+        } else {
+          overflow.push({ id, fan: (fanIn[id] || 0) + (fanOut[id] || 0) });
+        }
+      }
+      overflow.sort((a, b) => b.fan - a.fan);
+      for (const item of overflow) {
+        if (keep.size >= MAX_NODES) break;
+        keep.add(item.id);
+      }
+      finalSet = keep;
+      banner.innerHTML = `Showing <b>${finalSet.size.toLocaleString()}</b> of ${nodeSet.size.toLocaleString()} nodes (most-connected prioritized).`;
+      banner.classList.add("visible");
+    } else {
+      banner.classList.remove("visible");
+    }
+
+    const data = buildGraphData(finalSet);
     renderGraph(data);
   }
 
