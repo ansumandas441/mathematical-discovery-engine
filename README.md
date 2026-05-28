@@ -357,7 +357,7 @@ Stats: {"iterations": 15, "worker_calls": 47, "pruned": 12, "goal_found": true}
 The entire knowledge graph is explorable in an interactive 3D visualization — orbit, zoom, click, and trace the connections between axioms, techniques, and theorems.
 
 <p align="center">
-  <a href="assets/knowledge_graph_3d.mp4">
+  <a href="https://github.com/ansumandas441/mathematical-discovery-engine/releases/download/v0.1.0/knowledge_graph_3d.mp4">
     <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph Viewer" width="680">
   </a>
   <br>
