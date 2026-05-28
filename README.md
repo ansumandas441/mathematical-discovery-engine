@@ -356,11 +356,11 @@ Stats: {"iterations": 15, "worker_calls": 47, "pruned": 12, "goal_found": true}
 
 The entire knowledge graph is explorable in an interactive 3D visualization — orbit, zoom, click, and trace the connections between axioms, techniques, and theorems.
 
-<p align="center">
+<!-- <p align="center">
   <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph Viewer" width="680">
   <br>
   <sub>Nodes glow by type · Particles flow along proof paths · Hover to highlight connections</sub>
-</p>
+</p> -->
 
 <!-- REPLACE_WITH_VIDEO: Once you have a user-attachments URL, put it on its own line here to get inline playback -->
 
