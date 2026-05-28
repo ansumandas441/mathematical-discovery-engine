@@ -68468,6 +68468,1133 @@
       "name": "Schroder Number",
       "type_signature": "",
       "description": "Number of lattice paths from (0,0) to (n,n) with steps (1,0), (0,1), (1,1) not crossing the diagonal."
+    },
+    {
+      "id": "s_greatest_common_divisor",
+      "kind": "axiom",
+      "name": "Greatest common divisor",
+      "type_signature": "(ℤ, ℤ) → ℕ",
+      "description": "The greatest common divisor gcd(a,b) is the largest positive integer dividing both a and b, defined for any pair of integers not both zero."
+    },
+    {
+      "id": "s_least_common_multiple",
+      "kind": "axiom",
+      "name": "Least common multiple",
+      "type_signature": "(ℤ, ℤ) → ℕ",
+      "description": "The least common multiple lcm(a,b) is the smallest positive integer divisible by both a and b."
+    },
+    {
+      "id": "s_gcd_lcm_product_relation",
+      "kind": "theorem",
+      "name": "GCD–LCM product relation",
+      "type_signature": "",
+      "description": "For positive integers a and b, gcd(a,b) · lcm(a,b) = ab."
+    },
+    {
+      "id": "s_prime_number_definition",
+      "kind": "axiom",
+      "name": "Prime number",
+      "type_signature": "Subset(ℕ)",
+      "description": "A natural number p > 1 whose only positive divisors are 1 and p."
+    },
+    {
+      "id": "s_composite_number",
+      "kind": "axiom",
+      "name": "Composite number",
+      "type_signature": "Subset(ℕ)",
+      "description": "A natural number n > 1 that is not prime, equivalently n = ab for some integers 1 < a, b < n."
+    },
+    {
+      "id": "s_canonical_prime_factorization",
+      "kind": "axiom",
+      "name": "Canonical prime factorization",
+      "type_signature": "ℕ → Product(Prime, ℕ)",
+      "description": "The standard-form representation n = p₁^{a₁} p₂^{a₂} ··· pₖ^{aₖ} with p₁ < p₂ < ··· < pₖ prime and each aᵢ ≥ 1."
+    },
+    {
+      "id": "s_divisor_characterization_via_factorization",
+      "kind": "theorem",
+      "name": "Divisor characterization via prime factorization",
+      "type_signature": "",
+      "description": "If n = ∏ pᵢ^{aᵢ}, then d | n iff d = ∏ pᵢ^{bᵢ} with 0 ≤ bᵢ ≤ aᵢ for all i."
+    },
+    {
+      "id": "s_gcd_lcm_via_prime_factorization",
+      "kind": "theorem",
+      "name": "GCD and LCM via prime factorization",
+      "type_signature": "",
+      "description": "For n = ∏ pᵢ^{aᵢ} and m = ∏ pᵢ^{bᵢ}, gcd(n,m) = ∏ pᵢ^{min(aᵢ,bᵢ)} and lcm(n,m) = ∏ pᵢ^{max(aᵢ,bᵢ)}."
+    },
+    {
+      "id": "s_integrality_of_binomial_coefficients",
+      "kind": "theorem",
+      "name": "Integrality of binomial coefficients",
+      "type_signature": "",
+      "description": "The binomial coefficient C(n,k) = n!/(k!(n−k)!) is an integer for all 0 ≤ k ≤ n."
+    },
+    {
+      "id": "s_prime_divisibility_of_binomial_coefficients",
+      "kind": "theorem",
+      "name": "Prime divisibility of binomial coefficients",
+      "type_signature": "",
+      "description": "For prime p and 1 ≤ k ≤ p−1, the prime p divides C(p,k)."
+    },
+    {
+      "id": "s_completely_multiplicative_function",
+      "kind": "axiom",
+      "name": "Completely multiplicative function",
+      "type_signature": "ArithmeticFunction",
+      "description": "An arithmetic function f with f(1) = 1 and f(mn) = f(m)f(n) for all positive integers m, n without any coprimality restriction."
+    },
+    {
+      "id": "s_multiplicative_determination_by_prime_powers",
+      "kind": "theorem",
+      "name": "Multiplicative function determination by prime powers",
+      "type_signature": "",
+      "description": "A multiplicative function f is completely determined by its values f(pᵃ) at prime powers, since f(n) = ∏ f(pᵢ^{aᵢ})."
+    },
+    {
+      "id": "s_mobius_sum_identity",
+      "kind": "theorem",
+      "name": "Möbius function sum identity",
+      "type_signature": "",
+      "description": "For all positive integers n, ∑_{d|n} μ(d) = [n = 1], equaling 1 if n = 1 and 0 otherwise."
+    },
+    {
+      "id": "s_euler_totient_divisor_sum",
+      "kind": "theorem",
+      "name": "Euler totient divisor sum",
+      "type_signature": "",
+      "description": "For all positive integers n, ∑_{d|n} φ(d) = n."
+    },
+    {
+      "id": "s_euler_totient_product_formula",
+      "kind": "theorem",
+      "name": "Euler totient product formula",
+      "type_signature": "",
+      "description": "φ(n) = n ∏_{p|n} (1 − 1/p), expressing the totient as a product over the distinct prime divisors of n."
+    },
+    {
+      "id": "s_dirichlet_identity_function_epsilon",
+      "kind": "axiom",
+      "name": "Dirichlet identity function ε",
+      "type_signature": "ArithmeticFunction",
+      "description": "The function ε(n) = [n = 1], serving as the multiplicative identity for Dirichlet convolution."
+    },
+    {
+      "id": "s_dirichlet_inverse_existence",
+      "kind": "theorem",
+      "name": "Dirichlet inverse existence",
+      "type_signature": "",
+      "description": "An arithmetic function f has a unique Dirichlet inverse f⁻¹ (with f ∗ f⁻¹ = ε) if and only if f(1) ≠ 0."
+    },
+    {
+      "id": "s_dirichlet_product_abelian_group",
+      "kind": "theorem",
+      "name": "Abelian group of arithmetic functions under Dirichlet product",
+      "type_signature": "",
+      "description": "The set of arithmetic functions f with f(1) ≠ 0 forms an abelian group under Dirichlet convolution, with identity ε."
+    },
+    {
+      "id": "s_unit_function",
+      "kind": "axiom",
+      "name": "Unit function u(n) = 1",
+      "type_signature": "ArithmeticFunction",
+      "description": "The arithmetic function u(n) = 1 for all positive integers n, a completely multiplicative function."
+    },
+    {
+      "id": "s_number_theoretic_identity_function_N",
+      "kind": "axiom",
+      "name": "Number-theoretic identity function N(n) = n",
+      "type_signature": "ArithmeticFunction",
+      "description": "The arithmetic function N(n) = n, a completely multiplicative function."
+    },
+    {
+      "id": "s_mobius_dirichlet_inverse_of_unit",
+      "kind": "theorem",
+      "name": "Möbius function is Dirichlet inverse of unit function",
+      "type_signature": "",
+      "description": "μ = u⁻¹ under Dirichlet convolution, equivalently μ ∗ u = ε."
+    },
+    {
+      "id": "s_von_mangoldt_divisor_sum_identity",
+      "kind": "theorem",
+      "name": "Von Mangoldt divisor sum identity",
+      "type_signature": "",
+      "description": "For all n ≥ 1, ∑_{d|n} Λ(d) = log n, equivalently Λ = μ ∗ log as Dirichlet convolution."
+    },
+    {
+      "id": "s_liouville_completely_multiplicative",
+      "kind": "theorem",
+      "name": "Liouville function is completely multiplicative",
+      "type_signature": "",
+      "description": "The Liouville function λ(n) = (−1)^{Ω(n)} satisfies λ(mn) = λ(m)λ(n) for all positive integers m, n."
+    },
+    {
+      "id": "s_liouville_divisor_sum",
+      "kind": "theorem",
+      "name": "Liouville function divisor sum",
+      "type_signature": "",
+      "description": "∑_{d|n} λ(d) = [n is a perfect square], equaling 1 if n is a perfect square and 0 otherwise."
+    },
+    {
+      "id": "s_divisor_function_sigma_alpha",
+      "kind": "axiom",
+      "name": "Generalized divisor function σ_α",
+      "type_signature": "(ℂ, ℕ) → ℂ",
+      "description": "The function σ_α(n) = ∑_{d|n} d^α, a family of arithmetic functions parametrized by α ∈ ℂ."
+    },
+    {
+      "id": "s_number_of_divisors_function",
+      "kind": "axiom",
+      "name": "Number of divisors function d(n)",
+      "type_signature": "ℕ → ℕ",
+      "description": "The function d(n) = σ₀(n) = |{d > 0 : d | n}|, counting the number of positive divisors of n."
+    },
+    {
+      "id": "s_sum_of_divisors_function",
+      "kind": "axiom",
+      "name": "Sum of divisors function σ(n)",
+      "type_signature": "ℕ → ℕ",
+      "description": "The function σ(n) = σ₁(n) = ∑_{d|n} d, giving the sum of all positive divisors of n."
+    },
+    {
+      "id": "s_divisor_function_multiplicativity",
+      "kind": "theorem",
+      "name": "Divisor function multiplicativity",
+      "type_signature": "",
+      "description": "The generalized divisor function σ_α is multiplicative for every α."
+    },
+    {
+      "id": "s_divisor_function_prime_power_formula",
+      "kind": "theorem",
+      "name": "Divisor function prime power formula",
+      "type_signature": "",
+      "description": "For prime p and α ≠ 0, σ_α(pᵃ) = (p^{α(a+1)} − 1)/(p^α − 1); for α = 0, d(pᵃ) = a + 1."
+    },
+    {
+      "id": "s_product_multiplicative_is_multiplicative",
+      "kind": "theorem",
+      "name": "Dirichlet product of multiplicative functions is multiplicative",
+      "type_signature": "",
+      "description": "If f and g are multiplicative, their Dirichlet product f ∗ g is also multiplicative."
+    },
+    {
+      "id": "s_dirichlet_inverse_multiplicative_is_multiplicative",
+      "kind": "theorem",
+      "name": "Dirichlet inverse of multiplicative function is multiplicative",
+      "type_signature": "",
+      "description": "If f is multiplicative, its Dirichlet inverse f⁻¹ is also multiplicative."
+    },
+    {
+      "id": "s_bell_series",
+      "kind": "axiom",
+      "name": "Bell series",
+      "type_signature": "ArithmeticFunction × Prime → FormalPowerSeries",
+      "description": "The Bell series of an arithmetic function f at a prime p is the formal power series f_p(x) = ∑_{n=0}^{∞} f(pⁿ) xⁿ."
+    },
+    {
+      "id": "s_bell_series_multiplication",
+      "kind": "theorem",
+      "name": "Bell series multiplication theorem",
+      "type_signature": "",
+      "description": "If h = f ∗ g (Dirichlet product) and all three are multiplicative, then h_p(x) = f_p(x) · g_p(x) for every prime p."
+    },
+    {
+      "id": "s_euler_totient_via_mobius",
+      "kind": "theorem",
+      "name": "Euler totient via Möbius inversion",
+      "type_signature": "",
+      "description": "φ = μ ∗ N under Dirichlet convolution, equivalently φ(n) = ∑_{d|n} μ(d)(n/d)."
+    },
+    {
+      "id": "s_euler_totient_multiplicativity",
+      "kind": "theorem",
+      "name": "Euler totient multiplicativity",
+      "type_signature": "",
+      "description": "Euler's totient function φ is multiplicative: φ(mn) = φ(m)φ(n) whenever gcd(m,n) = 1."
+    },
+    {
+      "id": "s_dirichlet_ring_of_arithmetic_functions",
+      "kind": "axiom",
+      "name": "Dirichlet ring of arithmetic functions",
+      "type_signature": "CommutativeRing",
+      "description": "The commutative ring of all arithmetic functions under pointwise addition and Dirichlet convolution, with identity ε."
+    },
+    {
+      "id": "s_generalized_mobius_inversion",
+      "kind": "theorem",
+      "name": "Generalized Möbius inversion",
+      "type_signature": "",
+      "description": "If F(x) = ∑_{n≤x} f(x/n) for all x ≥ 1, then f(x) = ∑_{n≤x} μ(n)F(x/n), and conversely."
+    },
+    {
+      "id": "s_completely_multiplicative_inverse_formula",
+      "kind": "theorem",
+      "name": "Completely multiplicative Dirichlet inverse formula",
+      "type_signature": "",
+      "description": "If f is completely multiplicative, then f⁻¹(n) = μ(n)f(n) for all n."
+    },
+    {
+      "id": "s_asymptotic_equality",
+      "kind": "axiom",
+      "name": "Asymptotic equality",
+      "type_signature": "Relation(Function, Function)",
+      "description": "f ∼ g means f(x)/g(x) → 1 as x → ∞."
+    },
+    {
+      "id": "s_average_order_definition",
+      "kind": "axiom",
+      "name": "Average order of an arithmetic function",
+      "type_signature": "ArithmeticFunction → Function",
+      "description": "A function g(n) is an average order of f(n) if ∑_{n≤x} f(n) ∼ ∑_{n≤x} g(n)."
+    },
+    {
+      "id": "s_euler_summation_formula",
+      "kind": "theorem",
+      "name": "Euler summation formula",
+      "type_signature": "",
+      "description": "∑_{a<n≤b} f(n) = ∫_a^b f(t)dt + ∫_a^b (t − [t])f′(t)dt + f(x)([x] − x) − f(y)([y] − y), for f with continuous derivative."
+    },
+    {
+      "id": "s_average_order_of_d_n",
+      "kind": "theorem",
+      "name": "Average order of d(n)",
+      "type_signature": "",
+      "description": "∑_{n≤x} d(n) = x log x + (2γ − 1)x + O(√x), where γ is the Euler–Mascheroni constant."
+    },
+    {
+      "id": "t_dirichlet_hyperbola_method",
+      "kind": "technique",
+      "name": "Dirichlet hyperbola method",
+      "function_signature": "(Dirichlet convolution sum ∑_{n≤x} (f∗g)(n)) → (Improved asymptotic estimate)",
+      "description": "Splits the sum over the region {(a,b) : ab ≤ x} into three parts along a hyperbola to improve error terms in divisor-sum estimates."
+    },
+    {
+      "id": "s_average_order_of_sigma_n",
+      "kind": "theorem",
+      "name": "Average order of σ(n)",
+      "type_signature": "",
+      "description": "∑_{n≤x} σ(n) = (π²/12)x² + O(x log x)."
+    },
+    {
+      "id": "s_average_order_of_phi_n",
+      "kind": "theorem",
+      "name": "Average order of φ(n)",
+      "type_signature": "",
+      "description": "∑_{n≤x} φ(n) = (3/π²)x² + O(x log x)."
+    },
+    {
+      "id": "s_harmonic_sum_estimate",
+      "kind": "theorem",
+      "name": "Harmonic sum estimate",
+      "type_signature": "",
+      "description": "∑_{n≤x} 1/n = log x + γ + O(1/x), where γ is the Euler–Mascheroni constant."
+    },
+    {
+      "id": "s_average_order_of_mu",
+      "kind": "theorem",
+      "name": "Average order of μ(n) is zero",
+      "type_signature": "",
+      "description": "M(x) = ∑_{n≤x} μ(n) = o(x), equivalently the Möbius function has mean value zero."
+    },
+    {
+      "id": "s_mertens_function",
+      "kind": "axiom",
+      "name": "Mertens function",
+      "type_signature": "ℝ → ℤ",
+      "description": "M(x) = ∑_{n≤x} μ(n), the summatory function of the Möbius function."
+    },
+    {
+      "id": "t_lattice_point_counting",
+      "kind": "technique",
+      "name": "Lattice point counting",
+      "function_signature": "(Arithmetic sum) → (Geometric count of lattice points)",
+      "description": "Estimates arithmetic sums by counting integer lattice points in planar regions, e.g., under the hyperbola ab = x."
+    },
+    {
+      "id": "s_asymptotic_reciprocal_phi",
+      "kind": "theorem",
+      "name": "Asymptotic average of 1/φ(n)",
+      "type_signature": "",
+      "description": "∑_{n≤x} 1/φ(n) = (315ζ(3))/(2π⁴) · log x + O(1)."
+    },
+    {
+      "id": "s_prime_counting_function",
+      "kind": "axiom",
+      "name": "Prime counting function π(x)",
+      "type_signature": "ℝ → ℕ",
+      "description": "π(x) = |{p ≤ x : p prime}|, counting the number of primes not exceeding x."
+    },
+    {
+      "id": "s_theta_psi_relation",
+      "kind": "theorem",
+      "name": "Relation between Chebyshev θ and ψ",
+      "type_signature": "",
+      "description": "ψ(x) = θ(x) + O(√x log² x), so θ(x) ∼ x if and only if ψ(x) ∼ x."
+    },
+    {
+      "id": "s_abel_summation_pi_theta",
+      "kind": "theorem",
+      "name": "Abel summation relating π(x) and θ(x)",
+      "type_signature": "",
+      "description": "θ(x) = π(x) log x − ∫₂ˣ π(t)/t dt, obtained by partial summation."
+    },
+    {
+      "id": "s_equivalence_of_pnt_forms",
+      "kind": "theorem",
+      "name": "Equivalence of PNT forms",
+      "type_signature": "",
+      "description": "The statements π(x) ∼ x/log x, θ(x) ∼ x, ψ(x) ∼ x, and π(x) ∼ Li(x) are mutually equivalent."
+    },
+    {
+      "id": "s_shapiro_tauberian_theorem",
+      "kind": "theorem",
+      "name": "Shapiro's Tauberian theorem",
+      "type_signature": "",
+      "description": "If aₙ ≥ 0 and ∑_{n≤x} aₙ [x/n] = x log x + O(x), then ∑_{n≤x} aₙ/n = log x + O(1)."
+    },
+    {
+      "id": "s_selberg_identity",
+      "kind": "theorem",
+      "name": "Selberg's identity",
+      "type_signature": "",
+      "description": "Λ(n) log n + ∑_{d|n} Λ(d)Λ(n/d) = ∑_{d|n} μ(d) log²(n/d), an exact identity for the von Mangoldt function."
+    },
+    {
+      "id": "s_nth_prime_asymptotic",
+      "kind": "theorem",
+      "name": "Asymptotic formula for the n-th prime",
+      "type_signature": "",
+      "description": "The n-th prime satisfies pₙ ∼ n log n as n → ∞."
+    },
+    {
+      "id": "s_sum_prime_reciprocals_diverges",
+      "kind": "theorem",
+      "name": "Divergence of the sum of prime reciprocals",
+      "type_signature": "",
+      "description": "∑_{p prime} 1/p = ∞; more precisely ∑_{p≤x} 1/p = log log x + M + O(1/log x) where M is the Meissel–Mertens constant."
+    },
+    {
+      "id": "s_residue_class",
+      "kind": "axiom",
+      "name": "Residue class",
+      "type_signature": "ℤ × ℕ → Subset(ℤ)",
+      "description": "The residue class of a modulo m is the equivalence class a + mℤ = {a + km : k ∈ ℤ}."
+    },
+    {
+      "id": "s_complete_residue_system",
+      "kind": "axiom",
+      "name": "Complete residue system",
+      "type_signature": "ℕ → Set(ℤ)",
+      "description": "A set of m integers containing exactly one representative from each residue class modulo m."
+    },
+    {
+      "id": "s_reduced_residue_system",
+      "kind": "axiom",
+      "name": "Reduced residue system",
+      "type_signature": "ℕ → Set(ℤ)",
+      "description": "A set of φ(m) integers, one from each residue class coprime to m."
+    },
+    {
+      "id": "s_linear_congruence",
+      "kind": "axiom",
+      "name": "Linear congruence",
+      "type_signature": "Equation",
+      "description": "An equation ax ≡ b (mod m) seeking integer solutions x."
+    },
+    {
+      "id": "s_linear_congruence_solvability",
+      "kind": "theorem",
+      "name": "Linear congruence solvability",
+      "type_signature": "",
+      "description": "The congruence ax ≡ b (mod m) has a solution iff gcd(a,m) | b, in which case there are exactly gcd(a,m) incongruent solutions."
+    },
+    {
+      "id": "s_multiplicative_inverse_mod_m",
+      "kind": "theorem",
+      "name": "Multiplicative inverse modulo m",
+      "type_signature": "",
+      "description": "An integer a has a multiplicative inverse modulo m if and only if gcd(a,m) = 1."
+    },
+    {
+      "id": "s_polynomial_congruence",
+      "kind": "axiom",
+      "name": "Polynomial congruence",
+      "type_signature": "Equation",
+      "description": "An equation f(x) ≡ 0 (mod m) where f is a polynomial with integer coefficients."
+    },
+    {
+      "id": "s_lagrange_polynomial_congruence_mod_p",
+      "kind": "theorem",
+      "name": "Lagrange's theorem on polynomial congruences mod p",
+      "type_signature": "",
+      "description": "A polynomial of degree n with integer coefficients has at most n incongruent roots modulo a prime p."
+    },
+    {
+      "id": "s_order_of_group_element",
+      "kind": "axiom",
+      "name": "Order of a group element",
+      "type_signature": "FiniteGroup × Element → ℤ₊",
+      "description": "The smallest positive integer n such that gⁿ = e, for an element g in a finite group G."
+    },
+    {
+      "id": "s_order_divides_group_order",
+      "kind": "theorem",
+      "name": "Order of element divides group order",
+      "type_signature": "",
+      "description": "In a finite group G, the order of every element divides |G|."
+    },
+    {
+      "id": "s_cyclic_group",
+      "kind": "axiom",
+      "name": "Cyclic group",
+      "type_signature": "Group",
+      "description": "A group generated by a single element, isomorphic to ℤ/nℤ for some positive integer n."
+    },
+    {
+      "id": "s_subgroups_of_cyclic_are_cyclic",
+      "kind": "theorem",
+      "name": "Subgroups of cyclic groups are cyclic",
+      "type_signature": "",
+      "description": "Every subgroup of a cyclic group is cyclic, and for each divisor d of |G| there is exactly one subgroup of order d."
+    },
+    {
+      "id": "s_direct_product_of_groups",
+      "kind": "axiom",
+      "name": "Direct product of groups",
+      "type_signature": "Group × Group → Group",
+      "description": "The direct product G × H of two groups is the set of pairs (g,h) with componentwise multiplication."
+    },
+    {
+      "id": "s_group_character",
+      "kind": "axiom",
+      "name": "Group character (finite abelian)",
+      "type_signature": "Hom(G, ℂ*)",
+      "description": "A homomorphism χ: G → ℂ* from a finite abelian group G to the multiplicative group of nonzero complex numbers."
+    },
+    {
+      "id": "s_character_group_isomorphic_to_G",
+      "kind": "theorem",
+      "name": "Character group is isomorphic to G",
+      "type_signature": "",
+      "description": "For a finite abelian group G, its character group Ĝ is (non-canonically) isomorphic to G, so |Ĝ| = |G|."
+    },
+    {
+      "id": "s_orthogonality_dirichlet_characters",
+      "kind": "theorem",
+      "name": "Orthogonality relations for Dirichlet characters",
+      "type_signature": "",
+      "description": "∑_{χ mod m} χ(a)χ̄(b) = φ(m) if a ≡ b (mod m) with gcd(a,m) = 1, and 0 otherwise."
+    },
+    {
+      "id": "t_extraction_ap_via_characters",
+      "kind": "technique",
+      "name": "Extraction of arithmetic progressions via characters",
+      "function_signature": "(Dirichlet characters mod m, residue class l) → (Indicator function for n ≡ l mod m)",
+      "description": "Isolates a single residue class using the orthogonality relation: 𝟙_{n≡l} = (1/φ(m)) ∑_χ χ̄(l) χ(n)."
+    },
+    {
+      "id": "s_euler_product_for_l_function",
+      "kind": "theorem",
+      "name": "Euler product for L(s,χ)",
+      "type_signature": "",
+      "description": "For Re(s) > 1, L(s,χ) = ∏_p (1 − χ(p)p⁻ˢ)⁻¹, expressing the Dirichlet L-function as a product over primes."
+    },
+    {
+      "id": "s_l_chi0_relation_to_zeta",
+      "kind": "state",
+      "name": "L(s,χ₀) relation to Riemann zeta",
+      "type_signature": "",
+      "description": "L(s,χ₀) = ζ(s) ∏_{p|m} (1 − p⁻ˢ) for the principal character χ₀ mod m."
+    },
+    {
+      "id": "s_log_l_series",
+      "kind": "state",
+      "name": "Logarithm of L(s,χ) series",
+      "type_signature": "",
+      "description": "−log L(s,χ) = ∑_p ∑_{k≥1} χ(pᵏ)/(kpᵏˢ) for Re(s) > 1, from the Euler product."
+    },
+    {
+      "id": "s_primes_in_ap_dirichlet_series",
+      "kind": "state",
+      "name": "Dirichlet series for primes in arithmetic progressions",
+      "type_signature": "",
+      "description": "∑_{p≡l(m)} p⁻ˢ = (1/φ(m)) ∑_χ χ̄(l) log L(s,χ) + bounded terms for Re(s) > 1."
+    },
+    {
+      "id": "s_l_chi0_pole_at_1",
+      "kind": "theorem",
+      "name": "Pole of L(s,χ₀) at s = 1",
+      "type_signature": "",
+      "description": "L(s,χ₀) has a simple pole at s = 1 with residue ∏_{p|m}(1 − 1/p), inherited from the pole of ζ(s)."
+    },
+    {
+      "id": "t_product_all_l_functions_mod_m",
+      "kind": "technique",
+      "name": "Product of all L-functions mod m",
+      "function_signature": "(All Dirichlet characters mod m) → (Dirichlet series with nonnegative coefficients)",
+      "description": "The product ∏_χ L(s,χ) yields a Dirichlet series with nonnegative coefficients, used to prove L(1,χ) ≠ 0 for complex χ."
+    },
+    {
+      "id": "t_nonvanishing_real_chi_via_landau",
+      "kind": "technique",
+      "name": "Nonvanishing of L(1,χ) for real χ via Landau's theorem",
+      "function_signature": "(L(s,χ) with real χ, Landau's theorem) → (L(1,χ) ≠ 0)",
+      "description": "Proves L(1,χ) ≠ 0 for real χ using Landau's theorem that a Dirichlet series with nonneg coefficients has a singularity at its abscissa of convergence."
+    },
+    {
+      "id": "s_equidistribution_primes_residue_classes",
+      "kind": "theorem",
+      "name": "Equidistribution of primes in residue classes",
+      "type_signature": "",
+      "description": "The primes are equidistributed among the φ(m) reduced residue classes mod m: ∑_{p≤x, p≡l(m)} 1/p ∼ (1/φ(m)) log log x."
+    },
+    {
+      "id": "s_convergence_l_nonprincipal_s_gt_0",
+      "kind": "theorem",
+      "name": "Convergence of L(s,χ) for nonprincipal χ at s > 0",
+      "type_signature": "",
+      "description": "For nonprincipal χ, the series L(s,χ) converges (conditionally) for all s with Re(s) > 0."
+    },
+    {
+      "id": "s_periodic_arithmetical_function",
+      "kind": "axiom",
+      "name": "Periodic arithmetical function",
+      "type_signature": "ArithmeticFunction",
+      "description": "An arithmetical function f satisfying f(n + q) = f(n) for all integers n and some fixed positive integer q."
+    },
+    {
+      "id": "s_finite_fourier_expansion",
+      "kind": "theorem",
+      "name": "Finite Fourier expansion of periodic functions",
+      "type_signature": "",
+      "description": "Every arithmetical function with period q can be written as f(n) = ∑_{k=1}^q a(k) e^{2πikn/q} with a(k) = (1/q) ∑_{r=1}^q f(r) e^{-2πikr/q}."
+    },
+    {
+      "id": "s_ramanujan_sum_mobius_formula",
+      "kind": "theorem",
+      "name": "Ramanujan sum via Möbius function",
+      "type_signature": "",
+      "description": "c_q(n) = ∑_{d|gcd(n,q)} μ(q/d) d, expressing the Ramanujan sum as a divisor sum involving μ."
+    },
+    {
+      "id": "s_ramanujan_sum_multiplicativity",
+      "kind": "theorem",
+      "name": "Multiplicativity of Ramanujan sums",
+      "type_signature": "",
+      "description": "For fixed n, the function q ↦ c_q(n) is multiplicative: c_{q₁q₂}(n) = c_{q₁}(n) c_{q₂}(n) when gcd(q₁,q₂) = 1."
+    },
+    {
+      "id": "t_ramanujan_expansion",
+      "kind": "technique",
+      "name": "Ramanujan expansion of arithmetical functions",
+      "function_signature": "(ArithmeticFunction f) → (Series ∑ aₖ cₖ(n) in Ramanujan sums)",
+      "description": "Expresses an arithmetical function as a pointwise convergent series in Ramanujan sums, analogous to Fourier expansion."
+    },
+    {
+      "id": "s_separability_of_gauss_sums",
+      "kind": "axiom",
+      "name": "Separability of Gauss sums",
+      "type_signature": "",
+      "description": "A character χ mod m is separable if G(n,χ) = χ̄(n) G(1,χ) holds for all integers n."
+    },
+    {
+      "id": "s_primitive_characters_are_separable",
+      "kind": "theorem",
+      "name": "Primitive characters are separable",
+      "type_signature": "",
+      "description": "Every primitive Dirichlet character mod m is separable: G(n,χ) = χ̄(n) G(1,χ) for all n."
+    },
+    {
+      "id": "s_gauss_sum_modulus_primitive",
+      "kind": "theorem",
+      "name": "Modulus of Gauss sum for primitive characters",
+      "type_signature": "",
+      "description": "For a primitive character χ mod m, |G(1,χ)|² = m, equivalently |G(1,χ)| = √m."
+    },
+    {
+      "id": "s_quadratic_gauss_sum",
+      "kind": "state",
+      "name": "Quadratic Gauss sum",
+      "type_signature": "",
+      "description": "The sum G = ∑_{a=0}^{p−1} (a/p) e^{2πia/p} associated to the Legendre symbol, satisfying G² = (−1)^{(p−1)/2} p."
+    },
+    {
+      "id": "s_sign_of_quadratic_gauss_sum",
+      "kind": "theorem",
+      "name": "Sign of the quadratic Gauss sum",
+      "type_signature": "",
+      "description": "The quadratic Gauss sum equals √p if p ≡ 1 (mod 4) and i√p if p ≡ 3 (mod 4)."
+    },
+    {
+      "id": "s_chi_via_gauss_sum",
+      "kind": "theorem",
+      "name": "Representation of χ(n) via Gauss sums",
+      "type_signature": "",
+      "description": "For primitive χ mod m, χ(n) = (1/G(1,χ̄)) ∑_{a=1}^m χ̄(a) e^{2πian/m}, recovering χ from its Gauss sum."
+    },
+    {
+      "id": "s_gauss_sum_product_identity",
+      "kind": "theorem",
+      "name": "Gauss sum product identity G(1,χ)G(1,χ̄) = χ(−1)m",
+      "type_signature": "",
+      "description": "For primitive χ mod m, G(1,χ)G(1,χ̄) = χ(−1) · m."
+    },
+    {
+      "id": "s_von_sterneck_formula",
+      "kind": "theorem",
+      "name": "Von Sterneck's formula for Ramanujan sums",
+      "type_signature": "",
+      "description": "c_q(n) = μ(q/gcd(n,q)) φ(q)/φ(q/gcd(n,q)) when q/gcd(n,q) is squarefree, and 0 otherwise."
+    },
+    {
+      "id": "s_half_residues_are_qr",
+      "kind": "theorem",
+      "name": "Half of reduced residues are quadratic residues",
+      "type_signature": "",
+      "description": "Among 1, 2, …, p−1, exactly (p−1)/2 are quadratic residues mod p and (p−1)/2 are nonresidues."
+    },
+    {
+      "id": "s_euler_criterion",
+      "kind": "theorem",
+      "name": "Euler's criterion",
+      "type_signature": "",
+      "description": "For odd prime p and gcd(a,p) = 1, the Legendre symbol (a/p) ≡ a^{(p−1)/2} (mod p)."
+    },
+    {
+      "id": "s_legendre_symbol_completely_multiplicative",
+      "kind": "theorem",
+      "name": "Legendre symbol is completely multiplicative",
+      "type_signature": "",
+      "description": "The Legendre symbol satisfies (ab/p) = (a/p)(b/p) for all integers a, b."
+    },
+    {
+      "id": "s_first_supplement_qr",
+      "kind": "theorem",
+      "name": "First supplement to quadratic reciprocity",
+      "type_signature": "",
+      "description": "(−1/p) = (−1)^{(p−1)/2}, so −1 is a quadratic residue mod p iff p ≡ 1 (mod 4)."
+    },
+    {
+      "id": "s_gauss_lemma_legendre",
+      "kind": "theorem",
+      "name": "Gauss's lemma for the Legendre symbol",
+      "type_signature": "",
+      "description": "(a/p) = (−1)ⁿ where n counts the least positive residues of a, 2a, …, ((p−1)/2)a exceeding p/2."
+    },
+    {
+      "id": "s_second_supplement_qr",
+      "kind": "theorem",
+      "name": "Second supplement to quadratic reciprocity",
+      "type_signature": "",
+      "description": "(2/p) = (−1)^{(p²−1)/8}, so 2 is a quadratic residue mod p iff p ≡ ±1 (mod 8)."
+    },
+    {
+      "id": "s_jacobi_symbol",
+      "kind": "axiom",
+      "name": "Jacobi symbol",
+      "type_signature": "(ℤ, OddPositiveInteger) → {−1, 0, 1}",
+      "description": "For odd n = p₁^{a₁}···pₖ^{aₖ}, the Jacobi symbol (a/n) = ∏ (a/pᵢ)^{aᵢ} extends the Legendre symbol."
+    },
+    {
+      "id": "s_jacobi_reciprocity",
+      "kind": "theorem",
+      "name": "Quadratic reciprocity for Jacobi symbol",
+      "type_signature": "",
+      "description": "For coprime odd positive m, n: (m/n)(n/m) = (−1)^{((m−1)/2)((n−1)/2)}."
+    },
+    {
+      "id": "s_jacobi_first_supplement",
+      "kind": "theorem",
+      "name": "First supplement for Jacobi symbol",
+      "type_signature": "",
+      "description": "(−1/n) = (−1)^{(n−1)/2} for every odd positive integer n."
+    },
+    {
+      "id": "s_jacobi_second_supplement",
+      "kind": "theorem",
+      "name": "Second supplement for Jacobi symbol",
+      "type_signature": "",
+      "description": "(2/n) = (−1)^{(n²−1)/8} for every odd positive integer n."
+    },
+    {
+      "id": "s_eisenstein_lemma",
+      "kind": "theorem",
+      "name": "Eisenstein's lemma",
+      "type_signature": "",
+      "description": "(a/p) = (−1)^{∑_{k=1}^{(p−1)/2} ⌊ka/p⌋}, expressing the Legendre symbol via a sum of floor functions."
+    },
+    {
+      "id": "t_qr_proof_via_gauss_sums",
+      "kind": "technique",
+      "name": "Proof of quadratic reciprocity via Gauss sums",
+      "function_signature": "(Quadratic Gauss sum G, G² = (−1)^{(p−1)/2}p) → (Quadratic reciprocity law)",
+      "description": "Raises the quadratic Gauss sum to the q-th power and reduces mod q to derive (p/q)(q/p) = (−1)^{((p−1)/2)((q−1)/2)}."
+    },
+    {
+      "id": "t_lattice_point_qr_proof",
+      "kind": "technique",
+      "name": "Lattice point counting proof of quadratic reciprocity",
+      "function_signature": "(Eisenstein's lemma, lattice points in rectangle) → (Quadratic reciprocity law)",
+      "description": "Counts lattice points in the rectangle [1,(p−1)/2] × [1,(q−1)/2] above and below the diagonal to prove reciprocity."
+    },
+    {
+      "id": "s_number_solutions_x2_eq_a_mod_p",
+      "kind": "theorem",
+      "name": "Number of solutions of x² ≡ a (mod p)",
+      "type_signature": "",
+      "description": "The number of solutions of x² ≡ a (mod p) is 1 + (a/p): two if a is a nonzero QR, zero if a is a QNR, one if p | a."
+    },
+    {
+      "id": "s_order_of_integer_mod_m",
+      "kind": "axiom",
+      "name": "Order of an integer modulo m",
+      "type_signature": "(ℤ, ℕ) → ℕ",
+      "description": "For gcd(a,m) = 1, the order ord_m(a) is the smallest positive integer k such that aᵏ ≡ 1 (mod m)."
+    },
+    {
+      "id": "s_order_divides_iff",
+      "kind": "theorem",
+      "name": "Order divides exponent iff congruence holds",
+      "type_signature": "",
+      "description": "aⁿ ≡ 1 (mod m) if and only if ord_m(a) | n."
+    },
+    {
+      "id": "s_order_of_powers",
+      "kind": "theorem",
+      "name": "Order of a power of an element",
+      "type_signature": "",
+      "description": "ord_m(aʲ) = k/gcd(j,k) where k = ord_m(a)."
+    },
+    {
+      "id": "s_number_of_primitive_roots",
+      "kind": "theorem",
+      "name": "Number of primitive roots modulo m",
+      "type_signature": "",
+      "description": "If primitive roots exist modulo m, there are exactly φ(φ(m)) incongruent primitive roots."
+    },
+    {
+      "id": "s_primitive_roots_mod_prime_powers",
+      "kind": "theorem",
+      "name": "Existence of primitive roots modulo p^k",
+      "type_signature": "",
+      "description": "For odd prime p and k ≥ 1, the group (ℤ/pᵏℤ)* is cyclic, i.e., primitive roots exist modulo pᵏ."
+    },
+    {
+      "id": "s_primitive_roots_mod_2pk",
+      "kind": "theorem",
+      "name": "Existence of primitive roots modulo 2p^k",
+      "type_signature": "",
+      "description": "For odd prime p and k ≥ 1, the group (ℤ/2pᵏℤ)* is cyclic."
+    },
+    {
+      "id": "s_no_primitive_roots_mod_2k",
+      "kind": "theorem",
+      "name": "Nonexistence of primitive roots modulo 2^k for k ≥ 3",
+      "type_signature": "",
+      "description": "For k ≥ 3, (ℤ/2ᵏℤ)* ≅ ℤ/2 × ℤ/2^{k−2} is not cyclic, so no primitive root exists."
+    },
+    {
+      "id": "s_classification_moduli_primitive_roots",
+      "kind": "theorem",
+      "name": "Classification of moduli having primitive roots",
+      "type_signature": "",
+      "description": "Primitive roots exist modulo m iff m ∈ {1, 2, 4, pᵏ, 2pᵏ} for an odd prime p and k ≥ 1."
+    },
+    {
+      "id": "s_discrete_logarithm_index",
+      "kind": "axiom",
+      "name": "Index (discrete logarithm) modulo m",
+      "type_signature": "(PrimitiveRoot, ℤ) → ℤ/φ(m)ℤ",
+      "description": "For primitive root g mod m, ind_g(a) is the unique integer r mod φ(m) with gʳ ≡ a (mod m)."
+    },
+    {
+      "id": "s_index_homomorphism",
+      "kind": "theorem",
+      "name": "Homomorphism properties of the index function",
+      "type_signature": "",
+      "description": "ind_g(ab) ≡ ind_g(a) + ind_g(b) (mod φ(m)) and ind_g(aⁿ) ≡ n·ind_g(a) (mod φ(m)), giving (ℤ/mℤ)* ≅ ℤ/φ(m)ℤ."
+    },
+    {
+      "id": "t_solving_congruences_via_indices",
+      "kind": "technique",
+      "name": "Solving polynomial congruences via indices",
+      "function_signature": "(Polynomial congruence mod m with primitive root g) → (Linear congruence in index variable)",
+      "description": "Reduces xⁿ ≡ a (mod m) to the linear congruence n·ind_g(x) ≡ ind_g(a) (mod φ(m))."
+    },
+    {
+      "id": "s_power_residue_criterion",
+      "kind": "theorem",
+      "name": "Power residue criterion via indices",
+      "type_signature": "",
+      "description": "xⁿ ≡ a (mod p) is solvable iff a^{(p−1)/d} ≡ 1 (mod p) where d = gcd(n, p−1), with exactly d solutions."
+    },
+    {
+      "id": "s_characters_mod_p_via_primitive_roots",
+      "kind": "theorem",
+      "name": "Characters mod p via primitive roots",
+      "type_signature": "",
+      "description": "Every Dirichlet character mod p is χⱼ(gᵏ) = e^{2πijk/(p−1)} for unique j ∈ {0,…,p−2}, where g is a primitive root."
+    },
+    {
+      "id": "s_abscissa_relation",
+      "kind": "theorem",
+      "name": "Abscissa of convergence vs absolute convergence relation",
+      "type_signature": "",
+      "description": "For a Dirichlet series ∑ f(n)/nˢ, σ_c ≤ σ_a ≤ σ_c + 1, bounding the gap between conditional and absolute convergence."
+    },
+    {
+      "id": "s_analyticity_dirichlet_series",
+      "kind": "theorem",
+      "name": "Analyticity of Dirichlet series",
+      "type_signature": "",
+      "description": "A Dirichlet series ∑ aₙ n⁻ˢ represents a holomorphic function in its half-plane of convergence Re(s) > σ_c, differentiable term by term."
+    },
+    {
+      "id": "s_uniqueness_dirichlet_series",
+      "kind": "theorem",
+      "name": "Uniqueness theorem for Dirichlet series",
+      "type_signature": "",
+      "description": "If ∑ aₙ/nˢ = ∑ bₙ/nˢ in some half-plane, then aₙ = bₙ for all n."
+    },
+    {
+      "id": "s_euler_product_multiplicative",
+      "kind": "theorem",
+      "name": "Euler product for multiplicative functions",
+      "type_signature": "",
+      "description": "If f is multiplicative and ∑ f(n)/nˢ converges absolutely, then ∑ f(n)/nˢ = ∏_p (1 + f(p)/pˢ + f(p²)/p²ˢ + ···)."
+    },
+    {
+      "id": "s_euler_product_completely_multiplicative",
+      "kind": "theorem",
+      "name": "Euler product for completely multiplicative functions",
+      "type_signature": "",
+      "description": "If f is completely multiplicative with absolutely convergent Dirichlet series, then ∑ f(n)/nˢ = ∏_p (1 − f(p)/pˢ)⁻¹."
+    },
+    {
+      "id": "s_dirichlet_series_1_over_zeta",
+      "kind": "state",
+      "name": "Dirichlet series for 1/ζ(s)",
+      "type_signature": "",
+      "description": "1/ζ(s) = ∑ μ(n)/nˢ for Re(s) > 1, expressing the reciprocal of zeta via the Möbius function."
+    },
+    {
+      "id": "s_dirichlet_series_zeta_prime_over_zeta",
+      "kind": "state",
+      "name": "Dirichlet series for −ζ′(s)/ζ(s)",
+      "type_signature": "",
+      "description": "−ζ′(s)/ζ(s) = ∑ Λ(n)/nˢ for Re(s) > 1, the logarithmic derivative of zeta via the von Mangoldt function."
+    },
+    {
+      "id": "s_l_function_via_hurwitz_zeta",
+      "kind": "theorem",
+      "name": "L(s,χ) as linear combination of Hurwitz zeta functions",
+      "type_signature": "",
+      "description": "L(s,χ) = k⁻ˢ ∑_{r=1}^k χ(r) ζ(s, r/k) for a character χ mod k."
+    },
+    {
+      "id": "s_analytic_continuation_zeta_re_gt_0",
+      "kind": "theorem",
+      "name": "Analytic continuation of ζ(s) to Re(s) > 0",
+      "type_signature": "",
+      "description": "ζ(s) extends to a meromorphic function on Re(s) > 0 with a simple pole at s = 1 with residue 1."
+    },
+    {
+      "id": "s_analytic_continuation_l_re_gt_0",
+      "kind": "theorem",
+      "name": "Analytic continuation of L(s,χ) to Re(s) > 0",
+      "type_signature": "",
+      "description": "For nonprincipal χ, L(s,χ) extends to an analytic function on Re(s) > 0 via partial summation."
+    },
+    {
+      "id": "s_gamma_analytic_continuation",
+      "kind": "theorem",
+      "name": "Analytic continuation of Γ to meromorphic function on ℂ",
+      "type_signature": "",
+      "description": "Γ(s) extends to a meromorphic function on all of ℂ with simple poles at s = 0, −1, −2, … and residue (−1)ⁿ/n! at s = −n."
+    },
+    {
+      "id": "s_bernoulli_polynomial_difference",
+      "kind": "theorem",
+      "name": "Difference equation for Bernoulli polynomials",
+      "type_signature": "",
+      "description": "Bₙ(x+1) − Bₙ(x) = nxⁿ⁻¹, characterizing Bernoulli polynomials via their first difference."
+    },
+    {
+      "id": "s_fourier_expansion_bernoulli_polynomials",
+      "kind": "theorem",
+      "name": "Fourier expansion of Bernoulli polynomials",
+      "type_signature": "",
+      "description": "Bₙ(x) = −n!/(2πi)ⁿ ∑_{k≠0} e^{2πikx}/kⁿ for 0 < x < 1 (n ≥ 2)."
+    },
+    {
+      "id": "s_contour_integral_hurwitz_zeta",
+      "kind": "theorem",
+      "name": "Contour integral representation of Hurwitz zeta",
+      "type_signature": "",
+      "description": "ζ(s,a) = −Γ(1−s)/(2πi) ∮_C (−z)^{s−1} e^{−az}/(1−e^{−z}) dz over a Hankel contour, valid for all s ≠ 1."
+    },
+    {
+      "id": "s_hurwitz_zeta_continuation_all_c",
+      "kind": "theorem",
+      "name": "Analytic continuation of Hurwitz zeta to all of ℂ",
+      "type_signature": "",
+      "description": "Via the contour integral, ζ(s,a) extends to a meromorphic function on all of ℂ with only a simple pole at s = 1."
+    },
+    {
+      "id": "s_hurwitz_zeta_negative_integers",
+      "kind": "theorem",
+      "name": "Values of ζ(s,a) at negative integers",
+      "type_signature": "",
+      "description": "ζ(−n, a) = −B_{n+1}(a)/(n+1) for n ≥ 0, expressing Hurwitz zeta at nonpositive integers via Bernoulli polynomials."
+    },
+    {
+      "id": "s_zeta_at_negative_integers",
+      "kind": "theorem",
+      "name": "Values of ζ(s) at negative integers",
+      "type_signature": "",
+      "description": "ζ(−n) = −B_{n+1}/(n+1) for n ≥ 0, giving ζ(0) = −1/2 and ζ(−2k) = 0 for k ≥ 1."
+    },
+    {
+      "id": "s_evaluation_zeta_2n",
+      "kind": "theorem",
+      "name": "Evaluation of ζ(2n) via Bernoulli numbers",
+      "type_signature": "",
+      "description": "ζ(2n) = (−1)^{n+1} (2π)^{2n} B_{2n}/(2(2n)!) for n ≥ 1, giving ζ(2) = π²/6, ζ(4) = π⁴/90."
+    },
+    {
+      "id": "s_functional_equation_l_primitive",
+      "kind": "theorem",
+      "name": "Functional equation of L(s,χ) for primitive characters",
+      "type_signature": "",
+      "description": "For primitive χ mod k with a = (1−χ(−1))/2, the completed L-function Λ(s,χ) = (k/π)^{(s+a)/2} Γ((s+a)/2) L(s,χ) satisfies Λ(s,χ) = ε(χ) Λ(1−s,χ̄)."
+    },
+    {
+      "id": "s_analytic_continuation_l_all_c",
+      "kind": "theorem",
+      "name": "Analytic continuation of L(s,χ) to all of ℂ",
+      "type_signature": "",
+      "description": "For primitive nonprincipal χ, L(s,χ) extends to an entire function on ℂ via the functional equation."
+    },
+    {
+      "id": "s_integral_representation_zeta_gamma",
+      "kind": "theorem",
+      "name": "Integral representation Γ(s)ζ(s) via Mellin transform",
+      "type_signature": "",
+      "description": "Γ(s)ζ(s) = ∫₀^∞ t^{s−1}/(eᵗ−1) dt for Re(s) > 1."
+    },
+    {
+      "id": "s_periodic_zeta_function",
+      "kind": "state",
+      "name": "Periodic zeta function F(a,s)",
+      "type_signature": "",
+      "description": "F(a,s) = ∑_{n=1}^∞ e^{2πina}/nˢ for Re(s) > 1 and 0 < a < 1, appearing in the functional equation of Hurwitz zeta."
+    },
+    {
+      "id": "s_pole_of_zeta_at_1",
+      "kind": "theorem",
+      "name": "Simple pole of ζ(s) at s = 1",
+      "type_signature": "",
+      "description": "ζ(s) has a simple pole at s = 1 with residue 1, equivalently lim_{s→1} (s−1)ζ(s) = 1."
+    },
+    {
+      "id": "t_mertens_3_4_1_inequality",
+      "kind": "technique",
+      "name": "Mertens 3-4-1 inequality",
+      "function_signature": "(Euler product of ζ(s)) → (ζ(1+it) ≠ 0 for all real t)",
+      "description": "Uses 3 + 4cos θ + cos 2θ ≥ 0 to show |ζ(σ)³ ζ(σ+it)⁴ ζ(σ+2it)| ≥ 1, proving nonvanishing of ζ on Re(s) = 1."
+    },
+    {
+      "id": "s_meromorphic_zeta_prime_over_zeta",
+      "kind": "theorem",
+      "name": "Meromorphic structure of ζ′(s)/ζ(s)",
+      "type_signature": "",
+      "description": "−ζ′(s)/ζ(s) is meromorphic with a simple pole at s = 1 (residue 1) and poles at zeros ρ of ζ(s)."
+    },
+    {
+      "id": "t_pnt_from_wiener_ikehara",
+      "kind": "technique",
+      "name": "Derivation of PNT from Wiener–Ikehara theorem",
+      "function_signature": "(Wiener–Ikehara theorem, −ζ′/ζ properties) → (ψ(x) ∼ x)",
+      "description": "Applies the Wiener–Ikehara Tauberian theorem to −ζ′(s)/ζ(s) with its simple pole at s = 1 to deduce ψ(x) ∼ x."
+    },
+    {
+      "id": "t_newman_tauberian_pnt",
+      "kind": "technique",
+      "name": "Newman's short Tauberian proof of PNT",
+      "function_signature": "(Analytic properties of ζ) → (ψ(x) ∼ x)",
+      "description": "Newman's simplified analytic proof of PNT using a direct contour-integral argument avoiding the full Wiener–Ikehara machinery."
+    },
+    {
+      "id": "s_integral_psi_via_zeta",
+      "kind": "theorem",
+      "name": "Integral representation of ψ(x) via ζ′/ζ",
+      "type_signature": "",
+      "description": "ψ(x) = (1/2πi) ∫_{c−i∞}^{c+i∞} (−ζ′(s)/ζ(s)) xˢ/s ds for c > 1, via Perron's formula."
+    },
+    {
+      "id": "t_contour_integration_pnt",
+      "kind": "technique",
+      "name": "Contour integration method for PNT",
+      "function_signature": "(Integral for ψ(x), zero-free region) → (ψ(x) = x + error)",
+      "description": "Shifts the Perron-type contour leftward past Re(s) = 1, extracting the main term x from the pole and bounding the remainder."
+    },
+    {
+      "id": "s_pnt_error_term",
+      "kind": "theorem",
+      "name": "PNT with error term (de la Vallée-Poussin)",
+      "type_signature": "",
+      "description": "ψ(x) = x + O(x exp(−c√(log x))) for some c > 0, the quantitative prime number theorem."
+    },
+    {
+      "id": "s_pnt_equivalent_to_nonvanishing",
+      "kind": "theorem",
+      "name": "PNT equivalent to nonvanishing of ζ on Re(s) = 1",
+      "type_signature": "",
+      "description": "ψ(x) ∼ x is logically equivalent to ζ(1+it) ≠ 0 for all real t."
+    },
+    {
+      "id": "s_convexity_bound_zeta",
+      "kind": "theorem",
+      "name": "Convexity bound for ζ(s) in the critical strip",
+      "type_signature": "",
+      "description": "ζ(σ+it) = O(|t|^{(1−σ)/2+ε}) for 0 ≤ σ ≤ 1 and |t| ≥ 1, by the Phragmén–Lindelöf principle."
+    },
+    {
+      "id": "s_dirichlet_eta_zeta_relation",
+      "kind": "state",
+      "name": "Dirichlet eta function relation to ζ(s)",
+      "type_signature": "",
+      "description": "ζ(s) = (1 − 2^{1−s})⁻¹ η(s) where η(s) = ∑ (−1)^{n−1}/nˢ converges for Re(s) > 0."
+    },
+    {
+      "id": "s_zeta_squared_divisor_series",
+      "kind": "state",
+      "name": "ζ(s)² = ∑ d(n)/nˢ",
+      "type_signature": "",
+      "description": "ζ(s)² = ∑ d(n)/nˢ for Re(s) > 1, since d = 1 ∗ 1 under Dirichlet convolution."
+    },
+    {
+      "id": "s_zeta_product_sigma_series",
+      "kind": "state",
+      "name": "ζ(s)ζ(s−1) = ∑ σ(n)/nˢ",
+      "type_signature": "",
+      "description": "ζ(s)ζ(s−1) = ∑ σ(n)/nˢ for Re(s) > 2, from the Dirichlet convolution of N and u."
+    },
+    {
+      "id": "s_landau_theorem_nonneg_coefficients",
+      "kind": "theorem",
+      "name": "Landau's theorem on Dirichlet series with nonneg coefficients",
+      "type_signature": "",
+      "description": "If aₙ ≥ 0 and ∑ aₙ/nˢ has finite abscissa of convergence σ_c, then s = σ_c is a singularity of the function."
+    },
+    {
+      "id": "s_psi_pi_relation",
+      "kind": "theorem",
+      "name": "Relation between ψ(x) and π(x) via Abel summation",
+      "type_signature": "",
+      "description": "π(x) = ψ(x)/log x + ∫₂ˣ ψ(t)/(t log² t) dt, so ψ(x) ∼ x implies π(x) ∼ x/log x."
     }
   ],
   "edges": [
@@ -179754,6 +180881,334 @@
       "role": "input",
       "parameter_binding": {},
       "used_in_theorem": ""
+    },
+    {
+      "id": "e_12345",
+      "from": "s_dirichlet_convolution",
+      "to": "t_dirichlet_hyperbola_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_of_d_n"
+    },
+    {
+      "id": "e_12346",
+      "from": "s_number_of_divisors_function",
+      "to": "t_dirichlet_hyperbola_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_of_d_n"
+    },
+    {
+      "id": "e_12347",
+      "from": "t_dirichlet_hyperbola_method",
+      "to": "s_average_order_of_d_n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_of_d_n"
+    },
+    {
+      "id": "e_12348",
+      "from": "t_dirichlet_hyperbola_method",
+      "to": "s_average_order_of_sigma_n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_of_sigma_n"
+    },
+    {
+      "id": "e_12349",
+      "from": "s_number_of_divisors_function",
+      "to": "t_lattice_point_counting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_of_d_n"
+    },
+    {
+      "id": "e_12350",
+      "from": "t_lattice_point_counting",
+      "to": "s_average_order_of_d_n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_of_d_n"
+    },
+    {
+      "id": "e_12351",
+      "from": "s_dirichlet_character",
+      "to": "t_extraction_ap_via_characters",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equidistribution_primes_residue_classes"
+    },
+    {
+      "id": "e_12352",
+      "from": "s_orthogonality_dirichlet_characters",
+      "to": "t_extraction_ap_via_characters",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equidistribution_primes_residue_classes"
+    },
+    {
+      "id": "e_12353",
+      "from": "t_extraction_ap_via_characters",
+      "to": "s_primes_in_ap_dirichlet_series",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_primes_in_ap"
+    },
+    {
+      "id": "e_12354",
+      "from": "t_extraction_ap_via_characters",
+      "to": "s_equidistribution_primes_residue_classes",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equidistribution_primes_residue_classes"
+    },
+    {
+      "id": "e_12355",
+      "from": "s_euler_product_for_l_function",
+      "to": "t_product_all_l_functions_mod_m",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_l_nonvanishing_at_1"
+    },
+    {
+      "id": "e_12356",
+      "from": "s_dirichlet_l_function",
+      "to": "t_product_all_l_functions_mod_m",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_l_nonvanishing_at_1"
+    },
+    {
+      "id": "e_12357",
+      "from": "t_product_all_l_functions_mod_m",
+      "to": "s_dirichlet_l_nonvanishing_at_1",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_l_nonvanishing_at_1"
+    },
+    {
+      "id": "e_12358",
+      "from": "s_landau_theorem_nonneg_coefficients",
+      "to": "t_nonvanishing_real_chi_via_landau",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_l_nonvanishing_at_1"
+    },
+    {
+      "id": "e_12359",
+      "from": "s_dirichlet_l_function",
+      "to": "t_nonvanishing_real_chi_via_landau",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_l_nonvanishing_at_1"
+    },
+    {
+      "id": "e_12360",
+      "from": "t_nonvanishing_real_chi_via_landau",
+      "to": "s_dirichlet_l_nonvanishing_at_1",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_l_nonvanishing_at_1"
+    },
+    {
+      "id": "e_12361",
+      "from": "s_ramanujan_sum",
+      "to": "t_ramanujan_expansion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramanujan_sum_mobius_formula"
+    },
+    {
+      "id": "e_12362",
+      "from": "s_finite_fourier_expansion",
+      "to": "t_ramanujan_expansion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramanujan_sum_mobius_formula"
+    },
+    {
+      "id": "e_12363",
+      "from": "t_ramanujan_expansion",
+      "to": "s_ramanujan_sum_mobius_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramanujan_sum_mobius_formula"
+    },
+    {
+      "id": "e_12364",
+      "from": "s_quadratic_gauss_sum",
+      "to": "t_qr_proof_via_gauss_sums",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_reciprocity"
+    },
+    {
+      "id": "e_12365",
+      "from": "s_euler_criterion",
+      "to": "t_qr_proof_via_gauss_sums",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_reciprocity"
+    },
+    {
+      "id": "e_12366",
+      "from": "t_qr_proof_via_gauss_sums",
+      "to": "s_quadratic_reciprocity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_reciprocity"
+    },
+    {
+      "id": "e_12367",
+      "from": "s_eisenstein_lemma",
+      "to": "t_lattice_point_qr_proof",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_reciprocity"
+    },
+    {
+      "id": "e_12368",
+      "from": "t_lattice_point_qr_proof",
+      "to": "s_quadratic_reciprocity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_reciprocity"
+    },
+    {
+      "id": "e_12369",
+      "from": "s_discrete_logarithm_index",
+      "to": "t_solving_congruences_via_indices",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_power_residue_criterion"
+    },
+    {
+      "id": "e_12370",
+      "from": "s_index_homomorphism",
+      "to": "t_solving_congruences_via_indices",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_power_residue_criterion"
+    },
+    {
+      "id": "e_12371",
+      "from": "t_solving_congruences_via_indices",
+      "to": "s_power_residue_criterion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_power_residue_criterion"
+    },
+    {
+      "id": "e_12372",
+      "from": "s_euler_product_zeta",
+      "to": "t_mertens_3_4_1_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_zeta_nonvanishing_on_line_Re_1"
+    },
+    {
+      "id": "e_12373",
+      "from": "s_riemann_zeta_function",
+      "to": "t_mertens_3_4_1_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_zeta_nonvanishing_on_line_Re_1"
+    },
+    {
+      "id": "e_12374",
+      "from": "t_mertens_3_4_1_inequality",
+      "to": "s_zeta_nonvanishing_on_line_Re_1",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_zeta_nonvanishing_on_line_Re_1"
+    },
+    {
+      "id": "e_12375",
+      "from": "s_wiener_ikehara_theorem",
+      "to": "t_pnt_from_wiener_ikehara",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12376",
+      "from": "s_zeta_nonvanishing_on_line_Re_1",
+      "to": "t_pnt_from_wiener_ikehara",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12377",
+      "from": "s_dirichlet_series_zeta_prime_over_zeta",
+      "to": "t_pnt_from_wiener_ikehara",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12378",
+      "from": "t_pnt_from_wiener_ikehara",
+      "to": "s_prime_number_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12379",
+      "from": "s_zeta_nonvanishing_on_line_Re_1",
+      "to": "t_newman_tauberian_pnt",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12380",
+      "from": "s_analytic_continuation_zeta_re_gt_0",
+      "to": "t_newman_tauberian_pnt",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12381",
+      "from": "t_newman_tauberian_pnt",
+      "to": "s_prime_number_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12382",
+      "from": "s_integral_psi_via_zeta",
+      "to": "t_contour_integration_pnt",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pnt_error_term"
+    },
+    {
+      "id": "e_12383",
+      "from": "s_de_la_vallee_poussin_zero_free_region",
+      "to": "t_contour_integration_pnt",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pnt_error_term"
+    },
+    {
+      "id": "e_12384",
+      "from": "t_contour_integration_pnt",
+      "to": "s_pnt_error_term",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pnt_error_term"
+    },
+    {
+      "id": "e_12385",
+      "from": "t_contour_integration_pnt",
+      "to": "s_prime_number_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prime_number_theorem"
     }
   ],
   "subgraphs": [
