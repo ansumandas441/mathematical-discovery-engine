@@ -1,4 +1,4 @@
-# Mathematical Discovery Engine
+# Mathematical Discovery Engine (MDE)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
