@@ -72487,6 +72487,863 @@
       "name": "Cyclotomic polynomial irreducibility over ℚ",
       "type_signature": "",
       "description": "The n-th cyclotomic polynomial Φ_n(x) = ∏_{gcd(k,n)=1} (x − e^{2πik/n}) is irreducible over ℚ, equivalently [ℚ(ζ_n):ℚ] = φ(n)."
+    },
+    {
+      "id": "s_algebraic_integer_neukirch",
+      "kind": "axiom",
+      "name": "Algebraic integer",
+      "type_signature": "",
+      "description": "An element of an algebraic number field that is a root of a monic polynomial with coefficients in ℤ.",
+      "aliases": [
+        "integral element over ℤ"
+      ]
+    },
+    {
+      "id": "s_norm_of_ideal",
+      "kind": "axiom",
+      "name": "Norm of an ideal N(𝔞)",
+      "type_signature": "",
+      "description": "For a nonzero ideal 𝔞 of O_K, the finite cardinality N(𝔞) = |O_K/𝔞|, which is multiplicative: N(𝔞𝔟) = N(𝔞)N(𝔟)."
+    },
+    {
+      "id": "s_minkowski_embedding",
+      "kind": "axiom",
+      "name": "Minkowski embedding (canonical embedding)",
+      "type_signature": "(K) → (ℝ^{r₁} × ℂ^{r₂})",
+      "description": "The ring homomorphism σ: K → ℝ^{r₁} × ℂ^{r₂} sending α to (σ₁(α),...,σ_{r₁}(α),τ₁(α),...,τ_{r₂}(α)), which embeds O_K as a full-rank lattice."
+    },
+    {
+      "id": "s_finiteness_of_class_number",
+      "kind": "theorem",
+      "name": "Finiteness of the class number",
+      "type_signature": "",
+      "description": "The ideal class group Cl(K) of any algebraic number field K is finite, proved via the Minkowski bound."
+    },
+    {
+      "id": "s_transitivity_of_different_discriminant",
+      "kind": "theorem",
+      "name": "Transitivity of different and discriminant",
+      "type_signature": "",
+      "description": "For a tower K ⊂ L ⊂ M, 𝔇_{M/K} = 𝔇_{M/L}·𝔇_{L/K} and d_{M/K} = N_{L/K}(d_{M/L})·d_{L/K}^{[M:L]}."
+    },
+    {
+      "id": "s_complementary_module",
+      "kind": "axiom",
+      "name": "Complementary module (codifferent)",
+      "type_signature": "",
+      "description": "The fractional ideal 𝔇_{L/K}^{-1} = {x ∈ L : Tr_{L/K}(x·O_L) ⊂ O_K}, the O_L-dual of O_L with respect to the trace pairing."
+    },
+    {
+      "id": "s_different_discriminant_relation",
+      "kind": "theorem",
+      "name": "Different–discriminant relation",
+      "type_signature": "",
+      "description": "The relative discriminant equals the norm of the different: d_{L/K} = N_{L/K}(𝔇_{L/K}), and a prime ramifies iff it divides d_{L/K}."
+    },
+    {
+      "id": "s_exponent_of_different_at_prime",
+      "kind": "theorem",
+      "name": "Exponent of the different at a prime",
+      "type_signature": "",
+      "description": "For a prime 𝔓|𝔭 with ramification index e, v_𝔓(𝔇_{L/K}) = e−1 if tamely ramified and ≥ e if wildly ramified."
+    },
+    {
+      "id": "s_tame_and_wild_ramification",
+      "kind": "axiom",
+      "name": "Tame and wild ramification",
+      "type_signature": "",
+      "description": "A prime is tamely ramified if e is coprime to the residue characteristic p (wild inertia group V₁ is trivial), and wildly ramified otherwise."
+    },
+    {
+      "id": "s_discriminant_of_cyclotomic_field",
+      "kind": "theorem",
+      "name": "Discriminant of cyclotomic fields",
+      "type_signature": "",
+      "description": "The discriminant of ℚ(ζ_p) for a prime p is (-1)^{(p-1)/2}·p^{p-2}, and p is the only ramified prime, totally ramified as (1−ζ_p)O = 𝔭^{p-1}."
+    },
+    {
+      "id": "s_crt_dedekind_domains",
+      "kind": "theorem",
+      "name": "Chinese Remainder Theorem for Dedekind domains",
+      "type_signature": "",
+      "description": "For pairwise coprime ideals 𝔞₁,...,𝔞ᵣ in a Dedekind domain, O/𝔞₁···𝔞ᵣ ≅ O/𝔞₁ × ··· × O/𝔞ᵣ."
+    },
+    {
+      "id": "s_finiteness_of_ramification",
+      "kind": "theorem",
+      "name": "Finiteness of ramification",
+      "type_signature": "",
+      "description": "In any finite extension L/K of number fields, only finitely many primes ramify, namely those dividing the relative discriminant d_{L/K}."
+    },
+    {
+      "id": "s_discrete_valuation",
+      "kind": "axiom",
+      "name": "Discrete valuation",
+      "type_signature": "",
+      "description": "A surjective map v: K× → ℤ satisfying v(xy) = v(x) + v(y) and v(x+y) ≥ min(v(x),v(y)), whose valuation ring is a DVR."
+    },
+    {
+      "id": "s_newton_polygon",
+      "kind": "axiom",
+      "name": "Newton polygon",
+      "type_signature": "",
+      "description": "For a polynomial f(x) = Σaᵢxⁱ over a non-archimedean valued field, the lower convex hull of the points (i, v(aᵢ)) in the plane."
+    },
+    {
+      "id": "s_newton_polygon_theorem",
+      "kind": "theorem",
+      "name": "Newton polygon theorem",
+      "type_signature": "",
+      "description": "The slopes of the Newton polygon of f(x) over a complete non-archimedean field are the negatives of the valuations of the roots, with multiplicities given by horizontal lengths."
+    },
+    {
+      "id": "s_krasners_lemma",
+      "kind": "theorem",
+      "name": "Krasner's lemma",
+      "type_signature": "",
+      "description": "If α is separable over K(β) and |α−β| < |α−α'| for all conjugates α' ≠ α in a complete non-archimedean field, then K(α) ⊆ K(β)."
+    },
+    {
+      "id": "s_classification_of_local_fields",
+      "kind": "theorem",
+      "name": "Classification of local fields",
+      "type_signature": "",
+      "description": "A non-archimedean local field of characteristic 0 is a finite extension of ℚ_p; of characteristic p > 0 it is isomorphic to 𝔽_q((t))."
+    },
+    {
+      "id": "s_unramified_extension_local",
+      "kind": "axiom",
+      "name": "Unramified extension of a local field",
+      "type_signature": "",
+      "description": "A finite extension L/K of local fields with e(L/K) = 1, obtained by adjoining roots of unity of order prime to the residue characteristic."
+    },
+    {
+      "id": "s_totally_ramified_extension_local",
+      "kind": "axiom",
+      "name": "Totally ramified extension of a local field",
+      "type_signature": "",
+      "description": "A finite extension L/K of local fields with f(L/K) = 1 (same residue field), generated by a root of an Eisenstein polynomial."
+    },
+    {
+      "id": "s_eisenstein_polynomial",
+      "kind": "axiom",
+      "name": "Eisenstein polynomial",
+      "type_signature": "",
+      "description": "A monic polynomial f(x) = xⁿ + aₙ₋₁xⁿ⁻¹ + ··· + a₀ with all aᵢ in the maximal ideal 𝔪 and a₀ ∉ 𝔪², which is irreducible and generates a totally ramified extension."
+    },
+    {
+      "id": "s_structure_of_unramified_extensions",
+      "kind": "theorem",
+      "name": "Structure of unramified extensions",
+      "type_signature": "",
+      "description": "For each f ≥ 1 there is a unique unramified extension of degree f of a local field K, obtained by adjoining a (q^f−1)-th root of unity, with cyclic Galois group generated by Frobenius."
+    },
+    {
+      "id": "s_unramified_totally_ramified_decomposition",
+      "kind": "theorem",
+      "name": "Decomposition into unramified and totally ramified parts",
+      "type_signature": "",
+      "description": "Every finite extension L/K of local fields contains a unique maximal unramified subextension T/K with [T:K] = f, and L/T is totally ramified of degree e."
+    },
+    {
+      "id": "s_teichmuller_representatives",
+      "kind": "axiom",
+      "name": "Teichmüller representatives",
+      "type_signature": "",
+      "description": "The unique system of (q−1)-th roots of unity in a local field K providing a canonical multiplicative section of the reduction map O → κ."
+    },
+    {
+      "id": "s_product_formula_valuations",
+      "kind": "theorem",
+      "name": "Product formula for valuations",
+      "type_signature": "",
+      "description": "For any nonzero α in a number field K, the product of normalized absolute values over all places equals 1: ∏_v |α|_v = 1."
+    },
+    {
+      "id": "s_replete_ideal",
+      "kind": "axiom",
+      "name": "Replete ideal (Arakelov ideal)",
+      "type_signature": "",
+      "description": "A formal product ∏_{𝔭 finite} 𝔭^{v_𝔭} · ∏_{σ infinite} σ^{v_σ} with v_𝔭 ∈ ℤ (almost all zero) and v_σ ∈ ℝ, extending fractional ideals to include archimedean data."
+    },
+    {
+      "id": "s_replete_divisor",
+      "kind": "axiom",
+      "name": "Replete divisor",
+      "type_signature": "",
+      "description": "An element of ⊕_{𝔭 finite} ℤ·𝔭 ⊕ ⊕_{σ infinite} ℝ·σ, the Arakelov-theoretic analogue of a Weil divisor on the arithmetic curve Spec(O_K)."
+    },
+    {
+      "id": "s_arakelov_class_group",
+      "kind": "state",
+      "name": "Arakelov class group (replete divisor class group)",
+      "type_signature": "",
+      "description": "The quotient CH¹(O_K) = Div(O_K)/{replete principal divisors}, an extension of the ideal class group by a real torus."
+    },
+    {
+      "id": "s_metrized_line_bundle",
+      "kind": "axiom",
+      "name": "Metrized line bundle on Spec(O_K)",
+      "type_signature": "",
+      "description": "A projective O_K-module of rank 1 equipped with hermitian metrics at each infinite place, the arithmetic-geometric analogue of a line bundle on a curve."
+    },
+    {
+      "id": "s_degree_map_replete",
+      "kind": "state",
+      "name": "Degree map on replete divisors",
+      "type_signature": "",
+      "description": "The homomorphism deg: Div(O_K) → ℝ defined by deg(D) = Σ_𝔭 v_𝔭·log N(𝔭) + Σ_σ v_σ, inducing a degree map on the Arakelov class group."
+    },
+    {
+      "id": "s_euler_minkowski_characteristic",
+      "kind": "state",
+      "name": "Euler–Minkowski characteristic",
+      "type_signature": "",
+      "description": "For a metrized fractional ideal 𝔞, χ(𝔞) = −log(vol(𝔞)) + (n/2)log(π), the arithmetic analogue of the Euler characteristic of a line bundle on a curve."
+    },
+    {
+      "id": "s_riemann_roch_number_fields",
+      "kind": "theorem",
+      "name": "Riemann–Roch theorem for number fields",
+      "type_signature": "",
+      "description": "For a replete divisor D on Spec(O_K), χ(D) = deg(D) − ½ log|d_K|, analogous to χ(D) = deg(D) − g + 1 for algebraic curves."
+    },
+    {
+      "id": "s_ideal_lattice",
+      "kind": "state",
+      "name": "Ideal lattice",
+      "type_signature": "",
+      "description": "The image of a fractional ideal 𝔞 under the Minkowski embedding, forming a full lattice in K_ℝ with covolume |d_K|^{1/2}·N(𝔞)."
+    },
+    {
+      "id": "s_tate_cohomology_groups",
+      "kind": "axiom",
+      "name": "Tate cohomology groups Ĥⁿ(G,A)",
+      "type_signature": "",
+      "description": "For a finite group G and G-module A, a modification of group cohomology defined for all n ∈ ℤ, with Ĥ⁰ = A^G/N_G(A) and Ĥ⁻¹ = ker(N_G)/I_G·A."
+    },
+    {
+      "id": "s_herbrand_quotient",
+      "kind": "state",
+      "name": "Herbrand quotient h(G,A)",
+      "type_signature": "",
+      "description": "For a finite cyclic group G acting on A, the ratio h(G,A) = |Ĥ⁰(G,A)|/|Ĥ⁻¹(G,A)|, which is multiplicative on short exact sequences and equals 1 for finite modules."
+    },
+    {
+      "id": "s_class_formation",
+      "kind": "axiom",
+      "name": "Class formation",
+      "type_signature": "",
+      "description": "A pair (G,A) of a profinite group with closed subgroups and a G-module satisfying H¹ = 0 for all layers and H² ≅ (1/n)ℤ/ℤ canonically for degree-n Galois layers."
+    },
+    {
+      "id": "s_formation_module",
+      "kind": "axiom",
+      "name": "Formation module",
+      "type_signature": "",
+      "description": "The G-module A in a class formation playing the role of the multiplicative group (local) or idèle class group (global), satisfying the class formation axioms."
+    },
+    {
+      "id": "s_invariant_map",
+      "kind": "state",
+      "name": "Invariant map inv_{L/K}",
+      "type_signature": "",
+      "description": "The canonical isomorphism inv_{L/K}: H²(G_{L/K}, A_L) → (1/[L:K])ℤ/ℤ that is part of the class formation data, generalizing the Hasse invariant for Brauer groups."
+    },
+    {
+      "id": "s_fundamental_class",
+      "kind": "state",
+      "name": "Fundamental class u_{L/K}",
+      "type_signature": "",
+      "description": "The unique element of H²(G_{L/K}, A_L) mapping to 1/[L:K] under the invariant map, generating H² as a cyclic group and driving the Nakayama–Tate isomorphism."
+    },
+    {
+      "id": "s_nakayama_tate_duality",
+      "kind": "theorem",
+      "name": "Nakayama–Tate duality theorem",
+      "type_signature": "",
+      "description": "Cup product with the fundamental class u_{L/K} induces isomorphisms Ĥⁿ(G,ℤ) → Ĥⁿ⁺²(G,A) for all n; at n = −2 this gives the abstract reciprocity map G^{ab} ≅ A^G/N_G(A)."
+    },
+    {
+      "id": "s_abstract_reciprocity_map",
+      "kind": "theorem",
+      "name": "Abstract reciprocity map",
+      "type_signature": "",
+      "description": "The isomorphism rec_{L/K}: A_K/N_{L/K}(A_L) → G_{L/K}^{ab} from Nakayama–Tate at n = −2, which in concrete cases gives the local or global Artin map."
+    },
+    {
+      "id": "s_abstract_existence_theorem",
+      "kind": "theorem",
+      "name": "Abstract existence theorem",
+      "type_signature": "",
+      "description": "In a class formation satisfying an existence axiom, there is a bijection between open subgroups of finite index in A_K and finite abelian extensions of K, via norm groups."
+    },
+    {
+      "id": "s_inflation_map",
+      "kind": "state",
+      "name": "Inflation map in group cohomology",
+      "type_signature": "",
+      "description": "For H normal in G, the map inf: Hⁿ(G/H, A^H) → Hⁿ(G,A) induced by the projection G → G/H, injective on H¹ when H¹(H,A) = 0."
+    },
+    {
+      "id": "s_restriction_map_cohomology",
+      "kind": "state",
+      "name": "Restriction map in group cohomology",
+      "type_signature": "",
+      "description": "For H ≤ G, the map res: Hⁿ(G,A) → Hⁿ(H,A) induced by restricting cochains, satisfying cor ∘ res = [G:H]."
+    },
+    {
+      "id": "s_corestriction_map",
+      "kind": "state",
+      "name": "Corestriction (transfer) map in group cohomology",
+      "type_signature": "",
+      "description": "For H of finite index in G, the map cor: Hⁿ(H,A) → Hⁿ(G,A) satisfying cor ∘ res = [G:H]·id, relating cohomology at different levels."
+    },
+    {
+      "id": "s_inflation_restriction_exact_sequence",
+      "kind": "theorem",
+      "name": "Inflation–restriction exact sequence",
+      "type_signature": "",
+      "description": "For H normal in G, the sequence 0 → H¹(G/H, A^H) → H¹(G,A) → H¹(H,A)^{G/H} → H²(G/H, A^H) → H²(G,A) is exact."
+    },
+    {
+      "id": "s_shapiros_lemma",
+      "kind": "theorem",
+      "name": "Shapiro's lemma",
+      "type_signature": "",
+      "description": "For H ≤ G and H-module B, Hⁿ(G, Ind_H^G B) ≅ Hⁿ(H,B) for all n ≥ 0, extending to Tate cohomology when [G:H] is finite."
+    },
+    {
+      "id": "s_cohomologically_trivial_module",
+      "kind": "axiom",
+      "name": "Cohomologically trivial G-module",
+      "type_signature": "",
+      "description": "A G-module M with Ĥⁿ(H,M) = 0 for all n ∈ ℤ and all subgroups H of G."
+    },
+    {
+      "id": "s_tate_theorem_cohom_trivial",
+      "kind": "theorem",
+      "name": "Tate's theorem on cohomologically trivial modules",
+      "type_signature": "",
+      "description": "A G-module M is cohomologically trivial iff Ĥ⁰(G_p,M) = 0 and Ĥ¹(G_p,M) = 0 for every Sylow p-subgroup G_p of G."
+    },
+    {
+      "id": "s_norm_map_g_modules",
+      "kind": "state",
+      "name": "Norm map N_G for G-modules",
+      "type_signature": "",
+      "description": "For a finite group G acting on A, the map N_G: A → A^G defined by N_G(a) = Σ_{g∈G} g·a, whose image and kernel define Tate cohomology."
+    },
+    {
+      "id": "s_augmentation_ideal",
+      "kind": "axiom",
+      "name": "Augmentation ideal I_G",
+      "type_signature": "",
+      "description": "The kernel of the augmentation map ε: ℤ[G] → ℤ, generated by elements g−1 for g ∈ G, with I_G·A being the 'co-norms' in A."
+    },
+    {
+      "id": "s_two_periodicity_tate",
+      "kind": "theorem",
+      "name": "2-periodicity of Tate cohomology for cyclic groups",
+      "type_signature": "",
+      "description": "For a finite cyclic group G, Ĥⁿ(G,A) ≅ Ĥⁿ⁺²(G,A) for all n and all G-modules A, via cup product with a generator of Ĥ²(G,ℤ)."
+    },
+    {
+      "id": "s_profinite_completion",
+      "kind": "state",
+      "name": "Profinite completion",
+      "type_signature": "",
+      "description": "For a group G, the profinite completion Ĝ = lim_{←} G/N over normal subgroups N of finite index, with dense image of the canonical map G → Ĝ."
+    },
+    {
+      "id": "s_g_module_discrete",
+      "kind": "axiom",
+      "name": "G-module (discrete)",
+      "type_signature": "",
+      "description": "An abelian group A with continuous action of a profinite group G (A discrete), i.e., each element is fixed by some open subgroup of G."
+    },
+    {
+      "id": "s_cohomological_dimension",
+      "kind": "axiom",
+      "name": "Cohomological dimension",
+      "type_signature": "",
+      "description": "A profinite group G has cd(G) ≤ n if Hⁱ(G,A) = 0 for all i > n and all torsion discrete G-modules A; e.g., absolute Galois groups of local fields have cd = 2."
+    },
+    {
+      "id": "s_brauer_group_as_h2",
+      "kind": "theorem",
+      "name": "Brauer group as H²",
+      "type_signature": "",
+      "description": "The Brauer group Br(K) is canonically isomorphic to H²(Gal(K^{sep}/K), (K^{sep})×); for local fields, inv: Br(K) → ℚ/ℤ is an isomorphism."
+    },
+    {
+      "id": "s_long_exact_cohomology_sequence",
+      "kind": "theorem",
+      "name": "Long exact cohomology sequence (Tate)",
+      "type_signature": "",
+      "description": "A short exact sequence 0 → A → B → C → 0 of G-modules induces an infinite long exact sequence ··· → Ĥⁿ(G,A) → Ĥⁿ(G,B) → Ĥⁿ(G,C) → Ĥⁿ⁺¹(G,A) → ···."
+    },
+    {
+      "id": "s_hochschild_serre_exact_sequence",
+      "kind": "theorem",
+      "name": "Hochschild–Serre five-term exact sequence",
+      "type_signature": "",
+      "description": "For H normal in G: 0 → H¹(G/H, A^H) → H¹(G,A) → H¹(H,A)^{G/H} → H²(G/H, A^H) → H²(G,A), a special case of the Hochschild–Serre spectral sequence."
+    },
+    {
+      "id": "s_hilbert_90_abstract",
+      "kind": "theorem",
+      "name": "Hilbert 90 (abstract version)",
+      "type_signature": "",
+      "description": "The vanishing H¹(G_{L/K}, A_L) = 0 (Formation Axiom I), generalizing Hilbert's Theorem 90 for multiplicative groups and for idèle class groups."
+    },
+    {
+      "id": "s_higher_unit_groups",
+      "kind": "axiom",
+      "name": "Higher unit groups U^{(n)}",
+      "type_signature": "",
+      "description": "The filtration U^{(n)} = 1 + 𝔪ⁿ of the unit group U of the ring of integers O of a local field, with U^{(0)}/U^{(1)} ≅ κ× and U^{(n)}/U^{(n+1)} ≅ κ."
+    },
+    {
+      "id": "s_formal_group_law",
+      "kind": "axiom",
+      "name": "Formal group law",
+      "type_signature": "",
+      "description": "A power series F(X,Y) ∈ O[[X,Y]] satisfying the axioms of a commutative group law (associativity, commutativity, identity at 0, existence of inverses)."
+    },
+    {
+      "id": "s_lubin_tate_polynomial",
+      "kind": "axiom",
+      "name": "Lubin–Tate polynomial",
+      "type_signature": "",
+      "description": "A polynomial f(X) ∈ O_K[X] with f(X) ≡ πX (mod X²) and f(X) ≡ X^q (mod π), serving as the endomorphism [π] of the associated Lubin–Tate formal group."
+    },
+    {
+      "id": "s_lubin_tate_extension",
+      "kind": "state",
+      "name": "Lubin–Tate extension",
+      "type_signature": "",
+      "description": "The totally ramified abelian extension K_{π,n} = K(λ) where λ ranges over πⁿ-torsion of the Lubin–Tate group, with Gal(K_{π,n}/K) ≅ (O_K/πⁿO_K)×."
+    },
+    {
+      "id": "s_maximal_abelian_extension_local",
+      "kind": "state",
+      "name": "Maximal abelian extension of a local field",
+      "type_signature": "",
+      "description": "The compositum K^{ab} = K^{ur}·K_π, independent of the choice of uniformizer π, where K^{ur} is the maximal unramified extension and K_π = ∪ K_{π,n}."
+    },
+    {
+      "id": "s_local_reciprocity_law",
+      "kind": "theorem",
+      "name": "Local reciprocity law",
+      "type_signature": "",
+      "description": "For every finite abelian extension L/K of local fields, the local Artin map induces an isomorphism K×/N_{L/K}(L×) → Gal(L/K)."
+    },
+    {
+      "id": "s_local_existence_theorem",
+      "kind": "theorem",
+      "name": "Local existence theorem",
+      "type_signature": "",
+      "description": "Every open subgroup of finite index in K× is the norm group N_{L/K}(L×) for a unique finite abelian extension L/K of local fields."
+    },
+    {
+      "id": "s_hilbert_symbol",
+      "kind": "axiom",
+      "name": "Hilbert symbol",
+      "type_signature": "",
+      "description": "For a local field K with n-th roots of unity, the pairing (a,b)_n: K×/K×ⁿ × K×/K×ⁿ → μ_n satisfying bimultiplicativity and (a,1−a)_n = 1."
+    },
+    {
+      "id": "s_ramification_upper_numbering",
+      "kind": "axiom",
+      "name": "Ramification filtration (upper numbering)",
+      "type_signature": "",
+      "description": "The filtration Gal(L/K)^s (s ∈ ℝ, s ≥ −1) of the Galois group by higher ramification groups in upper numbering, compatible with quotients via the Herbrand function."
+    },
+    {
+      "id": "s_herbrand_function",
+      "kind": "state",
+      "name": "Herbrand function",
+      "type_signature": "",
+      "description": "The function φ_{L/K}(s) = ∫₀ˢ dt/[G₀:G_t] converting lower numbering to upper numbering of ramification groups, with inverse ψ_{L/K}."
+    },
+    {
+      "id": "s_maximal_unramified_extension",
+      "kind": "state",
+      "name": "Maximal unramified extension",
+      "type_signature": "",
+      "description": "The extension K^{ur} = ∪ K(ζ_{q^n−1}) of a local field K, with Gal(K^{ur}/K) ≅ Ẑ via the Frobenius automorphism."
+    },
+    {
+      "id": "s_local_norm_residue_symbol",
+      "kind": "state",
+      "name": "Local norm residue symbol (local Artin map)",
+      "type_signature": "",
+      "description": "The continuous homomorphism r_K: K× → Gal(K^{ab}/K) sending a uniformizer to Frobenius on K^{ur} and acting on torsion points via [a⁻¹]."
+    },
+    {
+      "id": "s_local_kronecker_weber",
+      "kind": "theorem",
+      "name": "Local Kronecker–Weber theorem",
+      "type_signature": "",
+      "description": "Every finite abelian extension of ℚ_p is contained in a cyclotomic field ℚ_p(ζ_n) for some n."
+    },
+    {
+      "id": "s_strong_approximation_theorem",
+      "kind": "theorem",
+      "name": "Strong approximation theorem",
+      "type_signature": "",
+      "description": "For a number field K and a place v₀, the image of K in ∏_{v≠v₀} K_v is dense; equivalently J_K = K×·J_K^{v₀}."
+    },
+    {
+      "id": "s_global_artin_map",
+      "kind": "state",
+      "name": "Global Artin map",
+      "type_signature": "",
+      "description": "The surjective continuous homomorphism r_K: C_K → Gal(K^{ab}/K) whose restriction to each local factor K_v× is the local Artin map."
+    },
+    {
+      "id": "s_artin_reciprocity_global",
+      "kind": "theorem",
+      "name": "Artin reciprocity law (global)",
+      "type_signature": "",
+      "description": "For every finite abelian extension L/K, the global Artin map induces an isomorphism C_K/N_{L/K}(C_L) → Gal(L/K)."
+    },
+    {
+      "id": "s_global_existence_theorem",
+      "kind": "theorem",
+      "name": "Global existence theorem",
+      "type_signature": "",
+      "description": "Every open subgroup of finite index in C_K is the norm group N_{L/K}(C_L) for a unique finite abelian extension L/K."
+    },
+    {
+      "id": "s_ray_class_field",
+      "kind": "state",
+      "name": "Ray class field",
+      "type_signature": "",
+      "description": "The unique abelian extension K(𝔪)/K corresponding to the ray class group Cl_𝔪(K), with Gal(K(𝔪)/K) ≅ Cl_𝔪(K); a prime is unramified iff it does not divide 𝔪."
+    },
+    {
+      "id": "s_modulus_cycle",
+      "kind": "axiom",
+      "name": "Modulus (cycle)",
+      "type_signature": "",
+      "description": "A formal product 𝔪 = ∏_v 𝔭_v^{n_v} over places with n_v ≥ 0 for finite places and n_v ∈ {0,1} for real places, defining congruence conditions for ray class groups."
+    },
+    {
+      "id": "s_conductor_of_extension",
+      "kind": "state",
+      "name": "Conductor of an abelian extension",
+      "type_signature": "",
+      "description": "The smallest modulus 𝔣 = 𝔣(L/K) such that the Artin map factors through Cl_𝔣(K), equal to the product of local conductors over all places."
+    },
+    {
+      "id": "s_principal_ideal_theorem_cft",
+      "kind": "theorem",
+      "name": "Principal ideal theorem (Hauptidealsatz, class field theory)",
+      "type_signature": "",
+      "description": "Every fractional ideal of K becomes principal in the Hilbert class field H, proved via the triviality of the transfer map Gal(K₂/K) → Gal(K₂/H)."
+    },
+    {
+      "id": "s_hasse_norm_theorem",
+      "kind": "theorem",
+      "name": "Hasse norm theorem",
+      "type_signature": "",
+      "description": "An element a ∈ K× is a norm from a cyclic extension L/K if and only if a is a local norm at every place v."
+    },
+    {
+      "id": "s_grunwald_wang_theorem",
+      "kind": "theorem",
+      "name": "Grunwald–Wang theorem",
+      "type_signature": "",
+      "description": "Given local conditions at finitely many places compatible with a global degree, there exists a cyclic extension realizing them, subject to a specific exception for 2-powers."
+    },
+    {
+      "id": "s_class_field_tower",
+      "kind": "state",
+      "name": "Class field tower",
+      "type_signature": "",
+      "description": "The tower K = K₀ ⊂ K₁ ⊂ K₂ ⊂ ··· where Kᵢ₊₁ is the Hilbert class field of Kᵢ; by Golod–Shafarevich, infinite towers exist."
+    },
+    {
+      "id": "s_norm_limitation_theorem",
+      "kind": "theorem",
+      "name": "Norm limitation theorem",
+      "type_signature": "",
+      "description": "For a finite Galois extension L/K, N_{L/K}(C_L) = N_{M/K}(C_M) where M/K is the maximal abelian sub-extension; the norm group depends only on the abelian part."
+    },
+    {
+      "id": "s_artin_symbol",
+      "kind": "state",
+      "name": "Artin symbol (Frobenius at unramified primes)",
+      "type_signature": "",
+      "description": "For an abelian extension L/K unramified at 𝔭, the element (L/K, 𝔭) ∈ Gal(L/K) acting as x ↦ x^{N𝔭} on the residue field."
+    },
+    {
+      "id": "s_idelic_norm_map",
+      "kind": "state",
+      "name": "Idelic norm map",
+      "type_signature": "",
+      "description": "For L/K, the map N_{L/K}: J_L → J_K defined component-wise by local norms, continuous and inducing C_L → C_K on idèle class groups."
+    },
+    {
+      "id": "s_conductor_discriminant_formula",
+      "kind": "theorem",
+      "name": "Conductor–discriminant formula",
+      "type_signature": "",
+      "description": "For a finite abelian extension L/K, d_{L/K} = ∏_χ 𝔣(χ) where χ ranges over characters of Gal(L/K) and 𝔣(χ) is the Artin conductor."
+    },
+    {
+      "id": "s_decomposition_law_abelian",
+      "kind": "theorem",
+      "name": "Decomposition law in abelian extensions",
+      "type_signature": "",
+      "description": "For an abelian extension L/K, a prime 𝔭 with Artin symbol of order f splits into g = [L:K]/ef primes of residue degree f and ramification index e."
+    },
+    {
+      "id": "s_content_idele_norm",
+      "kind": "state",
+      "name": "Content (idèle norm)",
+      "type_signature": "",
+      "description": "The continuous homomorphism ‖·‖: J_K → ℝ_{>0} defined by ‖a‖ = ∏_v |a_v|_v, trivial on K× by the product formula, factoring through C_K."
+    },
+    {
+      "id": "s_analytic_continuation_dedekind_zeta",
+      "kind": "theorem",
+      "name": "Analytic continuation of the Dedekind zeta function",
+      "type_signature": "",
+      "description": "ζ_K(s) extends to a meromorphic function on ℂ with a simple pole at s = 1 of residue (2^{r₁}(2π)^{r₂}h_K R_K)/(w_K√|d_K|)."
+    },
+    {
+      "id": "s_functional_equation_dedekind_zeta",
+      "kind": "theorem",
+      "name": "Functional equation for the Dedekind zeta function",
+      "type_signature": "",
+      "description": "The completed zeta function ξ_K(s) = |d_K|^{s/2}·Γ_ℝ(s)^{r₁}·Γ_ℂ(s)^{r₂}·ζ_K(s) satisfies ξ_K(s) = ξ_K(1−s)."
+    },
+    {
+      "id": "s_hecke_character",
+      "kind": "axiom",
+      "name": "Hecke character (Größencharakter)",
+      "type_signature": "",
+      "description": "A continuous homomorphism χ: C_K = J_K/K× → ℂ×, unifying Dirichlet characters and characters at infinity into a single adelic framework."
+    },
+    {
+      "id": "s_artin_conductor",
+      "kind": "state",
+      "name": "Artin conductor",
+      "type_signature": "",
+      "description": "For a representation ρ of Gal(L/K), the ideal 𝔣(ρ) = ∏_𝔭 𝔭^{f_𝔭(ρ)} where f_𝔭 = Σᵢ (|Gᵢ|/|G₀|)·codim(V^{Gᵢ}), measuring ramification."
+    },
+    {
+      "id": "s_artin_conjecture",
+      "kind": "state",
+      "name": "Artin conjecture",
+      "type_signature": "",
+      "description": "Every nontrivial irreducible Artin L-function L(s,ρ,L/K) is entire; known for 1-dimensional representations via class field theory, open in general."
+    },
+    {
+      "id": "s_meromorphic_continuation_artin",
+      "kind": "theorem",
+      "name": "Meromorphic continuation of Artin L-functions",
+      "type_signature": "",
+      "description": "By Brauer's theorem, every Artin L-function admits meromorphic continuation to ℂ, being expressible as a quotient of products of Hecke L-functions."
+    },
+    {
+      "id": "s_l_function_nonvanishing_s1",
+      "kind": "theorem",
+      "name": "L-function non-vanishing at s = 1",
+      "type_signature": "",
+      "description": "For any nontrivial character χ of a ray class group, L(1,χ) ≠ 0; the key analytic input for the Chebotarev density theorem and the existence theorem."
+    },
+    {
+      "id": "s_schwartz_bruhat_function",
+      "kind": "axiom",
+      "name": "Schwartz–Bruhat function",
+      "type_signature": "",
+      "description": "On a local field K_v: a Schwartz function for archimedean v, a locally constant compactly supported function for non-archimedean v; the test functions for adelic analysis."
+    },
+    {
+      "id": "s_local_zeta_integral",
+      "kind": "state",
+      "name": "Local zeta integral (Tate)",
+      "type_signature": "",
+      "description": "Z_v(f_v, χ_v, s) = ∫_{K_v×} f_v(x)χ_v(x)|x|_v^s d×x for a local Schwartz–Bruhat function f_v, whose ratio with the local L-factor gives the epsilon factor."
+    },
+    {
+      "id": "s_local_epsilon_factor",
+      "kind": "state",
+      "name": "Local epsilon factor",
+      "type_signature": "",
+      "description": "The local constant ε(s, χ_v, ψ_v) appearing in the local functional equation, depending on the character χ_v and additive character ψ_v, whose product gives the root number."
+    },
+    {
+      "id": "s_adelic_poisson_summation",
+      "kind": "theorem",
+      "name": "Adelic Poisson summation",
+      "type_signature": "",
+      "description": "For a Schwartz–Bruhat function f on 𝔸_K: Σ_{α∈K} f(α) = Σ_{α∈K} f̂(α), with Fourier transform via the self-dual Haar measure on 𝔸_K/K."
+    },
+    {
+      "id": "s_self_duality_adeles",
+      "kind": "state",
+      "name": "Self-duality of 𝔸_K/K",
+      "type_signature": "",
+      "description": "The compact group 𝔸_K/K is Pontryagin self-dual via the pairing (x,y) ↦ ψ(xy) for a nontrivial additive character ψ, the key ingredient for adelic Poisson summation."
+    },
+    {
+      "id": "s_abelian_l_equals_hecke",
+      "kind": "theorem",
+      "name": "Abelian Artin L-function equals Hecke L-function",
+      "type_signature": "",
+      "description": "For a one-dimensional Artin representation χ of Gal(L/K) with L/K abelian, L(s,χ,L/K) = L(s,χ') where χ' is the Hecke character via the Artin map."
+    },
+    {
+      "id": "s_inductivity_artin_l",
+      "kind": "theorem",
+      "name": "Inductivity of Artin L-functions",
+      "type_signature": "",
+      "description": "L(s, Ind_H^G σ) = L(s, σ, L/F) for induced representations, meaning Artin L-functions are invariant under induction from subgroups."
+    },
+    {
+      "id": "s_factorization_dedekind_zeta",
+      "kind": "theorem",
+      "name": "Factorization of the Dedekind zeta function",
+      "type_signature": "",
+      "description": "For a Galois extension L/K, ζ_L(s) = ∏_ρ L(s,ρ)^{dim(ρ)} over irreducible representations ρ of Gal(L/K); for abelian extensions, ζ_L = ∏_χ L(s,χ)."
+    },
+    {
+      "id": "s_functional_equation_hecke_l",
+      "kind": "theorem",
+      "name": "Functional equation for Hecke L-functions",
+      "type_signature": "",
+      "description": "Λ(s,χ) = (|d_K|·N𝔣(χ))^{s/2}·∏_{v|∞} γ_v(s,χ_v)·L(s,χ) satisfies Λ(s,χ) = W(χ)·Λ(1−s,χ̄), proved via Tate's thesis."
+    },
+    {
+      "id": "s_functional_equation_artin_l",
+      "kind": "theorem",
+      "name": "Functional equation for Artin L-functions",
+      "type_signature": "",
+      "description": "Λ(s,ρ) = (|d_K|^{dim ρ}·N𝔣(ρ))^{s/2}·∏_{v|∞} L_v(s,ρ)·L(s,ρ) satisfies Λ(s,ρ) = W(ρ)·Λ(1−s,ρ̌), via Brauer's theorem."
+    },
+    {
+      "id": "s_analytic_continuation_hecke_l",
+      "kind": "theorem",
+      "name": "Analytic continuation of Hecke L-functions",
+      "type_signature": "",
+      "description": "Every Hecke L-function for a nontrivial character extends to an entire function on ℂ; for the trivial character it has a simple pole at s = 1."
+    },
+    {
+      "id": "s_haar_measure_ideles",
+      "kind": "axiom",
+      "name": "Haar measure on idèles",
+      "type_signature": "",
+      "description": "The product measure d×x = ∏_v d×x_v on J_K with vol(O_v×) = 1 for almost all v and d×x_v = dx_v/|x_v|_v, giving J_K a locally compact group structure."
+    },
+    {
+      "id": "s_inertia_invariant_subspace",
+      "kind": "state",
+      "name": "Inertia-invariant subspace V^{I_𝔭}",
+      "type_signature": "",
+      "description": "For a Galois representation ρ and prime 𝔭 with inertia group I_𝔭, the subspace of V fixed by I_𝔭, on which Frobenius acts to define the local Euler factor at ramified primes."
+    },
+    {
+      "id": "s_dirichlet_theorem_primes_number_fields",
+      "kind": "theorem",
+      "name": "Dirichlet's theorem on primes in number fields",
+      "type_signature": "",
+      "description": "For any nontrivial class c in Cl_𝔪(K), there are infinitely many primes in c, with Dirichlet density 1/|Cl_𝔪(K)|."
+    },
+    {
+      "id": "t_logarithmic_embedding",
+      "kind": "technique",
+      "name": "Logarithmic embedding (Dirichlet map)",
+      "function_signature": "(O_K×) → (ℝ^{r₁+r₂})",
+      "description": "Maps a unit u to (log|σ₁(u)|,...,log|σ_{r₁+r₂}(u)|), whose image is a lattice of rank r₁+r₂−1 in the trace-zero hyperplane."
+    },
+    {
+      "id": "t_minkowski_lattice_point_argument",
+      "kind": "technique",
+      "name": "Minkowski's lattice point argument",
+      "function_signature": "(Ideal, Canonical embedding) → (Algebraic integer with bounded norm)",
+      "description": "Embeds an ideal as a lattice via the canonical embedding then applies the convex body theorem to find algebraic integers of bounded norm."
+    },
+    {
+      "id": "t_ideal_norm_reduction",
+      "kind": "technique",
+      "name": "Ideal norm reduction",
+      "function_signature": "(Ideal class) → (Representative ideal of bounded norm)",
+      "description": "Shows every ideal class contains an ideal of norm at most the Minkowski bound by applying the convex body theorem to the ideal lattice."
+    },
+    {
+      "id": "t_hensel_lifting",
+      "kind": "technique",
+      "name": "Hensel lifting",
+      "function_signature": "(Approximate root mod 𝔪ⁿ) → (Exact root in complete field)",
+      "description": "Iterative Newton-like procedure lifting approximate roots modulo higher powers of the maximal ideal, converging in the complete valued field."
+    },
+    {
+      "id": "t_dimension_shifting_cohomology",
+      "kind": "technique",
+      "name": "Dimension shifting in group cohomology",
+      "function_signature": "(Hⁿ(G,A)) → (Hⁿ⁻¹(G,A') or Hⁿ⁺¹(G,A''))",
+      "description": "Embeds A into an induced module I and uses the long exact sequence to relate Hⁿ(G,A) to Hⁿ⁻¹(G,I/A), reducing higher cohomology to lower."
+    },
+    {
+      "id": "t_herbrand_quotient_computation",
+      "kind": "technique",
+      "name": "Herbrand quotient computation",
+      "function_signature": "(Short exact sequences of G-modules) → (Herbrand quotient of middle term)",
+      "description": "Exploits multiplicativity of Herbrand quotients on short exact sequences and h(G,A) = 1 for finite A, reducing computations via filtrations."
+    },
+    {
+      "id": "t_cup_product_technique",
+      "kind": "technique",
+      "name": "Cup product pairing technique",
+      "function_signature": "(Ĥᵖ(G,A) × Ĥ⁻ᵖ⁻¹(G,A*)) → (ℚ/ℤ)",
+      "description": "Uses cup product to establish dualities and periodicity in Tate cohomology, notably cupping with a class in H² to produce periodicity isomorphisms."
+    },
+    {
+      "id": "t_reduction_to_sylow",
+      "kind": "technique",
+      "name": "Reduction to Sylow subgroups in cohomology",
+      "function_signature": "(Cohomological statement for G) → (Statement for each Sylow p-subgroup G_p)",
+      "description": "Reduces cohomological statements to Sylow subgroups via injectivity of restriction on p-primary parts and cor ∘ res = [G:G_p]."
+    },
+    {
+      "id": "t_lubin_tate_construction",
+      "kind": "technique",
+      "name": "Lubin–Tate formal group construction",
+      "function_signature": "(Uniformizer π, Local field K) → (Totally ramified abelian extensions, Local Artin map)",
+      "description": "Constructs explicit abelian extensions of a local field by adjoining torsion of a formal group, providing a non-cohomological construction of the local Artin map."
+    },
+    {
+      "id": "t_brauer_induction",
+      "kind": "technique",
+      "name": "Brauer induction",
+      "function_signature": "(Artin L-function L(s,ρ)) → (Product/quotient of Hecke L-functions)",
+      "description": "Expresses an arbitrary Galois representation as a virtual sum of induced 1-dimensional characters, reducing Artin L-function properties to abelian L-functions."
+    },
+    {
+      "id": "t_tate_thesis_adelic",
+      "kind": "technique",
+      "name": "Tate's thesis (adelic zeta integrals)",
+      "function_signature": "(Schwartz–Bruhat function, Hecke character) → (L-function with functional equation)",
+      "description": "Computes L-functions as integrals ζ(f,χ,s) = ∫_{J_K} f(x)χ(x)|x|^s d×x, with the functional equation arising from adelic Poisson summation."
+    },
+    {
+      "id": "t_transfer_homomorphism",
+      "kind": "technique",
+      "name": "Transfer (Verlagerung) homomorphism",
+      "function_signature": "(G^{ab}) → (H^{ab})",
+      "description": "The group-theoretic transfer map Ver: G^{ab} → H^{ab} for H ≤ G, used in proving the principal ideal theorem by reducing to a group-theoretic triviality statement."
+    },
+    {
+      "id": "t_poisson_summation_number_field",
+      "kind": "technique",
+      "name": "Poisson summation in number field setting",
+      "function_signature": "(Theta function on ideal lattice) → (Functional equation of ζ_K(s))",
+      "description": "Applies Σ_{x∈Λ} f(x) = (1/vol)Σ_{y∈Λ*} f̂(y) over ideal lattices to derive the functional equation of Dedekind zeta functions."
     }
   ],
   "edges": [
@@ -188233,6 +189090,774 @@
         "result": "complete character table"
       },
       "used_in_theorem": ""
+    },
+    {
+      "id": "e_12838",
+      "from": "s_minkowski_embedding",
+      "to": "t_minkowski_lattice_point_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_12839",
+      "from": "s_lattice_in_r_n",
+      "to": "t_minkowski_lattice_point_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_12840",
+      "from": "s_minkowski_convex_body_theorem",
+      "to": "t_minkowski_lattice_point_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_12841",
+      "from": "t_minkowski_lattice_point_argument",
+      "to": "s_finiteness_of_class_number",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_12842",
+      "from": "t_minkowski_lattice_point_argument",
+      "to": "s_minkowski_class_number_bound",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_12843",
+      "from": "s_ideal_class_group",
+      "to": "t_ideal_norm_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_12844",
+      "from": "s_norm_of_ideal",
+      "to": "t_ideal_norm_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_12845",
+      "from": "t_ideal_norm_reduction",
+      "to": "s_class_rep_below_minkowski_bound",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_12846",
+      "from": "s_fundamental_units",
+      "to": "t_logarithmic_embedding",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_unit_theorem"
+    },
+    {
+      "id": "e_12847",
+      "from": "s_minkowski_embedding",
+      "to": "t_logarithmic_embedding",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_unit_theorem"
+    },
+    {
+      "id": "e_12848",
+      "from": "t_logarithmic_embedding",
+      "to": "s_regulator_of_number_field",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_unit_theorem"
+    },
+    {
+      "id": "e_12849",
+      "from": "t_logarithmic_embedding",
+      "to": "s_dirichlet_unit_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_unit_theorem"
+    },
+    {
+      "id": "e_12850",
+      "from": "s_discrete_valuation_ring",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hensels_lemma"
+    },
+    {
+      "id": "e_12851",
+      "from": "s_local_field",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hensels_lemma"
+    },
+    {
+      "id": "e_12852",
+      "from": "t_hensel_lifting",
+      "to": "s_hensels_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hensels_lemma"
+    },
+    {
+      "id": "e_12853",
+      "from": "t_hensel_lifting",
+      "to": "s_structure_of_unramified_extensions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_structure_of_unramified_extensions"
+    },
+    {
+      "id": "e_12854",
+      "from": "s_newton_polygon",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_newton_polygon_theorem"
+    },
+    {
+      "id": "e_12855",
+      "from": "s_p_adic_valuation",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {
+        "context": "Newton polygon analysis"
+      },
+      "used_in_theorem": "s_newton_polygon_theorem"
+    },
+    {
+      "id": "e_12856",
+      "from": "s_tate_cohomology_groups",
+      "to": "t_dimension_shifting_cohomology",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tate_theorem_cohom_trivial"
+    },
+    {
+      "id": "e_12857",
+      "from": "s_long_exact_cohomology_sequence",
+      "to": "t_dimension_shifting_cohomology",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tate_theorem_cohom_trivial"
+    },
+    {
+      "id": "e_12858",
+      "from": "s_shapiros_lemma",
+      "to": "t_dimension_shifting_cohomology",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tate_theorem_cohom_trivial"
+    },
+    {
+      "id": "e_12859",
+      "from": "t_dimension_shifting_cohomology",
+      "to": "s_tate_theorem_cohom_trivial",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tate_theorem_cohom_trivial"
+    },
+    {
+      "id": "e_12860",
+      "from": "s_herbrand_quotient",
+      "to": "t_herbrand_quotient_computation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12861",
+      "from": "s_tate_cohomology_groups",
+      "to": "t_herbrand_quotient_computation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12862",
+      "from": "t_herbrand_quotient_computation",
+      "to": "s_local_reciprocity_law",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12863",
+      "from": "s_cup_product",
+      "to": "t_cup_product_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nakayama_tate_duality"
+    },
+    {
+      "id": "e_12864",
+      "from": "s_fundamental_class",
+      "to": "t_cup_product_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nakayama_tate_duality"
+    },
+    {
+      "id": "e_12865",
+      "from": "t_cup_product_technique",
+      "to": "s_nakayama_tate_duality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nakayama_tate_duality"
+    },
+    {
+      "id": "e_12866",
+      "from": "t_cup_product_technique",
+      "to": "s_two_periodicity_tate",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_two_periodicity_tate"
+    },
+    {
+      "id": "e_12867",
+      "from": "t_cup_product_technique",
+      "to": "s_abstract_reciprocity_map",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_abstract_reciprocity_map"
+    },
+    {
+      "id": "e_12868",
+      "from": "s_lubin_tate_formal_group",
+      "to": "t_lubin_tate_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12869",
+      "from": "s_lubin_tate_polynomial",
+      "to": "t_lubin_tate_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12870",
+      "from": "s_local_field",
+      "to": "t_lubin_tate_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12871",
+      "from": "t_lubin_tate_construction",
+      "to": "s_lubin_tate_extension",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12872",
+      "from": "t_lubin_tate_construction",
+      "to": "s_maximal_abelian_extension_local",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12873",
+      "from": "t_lubin_tate_construction",
+      "to": "s_local_norm_residue_symbol",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12874",
+      "from": "t_lubin_tate_construction",
+      "to": "s_local_reciprocity_law",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12875",
+      "from": "s_brauer_induced_character_theorem",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_meromorphic_continuation_artin"
+    },
+    {
+      "id": "e_12876",
+      "from": "s_artin_l_function",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_meromorphic_continuation_artin"
+    },
+    {
+      "id": "e_12877",
+      "from": "s_hecke_l_function_grossencharakter",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_meromorphic_continuation_artin"
+    },
+    {
+      "id": "e_12878",
+      "from": "t_brauer_induction",
+      "to": "s_meromorphic_continuation_artin",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_meromorphic_continuation_artin"
+    },
+    {
+      "id": "e_12879",
+      "from": "t_brauer_induction",
+      "to": "s_functional_equation_artin_l",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_artin_l"
+    },
+    {
+      "id": "e_12880",
+      "from": "s_schwartz_bruhat_function",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_hecke_l"
+    },
+    {
+      "id": "e_12881",
+      "from": "s_hecke_character",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_hecke_l"
+    },
+    {
+      "id": "e_12882",
+      "from": "s_haar_measure_ideles",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_hecke_l"
+    },
+    {
+      "id": "e_12883",
+      "from": "s_adele_ring",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_hecke_l"
+    },
+    {
+      "id": "e_12884",
+      "from": "s_self_duality_adeles",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_adelic_poisson_summation"
+    },
+    {
+      "id": "e_12885",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_local_zeta_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_hecke_l"
+    },
+    {
+      "id": "e_12886",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_local_epsilon_factor",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_hecke_l"
+    },
+    {
+      "id": "e_12887",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_functional_equation_hecke_l",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_hecke_l"
+    },
+    {
+      "id": "e_12888",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_analytic_continuation_hecke_l",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_analytic_continuation_hecke_l"
+    },
+    {
+      "id": "e_12889",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_adelic_poisson_summation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_adelic_poisson_summation"
+    },
+    {
+      "id": "e_12890",
+      "from": "s_hilbert_class_field",
+      "to": "t_transfer_homomorphism",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_principal_ideal_theorem_cft"
+    },
+    {
+      "id": "e_12891",
+      "from": "s_ideal_class_group",
+      "to": "t_transfer_homomorphism",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_principal_ideal_theorem_cft"
+    },
+    {
+      "id": "e_12892",
+      "from": "t_transfer_homomorphism",
+      "to": "s_principal_ideal_theorem_cft",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_principal_ideal_theorem_cft"
+    },
+    {
+      "id": "e_12893",
+      "from": "s_ideal_lattice",
+      "to": "t_poisson_summation_number_field",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_dedekind_zeta"
+    },
+    {
+      "id": "e_12894",
+      "from": "s_theta_function_number_theory",
+      "to": "t_poisson_summation_number_field",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_dedekind_zeta"
+    },
+    {
+      "id": "e_12895",
+      "from": "s_poisson_summation_formula",
+      "to": "t_poisson_summation_number_field",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_dedekind_zeta"
+    },
+    {
+      "id": "e_12896",
+      "from": "t_poisson_summation_number_field",
+      "to": "s_functional_equation_dedekind_zeta",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_dedekind_zeta"
+    },
+    {
+      "id": "e_12897",
+      "from": "t_poisson_summation_number_field",
+      "to": "s_analytic_continuation_dedekind_zeta",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_analytic_continuation_dedekind_zeta"
+    },
+    {
+      "id": "e_12898",
+      "from": "s_class_formation",
+      "to": "t_cup_product_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_abstract_reciprocity_map"
+    },
+    {
+      "id": "e_12899",
+      "from": "s_abstract_reciprocity_map",
+      "to": "t_lubin_tate_construction",
+      "role": "input",
+      "parameter_binding": {
+        "context": "concretizing abstract reciprocity"
+      },
+      "used_in_theorem": "s_local_reciprocity_law"
+    },
+    {
+      "id": "e_12900",
+      "from": "s_idele_class_group",
+      "to": "t_transfer_homomorphism",
+      "role": "input",
+      "parameter_binding": {
+        "context": "global Artin map"
+      },
+      "used_in_theorem": "s_artin_reciprocity_global"
+    },
+    {
+      "id": "e_12901",
+      "from": "s_local_reciprocity_law",
+      "to": "t_transfer_homomorphism",
+      "role": "input",
+      "parameter_binding": {
+        "context": "local-to-global"
+      },
+      "used_in_theorem": "s_artin_reciprocity_global"
+    },
+    {
+      "id": "e_12902",
+      "from": "t_transfer_homomorphism",
+      "to": "s_global_artin_map",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_artin_reciprocity_global"
+    },
+    {
+      "id": "e_12903",
+      "from": "t_transfer_homomorphism",
+      "to": "s_artin_reciprocity_global",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_artin_reciprocity_global"
+    },
+    {
+      "id": "e_12904",
+      "from": "s_dedekind_zeta_function",
+      "to": "t_poisson_summation_number_field",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_analytic_continuation_dedekind_zeta"
+    },
+    {
+      "id": "e_12905",
+      "from": "s_analytic_continuation_dedekind_zeta",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {
+        "context": "residue computation"
+      },
+      "used_in_theorem": "s_class_number_formula"
+    },
+    {
+      "id": "e_12906",
+      "from": "s_krasners_lemma",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {
+        "context": "perturbation of roots"
+      },
+      "used_in_theorem": "s_classification_of_local_fields"
+    },
+    {
+      "id": "e_12907",
+      "from": "t_hensel_lifting",
+      "to": "s_classification_of_local_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_classification_of_local_fields"
+    },
+    {
+      "id": "e_12908",
+      "from": "s_eisenstein_polynomial",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {
+        "context": "Eisenstein extension"
+      },
+      "used_in_theorem": "s_unramified_totally_ramified_decomposition"
+    },
+    {
+      "id": "e_12909",
+      "from": "t_hensel_lifting",
+      "to": "s_totally_ramified_extension_local",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_unramified_totally_ramified_decomposition"
+    },
+    {
+      "id": "e_12910",
+      "from": "t_hensel_lifting",
+      "to": "s_unramified_totally_ramified_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_unramified_totally_ramified_decomposition"
+    },
+    {
+      "id": "e_12911",
+      "from": "s_replete_divisor",
+      "to": "t_minkowski_lattice_point_argument",
+      "role": "input",
+      "parameter_binding": {
+        "context": "Arakelov Riemann-Roch"
+      },
+      "used_in_theorem": "s_riemann_roch_number_fields"
+    },
+    {
+      "id": "e_12912",
+      "from": "s_degree_map_replete",
+      "to": "t_minkowski_lattice_point_argument",
+      "role": "input",
+      "parameter_binding": {
+        "context": "degree of Arakelov divisor"
+      },
+      "used_in_theorem": "s_riemann_roch_number_fields"
+    },
+    {
+      "id": "e_12913",
+      "from": "t_minkowski_lattice_point_argument",
+      "to": "s_riemann_roch_number_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riemann_roch_number_fields"
+    },
+    {
+      "id": "e_12914",
+      "from": "s_l_function_nonvanishing_s1",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {
+        "context": "density proof"
+      },
+      "used_in_theorem": "s_chebotarev_density_theorem"
+    },
+    {
+      "id": "e_12915",
+      "from": "s_factorization_dedekind_zeta",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {
+        "context": "zeta factorization"
+      },
+      "used_in_theorem": "s_chebotarev_density_theorem"
+    },
+    {
+      "id": "e_12916",
+      "from": "t_brauer_induction",
+      "to": "s_chebotarev_density_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "context": "via non-vanishing"
+      },
+      "used_in_theorem": "s_chebotarev_density_theorem"
+    },
+    {
+      "id": "e_12917",
+      "from": "s_artin_conductor",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conductor_discriminant_formula"
+    },
+    {
+      "id": "e_12918",
+      "from": "s_discriminant_of_number_field",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conductor_discriminant_formula"
+    },
+    {
+      "id": "e_12919",
+      "from": "t_brauer_induction",
+      "to": "s_conductor_discriminant_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conductor_discriminant_formula"
+    },
+    {
+      "id": "e_12920",
+      "from": "s_place_of_number_field",
+      "to": "t_local_global_principle",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_product_formula_valuations"
+    },
+    {
+      "id": "e_12921",
+      "from": "t_local_global_principle",
+      "to": "s_product_formula_valuations",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_product_formula_valuations"
+    },
+    {
+      "id": "e_12922",
+      "from": "s_local_reciprocity_law",
+      "to": "t_herbrand_quotient_computation",
+      "role": "input",
+      "parameter_binding": {
+        "context": "local norms"
+      },
+      "used_in_theorem": "s_hasse_norm_theorem"
+    },
+    {
+      "id": "e_12923",
+      "from": "t_herbrand_quotient_computation",
+      "to": "s_hasse_norm_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hasse_norm_theorem"
+    },
+    {
+      "id": "e_12924",
+      "from": "s_adele_ring",
+      "to": "t_local_global_principle",
+      "role": "input",
+      "parameter_binding": {
+        "context": "adelic strong approx"
+      },
+      "used_in_theorem": "s_strong_approximation_theorem"
+    },
+    {
+      "id": "e_12925",
+      "from": "s_product_formula_valuations",
+      "to": "t_local_global_principle",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strong_approximation_theorem"
+    },
+    {
+      "id": "e_12926",
+      "from": "t_local_global_principle",
+      "to": "s_strong_approximation_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strong_approximation_theorem"
+    },
+    {
+      "id": "e_12927",
+      "from": "s_ray_class_field",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {
+        "context": "primes in ray classes"
+      },
+      "used_in_theorem": "s_dirichlet_theorem_primes_number_fields"
+    },
+    {
+      "id": "e_12928",
+      "from": "s_l_function_nonvanishing_s1",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {
+        "context": "nonvanishing for density"
+      },
+      "used_in_theorem": "s_dirichlet_theorem_primes_number_fields"
+    },
+    {
+      "id": "e_12929",
+      "from": "t_brauer_induction",
+      "to": "s_dirichlet_theorem_primes_number_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_theorem_primes_number_fields"
     }
   ],
   "subgraphs": [
