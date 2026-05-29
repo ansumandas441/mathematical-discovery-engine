@@ -73781,6 +73781,321 @@
       "function_signature": "(Group extension 1 → N → G → G/N → 1, G-Module M) → (Spectral sequence E₂^{p,q} = H^p(G/N, H^q(N,M)) ⟹ H^{p+q}(G,M))",
       "description": "For N normal in G, a spectral sequence converging to H^*(G,M) with E₂ page given by the cohomology of G/N with coefficients in H^*(N,M); the five-term exact sequence is its low-degree truncation.",
       "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. IV"
+    },
+    {
+      "id": "s_projective_modules_over_dedekind_domains",
+      "kind": "theorem",
+      "name": "Projective modules over Dedekind domains",
+      "type_signature": "",
+      "description": "Every finitely generated projective module over a Dedekind domain R is isomorphic to a direct sum of ideals; equivalently, it has the form R^{n-1} ⊕ I for some ideal I."
+    },
+    {
+      "id": "s_non_archimedean_absolute_value",
+      "kind": "axiom",
+      "name": "Non-archimedean absolute value",
+      "type_signature": "",
+      "description": "An absolute value |·| on a field satisfying the ultrametric inequality |x+y| ≤ max(|x|,|y|), equivalently one for which |n| ≤ 1 for all integers n."
+    },
+    {
+      "id": "s_trace_form",
+      "kind": "axiom",
+      "name": "Trace form",
+      "type_signature": "",
+      "description": "The symmetric bilinear form (x,y) ↦ Tr_{L/K}(xy) on a finite separable extension L/K, whose discriminant equals the field discriminant d_{L/K}."
+    },
+    {
+      "id": "s_different_ramification_theorem",
+      "kind": "theorem",
+      "name": "Different–ramification theorem",
+      "type_signature": "",
+      "description": "A prime P of O_L divides the different D_{L/K} if and only if P is ramified over K; the exponent of P in D_{L/K} satisfies d_P ≥ e_P − 1 with equality iff the ramification is tame."
+    },
+    {
+      "id": "s_discriminant_ramification_theorem",
+      "kind": "theorem",
+      "name": "Discriminant–ramification theorem",
+      "type_signature": "",
+      "description": "A prime p of O_K ramifies in L/K if and only if p divides the discriminant d_{L/K}; follows from the different–discriminant relation N_{L/K}(D_{L/K}) = d_{L/K}."
+    },
+    {
+      "id": "s_ring_of_integers_of_cyclotomic_field",
+      "kind": "theorem",
+      "name": "Ring of integers of cyclotomic fields",
+      "type_signature": "",
+      "description": "The ring of integers of Q(ζ_n) is Z[ζ_n], generated as a Z-module by powers of a primitive n-th root of unity."
+    },
+    {
+      "id": "s_ramification_in_cyclotomic_fields",
+      "kind": "theorem",
+      "name": "Ramification in cyclotomic fields",
+      "type_signature": "",
+      "description": "In Q(ζ_n)/Q, a prime p ramifies if and only if p divides n; specifically pO_{Q(ζ_{p^r})} = (1 − ζ_{p^r})^{φ(p^r)} and the ramification is totally ramified with index φ(p^r)."
+    },
+    {
+      "id": "s_gauss_sum_norm_formula",
+      "kind": "theorem",
+      "name": "Gauss sum norm formula",
+      "type_signature": "",
+      "description": "For a primitive Dirichlet character χ mod m, the Gauss sum satisfies |g(χ)|² = m, and more generally g(χ)g(χ̄) = χ(−1)m."
+    },
+    {
+      "id": "s_stickelberger_element",
+      "kind": "state",
+      "name": "Stickelberger element",
+      "type_signature": "",
+      "description": "The element θ = ∑_{a ∈ (Z/mZ)×} (a/m) σ_a⁻¹ in the group ring Q[Gal(Q(ζ_m)/Q)], whose annihilation properties on the class group are given by Stickelberger’s theorem."
+    },
+    {
+      "id": "t_volume_computation_fundamental_domain",
+      "kind": "technique",
+      "name": "Volume computation of fundamental domain",
+      "function_signature": "(Lattice Λ ⊂ R^n, number field K) → (vol(R^n/Λ) = 2^{−r_2}|d_K|^{1/2})",
+      "description": "Computing the volume of the fundamental parallelotope of the image of O_K under the Minkowski embedding, yielding the key factor in Minkowski’s bound."
+    },
+    {
+      "id": "s_counting_ideals_of_bounded_norm",
+      "kind": "theorem",
+      "name": "Counting ideals of bounded norm",
+      "type_signature": "",
+      "description": "The number of integral ideals of norm ≤ x in a number field K satisfies #{a ⊂ O_K : N(a) ≤ x} = κ·x + O(x^{1−1/[K:Q]}) where κ = (2^{r_1}(2π)^{r_2}R_K h_K)/(w_K |d_K|^{1/2})."
+    },
+    {
+      "id": "t_lattice_points_in_expanding_domains",
+      "kind": "technique",
+      "name": "Lattice points in homogeneously expanding domains",
+      "function_signature": "(Bounded region S ⊂ R^n, lattice Λ, parameter t) → (|tS ∩ Λ| ∼ t^n vol(S)/vol(R^n/Λ))",
+      "description": "Estimating the number of lattice points in a region scaled by parameter t, the fundamental counting technique behind ideal-counting and class number formulas."
+    },
+    {
+      "id": "s_content_map",
+      "kind": "state",
+      "name": "Content (idèle norm) map",
+      "type_signature": "",
+      "description": "The continuous homomorphism ||·||: J_K → R>0 defined by ||x|| = ∏_v |x_v|_v, whose kernel J_K^1 contains K× by the product formula, yielding the exact sequence 1 → C_K^1 → C_K → R>0 → 1."
+    },
+    {
+      "id": "s_compactness_of_c_k_1",
+      "kind": "theorem",
+      "name": "Compactness of C_K^1",
+      "type_signature": "",
+      "description": "The norm-one idèle class group C_K^1 = J_K^1/K× is compact, encoding both finiteness of the class number and Dirichlet’s unit theorem in a single topological statement."
+    },
+    {
+      "id": "s_idele_class_group_ray_class_group_relationship",
+      "kind": "theorem",
+      "name": "Relationship between idèle class group and ray class groups",
+      "type_signature": "",
+      "description": "For a modulus m, the ray class group Cl_m(K) is canonically isomorphic to C_K / U_m K× where U_m is the open subgroup of idèles congruent to 1 mod m, connecting the idelic and classical formulations."
+    },
+    {
+      "id": "s_galois_action_on_ideles",
+      "kind": "state",
+      "name": "Galois action on idèles",
+      "type_signature": "",
+      "description": "For a Galois extension L/K, the Galois group Gal(L/K) acts on J_L by permuting components according to its action on places; the fixed subgroup satisfies J_L^{Gal(L/K)} = J_K (embedded diagonally at places above each v)."
+    },
+    {
+      "id": "s_convergence_and_euler_product_for_dedekind_zeta",
+      "kind": "theorem",
+      "name": "Convergence and Euler product for ζ_K",
+      "type_signature": "",
+      "description": "The Dedekind zeta function ζ_K(s) = ∑_{a ⊂ O_K} N(a)^{−s} converges absolutely for Re(s) > 1 and admits an Euler product ζ_K(s) = ∏_p (1 − N(p)^{−s})^{−1} over prime ideals p of O_K."
+    },
+    {
+      "id": "s_faltings_finiteness_theorem",
+      "kind": "theorem",
+      "name": "Faltings’ finiteness theorem (Shafarevich conjecture)",
+      "type_signature": "",
+      "description": "Up to isomorphism, there are only finitely many abelian varieties of given dimension over a number field K with good reduction outside a fixed finite set of primes; implies the Mordell conjecture."
+    },
+    {
+      "id": "s_local_norm_group",
+      "kind": "state",
+      "name": "Local norm group",
+      "type_signature": "",
+      "description": "For a finite extension L_w/K_v of local fields, the norm group N_{L_w/K_v}(L_w×) is an open subgroup of finite index in K_v×, and the map L ↦ N_{L/K}(L×) gives a bijection between finite abelian extensions and open subgroups of finite index."
+    },
+    {
+      "id": "s_local_norm_index_theorem",
+      "kind": "theorem",
+      "name": "Local norm index theorem",
+      "type_signature": "",
+      "description": "[K_v× : N_{L_w/K_v}(L_w×)] = [L_w : K_v] for any finite Galois extension L_w/K_v of local fields; equivalently |Ĥ⁰(G, L_w×)| = n."
+    },
+    {
+      "id": "t_p_adic_exponential_and_logarithm",
+      "kind": "technique",
+      "name": "p-adic exponential and logarithm",
+      "function_signature": "(p-adic number x with v_p(x) > 1/(p−1)) → (exp_p(x), log_p(1+x))",
+      "description": "The p-adic exponential exp_p(x) = ∑ x^n/n! converges for v_p(x) > 1/(p−1) and the p-adic logarithm log_p(1+x) = ∑ (−1)^{n+1} x^n/n converges for |x|_p < 1, providing isomorphisms between additive and multiplicative subgroups of Z_p."
+    },
+    {
+      "id": "s_structure_of_local_units",
+      "kind": "theorem",
+      "name": "Structure of local units",
+      "type_signature": "",
+      "description": "For a local field K_v with residue field of order q = p^f, the unit group O_v× ≅ μ_{q−1} × Z_p^f as a topological group, where μ_{q−1} is the group of (q−1)-th roots of unity (Teichmüller representatives)."
+    },
+    {
+      "id": "s_global_cyclic_norm_index",
+      "kind": "theorem",
+      "name": "Global cyclic norm index inequality",
+      "type_signature": "",
+      "description": "For a cyclic extension L/K of number fields of degree n, the norm index [J_K : K× · N_{L/K}(J_L)] divides n, a key step toward proving the first and second inequalities of class field theory."
+    },
+    {
+      "id": "s_takagi_existence_theorem",
+      "kind": "theorem",
+      "name": "Takagi’s existence theorem",
+      "type_signature": "",
+      "description": "Every open subgroup of finite index in the idèle class group C_K (equivalently, every congruence subgroup defined by a modulus m) is the norm group N_{L/K}(C_L) of a unique finite abelian extension L/K."
+    },
+    {
+      "id": "s_conductor_class_field_relationship",
+      "kind": "theorem",
+      "name": "Conductor–class field relationship",
+      "type_signature": "",
+      "description": "The conductor f(L/K) of an abelian extension L/K is the smallest modulus m such that L is contained in the ray class field K_m; a prime ramifies in L/K if and only if it divides f(L/K)."
+    },
+    {
+      "id": "s_existence_theorem_of_cft",
+      "kind": "theorem",
+      "name": "Existence theorem of class field theory",
+      "type_signature": "",
+      "description": "The correspondence L ↦ N_{L/K}(C_L) is an inclusion-reversing bijection between finite abelian extensions of K and open subgroups of finite index in C_K, with [C_K : N_{L/K}(C_L)] = [L:K]."
+    },
+    {
+      "id": "t_reduction_to_kummer_extensions",
+      "kind": "technique",
+      "name": "Reduction to Kummer extensions",
+      "function_signature": "(Abelian extension L/K) → (Reduced to cyclic extensions of prime degree via Kummer theory)",
+      "description": "Proving the main theorems of CFT by first adjoining enough roots of unity to reduce to the case where the extension is Kummer, then using explicit norm computations in Kummer extensions."
+    },
+    {
+      "id": "s_complete_splitting_theorem",
+      "kind": "theorem",
+      "name": "Complete splitting theorem",
+      "type_signature": "",
+      "description": "A prime p of K splits completely in an abelian extension L/K if and only if p lies in the norm group N_{L/K}(C_L); equivalently, the Frobenius at p is trivial iff the local norm group at p equals K_p×."
+    },
+    {
+      "id": "s_ramification_theorem_cft",
+      "kind": "theorem",
+      "name": "Ramification theorem (class field theory)",
+      "type_signature": "",
+      "description": "A prime p of K is unramified in the abelian extension L/K if and only if the local norm group N_{L_P/K_p}(L_P×) contains the local units O_{K_p}×; the conductor f(L/K) encodes exactly the ramified primes."
+    },
+    {
+      "id": "s_infinite_divisibility_of_universal_norms",
+      "kind": "theorem",
+      "name": "Infinite divisibility of universal norms",
+      "type_signature": "",
+      "description": "The intersection ∩_L N_{L/K}(L×) over all finite extensions L/K equals {1} in K× (or the connected component in the local case), meaning elements that are norms from every extension are infinitely divisible."
+    },
+    {
+      "id": "s_induced_character_l_series_factorization",
+      "kind": "theorem",
+      "name": "Induced character and L-series factorization",
+      "type_signature": "",
+      "description": "Writing ρ = ∑ n_i Ind_{H_i}^G χ_i by Brauer’s theorem gives L(s,ρ,L/K) = ∏ L(s,χ_i,L/L^{H_i})^{n_i}, reducing non-abelian Artin L-functions to products of abelian ones (Hecke L-functions)."
+    },
+    {
+      "id": "s_local_additive_duality",
+      "kind": "theorem",
+      "name": "Local additive duality (self-duality of K_v)",
+      "type_signature": "",
+      "description": "For a local field K_v, the map x ↦ ψ_v(x·) gives an isomorphism K_v ≅ K̂_v between K_v and its Pontryagin dual, making K_v additively self-dual; the self-dual Haar measure is normalized by |d_v|^{1/2}."
+    },
+    {
+      "id": "t_dirichlet_integral_technique",
+      "kind": "technique",
+      "name": "Dirichlet integral",
+      "function_signature": "(Dirichlet series ∑ a_n n^{−s}, contour) → (Partial sums A(x) via Perron’s formula)",
+      "description": "Recovering partial sums of arithmetic functions from their Dirichlet series via the integral (1/2πi) ∫ f(s) x^s/s ds, the analytic bridge between multiplicative and additive number theory."
+    },
+    {
+      "id": "s_tauberian_theorem_for_dirichlet_series",
+      "kind": "theorem",
+      "name": "Tauberian theorem for Dirichlet series",
+      "type_signature": "",
+      "description": "If f(s) = ∑ a_n n^{−s} with a_n ≥ 0 has a simple pole at s = 1 with residue c, and is otherwise analytic on Re(s) ≥ 1, then ∑_{n≤x} a_n ∼ cx, converting analytic information into asymptotic counts."
+    },
+    {
+      "id": "s_nonvanishing_l1_hecke_characters",
+      "kind": "theorem",
+      "name": "Non-vanishing of L(1, χ) for Hecke characters",
+      "type_signature": "",
+      "description": "For a nontrivial Hecke character χ (Grössencharakter) of a number field K, L(1, χ) ≠ 0; generalizes the classical Dirichlet non-vanishing and is essential for the Chebotarev density theorem."
+    },
+    {
+      "id": "s_dirichlet_as_special_case_of_chebotarev",
+      "kind": "theorem",
+      "name": "Dirichlet’s theorem as special case of Chebotarev",
+      "type_signature": "",
+      "description": "Dirichlet’s theorem on primes in arithmetic progressions follows from the Chebotarev density theorem applied to the cyclotomic extension Q(ζ_m)/Q, where Frobenius classes correspond to residue classes mod m."
+    },
+    {
+      "id": "s_upper_estimate_residue_zeta_k",
+      "kind": "theorem",
+      "name": "Upper estimate for residue of ζ_K at s = 1",
+      "type_signature": "",
+      "description": "The residue κ_K of ζ_K(s) at s = 1 satisfies κ_K ≤ c(ε) |d_K|^ε for every ε > 0, where c(ε) depends only on the degree [K:Q] and ε; controls the class number times regulator from above."
+    },
+    {
+      "id": "s_siegel_lower_bound_residue",
+      "kind": "theorem",
+      "name": "Siegel’s lower bound for the residue",
+      "type_signature": "",
+      "description": "For totally real fields K (and more generally), κ_K ≥ c(ε) |d_K|^{−ε} for every ε > 0; the constant c(ε) is ineffective due to the possible existence of Siegel zeros."
+    },
+    {
+      "id": "t_comparison_of_residues_in_normal_extensions",
+      "kind": "technique",
+      "name": "Comparison of residues in normal extensions",
+      "function_signature": "(Normal extension L/K, ζ_K, ζ_L) → (Ratio κ_L/κ_K^{[L:K]} bounded in terms of discriminants)",
+      "description": "Comparing the residues of Dedekind zeta functions of a normal extension L/K by factoring ζ_L/ζ_K into Artin L-functions and bounding each factor, a key step in the proof of the Brauer–Siegel theorem."
+    },
+    {
+      "id": "s_weierstrass_product_for_completed_l_function",
+      "kind": "state",
+      "name": "Weierstrass product for completed L-function",
+      "type_signature": "",
+      "description": "The completed L-function Λ(s, χ) admits a Hadamard product Λ(s, χ) = e^{A+Bs} ∏_ρ (1 − s/ρ) e^{s/ρ} over its nontrivial zeros ρ, encoding the distribution of zeros in the critical strip."
+    },
+    {
+      "id": "t_logarithmic_derivative_xi",
+      "kind": "technique",
+      "name": "Logarithmic derivative ξ’/ξ",
+      "function_signature": "(Completed L-function ξ(s)) → (Sum over zeros ∑_ρ 1/(s−ρ))",
+      "description": "Taking the logarithmic derivative of the Hadamard product to express ξ’/ξ(s) = B + ∑_ρ (1/(s−ρ) + 1/ρ), the basic tool for relating zeros to prime-counting functions."
+    },
+    {
+      "id": "s_estimate_for_xi_prime_over_xi",
+      "kind": "theorem",
+      "name": "Estimate for ξ’/ξ",
+      "type_signature": "",
+      "description": "The bound ∑_ρ 1/|s−ρ|² = O(log |t|) for |Im(s)| = t → ∞ away from zeros, and the consequence that ξ’/ξ(s) = ∑_{|γ−t|≤1} 1/(s−ρ) + O(log t), localizing the contribution to nearby zeros."
+    },
+    {
+      "id": "s_weil_positivity_criterion",
+      "kind": "theorem",
+      "name": "Weil’s positivity criterion",
+      "type_signature": "",
+      "description": "The Riemann hypothesis for ζ_K is equivalent to the positivity ∑_{ρ} ĥ(ρ) ≥ 0 for all test functions h in a suitable class, reformulating RH as a positive-definiteness condition."
+    },
+    {
+      "id": "t_evaluation_of_basic_sum_part_1",
+      "kind": "technique",
+      "name": "Evaluation of basic sum (Part 1)",
+      "function_signature": "(Test function h, explicit formula) → (∑_p log p · h(log p) expressed via ĥ and zeros)",
+      "description": "First stage of evaluating the prime-side sum in Weil’s explicit formula by Fourier analysis, converting the sum over primes into integrals involving the Fourier transform of the test function."
+    },
+    {
+      "id": "t_evaluation_of_basic_sum_part_2",
+      "kind": "technique",
+      "name": "Evaluation of basic sum (Part 2)",
+      "function_signature": "(Fourier-side expression from Part 1) → (Final explicit relation between primes and zeros)",
+      "description": "Second stage completing the evaluation by handling archimedean contributions and the integral terms, yielding the full Weil explicit formula relating prime sums to zero sums."
     }
   ],
   "edges": [
@@ -190603,6 +190918,1432 @@
       "role": "output",
       "parameter_binding": {},
       "used_in_theorem": "s_iwasawa_class_number_theorem"
+    },
+    {
+      "id": "e_12965",
+      "from": "s_dedekind_domain",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_projective_modules_over_dedekind_domains"
+    },
+    {
+      "id": "e_12966",
+      "from": "s_fractional_ideal",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_projective_modules_over_dedekind_domains"
+    },
+    {
+      "id": "e_12967",
+      "from": "t_ideal_arithmetic",
+      "to": "s_projective_modules_over_dedekind_domains",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_projective_modules_over_dedekind_domains"
+    },
+    {
+      "id": "e_12968",
+      "from": "s_finitely_generated_projective_module",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_projective_modules_over_dedekind_domains"
+    },
+    {
+      "id": "e_12969",
+      "from": "s_non_archimedean_absolute_value",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hensels_lemma"
+    },
+    {
+      "id": "e_12970",
+      "from": "s_non_archimedean_absolute_value",
+      "to": "t_p_adic_exponential_and_logarithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_structure_of_local_units"
+    },
+    {
+      "id": "e_12971",
+      "from": "s_p_adic_absolute_value",
+      "to": "t_p_adic_exponential_and_logarithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_structure_of_local_units"
+    },
+    {
+      "id": "e_12972",
+      "from": "s_p_adic_integers",
+      "to": "t_p_adic_exponential_and_logarithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_structure_of_local_units"
+    },
+    {
+      "id": "e_12973",
+      "from": "s_local_field",
+      "to": "t_p_adic_exponential_and_logarithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_structure_of_local_units"
+    },
+    {
+      "id": "e_12974",
+      "from": "t_p_adic_exponential_and_logarithm",
+      "to": "s_structure_of_local_units",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_structure_of_local_units"
+    },
+    {
+      "id": "e_12975",
+      "from": "s_structure_of_local_units",
+      "to": "t_herbrand_quotient_computation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_norm_index_theorem"
+    },
+    {
+      "id": "e_12976",
+      "from": "s_structure_of_local_units",
+      "to": "t_p_adic_exponential_and_logarithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_norm_index_theorem"
+    },
+    {
+      "id": "e_12977",
+      "from": "s_trace_form",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_different_ramification_theorem"
+    },
+    {
+      "id": "e_12978",
+      "from": "s_norm_and_trace_of_field_extension",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {
+        "map": "trace"
+      },
+      "used_in_theorem": "s_different_ramification_theorem"
+    },
+    {
+      "id": "e_12979",
+      "from": "s_different_ideal_definition",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_different_ramification_theorem"
+    },
+    {
+      "id": "e_12980",
+      "from": "s_ramification_index",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_different_ramification_theorem"
+    },
+    {
+      "id": "e_12981",
+      "from": "t_localization_at_prime",
+      "to": "s_different_ramification_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_different_ramification_theorem"
+    },
+    {
+      "id": "e_12982",
+      "from": "s_discriminant_of_number_field",
+      "to": "t_ideal_norm_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_discriminant_ramification_theorem"
+    },
+    {
+      "id": "e_12983",
+      "from": "s_different_ideal_definition",
+      "to": "t_ideal_norm_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_discriminant_ramification_theorem"
+    },
+    {
+      "id": "e_12984",
+      "from": "t_ideal_norm_reduction",
+      "to": "s_discriminant_ramification_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_discriminant_ramification_theorem"
+    },
+    {
+      "id": "e_12985",
+      "from": "s_different_ramification_theorem",
+      "to": "t_ideal_norm_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_discriminant_ramification_theorem"
+    },
+    {
+      "id": "e_12986",
+      "from": "s_trace_form",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transitivity_of_different_discriminant"
+    },
+    {
+      "id": "e_12987",
+      "from": "s_cyclotomic_field_Q_zeta_n",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ring_of_integers_of_cyclotomic_field"
+    },
+    {
+      "id": "e_12988",
+      "from": "s_cyclotomic_polynomial_phi_n",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ring_of_integers_of_cyclotomic_field"
+    },
+    {
+      "id": "e_12989",
+      "from": "t_ideal_arithmetic",
+      "to": "s_ring_of_integers_of_cyclotomic_field",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ring_of_integers_of_cyclotomic_field"
+    },
+    {
+      "id": "e_12990",
+      "from": "s_ring_of_integers_of_cyclotomic_field",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramification_in_cyclotomic_fields"
+    },
+    {
+      "id": "e_12991",
+      "from": "s_cyclotomic_galois_structure",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramification_in_cyclotomic_fields"
+    },
+    {
+      "id": "e_12992",
+      "from": "t_galois_correspondence",
+      "to": "s_ramification_in_cyclotomic_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramification_in_cyclotomic_fields"
+    },
+    {
+      "id": "e_12993",
+      "from": "s_dedekind_kummer_theorem",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramification_in_cyclotomic_fields"
+    },
+    {
+      "id": "e_12994",
+      "from": "s_gauss_sum",
+      "to": "t_qr_proof_via_gauss_sums",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gauss_sum_norm_formula"
+    },
+    {
+      "id": "e_12995",
+      "from": "s_cyclotomic_galois_structure",
+      "to": "t_qr_proof_via_gauss_sums",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gauss_sum_norm_formula"
+    },
+    {
+      "id": "e_12996",
+      "from": "t_qr_proof_via_gauss_sums",
+      "to": "s_gauss_sum_norm_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gauss_sum_norm_formula"
+    },
+    {
+      "id": "e_12997",
+      "from": "s_gauss_sum_norm_formula",
+      "to": "t_qr_proof_via_gauss_sums",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stickelberger_theorem"
+    },
+    {
+      "id": "e_12998",
+      "from": "t_qr_proof_via_gauss_sums",
+      "to": "s_stickelberger_element",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stickelberger_theorem"
+    },
+    {
+      "id": "e_12999",
+      "from": "s_stickelberger_element",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stickelberger_theorem"
+    },
+    {
+      "id": "e_13000",
+      "from": "s_gauss_sum_prime_factorization",
+      "to": "t_qr_proof_via_gauss_sums",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stickelberger_theorem"
+    },
+    {
+      "id": "e_13001",
+      "from": "s_minkowski_embedding",
+      "to": "t_volume_computation_fundamental_domain",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_counting_ideals_of_bounded_norm"
+    },
+    {
+      "id": "e_13002",
+      "from": "s_discriminant_of_number_field",
+      "to": "t_volume_computation_fundamental_domain",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_counting_ideals_of_bounded_norm"
+    },
+    {
+      "id": "e_13003",
+      "from": "s_signature_of_number_field",
+      "to": "t_volume_computation_fundamental_domain",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_counting_ideals_of_bounded_norm"
+    },
+    {
+      "id": "e_13004",
+      "from": "t_volume_computation_fundamental_domain",
+      "to": "s_counting_ideals_of_bounded_norm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_counting_ideals_of_bounded_norm"
+    },
+    {
+      "id": "e_13005",
+      "from": "s_lattice_in_rn",
+      "to": "t_lattice_points_in_expanding_domains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_counting_ideals_of_bounded_norm"
+    },
+    {
+      "id": "e_13006",
+      "from": "s_norm_of_ideal",
+      "to": "t_lattice_points_in_expanding_domains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_counting_ideals_of_bounded_norm"
+    },
+    {
+      "id": "e_13007",
+      "from": "t_lattice_points_in_expanding_domains",
+      "to": "s_counting_ideals_of_bounded_norm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_counting_ideals_of_bounded_norm"
+    },
+    {
+      "id": "e_13008",
+      "from": "s_counting_ideals_of_bounded_norm",
+      "to": "t_contour_integration_in_ant",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_class_number_formula"
+    },
+    {
+      "id": "e_13009",
+      "from": "s_discriminant_of_number_field",
+      "to": "t_minkowski_lattice_point_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_faltings_finiteness_theorem"
+    },
+    {
+      "id": "e_13010",
+      "from": "s_counting_ideals_of_bounded_norm",
+      "to": "t_minkowski_lattice_point_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_faltings_finiteness_theorem"
+    },
+    {
+      "id": "e_13011",
+      "from": "t_minkowski_lattice_point_argument",
+      "to": "s_faltings_finiteness_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_faltings_finiteness_theorem"
+    },
+    {
+      "id": "e_13012",
+      "from": "s_idele_group",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_of_c_k_1"
+    },
+    {
+      "id": "e_13013",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_content_map",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_of_c_k_1"
+    },
+    {
+      "id": "e_13014",
+      "from": "s_content_idele_norm",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_of_c_k_1"
+    },
+    {
+      "id": "e_13015",
+      "from": "s_idele_group",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_galois_action_on_ideles"
+    },
+    {
+      "id": "e_13016",
+      "from": "s_galois_extension_of_number_fields",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_galois_action_on_ideles"
+    },
+    {
+      "id": "e_13017",
+      "from": "t_galois_correspondence",
+      "to": "s_galois_action_on_ideles",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_galois_action_on_ideles"
+    },
+    {
+      "id": "e_13018",
+      "from": "s_content_map",
+      "to": "t_volume_computation_fundamental_domain",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_of_c_k_1"
+    },
+    {
+      "id": "e_13019",
+      "from": "s_idele_class_group",
+      "to": "t_volume_computation_fundamental_domain",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_of_c_k_1"
+    },
+    {
+      "id": "e_13020",
+      "from": "s_dirichlet_unit_theorem",
+      "to": "t_volume_computation_fundamental_domain",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_of_c_k_1"
+    },
+    {
+      "id": "e_13021",
+      "from": "t_volume_computation_fundamental_domain",
+      "to": "s_compactness_of_c_k_1",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_of_c_k_1"
+    },
+    {
+      "id": "e_13022",
+      "from": "s_idele_class_group",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_idele_class_group_ray_class_group_relationship"
+    },
+    {
+      "id": "e_13023",
+      "from": "s_ray_class_group",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_idele_class_group_ray_class_group_relationship"
+    },
+    {
+      "id": "e_13024",
+      "from": "t_cohomology_of_ideles",
+      "to": "s_idele_class_group_ray_class_group_relationship",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_idele_class_group_ray_class_group_relationship"
+    },
+    {
+      "id": "e_13025",
+      "from": "s_modulus_cycle",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_idele_class_group_ray_class_group_relationship"
+    },
+    {
+      "id": "e_13026",
+      "from": "s_local_field",
+      "to": "t_herbrand_quotient_computation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_norm_index_theorem"
+    },
+    {
+      "id": "e_13027",
+      "from": "t_herbrand_quotient_computation",
+      "to": "s_local_norm_group",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_norm_index_theorem"
+    },
+    {
+      "id": "e_13028",
+      "from": "s_totally_ramified_extension_local",
+      "to": "t_herbrand_quotient_computation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_norm_index_theorem"
+    },
+    {
+      "id": "e_13029",
+      "from": "s_local_norm_group",
+      "to": "t_herbrand_quotient_computation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_norm_index_theorem"
+    },
+    {
+      "id": "e_13030",
+      "from": "s_tate_cohomology_groups",
+      "to": "t_herbrand_quotient_computation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_norm_index_theorem"
+    },
+    {
+      "id": "e_13031",
+      "from": "t_herbrand_quotient_computation",
+      "to": "s_local_norm_index_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_norm_index_theorem"
+    },
+    {
+      "id": "e_13032",
+      "from": "s_local_field",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_additive_duality"
+    },
+    {
+      "id": "e_13033",
+      "from": "s_self_duality_adeles",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_additive_duality"
+    },
+    {
+      "id": "e_13034",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_local_additive_duality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_additive_duality"
+    },
+    {
+      "id": "e_13035",
+      "from": "s_trace_form",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_additive_duality"
+    },
+    {
+      "id": "e_13036",
+      "from": "s_kummer_theory_theorem",
+      "to": "t_reduction_to_kummer_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_theorem_of_cft"
+    },
+    {
+      "id": "e_13037",
+      "from": "s_local_norm_index_theorem",
+      "to": "t_reduction_to_kummer_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_theorem_of_cft"
+    },
+    {
+      "id": "e_13038",
+      "from": "s_galois_action_on_ideles",
+      "to": "t_reduction_to_kummer_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_theorem_of_cft"
+    },
+    {
+      "id": "e_13039",
+      "from": "s_idele_class_group",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_cyclic_norm_index"
+    },
+    {
+      "id": "e_13040",
+      "from": "s_local_norm_index_theorem",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_cyclic_norm_index"
+    },
+    {
+      "id": "e_13041",
+      "from": "t_cohomology_of_ideles",
+      "to": "s_global_cyclic_norm_index",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_cyclic_norm_index"
+    },
+    {
+      "id": "e_13042",
+      "from": "s_global_cyclic_norm_index",
+      "to": "t_reduction_to_kummer_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_takagi_existence_theorem"
+    },
+    {
+      "id": "e_13043",
+      "from": "s_idele_class_group_ray_class_group_relationship",
+      "to": "t_reduction_to_kummer_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_takagi_existence_theorem"
+    },
+    {
+      "id": "e_13044",
+      "from": "t_reduction_to_kummer_extensions",
+      "to": "s_takagi_existence_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_takagi_existence_theorem"
+    },
+    {
+      "id": "e_13045",
+      "from": "s_takagi_existence_theorem",
+      "to": "t_reduction_to_kummer_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_theorem_of_cft"
+    },
+    {
+      "id": "e_13046",
+      "from": "s_artin_reciprocity_global",
+      "to": "t_reduction_to_kummer_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_theorem_of_cft"
+    },
+    {
+      "id": "e_13047",
+      "from": "t_reduction_to_kummer_extensions",
+      "to": "s_existence_theorem_of_cft",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_theorem_of_cft"
+    },
+    {
+      "id": "e_13048",
+      "from": "s_conductor_of_abelian_extension",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conductor_class_field_relationship"
+    },
+    {
+      "id": "e_13049",
+      "from": "s_ray_class_field",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conductor_class_field_relationship"
+    },
+    {
+      "id": "e_13050",
+      "from": "t_cohomology_of_ideles",
+      "to": "s_conductor_class_field_relationship",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conductor_class_field_relationship"
+    },
+    {
+      "id": "e_13051",
+      "from": "s_conductor_discriminant_formula",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conductor_class_field_relationship"
+    },
+    {
+      "id": "e_13052",
+      "from": "s_artin_symbol",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_complete_splitting_theorem"
+    },
+    {
+      "id": "e_13053",
+      "from": "s_frobenius_element",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_complete_splitting_theorem"
+    },
+    {
+      "id": "e_13054",
+      "from": "t_galois_correspondence",
+      "to": "s_complete_splitting_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_complete_splitting_theorem"
+    },
+    {
+      "id": "e_13055",
+      "from": "s_existence_theorem_of_cft",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_complete_splitting_theorem"
+    },
+    {
+      "id": "e_13056",
+      "from": "s_conductor_of_extension",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramification_theorem_cft"
+    },
+    {
+      "id": "e_13057",
+      "from": "s_local_norm_group",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramification_theorem_cft"
+    },
+    {
+      "id": "e_13058",
+      "from": "t_cohomology_of_ideles",
+      "to": "s_ramification_theorem_cft",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramification_theorem_cft"
+    },
+    {
+      "id": "e_13059",
+      "from": "s_inertia_group",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramification_theorem_cft"
+    },
+    {
+      "id": "e_13060",
+      "from": "s_local_norm_group",
+      "to": "t_p_adic_exponential_and_logarithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_infinite_divisibility_of_universal_norms"
+    },
+    {
+      "id": "e_13061",
+      "from": "s_structure_of_local_units",
+      "to": "t_p_adic_exponential_and_logarithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_infinite_divisibility_of_universal_norms"
+    },
+    {
+      "id": "e_13062",
+      "from": "t_p_adic_exponential_and_logarithm",
+      "to": "s_infinite_divisibility_of_universal_norms",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_infinite_divisibility_of_universal_norms"
+    },
+    {
+      "id": "e_13063",
+      "from": "s_induced_representation",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_induced_character_l_series_factorization"
+    },
+    {
+      "id": "e_13064",
+      "from": "s_artin_l_function",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_induced_character_l_series_factorization"
+    },
+    {
+      "id": "e_13065",
+      "from": "t_brauer_induction",
+      "to": "s_induced_character_l_series_factorization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_induced_character_l_series_factorization"
+    },
+    {
+      "id": "e_13066",
+      "from": "s_brauer_induced_character_theorem",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_induced_character_l_series_factorization"
+    },
+    {
+      "id": "e_13067",
+      "from": "s_induced_character_l_series_factorization",
+      "to": "t_brauer_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_factorization_dedekind_zeta"
+    },
+    {
+      "id": "e_13068",
+      "from": "s_dedekind_zeta_function",
+      "to": "t_contour_integration_in_ant",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_convergence_and_euler_product_for_dedekind_zeta"
+    },
+    {
+      "id": "e_13069",
+      "from": "s_unique_factorization_ideals_dedekind",
+      "to": "t_contour_integration_in_ant",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_convergence_and_euler_product_for_dedekind_zeta"
+    },
+    {
+      "id": "e_13070",
+      "from": "t_contour_integration_in_ant",
+      "to": "s_convergence_and_euler_product_for_dedekind_zeta",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_convergence_and_euler_product_for_dedekind_zeta"
+    },
+    {
+      "id": "e_13071",
+      "from": "s_norm_of_ideal",
+      "to": "t_contour_integration_in_ant",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_convergence_and_euler_product_for_dedekind_zeta"
+    },
+    {
+      "id": "e_13072",
+      "from": "s_completed_l_function",
+      "to": "t_contour_integration_in_ant",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_analytic_continuation_dedekind_zeta"
+    },
+    {
+      "id": "e_13073",
+      "from": "s_hadamard_factorization_theorem",
+      "to": "t_contour_integration_in_ant",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_analytic_continuation_dedekind_zeta"
+    },
+    {
+      "id": "e_13074",
+      "from": "t_contour_integration_in_ant",
+      "to": "s_weierstrass_product_for_completed_l_function",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_analytic_continuation_dedekind_zeta"
+    },
+    {
+      "id": "e_13075",
+      "from": "s_dirichlet_series",
+      "to": "t_dirichlet_integral_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tauberian_theorem_for_dirichlet_series"
+    },
+    {
+      "id": "e_13076",
+      "from": "s_convergence_and_euler_product_for_dedekind_zeta",
+      "to": "t_dirichlet_integral_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tauberian_theorem_for_dirichlet_series"
+    },
+    {
+      "id": "e_13077",
+      "from": "t_dirichlet_integral_technique",
+      "to": "s_tauberian_theorem_for_dirichlet_series",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tauberian_theorem_for_dirichlet_series"
+    },
+    {
+      "id": "e_13078",
+      "from": "s_perron_formula",
+      "to": "t_dirichlet_integral_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tauberian_theorem_for_dirichlet_series"
+    },
+    {
+      "id": "e_13079",
+      "from": "s_tauberian_theorem_for_dirichlet_series",
+      "to": "t_effective_tauberian_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_landau_prime_ideal_theorem"
+    },
+    {
+      "id": "e_13080",
+      "from": "s_hecke_l_function_grossencharakter",
+      "to": "t_dirichlet_integral_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nonvanishing_l1_hecke_characters"
+    },
+    {
+      "id": "e_13081",
+      "from": "s_functional_equation_hecke_l",
+      "to": "t_dirichlet_integral_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nonvanishing_l1_hecke_characters"
+    },
+    {
+      "id": "e_13082",
+      "from": "t_dirichlet_integral_technique",
+      "to": "s_nonvanishing_l1_hecke_characters",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nonvanishing_l1_hecke_characters"
+    },
+    {
+      "id": "e_13083",
+      "from": "s_chebotarev_density_theorem",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_as_special_case_of_chebotarev"
+    },
+    {
+      "id": "e_13084",
+      "from": "s_dirichlet_density",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_as_special_case_of_chebotarev"
+    },
+    {
+      "id": "e_13085",
+      "from": "t_galois_correspondence",
+      "to": "s_dirichlet_as_special_case_of_chebotarev",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_as_special_case_of_chebotarev"
+    },
+    {
+      "id": "e_13086",
+      "from": "s_cyclotomic_galois_theorem",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_as_special_case_of_chebotarev"
+    },
+    {
+      "id": "e_13087",
+      "from": "s_residue_of_dedekind_zeta",
+      "to": "t_comparison_of_residues_in_normal_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brauer_siegel_theorem"
+    },
+    {
+      "id": "e_13088",
+      "from": "s_convergence_and_euler_product_for_dedekind_zeta",
+      "to": "t_comparison_of_residues_in_normal_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brauer_siegel_theorem"
+    },
+    {
+      "id": "e_13089",
+      "from": "s_factorization_dedekind_zeta",
+      "to": "t_comparison_of_residues_in_normal_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brauer_siegel_theorem"
+    },
+    {
+      "id": "e_13090",
+      "from": "t_comparison_of_residues_in_normal_extensions",
+      "to": "s_upper_estimate_residue_zeta_k",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_upper_estimate_residue_zeta_k"
+    },
+    {
+      "id": "e_13091",
+      "from": "s_functional_equation_dedekind_zeta",
+      "to": "t_comparison_of_residues_in_normal_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_upper_estimate_residue_zeta_k"
+    },
+    {
+      "id": "e_13092",
+      "from": "s_nonvanishing_l1_hecke_characters",
+      "to": "t_comparison_of_residues_in_normal_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_siegel_lower_bound_residue"
+    },
+    {
+      "id": "e_13093",
+      "from": "s_upper_estimate_residue_zeta_k",
+      "to": "t_comparison_of_residues_in_normal_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_siegel_lower_bound_residue"
+    },
+    {
+      "id": "e_13094",
+      "from": "t_comparison_of_residues_in_normal_extensions",
+      "to": "s_siegel_lower_bound_residue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_siegel_lower_bound_residue"
+    },
+    {
+      "id": "e_13095",
+      "from": "s_siegel_zero",
+      "to": "t_comparison_of_residues_in_normal_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_siegel_lower_bound_residue"
+    },
+    {
+      "id": "e_13096",
+      "from": "s_siegel_lower_bound_residue",
+      "to": "t_comparison_of_residues_in_normal_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brauer_siegel_theorem"
+    },
+    {
+      "id": "e_13097",
+      "from": "t_comparison_of_residues_in_normal_extensions",
+      "to": "s_brauer_siegel_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brauer_siegel_theorem"
+    },
+    {
+      "id": "e_13098",
+      "from": "s_weierstrass_product_for_completed_l_function",
+      "to": "t_logarithmic_derivative_xi",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_estimate_for_xi_prime_over_xi"
+    },
+    {
+      "id": "e_13099",
+      "from": "s_hadamard_product_for_xi",
+      "to": "t_logarithmic_derivative_xi",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_estimate_for_xi_prime_over_xi"
+    },
+    {
+      "id": "e_13100",
+      "from": "t_logarithmic_derivative_xi",
+      "to": "s_estimate_for_xi_prime_over_xi",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_estimate_for_xi_prime_over_xi"
+    },
+    {
+      "id": "e_13101",
+      "from": "s_estimate_for_xi_prime_over_xi",
+      "to": "t_evaluation_of_basic_sum_part_1",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weil_explicit_formula"
+    },
+    {
+      "id": "e_13102",
+      "from": "s_dedekind_zeta_function",
+      "to": "t_evaluation_of_basic_sum_part_1",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weil_explicit_formula"
+    },
+    {
+      "id": "e_13103",
+      "from": "t_evaluation_of_basic_sum_part_1",
+      "to": "s_weil_explicit_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weil_explicit_formula"
+    },
+    {
+      "id": "e_13104",
+      "from": "s_weil_explicit_formula",
+      "to": "t_evaluation_of_basic_sum_part_2",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weil_positivity_criterion"
+    },
+    {
+      "id": "e_13105",
+      "from": "s_functional_equation_dedekind_zeta",
+      "to": "t_evaluation_of_basic_sum_part_2",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weil_positivity_criterion"
+    },
+    {
+      "id": "e_13106",
+      "from": "t_evaluation_of_basic_sum_part_2",
+      "to": "s_weil_positivity_criterion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weil_positivity_criterion"
+    },
+    {
+      "id": "e_13107",
+      "from": "s_weil_positivity_criterion",
+      "to": "t_explicit_formula_test_function",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riemann_hypothesis"
+    },
+    {
+      "id": "e_13108",
+      "from": "s_non_archimedean_absolute_value",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_classification_of_local_fields"
+    },
+    {
+      "id": "e_13109",
+      "from": "s_trace_form",
+      "to": "t_ideal_norm_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_different_discriminant_relation"
+    },
+    {
+      "id": "e_13110",
+      "from": "s_content_map",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_of_c_k_1"
+    },
+    {
+      "id": "e_13111",
+      "from": "s_galois_action_on_ideles",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_artin_reciprocity_global"
+    },
+    {
+      "id": "e_13112",
+      "from": "s_local_norm_group",
+      "to": "t_reduction_to_kummer_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_takagi_existence_theorem"
+    },
+    {
+      "id": "e_13113",
+      "from": "s_weierstrass_product_for_completed_l_function",
+      "to": "t_contour_integration_in_ant",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_equation_dedekind_zeta"
+    },
+    {
+      "id": "e_13114",
+      "from": "s_faltings_finiteness_theorem",
+      "to": "t_minkowski_lattice_point_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_13115",
+      "from": "s_convergence_and_euler_product_for_dedekind_zeta",
+      "to": "t_dirichlet_integral_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_landau_prime_ideal_theorem"
+    },
+    {
+      "id": "e_13116",
+      "from": "s_counting_ideals_of_bounded_norm",
+      "to": "t_lattice_points_in_expanding_domains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_class_number_formula"
+    },
+    {
+      "id": "e_13117",
+      "from": "t_logarithmic_derivative_xi",
+      "to": "s_weil_explicit_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weil_explicit_formula"
+    },
+    {
+      "id": "e_13118",
+      "from": "s_induced_character_l_series_factorization",
+      "to": "t_contour_integration_in_ant",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_analytic_continuation_dedekind_zeta"
+    },
+    {
+      "id": "e_13119",
+      "from": "s_minkowski_convex_body_theorem",
+      "to": "t_lattice_points_in_expanding_domains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_class_number"
+    },
+    {
+      "id": "e_13120",
+      "from": "s_regulator_of_number_field",
+      "to": "t_volume_computation_fundamental_domain",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_class_number_formula"
+    },
+    {
+      "id": "e_13121",
+      "from": "s_compactness_of_c_k_1",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_artin_reciprocity_global"
+    },
+    {
+      "id": "e_13122",
+      "from": "s_dirichlet_l_function",
+      "to": "t_dirichlet_integral_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_l_nonvanishing_at_1"
+    },
+    {
+      "id": "e_13123",
+      "from": "s_ramification_in_cyclotomic_fields",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_discriminant_of_cyclotomic_field"
+    },
+    {
+      "id": "e_13124",
+      "from": "s_takagi_existence_theorem",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilbert_class_field"
+    },
+    {
+      "id": "e_13125",
+      "from": "s_conductor_class_field_relationship",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conductor_discriminant_formula"
+    },
+    {
+      "id": "e_13126",
+      "from": "s_complete_splitting_theorem",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chebotarev_density_theorem"
+    },
+    {
+      "id": "e_13127",
+      "from": "s_ramification_theorem_cft",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_exponent_of_different_at_prime"
+    },
+    {
+      "id": "e_13128",
+      "from": "s_existence_theorem_of_cft",
+      "to": "t_reduction_to_kummer_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_class_field_theory"
+    },
+    {
+      "id": "e_13129",
+      "from": "s_global_cyclic_norm_index",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_artin_reciprocity_global"
+    },
+    {
+      "id": "e_13130",
+      "from": "s_estimate_for_xi_prime_over_xi",
+      "to": "t_logarithmic_derivative_xi",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_de_la_vallee_poussin_zero_free_region"
+    },
+    {
+      "id": "e_13131",
+      "from": "s_upper_estimate_residue_zeta_k",
+      "to": "t_comparison_of_residues_in_normal_extensions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_class_number_formula"
+    },
+    {
+      "id": "e_13132",
+      "from": "s_dirichlet_as_special_case_of_chebotarev",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dirichlet_theorem_primes_number_fields"
+    },
+    {
+      "id": "e_13133",
+      "from": "s_nonvanishing_l1_hecke_characters",
+      "to": "t_dirichlet_integral_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_class_number_formula"
+    },
+    {
+      "id": "e_13134",
+      "from": "s_tauberian_theorem_for_dirichlet_series",
+      "to": "t_effective_tauberian_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chebotarev_density_theorem"
+    },
+    {
+      "id": "e_13135",
+      "from": "s_infinite_divisibility_of_universal_norms",
+      "to": "t_p_adic_exponential_and_logarithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_class_field_theory"
+    },
+    {
+      "id": "e_13136",
+      "from": "s_local_additive_duality",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_functional_equation_tate"
+    },
+    {
+      "id": "e_13137",
+      "from": "s_haar_measure_ideles",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_content_map"
+    },
+    {
+      "id": "e_13138",
+      "from": "s_gauss_sum_norm_formula",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_discriminant_of_cyclotomic_field"
+    },
+    {
+      "id": "e_13139",
+      "from": "s_projective_modules_over_dedekind_domains",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_unique_factorization_ideals_dedekind"
+    },
+    {
+      "id": "e_13140",
+      "from": "s_dedekind_zeta_function",
+      "to": "t_evaluation_of_basic_sum_part_2",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weil_positivity_criterion"
+    },
+    {
+      "id": "e_13141",
+      "from": "s_schwartz_bruhat_function",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_additive_duality"
+    },
+    {
+      "id": "e_13142",
+      "from": "s_ring_of_integers_of_cyclotomic_field",
+      "to": "t_ideal_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramification_in_cyclotomic_fields"
     }
   ],
   "subgraphs": [
