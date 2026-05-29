@@ -72151,6 +72151,342 @@
       "name": "Twisting by Dirichlet characters",
       "function_signature": "(Dirichlet series, character χ) → L(s,χ) separating residue classes",
       "description": "Multiplying a Dirichlet series by a character χ to study its behavior in arithmetic progressions via L(s,χ) = ∑χ(n)n^{−s}."
+    },
+    {
+      "id": "s_logarithmic_density_primes_in_ap",
+      "kind": "state",
+      "name": "Logarithmic density of primes in arithmetic progressions",
+      "type_signature": "",
+      "description": "The set of primes p ≡ a (mod q) with gcd(a,q) = 1 has logarithmic density 1/φ(q) among all primes, proved as an intermediate step toward Dirichlet's theorem."
+    },
+    {
+      "id": "s_gaussian_periods",
+      "kind": "state",
+      "name": "Gaussian periods",
+      "type_signature": "",
+      "description": "The sums η_j = ∑_{k} ζ^{g^{ek+j}} where g is a primitive root mod p and e | (p−1), forming the basis for Gauss's theory of cyclotomy and constructibility."
+    },
+    {
+      "id": "s_gauss_constructible_regular_polygons",
+      "kind": "theorem",
+      "name": "Gauss's theorem on constructible regular polygons",
+      "type_signature": "",
+      "description": "A regular n-gon is constructible by straightedge and compass if and only if n = 2^a p_1 ⋯ p_k where the p_i are distinct Fermat primes."
+    },
+    {
+      "id": "s_fundamental_discriminant",
+      "kind": "axiom",
+      "name": "Fundamental discriminant",
+      "type_signature": "ℤ",
+      "description": "An integer D that is the discriminant of a quadratic field ℚ(√d): either D = d with d ≡ 1 (mod 4) squarefree, or D = 4d with d ≡ 2 or 3 (mod 4) squarefree."
+    },
+    {
+      "id": "s_binary_quadratic_form",
+      "kind": "axiom",
+      "name": "Binary quadratic form",
+      "type_signature": "ℤ × ℤ → ℤ",
+      "description": "A function f(x,y) = ax² + bxy + cy² with a,b,c ∈ ℤ and discriminant D = b² − 4ac, central to the theory of class numbers and representations by forms."
+    },
+    {
+      "id": "s_finite_expression_l1_chi",
+      "kind": "state",
+      "name": "Finite expression for L(1, χ)",
+      "type_signature": "",
+      "description": "For a nonprincipal character χ mod q, L(1,χ) equals a finite sum involving χ(a) and log sin(πa/q) or linear terms, providing computable values of Dirichlet L-functions at s = 1."
+    },
+    {
+      "id": "s_riemann_approximate_formula_for_N_T",
+      "kind": "state",
+      "name": "Riemann's approximate formula for N(T)",
+      "type_signature": "",
+      "description": "N(T) ≈ (T/2π) log(T/2πe), Riemann's original heuristic approximation for the number of zeros of ζ(s) with imaginary part between 0 and T."
+    },
+    {
+      "id": "t_contour_integration_arithmetic_functions",
+      "kind": "technique",
+      "name": "Contour integration for arithmetic functions",
+      "function_signature": "(Dirichlet series F(s), contour C) → (Asymptotic formula for ∑_{n≤x} a_n)",
+      "description": "Recovers partial sums of arithmetic functions from their Dirichlet series via Perron-type contour integrals, shifting contours past poles and zeros to extract main terms and error estimates."
+    },
+    {
+      "id": "s_truncated_explicit_formula_psi",
+      "kind": "state",
+      "name": "Truncated explicit formula for ψ(x)",
+      "type_signature": "",
+      "description": "ψ(x) = x − ∑_{|γ|≤T} x^ρ/ρ + O(x log²x / T), a practical form of the explicit formula with controlled truncation error."
+    },
+    {
+      "id": "s_chebyshev_psi_twisted_by_chi",
+      "kind": "state",
+      "name": "Chebyshev ψ-function twisted by χ",
+      "type_signature": "ℝ × (ℤ → ℂ) → ℂ",
+      "description": "ψ(x, χ) = ∑_{n≤x} Λ(n) χ(n), the Chebyshev function weighted by a Dirichlet character, whose analytic properties are governed by the zeros of L(s, χ)."
+    },
+    {
+      "id": "t_character_sum_completion",
+      "kind": "technique",
+      "name": "Character sum completion technique",
+      "function_signature": "(Incomplete character sum ∑_{a≤N} χ(a)) → (Complete sum over full period + error)",
+      "description": "Extends an incomplete character sum to a complete sum over a full period by inserting additive characters, enabling evaluation via Gauss sums."
+    },
+    {
+      "id": "s_further_prime_number_sums",
+      "kind": "state",
+      "name": "Further prime number sums",
+      "type_signature": "",
+      "description": "Estimates for sums ∑_{p≤x} f(p) for various arithmetic functions f derived from the prime number theorem and partial summation."
+    },
+    {
+      "id": "s_generalized_xi_function",
+      "kind": "state",
+      "name": "Generalized xi-function ξ(s, χ)",
+      "type_signature": "ℂ × (ℤ → ℂ) → ℂ",
+      "description": "The completed L-function ξ(s, χ) = (q/π)^{(s+a)/2} Γ((s+a)/2) L(s, χ) for primitive χ mod q, an entire function of order 1 satisfying ξ(s, χ) = W(χ) ξ(1−s, χ̄)."
+    },
+    {
+      "id": "s_root_number_w_chi",
+      "kind": "state",
+      "name": "Root number W(χ)",
+      "type_signature": "ℂ, |W(χ)| = 1",
+      "description": "The complex constant W(χ) = τ(χ)/(i^a √q) of absolute value 1 appearing in the functional equation of ξ(s, χ), where a = (1−χ(−1))/2."
+    },
+    {
+      "id": "s_counting_zeros_entire_order_1",
+      "kind": "state",
+      "name": "Counting zeros of entire functions of order 1",
+      "type_signature": "",
+      "description": "An entire function f of order 1 satisfies n(r) = O(r) where n(r) counts zeros with |z| ≤ r, and ∑ 1/|ρ|^{1+ε} converges for every ε > 0."
+    },
+    {
+      "id": "s_hadamard_product_for_xi_chi",
+      "kind": "theorem",
+      "name": "Hadamard product for ξ(s, χ)",
+      "type_signature": "",
+      "description": "ξ(s, χ) = e^{A(χ)+B(χ)s} ∏_ρ (1 − s/ρ) e^{s/ρ}, the product over nontrivial zeros ρ of L(s, χ), obtained by Hadamard factorization of the entire function ξ(s, χ)."
+    },
+    {
+      "id": "s_partial_fraction_l_prime_over_l",
+      "kind": "state",
+      "name": "Partial fraction for −L′/L",
+      "type_signature": "",
+      "description": "−L′(s,χ)/L(s,χ) = −B(χ) − ∑_ρ (1/(s−ρ) + 1/ρ) + (terms from trivial zeros), expressing the logarithmic derivative as a sum over nontrivial zeros."
+    },
+    {
+      "id": "t_zero_counting_argument_principle",
+      "kind": "technique",
+      "name": "Zero-counting via argument principle",
+      "function_signature": "(Meromorphic function f(s), rectangular contour) → (Count of zeros N(T) inside contour)",
+      "description": "Counts zeros of ζ(s) or L(s,χ) in a rectangle by integrating (1/2πi) ∮ f′/f ds around the boundary."
+    },
+    {
+      "id": "s_log_zeta_bound_near_sigma_1",
+      "kind": "state",
+      "name": "log ζ(s) bound near σ = 1",
+      "type_signature": "",
+      "description": "log ζ(σ+it) = O(log t) for σ ≥ 1 − c/log t and |t| ≥ 2, a consequence of the zero-free region providing control on ζ near the 1-line."
+    },
+    {
+      "id": "s_repulsion_of_zeros_by_exceptional_zero",
+      "kind": "theorem",
+      "name": "Repulsion of zeros by exceptional zero",
+      "type_signature": "",
+      "description": "If L(β₁, χ₁) = 0 with β₁ near 1 for a real character χ₁, then all other zeros ρ of L-functions mod q satisfy enlarged zero-free regions, quantifying the Deuring–Heilbronn phenomenon."
+    },
+    {
+      "id": "s_s_t_argument_function",
+      "kind": "state",
+      "name": "S(T) argument function",
+      "type_signature": "ℝ → ℝ",
+      "description": "S(T) = (1/π) arg ζ(1/2 + iT) defined by continuous variation, satisfying S(T) = O(log T) and appearing in the Riemann–von Mangoldt formula as the oscillatory correction."
+    },
+    {
+      "id": "s_n_t_chi_zero_counting",
+      "kind": "state",
+      "name": "N(T, χ) zero-counting function",
+      "type_signature": "ℝ × (ℤ → ℂ) → ℤ",
+      "description": "N(T, χ) counts nontrivial zeros of L(s, χ) with imaginary part in [−T, T], generalizing the Riemann–von Mangoldt N(T) to Dirichlet L-functions."
+    },
+    {
+      "id": "s_asymptotic_n_t_chi",
+      "kind": "theorem",
+      "name": "Asymptotic for N(T, χ)",
+      "type_signature": "",
+      "description": "N(T, χ) = (T/π) log(qT/2πe) + O(log qT) for primitive χ mod q, generalizing the Riemann–von Mangoldt formula to Dirichlet L-functions."
+    },
+    {
+      "id": "s_exponential_sum_over_primes",
+      "kind": "state",
+      "name": "Exponential sum over primes",
+      "type_signature": "ℝ → ℂ",
+      "description": "S(α) = ∑_{p≤N} (log p) e(pα), the generating function for primes used in the circle method, whose size on major and minor arcs controls additive problems involving primes."
+    },
+    {
+      "id": "s_vinogradov_estimate_prime_exponential_sums",
+      "kind": "theorem",
+      "name": "Vinogradov's estimate for prime exponential sums",
+      "type_signature": "",
+      "description": "If |α − a/q| ≤ 1/qN with (a,q) = 1, then |∑_{n≤N} Λ(n) e(nα)| ≪ N(log N)^B (q^{−1/2} + N^{−1/2} + q^{1/2} N^{−1/2})."
+    },
+    {
+      "id": "s_singular_series_three_primes",
+      "kind": "state",
+      "name": "Singular series for three primes",
+      "type_signature": "ℤ → ℝ",
+      "description": "The arithmetic factor 𝔖(N) in the asymptotic for representations of odd N as a sum of three primes, a convergent product over primes encoding local solubility."
+    },
+    {
+      "id": "t_major_arc_approximation_via_l_functions",
+      "kind": "technique",
+      "name": "Major arc approximation via L-functions",
+      "function_signature": "(Exponential sum S(α) on major arc M(q,a)) → (Approximation via L-functions and Gauss sums)",
+      "description": "Approximates ∑_{p≤N} (log p) e(pα) on major arcs using Dirichlet characters and L-function zero information, reducing the circle method to analytic properties of L(s, χ)."
+    },
+    {
+      "id": "s_large_sieve_as_mean_value_estimate",
+      "kind": "state",
+      "name": "Large sieve as mean-value estimate",
+      "type_signature": "",
+      "description": "The large sieve inequality reinterpreted as a mean-value bound on character sums averaging over all primitive characters to moduli q ≤ Q, often matching GRH-strength individual bounds."
+    },
+    {
+      "id": "t_vaughan_proof_bombieri_vinogradov",
+      "kind": "technique",
+      "name": "Vaughan's proof of Bombieri–Vinogradov",
+      "function_signature": "(Vaughan's identity + large sieve) → (Bombieri–Vinogradov theorem)",
+      "description": "Proves the Bombieri–Vinogradov theorem by decomposing Λ(n) via Vaughan's identity into bilinear forms, then bounding each via the large sieve inequality for characters."
+    },
+    {
+      "id": "t_reduction_to_primitive_characters",
+      "kind": "technique",
+      "name": "Reduction to primitive characters",
+      "function_signature": "(Sum over all χ mod q) → (Sum over primitive χ* mod q* with q*|q)",
+      "description": "Replaces sums over all Dirichlet characters mod q by sums over primitive characters of smaller moduli dividing q, exploiting the factorization χ = χ* · χ₀."
+    },
+    {
+      "id": "s_bombieri_vinogradov_as_grh_substitute",
+      "kind": "state",
+      "name": "Bombieri–Vinogradov as substitute for GRH",
+      "type_signature": "",
+      "description": "The Bombieri–Vinogradov theorem provides, on average over q ≤ x^{1/2−ε}, the same quality of error term in ψ(x;q,a) that GRH would give for each individual q."
+    },
+    {
+      "id": "s_application_titchmarsh_divisor_problem",
+      "kind": "state",
+      "name": "Application to the Titchmarsh divisor problem",
+      "type_signature": "",
+      "description": "∑_{p≤x} d(p−1) ∼ Cx log x for an explicit constant C, proved using the Bombieri–Vinogradov theorem to handle the sum over shifted primes."
+    },
+    {
+      "id": "t_de_la_vallee_poussin_proof_strategy",
+      "kind": "technique",
+      "name": "De la Vallée-Poussin's proof strategy",
+      "function_signature": "(Zero-free region for ζ(s) + Perron/explicit formula) → (PNT with error term)",
+      "description": "Establishes the prime number theorem by proving ζ(1+it) ≠ 0 via the 3-4-1 inequality, deriving a zero-free region, then extracting ψ(x) ~ x via contour integration."
+    },
+    {
+      "id": "s_zero_free_region_real_characters_near_t_0",
+      "kind": "theorem",
+      "name": "Zero-free region for real characters near t = 0",
+      "type_signature": "",
+      "description": "For a real primitive character χ mod q, L(s, χ) has at most one real zero β in (1 − c/log q, 1), requiring treatment separate from the 3-4-1 method which fails near t = 0 for real χ."
+    },
+    {
+      "id": "s_lower_bound_l1_chi_via_class_number",
+      "kind": "state",
+      "name": "Lower bound for L(1, χ) via class number",
+      "type_signature": "",
+      "description": "For real primitive χ mod q, the class number formula gives L(1, χ) ≥ c/√q since h(d) ≥ 1, providing an effective but weak lower bound."
+    },
+    {
+      "id": "s_siegel_lemma_l_function_products",
+      "kind": "theorem",
+      "name": "Siegel's lemma on L-function products",
+      "type_signature": "",
+      "description": "If L(β, χ₁) = 0 with β near 1 for real χ₁, then for any other real character χ₂ the product L(s, χ₁)L(s, χ₂) has no zero near s = 1, forcing L(1, χ₂) to be bounded below."
+    },
+    {
+      "id": "s_ineffectivity_in_siegel_theorem",
+      "kind": "state",
+      "name": "Ineffectivity in Siegel's theorem",
+      "type_signature": "",
+      "description": "The constant c(ε) in Siegel's bound L(1, χ) > c(ε) q^{−ε} cannot be effectively computed because the proof splits into cases depending on the existence of an exceptional zero."
+    },
+    {
+      "id": "s_symmetric_pairing_of_zeros",
+      "kind": "state",
+      "name": "Symmetric pairing of zeros",
+      "type_signature": "",
+      "description": "The functional equation of ξ(s, χ) implies that if ρ is a nontrivial zero of L(s, χ), then 1 − ρ̄ is a zero of L(s, χ̄), and for real χ the zeros come in symmetric pairs."
+    },
+    {
+      "id": "s_density_of_zeros_near_sigma_1",
+      "kind": "state",
+      "name": "Density of zeros near σ = 1",
+      "type_signature": "",
+      "description": "The number of zeros ρ of L(s, χ) with Re(ρ) ≥ σ and |Im(ρ)| ≤ T satisfies N(σ, T, χ) = O(T^{A(1−σ)} log T) for σ near 1."
+    },
+    {
+      "id": "s_contribution_of_major_arcs",
+      "kind": "state",
+      "name": "Contribution of major arcs",
+      "type_signature": "",
+      "description": "The integral of S(α)³ e(−Nα) over the major arcs yields the main term (1/2) 𝔖(N) N²/(log N)³ in Vinogradov's three-primes theorem."
+    },
+    {
+      "id": "s_contribution_of_minor_arcs",
+      "kind": "state",
+      "name": "Contribution of minor arcs",
+      "type_signature": "",
+      "description": "The integral of S(α)³ e(−Nα) over the minor arcs is O(N²/(log N)^A), shown negligible using Vinogradov's estimate for exponential sums over primes."
+    },
+    {
+      "id": "s_dirichlet_polynomial",
+      "kind": "state",
+      "name": "Dirichlet polynomial",
+      "type_signature": "ℂ → ℂ",
+      "description": "A finite sum D(s) = ∑_{n≤N} a_n n^{−s}, a fundamental building block in the analytic theory of L-functions, large sieve, and Vaughan's identity."
+    },
+    {
+      "id": "s_character_table_of_z_qz_star",
+      "kind": "state",
+      "name": "Character table of (ℤ/qℤ)*",
+      "type_signature": "",
+      "description": "The φ(q) × φ(q) matrix (χ_i(a_j)) of Dirichlet characters mod q evaluated at reduced residue representatives, satisfying row and column orthogonality."
+    },
+    {
+      "id": "s_factorization_characters_via_crt",
+      "kind": "state",
+      "name": "Factorization of characters via CRT",
+      "type_signature": "",
+      "description": "For q = q₁q₂ with gcd(q₁,q₂) = 1, every Dirichlet character χ mod q factors uniquely as χ = χ₁χ₂ via the CRT isomorphism (ℤ/qℤ)* ≅ (ℤ/q₁ℤ)* × (ℤ/q₂ℤ)*."
+    },
+    {
+      "id": "s_dirichlet_l1_evaluation_quadratic_chi",
+      "kind": "theorem",
+      "name": "Dirichlet's L(1, χ) evaluation for quadratic χ",
+      "type_signature": "",
+      "description": "For real primitive χ_D mod |D|, L(1, χ_D) equals an explicit finite sum involving χ_D(a) and log sin(πa/|D|) or linear terms, depending on the sign of D."
+    },
+    {
+      "id": "s_estimate_sum_chi_p_over_p",
+      "kind": "state",
+      "name": "Estimate for ∑ χ(p)/p",
+      "type_signature": "",
+      "description": "For nonprincipal χ mod q, ∑_{p≤x} χ(p)/p = O(1) uniformly in x, while for the principal character the sum equals log log x + M + O(1/log x)."
+    },
+    {
+      "id": "s_mertens_type_estimate_in_ap",
+      "kind": "state",
+      "name": "Mertens-type estimate in arithmetic progressions",
+      "type_signature": "",
+      "description": "∑_{p≤x, p≡a mod q} 1/p = (1/φ(q)) log log x + C(q,a) + O(1/log x) for gcd(a,q) = 1, the analogue of Mertens' second theorem for primes in arithmetic progressions."
+    },
+    {
+      "id": "s_cyclotomic_polynomial_irreducibility",
+      "kind": "theorem",
+      "name": "Cyclotomic polynomial irreducibility over ℚ",
+      "type_signature": "",
+      "description": "The n-th cyclotomic polynomial Φ_n(x) = ∏_{gcd(k,n)=1} (x − e^{2πik/n}) is irreducible over ℚ, equivalently [ℚ(ζ_n):ℚ] = φ(n)."
     }
   ],
   "edges": [
@@ -186917,6 +187253,986 @@
       "role": "output",
       "parameter_binding": {},
       "used_in_theorem": "s_smooth_numbers_short_intervals"
+    },
+    {
+      "id": "e_12740",
+      "from": "s_riemann_zeta_function",
+      "to": "t_contour_integration_arithmetic_functions",
+      "role": "input",
+      "parameter_binding": {
+        "role": "generating function"
+      },
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12741",
+      "from": "s_perron_formula",
+      "to": "t_contour_integration_arithmetic_functions",
+      "role": "input",
+      "parameter_binding": {
+        "role": "inversion formula"
+      },
+      "used_in_theorem": "s_riemann_von_mangoldt_explicit_formula"
+    },
+    {
+      "id": "e_12742",
+      "from": "s_dirichlet_l_function",
+      "to": "t_contour_integration_arithmetic_functions",
+      "role": "input",
+      "parameter_binding": {
+        "role": "L-function input"
+      },
+      "used_in_theorem": "s_pnt_arithmetic_progressions"
+    },
+    {
+      "id": "e_12743",
+      "from": "t_contour_integration_arithmetic_functions",
+      "to": "s_truncated_explicit_formula_psi",
+      "role": "output",
+      "parameter_binding": {
+        "result": "explicit formula with truncated zero sum"
+      },
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12744",
+      "from": "t_contour_integration_arithmetic_functions",
+      "to": "s_riemann_approximate_formula_for_N_T",
+      "role": "output",
+      "parameter_binding": {
+        "result": "N(T) approximation"
+      },
+      "used_in_theorem": "s_riemann_von_mangoldt_explicit_formula"
+    },
+    {
+      "id": "e_12745",
+      "from": "t_contour_integration_arithmetic_functions",
+      "to": "s_further_prime_number_sums",
+      "role": "output",
+      "parameter_binding": {
+        "result": "sums over primes via contour methods"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12746",
+      "from": "s_gauss_sum",
+      "to": "t_character_sum_completion",
+      "role": "input",
+      "parameter_binding": {
+        "role": "completing partial character sum"
+      },
+      "used_in_theorem": "s_polya_vinogradov_inequality"
+    },
+    {
+      "id": "e_12747",
+      "from": "s_dirichlet_character",
+      "to": "t_character_sum_completion",
+      "role": "input",
+      "parameter_binding": {
+        "role": "character being summed"
+      },
+      "used_in_theorem": "s_polya_vinogradov_inequality"
+    },
+    {
+      "id": "e_12748",
+      "from": "t_character_sum_completion",
+      "to": "s_estimate_sum_chi_p_over_p",
+      "role": "output",
+      "parameter_binding": {
+        "result": "estimate of sum chi(p)/p"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12749",
+      "from": "s_major_arcs",
+      "to": "t_major_arc_approximation_via_l_functions",
+      "role": "input",
+      "parameter_binding": {
+        "role": "integration domain"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12750",
+      "from": "s_dirichlet_l_function",
+      "to": "t_major_arc_approximation_via_l_functions",
+      "role": "input",
+      "parameter_binding": {
+        "role": "approximating exponential sums on major arcs"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12751",
+      "from": "s_gauss_sum",
+      "to": "t_major_arc_approximation_via_l_functions",
+      "role": "input",
+      "parameter_binding": {
+        "role": "linking characters to additive exponentials"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12752",
+      "from": "t_major_arc_approximation_via_l_functions",
+      "to": "s_contribution_of_major_arcs",
+      "role": "output",
+      "parameter_binding": {
+        "result": "main term from major arcs"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12753",
+      "from": "t_major_arc_approximation_via_l_functions",
+      "to": "s_singular_series_three_primes",
+      "role": "output",
+      "parameter_binding": {
+        "result": "singular series product"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12754",
+      "from": "s_dirichlet_polynomial",
+      "to": "t_vaughan_proof_bombieri_vinogradov",
+      "role": "input",
+      "parameter_binding": {
+        "role": "bilinear decomposition piece"
+      },
+      "used_in_theorem": "s_bombieri_vinogradov"
+    },
+    {
+      "id": "e_12755",
+      "from": "s_large_sieve_characters",
+      "to": "t_vaughan_proof_bombieri_vinogradov",
+      "role": "input",
+      "parameter_binding": {
+        "role": "mean value estimate over characters"
+      },
+      "used_in_theorem": "s_bombieri_vinogradov"
+    },
+    {
+      "id": "e_12756",
+      "from": "t_vaughan_proof_bombieri_vinogradov",
+      "to": "s_bombieri_vinogradov_as_grh_substitute",
+      "role": "output",
+      "parameter_binding": {
+        "result": "GRH-on-average substitute"
+      },
+      "used_in_theorem": "s_bombieri_vinogradov"
+    },
+    {
+      "id": "e_12757",
+      "from": "t_vaughan_proof_bombieri_vinogradov",
+      "to": "s_application_titchmarsh_divisor_problem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "application to Titchmarsh divisor problem"
+      },
+      "used_in_theorem": "s_bombieri_vinogradov"
+    },
+    {
+      "id": "e_12758",
+      "from": "s_dirichlet_character",
+      "to": "t_reduction_to_primitive_characters",
+      "role": "input",
+      "parameter_binding": {
+        "role": "general character"
+      },
+      "used_in_theorem": "s_siegel_walfisz_theorem"
+    },
+    {
+      "id": "e_12759",
+      "from": "s_conductor_of_character",
+      "to": "t_reduction_to_primitive_characters",
+      "role": "input",
+      "parameter_binding": {
+        "role": "conductor determining primitive character"
+      },
+      "used_in_theorem": "s_siegel_walfisz_theorem"
+    },
+    {
+      "id": "e_12760",
+      "from": "s_primitive_character",
+      "to": "t_reduction_to_primitive_characters",
+      "role": "input",
+      "parameter_binding": {
+        "role": "target primitive character"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12761",
+      "from": "t_reduction_to_primitive_characters",
+      "to": "s_chebyshev_psi_twisted_by_chi",
+      "role": "output",
+      "parameter_binding": {
+        "result": "psi(x,chi) reduced to primitive chi"
+      },
+      "used_in_theorem": "s_siegel_walfisz_theorem"
+    },
+    {
+      "id": "e_12762",
+      "from": "t_reduction_to_primitive_characters",
+      "to": "s_factorization_characters_via_crt",
+      "role": "output",
+      "parameter_binding": {
+        "result": "factorization of characters via CRT"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12763",
+      "from": "s_de_la_vallee_poussin_zero_free_region",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "zero-free region for zeta"
+      },
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12764",
+      "from": "s_riemann_von_mangoldt_explicit_formula",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "explicit formula connecting zeros to primes"
+      },
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12765",
+      "from": "t_de_la_vallee_poussin_proof_strategy",
+      "to": "s_log_zeta_bound_near_sigma_1",
+      "role": "output",
+      "parameter_binding": {
+        "result": "bound on log zeta near sigma=1"
+      },
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12766",
+      "from": "s_hadamard_product_for_xi",
+      "to": "t_zero_counting_argument_principle",
+      "role": "input",
+      "parameter_binding": {
+        "role": "product representation of xi"
+      },
+      "used_in_theorem": "s_riemann_von_mangoldt_explicit_formula"
+    },
+    {
+      "id": "e_12767",
+      "from": "s_hadamard_product_for_xi_chi",
+      "to": "t_zero_counting_argument_principle",
+      "role": "input",
+      "parameter_binding": {
+        "role": "product representation of xi(s,chi)"
+      },
+      "used_in_theorem": "s_asymptotic_n_t_chi"
+    },
+    {
+      "id": "e_12768",
+      "from": "t_zero_counting_argument_principle",
+      "to": "s_s_t_argument_function",
+      "role": "output",
+      "parameter_binding": {
+        "result": "S(T) = (1/pi) arg zeta(1/2+iT)"
+      },
+      "used_in_theorem": "s_riemann_von_mangoldt_explicit_formula"
+    },
+    {
+      "id": "e_12769",
+      "from": "t_zero_counting_argument_principle",
+      "to": "s_n_t_chi_zero_counting",
+      "role": "output",
+      "parameter_binding": {
+        "result": "N(T,chi) counting formula"
+      },
+      "used_in_theorem": "s_asymptotic_n_t_chi"
+    },
+    {
+      "id": "e_12770",
+      "from": "t_zero_counting_argument_principle",
+      "to": "s_asymptotic_n_t_chi",
+      "role": "output",
+      "parameter_binding": {
+        "result": "asymptotic for N(T,chi)"
+      },
+      "used_in_theorem": "s_asymptotic_n_t_chi"
+    },
+    {
+      "id": "e_12771",
+      "from": "s_exponential_sum_over_primes",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "role": "sum to be estimated"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12772",
+      "from": "t_vinogradov_method_exponential_sums",
+      "to": "s_vinogradov_estimate_prime_exponential_sums",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Vinogradov bound on prime exponential sums"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12773",
+      "from": "t_vinogradov_method_exponential_sums",
+      "to": "s_contribution_of_minor_arcs",
+      "role": "output",
+      "parameter_binding": {
+        "result": "minor arc bound via exponential sum estimates"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12774",
+      "from": "s_minor_arcs",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "role": "minor arc domain"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12775",
+      "from": "s_hadamard_factorization_theorem",
+      "to": "t_contour_integration_arithmetic_functions",
+      "role": "input",
+      "parameter_binding": {
+        "role": "product formula for entire functions"
+      },
+      "used_in_theorem": "s_hadamard_product_for_xi_chi"
+    },
+    {
+      "id": "e_12776",
+      "from": "t_contour_integration_arithmetic_functions",
+      "to": "s_hadamard_product_for_xi_chi",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Hadamard product for xi(s,chi)"
+      },
+      "used_in_theorem": "s_hadamard_product_for_xi_chi"
+    },
+    {
+      "id": "e_12777",
+      "from": "t_contour_integration_arithmetic_functions",
+      "to": "s_counting_zeros_entire_order_1",
+      "role": "output",
+      "parameter_binding": {
+        "result": "zero-counting for entire functions of order 1"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12778",
+      "from": "t_contour_integration_arithmetic_functions",
+      "to": "s_generalized_xi_function",
+      "role": "output",
+      "parameter_binding": {
+        "result": "generalized xi function definition and properties"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12779",
+      "from": "s_functional_equation_l_primitive",
+      "to": "t_contour_integration_arithmetic_functions",
+      "role": "input",
+      "parameter_binding": {
+        "role": "functional equation for L-functions"
+      },
+      "used_in_theorem": "s_asymptotic_n_t_chi"
+    },
+    {
+      "id": "e_12780",
+      "from": "t_contour_integration_arithmetic_functions",
+      "to": "s_partial_fraction_l_prime_over_l",
+      "role": "output",
+      "parameter_binding": {
+        "result": "partial fraction for L'/L"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12781",
+      "from": "t_contour_integration_arithmetic_functions",
+      "to": "s_root_number_w_chi",
+      "role": "output",
+      "parameter_binding": {
+        "result": "root number from functional equation"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12782",
+      "from": "s_dirichlet_character_mod_q",
+      "to": "t_extraction_ap_via_characters",
+      "role": "input",
+      "parameter_binding": {
+        "role": "characters mod q for AP extraction"
+      },
+      "used_in_theorem": "s_dirichlet_primes_in_ap"
+    },
+    {
+      "id": "e_12783",
+      "from": "t_extraction_ap_via_characters",
+      "to": "s_logarithmic_density_primes_in_ap",
+      "role": "output",
+      "parameter_binding": {
+        "result": "logarithmic density 1/phi(q) for primes in AP"
+      },
+      "used_in_theorem": "s_dirichlet_primes_in_ap"
+    },
+    {
+      "id": "e_12784",
+      "from": "t_extraction_ap_via_characters",
+      "to": "s_character_table_of_z_qz_star",
+      "role": "output",
+      "parameter_binding": {
+        "result": "character table of (Z/qZ)*"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12785",
+      "from": "s_orthogonality_dirichlet_characters",
+      "to": "t_extraction_ap_via_characters",
+      "role": "input",
+      "parameter_binding": {
+        "role": "orthogonality for extracting AP"
+      },
+      "used_in_theorem": "s_dirichlet_primes_in_ap"
+    },
+    {
+      "id": "e_12786",
+      "from": "s_chinese_remainder_theorem",
+      "to": "t_reduction_to_primitive_characters",
+      "role": "input",
+      "parameter_binding": {
+        "role": "CRT decomposition of characters"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12787",
+      "from": "s_zero_free_region_l_functions",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "zero-free region for L-functions"
+      },
+      "used_in_theorem": "s_siegel_walfisz_theorem"
+    },
+    {
+      "id": "e_12788",
+      "from": "t_de_la_vallee_poussin_proof_strategy",
+      "to": "s_zero_free_region_real_characters_near_t_0",
+      "role": "output",
+      "parameter_binding": {
+        "result": "zero-free region for real characters near t=0"
+      },
+      "used_in_theorem": "s_siegel_theorem_l_functions"
+    },
+    {
+      "id": "e_12789",
+      "from": "s_siegel_zero",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "exceptional zero possibility"
+      },
+      "used_in_theorem": "s_siegel_theorem_l_functions"
+    },
+    {
+      "id": "e_12790",
+      "from": "t_de_la_vallee_poussin_proof_strategy",
+      "to": "s_repulsion_of_zeros_by_exceptional_zero",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Deuring-Heilbronn repulsion from exceptional zero"
+      },
+      "used_in_theorem": "s_deuring_heilbronn_repulsion"
+    },
+    {
+      "id": "e_12791",
+      "from": "t_logarithmic_derivative_of_l",
+      "to": "s_partial_fraction_l_prime_over_l",
+      "role": "output",
+      "parameter_binding": {
+        "result": "partial fraction decomposition of L'/L"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12792",
+      "from": "s_partial_fraction_l_prime_over_l",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "partial fraction for bounding L'/L"
+      },
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12793",
+      "from": "t_nonvanishing_real_chi_via_landau",
+      "to": "s_lower_bound_l1_chi_via_class_number",
+      "role": "output",
+      "parameter_binding": {
+        "result": "L(1,chi) lower bound via class number"
+      },
+      "used_in_theorem": "s_siegel_theorem_l_functions"
+    },
+    {
+      "id": "e_12794",
+      "from": "s_class_number_formula",
+      "to": "t_nonvanishing_real_chi_via_landau",
+      "role": "input",
+      "parameter_binding": {
+        "role": "class number formula linking L(1,chi) to h(d)"
+      },
+      "used_in_theorem": "s_siegel_theorem_l_functions"
+    },
+    {
+      "id": "e_12795",
+      "from": "t_nonvanishing_real_chi_via_landau",
+      "to": "s_finite_expression_l1_chi",
+      "role": "output",
+      "parameter_binding": {
+        "result": "finite closed-form for L(1,chi)"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12796",
+      "from": "t_product_all_l_functions_mod_m",
+      "to": "s_siegel_lemma_l_function_products",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Siegel's lemma on products of L-functions"
+      },
+      "used_in_theorem": "s_siegel_theorem_l_functions"
+    },
+    {
+      "id": "e_12797",
+      "from": "t_product_all_l_functions_mod_m",
+      "to": "s_ineffectivity_in_siegel_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "ineffectivity from product argument"
+      },
+      "used_in_theorem": "s_siegel_theorem_l_functions"
+    },
+    {
+      "id": "e_12798",
+      "from": "s_siegel_theorem_l_functions",
+      "to": "t_product_all_l_functions_mod_m",
+      "role": "input",
+      "parameter_binding": {
+        "role": "Siegel's theorem context"
+      },
+      "used_in_theorem": "s_siegel_theorem_l_functions"
+    },
+    {
+      "id": "e_12799",
+      "from": "t_zero_counting_argument_principle",
+      "to": "s_symmetric_pairing_of_zeros",
+      "role": "output",
+      "parameter_binding": {
+        "result": "symmetric pairing of zeros of xi"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12800",
+      "from": "t_zero_counting_argument_principle",
+      "to": "s_density_of_zeros_near_sigma_1",
+      "role": "output",
+      "parameter_binding": {
+        "result": "density estimate for zeros near sigma=1"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12801",
+      "from": "s_completed_xi_function",
+      "to": "t_zero_counting_argument_principle",
+      "role": "input",
+      "parameter_binding": {
+        "role": "completed xi function"
+      },
+      "used_in_theorem": "s_riemann_von_mangoldt_explicit_formula"
+    },
+    {
+      "id": "e_12802",
+      "from": "s_large_sieve_inequality",
+      "to": "t_vaughan_proof_bombieri_vinogradov",
+      "role": "input",
+      "parameter_binding": {
+        "role": "large sieve inequality"
+      },
+      "used_in_theorem": "s_bombieri_vinogradov"
+    },
+    {
+      "id": "e_12803",
+      "from": "t_circle_method",
+      "to": "s_contribution_of_major_arcs",
+      "role": "output",
+      "parameter_binding": {
+        "result": "major arc contribution"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12804",
+      "from": "t_circle_method",
+      "to": "s_contribution_of_minor_arcs",
+      "role": "output",
+      "parameter_binding": {
+        "result": "minor arc contribution"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12805",
+      "from": "s_mean_value_theorem_dirichlet_polynomials",
+      "to": "t_vaughan_proof_bombieri_vinogradov",
+      "role": "input",
+      "parameter_binding": {
+        "role": "mean value bound for Dirichlet polynomials"
+      },
+      "used_in_theorem": "s_bombieri_vinogradov"
+    },
+    {
+      "id": "e_12806",
+      "from": "t_vaughan_proof_bombieri_vinogradov",
+      "to": "s_large_sieve_as_mean_value_estimate",
+      "role": "output",
+      "parameter_binding": {
+        "result": "large sieve as mean value estimate"
+      },
+      "used_in_theorem": "s_bombieri_vinogradov"
+    },
+    {
+      "id": "e_12807",
+      "from": "s_quadratic_dirichlet_character",
+      "to": "t_nonvanishing_real_chi_via_landau",
+      "role": "input",
+      "parameter_binding": {
+        "role": "real quadratic character"
+      },
+      "used_in_theorem": "s_siegel_theorem_l_functions"
+    },
+    {
+      "id": "e_12808",
+      "from": "t_nonvanishing_real_chi_via_landau",
+      "to": "s_dirichlet_l1_evaluation_quadratic_chi",
+      "role": "output",
+      "parameter_binding": {
+        "result": "evaluation of L(1,chi) for quadratic chi"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12809",
+      "from": "s_fundamental_discriminant",
+      "to": "t_nonvanishing_real_chi_via_landau",
+      "role": "input",
+      "parameter_binding": {
+        "role": "discriminant parametrizing quadratic characters"
+      },
+      "used_in_theorem": "s_class_number_formula"
+    },
+    {
+      "id": "e_12810",
+      "from": "t_nonvanishing_real_chi_via_landau",
+      "to": "s_binary_quadratic_form",
+      "role": "output",
+      "parameter_binding": {
+        "result": "link to binary quadratic forms via class number"
+      },
+      "used_in_theorem": "s_class_number_formula"
+    },
+    {
+      "id": "e_12811",
+      "from": "s_gaussian_periods",
+      "to": "t_extraction_ap_via_characters",
+      "role": "input",
+      "parameter_binding": {
+        "role": "Gauss periods as character sums"
+      },
+      "used_in_theorem": "s_gauss_constructible_regular_polygons"
+    },
+    {
+      "id": "e_12812",
+      "from": "t_extraction_ap_via_characters",
+      "to": "s_gauss_constructible_regular_polygons",
+      "role": "output",
+      "parameter_binding": {
+        "result": "constructibility via period equations"
+      },
+      "used_in_theorem": "s_gauss_constructible_regular_polygons"
+    },
+    {
+      "id": "e_12813",
+      "from": "s_cyclotomic_polynomial_phi_n",
+      "to": "t_extraction_ap_via_characters",
+      "role": "input",
+      "parameter_binding": {
+        "role": "cyclotomic polynomial"
+      },
+      "used_in_theorem": "s_cyclotomic_polynomial_irreducibility"
+    },
+    {
+      "id": "e_12814",
+      "from": "t_extraction_ap_via_characters",
+      "to": "s_cyclotomic_polynomial_irreducibility",
+      "role": "output",
+      "parameter_binding": {
+        "result": "irreducibility of cyclotomic polynomials"
+      },
+      "used_in_theorem": "s_cyclotomic_polynomial_irreducibility"
+    },
+    {
+      "id": "e_12815",
+      "from": "s_chebyshev_psi_twisted_by_chi",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "twisted Chebyshev function"
+      },
+      "used_in_theorem": "s_pnt_arithmetic_progressions"
+    },
+    {
+      "id": "e_12816",
+      "from": "t_de_la_vallee_poussin_proof_strategy",
+      "to": "s_pnt_arithmetic_progressions",
+      "role": "output",
+      "parameter_binding": {
+        "result": "PNT for arithmetic progressions"
+      },
+      "used_in_theorem": "s_pnt_arithmetic_progressions"
+    },
+    {
+      "id": "e_12817",
+      "from": "s_generalized_xi_function",
+      "to": "t_zero_counting_argument_principle",
+      "role": "input",
+      "parameter_binding": {
+        "role": "generalized xi function"
+      },
+      "used_in_theorem": "s_asymptotic_n_t_chi"
+    },
+    {
+      "id": "e_12818",
+      "from": "s_root_number_w_chi",
+      "to": "t_zero_counting_argument_principle",
+      "role": "input",
+      "parameter_binding": {
+        "role": "root number in functional equation"
+      },
+      "used_in_theorem": "s_asymptotic_n_t_chi"
+    },
+    {
+      "id": "e_12819",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_mertens_type_estimate_in_ap",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Mertens-type estimate in arithmetic progressions"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12820",
+      "from": "s_mertens_theorems",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {
+        "role": "Mertens estimates as input"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12821",
+      "from": "s_dirichlet_polynomial",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "role": "Dirichlet polynomial in circle method"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12822",
+      "from": "s_exponential_sum_over_primes",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "role": "generating function for primes"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12823",
+      "from": "s_singular_series_three_primes",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "role": "singular series in asymptotic"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12824",
+      "from": "t_circle_method",
+      "to": "s_vinogradov_three_primes_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "three primes theorem via circle method"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12825",
+      "from": "s_counting_zeros_entire_order_1",
+      "to": "t_zero_counting_argument_principle",
+      "role": "input",
+      "parameter_binding": {
+        "role": "zero-counting for entire functions of order 1"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12826",
+      "from": "s_density_of_zeros_near_sigma_1",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "zero density input for error term"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12827",
+      "from": "s_log_zeta_bound_near_sigma_1",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "log zeta bound in zero-free region"
+      },
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12828",
+      "from": "s_induced_dirichlet_character",
+      "to": "t_reduction_to_primitive_characters",
+      "role": "input",
+      "parameter_binding": {
+        "role": "induced character to reduce"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12829",
+      "from": "t_twisting_by_dirichlet_characters",
+      "to": "s_chebyshev_psi_twisted_by_chi",
+      "role": "output",
+      "parameter_binding": {
+        "result": "twisted Chebyshev function psi(x,chi)"
+      },
+      "used_in_theorem": "s_pnt_arithmetic_progressions"
+    },
+    {
+      "id": "e_12830",
+      "from": "s_gauss_sum_modulus_primitive",
+      "to": "t_character_sum_completion",
+      "role": "input",
+      "parameter_binding": {
+        "role": "|tau(chi)|=sqrt(q) for primitive chi"
+      },
+      "used_in_theorem": "s_polya_vinogradov_inequality"
+    },
+    {
+      "id": "e_12831",
+      "from": "s_repulsion_of_zeros_by_exceptional_zero",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "repulsion effect of exceptional zero"
+      },
+      "used_in_theorem": "s_siegel_walfisz_theorem"
+    },
+    {
+      "id": "e_12832",
+      "from": "t_de_la_vallee_poussin_proof_strategy",
+      "to": "s_siegel_walfisz_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Siegel-Walfisz theorem via zero-free region"
+      },
+      "used_in_theorem": "s_siegel_walfisz_theorem"
+    },
+    {
+      "id": "e_12833",
+      "from": "s_riemann_xi_function",
+      "to": "t_zero_counting_argument_principle",
+      "role": "input",
+      "parameter_binding": {
+        "role": "xi function with symmetric zeros"
+      },
+      "used_in_theorem": "s_riemann_von_mangoldt_explicit_formula"
+    },
+    {
+      "id": "e_12834",
+      "from": "s_truncated_explicit_formula_psi",
+      "to": "t_de_la_vallee_poussin_proof_strategy",
+      "role": "input",
+      "parameter_binding": {
+        "role": "truncated explicit formula"
+      },
+      "used_in_theorem": "s_prime_number_theorem"
+    },
+    {
+      "id": "e_12835",
+      "from": "s_riemann_approximate_formula_for_N_T",
+      "to": "t_zero_counting_argument_principle",
+      "role": "input",
+      "parameter_binding": {
+        "role": "approximate formula for N(T)"
+      },
+      "used_in_theorem": "s_riemann_von_mangoldt_explicit_formula"
+    },
+    {
+      "id": "e_12836",
+      "from": "s_vinogradov_estimate_prime_exponential_sums",
+      "to": "t_major_arc_approximation_via_l_functions",
+      "role": "input",
+      "parameter_binding": {
+        "role": "exponential sum bound complementing major arc analysis"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_12837",
+      "from": "t_character_sum_completion",
+      "to": "s_character_table_of_z_qz_star",
+      "role": "output",
+      "parameter_binding": {
+        "result": "complete character table"
+      },
+      "used_in_theorem": ""
     }
   ],
   "subgraphs": [
