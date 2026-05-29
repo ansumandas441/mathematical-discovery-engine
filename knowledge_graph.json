@@ -76999,6 +76999,454 @@
       "name": "Character Theory for Simplicity Proofs",
       "function_signature": "(Finite group G, character table) -> (Proof of simplicity or identification of normal subgroups)",
       "description": "Using the fact that normal subgroups are exactly unions of conjugacy classes and kernels of characters to prove simplicity by showing no proper nontrivial subset of conjugacy classes satisfies the closure conditions, applied classically to A_n and PSL_2(F_q)."
+    },
+    {
+      "id": "s_von_dycks_theorem",
+      "kind": "theorem",
+      "name": "Von Dyck's theorem",
+      "description": "If G = ⟨S | R⟩ is a group presentation and H is any group whose generators satisfy the relations R, then there exists a surjective homomorphism G → H.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_chief_series",
+      "kind": "state",
+      "name": "Chief series",
+      "description": "A normal series G = G₀ ▷ G₁ ▷ ··· ▷ Gₙ = {e} where each Gᵢ is normal in G and each factor Gᵢ/Gᵢ₊₁ is a minimal normal subgroup of G/Gᵢ₊₁.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_chief_factors",
+      "kind": "state",
+      "name": "Chief factors",
+      "description": "The factor groups Gᵢ/Gᵢ₊₁ of a chief series, each of which is characteristically simple.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_indecomposable_group",
+      "kind": "axiom",
+      "name": "Indecomposable group",
+      "description": "A nontrivial group that cannot be expressed as a direct product of two nontrivial subgroups.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_krull_schmidt_theorem_groups",
+      "kind": "theorem",
+      "name": "Krull-Schmidt theorem for groups",
+      "description": "If a group G satisfies both ACC and DCC on normal subgroups, then any two decompositions of G into direct products of indecomposable factors have the same number of factors, and the factors are pairwise isomorphic up to reordering.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_free_product_with_amalgamation",
+      "kind": "axiom",
+      "name": "Free product with amalgamation",
+      "description": "For groups G₁, G₂ and monomorphisms φᵢ: H → Gᵢ, the quotient of the free product G₁ * G₂ by the normal closure of {φ₁(h)φ₂(h)⁻¹ : h ∈ H}.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_subnormal_subgroup",
+      "kind": "axiom",
+      "name": "Subnormal subgroup",
+      "description": "A subgroup H of G for which there exists a finite chain H = Hₖ ◁ Hₖ₋₁ ◁ ··· ◁ H₀ = G where each term is normal in its predecessor.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_zero_divisor",
+      "kind": "axiom",
+      "name": "Zero divisor",
+      "description": "A nonzero element a of a ring R such that ab = 0 or ba = 0 for some nonzero b ∈ R.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_nil_ideal",
+      "kind": "axiom",
+      "name": "Nil ideal",
+      "description": "An ideal of a ring in which every element is nilpotent.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_nilpotent_ideal",
+      "kind": "axiom",
+      "name": "Nilpotent ideal",
+      "description": "An ideal I of a ring R such that Iⁿ = 0 for some positive integer n.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_primitive_ring",
+      "kind": "axiom",
+      "name": "Primitive ring",
+      "description": "A ring possessing a faithful simple left module.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_semiprimitive_ring",
+      "kind": "axiom",
+      "name": "Semiprimitive ring",
+      "description": "A ring R whose Jacobson radical is zero: J(R) = 0.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_dense_ring_of_linear_transformations",
+      "kind": "state",
+      "name": "Dense ring of linear transformations",
+      "description": "A subring D of End_k(V) such that for any finite linearly independent set v₁,...,vₙ and arbitrary w₁,...,wₙ, there exists d ∈ D with d(vᵢ) = wᵢ.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_group_ring",
+      "kind": "axiom",
+      "name": "Group ring",
+      "description": "For a ring R and group G, the ring R[G] of formal finite sums Σ aᵍg with convolution multiplication.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_semiprime_ring",
+      "kind": "axiom",
+      "name": "Semiprime ring",
+      "description": "A ring with no nonzero nilpotent two-sided ideals.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_essential_submodule",
+      "kind": "axiom",
+      "name": "Essential submodule",
+      "description": "A submodule N of M such that N ∩ K ≠ 0 for every nonzero submodule K of M.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_divisible_abelian_group",
+      "kind": "axiom",
+      "name": "Divisible abelian group",
+      "description": "An abelian group D such that for every d ∈ D and nonzero integer n, there exists x ∈ D with nx = d.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_invariant_basis_number",
+      "kind": "state",
+      "name": "Invariant basis number",
+      "description": "A ring R has IBN if any two bases of a free R-module have the same cardinality; all commutative rings and all left-Noetherian rings have IBN.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_comparison_theorem_resolutions",
+      "kind": "theorem",
+      "name": "Comparison theorem for resolutions",
+      "description": "Given a module map f: M → N and projective resolutions P• → M and Q• → N, there exists a chain map lifting f, unique up to chain homotopy.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_torsion_module",
+      "kind": "state",
+      "name": "Torsion module",
+      "description": "An R-module M over a domain such that every element is torsion: for each m ∈ M there exists nonzero r ∈ R with rm = 0.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_cyclic_module",
+      "kind": "axiom",
+      "name": "Cyclic module",
+      "description": "An R-module generated by a single element, isomorphic to R/I for some left ideal I.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_progenerator",
+      "kind": "state",
+      "name": "Progenerator",
+      "description": "A finitely generated projective generator module; rings R and S are Morita equivalent iff S ≅ End_R(P) for a progenerator P.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_endomorphism_ring_module",
+      "kind": "axiom",
+      "name": "Endomorphism ring of a module",
+      "description": "The ring End_R(M) = Hom_R(M, M) with composition as multiplication, for an R-module M.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_maclane_separability_criterion",
+      "kind": "theorem",
+      "name": "MacLane separability criterion",
+      "description": "A field extension F/K in characteristic p is separable if and only if F and K^{1/p} are linearly disjoint over K.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_separating_transcendence_basis",
+      "kind": "state",
+      "name": "Separating transcendence basis",
+      "description": "A transcendence basis B of F/K such that F is separable algebraic over K(B).",
+      "type_signature": ""
+    },
+    {
+      "id": "s_separable_closure_in_extension",
+      "kind": "state",
+      "name": "Separable closure in an extension",
+      "description": "For F/K, the subfield Kₛ of elements separable over K; F/Kₛ is purely inseparable and Kₛ/K is separable.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_compositum_of_fields",
+      "kind": "axiom",
+      "name": "Compositum of fields",
+      "description": "For subfields E, F of a common overfield containing K, the smallest subfield containing both E and F.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_artin_schreier_map",
+      "kind": "state",
+      "name": "Artin-Schreier map",
+      "description": "The additive map ℘: K → K defined by ℘(x) = xᵖ − x in characteristic p, whose cokernel K/℘(K) classifies cyclic extensions of degree p.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_natural_transformation",
+      "kind": "axiom",
+      "name": "Natural transformation",
+      "description": "Given functors F, G: C → D, a family of morphisms ηₐ: F(A) → G(A) indexed by objects of C such that G(f)∘ηₐ = ηᵦ∘F(f) for every morphism f: A → B.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_functor_category",
+      "kind": "axiom",
+      "name": "Functor category",
+      "description": "The category [C, D] whose objects are functors C → D and whose morphisms are natural transformations.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_equalizer",
+      "kind": "axiom",
+      "name": "Equalizer",
+      "description": "For parallel morphisms f, g: A → B in a category, an object E with e: E → A satisfying fe = ge, universal among such.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_coequalizer",
+      "kind": "axiom",
+      "name": "Coequalizer",
+      "description": "For parallel morphisms f, g: A → B, an object Q with q: B → Q satisfying qf = qg, universal among such; the categorical dual of equalizer.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_pullback_categorical",
+      "kind": "axiom",
+      "name": "Pullback (categorical)",
+      "description": "For morphisms f: A → C and g: B → C, a limit over the diagram A → C ← B; the categorical fiber product.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_pushout_categorical",
+      "kind": "axiom",
+      "name": "Pushout (categorical)",
+      "description": "For morphisms f: C → A and g: C → B, a colimit over the diagram A ← C → B; the categorical dual of pullback.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_complete_category",
+      "kind": "axiom",
+      "name": "Complete category",
+      "description": "A category in which all small limits exist.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_cocomplete_category",
+      "kind": "axiom",
+      "name": "Cocomplete category",
+      "description": "A category in which all small colimits exist.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_initial_object",
+      "kind": "axiom",
+      "name": "Initial object",
+      "description": "An object I in a category such that for every object A there exists exactly one morphism I → A.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_terminal_object",
+      "kind": "axiom",
+      "name": "Terminal object",
+      "description": "An object T in a category such that for every object A there exists exactly one morphism A → T.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_zero_object_category",
+      "kind": "axiom",
+      "name": "Zero object (category)",
+      "description": "An object that is both initial and terminal in a category.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_cone_over_diagram",
+      "kind": "state",
+      "name": "Cone over a diagram",
+      "description": "A family of morphisms from a fixed object to each object in a diagram, compatible with the diagram morphisms.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_cocone_under_diagram",
+      "kind": "state",
+      "name": "Cocone under a diagram",
+      "description": "A family of morphisms from each diagram object to a fixed object, compatible with the diagram morphisms.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_unit_of_adjunction",
+      "kind": "state",
+      "name": "Unit of adjunction",
+      "description": "The natural transformation η: Id_C → GF defined by η_A corresponding to id_{F(A)} under the adjunction bijection Hom(FA,FA) ≅ Hom(A,GFA).",
+      "type_signature": ""
+    },
+    {
+      "id": "s_counit_of_adjunction",
+      "kind": "state",
+      "name": "Counit of adjunction",
+      "description": "The natural transformation ε: FG → Id_D defined by ε_B corresponding to id_{G(B)} under the adjunction bijection.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_additive_functor",
+      "kind": "axiom",
+      "name": "Additive functor",
+      "description": "A functor F between additive categories such that F: Hom(A,B) → Hom(FA,FB) is a group homomorphism for all A, B.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_image_in_abelian_category",
+      "kind": "state",
+      "name": "Image in abelian category",
+      "description": "For a morphism f in an abelian category, im(f) = ker(coker(f)), the smallest subobject through which f factors.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_triangle_identities_adjunction",
+      "kind": "theorem",
+      "name": "Triangle identities for adjunction",
+      "description": "For an adjunction (F ⊣ G, η, ε), the composites εF∘Fη = id_F and Gε∘ηG = id_G hold.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_limits_from_products_and_equalizers",
+      "kind": "theorem",
+      "name": "Limits from products and equalizers",
+      "description": "A category has all small limits if and only if it has all small products and all equalizers.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_colimits_from_coproducts_and_coequalizers",
+      "kind": "theorem",
+      "name": "Colimits from coproducts and coequalizers",
+      "description": "A category has all small colimits if and only if it has all small coproducts and all coequalizers.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_right_adjoints_preserve_limits",
+      "kind": "theorem",
+      "name": "Right adjoints preserve limits",
+      "description": "If a functor G has a left adjoint, then G preserves all small limits.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_left_adjoints_preserve_colimits",
+      "kind": "theorem",
+      "name": "Left adjoints preserve colimits",
+      "description": "If a functor F has a right adjoint, then F preserves all small colimits.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_characterization_equivalence_categories",
+      "kind": "theorem",
+      "name": "Characterization of equivalence of categories",
+      "description": "A functor F: C → D is an equivalence of categories iff F is full, faithful, and essentially surjective.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_p_primary_component",
+      "kind": "state",
+      "name": "p-primary component",
+      "description": "For a prime p in a PID R and torsion module M, the submodule M_p = {m ∈ M : p^k m = 0 for some k ≥ 1}.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_matrix_equivalence",
+      "kind": "axiom",
+      "name": "Matrix equivalence",
+      "description": "Matrices A and B over a ring R are equivalent if B = PAQ for invertible matrices P, Q.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_matrix_similarity",
+      "kind": "axiom",
+      "name": "Matrix similarity",
+      "description": "Matrices A and B over a field F are similar if B = P⁻¹AP for some invertible P.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_embedded_associated_prime",
+      "kind": "state",
+      "name": "Embedded associated prime",
+      "description": "An associated prime of an ideal that properly contains another associated prime.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_isolated_associated_prime",
+      "kind": "state",
+      "name": "Isolated associated prime",
+      "description": "An associated prime of an ideal that is minimal among all associated primes.",
+      "type_signature": ""
+    },
+    {
+      "id": "s_minimal_primary_decomposition",
+      "kind": "state",
+      "name": "Minimal primary decomposition",
+      "description": "A primary decomposition I = Q₁ ∩ ··· ∩ Qₙ where no Qᵢ is redundant and all associated primes rad(Qᵢ) are distinct.",
+      "type_signature": ""
+    },
+    {
+      "id": "t_von_dyck_presentation_argument",
+      "kind": "technique",
+      "name": "Von Dyck presentation argument",
+      "description": "Construct an epimorphism from a presented group to any group whose generators satisfy the given relations.",
+      "type_signature": "(Group presentation ⟨S|R⟩, group H satisfying R) → Surjective homomorphism ⟨S|R⟩ → H"
+    },
+    {
+      "id": "t_horseshoe_lemma_construction",
+      "kind": "technique",
+      "name": "Horseshoe lemma construction",
+      "description": "Construct a projective resolution of the middle term from resolutions of the outer terms using direct sums.",
+      "type_signature": "(SES 0→A→B→C→0, proj. resolutions of A and C) → Projective resolution of B"
+    },
+    {
+      "id": "t_comparison_theorem_lifting",
+      "kind": "technique",
+      "name": "Comparison theorem lifting",
+      "description": "Lift a module homomorphism to a chain map between projective resolutions, unique up to chain homotopy.",
+      "type_signature": "(Module map f: M→N, proj. resolutions P•→M, Q•→N) → Chain map F: P•→Q• lifting f"
+    },
+    {
+      "id": "t_universal_property_argument",
+      "kind": "technique",
+      "name": "Universal property argument",
+      "description": "Verify existence and uniqueness of morphisms by checking the universal property diagram commutes.",
+      "type_signature": "(Universal property of a construction, candidate morphism) → Unique morphism with prescribed behavior"
+    },
+    {
+      "id": "t_yoneda_argument",
+      "kind": "technique",
+      "name": "Yoneda argument",
+      "description": "Use the bijection Nat(Hom(A,−), F) ≅ F(A) to reduce categorical statements to set-theoretic ones.",
+      "type_signature": "(Objects or functors to compare) → Isomorphisms or natural transformations via Yoneda bijection"
+    },
+    {
+      "id": "t_adjunction_construction_universal_arrows",
+      "kind": "technique",
+      "name": "Adjunction construction via universal arrows",
+      "description": "Assemble universal arrows into an adjoint functor pair.",
+      "type_signature": "(Universal arrows from objects to functor G) → Left adjoint F to G with unit η"
+    },
+    {
+      "id": "t_diagram_chasing_abelian_categories",
+      "kind": "technique",
+      "name": "Diagram chasing in abelian categories",
+      "description": "Chase elements through diagrams using the embedding theorem to prove exactness or isomorphism results.",
+      "type_signature": "(Commutative diagram with exact rows/columns in abelian category) → Exactness statements and connecting morphisms"
     }
   ],
   "edges": [
@@ -199964,6 +200412,1446 @@
       "parameter_binding": {
         "context": "degree_bound_on_roots"
       },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13681",
+      "from": "s_von_dycks_theorem",
+      "to": "t_von_dyck_presentation_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_von_dycks_theorem"
+    },
+    {
+      "id": "e_13682",
+      "from": "s_group_presentation",
+      "to": "t_von_dyck_presentation_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_von_dycks_theorem"
+    },
+    {
+      "id": "e_13683",
+      "from": "t_von_dyck_presentation_argument",
+      "to": "s_von_dycks_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_von_dycks_theorem"
+    },
+    {
+      "id": "e_13684",
+      "from": "t_von_dyck_presentation_argument",
+      "to": "s_surjection",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13685",
+      "from": "s_chief_series",
+      "to": "t_composition_series_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13686",
+      "from": "s_normal_subgroup",
+      "to": "t_composition_series_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13687",
+      "from": "t_composition_series_analysis",
+      "to": "s_chief_series",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13688",
+      "from": "t_composition_series_analysis",
+      "to": "s_chief_factors",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13689",
+      "from": "s_chief_factors",
+      "to": "t_composition_series_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13690",
+      "from": "s_indecomposable_group",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_krull_schmidt_theorem_groups"
+    },
+    {
+      "id": "e_13691",
+      "from": "s_direct_product_of_groups",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_krull_schmidt_theorem_groups"
+    },
+    {
+      "id": "e_13692",
+      "from": "t_universal_property_argument",
+      "to": "s_krull_schmidt_theorem_groups",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_krull_schmidt_theorem_groups"
+    },
+    {
+      "id": "e_13693",
+      "from": "s_free_product",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13694",
+      "from": "s_free_product_with_amalgamation",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13695",
+      "from": "t_universal_property_argument",
+      "to": "s_free_product_with_amalgamation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13696",
+      "from": "s_amalgamated_free_product",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13697",
+      "from": "s_subnormal_subgroup",
+      "to": "t_composition_series_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13698",
+      "from": "s_normal_subgroup",
+      "to": "t_composition_series_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13699",
+      "from": "t_composition_series_analysis",
+      "to": "s_subnormal_subgroup",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13700",
+      "from": "s_zero_divisor",
+      "to": "t_radical_extension_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13701",
+      "from": "s_integral_domain",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13702",
+      "from": "t_universal_property_argument",
+      "to": "s_zero_divisor",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13703",
+      "from": "s_nil_ideal",
+      "to": "t_radical_extension_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13704",
+      "from": "s_nilpotent_ideal",
+      "to": "t_radical_extension_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13705",
+      "from": "s_nilpotent_element",
+      "to": "t_radical_extension_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13706",
+      "from": "t_radical_extension_analysis",
+      "to": "s_nil_ideal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13707",
+      "from": "t_radical_extension_analysis",
+      "to": "s_nilpotent_ideal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13708",
+      "from": "s_primitive_ring",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13709",
+      "from": "s_simple_module",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13710",
+      "from": "t_representations_as_modules",
+      "to": "s_primitive_ring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13711",
+      "from": "s_semiprimitive_ring",
+      "to": "t_radical_extension_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13712",
+      "from": "s_jacobson_radical_of_a_ring",
+      "to": "t_radical_extension_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13713",
+      "from": "t_radical_extension_analysis",
+      "to": "s_semiprimitive_ring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13714",
+      "from": "s_dense_ring_of_linear_transformations",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13715",
+      "from": "s_jacobson_density_theorem",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13716",
+      "from": "t_representations_as_modules",
+      "to": "s_dense_ring_of_linear_transformations",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13717",
+      "from": "s_group_ring",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13718",
+      "from": "t_representations_as_modules",
+      "to": "s_group_ring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13719",
+      "from": "s_maschke_theorem",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13720",
+      "from": "s_semiprime_ring",
+      "to": "t_radical_extension_analysis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13721",
+      "from": "t_radical_extension_analysis",
+      "to": "s_semiprime_ring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13722",
+      "from": "s_essential_submodule",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13723",
+      "from": "s_injective_module",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13724",
+      "from": "t_universal_property_argument",
+      "to": "s_essential_submodule",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13725",
+      "from": "s_divisible_abelian_group",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13726",
+      "from": "t_universal_property_argument",
+      "to": "s_divisible_abelian_group",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13727",
+      "from": "s_horseshoe_lemma",
+      "to": "t_horseshoe_lemma_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_horseshoe_lemma"
+    },
+    {
+      "id": "e_13728",
+      "from": "s_short_exact_sequence",
+      "to": "t_horseshoe_lemma_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_horseshoe_lemma"
+    },
+    {
+      "id": "e_13729",
+      "from": "s_projective_resolution",
+      "to": "t_horseshoe_lemma_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_horseshoe_lemma"
+    },
+    {
+      "id": "e_13730",
+      "from": "t_horseshoe_lemma_construction",
+      "to": "s_projective_resolution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_horseshoe_lemma"
+    },
+    {
+      "id": "e_13731",
+      "from": "s_invariant_basis_number",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13732",
+      "from": "s_free_module",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13733",
+      "from": "t_universal_property_argument",
+      "to": "s_invariant_basis_number",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13734",
+      "from": "s_comparison_theorem_resolutions",
+      "to": "t_comparison_theorem_lifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_comparison_theorem_resolutions"
+    },
+    {
+      "id": "e_13735",
+      "from": "s_projective_resolution",
+      "to": "t_comparison_theorem_lifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_comparison_theorem_resolutions"
+    },
+    {
+      "id": "e_13736",
+      "from": "s_module_homomorphism",
+      "to": "t_comparison_theorem_lifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_comparison_theorem_resolutions"
+    },
+    {
+      "id": "e_13737",
+      "from": "t_comparison_theorem_lifting",
+      "to": "s_comparison_theorem_resolutions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_comparison_theorem_resolutions"
+    },
+    {
+      "id": "e_13738",
+      "from": "s_torsion_module",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13739",
+      "from": "s_torsion_submodule",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13740",
+      "from": "t_universal_property_argument",
+      "to": "s_torsion_module",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13741",
+      "from": "s_cyclic_module",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13742",
+      "from": "t_universal_property_argument",
+      "to": "s_cyclic_module",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13743",
+      "from": "s_progenerator",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13744",
+      "from": "s_projective_module",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13745",
+      "from": "s_morita_equivalence",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13746",
+      "from": "t_universal_property_argument",
+      "to": "s_progenerator",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13747",
+      "from": "s_endomorphism_ring_module",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13748",
+      "from": "s_endomorphism_ring",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13749",
+      "from": "t_representations_as_modules",
+      "to": "s_endomorphism_ring_module",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13750",
+      "from": "s_maclane_separability_criterion",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maclane_separability_criterion"
+    },
+    {
+      "id": "e_13751",
+      "from": "s_separable_extension",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maclane_separability_criterion"
+    },
+    {
+      "id": "e_13752",
+      "from": "s_linearly_disjoint_extensions",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maclane_separability_criterion"
+    },
+    {
+      "id": "e_13753",
+      "from": "t_galois_correspondence",
+      "to": "s_maclane_separability_criterion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maclane_separability_criterion"
+    },
+    {
+      "id": "e_13754",
+      "from": "s_separating_transcendence_basis",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13755",
+      "from": "s_transcendence_basis",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13756",
+      "from": "t_galois_correspondence",
+      "to": "s_separating_transcendence_basis",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13757",
+      "from": "s_separable_closure_in_extension",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13758",
+      "from": "s_purely_inseparable_extension",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13759",
+      "from": "t_galois_correspondence",
+      "to": "s_separable_closure_in_extension",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13760",
+      "from": "s_compositum_of_fields",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13761",
+      "from": "t_galois_correspondence",
+      "to": "s_compositum_of_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13762",
+      "from": "s_artin_schreier_map",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13763",
+      "from": "s_artin_schreier_theorem",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13764",
+      "from": "t_galois_correspondence",
+      "to": "s_artin_schreier_map",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13765",
+      "from": "s_natural_transformation",
+      "to": "t_yoneda_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13766",
+      "from": "s_functor_F_between_small_categories",
+      "to": "t_yoneda_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13767",
+      "from": "t_yoneda_argument",
+      "to": "s_natural_transformation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13768",
+      "from": "s_functor_category",
+      "to": "t_yoneda_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13769",
+      "from": "s_natural_transformation",
+      "to": "t_yoneda_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13770",
+      "from": "t_yoneda_argument",
+      "to": "s_functor_category",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13771",
+      "from": "s_equalizer",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13772",
+      "from": "t_universal_property_argument",
+      "to": "s_equalizer",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13773",
+      "from": "s_coequalizer",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13774",
+      "from": "t_universal_property_argument",
+      "to": "s_coequalizer",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13775",
+      "from": "s_pullback_categorical",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13776",
+      "from": "t_universal_property_argument",
+      "to": "s_pullback_categorical",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13777",
+      "from": "s_pushout_categorical",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13778",
+      "from": "t_universal_property_argument",
+      "to": "s_pushout_categorical",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13779",
+      "from": "s_complete_category",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13780",
+      "from": "s_product_of_objects_in_a_category",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13781",
+      "from": "s_equalizer",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13782",
+      "from": "t_universal_property_argument",
+      "to": "s_complete_category",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13783",
+      "from": "s_cocomplete_category",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13784",
+      "from": "s_coproduct_of_objects_in_a_category",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13785",
+      "from": "s_coequalizer",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13786",
+      "from": "t_universal_property_argument",
+      "to": "s_cocomplete_category",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13787",
+      "from": "s_initial_object",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13788",
+      "from": "t_universal_property_argument",
+      "to": "s_initial_object",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13789",
+      "from": "s_terminal_object",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13790",
+      "from": "t_universal_property_argument",
+      "to": "s_terminal_object",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13791",
+      "from": "s_zero_object_category",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13792",
+      "from": "s_initial_object",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13793",
+      "from": "s_terminal_object",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13794",
+      "from": "t_universal_property_argument",
+      "to": "s_zero_object_category",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13795",
+      "from": "s_cone_over_diagram",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13796",
+      "from": "t_universal_property_argument",
+      "to": "s_cone_over_diagram",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13797",
+      "from": "s_cocone_under_diagram",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13798",
+      "from": "t_universal_property_argument",
+      "to": "s_cocone_under_diagram",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13799",
+      "from": "s_unit_of_adjunction",
+      "to": "t_adjunction_construction_universal_arrows",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13800",
+      "from": "s_adjoint_functor_pair",
+      "to": "t_adjunction_construction_universal_arrows",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13801",
+      "from": "t_adjunction_construction_universal_arrows",
+      "to": "s_unit_of_adjunction",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13802",
+      "from": "s_counit_of_adjunction",
+      "to": "t_adjunction_construction_universal_arrows",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13803",
+      "from": "t_adjunction_construction_universal_arrows",
+      "to": "s_counit_of_adjunction",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13804",
+      "from": "s_additive_functor",
+      "to": "t_diagram_chasing_abelian_categories",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13805",
+      "from": "s_additive_category",
+      "to": "t_diagram_chasing_abelian_categories",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13806",
+      "from": "t_diagram_chasing_abelian_categories",
+      "to": "s_additive_functor",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13807",
+      "from": "s_image_in_abelian_category",
+      "to": "t_diagram_chasing_abelian_categories",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13808",
+      "from": "s_abelian_category",
+      "to": "t_diagram_chasing_abelian_categories",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13809",
+      "from": "t_diagram_chasing_abelian_categories",
+      "to": "s_image_in_abelian_category",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13810",
+      "from": "s_enough_projectives",
+      "to": "t_comparison_theorem_lifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13811",
+      "from": "s_enough_injectives",
+      "to": "t_horseshoe_lemma_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13812",
+      "from": "s_unit_of_adjunction",
+      "to": "t_adjunction_construction_universal_arrows",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_triangle_identities_adjunction"
+    },
+    {
+      "id": "e_13813",
+      "from": "s_counit_of_adjunction",
+      "to": "t_adjunction_construction_universal_arrows",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_triangle_identities_adjunction"
+    },
+    {
+      "id": "e_13814",
+      "from": "t_adjunction_construction_universal_arrows",
+      "to": "s_triangle_identities_adjunction",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_triangle_identities_adjunction"
+    },
+    {
+      "id": "e_13815",
+      "from": "s_product_of_objects_in_a_category",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_limits_from_products_and_equalizers"
+    },
+    {
+      "id": "e_13816",
+      "from": "s_equalizer",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_limits_from_products_and_equalizers"
+    },
+    {
+      "id": "e_13817",
+      "from": "t_universal_property_argument",
+      "to": "s_limits_from_products_and_equalizers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_limits_from_products_and_equalizers"
+    },
+    {
+      "id": "e_13818",
+      "from": "s_coproduct_of_objects_in_a_category",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_colimits_from_coproducts_and_coequalizers"
+    },
+    {
+      "id": "e_13819",
+      "from": "s_coequalizer",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_colimits_from_coproducts_and_coequalizers"
+    },
+    {
+      "id": "e_13820",
+      "from": "t_universal_property_argument",
+      "to": "s_colimits_from_coproducts_and_coequalizers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_colimits_from_coproducts_and_coequalizers"
+    },
+    {
+      "id": "e_13821",
+      "from": "s_adjoint_functor_pair",
+      "to": "t_adjunction_construction_universal_arrows",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_right_adjoints_preserve_limits"
+    },
+    {
+      "id": "e_13822",
+      "from": "t_adjunction_construction_universal_arrows",
+      "to": "s_right_adjoints_preserve_limits",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_right_adjoints_preserve_limits"
+    },
+    {
+      "id": "e_13823",
+      "from": "s_adjoint_functor_pair",
+      "to": "t_adjunction_construction_universal_arrows",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_left_adjoints_preserve_colimits"
+    },
+    {
+      "id": "e_13824",
+      "from": "s_colimit",
+      "to": "t_adjunction_construction_universal_arrows",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_left_adjoints_preserve_colimits"
+    },
+    {
+      "id": "e_13825",
+      "from": "t_adjunction_construction_universal_arrows",
+      "to": "s_left_adjoints_preserve_colimits",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_left_adjoints_preserve_colimits"
+    },
+    {
+      "id": "e_13826",
+      "from": "s_characterization_equivalence_categories",
+      "to": "t_yoneda_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characterization_equivalence_categories"
+    },
+    {
+      "id": "e_13827",
+      "from": "s_yoneda_lemma",
+      "to": "t_yoneda_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characterization_equivalence_categories"
+    },
+    {
+      "id": "e_13828",
+      "from": "t_yoneda_argument",
+      "to": "s_characterization_equivalence_categories",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characterization_equivalence_categories"
+    },
+    {
+      "id": "e_13829",
+      "from": "s_p_primary_component",
+      "to": "t_partial_fraction_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13830",
+      "from": "s_structure_theorem_for_modules_over_a_pid",
+      "to": "t_partial_fraction_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13831",
+      "from": "t_partial_fraction_decomposition",
+      "to": "s_p_primary_component",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13832",
+      "from": "s_torsion_module",
+      "to": "t_partial_fraction_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13833",
+      "from": "s_matrix_equivalence",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13834",
+      "from": "s_smith_normal_form_theorem",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13835",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_matrix_equivalence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13836",
+      "from": "s_matrix_similarity",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13837",
+      "from": "s_invariant_factor_decomposition",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13838",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_matrix_similarity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13839",
+      "from": "s_associated_prime",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13840",
+      "from": "t_localization_at_prime",
+      "to": "s_embedded_associated_prime",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13841",
+      "from": "t_localization_at_prime",
+      "to": "s_isolated_associated_prime",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13842",
+      "from": "s_embedded_associated_prime",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13843",
+      "from": "s_isolated_associated_prime",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13844",
+      "from": "s_primary_ideal",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13845",
+      "from": "s_uniqueness_primary_decomposition",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13846",
+      "from": "t_localization_at_prime",
+      "to": "s_minimal_primary_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13847",
+      "from": "s_minimal_primary_decomposition",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13848",
+      "from": "s_free_group",
+      "to": "t_von_dyck_presentation_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13849",
+      "from": "t_horseshoe_lemma_construction",
+      "to": "s_direct_sum_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13850",
+      "from": "t_comparison_theorem_lifting",
+      "to": "s_chain_homotopy_equivalence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13851",
+      "from": "s_representable_functor",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13852",
+      "from": "s_yoneda_lemma",
+      "to": "t_yoneda_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13853",
+      "from": "s_representable_functor",
+      "to": "t_yoneda_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13854",
+      "from": "s_adjoint_functor_theorem",
+      "to": "t_adjunction_construction_universal_arrows",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13855",
+      "from": "t_adjunction_construction_universal_arrows",
+      "to": "s_adjoint_functor_pair",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13856",
+      "from": "s_snake_lemma",
+      "to": "t_diagram_chasing_abelian_categories",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13857",
+      "from": "s_five_lemma",
+      "to": "t_diagram_chasing_abelian_categories",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13858",
+      "from": "s_mitchell_embedding_theorem",
+      "to": "t_diagram_chasing_abelian_categories",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13859",
+      "from": "s_exact_sequence",
+      "to": "t_diagram_chasing_abelian_categories",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13860",
+      "from": "t_diagram_chasing_abelian_categories",
+      "to": "s_exact_sequence",
+      "role": "output",
+      "parameter_binding": {},
       "used_in_theorem": ""
     }
   ],
