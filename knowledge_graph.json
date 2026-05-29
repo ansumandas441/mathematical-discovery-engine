@@ -74712,6 +74712,482 @@
       "aliases": [
         "elliptic curve group law"
       ]
+    },
+    {
+      "id": "s_polygonal_number",
+      "kind": "axiom",
+      "name": "Polygonal number p_m(k)",
+      "type_signature": "ℕ × ℕ → ℕ",
+      "description": "The k-th m-gonal number p_m(k) = (m−2)·k(k−1)/2 + k, generalizing triangular, square, and pentagonal numbers to arbitrary polygon order m ≥ 3."
+    },
+    {
+      "id": "s_cauchy_polygonal_number_theorem",
+      "kind": "theorem",
+      "name": "Cauchy’s polygonal number theorem",
+      "type_signature": "",
+      "description": "Every positive integer is the sum of at most m m-gonal numbers, of which all but four equal 0 or 1, completing the proof of Fermat’s polygonal number conjecture."
+    },
+    {
+      "id": "s_cauchy_lemma_polygonal",
+      "kind": "theorem",
+      "name": "Cauchy’s lemma (polygonal numbers)",
+      "type_signature": "",
+      "description": "If b ≥ 2a and b ≡ a (mod 2), then every integer in the interval [2a + b, 4a + 2b − 2] is a sum a·x₁² + b·x₂² with x₁, x₂ ∈ {0,1}, used in proving the polygonal number theorem."
+    },
+    {
+      "id": "s_pepin_five_pentagonal_theorem",
+      "kind": "theorem",
+      "name": "Pépin’s theorem on five pentagonal numbers",
+      "type_signature": "",
+      "description": "Every sufficiently large positive integer is the sum of at most five pentagonal numbers, sharpening the general polygonal number theorem for m = 5."
+    },
+    {
+      "id": "s_waring_g_function",
+      "kind": "axiom",
+      "name": "Waring’s function g(k)",
+      "type_signature": "ℕ → ℕ",
+      "description": "g(k) is the smallest s such that every positive integer is representable as a sum of at most s perfect k-th powers."
+    },
+    {
+      "id": "s_waring_G_function",
+      "kind": "axiom",
+      "name": "Asymptotic Waring function G(k)",
+      "type_signature": "ℕ → ℕ",
+      "description": "G(k) is the smallest s such that every sufficiently large integer is representable as a sum of s perfect k-th powers."
+    },
+    {
+      "id": "s_wieferich_kempner_theorem",
+      "kind": "theorem",
+      "name": "Wieferich–Kempner theorem (g(3) = 9)",
+      "type_signature": "",
+      "description": "Every positive integer is the sum of at most nine positive cubes, and nine are necessary (for 23 and 239), establishing g(3) = 9."
+    },
+    {
+      "id": "s_linnik_seven_cubes",
+      "kind": "theorem",
+      "name": "Linnik’s theorem on sums of seven cubes (G(3) ≤ 7)",
+      "type_signature": "",
+      "description": "Every sufficiently large integer is the sum of at most seven positive cubes, i.e., G(3) ≤ 7, proved by Linnik using an elementary additive method."
+    },
+    {
+      "id": "s_sums_two_cubes_impossibility",
+      "kind": "state",
+      "name": "Impossibility of representing all integers as sums of few cubes",
+      "type_signature": "",
+      "description": "Integers ≡ ±4 (mod 9) cannot be sums of three cubes, since cubes are congruent to 0 or ±1 modulo 9, giving G(3) ≥ 4."
+    },
+    {
+      "id": "s_ideal_waring_conjecture",
+      "kind": "state",
+      "name": "Ideal Waring conjecture",
+      "type_signature": "",
+      "description": "g(k) = 2^k + ⌊(3/2)^k⌋ − 2 for all k ≥ 1, asserting that the lower bound from numbers just below 2^k is always tight."
+    },
+    {
+      "id": "t_hilbert_multilinear_identity_proof",
+      "kind": "technique",
+      "name": "Hilbert’s proof via multilinear identities",
+      "function_signature": "(k-th power representation goal) → (existence of g(k) via algebraic identities)",
+      "description": "Hilbert’s original proof of the Waring–Hilbert theorem using multilinear algebraic identities to reduce higher powers to sums of 2k-th powers, combined with induction on k."
+    },
+    {
+      "id": "t_schur_trick",
+      "kind": "technique",
+      "name": "Schur’s trick",
+      "function_signature": "(Identity with possibly negative coefficients) → (Identity with non-negative integer coefficients)",
+      "description": "Replaces a polynomial identity with possibly negative coefficients by a sum-of-squares identity with non-negative integer coefficients, used to simplify Hilbert’s proof of Waring’s theorem."
+    },
+    {
+      "id": "s_stridsberg_improvement",
+      "kind": "theorem",
+      "name": "Stridsberg’s improvement of Hilbert’s bound",
+      "type_signature": "",
+      "description": "Improved the explicit upper bound on g(k) obtained from Hilbert’s algebraic identity method by optimizing the number of variables in the multilinear identity approach."
+    },
+    {
+      "id": "t_dress_simplification",
+      "kind": "technique",
+      "name": "Dress’s simplification of Hilbert’s proof",
+      "function_signature": "(Hilbert’s multilinear identity proof) → (Simplified elementary proof of Waring–Hilbert theorem)",
+      "description": "Streamlined Hilbert’s proof of the Waring theorem by replacing complicated algebraic identity constructions with a cleaner inductive argument."
+    },
+    {
+      "id": "s_hurwitz_identity_sums_of_squares",
+      "kind": "state",
+      "name": "Hurwitz identity for sums of squares",
+      "type_signature": "",
+      "description": "A composition identity (x₁² + ··· + xₙ²)(y₁² + ··· + yₙ²) = z₁² + ··· + zₙ² with each zᵢ bilinear in x and y, existing only for n = 1, 2, 4, 8."
+    },
+    {
+      "id": "s_weyl_inequality",
+      "kind": "theorem",
+      "name": "Weyl’s inequality",
+      "type_signature": "",
+      "description": "If α has a rational approximation a/q with |α − a/q| ≤ q⁻², then |∑_{n≤N} e(αnᵏ)| ≪ N^{1+ε}(q⁻¹ + N⁻¹ + qN⁻ᵏ)^{2^{1−k}}, bounding exponential sums via Diophantine approximation quality."
+    },
+    {
+      "id": "t_hua_iterative_squaring",
+      "kind": "technique",
+      "name": "Hua’s lemma proof by iterative squaring",
+      "function_signature": "(Exponential sum S = ∑ e(αnᵏ)) → (Bound on ∫|S|^{2^k} dα via repeated squaring and differencing)",
+      "description": "Proves Hua’s inequality by iteratively squaring the exponential sum and applying Weyl differencing at each step, reducing the mean value estimate to counting solutions of a Diophantine system."
+    },
+    {
+      "id": "s_singular_series_waring",
+      "kind": "state",
+      "name": "Singular series S(n) for Waring’s problem",
+      "type_signature": "",
+      "description": "S(n) = ∑_{q≥1} ∑_{(a,q)=1} q⁻ˢ S(q,a)ˢ e(−an/q), the arithmetic factor in the Hardy–Littlewood asymptotic formula for representations of n as a sum of s k-th powers."
+    },
+    {
+      "id": "s_singular_integral_waring",
+      "kind": "axiom",
+      "name": "Singular integral J(n) for Waring’s problem",
+      "type_signature": "",
+      "description": "J(n) = ∫(∫₀¹ e(βxᵏ)dx)ˢ e(−βn)dβ, the real-analytic density factor in the Hardy–Littlewood asymptotic formula measuring the volume of the real solution set."
+    },
+    {
+      "id": "s_positivity_singular_series",
+      "kind": "theorem",
+      "name": "Positivity of the singular series for Waring’s problem",
+      "type_signature": "",
+      "description": "For s sufficiently large relative to k, the singular series S(n) satisfies S(n) ≥ c > 0 for all n, proved by showing local solubility at every prime via Hensel’s lemma."
+    },
+    {
+      "id": "s_complete_exponential_sum_mod_q",
+      "kind": "axiom",
+      "name": "Complete exponential sum mod q",
+      "type_signature": "ℤ × ℕ → ℂ",
+      "description": "S(q,a) = ∑_{x=1}^{q} e(axᵏ/q), the complete exponential sum of a k-th power phase over a full residue system modulo q, the local factor in the singular series."
+    },
+    {
+      "id": "t_pruning",
+      "kind": "technique",
+      "name": "Pruning (circle method)",
+      "function_signature": "(Major arcs with wide Diophantine conditions) → (Narrower major arcs with tighter conditions and negligible complement)",
+      "description": "Restricts the major arcs to a narrower set where singular series and singular integral approximations are more precise, showing the contribution from the pruned region is negligible."
+    },
+    {
+      "id": "s_local_solubility_condition",
+      "kind": "state",
+      "name": "Local solubility condition for Waring’s problem",
+      "type_signature": "",
+      "description": "For every prime p and every n, the congruence x₁ᵏ + ··· + xₛᵏ ≡ n (mod pʲ) has a solution for all j ≥ 1, ensuring the p-adic singular series factor is positive."
+    },
+    {
+      "id": "s_three_prime_asymptotic_formula",
+      "kind": "theorem",
+      "name": "Asymptotic formula for three-prime representations",
+      "type_signature": "",
+      "description": "The number of representations of a large odd N as p₁ + p₂ + p₃ is asymptotic to ½·𝔖(N)·N²/(log N)³, where 𝔖(N) is the singular series for the ternary Goldbach problem."
+    },
+    {
+      "id": "t_major_arc_approximation_prime_sums",
+      "kind": "technique",
+      "name": "Major arc approximation for prime exponential sums",
+      "function_signature": "(S(α) = ∑ Λ(n)e(nα) on major arc) → (Approximation via Dirichlet characters and L-functions)",
+      "description": "On major arcs, approximates the exponential sum over primes by a product of a Ramanujan-type sum and a smooth integral, using the Siegel–Walfisz theorem for primes in arithmetic progressions."
+    },
+    {
+      "id": "s_goldbach_exceptional_set",
+      "kind": "state",
+      "name": "Goldbach exceptional set",
+      "type_signature": "",
+      "description": "E(X) = |{n ≤ X : n even, n ≠ p₁ + p₂}| is the count of even numbers up to X failing binary Goldbach; the best known bound is E(X) ≪ X^{0.879}."
+    },
+    {
+      "id": "s_vinogradov_bound_G_k",
+      "kind": "theorem",
+      "name": "Vinogradov’s bound on G(k)",
+      "type_signature": "",
+      "description": "G(k) ≤ 2k(log k + log log k + O(1)), proved using the circle method with Vinogradov’s mean value theorem, giving the best known general upper bound on the asymptotic Waring function."
+    },
+    {
+      "id": "s_easy_waring_problem",
+      "kind": "axiom",
+      "name": "Easy Waring problem",
+      "type_signature": "",
+      "description": "The variant of Waring’s problem asking for the minimal s such that almost all positive integers are sums of s k-th powers, where the threshold is lower than G(k)."
+    },
+    {
+      "id": "s_segre_mahler_wright_theorem",
+      "kind": "theorem",
+      "name": "Segre–Mahler–Wright theorem",
+      "type_signature": "",
+      "description": "Almost all positive integers are sums of O(k log k) perfect k-th powers, giving a density-one result with fewer summands than G(k) requires for all sufficiently large integers."
+    },
+    {
+      "id": "t_efficient_differencing",
+      "kind": "technique",
+      "name": "Efficient differencing (Vinogradov–Wooley)",
+      "function_signature": "(Vinogradov mean value integral Jₛ,ₖ(X)) → (Improved bound via iterative differencing with efficient variable usage)",
+      "description": "Refines Vinogradov’s mean value method by reusing variables across differencing steps, achieving near-optimal bounds on the mean value integral for exponential sums."
+    },
+    {
+      "id": "s_davenport_G4_equals_15",
+      "kind": "theorem",
+      "name": "Davenport’s theorem G(4) = 15",
+      "type_signature": "",
+      "description": "Every sufficiently large integer is the sum of at most 15 fourth powers, and 15 is best possible since numbers of the form 16ᵐ·31 require 15 fourth powers."
+    },
+    {
+      "id": "s_G2_equals_4",
+      "kind": "theorem",
+      "name": "G(2) = 4",
+      "type_signature": "",
+      "description": "Every sufficiently large integer is the sum of at most four squares, and four is necessary since integers of the form 4ᵃ(8b+7) require four squares."
+    },
+    {
+      "id": "s_wooley_refinement",
+      "kind": "theorem",
+      "name": "Wooley’s refinement of Vinogradov’s mean value theorem",
+      "type_signature": "",
+      "description": "Establishes the main conjecture for Vinogradov’s mean value theorem: Jₛ,ₖ(X) ≪ X^{s+ε} + X^{2s−k(k+1)/2+ε} for all s, k, via efficient congruencing or decoupling."
+    },
+    {
+      "id": "s_asymptotic_basis",
+      "kind": "axiom",
+      "name": "Asymptotic basis of order h",
+      "type_signature": "",
+      "description": "A set A ⊆ ℕ₀ is an asymptotic basis of order h if every sufficiently large positive integer is representable as a sum of at most h elements of A."
+    },
+    {
+      "id": "s_schnirelmann_theorem_primes",
+      "kind": "theorem",
+      "name": "Schnirelmann’s theorem (primes form an additive basis)",
+      "type_signature": "",
+      "description": "The set of primes together with {0, 1} is an additive basis of finite order: there exists h such that every integer ≥ 2 is a sum of at most h primes."
+    },
+    {
+      "id": "s_schnirelmann_inequality",
+      "kind": "theorem",
+      "name": "Schnirelmann’s inequality",
+      "type_signature": "",
+      "description": "σ(A + B) ≥ σ(A) + σ(B) − σ(A)σ(B) for sets A, B ⊆ ℕ₀ with 0 ∈ A ∩ B, where σ denotes Schnirelmann density."
+    },
+    {
+      "id": "s_mann_theorem",
+      "kind": "theorem",
+      "name": "Mann’s theorem",
+      "type_signature": "",
+      "description": "σ(A + B) ≥ min(1, σ(A) + σ(B)) for sets A, B ⊆ ℕ₀ with 0 ∈ A ∩ B, strengthening Schnirelmann’s inequality to a sharp lower bound on sumset density."
+    },
+    {
+      "id": "s_khinchin_addition_theorem",
+      "kind": "theorem",
+      "name": "Khinchin’s addition theorem",
+      "type_signature": "",
+      "description": "If A is an asymptotic basis of order h and B has positive Schnirelmann density, then A + B is an asymptotic basis of order at most h."
+    },
+    {
+      "id": "s_essential_component",
+      "kind": "axiom",
+      "name": "Essential component",
+      "type_signature": "",
+      "description": "A set B ⊆ ℕ₀ is an essential component if σ(A + B) > σ(A) for every set A with 0 < σ(A) < 1, meaning B always increases Schnirelmann density."
+    },
+    {
+      "id": "s_primes_essential_component",
+      "kind": "theorem",
+      "name": "Primes are an essential component",
+      "type_signature": "",
+      "description": "The set of primes (with 0 and 1 adjoined) is an essential component: for any A ⊆ ℕ₀ with 0 < σ(A) < 1, we have σ(A + P) > σ(A)."
+    },
+    {
+      "id": "s_khinchin_essential_components_theorem",
+      "kind": "theorem",
+      "name": "Khinchin’s theorem on essential components",
+      "type_signature": "",
+      "description": "Every asymptotic basis of finite order is an essential component, providing a sufficient condition for a set to increase the Schnirelmann density of any incomplete set."
+    },
+    {
+      "id": "s_erdos_essential_components_theorem",
+      "kind": "theorem",
+      "name": "Erdős’s theorem on essential components",
+      "type_signature": "",
+      "description": "If ∑_{n=1}^∞ B(n)/n² = ∞ where B(n) = |B ∩ [1,n]|, then B is an essential component, giving a counting-function criterion weaker than being an asymptotic basis."
+    },
+    {
+      "id": "t_mann_sequential_addition",
+      "kind": "technique",
+      "name": "Mann’s proof via sequential addition",
+      "function_signature": "(Sets A, B with Schnirelmann densities) → (Proof that σ(A+B) ≥ min(1, σ(A)+σ(B)))",
+      "description": "Proves Mann’s theorem by constructing the sumset incrementally, adding one element of B at a time and tracking how each addition increases the counting function."
+    },
+    {
+      "id": "s_selberg_sieve_goldbach",
+      "kind": "state",
+      "name": "Selberg sieve applied to Goldbach",
+      "type_signature": "",
+      "description": "Applying the Selberg upper-bound sieve to binary Goldbach yields that representations of even n as p + p’ number ≪ n·∏_{p|n}(1+1/p)/(log n)²."
+    },
+    {
+      "id": "s_romanov_theorem",
+      "kind": "theorem",
+      "name": "Romanov’s theorem",
+      "type_signature": "",
+      "description": "A positive proportion of positive integers can be represented as p + 2ᵏ for some prime p and non-negative integer k."
+    },
+    {
+      "id": "s_dickson_pillai_result",
+      "kind": "theorem",
+      "name": "Dickson–Pillai theorem on g(k)",
+      "type_signature": "",
+      "description": "g(k) = 2ᵏ + ⌊(3/2)ᵏ⌋ − 2 provided 2ᵏ{(3/2)ᵏ} + ⌊(3/2)ᵏ⌋ ≤ 2ᵏ, reducing the ideal Waring conjecture to a condition on fractional parts of powers of 3/2."
+    },
+    {
+      "id": "s_balasubramanian_deshouillers_dress_theorem",
+      "kind": "theorem",
+      "name": "Balasubramanian–Deshouillers–Dress theorem (g(4) = 19)",
+      "type_signature": "",
+      "description": "Every positive integer is the sum of at most 19 fourth powers, establishing g(4) = 19 via a combination of computational verification and analytic methods."
+    },
+    {
+      "id": "s_multiplicativity_singular_series",
+      "kind": "state",
+      "name": "Euler product for the singular series",
+      "type_signature": "",
+      "description": "The singular series factors as S(n) = ∏_p σ_p(n), expressing the global arithmetic factor as a product of local p-adic densities for Waring representations."
+    },
+    {
+      "id": "s_hua_theorem_cubes_of_primes",
+      "kind": "theorem",
+      "name": "Hua’s theorem on sums of cubes of primes",
+      "type_signature": "",
+      "description": "Every sufficiently large odd integer is the sum of nine cubes of primes, establishing a Waring–Goldbach result for cubes using the circle method."
+    },
+    {
+      "id": "s_waring_problem_for_primes",
+      "kind": "state",
+      "name": "Waring’s problem for primes (Waring–Goldbach problem)",
+      "type_signature": "",
+      "description": "The problem of determining the smallest s such that every sufficiently large integer satisfying necessary congruence conditions is the sum of s k-th powers of primes."
+    },
+    {
+      "id": "t_davenport_heilbronn_method",
+      "kind": "technique",
+      "name": "Davenport–Heilbronn method",
+      "function_signature": "(Diophantine inequality with irrational coefficients) → (Asymptotic count via modified circle method)",
+      "description": "Adapts the circle method to Diophantine inequalities rather than equations by exploiting irrationality of coefficients to avoid a singular series."
+    },
+    {
+      "id": "s_representation_function_polygonal",
+      "kind": "axiom",
+      "name": "Representation function for polygonal numbers",
+      "type_signature": "ℕ → ℕ₀",
+      "description": "r_{m,s}(n) counts the number of ways to write n as a sum of s m-gonal numbers, the fundamental counting function in the additive theory of figurate numbers."
+    },
+    {
+      "id": "s_representation_function_waring",
+      "kind": "axiom",
+      "name": "Representation function r_{s,k}(n)",
+      "type_signature": "ℕ → ℕ₀",
+      "description": "r_{s,k}(n) = |{(x₁,…,xₛ) ∈ ℕ₀ˢ : x₁ᵏ + ··· + xₛᵏ = n}| counts representations of n as a sum of s non-negative k-th powers."
+    },
+    {
+      "id": "s_liouville_identity_four_squares",
+      "kind": "state",
+      "name": "Liouville’s identity (sums of squares)",
+      "type_signature": "",
+      "description": "Liouville’s identity expressing r₄(n) = 8∑_{d|n, 4∤d} d, giving an exact divisor-sum formula for the number of representations as a sum of four squares."
+    },
+    {
+      "id": "s_quadratic_forms_and_squares",
+      "kind": "state",
+      "name": "Connection between quadratic forms and sums of squares",
+      "type_signature": "",
+      "description": "The representability of integers as sums of k squares is equivalent to representation by the standard positive-definite quadratic form of rank k, linking Waring-type questions to genera and class numbers."
+    },
+    {
+      "id": "s_h_fold_sumset",
+      "kind": "axiom",
+      "name": "h-fold sumset hA",
+      "type_signature": "",
+      "description": "For A ⊆ ℕ₀ and h ≥ 1, the h-fold sumset hA = {a₁ + ··· + aₕ : aᵢ ∈ A} is the set of all sums of exactly h elements of A with repetition."
+    },
+    {
+      "id": "s_h_fold_representation_function",
+      "kind": "axiom",
+      "name": "h-fold representation function r_{A,h}(n)",
+      "type_signature": "ℕ₀ → ℕ₀",
+      "description": "r_{A,h}(n) = |{(a₁,…,aₕ) ∈ Aʰ : a₁ + ··· + aₕ = n}| counts ordered representations of n as a sum of h elements from A."
+    },
+    {
+      "id": "s_counting_function_A_n",
+      "kind": "axiom",
+      "name": "Counting function A(n)",
+      "type_signature": "ℕ → ℕ₀",
+      "description": "A(n) = |A ∩ [0,n]| for A ⊆ ℕ₀, the counting function measuring elements of A up to n, fundamental to Schnirelmann and asymptotic density."
+    },
+    {
+      "id": "t_schnirelmann_original_density_argument",
+      "kind": "technique",
+      "name": "Schnirelmann’s original density argument",
+      "function_signature": "(Set A with σ(A) > 0) → (A is additive basis of finite order)",
+      "description": "Schnirelmann’s proof that positive Schnirelmann density implies basis property, using iterated sumset density inequalities to show σ(hA) → 1 as h increases."
+    },
+    {
+      "id": "s_generating_function_waring",
+      "kind": "axiom",
+      "name": "Generating function for Waring’s problem",
+      "type_signature": "",
+      "description": "f(α) = ∑_{m=0}^{N^{1/k}} e(αmᵏ), the exponential generating function whose s-th power’s Fourier coefficients equal the Waring representation function r_{s,k}(n)."
+    },
+    {
+      "id": "s_p_adic_solubility",
+      "kind": "state",
+      "name": "p-adic solubility for Waring’s problem",
+      "type_signature": "",
+      "description": "The equation x₁ᵏ + ··· + xₛᵏ = n has a non-trivial solution in ℤ_p for every prime p, equivalent to positivity of the local factor σ_p(n) in the singular series."
+    },
+    {
+      "id": "s_minor_arc_estimate_waring",
+      "kind": "state",
+      "name": "Minor arc estimate for Waring’s problem",
+      "type_signature": "",
+      "description": "∫_{𝔪} |f(α)|ˢ e(−nα)dα = o(n^{s/k−1}) for s sufficiently large, showing the minor arc contribution is negligible compared to the main term."
+    },
+    {
+      "id": "s_minor_arc_estimate_three_primes",
+      "kind": "state",
+      "name": "Minor arc estimate for the three-primes problem",
+      "type_signature": "",
+      "description": "sup_{α ∈ 𝔪} |S(α)| ≪ N/(log N)^A for any A > 0 on the minor arcs, where S(α) = ∑_{n≤N} Λ(n)e(nα), by Vinogradov’s method."
+    },
+    {
+      "id": "s_major_arc_contribution_waring",
+      "kind": "state",
+      "name": "Major arc contribution for Waring’s problem",
+      "type_signature": "",
+      "description": "∫_{𝔐} f(α)ˢ e(−nα)dα = S(n)·J(n)·n^{s/k−1} + o(n^{s/k−1}), expressing the major arc integral as the product of singular series and singular integral."
+    },
+    {
+      "id": "s_four_cubes_impossibility",
+      "kind": "state",
+      "name": "Four cubes impossibility modulo 9",
+      "type_signature": "",
+      "description": "Integers ≡ ±4 (mod 9) cannot be represented as sums of three cubes, since cubes are ≡ 0, ±1 (mod 9), constraining local solubility of sums of few cubes."
+    },
+    {
+      "id": "s_23_and_239_require_9_cubes",
+      "kind": "state",
+      "name": "23 and 239 require nine cubes",
+      "type_signature": "",
+      "description": "The integers 23 and 239 are the only positive integers requiring exactly nine positive cubes for their representation, establishing that g(3) = 9 is tight."
+    },
+    {
+      "id": "t_descent_four_squares",
+      "kind": "technique",
+      "name": "Descent method for four squares",
+      "function_signature": "(mp = x₁² + x₂² + x₃² + x₄² with m > 1) → (p = y₁² + y₂² + y₃² + y₄² by iterative reduction)",
+      "description": "Proves Lagrange’s four-square theorem by showing that if mp is a sum of four squares with m > 1, then m can be reduced, iterating until m = 1."
+    },
+    {
+      "id": "t_linnik_elementary_method",
+      "kind": "technique",
+      "name": "Linnik’s elementary method for sums of cubes",
+      "function_signature": "(Large integer n) → (Representation as sum of 7 cubes via combinatorial and p-adic estimates)",
+      "description": "An elementary approach avoiding the full circle method, using combinatorial arguments and local density estimates to prove G(3) ≤ 7."
     }
   ],
   "edges": [
@@ -193880,6 +194356,1786 @@
       "role": "input",
       "parameter_binding": {},
       "used_in_theorem": "s_failure_of_ufd_in_z_sqrt_neg5"
+    },
+    {
+      "id": "e_13258",
+      "from": "s_warings_problem",
+      "to": "t_hilbert_multilinear_identity_proof",
+      "role": "input",
+      "parameter_binding": {
+        "problem": "every positive integer is sum of bounded k-th powers"
+      },
+      "used_in_theorem": "s_hilbert_waring_theorem"
+    },
+    {
+      "id": "e_13259",
+      "from": "t_hilbert_multilinear_identity_proof",
+      "to": "s_hilbert_waring_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "g(k) exists for all k"
+      },
+      "used_in_theorem": "s_hilbert_waring_theorem"
+    },
+    {
+      "id": "e_13260",
+      "from": "s_hilbert_waring_theorem",
+      "to": "t_schur_trick",
+      "role": "input",
+      "parameter_binding": {
+        "coefficients": "make non-negative integer"
+      },
+      "used_in_theorem": "s_hilbert_waring_theorem"
+    },
+    {
+      "id": "e_13261",
+      "from": "t_schur_trick",
+      "to": "s_hilbert_waring_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "non-negative integer coefficients in identity"
+      },
+      "used_in_theorem": "s_hilbert_waring_theorem"
+    },
+    {
+      "id": "e_13262",
+      "from": "s_hilbert_waring_theorem",
+      "to": "t_dress_simplification",
+      "role": "input",
+      "parameter_binding": {
+        "simplifies": "Hilbert's original argument"
+      },
+      "used_in_theorem": "s_hilbert_waring_theorem"
+    },
+    {
+      "id": "e_13263",
+      "from": "t_dress_simplification",
+      "to": "s_hilbert_waring_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "simplified proof of Hilbert-Waring"
+      },
+      "used_in_theorem": "s_hilbert_waring_theorem"
+    },
+    {
+      "id": "e_13264",
+      "from": "s_warings_problem",
+      "to": "t_hilbert_multilinear_identity_proof",
+      "role": "input",
+      "parameter_binding": {
+        "multilinear_identity": "25-fold identity for k-th powers"
+      },
+      "used_in_theorem": "s_waring_g_function"
+    },
+    {
+      "id": "e_13265",
+      "from": "t_hilbert_multilinear_identity_proof",
+      "to": "s_waring_g_function",
+      "role": "output",
+      "parameter_binding": {
+        "defines": "g(k) = min s such that every n is sum of s k-th powers"
+      },
+      "used_in_theorem": "s_waring_g_function"
+    },
+    {
+      "id": "e_13266",
+      "from": "s_waring_g_function",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "connects_to": "asymptotic formula for representation count"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13267",
+      "from": "s_waring_G_function",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "problem": "determine G(k) = min s for all sufficiently large n"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13268",
+      "from": "s_weyl_differencing_reduction",
+      "to": "t_hua_iterative_squaring",
+      "role": "input",
+      "parameter_binding": {
+        "method": "iterative application of Weyl differencing"
+      },
+      "used_in_theorem": "s_hua_inequality"
+    },
+    {
+      "id": "e_13269",
+      "from": "t_hua_iterative_squaring",
+      "to": "s_hua_inequality",
+      "role": "output",
+      "parameter_binding": {
+        "bound": "|sum e(alpha n^k)|^{2^k} << X^{2^k - k + epsilon}"
+      },
+      "used_in_theorem": "s_hua_inequality"
+    },
+    {
+      "id": "e_13270",
+      "from": "s_weyl_exponential_sum",
+      "to": "t_hua_iterative_squaring",
+      "role": "input",
+      "parameter_binding": {
+        "exponential_sum": "sum of e(f(n)) with polynomial f"
+      },
+      "used_in_theorem": "s_hua_inequality"
+    },
+    {
+      "id": "e_13271",
+      "from": "s_cauchy_schwarz_inequality",
+      "to": "t_hua_iterative_squaring",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "iterated squaring via Cauchy-Schwarz"
+      },
+      "used_in_theorem": "s_hua_inequality"
+    },
+    {
+      "id": "e_13272",
+      "from": "s_hua_inequality",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "mean value bound for exponential sums"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13273",
+      "from": "s_weyl_inequality",
+      "to": "t_major_minor_arc_decomposition",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "upper bound on minor arc exponential sums"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13274",
+      "from": "s_weyl_exponential_sum",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "sum_type": "exponential sum over k-th powers"
+      },
+      "used_in_theorem": "s_vinogradov_bound_G_k"
+    },
+    {
+      "id": "e_13275",
+      "from": "t_vinogradov_method_exponential_sums",
+      "to": "s_vinogradov_bound_G_k",
+      "role": "output",
+      "parameter_binding": {
+        "bound": "G(k) <= 2k log k + O(k log log k)"
+      },
+      "used_in_theorem": "s_vinogradov_bound_G_k"
+    },
+    {
+      "id": "e_13276",
+      "from": "t_major_minor_arc_decomposition",
+      "to": "s_singular_series_waring",
+      "role": "output",
+      "parameter_binding": {
+        "from_major_arcs": "Euler product over local densities"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13277",
+      "from": "t_major_minor_arc_decomposition",
+      "to": "s_singular_integral_waring",
+      "role": "output",
+      "parameter_binding": {
+        "from_major_arcs": "real density integral"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13278",
+      "from": "s_singular_series_waring",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "factor": "arithmetic factor S(n)"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13279",
+      "from": "s_singular_integral_waring",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "factor": "real-analytic factor J(n)"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13280",
+      "from": "t_circle_method",
+      "to": "s_hardy_littlewood_asymptotic_waring",
+      "role": "output",
+      "parameter_binding": {
+        "formula": "r_{s,k}(n) ~ S(n) J(n) n^{s/k - 1}"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13281",
+      "from": "s_singular_series_waring",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {
+        "purpose": "evaluate local densities at each prime"
+      },
+      "used_in_theorem": "s_positivity_singular_series"
+    },
+    {
+      "id": "e_13282",
+      "from": "t_hensel_lifting",
+      "to": "s_positivity_singular_series",
+      "role": "output",
+      "parameter_binding": {
+        "result": "singular series > 0 when s >= s_0(k)"
+      },
+      "used_in_theorem": "s_positivity_singular_series"
+    },
+    {
+      "id": "e_13283",
+      "from": "s_complete_exponential_sum_mod_q",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {
+        "sum_type": "complete sum S(q,a) = sum_{x=1}^{q} e(ax^k/q)"
+      },
+      "used_in_theorem": "s_positivity_singular_series"
+    },
+    {
+      "id": "e_13284",
+      "from": "s_local_solubility_condition",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {
+        "condition": "n representable mod p^j for all j"
+      },
+      "used_in_theorem": "s_positivity_singular_series"
+    },
+    {
+      "id": "e_13285",
+      "from": "t_hensel_lifting",
+      "to": "s_local_solubility_condition",
+      "role": "output",
+      "parameter_binding": {
+        "lifts": "solutions mod p to solutions mod p^j"
+      },
+      "used_in_theorem": "s_positivity_singular_series"
+    },
+    {
+      "id": "e_13286",
+      "from": "s_p_adic_solubility",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {
+        "equivalence": "Hensel lifting gives p-adic representability"
+      },
+      "used_in_theorem": "s_positivity_singular_series"
+    },
+    {
+      "id": "e_13287",
+      "from": "s_contribution_of_major_arcs",
+      "to": "t_pruning",
+      "role": "input",
+      "parameter_binding": {
+        "refines": "major arc analysis via pruning"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13288",
+      "from": "t_pruning",
+      "to": "s_major_arc_contribution_waring",
+      "role": "output",
+      "parameter_binding": {
+        "result": "tighter major arc contribution estimate"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13289",
+      "from": "s_major_arc_contribution_waring",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "asymptotic main term"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13290",
+      "from": "s_weyl_inequality",
+      "to": "t_major_minor_arc_decomposition",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "minor arc bound"
+      },
+      "used_in_theorem": "s_minor_arc_estimate_waring"
+    },
+    {
+      "id": "e_13291",
+      "from": "t_major_minor_arc_decomposition",
+      "to": "s_minor_arc_estimate_waring",
+      "role": "output",
+      "parameter_binding": {
+        "bound": "sup on minor arcs << N^{1/k - delta}"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13292",
+      "from": "s_dirichlet_approximation",
+      "to": "t_major_minor_arc_decomposition",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "rational approximation to define arc structure"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13293",
+      "from": "s_farey_sequence",
+      "to": "t_farey_dissection",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "partition of [0,1] into Farey arcs"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13294",
+      "from": "t_farey_dissection",
+      "to": "s_singular_series_waring",
+      "role": "output",
+      "parameter_binding": {
+        "yields": "singular series via Farey arc decomposition"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13295",
+      "from": "s_multiplicativity_singular_series",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {
+        "euler_product": "S(n) = prod_p S_p(n)"
+      },
+      "used_in_theorem": "s_positivity_singular_series"
+    },
+    {
+      "id": "e_13296",
+      "from": "s_singular_series_waring",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "multiplicativity": "Euler product structure"
+      },
+      "used_in_theorem": "s_multiplicativity_singular_series"
+    },
+    {
+      "id": "e_13297",
+      "from": "t_circle_method",
+      "to": "s_multiplicativity_singular_series",
+      "role": "output",
+      "parameter_binding": {
+        "result": "S(n) has Euler product"
+      },
+      "used_in_theorem": "s_multiplicativity_singular_series"
+    },
+    {
+      "id": "e_13298",
+      "from": "s_representation_function_waring",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "integral": "r_{s,k}(n) = integral of generating function"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13299",
+      "from": "s_generating_function_waring",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "generating_fn": "f(alpha) = sum e(alpha n^k)"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13300",
+      "from": "s_vinogradov_three_primes_theorem",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "problem": "odd n = p1 + p2 + p3"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13301",
+      "from": "s_von_mangoldt_function",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "weight": "Lambda(n) weights prime sums"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13302",
+      "from": "t_major_arc_approximation_prime_sums",
+      "to": "s_singular_series_three_primes",
+      "role": "output",
+      "parameter_binding": {
+        "result": "singular series for three primes"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13303",
+      "from": "t_major_arc_approximation_prime_sums",
+      "to": "s_three_prime_asymptotic_formula",
+      "role": "output",
+      "parameter_binding": {
+        "formula": "r_3(n) ~ (1/2) S(n) n^2 / (log n)^3"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13304",
+      "from": "s_singular_series_three_primes",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "factor": "arithmetic density for prime representation"
+      },
+      "used_in_theorem": "s_three_prime_asymptotic_formula"
+    },
+    {
+      "id": "e_13305",
+      "from": "s_prime_number_theorem",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "density": "prime density ~ 1/log n"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13306",
+      "from": "s_siegel_walfisz_theorem",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "primes in arithmetic progressions estimate"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13307",
+      "from": "t_vaughan_identity",
+      "to": "s_minor_arc_estimate_three_primes",
+      "role": "output",
+      "parameter_binding": {
+        "decomposes": "von Mangoldt into Type I and Type II sums"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13308",
+      "from": "s_von_mangoldt_function",
+      "to": "t_vaughan_identity",
+      "role": "input",
+      "parameter_binding": {
+        "decomposes": "Lambda(n) into bilinear forms"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13309",
+      "from": "s_minor_arc_estimate_three_primes",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "bound": "prime exponential sum small on minor arcs"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13310",
+      "from": "t_vinogradov_method_exponential_sums",
+      "to": "s_vinogradov_three_primes_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "every sufficiently large odd number is sum of three primes"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13311",
+      "from": "s_goldbach_conjecture",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "motivates": "circle method approach to Goldbach"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13312",
+      "from": "t_vinogradov_method_exponential_sums",
+      "to": "s_goldbach_weak_conjecture",
+      "role": "output",
+      "parameter_binding": {
+        "proves_for_large": "weak Goldbach for large odd n"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13313",
+      "from": "s_goldbach_conjecture",
+      "to": "t_selberg_sieve",
+      "role": "input",
+      "parameter_binding": {
+        "approach": "sieve bound on Goldbach exceptions"
+      },
+      "used_in_theorem": "s_goldbach_exceptional_set"
+    },
+    {
+      "id": "e_13314",
+      "from": "t_selberg_sieve",
+      "to": "s_goldbach_exceptional_set",
+      "role": "output",
+      "parameter_binding": {
+        "bound": "E(x) = o(x) — density 0 exceptional set"
+      },
+      "used_in_theorem": "s_goldbach_exceptional_set"
+    },
+    {
+      "id": "e_13315",
+      "from": "t_selberg_sieve",
+      "to": "s_selberg_sieve_goldbach",
+      "role": "output",
+      "parameter_binding": {
+        "result": "bounded number of prime factors in Goldbach representations"
+      },
+      "used_in_theorem": "s_selberg_sieve_goldbach"
+    },
+    {
+      "id": "e_13316",
+      "from": "s_goldbach_conjecture",
+      "to": "t_selberg_sieve",
+      "role": "input",
+      "parameter_binding": {
+        "sieve_problem": "sieve for almost-prime Goldbach representations"
+      },
+      "used_in_theorem": "s_chen_theorem"
+    },
+    {
+      "id": "e_13317",
+      "from": "t_selberg_sieve",
+      "to": "s_chen_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "n = p + P_2 for large even n"
+      },
+      "used_in_theorem": "s_chen_theorem"
+    },
+    {
+      "id": "e_13318",
+      "from": "s_euler_four_square_identity",
+      "to": "t_descent_four_squares",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "product of sums of 4 squares is sum of 4 squares"
+      },
+      "used_in_theorem": "s_lagrange_four_squares"
+    },
+    {
+      "id": "e_13319",
+      "from": "t_descent_four_squares",
+      "to": "s_lagrange_four_squares",
+      "role": "output",
+      "parameter_binding": {
+        "result": "every positive integer is sum of four squares"
+      },
+      "used_in_theorem": "s_lagrange_four_squares"
+    },
+    {
+      "id": "e_13320",
+      "from": "s_prime_as_sum_of_four_squares",
+      "to": "t_descent_four_squares",
+      "role": "input",
+      "parameter_binding": {
+        "base_case": "every prime is sum of 4 squares"
+      },
+      "used_in_theorem": "s_lagrange_four_squares"
+    },
+    {
+      "id": "e_13321",
+      "from": "s_hensels_lemma",
+      "to": "t_descent_four_squares",
+      "role": "input",
+      "parameter_binding": {
+        "lifting": "lift mod p solutions to integers"
+      },
+      "used_in_theorem": "s_lagrange_four_squares"
+    },
+    {
+      "id": "e_13322",
+      "from": "s_lagrange_four_squares",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "implies": "G(2)=4 known, connects to asymptotic"
+      },
+      "used_in_theorem": "s_G2_equals_4"
+    },
+    {
+      "id": "e_13323",
+      "from": "t_circle_method",
+      "to": "s_G2_equals_4",
+      "role": "output",
+      "parameter_binding": {
+        "result": "G(2) = 4"
+      },
+      "used_in_theorem": "s_G2_equals_4"
+    },
+    {
+      "id": "e_13324",
+      "from": "s_legendre_three_square_theorem",
+      "to": "t_descent_four_squares",
+      "role": "input",
+      "parameter_binding": {
+        "constraint": "n is sum of 3 squares iff n != 4^a(8b+7)"
+      },
+      "used_in_theorem": "s_G2_equals_4"
+    },
+    {
+      "id": "e_13325",
+      "from": "s_fermat_polygonal_number_theorem",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "conjecture": "every integer is sum of k k-gonal numbers"
+      },
+      "used_in_theorem": "s_cauchy_polygonal_number_theorem"
+    },
+    {
+      "id": "e_13326",
+      "from": "s_polygonal_number",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "definition": "p_k(n) = n((k-2)n - (k-4))/2"
+      },
+      "used_in_theorem": "s_cauchy_polygonal_number_theorem"
+    },
+    {
+      "id": "e_13327",
+      "from": "s_cauchy_lemma_polygonal",
+      "to": "t_descent_four_squares",
+      "role": "input",
+      "parameter_binding": {
+        "lemma": "Cauchy's combinatorial lemma for polygonal decomposition"
+      },
+      "used_in_theorem": "s_cauchy_polygonal_number_theorem"
+    },
+    {
+      "id": "e_13328",
+      "from": "t_descent_four_squares",
+      "to": "s_cauchy_polygonal_number_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "every integer is sum of k+1 polygonal numbers of order k+2"
+      },
+      "used_in_theorem": "s_cauchy_polygonal_number_theorem"
+    },
+    {
+      "id": "e_13329",
+      "from": "s_gauss_triangular_eureka",
+      "to": "t_descent_four_squares",
+      "role": "input",
+      "parameter_binding": {
+        "base": "every n is sum of 3 triangular numbers"
+      },
+      "used_in_theorem": "s_cauchy_polygonal_number_theorem"
+    },
+    {
+      "id": "e_13330",
+      "from": "s_pentagonal_number_theorem",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "context": "pentagonal number representations"
+      },
+      "used_in_theorem": "s_pepin_five_pentagonal_theorem"
+    },
+    {
+      "id": "e_13331",
+      "from": "t_circle_method",
+      "to": "s_pepin_five_pentagonal_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "every sufficiently large n is sum of 5 pentagonal numbers"
+      },
+      "used_in_theorem": "s_pepin_five_pentagonal_theorem"
+    },
+    {
+      "id": "e_13332",
+      "from": "s_sums_two_cubes_impossibility",
+      "to": "t_finite_case_check",
+      "role": "input",
+      "parameter_binding": {
+        "obstruction": "cubes are 0, 1, or 8 mod 9"
+      },
+      "used_in_theorem": "s_four_cubes_impossibility"
+    },
+    {
+      "id": "e_13333",
+      "from": "t_finite_case_check",
+      "to": "s_four_cubes_impossibility",
+      "role": "output",
+      "parameter_binding": {
+        "result": "n = 4 or 5 mod 9 not sum of 3 cubes"
+      },
+      "used_in_theorem": "s_four_cubes_impossibility"
+    },
+    {
+      "id": "e_13334",
+      "from": "s_sums_two_cubes_impossibility",
+      "to": "t_finite_case_check",
+      "role": "input",
+      "parameter_binding": {
+        "shows": "g(3) >= 9 since 23 requires 9 cubes"
+      },
+      "used_in_theorem": "s_23_and_239_require_9_cubes"
+    },
+    {
+      "id": "e_13335",
+      "from": "t_finite_case_check",
+      "to": "s_23_and_239_require_9_cubes",
+      "role": "output",
+      "parameter_binding": {
+        "result": "23 = 2*8 + 7*1, 239 = 2*64 + 4*27 + 7*1 require 9 cubes"
+      },
+      "used_in_theorem": "s_23_and_239_require_9_cubes"
+    },
+    {
+      "id": "e_13336",
+      "from": "s_23_and_239_require_9_cubes",
+      "to": "t_linnik_elementary_method",
+      "role": "input",
+      "parameter_binding": {
+        "motivation": "g(3)=9 but need G(3) bound"
+      },
+      "used_in_theorem": "s_wieferich_kempner_theorem"
+    },
+    {
+      "id": "e_13337",
+      "from": "t_linnik_elementary_method",
+      "to": "s_wieferich_kempner_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "g(3) = 9"
+      },
+      "used_in_theorem": "s_wieferich_kempner_theorem"
+    },
+    {
+      "id": "e_13338",
+      "from": "s_wieferich_kempner_theorem",
+      "to": "t_linnik_elementary_method",
+      "role": "input",
+      "parameter_binding": {
+        "gives": "g(3) = 9 as starting point"
+      },
+      "used_in_theorem": "s_linnik_seven_cubes"
+    },
+    {
+      "id": "e_13339",
+      "from": "t_linnik_elementary_method",
+      "to": "s_linnik_seven_cubes",
+      "role": "output",
+      "parameter_binding": {
+        "result": "G(3) <= 7"
+      },
+      "used_in_theorem": "s_linnik_seven_cubes"
+    },
+    {
+      "id": "e_13340",
+      "from": "s_vinogradov_mean_value_theorem",
+      "to": "t_efficient_differencing",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "mean value estimate as starting point"
+      },
+      "used_in_theorem": "s_wooley_refinement"
+    },
+    {
+      "id": "e_13341",
+      "from": "t_efficient_differencing",
+      "to": "s_wooley_refinement",
+      "role": "output",
+      "parameter_binding": {
+        "result": "improved mean value theorem via efficient differencing"
+      },
+      "used_in_theorem": "s_wooley_refinement"
+    },
+    {
+      "id": "e_13342",
+      "from": "s_weyl_differencing_reduction",
+      "to": "t_efficient_differencing",
+      "role": "input",
+      "parameter_binding": {
+        "generalizes": "Weyl differencing to efficient differencing"
+      },
+      "used_in_theorem": "s_wooley_refinement"
+    },
+    {
+      "id": "e_13343",
+      "from": "t_efficient_differencing",
+      "to": "s_vinogradov_bound_G_k",
+      "role": "output",
+      "parameter_binding": {
+        "improves": "G(k) upper bounds for large k"
+      },
+      "used_in_theorem": "s_vinogradov_bound_G_k"
+    },
+    {
+      "id": "e_13344",
+      "from": "s_waring_g_k_lower_bound",
+      "to": "t_finite_case_check",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "lower bound for g(k) via specific n"
+      },
+      "used_in_theorem": "s_ideal_waring_conjecture"
+    },
+    {
+      "id": "e_13345",
+      "from": "t_finite_case_check",
+      "to": "s_ideal_waring_conjecture",
+      "role": "output",
+      "parameter_binding": {
+        "conjecture": "g(k) = 2^k + floor((3/2)^k) - 2"
+      },
+      "used_in_theorem": "s_ideal_waring_conjecture"
+    },
+    {
+      "id": "e_13346",
+      "from": "s_ideal_waring_conjecture",
+      "to": "t_finite_case_check",
+      "role": "input",
+      "parameter_binding": {
+        "verify": "Stridsberg improves for specific k"
+      },
+      "used_in_theorem": "s_stridsberg_improvement"
+    },
+    {
+      "id": "e_13347",
+      "from": "t_finite_case_check",
+      "to": "s_stridsberg_improvement",
+      "role": "output",
+      "parameter_binding": {
+        "result": "sharper bounds on g(k) for small k"
+      },
+      "used_in_theorem": "s_stridsberg_improvement"
+    },
+    {
+      "id": "e_13348",
+      "from": "s_hurwitz_identity_sums_of_squares",
+      "to": "t_descent_four_squares",
+      "role": "input",
+      "parameter_binding": {
+        "identity": "Hurwitz composition for sums of squares"
+      },
+      "used_in_theorem": "s_lagrange_four_squares"
+    },
+    {
+      "id": "e_13349",
+      "from": "s_jacobi_four_square_formula",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "exact_formula": "r_4(n) = 8 sum_{4 nmid d | n} d"
+      },
+      "used_in_theorem": "s_lagrange_four_squares"
+    },
+    {
+      "id": "e_13350",
+      "from": "s_liouville_identity_four_squares",
+      "to": "t_descent_four_squares",
+      "role": "input",
+      "parameter_binding": {
+        "identity": "Liouville's identity for 4-square count"
+      },
+      "used_in_theorem": "s_lagrange_four_squares"
+    },
+    {
+      "id": "e_13351",
+      "from": "s_quadratic_forms_and_squares",
+      "to": "t_descent_four_squares",
+      "role": "input",
+      "parameter_binding": {
+        "connection": "binary/ternary quadratic forms and square representations"
+      },
+      "used_in_theorem": "s_legendre_three_square_theorem"
+    },
+    {
+      "id": "e_13352",
+      "from": "s_schnirelmann_density",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "density": "sigma(A) = inf A(n)/n"
+      },
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_13353",
+      "from": "t_schnirelmann_original_density_argument",
+      "to": "s_schnirelman_additive_basis_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "if sigma(A) > 0 then A is additive basis"
+      },
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_13354",
+      "from": "t_schnirelmann_original_density_argument",
+      "to": "s_schnirelmann_inequality",
+      "role": "output",
+      "parameter_binding": {
+        "inequality": "sigma(A+B) >= sigma(A) + sigma(B) - sigma(A)*sigma(B)"
+      },
+      "used_in_theorem": "s_schnirelmann_inequality"
+    },
+    {
+      "id": "e_13355",
+      "from": "s_schnirelmann_inequality",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "iterated sumset density grows"
+      },
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_13356",
+      "from": "s_additive_basis",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "definition": "A is basis of order h if hA = N"
+      },
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_13357",
+      "from": "s_h_fold_sumset",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "definition": "hA = {a_1 + ... + a_h : a_i in A}"
+      },
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_13358",
+      "from": "s_counting_function_A_n",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "definition": "A(n) = |{a in A : a <= n}|"
+      },
+      "used_in_theorem": "s_schnirelmann_inequality"
+    },
+    {
+      "id": "e_13359",
+      "from": "s_schnirelmann_density",
+      "to": "t_mann_sequential_addition",
+      "role": "input",
+      "parameter_binding": {
+        "density": "sigma(A) for Mann's theorem"
+      },
+      "used_in_theorem": "s_mann_theorem"
+    },
+    {
+      "id": "e_13360",
+      "from": "t_mann_sequential_addition",
+      "to": "s_mann_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "sigma(A+B) >= min(1, sigma(A) + sigma(B))"
+      },
+      "used_in_theorem": "s_mann_theorem"
+    },
+    {
+      "id": "e_13361",
+      "from": "s_mann_theorem",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "strengthens": "Schnirelmann inequality to Mann's alpha+beta theorem"
+      },
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_13362",
+      "from": "s_goldbach_conjecture",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "application": "primes + primes has positive Schnirelmann density"
+      },
+      "used_in_theorem": "s_schnirelmann_theorem_primes"
+    },
+    {
+      "id": "e_13363",
+      "from": "t_schnirelmann_original_density_argument",
+      "to": "s_schnirelmann_theorem_primes",
+      "role": "output",
+      "parameter_binding": {
+        "result": "primes form an additive basis of finite order"
+      },
+      "used_in_theorem": "s_schnirelmann_theorem_primes"
+    },
+    {
+      "id": "e_13364",
+      "from": "s_vinogradov_three_primes_theorem",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "large odd n = p1+p2+p3 => positive density"
+      },
+      "used_in_theorem": "s_schnirelmann_theorem_primes"
+    },
+    {
+      "id": "e_13365",
+      "from": "s_khinchin_addition_theorem",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "extension": "Khinchin's addition theorem for Schnirelmann density"
+      },
+      "used_in_theorem": "s_khinchin_addition_theorem"
+    },
+    {
+      "id": "e_13366",
+      "from": "t_schnirelmann_original_density_argument",
+      "to": "s_khinchin_addition_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "if sigma(A)>0 and B is basis, then A+B has greater density"
+      },
+      "used_in_theorem": "s_khinchin_addition_theorem"
+    },
+    {
+      "id": "e_13367",
+      "from": "s_essential_component",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "definition": "B is essential component if sigma(A+B)>sigma(A) for all A with 0<sigma(A)<1"
+      },
+      "used_in_theorem": "s_khinchin_essential_components_theorem"
+    },
+    {
+      "id": "e_13368",
+      "from": "t_schnirelmann_original_density_argument",
+      "to": "s_primes_essential_component",
+      "role": "output",
+      "parameter_binding": {
+        "result": "primes are an essential component"
+      },
+      "used_in_theorem": "s_primes_essential_component"
+    },
+    {
+      "id": "e_13369",
+      "from": "t_schnirelmann_original_density_argument",
+      "to": "s_khinchin_essential_components_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Khinchin criterion for essential components"
+      },
+      "used_in_theorem": "s_khinchin_essential_components_theorem"
+    },
+    {
+      "id": "e_13370",
+      "from": "s_essential_component",
+      "to": "t_selberg_sieve",
+      "role": "input",
+      "parameter_binding": {
+        "connection": "sieve methods show primes are essential"
+      },
+      "used_in_theorem": "s_erdos_essential_components_theorem"
+    },
+    {
+      "id": "e_13371",
+      "from": "t_selberg_sieve",
+      "to": "s_erdos_essential_components_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Erdos characterization of essential components"
+      },
+      "used_in_theorem": "s_erdos_essential_components_theorem"
+    },
+    {
+      "id": "e_13372",
+      "from": "s_asymptotic_basis",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "definition": "hA contains all sufficiently large n"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13373",
+      "from": "t_circle_method",
+      "to": "s_easy_waring_problem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "k-th powers form asymptotic basis for s >= s_0(k)"
+      },
+      "used_in_theorem": "s_easy_waring_problem"
+    },
+    {
+      "id": "e_13374",
+      "from": "s_hua_inequality",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "Hua's inequality for mean value estimates"
+      },
+      "used_in_theorem": "s_easy_waring_problem"
+    },
+    {
+      "id": "e_13375",
+      "from": "t_vinogradov_method_exponential_sums",
+      "to": "s_easy_waring_problem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "easy Waring for s >= 2^k + 1"
+      },
+      "used_in_theorem": "s_easy_waring_problem"
+    },
+    {
+      "id": "e_13376",
+      "from": "s_waring_G_function",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "determines": "asymptotic threshold for k-th power sums"
+      },
+      "used_in_theorem": "s_davenport_G4_equals_15"
+    },
+    {
+      "id": "e_13377",
+      "from": "t_davenport_heilbronn_method",
+      "to": "s_davenport_G4_equals_15",
+      "role": "output",
+      "parameter_binding": {
+        "result": "G(4) = 15"
+      },
+      "used_in_theorem": "s_davenport_G4_equals_15"
+    },
+    {
+      "id": "e_13378",
+      "from": "s_weyl_inequality",
+      "to": "t_davenport_heilbronn_method",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "exponential sum bounds for 4th powers"
+      },
+      "used_in_theorem": "s_davenport_G4_equals_15"
+    },
+    {
+      "id": "e_13379",
+      "from": "s_hua_inequality",
+      "to": "t_davenport_heilbronn_method",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "mean value theorem for 4th powers"
+      },
+      "used_in_theorem": "s_davenport_G4_equals_15"
+    },
+    {
+      "id": "e_13380",
+      "from": "s_waring_g_function",
+      "to": "t_finite_case_check",
+      "role": "input",
+      "parameter_binding": {
+        "verify": "g(4)=19 via Balasubramanian-Deshouillers-Dress"
+      },
+      "used_in_theorem": "s_balasubramanian_deshouillers_dress_theorem"
+    },
+    {
+      "id": "e_13381",
+      "from": "t_finite_case_check",
+      "to": "s_balasubramanian_deshouillers_dress_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "g(4) = 19"
+      },
+      "used_in_theorem": "s_balasubramanian_deshouillers_dress_theorem"
+    },
+    {
+      "id": "e_13382",
+      "from": "s_dickson_pillai_result",
+      "to": "t_finite_case_check",
+      "role": "input",
+      "parameter_binding": {
+        "computes": "g(k) for specific small k values"
+      },
+      "used_in_theorem": "s_ideal_waring_conjecture"
+    },
+    {
+      "id": "e_13383",
+      "from": "t_finite_case_check",
+      "to": "s_dickson_pillai_result",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Dickson-Pillai computations of g(k)"
+      },
+      "used_in_theorem": "s_dickson_pillai_result"
+    },
+    {
+      "id": "e_13384",
+      "from": "s_segre_mahler_wright_theorem",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "result": "bounds on representation of n by k-th powers"
+      },
+      "used_in_theorem": "s_segre_mahler_wright_theorem"
+    },
+    {
+      "id": "e_13385",
+      "from": "t_vinogradov_method_exponential_sums",
+      "to": "s_segre_mahler_wright_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Segre-Mahler-Wright improvements on G(k)"
+      },
+      "used_in_theorem": "s_segre_mahler_wright_theorem"
+    },
+    {
+      "id": "e_13386",
+      "from": "s_hua_inequality",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "key mean value estimate for cubes of primes"
+      },
+      "used_in_theorem": "s_hua_theorem_cubes_of_primes"
+    },
+    {
+      "id": "e_13387",
+      "from": "t_circle_method",
+      "to": "s_hua_theorem_cubes_of_primes",
+      "role": "output",
+      "parameter_binding": {
+        "result": "every large n is sum of 9 cubes of primes"
+      },
+      "used_in_theorem": "s_hua_theorem_cubes_of_primes"
+    },
+    {
+      "id": "e_13388",
+      "from": "s_von_mangoldt_function",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "weight": "Lambda(n) for prime-weighted sums"
+      },
+      "used_in_theorem": "s_waring_problem_for_primes"
+    },
+    {
+      "id": "e_13389",
+      "from": "t_circle_method",
+      "to": "s_waring_problem_for_primes",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Waring-Goldbach problem: sums of prime k-th powers"
+      },
+      "used_in_theorem": "s_waring_problem_for_primes"
+    },
+    {
+      "id": "e_13390",
+      "from": "s_gauss_sum_definition",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "Gauss sums in singular series computation"
+      },
+      "used_in_theorem": "s_singular_series_three_primes"
+    },
+    {
+      "id": "e_13391",
+      "from": "s_ramanujan_sum",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "Ramanujan sums in singular series"
+      },
+      "used_in_theorem": "s_singular_series_three_primes"
+    },
+    {
+      "id": "e_13392",
+      "from": "s_gauss_sum_definition",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "complete Gauss sums for Waring singular series"
+      },
+      "used_in_theorem": "s_singular_series_waring"
+    },
+    {
+      "id": "e_13393",
+      "from": "s_complete_exponential_sum_mod_q",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "S(q,a) for major arc approximation"
+      },
+      "used_in_theorem": "s_singular_series_waring"
+    },
+    {
+      "id": "e_13394",
+      "from": "s_holder_inequality",
+      "to": "t_hua_iterative_squaring",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "Holder for mean value bounds"
+      },
+      "used_in_theorem": "s_hua_inequality"
+    },
+    {
+      "id": "e_13395",
+      "from": "s_romanov_theorem",
+      "to": "t_selberg_sieve",
+      "role": "input",
+      "parameter_binding": {
+        "problem": "positive proportion of odd n = p + 2^k"
+      },
+      "used_in_theorem": "s_romanov_theorem"
+    },
+    {
+      "id": "e_13396",
+      "from": "t_selberg_sieve",
+      "to": "s_romanov_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "result": "positive lower density for p + 2^k representations"
+      },
+      "used_in_theorem": "s_romanov_theorem"
+    },
+    {
+      "id": "e_13397",
+      "from": "s_h_fold_representation_function",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "function": "r_h(n) = number of representations of n as h-fold sum"
+      },
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_13398",
+      "from": "s_representation_function_polygonal",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "function": "representation function for polygonal numbers"
+      },
+      "used_in_theorem": "s_cauchy_polygonal_number_theorem"
+    },
+    {
+      "id": "e_13399",
+      "from": "s_representation_function_waring",
+      "to": "t_major_minor_arc_decomposition",
+      "role": "input",
+      "parameter_binding": {
+        "function": "r_{s,k}(n) to be estimated"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13400",
+      "from": "t_major_minor_arc_decomposition",
+      "to": "s_representation_function_waring",
+      "role": "output",
+      "parameter_binding": {
+        "result": "asymptotic formula for r_{s,k}(n)"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13401",
+      "from": "s_abel_summation_theorem",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "partial summation for prime sum approximation"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13402",
+      "from": "s_weyl_inequality",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "Weyl bound for polynomial exponential sums"
+      },
+      "used_in_theorem": "s_vinogradov_bound_G_k"
+    },
+    {
+      "id": "e_13403",
+      "from": "s_hua_identity_theorem",
+      "to": "t_hua_iterative_squaring",
+      "role": "input",
+      "parameter_binding": {
+        "identity": "Hua's identity for iterative squaring"
+      },
+      "used_in_theorem": "s_hua_inequality"
+    },
+    {
+      "id": "e_13404",
+      "from": "t_hua_iterative_squaring",
+      "to": "s_hua_identity_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "proves": "Hua identity via iterative squaring technique"
+      },
+      "used_in_theorem": "s_hua_identity_theorem"
+    },
+    {
+      "id": "e_13405",
+      "from": "s_weyl_inequality",
+      "to": "t_van_der_corput_a_process",
+      "role": "input",
+      "parameter_binding": {
+        "connection": "Weyl inequality uses van der Corput differencing"
+      },
+      "used_in_theorem": "s_weyl_inequality"
+    },
+    {
+      "id": "e_13406",
+      "from": "t_van_der_corput_a_process",
+      "to": "s_weyl_inequality",
+      "role": "output",
+      "parameter_binding": {
+        "result": "Weyl's inequality via iterated differencing"
+      },
+      "used_in_theorem": "s_weyl_inequality"
+    },
+    {
+      "id": "e_13407",
+      "from": "s_cauchy_davenport_theorem",
+      "to": "t_mann_sequential_addition",
+      "role": "input",
+      "parameter_binding": {
+        "analog": "mod p version inspires integer density theorems"
+      },
+      "used_in_theorem": "s_mann_theorem"
+    },
+    {
+      "id": "e_13408",
+      "from": "s_plunnecke_ruzsa_inequality",
+      "to": "t_schnirelmann_original_density_argument",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "sumset growth bounds"
+      },
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_13409",
+      "from": "s_vinogradov_mean_value_theorem",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "mean value estimate J_{s,k}"
+      },
+      "used_in_theorem": "s_vinogradov_bound_G_k"
+    },
+    {
+      "id": "e_13410",
+      "from": "s_wooley_refinement",
+      "to": "t_efficient_differencing",
+      "role": "input",
+      "parameter_binding": {
+        "feeds_back": "improved mean values feed further differencing"
+      },
+      "used_in_theorem": "s_vinogradov_bound_G_k"
+    },
+    {
+      "id": "e_13411",
+      "from": "t_efficient_differencing",
+      "to": "s_vinogradov_mean_value_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "proves": "main conjecture for Vinogradov mean value"
+      },
+      "used_in_theorem": "s_vinogradov_mean_value_theorem"
+    },
+    {
+      "id": "e_13412",
+      "from": "s_chinese_remainder_theorem",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "CRT for coprime moduli in singular series"
+      },
+      "used_in_theorem": "s_multiplicativity_singular_series"
+    },
+    {
+      "id": "e_13413",
+      "from": "t_hensel_lifting",
+      "to": "s_multiplicativity_singular_series",
+      "role": "output",
+      "parameter_binding": {
+        "result": "singular series = Euler product via CRT + Hensel"
+      },
+      "used_in_theorem": "s_multiplicativity_singular_series"
+    },
+    {
+      "id": "e_13414",
+      "from": "s_waring_G_k_lower_bounds",
+      "to": "t_finite_case_check",
+      "role": "input",
+      "parameter_binding": {
+        "lower_bounds": "G(k) >= various lower bounds"
+      },
+      "used_in_theorem": "s_waring_G_function"
+    },
+    {
+      "id": "e_13415",
+      "from": "t_finite_case_check",
+      "to": "s_waring_G_function",
+      "role": "output",
+      "parameter_binding": {
+        "establishes": "G(k) definition with known bounds"
+      },
+      "used_in_theorem": "s_waring_G_function"
+    },
+    {
+      "id": "e_13417",
+      "from": "t_bruns_sieve",
+      "to": "s_goldbach_exceptional_set",
+      "role": "output",
+      "parameter_binding": {
+        "bound": "sieve upper bound on Goldbach exceptions"
+      },
+      "used_in_theorem": "s_goldbach_exceptional_set"
+    },
+    {
+      "id": "e_13418",
+      "from": "s_siegel_zero",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "obstruction": "possible Siegel zero affects error term"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13419",
+      "from": "s_bombieri_vinogradov",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "average version of GRH for primes in APs"
+      },
+      "used_in_theorem": "s_goldbach_exceptional_set"
+    },
+    {
+      "id": "e_13420",
+      "from": "s_large_sieve_inequality",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "tool": "large sieve for prime exponential sums"
+      },
+      "used_in_theorem": "s_goldbach_exceptional_set"
+    },
+    {
+      "id": "e_13421",
+      "from": "s_ternary_goldbach",
+      "to": "t_vinogradov_method_exponential_sums",
+      "role": "input",
+      "parameter_binding": {
+        "problem": "odd n >= 7 is sum of three primes"
+      },
+      "used_in_theorem": "s_three_prime_asymptotic_formula"
+    },
+    {
+      "id": "e_13422",
+      "from": "t_vinogradov_method_exponential_sums",
+      "to": "s_three_prime_asymptotic_formula",
+      "role": "output",
+      "parameter_binding": {
+        "formula": "r_3(n) = (1/2) S(n) n^2/(log n)^3 (1 + o(1))"
+      },
+      "used_in_theorem": "s_three_prime_asymptotic_formula"
+    },
+    {
+      "id": "e_13423",
+      "from": "s_generating_function_waring",
+      "to": "t_major_minor_arc_decomposition",
+      "role": "input",
+      "parameter_binding": {
+        "function": "f(alpha)^s generates Waring representations"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13424",
+      "from": "s_circle_integral_for_r3_N",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "integral": "circle integral for three-prime representation"
+      },
+      "used_in_theorem": "s_vinogradov_three_primes_theorem"
+    },
+    {
+      "id": "e_13425",
+      "from": "s_euler_product_zeta",
+      "to": "t_major_arc_approximation_prime_sums",
+      "role": "input",
+      "parameter_binding": {
+        "connection": "Euler product relates to singular series"
+      },
+      "used_in_theorem": "s_singular_series_three_primes"
+    },
+    {
+      "id": "e_13426",
+      "from": "t_major_arc_approximation_prime_sums",
+      "to": "s_singular_series_three_primes",
+      "role": "output",
+      "parameter_binding": {
+        "result": "S(n) = prod_p (1 - 1/(p-1)^2)(1 + ...) for three primes"
+      },
+      "used_in_theorem": "s_singular_series_three_primes"
+    },
+    {
+      "id": "e_13427",
+      "from": "s_four_cubes_impossibility",
+      "to": "t_linnik_elementary_method",
+      "role": "input",
+      "parameter_binding": {
+        "obstruction": "some n not sum of fewer than 5 cubes"
+      },
+      "used_in_theorem": "s_linnik_seven_cubes"
+    },
+    {
+      "id": "e_13428",
+      "from": "s_waring_g_function",
+      "to": "t_linnik_elementary_method",
+      "role": "input",
+      "parameter_binding": {
+        "context": "g(3)=9 known, seek G(3) bound"
+      },
+      "used_in_theorem": "s_linnik_seven_cubes"
+    },
+    {
+      "id": "e_13429",
+      "from": "s_hua_inequality",
+      "to": "t_davenport_heilbronn_method",
+      "role": "input",
+      "parameter_binding": {
+        "provides": "mean value estimate for biquadratic sums"
+      },
+      "used_in_theorem": "s_davenport_G4_equals_15"
+    },
+    {
+      "id": "e_13430",
+      "from": "s_vinogradov_bound_G_k",
+      "to": "t_efficient_differencing",
+      "role": "input",
+      "parameter_binding": {
+        "starting_point": "classical G(k) bound to be refined"
+      },
+      "used_in_theorem": "s_wooley_refinement"
+    },
+    {
+      "id": "e_13431",
+      "from": "s_waring_problem_for_primes",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "problem": "every large n = sum of prime k-th powers"
+      },
+      "used_in_theorem": "s_hua_theorem_cubes_of_primes"
+    },
+    {
+      "id": "e_13432",
+      "from": "s_hardy_littlewood_singular_series_predictor",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "prediction": "singular series predicts density of representations"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13433",
+      "from": "t_circle_method",
+      "to": "s_representation_function_waring",
+      "role": "output",
+      "parameter_binding": {
+        "computes": "asymptotic for r_{s,k}(n)"
+      },
+      "used_in_theorem": "s_hardy_littlewood_asymptotic_waring"
+    },
+    {
+      "id": "e_13434",
+      "from": "s_weyl_differencing_reduction",
+      "to": "t_van_der_corput_a_process",
+      "role": "input",
+      "parameter_binding": {
+        "method": "Weyl differencing = van der Corput A-process for polynomials"
+      },
+      "used_in_theorem": "s_weyl_inequality"
+    },
+    {
+      "id": "e_13435",
+      "from": "s_singular_integral_circle_method",
+      "to": "t_circle_method",
+      "role": "input",
+      "parameter_binding": {
+        "integral": "J(n) real-analytic singular integral"
+      },
+      "used_in_theorem": "s_singular_integral_waring"
+    },
+    {
+      "id": "e_13436",
+      "from": "t_circle_method",
+      "to": "s_singular_integral_waring",
+      "role": "output",
+      "parameter_binding": {
+        "result": "J_{s,k}(n) = Gamma(1+1/k)^s / Gamma(s/k) * n^{s/k-1}"
+      },
+      "used_in_theorem": "s_singular_integral_waring"
     }
   ],
   "subgraphs": [
