@@ -77447,6 +77447,200 @@
       "name": "Diagram chasing in abelian categories",
       "description": "Chase elements through diagrams using the embedding theorem to prove exactness or isomorphism results.",
       "type_signature": "(Commutative diagram with exact rows/columns in abelian category) → Exactness statements and connecting morphisms"
+    },
+    {
+      "id": "t_cycle_decomposition_of_permutations",
+      "kind": "technique",
+      "name": "Cycle decomposition of permutations",
+      "function_signature": "(Permutation σ ∈ S_n) → (Product of disjoint cycles)",
+      "description": "Writing a permutation as a product of disjoint cycles to determine its order, cycle type, and conjugacy class."
+    },
+    {
+      "id": "s_simplicity_of_alternating_group",
+      "kind": "theorem",
+      "name": "Simplicity of A_n for n ≥ 5",
+      "type_signature": "",
+      "description": "The alternating group A_n is simple (has no proper nontrivial normal subgroups) for all n ≥ 5.",
+      "aliases": [
+        "A_n is simple"
+      ]
+    },
+    {
+      "id": "s_ufd_polynomial_ring_theorem",
+      "kind": "theorem",
+      "name": "R UFD implies R[x] UFD",
+      "type_signature": "",
+      "description": "If R is a unique factorization domain, then the polynomial ring R[x] is also a unique factorization domain."
+    },
+    {
+      "id": "s_fundamental_theorem_of_algebra_via_real_closed_fields",
+      "kind": "theorem",
+      "name": "Fundamental theorem of algebra via real closed fields",
+      "type_signature": "",
+      "description": "If R is a real closed field, then R[i] = R[x]/(x² + 1) is algebraically closed; in particular ℂ = ℝ[i] is algebraically closed.",
+      "aliases": [
+        "FTA via real closed fields"
+      ]
+    },
+    {
+      "id": "s_budan_fourier_theorem",
+      "kind": "theorem",
+      "name": "Budan–Fourier theorem",
+      "type_signature": "",
+      "description": "The number of real roots of a polynomial f in an interval (a, b] is at most the difference in the number of sign changes of f, f', f'', ... evaluated at a and b, with equality modulo 2."
+    },
+    {
+      "id": "s_distributive_lattice",
+      "kind": "axiom",
+      "name": "Distributive lattice",
+      "type_signature": "Lattice",
+      "description": "A lattice satisfying the distributive law: a ∧ (b ∨ c) = (a ∧ b) ∨ (a ∧ c) for all elements a, b, c."
+    },
+    {
+      "id": "s_complemented_lattice",
+      "kind": "axiom",
+      "name": "Complemented lattice",
+      "type_signature": "BoundedLattice",
+      "description": "A bounded lattice in which every element a has a complement b satisfying a ∧ b = 0 and a ∨ b = 1."
+    },
+    {
+      "id": "s_jordan_dedekind_chain_condition",
+      "kind": "theorem",
+      "name": "Jordan–Dedekind chain condition",
+      "type_signature": "",
+      "description": "In a modular lattice of finite length, all maximal chains between any two comparable elements have the same length."
+    },
+    {
+      "id": "s_universal_algebra",
+      "kind": "axiom",
+      "name": "Universal algebra (Ω-algebra)",
+      "type_signature": "(Set A, Operations Ω)",
+      "description": "A set A equipped with a family Ω of finitary operations ω: A^{n_ω} → A, providing a general framework encompassing groups, rings, lattices, and other algebraic structures.",
+      "aliases": [
+        "Ω-algebra",
+        "general algebra"
+      ]
+    },
+    {
+      "id": "s_congruence_relation",
+      "kind": "axiom",
+      "name": "Congruence relation",
+      "type_signature": "EquivalenceRelation",
+      "description": "An equivalence relation on an algebra compatible with all operations: if a_i ≡ b_i then ω(a_1,...,a_n) ≡ ω(b_1,...,b_n) for every operation ω."
+    },
+    {
+      "id": "s_free_algebra_universal",
+      "kind": "state",
+      "name": "Free algebra (universal algebra)",
+      "type_signature": "Ω-algebra",
+      "description": "The Ω-algebra F(X) on a generating set X satisfying the universal property: every map X → A to an Ω-algebra A extends uniquely to a homomorphism F(X) → A."
+    },
+    {
+      "id": "s_variety_equational_class",
+      "kind": "axiom",
+      "name": "Variety (equational class)",
+      "type_signature": "Class of Ω-algebras",
+      "description": "A class of Ω-algebras defined by a set of universally quantified identities; equivalently, a class closed under homomorphic images, subalgebras, and direct products.",
+      "aliases": [
+        "equational class",
+        "variety of algebras"
+      ]
+    },
+    {
+      "id": "s_birkhoff_hsp_theorem",
+      "kind": "theorem",
+      "name": "Birkhoff's HSP theorem",
+      "type_signature": "",
+      "description": "A class of algebras is a variety (definable by identities) if and only if it is closed under homomorphic images (H), subalgebras (S), and direct products (P).",
+      "aliases": [
+        "Birkhoff's variety theorem"
+      ]
+    },
+    {
+      "id": "s_subdirect_product",
+      "kind": "state",
+      "name": "Subdirect product",
+      "type_signature": "Ω-algebra",
+      "description": "A subalgebra of a direct product ∏ A_i whose projection onto each factor A_i is surjective."
+    },
+    {
+      "id": "s_birkhoff_subdirect_representation_theorem",
+      "kind": "theorem",
+      "name": "Birkhoff's subdirect representation theorem",
+      "type_signature": "",
+      "description": "Every algebra is isomorphic to a subdirect product of subdirectly irreducible algebras."
+    },
+    {
+      "id": "s_completely_reducible_module",
+      "kind": "axiom",
+      "name": "Completely reducible module",
+      "type_signature": "Module",
+      "description": "A module in which every submodule is a direct summand; equivalent to being a direct sum of simple submodules (semisimple).",
+      "aliases": [
+        "semisimple module"
+      ]
+    },
+    {
+      "id": "s_composition_length",
+      "kind": "state",
+      "name": "Composition length",
+      "type_signature": "ℕ ∪ {∞}",
+      "description": "The length of a composition series of a module, when one exists; well-defined by the Jordan–Hölder theorem."
+    },
+    {
+      "id": "s_krull_dimension_of_ring",
+      "kind": "state",
+      "name": "Krull dimension",
+      "type_signature": "ℕ ∪ {∞}",
+      "description": "The supremum of lengths of all chains of prime ideals p_0 ⊊ p_1 ⊊ ⋯ ⊊ p_d in a commutative ring R.",
+      "aliases": [
+        "Krull dimension of a ring"
+      ]
+    },
+    {
+      "id": "s_prufer_domain",
+      "kind": "axiom",
+      "name": "Prüfer domain",
+      "type_signature": "IntegralDomain",
+      "description": "An integral domain in which every finitely generated nonzero ideal is invertible; equivalently, every localization at a maximal ideal is a valuation ring.",
+      "aliases": [
+        "Prufer domain"
+      ]
+    },
+    {
+      "id": "s_prufer_domain_characterizations",
+      "kind": "theorem",
+      "name": "Characterizations of Prüfer domains",
+      "type_signature": "",
+      "description": "An integral domain R is a Prüfer domain if and only if R_M is a valuation ring for every maximal ideal M, if and only if every finitely generated torsion-free R-module is flat."
+    },
+    {
+      "id": "s_homology_of_chain_complex",
+      "kind": "state",
+      "name": "Homology of a chain complex",
+      "type_signature": "GradedModule",
+      "description": "The graded module H_n(C) = ker(d_n)/im(d_{n+1}) measuring the failure of exactness of a chain complex C at position n."
+    },
+    {
+      "id": "s_abelian_p_extensions_via_witt_vectors",
+      "kind": "theorem",
+      "name": "Abelian p-extensions via Witt vectors",
+      "type_signature": "",
+      "description": "Over a field of characteristic p, abelian extensions of exponent p^n correspond bijectively to quotients of the additive group of Witt vectors W_n(K) modulo the image of the operator ℘ = F − id."
+    },
+    {
+      "id": "s_integrality_of_characters",
+      "kind": "theorem",
+      "name": "Integrality of characters",
+      "type_signature": "",
+      "description": "The character values χ(g) of a finite group representation over ℂ are algebraic integers, and |G|/dim(V) times the character value at any element is an algebraic integer."
+    },
+    {
+      "id": "t_modular_representation_theory",
+      "kind": "technique",
+      "name": "Modular representation theory",
+      "function_signature": "(Finite group G, Field k with char(k) | |G|) → (Block decomposition, Brauer characters, decomposition numbers)",
+      "description": "Study of representations of finite groups over fields whose characteristic divides the group order, where Maschke's theorem fails and indecomposable modules need not be simple."
     }
   ],
   "edges": [
@@ -201850,6 +202044,430 @@
       "id": "e_13860",
       "from": "t_diagram_chasing_abelian_categories",
       "to": "s_exact_sequence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13861",
+      "from": "s_permutation_group_on_indices",
+      "to": "t_cycle_decomposition_of_permutations",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13862",
+      "from": "s_symmetric_group_Sn",
+      "to": "t_cycle_decomposition_of_permutations",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13863",
+      "from": "t_cycle_decomposition_of_permutations",
+      "to": "s_alternating_group",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13864",
+      "from": "s_alternating_group",
+      "to": "t_cycle_decomposition_of_permutations",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_simplicity_of_alternating_group"
+    },
+    {
+      "id": "e_13865",
+      "from": "t_cycle_decomposition_of_permutations",
+      "to": "s_simplicity_of_alternating_group",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_simplicity_of_alternating_group"
+    },
+    {
+      "id": "e_13866",
+      "from": "s_unique_factorization_domain",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ufd_polynomial_ring_theorem"
+    },
+    {
+      "id": "e_13867",
+      "from": "s_gausss_lemma_content_of_polynomials",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ufd_polynomial_ring_theorem"
+    },
+    {
+      "id": "e_13868",
+      "from": "t_universal_property_argument",
+      "to": "s_ufd_polynomial_ring_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ufd_polynomial_ring_theorem"
+    },
+    {
+      "id": "e_13869",
+      "from": "s_real_closed_field",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fundamental_theorem_of_algebra_via_real_closed_fields"
+    },
+    {
+      "id": "e_13870",
+      "from": "t_galois_correspondence",
+      "to": "s_fundamental_theorem_of_algebra_via_real_closed_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fundamental_theorem_of_algebra_via_real_closed_fields"
+    },
+    {
+      "id": "e_13871",
+      "from": "s_ordered_field_structure",
+      "to": "t_proof_by_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_budan_fourier_theorem"
+    },
+    {
+      "id": "e_13872",
+      "from": "t_proof_by_induction",
+      "to": "s_budan_fourier_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_budan_fourier_theorem"
+    },
+    {
+      "id": "e_13873",
+      "from": "s_distributive_lattice",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_boolean_algebra_B"
+    },
+    {
+      "id": "e_13874",
+      "from": "t_universal_property_argument",
+      "to": "s_boolean_algebra_B",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_boolean_algebra_B"
+    },
+    {
+      "id": "e_13875",
+      "from": "s_complemented_lattice",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13876",
+      "from": "s_distributive_lattice",
+      "to": "t_proof_by_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_jordan_dedekind_chain_condition"
+    },
+    {
+      "id": "e_13877",
+      "from": "t_proof_by_induction",
+      "to": "s_jordan_dedekind_chain_condition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_jordan_dedekind_chain_condition"
+    },
+    {
+      "id": "e_13878",
+      "from": "s_universal_algebra",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_free_algebra_universal"
+    },
+    {
+      "id": "e_13879",
+      "from": "t_universal_property_argument",
+      "to": "s_free_algebra_universal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_free_algebra_universal"
+    },
+    {
+      "id": "e_13880",
+      "from": "s_universal_algebra",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_congruence_relation"
+    },
+    {
+      "id": "e_13881",
+      "from": "t_universal_property_argument",
+      "to": "s_congruence_relation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_congruence_relation"
+    },
+    {
+      "id": "e_13882",
+      "from": "s_variety_equational_class",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_hsp_theorem"
+    },
+    {
+      "id": "e_13883",
+      "from": "s_congruence_relation",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_hsp_theorem"
+    },
+    {
+      "id": "e_13884",
+      "from": "t_universal_property_argument",
+      "to": "s_birkhoff_hsp_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_hsp_theorem"
+    },
+    {
+      "id": "e_13885",
+      "from": "s_subdirect_product",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_subdirect_representation_theorem"
+    },
+    {
+      "id": "e_13886",
+      "from": "s_congruence_relation",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_subdirect_representation_theorem"
+    },
+    {
+      "id": "e_13887",
+      "from": "t_universal_property_argument",
+      "to": "s_birkhoff_subdirect_representation_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_subdirect_representation_theorem"
+    },
+    {
+      "id": "e_13888",
+      "from": "s_simple_module",
+      "to": "t_universal_property_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_completely_reducible_module"
+    },
+    {
+      "id": "e_13889",
+      "from": "t_universal_property_argument",
+      "to": "s_completely_reducible_module",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_completely_reducible_module"
+    },
+    {
+      "id": "e_13890",
+      "from": "s_composition_series",
+      "to": "t_proof_by_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_composition_length"
+    },
+    {
+      "id": "e_13891",
+      "from": "t_proof_by_induction",
+      "to": "s_composition_length",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_composition_length"
+    },
+    {
+      "id": "e_13892",
+      "from": "s_prime_ideal_chain",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_krull_dimension_of_ring"
+    },
+    {
+      "id": "e_13893",
+      "from": "t_localization_at_prime",
+      "to": "s_krull_dimension_of_ring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_krull_dimension_of_ring"
+    },
+    {
+      "id": "e_13894",
+      "from": "s_krull_dimension_of_ring",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_krull_hauptidealsatz"
+    },
+    {
+      "id": "e_13895",
+      "from": "t_localization_at_prime",
+      "to": "s_krull_hauptidealsatz",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_krull_hauptidealsatz"
+    },
+    {
+      "id": "e_13896",
+      "from": "s_integral_domain",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prufer_domain_characterizations"
+    },
+    {
+      "id": "e_13897",
+      "from": "s_valuation_ring",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prufer_domain_characterizations"
+    },
+    {
+      "id": "e_13898",
+      "from": "t_localization_at_prime",
+      "to": "s_prufer_domain_characterizations",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prufer_domain_characterizations"
+    },
+    {
+      "id": "e_13899",
+      "from": "s_dedekind_domain",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prufer_domain"
+    },
+    {
+      "id": "e_13900",
+      "from": "t_localization_at_prime",
+      "to": "s_prufer_domain",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_prufer_domain"
+    },
+    {
+      "id": "e_13901",
+      "from": "s_chain_complex",
+      "to": "t_derived_functor_computation_via_acyclic_resolutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_homology_of_chain_complex"
+    },
+    {
+      "id": "e_13902",
+      "from": "t_derived_functor_computation_via_acyclic_resolutions",
+      "to": "s_homology_of_chain_complex",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_homology_of_chain_complex"
+    },
+    {
+      "id": "e_13903",
+      "from": "s_homology_of_chain_complex",
+      "to": "t_derived_functor_computation_via_acyclic_resolutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ext_functor"
+    },
+    {
+      "id": "e_13904",
+      "from": "s_homology_of_chain_complex",
+      "to": "t_derived_functor_computation_via_acyclic_resolutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tor_functor"
+    },
+    {
+      "id": "e_13905",
+      "from": "s_witt_vectors",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_abelian_p_extensions_via_witt_vectors"
+    },
+    {
+      "id": "e_13906",
+      "from": "s_artin_schreier_theorem",
+      "to": "t_galois_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_abelian_p_extensions_via_witt_vectors"
+    },
+    {
+      "id": "e_13907",
+      "from": "t_galois_correspondence",
+      "to": "s_abelian_p_extensions_via_witt_vectors",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_abelian_p_extensions_via_witt_vectors"
+    },
+    {
+      "id": "e_13908",
+      "from": "s_character_of_a_representation",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_integrality_of_characters"
+    },
+    {
+      "id": "e_13909",
+      "from": "s_representation_of_a_group",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_integrality_of_characters"
+    },
+    {
+      "id": "e_13910",
+      "from": "t_character_methods",
+      "to": "s_integrality_of_characters",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_integrality_of_characters"
+    },
+    {
+      "id": "e_13911",
+      "from": "s_representation_of_a_group",
+      "to": "t_modular_representation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13912",
+      "from": "s_group_algebra",
+      "to": "t_modular_representation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_13913",
+      "from": "t_modular_representation_theory",
+      "to": "s_brauer_three_main_theorems",
       "role": "output",
       "parameter_binding": {},
       "used_in_theorem": ""
