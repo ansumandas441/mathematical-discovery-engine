@@ -71724,6 +71724,433 @@
       "aliases": [
         "Ramanujan-Petersson conjecture"
       ]
+    },
+    {
+      "id": "s_extremal_order_definition",
+      "kind": "axiom",
+      "name": "Extremal order of an arithmetic function",
+      "type_signature": "",
+      "description": "The maximal (resp. minimal) order of f(n) is a function g(n) bounding f from above (resp. below) up to (1+o(1)) factor, achieved along some subsequence."
+    },
+    {
+      "id": "s_highly_composite_number",
+      "kind": "axiom",
+      "name": "Highly composite number",
+      "type_signature": "",
+      "description": "An integer n such that d(m) < d(n) for all m < n; has the form ∏ p_i^{a_i} with a_1 ≥ a_2 ≥ … ≥ 1 (Ramanujan)."
+    },
+    {
+      "id": "s_largest_prime_factor",
+      "kind": "axiom",
+      "name": "Largest prime factor P⁺(n)",
+      "type_signature": "",
+      "description": "P⁺(n) = max{p : p | n} for n ≥ 2, with P⁺(1) = 1 by convention; central to the study of smooth/friable integers."
+    },
+    {
+      "id": "s_smallest_prime_factor_definition",
+      "kind": "axiom",
+      "name": "Smallest prime factor P⁻(n)",
+      "type_signature": "",
+      "description": "P⁻(n) = min{p : p | n} for n ≥ 2, with P⁻(1) = +∞ by convention; central to the study of rough integers."
+    },
+    {
+      "id": "s_integers_free_of_small_prime_factors",
+      "kind": "axiom",
+      "name": "Rough integers Φ(x, y)",
+      "type_signature": "",
+      "description": "Φ(x, y) = #{n ≤ x : P⁻(n) > y}, counting integers up to x whose smallest prime factor exceeds y."
+    },
+    {
+      "id": "s_natural_density",
+      "kind": "axiom",
+      "name": "Natural density (asymptotic density)",
+      "type_signature": "",
+      "description": "d(A) = lim_{x→∞} |A ∩ [1,x]| / x for a set A ⊆ ℤ_{>0}, when the limit exists."
+    },
+    {
+      "id": "s_logarithmic_density",
+      "kind": "axiom",
+      "name": "Logarithmic density",
+      "type_signature": "",
+      "description": "δ(A) = lim_{x→∞} (1/log x) ∑_{n≤x, n∈A} 1/n; if natural density d(A) exists then δ(A) = d(A), but the converse fails."
+    },
+    {
+      "id": "s_slowly_varying_function",
+      "kind": "axiom",
+      "name": "Slowly varying function",
+      "type_signature": "",
+      "description": "A measurable function L: [1,∞) → (0,∞) with L(tx)/L(x) → 1 for every t > 0 as x → ∞; examples include log x, log log x, constants."
+    },
+    {
+      "id": "s_generalized_divisor_function_d_z",
+      "kind": "axiom",
+      "name": "Generalized divisor function d_z(n)",
+      "type_signature": "",
+      "description": "For z ∈ ℂ, d_z(n) is the n-th Dirichlet coefficient of ζ(s)^z; multiplicative with d_z(p^k) = z(z+1)⋯(z+k−1)/k!."
+    },
+    {
+      "id": "s_local_zeta_function_y_smooth",
+      "kind": "axiom",
+      "name": "Local zeta function ζ(s, y)",
+      "type_signature": "",
+      "description": "ζ(s, y) = ∏_{p≤y}(1 − p^{−s})^{−1} = ∑_{P⁺(n)≤y} n^{−s}, the truncated Euler product restricted to y-smooth integers."
+    },
+    {
+      "id": "s_pretentious_distance_function",
+      "kind": "axiom",
+      "name": "Pretentious distance D(f, g; x)",
+      "type_signature": "",
+      "description": "D(f, g; x)² = ∑_{p≤x} (1 − Re(f(p)g̅(p)))/p, measuring proximity between multiplicative functions f, g of modulus ≤ 1 on primes."
+    },
+    {
+      "id": "s_hooley_delta_function",
+      "kind": "axiom",
+      "name": "Hooley's Δ-function",
+      "type_signature": "",
+      "description": "Δ(n) = max_{u∈ℝ} #{d | n : e^u < d ≤ e^{u+1}}, measuring the maximum concentration of divisors of n in a dyadic interval."
+    },
+    {
+      "id": "s_distribution_function_arithmetic_function",
+      "kind": "axiom",
+      "name": "Distribution function of an arithmetic function",
+      "type_signature": "",
+      "description": "F_N(t) = (1/N)#{n ≤ N : f(n) ≤ t}, the empirical cumulative distribution function of f evaluated at the first N integers."
+    },
+    {
+      "id": "s_limiting_distribution_arithmetic_function",
+      "kind": "axiom",
+      "name": "Limiting distribution of an arithmetic function",
+      "type_signature": "",
+      "description": "An arithmetic function f has limiting distribution F if F_N(t) → F(t) at all continuity points of F as N → ∞."
+    },
+    {
+      "id": "s_summatory_liouville_function",
+      "kind": "state",
+      "name": "Summatory Liouville function L(x)",
+      "type_signature": "",
+      "description": "L(x) = ∑_{n≤x} λ(n); the PNT is equivalent to L(x) = o(x), and the RH to L(x) = O(x^{1/2+ε})."
+    },
+    {
+      "id": "s_dickman_function_differential_delay_equation",
+      "kind": "state",
+      "name": "Dickman function differential-delay equation",
+      "type_signature": "",
+      "description": "ρ satisfies uρ′(u) = −ρ(u−1) for u > 1 with ρ(u) = 1 for 0 ≤ u ≤ 1; ρ(u) decreases super-exponentially as u → ∞."
+    },
+    {
+      "id": "s_buchstab_function_differential_delay_equation",
+      "kind": "state",
+      "name": "Buchstab function differential-delay equation",
+      "type_signature": "",
+      "description": "(uω(u))′ = ω(u−1) for u > 2 with uω(u) = 1 for 1 ≤ u ≤ 2; ω(u) → e^{−γ} as u → ∞."
+    },
+    {
+      "id": "s_saddle_point_alpha_x_y",
+      "kind": "state",
+      "name": "Saddle-point parameter α(x, y)",
+      "type_signature": "",
+      "description": "The unique positive solution α to ∑_{p≤y} (log p)/(p^α − 1) = log x, the saddle point in the Hildebrand–Tenenbaum estimate for Ψ(x, y)."
+    },
+    {
+      "id": "s_robin_inequality",
+      "kind": "state",
+      "name": "Robin's inequality",
+      "type_signature": "",
+      "description": "σ(n) < e^γ n log log n for all n ≥ 5041; equivalent to the Riemann hypothesis (Robin, 1984)."
+    },
+    {
+      "id": "s_mertens_first_theorem",
+      "kind": "theorem",
+      "name": "Mertens' first theorem",
+      "type_signature": "",
+      "description": "∑_{p≤x} (log p)/p = log x + O(1)."
+    },
+    {
+      "id": "s_mertens_second_theorem",
+      "kind": "theorem",
+      "name": "Mertens' second theorem",
+      "type_signature": "",
+      "description": "∑_{p≤x} 1/p = log log x + M + O(1/log x), where M is the Meissel–Mertens constant."
+    },
+    {
+      "id": "s_mertens_third_theorem",
+      "kind": "theorem",
+      "name": "Mertens' third theorem",
+      "type_signature": "",
+      "description": "∏_{p≤x}(1 − 1/p) = e^{−γ}/log x · (1 + O(1/log x)), where γ is the Euler–Mascheroni constant."
+    },
+    {
+      "id": "s_average_order_omega_n",
+      "kind": "theorem",
+      "name": "Average order of ω(n)",
+      "type_signature": "",
+      "description": "∑_{n≤x} ω(n) = x log log x + M₁x + O(x/log x), where M₁ is a constant related to the Meissel–Mertens constant."
+    },
+    {
+      "id": "s_average_order_big_omega_n",
+      "kind": "theorem",
+      "name": "Average order of Ω(n)",
+      "type_signature": "",
+      "description": "∑_{n≤x} Ω(n) = x log log x + M₂x + O(x/log x), with M₂ = M₁ + ∑_p 1/(p(p−1))."
+    },
+    {
+      "id": "s_squarefree_counting_asymptotic",
+      "kind": "theorem",
+      "name": "Squarefree counting asymptotic",
+      "type_signature": "",
+      "description": "Q(x) = ∑_{n≤x} μ(n)² = (6/π²)x + O(√x), counting squarefree integers up to x."
+    },
+    {
+      "id": "s_maximal_order_divisor_function",
+      "kind": "theorem",
+      "name": "Maximal order of d(n)",
+      "type_signature": "",
+      "description": "lim sup_{n→∞} log d(n) · log log n / log n = log 2; equivalently d(n) ≤ 2^{(1+o(1)) log n / log log n} with equality along highly composite numbers."
+    },
+    {
+      "id": "s_gronwall_theorem_sigma",
+      "kind": "theorem",
+      "name": "Gronwall's theorem (maximal order of σ(n)/n)",
+      "type_signature": "",
+      "description": "lim sup_{n→∞} σ(n)/(n log log n) = e^γ, where γ is the Euler–Mascheroni constant."
+    },
+    {
+      "id": "s_minimal_order_euler_totient_ratio",
+      "kind": "theorem",
+      "name": "Minimal order of φ(n)/n",
+      "type_signature": "",
+      "description": "lim inf_{n→∞} φ(n) log log n / n = e^{−γ}; achieved along primorial numbers n_k = ∏_{p≤p_k} p."
+    },
+    {
+      "id": "s_mean_value_zeta_critical_line",
+      "kind": "theorem",
+      "name": "Mean value of |ζ(1/2+it)|²",
+      "type_signature": "",
+      "description": "∫₀ᵀ |ζ(1/2 + it)|² dt ∼ T log T as T → ∞."
+    },
+    {
+      "id": "s_dickman_theorem",
+      "kind": "theorem",
+      "name": "Dickman's theorem",
+      "type_signature": "",
+      "description": "For fixed u > 0, Ψ(x, x^{1/u})/x → ρ(u) as x → ∞, where ρ is the Dickman function."
+    },
+    {
+      "id": "s_karamata_tauberian_theorem",
+      "kind": "theorem",
+      "name": "Karamata's Tauberian theorem",
+      "type_signature": "",
+      "description": "If a_n ≥ 0 and ∑a_n n^{−s} ∼ Γ(α+1)(s−α)^{−1}L(1/(s−α)) as s → α⁺ with L slowly varying, then ∑_{n≤x} a_n ∼ x^α L(x)."
+    },
+    {
+      "id": "s_delange_tauberian_theorem",
+      "kind": "theorem",
+      "name": "Delange's Tauberian theorem",
+      "type_signature": "",
+      "description": "If ∑a_n n^{−s} behaves like ζ(s)^z near s = 1 for z ∈ ℂ, then ∑_{n≤x} a_n ∼ Cx(log x)^{z−1}/Γ(z) for an explicit constant C."
+    },
+    {
+      "id": "s_landau_page_theorem",
+      "kind": "theorem",
+      "name": "Landau–Page theorem",
+      "type_signature": "",
+      "description": "Among all real primitive characters χ mod q with q ≤ Q, at most one L(s, χ) can vanish in the region σ > 1 − c/log Q."
+    },
+    {
+      "id": "s_dual_turan_kubilius_inequality",
+      "kind": "theorem",
+      "name": "Dual Turán–Kubilius inequality",
+      "type_signature": "",
+      "description": "∑_{p^k≤x} |g(p^k)|²/p^k ≪ (1/x) ∑_{n≤x} |∑_{p^k‖n} g(p^k)|², dual to the Turán–Kubilius inequality."
+    },
+    {
+      "id": "s_normal_order_log_divisor_function",
+      "kind": "theorem",
+      "name": "Normal order of log d(n)",
+      "type_signature": "",
+      "description": "The normal order of log d(n) is (log 2)(log log n): for almost all n, log d(n) ∼ (log 2) log log n."
+    },
+    {
+      "id": "s_delange_mean_value_multiplicative",
+      "kind": "theorem",
+      "name": "Delange's theorem on mean values of multiplicative functions",
+      "type_signature": "",
+      "description": "If f is multiplicative with |f(p)| ≤ 1 and ∑(1 − f(p))/p converges, then (1/x)∑_{n≤x} f(n) → ∏_p(1 − 1/p)(1 + f(p)/p + f(p²)/p² + ⋯)."
+    },
+    {
+      "id": "s_equivalence_pnt_mobius_mean_zero",
+      "kind": "theorem",
+      "name": "Equivalence of PNT and ∑μ(n) = o(x)",
+      "type_signature": "",
+      "description": "The prime number theorem is equivalent to ∑_{n≤x} μ(n) = o(x), and also to ∑_{n≤x} μ(n)/n → 0."
+    },
+    {
+      "id": "s_elliott_multiplicative_in_progressions",
+      "kind": "theorem",
+      "name": "Elliott's theorem on multiplicative functions in progressions",
+      "type_signature": "",
+      "description": "Extension of Halász's theorem to averages of multiplicative functions over arithmetic progressions, using character sum techniques."
+    },
+    {
+      "id": "s_hildebrand_dickman_extension",
+      "kind": "theorem",
+      "name": "Hildebrand's extension of Dickman's theorem",
+      "type_signature": "",
+      "description": "Ψ(x, y) = xρ(u)(1 + O(log(u+1)/log y)) uniformly for u ≤ exp((log y)^{3/5−ε}), extending Dickman's result to a wide range."
+    },
+    {
+      "id": "s_hildebrand_tenenbaum_saddle_point_estimate",
+      "kind": "theorem",
+      "name": "Hildebrand–Tenenbaum saddle-point estimate for Ψ(x, y)",
+      "type_signature": "",
+      "description": "Ψ(x, y) = (x^{1−α}ζ(α, y))/(α√(2πφ₂(α, y)))(1 + O(1/u)) where α is the saddle point, valid for exp((log log x)^{5/3+ε}) ≤ y ≤ x."
+    },
+    {
+      "id": "s_canfield_erdos_pomerance_theorem",
+      "kind": "theorem",
+      "name": "Canfield–Erdős–Pomerance theorem",
+      "type_signature": "",
+      "description": "log Ψ(x, y) ∼ −u log u when u = log x / log y → ∞ with y → ∞, refining the Dickman approximation for large u."
+    },
+    {
+      "id": "s_alladi_erdos_largest_prime_factor_average",
+      "kind": "theorem",
+      "name": "Alladi–Erdős result on average of log P⁺(n)",
+      "type_signature": "",
+      "description": "∑_{n≤x} log P⁺(n) = cx + o(x) for an explicit constant c = 1 − ∫₀^∞ ρ(t) dt related to the Dickman function."
+    },
+    {
+      "id": "s_smooth_numbers_short_intervals",
+      "kind": "theorem",
+      "name": "Smooth numbers in short intervals",
+      "type_signature": "",
+      "description": "Ψ(x + h, y) − Ψ(x, y) ≫ hρ(u) under suitable conditions on h and y, showing smooth numbers are well-distributed in short intervals."
+    },
+    {
+      "id": "s_asymptotic_rough_integers_phi",
+      "kind": "theorem",
+      "name": "Asymptotic for rough integers Φ(x, y)",
+      "type_signature": "",
+      "description": "Φ(x, y) = xω(u)∏_{p≤y}(1 − 1/p)(1 + O(1/log y)) for u = log x / log y, where ω is the Buchstab function."
+    },
+    {
+      "id": "s_friable_integers_arithmetic_progressions",
+      "kind": "theorem",
+      "name": "Friable integers in arithmetic progressions",
+      "type_signature": "",
+      "description": "Ψ(x, y; q, a) = Ψ(x, y)/φ(q)(1 + O(…)) under suitable conditions on q and y, showing equidistribution of smooth numbers in progressions."
+    },
+    {
+      "id": "s_distribution_smallest_prime_factor",
+      "kind": "theorem",
+      "name": "Distribution of the smallest prime factor",
+      "type_signature": "",
+      "description": "#{n ≤ x : P⁻(n) > y} = x∏_{p≤y}(1 − 1/p)(ω(u) + O(1/log y)); for fixed u the probability that P⁻(n) > n^{1/u} approaches e^{−γ}."
+    },
+    {
+      "id": "s_wintner_random_multiplicative_theorem",
+      "kind": "theorem",
+      "name": "Wintner's theorem on random multiplicative functions",
+      "type_signature": "",
+      "description": "If f(p) = ±1 independently with probability 1/2 each, then ∑_{n≤x} f(n) = O(x^{1/2+ε}) almost surely."
+    },
+    {
+      "id": "s_maier_theorem_short_intervals",
+      "kind": "theorem",
+      "name": "Maier's theorem on short intervals",
+      "type_signature": "",
+      "description": "π(x + (log x)^A) − π(x) is NOT asymptotic to (log x)^{A−1} for any A > 1; short intervals exhibit irregularities beyond PNT predictions."
+    },
+    {
+      "id": "s_daboussi_theorem",
+      "kind": "theorem",
+      "name": "Daboussi's theorem",
+      "type_signature": "",
+      "description": "If f is multiplicative with |f| ≤ 1, then ∑_{n≤x} f(n)e(nα) = o(x) for every irrational α."
+    },
+    {
+      "id": "s_schnirelman_additive_basis_theorem",
+      "kind": "theorem",
+      "name": "Schnirelman's additive basis theorem",
+      "type_signature": "",
+      "description": "If A has positive Schnirelman density σ(A) > 0 and 0 ∈ A, then A is an additive basis of finite order: every sufficiently large integer is a sum of at most h elements of A."
+    },
+    {
+      "id": "s_tenenbaum_divisor_distribution",
+      "kind": "theorem",
+      "name": "Tenenbaum's theorem on divisor distribution",
+      "type_signature": "",
+      "description": "For almost all n, the divisors of n are approximately uniformly distributed on a logarithmic scale in [1, n]."
+    },
+    {
+      "id": "s_generalized_divisor_d_z_asymptotic",
+      "kind": "theorem",
+      "name": "Asymptotic for ∑d_z(n) (Selberg–Delange)",
+      "type_signature": "",
+      "description": "∑_{n≤x} d_z(n) ∼ Cx(log x)^{z−1}/Γ(z) for z ∈ ℂ, obtained via the Selberg–Delange method applied to ζ(s)^z."
+    },
+    {
+      "id": "t_laplace_method_integrals",
+      "kind": "technique",
+      "name": "Laplace method for integrals",
+      "function_signature": "(∫e^{λφ(t)}g(t)dt, λ→∞) → asymptotic expansion",
+      "description": "Asymptotic evaluation of integrals ∫e^{λφ(t)}g(t)dt as λ → ∞ by expanding around the maximum of φ."
+    },
+    {
+      "id": "t_kubilius_probabilistic_model",
+      "kind": "technique",
+      "name": "Kubilius probabilistic model",
+      "function_signature": "(additive function f, primes) → approximate independence model",
+      "description": "Models events {p | n} for different primes as approximately independent with probability 1/p, making ω(n) behave like a sum of independent Bernoulli variables."
+    },
+    {
+      "id": "t_turan_second_moment_method",
+      "kind": "technique",
+      "name": "Turán's second moment method",
+      "function_signature": "(additive function f) → normal order via variance bound",
+      "description": "Elementary proof of normal order via ∑_{n≤x}(ω(n) − log log x)² = O(x log log x), yielding the Hardy–Ramanujan theorem without complex analysis."
+    },
+    {
+      "id": "t_pretentious_distance_method",
+      "kind": "technique",
+      "name": "Pretentious distance method (Halász)",
+      "function_signature": "(multiplicative f with |f|≤1) → mean value characterization",
+      "description": "Characterizes when a multiplicative function has non-vanishing mean value: iff D(f, n^{it}; x) is bounded for some real t."
+    },
+    {
+      "id": "t_effective_tauberian_method",
+      "kind": "technique",
+      "name": "Effective Tauberian method",
+      "function_signature": "(Dirichlet series, zero-free region) → explicit error term in partial sum asymptotic",
+      "description": "Quantitative Tauberian theorems providing explicit error terms, typically requiring information about the zero-free region of the associated L-function."
+    },
+    {
+      "id": "t_counting_primes_smooth_rough_decomposition",
+      "kind": "technique",
+      "name": "Smooth–rough decomposition for counting primes",
+      "function_signature": "(π(x), parameter y) → π(y) + Φ(x,y) − 1 + corrections",
+      "description": "Decomposes π(x) = π(y) + Φ(x,y) − 1 plus sieve correction terms, linking prime counting to counts of rough and smooth numbers."
+    },
+    {
+      "id": "t_granville_soundararajan_pretentious",
+      "kind": "technique",
+      "name": "Granville–Soundararajan pretentious number theory",
+      "function_signature": "(multiplicative f) → structural classification via pretentious distance",
+      "description": "Framework studying multiplicative functions through D(f, χn^{it}; x): f has large partial sums iff it pretends to be χ(n)n^{it} for some character χ and real t."
+    },
+    {
+      "id": "t_renyi_turan_power_sum_method",
+      "kind": "technique",
+      "name": "Rényi–Turán power sum method",
+      "function_signature": "(exponential sums, sequence) → discrepancy bound",
+      "description": "Bounds the discrepancy of a sequence from its power sums (exponential sums), used in proving equidistribution and large sieve results."
+    },
+    {
+      "id": "t_twisting_by_dirichlet_characters",
+      "kind": "technique",
+      "name": "Twisting by Dirichlet characters",
+      "function_signature": "(Dirichlet series, character χ) → L(s,χ) separating residue classes",
+      "description": "Multiplying a Dirichlet series by a character χ to study its behavior in arithmetic progressions via L(s,χ) = ∑χ(n)n^{−s}."
     }
   ],
   "edges": [
@@ -185666,6 +186093,830 @@
       "role": "output",
       "parameter_binding": {},
       "used_in_theorem": ""
+    },
+    {
+      "id": "e_12637",
+      "from": "t_laplace_method_integrals",
+      "to": "t_method_of_steepest_descents",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12638",
+      "from": "s_mobius_function",
+      "to": "t_dirichlet_hyperbola_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_squarefree_counting_asymptotic"
+    },
+    {
+      "id": "e_12639",
+      "from": "t_dirichlet_hyperbola_method",
+      "to": "s_squarefree_counting_asymptotic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_squarefree_counting_asymptotic"
+    },
+    {
+      "id": "e_12640",
+      "from": "s_largest_prime_factor",
+      "to": "t_rankin_trick",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dickman_theorem"
+    },
+    {
+      "id": "e_12641",
+      "from": "s_dickman_rho_function",
+      "to": "t_rankin_trick",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dickman_theorem"
+    },
+    {
+      "id": "e_12642",
+      "from": "t_rankin_trick",
+      "to": "s_dickman_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dickman_theorem"
+    },
+    {
+      "id": "e_12643",
+      "from": "s_local_zeta_function_y_smooth",
+      "to": "t_method_of_steepest_descents",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hildebrand_tenenbaum_saddle_point_estimate"
+    },
+    {
+      "id": "e_12644",
+      "from": "s_saddle_point_alpha_x_y",
+      "to": "t_method_of_steepest_descents",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hildebrand_tenenbaum_saddle_point_estimate"
+    },
+    {
+      "id": "e_12645",
+      "from": "t_method_of_steepest_descents",
+      "to": "s_hildebrand_tenenbaum_saddle_point_estimate",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hildebrand_tenenbaum_saddle_point_estimate"
+    },
+    {
+      "id": "e_12646",
+      "from": "s_smooth_number_asymptotic",
+      "to": "t_twisting_by_dirichlet_characters",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_friable_integers_arithmetic_progressions"
+    },
+    {
+      "id": "e_12647",
+      "from": "s_dirichlet_character_mod_q",
+      "to": "t_twisting_by_dirichlet_characters",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_friable_integers_arithmetic_progressions"
+    },
+    {
+      "id": "e_12648",
+      "from": "t_twisting_by_dirichlet_characters",
+      "to": "s_friable_integers_arithmetic_progressions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_friable_integers_arithmetic_progressions"
+    },
+    {
+      "id": "e_12649",
+      "from": "s_generalized_divisor_function_d_z",
+      "to": "t_selberg_delange_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_divisor_d_z_asymptotic"
+    },
+    {
+      "id": "e_12650",
+      "from": "s_riemann_zeta_function",
+      "to": "t_selberg_delange_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_divisor_d_z_asymptotic"
+    },
+    {
+      "id": "e_12651",
+      "from": "t_selberg_delange_method",
+      "to": "s_generalized_divisor_d_z_asymptotic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_divisor_d_z_asymptotic"
+    },
+    {
+      "id": "e_12652",
+      "from": "s_delange_tauberian_theorem",
+      "to": "t_selberg_delange_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_delange_mean_value_multiplicative"
+    },
+    {
+      "id": "e_12653",
+      "from": "s_multiplicative_function",
+      "to": "t_selberg_delange_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_delange_mean_value_multiplicative"
+    },
+    {
+      "id": "e_12654",
+      "from": "t_selberg_delange_method",
+      "to": "s_delange_mean_value_multiplicative",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_delange_mean_value_multiplicative"
+    },
+    {
+      "id": "e_12655",
+      "from": "s_slowly_varying_function",
+      "to": "t_effective_tauberian_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_karamata_tauberian_theorem"
+    },
+    {
+      "id": "e_12656",
+      "from": "s_dirichlet_series",
+      "to": "t_effective_tauberian_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_karamata_tauberian_theorem"
+    },
+    {
+      "id": "e_12657",
+      "from": "t_effective_tauberian_method",
+      "to": "s_karamata_tauberian_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_karamata_tauberian_theorem"
+    },
+    {
+      "id": "e_12658",
+      "from": "s_riemann_zeta_function",
+      "to": "t_selberg_delange_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_delange_tauberian_theorem"
+    },
+    {
+      "id": "e_12659",
+      "from": "t_selberg_delange_method",
+      "to": "s_delange_tauberian_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_delange_tauberian_theorem"
+    },
+    {
+      "id": "e_12660",
+      "from": "s_riemann_zeta_function",
+      "to": "t_perron_formula",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mean_value_zeta_critical_line"
+    },
+    {
+      "id": "e_12661",
+      "from": "t_perron_formula",
+      "to": "s_mean_value_zeta_critical_line",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mean_value_zeta_critical_line"
+    },
+    {
+      "id": "e_12662",
+      "from": "s_siegel_zero",
+      "to": "t_nonvanishing_real_chi_via_landau",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_landau_page_theorem"
+    },
+    {
+      "id": "e_12663",
+      "from": "t_nonvanishing_real_chi_via_landau",
+      "to": "s_landau_page_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_landau_page_theorem"
+    },
+    {
+      "id": "e_12664",
+      "from": "s_turan_kubilius_inequality",
+      "to": "t_turan_second_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hardy_ramanujan_normal_order"
+    },
+    {
+      "id": "e_12665",
+      "from": "s_turan_kubilius_inequality",
+      "to": "t_turan_second_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dual_turan_kubilius_inequality"
+    },
+    {
+      "id": "e_12666",
+      "from": "t_turan_second_moment_method",
+      "to": "s_dual_turan_kubilius_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dual_turan_kubilius_inequality"
+    },
+    {
+      "id": "e_12667",
+      "from": "s_hardy_ramanujan_normal_order",
+      "to": "t_turan_second_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_normal_order_log_divisor_function"
+    },
+    {
+      "id": "e_12668",
+      "from": "s_number_of_divisors_function",
+      "to": "t_turan_second_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_normal_order_log_divisor_function"
+    },
+    {
+      "id": "e_12669",
+      "from": "t_turan_second_moment_method",
+      "to": "s_normal_order_log_divisor_function",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_normal_order_log_divisor_function"
+    },
+    {
+      "id": "e_12670",
+      "from": "s_prime_number_theorem",
+      "to": "t_mobius_inversion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equivalence_pnt_mobius_mean_zero"
+    },
+    {
+      "id": "e_12671",
+      "from": "s_mobius_function",
+      "to": "t_mobius_inversion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equivalence_pnt_mobius_mean_zero"
+    },
+    {
+      "id": "e_12672",
+      "from": "t_mobius_inversion",
+      "to": "s_equivalence_pnt_mobius_mean_zero",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equivalence_pnt_mobius_mean_zero"
+    },
+    {
+      "id": "e_12673",
+      "from": "s_pretentious_distance_function",
+      "to": "t_pretentious_distance_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_halasz_theorem"
+    },
+    {
+      "id": "e_12674",
+      "from": "s_multiplicative_function",
+      "to": "t_pretentious_distance_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_halasz_theorem"
+    },
+    {
+      "id": "e_12675",
+      "from": "s_halasz_theorem",
+      "to": "t_granville_soundararajan_pretentious",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_elliott_multiplicative_in_progressions"
+    },
+    {
+      "id": "e_12676",
+      "from": "s_dirichlet_character_mod_q",
+      "to": "t_granville_soundararajan_pretentious",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_elliott_multiplicative_in_progressions"
+    },
+    {
+      "id": "e_12677",
+      "from": "t_granville_soundararajan_pretentious",
+      "to": "s_elliott_multiplicative_in_progressions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_elliott_multiplicative_in_progressions"
+    },
+    {
+      "id": "e_12678",
+      "from": "s_erdos_kac_theorem",
+      "to": "t_kubilius_probabilistic_model",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_erdos_kac_theorem"
+    },
+    {
+      "id": "e_12679",
+      "from": "t_kubilius_probabilistic_model",
+      "to": "s_erdos_kac_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_erdos_kac_theorem"
+    },
+    {
+      "id": "e_12680",
+      "from": "s_multiplicative_function",
+      "to": "t_pretentious_distance_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_daboussi_theorem"
+    },
+    {
+      "id": "e_12681",
+      "from": "t_pretentious_distance_method",
+      "to": "s_daboussi_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_daboussi_theorem"
+    },
+    {
+      "id": "e_12682",
+      "from": "s_multiplicative_function",
+      "to": "t_kubilius_probabilistic_model",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_wintner_random_multiplicative_theorem"
+    },
+    {
+      "id": "e_12683",
+      "from": "t_kubilius_probabilistic_model",
+      "to": "s_wintner_random_multiplicative_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_wintner_random_multiplicative_theorem"
+    },
+    {
+      "id": "e_12684",
+      "from": "s_prime_number_theorem",
+      "to": "t_selberg_delange_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maier_theorem_short_intervals"
+    },
+    {
+      "id": "e_12685",
+      "from": "t_selberg_delange_method",
+      "to": "s_maier_theorem_short_intervals",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maier_theorem_short_intervals"
+    },
+    {
+      "id": "e_12686",
+      "from": "s_number_of_divisors_function",
+      "to": "t_turan_second_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tenenbaum_divisor_distribution"
+    },
+    {
+      "id": "e_12687",
+      "from": "s_hardy_ramanujan_normal_order",
+      "to": "t_turan_second_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tenenbaum_divisor_distribution"
+    },
+    {
+      "id": "e_12688",
+      "from": "t_turan_second_moment_method",
+      "to": "s_tenenbaum_divisor_distribution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tenenbaum_divisor_distribution"
+    },
+    {
+      "id": "e_12689",
+      "from": "s_schnirelmann_density",
+      "to": "t_bruns_sieve",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_12690",
+      "from": "t_bruns_sieve",
+      "to": "s_schnirelman_additive_basis_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_schnirelman_additive_basis_theorem"
+    },
+    {
+      "id": "e_12691",
+      "from": "s_integers_free_of_small_prime_factors",
+      "to": "t_counting_primes_smooth_rough_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12692",
+      "from": "s_prime_counting_function",
+      "to": "t_counting_primes_smooth_rough_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12693",
+      "from": "t_counting_primes_smooth_rough_decomposition",
+      "to": "s_prime_counting_function",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12694",
+      "from": "s_large_sieve_inequality",
+      "to": "t_renyi_turan_power_sum_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12695",
+      "from": "s_exponential_sum",
+      "to": "t_renyi_turan_power_sum_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12696",
+      "from": "s_riemann_zeta_function",
+      "to": "t_perron_formula",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_robin_inequality"
+    },
+    {
+      "id": "e_12697",
+      "from": "s_chebyshev_function_theta_psi",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mertens_first_theorem"
+    },
+    {
+      "id": "e_12698",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_mertens_first_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mertens_first_theorem"
+    },
+    {
+      "id": "e_12699",
+      "from": "s_mertens_first_theorem",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mertens_second_theorem"
+    },
+    {
+      "id": "e_12700",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_mertens_second_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mertens_second_theorem"
+    },
+    {
+      "id": "e_12701",
+      "from": "s_mertens_second_theorem",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mertens_third_theorem"
+    },
+    {
+      "id": "e_12702",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_mertens_third_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mertens_third_theorem"
+    },
+    {
+      "id": "e_12703",
+      "from": "s_mertens_second_theorem",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_omega_n"
+    },
+    {
+      "id": "e_12704",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_average_order_omega_n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_omega_n"
+    },
+    {
+      "id": "e_12705",
+      "from": "s_average_order_omega_n",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_big_omega_n"
+    },
+    {
+      "id": "e_12706",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_average_order_big_omega_n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_average_order_big_omega_n"
+    },
+    {
+      "id": "e_12707",
+      "from": "s_number_of_divisors_function",
+      "to": "t_asymptotic_comparison_of_functions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_order_divisor_function"
+    },
+    {
+      "id": "e_12708",
+      "from": "s_highly_composite_number",
+      "to": "t_asymptotic_comparison_of_functions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_order_divisor_function"
+    },
+    {
+      "id": "e_12709",
+      "from": "t_asymptotic_comparison_of_functions",
+      "to": "s_maximal_order_divisor_function",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_order_divisor_function"
+    },
+    {
+      "id": "e_12710",
+      "from": "s_mertens_third_theorem",
+      "to": "t_asymptotic_comparison_of_functions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gronwall_theorem_sigma"
+    },
+    {
+      "id": "e_12711",
+      "from": "s_sum_of_divisors_function",
+      "to": "t_asymptotic_comparison_of_functions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gronwall_theorem_sigma"
+    },
+    {
+      "id": "e_12712",
+      "from": "t_asymptotic_comparison_of_functions",
+      "to": "s_gronwall_theorem_sigma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gronwall_theorem_sigma"
+    },
+    {
+      "id": "e_12713",
+      "from": "s_gronwall_theorem_sigma",
+      "to": "t_asymptotic_comparison_of_functions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_robin_inequality"
+    },
+    {
+      "id": "e_12714",
+      "from": "s_riemann_hypothesis",
+      "to": "t_asymptotic_comparison_of_functions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_robin_inequality"
+    },
+    {
+      "id": "e_12715",
+      "from": "t_asymptotic_comparison_of_functions",
+      "to": "s_robin_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_robin_inequality"
+    },
+    {
+      "id": "e_12716",
+      "from": "s_euler_totient_function",
+      "to": "t_asymptotic_comparison_of_functions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_minimal_order_euler_totient_ratio"
+    },
+    {
+      "id": "e_12717",
+      "from": "s_mertens_third_theorem",
+      "to": "t_asymptotic_comparison_of_functions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_minimal_order_euler_totient_ratio"
+    },
+    {
+      "id": "e_12718",
+      "from": "t_asymptotic_comparison_of_functions",
+      "to": "s_minimal_order_euler_totient_ratio",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_minimal_order_euler_totient_ratio"
+    },
+    {
+      "id": "e_12719",
+      "from": "s_dickman_theorem",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hildebrand_dickman_extension"
+    },
+    {
+      "id": "e_12720",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_hildebrand_dickman_extension",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hildebrand_dickman_extension"
+    },
+    {
+      "id": "e_12721",
+      "from": "s_dickman_rho_function",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_canfield_erdos_pomerance_theorem"
+    },
+    {
+      "id": "e_12722",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_canfield_erdos_pomerance_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_canfield_erdos_pomerance_theorem"
+    },
+    {
+      "id": "e_12723",
+      "from": "s_largest_prime_factor",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_alladi_erdos_largest_prime_factor_average"
+    },
+    {
+      "id": "e_12724",
+      "from": "s_dickman_rho_function",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_alladi_erdos_largest_prime_factor_average"
+    },
+    {
+      "id": "e_12725",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_alladi_erdos_largest_prime_factor_average",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_alladi_erdos_largest_prime_factor_average"
+    },
+    {
+      "id": "e_12726",
+      "from": "s_integers_free_of_small_prime_factors",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_asymptotic_rough_integers_phi"
+    },
+    {
+      "id": "e_12727",
+      "from": "s_buchstab_function",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_asymptotic_rough_integers_phi"
+    },
+    {
+      "id": "e_12728",
+      "from": "s_mertens_third_theorem",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_asymptotic_rough_integers_phi"
+    },
+    {
+      "id": "e_12729",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_asymptotic_rough_integers_phi",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_asymptotic_rough_integers_phi"
+    },
+    {
+      "id": "e_12730",
+      "from": "s_smallest_prime_factor_definition",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_distribution_smallest_prime_factor"
+    },
+    {
+      "id": "e_12731",
+      "from": "s_buchstab_function",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_distribution_smallest_prime_factor"
+    },
+    {
+      "id": "e_12732",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_distribution_smallest_prime_factor",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_distribution_smallest_prime_factor"
+    },
+    {
+      "id": "e_12733",
+      "from": "s_de_la_vallee_poussin_zero_free_region",
+      "to": "t_nonvanishing_real_chi_via_landau",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_landau_page_theorem"
+    },
+    {
+      "id": "e_12734",
+      "from": "s_liouville_lambda_function",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_summatory_liouville_function"
+    },
+    {
+      "id": "e_12735",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_summatory_liouville_function",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_summatory_liouville_function"
+    },
+    {
+      "id": "e_12736",
+      "from": "s_riemann_hypothesis",
+      "to": "t_asymptotic_comparison_of_functions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lindelof_hypothesis"
+    },
+    {
+      "id": "e_12737",
+      "from": "t_asymptotic_comparison_of_functions",
+      "to": "s_lindelof_hypothesis",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lindelof_hypothesis"
+    },
+    {
+      "id": "e_12738",
+      "from": "s_hildebrand_dickman_extension",
+      "to": "t_riemann_stieltjes_partial_summation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_smooth_numbers_short_intervals"
+    },
+    {
+      "id": "e_12739",
+      "from": "t_riemann_stieltjes_partial_summation",
+      "to": "s_smooth_numbers_short_intervals",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_smooth_numbers_short_intervals"
     }
   ],
   "subgraphs": [
