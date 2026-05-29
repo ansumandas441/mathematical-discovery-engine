@@ -74418,6 +74418,300 @@
       "name": "Hecke eigenform method",
       "function_signature": "(Space S_k, Hecke operators {T_n}, Petersson inner product) → (Basis of eigenforms with Euler products)",
       "description": "Simultaneously diagonalizes the commuting self-adjoint Hecke operators on the space of cusp forms to produce eigenforms whose L-functions have Euler products."
+    },
+    {
+      "id": "s_farey_sequence",
+      "kind": "axiom",
+      "name": "Farey sequence F_n",
+      "type_signature": "ℕ → Sequence(ℚ ∩ [0,1])",
+      "description": "The ascending sequence of all irreducible fractions h/k with 0 ≤ h/k ≤ 1 and 1 ≤ k ≤ n.",
+      "aliases": [
+        "Farey series"
+      ]
+    },
+    {
+      "id": "s_mediant",
+      "kind": "axiom",
+      "name": "Mediant of two fractions",
+      "type_signature": "ℚ × ℚ → ℚ",
+      "description": "The mediant of a/b and c/d is the fraction (a+c)/(b+d).",
+      "aliases": [
+        "Farey mediant",
+        "freshman sum"
+      ]
+    },
+    {
+      "id": "s_normal_number",
+      "kind": "axiom",
+      "name": "Normal number",
+      "type_signature": "ℝ × ℕ≥2 → Prop",
+      "description": "A real number x is normal in base r if every block of k consecutive digits appears in its base-r expansion with asymptotic frequency r⁻ᵏ.",
+      "aliases": []
+    },
+    {
+      "id": "s_simply_normal_number",
+      "kind": "axiom",
+      "name": "Simply normal number",
+      "type_signature": "ℝ × ℕ≥2 → Prop",
+      "description": "A real number x is simply normal in base r if each digit 0, 1, …, r−1 occurs with frequency 1/r in its base-r expansion.",
+      "aliases": []
+    },
+    {
+      "id": "s_absolutely_normal_number",
+      "kind": "axiom",
+      "name": "Absolutely normal number",
+      "type_signature": "ℝ → Prop",
+      "description": "A real number that is normal in every integer base r ≥ 2.",
+      "aliases": []
+    },
+    {
+      "id": "s_badly_approximable_number",
+      "kind": "axiom",
+      "name": "Badly approximable number",
+      "type_signature": "ℝ → Prop",
+      "description": "An irrational α with inf_{p,q} q²|α − p/q| > 0, equivalently one whose continued fraction partial quotients are bounded.",
+      "aliases": [
+        "bounded partial quotients"
+      ]
+    },
+    {
+      "id": "s_durfee_square",
+      "kind": "axiom",
+      "name": "Durfee square",
+      "type_signature": "Partition → ℕ",
+      "description": "The side length of the largest square fitting in the upper-left corner of the Ferrers diagram of a partition.",
+      "aliases": []
+    },
+    {
+      "id": "s_stern_brocot_tree",
+      "kind": "axiom",
+      "name": "Stern–Brocot tree",
+      "type_signature": "BinaryTree(ℚ>0)",
+      "description": "The complete infinite binary tree of all positive rationals constructed by iterated mediant insertion between 0/1 and 1/0.",
+      "aliases": [
+        "Stern-Brocot tree",
+        "Calkin-Wilf tree"
+      ]
+    },
+    {
+      "id": "s_visible_lattice_point_density",
+      "kind": "state",
+      "name": "Density of visible lattice points",
+      "type_signature": "",
+      "description": "The number of lattice points (x,y) visible from the origin with |x|,|y| ≤ n is asymptotically 6n²/π², equivalently the probability two random integers are coprime is 6/π².",
+      "aliases": [
+        "coprimality probability"
+      ]
+    },
+    {
+      "id": "s_fibonacci_golden_ratio_convergents",
+      "kind": "state",
+      "name": "Fibonacci numbers as convergents of the golden ratio",
+      "type_signature": "",
+      "description": "The convergents of the continued fraction [1; 1, 1, 1, …] for the golden ratio φ = (1+√5)/2 are F_{n+1}/F_n, yielding the slowest-converging simple continued fraction.",
+      "aliases": []
+    },
+    {
+      "id": "s_failure_of_ufd_in_z_sqrt_neg5",
+      "kind": "state",
+      "name": "Failure of unique factorization in ℤ[√(−5)]",
+      "type_signature": "",
+      "description": "The ring ℤ[√(−5)] is not a UFD: 6 = 2·3 = (1+√(−5))(1−√(−5)) gives two essentially distinct factorizations into irreducibles.",
+      "aliases": []
+    },
+    {
+      "id": "s_hurwitz_sharpness_sqrt5",
+      "kind": "state",
+      "name": "Sharpness of √5 in Hurwitz's theorem",
+      "type_signature": "",
+      "description": "The constant √5 in Hurwitz's approximation theorem is best possible: for α = (1+√5)/2 the inequality |α − p/q| < 1/(cq²) has infinitely many solutions iff c ≤ √5.",
+      "aliases": []
+    },
+    {
+      "id": "s_waring_g_k_lower_bound",
+      "kind": "state",
+      "name": "Lower bound for g(k) in Waring's problem",
+      "type_signature": "",
+      "description": "g(k) ≥ 2ᵏ + ⌊(3/2)ᵏ⌋ − 2 for all k ≥ 2, attained by integers just below 3ᵏ that require many k-th powers.",
+      "aliases": []
+    },
+    {
+      "id": "s_waring_G_k_lower_bounds",
+      "kind": "state",
+      "name": "Lower bounds for G(k) in Waring's problem",
+      "type_signature": "",
+      "description": "G(k) ≥ k+1 for all k ≥ 2 by counting arguments; G(2ᶿ) ≥ 2ᶿ⁺² for θ ≥ 2 and G(4) ≥ 16 by congruence obstructions.",
+      "aliases": []
+    },
+    {
+      "id": "s_farey_neighbor_theorem",
+      "kind": "theorem",
+      "name": "Farey neighbor property",
+      "type_signature": "",
+      "description": "If h/k and h'/k' are consecutive fractions in the Farey sequence F_n, then k·h' − h·k' = 1.",
+      "aliases": []
+    },
+    {
+      "id": "s_farey_mediant_theorem",
+      "kind": "theorem",
+      "name": "Farey mediant property",
+      "type_signature": "",
+      "description": "If h/k, h″/k″, h'/k' are three consecutive terms of F_n, then h″ = h + h' and k″ = k + k', i.e., the middle term is the mediant of its neighbors.",
+      "aliases": []
+    },
+    {
+      "id": "s_borel_normal_number_theorem",
+      "kind": "theorem",
+      "name": "Borel's normal number theorem",
+      "type_signature": "",
+      "description": "Almost all real numbers in the sense of Lebesgue measure are absolutely normal.",
+      "aliases": [
+        "Borel's theorem on normal numbers"
+      ]
+    },
+    {
+      "id": "s_kempner_series_convergence",
+      "kind": "theorem",
+      "name": "Kempner series convergence",
+      "type_signature": "",
+      "description": "The sum of 1/n over all positive integers n whose base-10 representation omits a given digit converges.",
+      "aliases": [
+        "Kempner's series"
+      ]
+    },
+    {
+      "id": "s_lagrange_periodic_cf_theorem",
+      "kind": "theorem",
+      "name": "Lagrange's periodic continued fraction theorem",
+      "type_signature": "",
+      "description": "A real number has an eventually periodic continued fraction expansion if and only if it is a quadratic irrational.",
+      "aliases": [
+        "Lagrange's theorem on continued fractions"
+      ]
+    },
+    {
+      "id": "s_galois_purely_periodic_cf_theorem",
+      "kind": "theorem",
+      "name": "Galois's theorem on purely periodic continued fractions",
+      "type_signature": "",
+      "description": "A continued fraction [a₀; a₁, a₂, …] is purely periodic if and only if it represents a reduced quadratic surd α > 1 whose conjugate α' satisfies −1 < α' < 0.",
+      "aliases": []
+    },
+    {
+      "id": "s_leudesdorf_theorem",
+      "kind": "theorem",
+      "name": "Leudesdorf's theorem",
+      "type_signature": "",
+      "description": "A generalization of Wolstenholme's theorem giving divisibility conditions on sums of reciprocals of integers coprime to a composite modulus.",
+      "aliases": []
+    },
+    {
+      "id": "s_bauer_identical_congruence",
+      "kind": "theorem",
+      "name": "Bauer's identical congruence",
+      "type_signature": "",
+      "description": "For prime p, the product ∏_{a=1}^{p−1}(x − a) ≡ x^{p−1} − 1 (mod p) holds as an identity in x.",
+      "aliases": []
+    },
+    {
+      "id": "s_kronecker_approximation_theorem",
+      "kind": "theorem",
+      "name": "Kronecker's approximation theorem",
+      "type_signature": "",
+      "description": "If θ is irrational, then the set {nθ mod 1 : n ∈ ℕ} is dense in [0, 1); for any α and ε > 0 there exist integers n, p with |nθ − p − α| < ε.",
+      "aliases": [
+        "Kronecker's theorem"
+      ]
+    },
+    {
+      "id": "s_kronecker_simultaneous_approximation",
+      "kind": "theorem",
+      "name": "Kronecker's simultaneous approximation theorem",
+      "type_signature": "",
+      "description": "If θ₁, …, θₖ, 1 are linearly independent over ℚ, then the vectors (nθ₁, …, nθₖ) mod 1 are dense in [0,1)ᵏ.",
+      "aliases": [
+        "Kronecker's theorem in k dimensions"
+      ]
+    },
+    {
+      "id": "s_rogers_ramanujan_continued_fraction",
+      "kind": "theorem",
+      "name": "Rogers–Ramanujan continued fraction",
+      "type_signature": "",
+      "description": "The continued fraction R(q) = q^{1/5}/(1 + q/(1 + q²/(1 + ⋯))) equals q^{1/5}·∏(1−q^{5n−1})(1−q^{5n−4})/∏(1−q^{5n−2})(1−q^{5n−3}) for |q| < 1.",
+      "aliases": [
+        "Ramanujan's continued fraction"
+      ]
+    },
+    {
+      "id": "s_euclidean_quadratic_fields_classification",
+      "kind": "theorem",
+      "name": "Classification of Euclidean quadratic fields",
+      "type_signature": "",
+      "description": "The ring of integers of ℚ(√d) is Euclidean under the norm for d ∈ {−11, −7, −3, −2, −1, 2, 3, 5, 6, 7, 11, 13, …}; a finite list for imaginary quadratic fields.",
+      "aliases": []
+    },
+    {
+      "id": "s_minkowski_theorem_linear_forms",
+      "kind": "theorem",
+      "name": "Minkowski's theorem on linear forms",
+      "type_signature": "",
+      "description": "If ξ₁, …, ξₙ are homogeneous linear forms with determinant Δ and λ₁⋯λₙ ≥ |Δ|, then there exist integers x₁, …, xₙ not all zero with |ξᵢ| ≤ λᵢ.",
+      "aliases": []
+    },
+    {
+      "id": "s_tchebotaref_inhomogeneous_form_theorem",
+      "kind": "theorem",
+      "name": "Tchebotaref's theorem on inhomogeneous forms",
+      "type_signature": "",
+      "description": "For homogeneous linear forms ξᵢ with determinant Δ and arbitrary real shifts ρᵢ: inf |(ξ₁−ρ₁)⋯(ξₙ−ρₙ)| ≤ 2⁻ⁿ|Δ| over all integer points.",
+      "aliases": [
+        "Chebotarev's theorem on forms"
+      ]
+    },
+    {
+      "id": "t_quaternion_norm_descent",
+      "kind": "technique",
+      "name": "Quaternion norm descent",
+      "function_signature": "(ℍ, prime p) → (a,b,c,d with a²+b²+c²+d² = p)",
+      "description": "Use Hurwitz quaternion arithmetic with multiplicative norm to express primes as sums of four squares via descent.",
+      "aliases": []
+    },
+    {
+      "id": "t_durfee_square_decomposition",
+      "kind": "technique",
+      "name": "Durfee square decomposition",
+      "function_signature": "(Partition λ) → (Durfee square + two sub-partitions)",
+      "description": "Decompose a partition at its Durfee square to derive generating function identities relating partitions to q-series.",
+      "aliases": []
+    },
+    {
+      "id": "t_franklin_involution",
+      "kind": "technique",
+      "name": "Franklin's involution",
+      "function_signature": "(Partition into distinct parts) → (Partition into distinct parts)",
+      "description": "A sign-reversing involution on partitions into distinct parts that bijects even-part and odd-part partitions except at pentagonal numbers, proving Euler's pentagonal theorem.",
+      "aliases": []
+    },
+    {
+      "id": "t_lettenmeyer_kronecker_proof",
+      "kind": "technique",
+      "name": "Lettenmeyer's proof of Kronecker's theorem",
+      "function_signature": "(Irrational θ, ε > 0) → (n with {nθ} in target interval)",
+      "description": "An elementary geometric proof of Kronecker's approximation theorem by pigeonhole on ε-neighborhoods in the unit torus, extended to k dimensions by induction.",
+      "aliases": [
+        "Estermann's proof"
+      ]
+    },
+    {
+      "id": "t_elliptic_curve_chord_tangent_addition",
+      "kind": "technique",
+      "name": "Chord-and-tangent addition on elliptic curves",
+      "function_signature": "(E(K), P, Q) → P + Q ∈ E(K)",
+      "description": "Given points P, Q on an elliptic curve, draw line PQ (or tangent if P=Q), find the third intersection R with the curve, and reflect to obtain P+Q = −R, defining an abelian group law.",
+      "aliases": [
+        "elliptic curve group law"
+      ]
     }
   ],
   "edges": [
@@ -193322,6 +193616,270 @@
       "role": "input",
       "parameter_binding": {},
       "used_in_theorem": ""
+    },
+    {
+      "id": "e_13225",
+      "from": "s_quaternions",
+      "to": "t_quaternion_norm_descent",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilbert_waring_theorem"
+    },
+    {
+      "id": "e_13226",
+      "from": "s_euler_four_square_identity",
+      "to": "t_quaternion_norm_descent",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilbert_waring_theorem"
+    },
+    {
+      "id": "e_13227",
+      "from": "t_quaternion_norm_descent",
+      "to": "s_prime_as_sum_of_four_squares",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilbert_waring_theorem"
+    },
+    {
+      "id": "e_13228",
+      "from": "s_durfee_square",
+      "to": "t_durfee_square_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_rogers_ramanujan_identities"
+    },
+    {
+      "id": "e_13229",
+      "from": "s_integer_partitions",
+      "to": "t_durfee_square_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_rogers_ramanujan_identities"
+    },
+    {
+      "id": "e_13230",
+      "from": "t_durfee_square_decomposition",
+      "to": "s_rogers_ramanujan_identities",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_rogers_ramanujan_identities"
+    },
+    {
+      "id": "e_13231",
+      "from": "s_franklin_involution_cancellation",
+      "to": "t_franklin_involution",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pentagonal_number_theorem"
+    },
+    {
+      "id": "e_13232",
+      "from": "s_integer_partitions",
+      "to": "t_franklin_involution",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pentagonal_number_theorem"
+    },
+    {
+      "id": "e_13233",
+      "from": "t_franklin_involution",
+      "to": "s_pentagonal_number_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pentagonal_number_theorem"
+    },
+    {
+      "id": "e_13234",
+      "from": "s_dirichlet_approximation",
+      "to": "t_lettenmeyer_kronecker_proof",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kronecker_approximation_theorem"
+    },
+    {
+      "id": "e_13235",
+      "from": "t_lettenmeyer_kronecker_proof",
+      "to": "s_kronecker_approximation_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kronecker_approximation_theorem"
+    },
+    {
+      "id": "e_13236",
+      "from": "t_lettenmeyer_kronecker_proof",
+      "to": "s_kronecker_simultaneous_approximation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kronecker_simultaneous_approximation"
+    },
+    {
+      "id": "e_13237",
+      "from": "s_elliptic_curve_over_Q",
+      "to": "t_elliptic_curve_chord_tangent_addition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mordell_weil_theorem"
+    },
+    {
+      "id": "e_13238",
+      "from": "t_elliptic_curve_chord_tangent_addition",
+      "to": "s_mordell_weil_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mordell_weil_theorem"
+    },
+    {
+      "id": "e_13239",
+      "from": "s_farey_sequence",
+      "to": "t_farey_dissection",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_farey_neighbor_theorem"
+    },
+    {
+      "id": "e_13240",
+      "from": "s_mediant",
+      "to": "t_farey_dissection",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_farey_mediant_theorem"
+    },
+    {
+      "id": "e_13241",
+      "from": "t_farey_dissection",
+      "to": "s_farey_neighbor_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_farey_neighbor_theorem"
+    },
+    {
+      "id": "e_13242",
+      "from": "t_farey_dissection",
+      "to": "s_farey_mediant_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_farey_mediant_theorem"
+    },
+    {
+      "id": "e_13243",
+      "from": "t_farey_dissection",
+      "to": "s_visible_lattice_point_density",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_visible_lattice_point_density"
+    },
+    {
+      "id": "e_13244",
+      "from": "t_farey_dissection",
+      "to": "s_stern_brocot_tree",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_farey_mediant_theorem"
+    },
+    {
+      "id": "e_13245",
+      "from": "s_continued_fraction_expansion",
+      "to": "t_lettenmeyer_kronecker_proof",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kronecker_approximation_theorem"
+    },
+    {
+      "id": "e_13246",
+      "from": "s_fibonacci_golden_ratio_convergents",
+      "to": "t_lettenmeyer_kronecker_proof",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hurwitz_sharpness_sqrt5"
+    },
+    {
+      "id": "e_13247",
+      "from": "s_waring_g_k_lower_bound",
+      "to": "t_auxiliary_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_warings_problem"
+    },
+    {
+      "id": "e_13248",
+      "from": "s_waring_G_k_lower_bounds",
+      "to": "t_auxiliary_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_warings_problem"
+    },
+    {
+      "id": "e_13249",
+      "from": "s_euclidean_domain",
+      "to": "t_auxiliary_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_euclidean_quadratic_fields_classification"
+    },
+    {
+      "id": "e_13250",
+      "from": "t_auxiliary_construction",
+      "to": "s_euclidean_quadratic_fields_classification",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_euclidean_quadratic_fields_classification"
+    },
+    {
+      "id": "e_13251",
+      "from": "s_bauer_identical_congruence",
+      "to": "t_character_decomposition_count",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bauer_identical_congruence"
+    },
+    {
+      "id": "e_13252",
+      "from": "s_leudesdorf_theorem",
+      "to": "t_character_decomposition_count",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_leudesdorf_theorem"
+    },
+    {
+      "id": "e_13253",
+      "from": "s_normal_number",
+      "to": "t_alteration_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_borel_normal_number_theorem"
+    },
+    {
+      "id": "e_13254",
+      "from": "s_simply_normal_number",
+      "to": "t_alteration_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_borel_normal_number_theorem"
+    },
+    {
+      "id": "e_13255",
+      "from": "s_absolutely_normal_number",
+      "to": "t_alteration_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_borel_normal_number_theorem"
+    },
+    {
+      "id": "e_13256",
+      "from": "t_alteration_method",
+      "to": "s_borel_normal_number_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_borel_normal_number_theorem"
+    },
+    {
+      "id": "e_13257",
+      "from": "s_failure_of_ufd_in_z_sqrt_neg5",
+      "to": "t_auxiliary_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_failure_of_ufd_in_z_sqrt_neg5"
     }
   ],
   "subgraphs": [
