@@ -73344,6 +73344,443 @@
       "name": "Poisson summation in number field setting",
       "function_signature": "(Theta function on ideal lattice) → (Functional equation of ζ_K(s))",
       "description": "Applies Σ_{x∈Λ} f(x) = (1/vol)Σ_{y∈Λ*} f̂(y) over ideal lattices to derive the functional equation of Dedekind zeta functions."
+    },
+    {
+      "id": "s_pro_p_group",
+      "kind": "axiom",
+      "name": "Pro-p group",
+      "type_signature": "ProfiniteGroup",
+      "description": "A profinite group that is an inverse limit of finite p-groups for a fixed prime p.",
+      "aliases": [
+        "pro-p-group",
+        "p-profinite group"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. V"
+    },
+    {
+      "id": "s_cm_field",
+      "kind": "axiom",
+      "name": "Complex multiplication (CM) field",
+      "type_signature": "NumberField",
+      "description": "A totally imaginary quadratic extension of a totally real number field; the endomorphism algebra of a CM abelian variety.",
+      "aliases": [
+        "CM field"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIII"
+    },
+    {
+      "id": "s_linear_algebraic_group",
+      "kind": "axiom",
+      "name": "Linear algebraic group",
+      "type_signature": "AlgebraicVariety × GroupStructure",
+      "description": "An algebraic variety G equipped with a group structure such that multiplication and inversion are morphisms of varieties.",
+      "aliases": [
+        "algebraic group"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. X"
+    },
+    {
+      "id": "s_semi_simple_algebraic_group",
+      "kind": "axiom",
+      "name": "Semi-simple algebraic group",
+      "type_signature": "LinearAlgebraicGroup",
+      "description": "A connected linear algebraic group with no nontrivial connected solvable normal subgroup (trivial radical).",
+      "aliases": [
+        "semisimple algebraic group"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. X"
+    },
+    {
+      "id": "s_simply_connected_algebraic_group",
+      "kind": "axiom",
+      "name": "Simply connected algebraic group",
+      "type_signature": "SemiSimpleAlgebraicGroup",
+      "description": "A semi-simple algebraic group that admits no nontrivial central isogeny from another semi-simple group; its own universal cover.",
+      "aliases": [
+        "simply connected semisimple group"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. X"
+    },
+    {
+      "id": "s_restricted_topological_product",
+      "kind": "axiom",
+      "name": "Restricted topological product (restricted direct product)",
+      "type_signature": "TopologicalGroup",
+      "description": "Given locally compact groups {G_v} with compact open subgroups {H_v} for almost all v, the subgroup of the direct product consisting of tuples (g_v) with g_v ∈ H_v for almost all v.",
+      "aliases": [
+        "restricted direct product",
+        "restricted product"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. II"
+    },
+    {
+      "id": "s_group_homology",
+      "kind": "state",
+      "name": "Group homology H_n(G, M)",
+      "type_signature": "(Group, G-Module) → AbelianGroup",
+      "description": "The left derived functors of the G-coinvariants functor M ↦ M_G = M/I_G·M, where I_G is the augmentation ideal of ℤ[G].",
+      "aliases": [
+        "homology of groups"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. IV"
+    },
+    {
+      "id": "s_absolute_galois_group",
+      "kind": "state",
+      "name": "Absolute Galois group Gal(K^sep/K)",
+      "type_signature": "ProfiniteGroup",
+      "description": "The Galois group of the separable closure of K over K, equipped with the Krull topology as an inverse limit of finite Galois groups.",
+      "aliases": [
+        "absolute Galois group"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. V"
+    },
+    {
+      "id": "s_supernatural_number",
+      "kind": "state",
+      "name": "Supernatural number",
+      "type_signature": "FormalProduct",
+      "description": "A formal product ∏ p^{n_p} over all primes with exponents n_p ∈ {0, 1, 2, …, ∞}; the order of a profinite group is a supernatural number.",
+      "aliases": [
+        "Steinitz number"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. V"
+    },
+    {
+      "id": "s_free_profinite_group",
+      "kind": "state",
+      "name": "Free profinite group",
+      "type_signature": "ProfiniteGroup",
+      "description": "A profinite group F such that every continuous map from a basis set to a profinite group G extends uniquely to a continuous homomorphism F → G.",
+      "aliases": [],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. V"
+    },
+    {
+      "id": "s_continuous_cohomology_profinite",
+      "kind": "state",
+      "name": "Continuous cohomology of profinite groups",
+      "type_signature": "(ProfiniteGroup, DiscreteModule) → AbelianGroup",
+      "description": "H^n(G, M) = lim_U H^n(G/U, M^U) over open normal subgroups U, the cohomology theory for profinite groups with discrete coefficient modules.",
+      "aliases": [
+        "profinite group cohomology",
+        "Galois cohomology"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. V"
+    },
+    {
+      "id": "s_cm_type",
+      "kind": "state",
+      "name": "CM type",
+      "type_signature": "Set(Embedding)",
+      "description": "For a CM field E of degree 2g over ℚ, a set Φ = {φ_1, …, φ_g} of embeddings E ↪ ℂ choosing one from each complex-conjugate pair; determines the complex structure of the associated abelian variety.",
+      "aliases": [],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIII"
+    },
+    {
+      "id": "s_abelian_variety_with_cm",
+      "kind": "state",
+      "name": "Abelian variety with complex multiplication",
+      "type_signature": "AbelianVariety",
+      "description": "An abelian variety A of dimension g whose endomorphism algebra End(A) ⊗ ℚ contains a CM field of degree 2g; the richest class of abelian varieties for arithmetic applications.",
+      "aliases": [
+        "CM abelian variety"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIII"
+    },
+    {
+      "id": "s_reflex_field",
+      "kind": "state",
+      "name": "Reflex field (reflex CM type)",
+      "type_signature": "NumberField",
+      "description": "For a CM type (E, Φ), the subfield E* of ℂ generated over ℚ by {∑_{φ ∈ Φ} φ(a) : a ∈ E}; the field of definition of the CM type up to isogeny.",
+      "aliases": [
+        "reflex CM type",
+        "dual CM type"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIII"
+    },
+    {
+      "id": "s_algebraic_hecke_character",
+      "kind": "state",
+      "name": "Algebraic Hecke character (Grössencharakter of type A₀)",
+      "type_signature": "I_K → ℂ*",
+      "description": "A Hecke character χ: I_K → ℂ* whose infinity-type is algebraic, given by a product of embeddings raised to integer powers; naturally associated to CM abelian varieties via their ℓ-adic representations.",
+      "aliases": [
+        "algebraic Grössencharakter",
+        "type A₀ Hecke character"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIII"
+    },
+    {
+      "id": "s_l_extension",
+      "kind": "state",
+      "name": "ℓ-extension",
+      "type_signature": "FieldExtension",
+      "description": "A Galois extension whose Galois group is a pro-ℓ group for a fixed prime ℓ; the study of the ℓ-part of class field theory.",
+      "aliases": [
+        "l-extension",
+        "p-extension"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIV"
+    },
+    {
+      "id": "s_z_l_extension",
+      "kind": "state",
+      "name": "ℤ_ℓ-extension",
+      "type_signature": "FieldExtension",
+      "description": "A Galois extension with Galois group isomorphic to ℤ_ℓ (the ℓ-adic integers); the cyclotomic ℤ_p-extension ℚ(μ_{p^∞})/ℚ is the prototypical example.",
+      "aliases": [
+        "Z_l-extension",
+        "Z_p-extension"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIV"
+    },
+    {
+      "id": "s_global_zeta_integral_tate",
+      "kind": "state",
+      "name": "Global zeta integral (Tate)",
+      "type_signature": "(SchwartzBruhat, HeckeCharacter, ℂ) → ℂ",
+      "description": "Z(f, χ, s) = ∫_{I_K} f(x)χ(x)|x|^s d*x where f is a Schwartz–Bruhat function on 𝔸_K and χ is a Hecke character; a single integral computing all Hecke L-functions.",
+      "aliases": [
+        "Tate's global zeta function"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XV (Tate's Thesis)"
+    },
+    {
+      "id": "s_quasi_character",
+      "kind": "state",
+      "name": "Quasi-character of K_v*",
+      "type_signature": "K_v* → ℂ*",
+      "description": "A continuous homomorphism χ: K_v* → ℂ*; of the form χ(x) = χ₀(x)|x|^s where χ₀ is a unitary character and s ∈ ℂ.",
+      "aliases": [
+        "quasi-character"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XV (Tate's Thesis)"
+    },
+    {
+      "id": "s_self_dual_measure",
+      "kind": "state",
+      "name": "Self-dual Haar measure",
+      "type_signature": "Measure",
+      "description": "The unique Haar measure on 𝔸_K (relative to an additive character ψ) such that the Fourier transform is an isometry; equivalently, vol(𝔸_K/K) = 1 with standard normalization.",
+      "aliases": [
+        "self-dual measure"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XV (Tate's Thesis)"
+    },
+    {
+      "id": "s_kroneckers_jugendtraum",
+      "kind": "state",
+      "name": "Kronecker's Jugendtraum",
+      "type_signature": "",
+      "description": "The program (partially realized by CM theory) to generate all abelian extensions of imaginary quadratic fields via special values of elliptic functions and modular functions.",
+      "aliases": [
+        "Kronecker's youth dream",
+        "Hilbert's 12th problem (partial)"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XI"
+    },
+    {
+      "id": "s_kneser_tits_conjecture",
+      "kind": "state",
+      "name": "Kneser–Tits conjecture",
+      "type_signature": "",
+      "description": "The conjecture that for an isotropic simply connected simple algebraic group G over a field K, the Whitehead group G(K)/G(K)⁺ is trivial, where G(K)⁺ is generated by unipotent elements.",
+      "aliases": [
+        "Kneser–Tits problem"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. X"
+    },
+    {
+      "id": "s_golod_shafarevich_theorem",
+      "kind": "theorem",
+      "name": "Golod–Shafarevich theorem",
+      "type_signature": "",
+      "description": "If G is a finite p-group with d minimal generators and r relations, then r > d²/4; consequently, certain pro-p groups with enough generators relative to relations must be infinite.",
+      "aliases": [
+        "Golod–Šafarevič theorem",
+        "Golod–Shafarevich inequality"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. IX"
+    },
+    {
+      "id": "s_existence_infinite_class_field_towers",
+      "kind": "theorem",
+      "name": "Existence of infinite class field towers",
+      "type_signature": "",
+      "description": "There exist number fields whose p-class field tower K ⊂ K₁ ⊂ K₂ ⊂ ⋯ does not terminate, answering negatively a question of Furtwängler; proved via the Golod–Shafarevich theorem.",
+      "aliases": [],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. IX"
+    },
+    {
+      "id": "s_hasse_principle_algebraic_groups",
+      "kind": "theorem",
+      "name": "Hasse principle for algebraic groups (Kneser–Harder)",
+      "type_signature": "",
+      "description": "For simply connected semi-simple groups G over a number field K, the map H¹(K, G) → ∏_v H¹(K_v, G) is injective; the local-global principle holds for principal homogeneous spaces.",
+      "aliases": [
+        "Kneser–Harder theorem"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. X"
+    },
+    {
+      "id": "s_strong_approximation_algebraic_groups",
+      "kind": "theorem",
+      "name": "Strong approximation for algebraic groups",
+      "type_signature": "",
+      "description": "For a simply connected semi-simple group G over a number field K and a place v with G(K_v) non-compact, G(K) is dense in ∏'_{w≠v} G(K_w).",
+      "aliases": [],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. X"
+    },
+    {
+      "id": "s_main_theorem_complex_multiplication",
+      "kind": "theorem",
+      "name": "Main theorem of complex multiplication",
+      "type_signature": "",
+      "description": "For an abelian variety A with CM type (E, Φ) and σ ∈ Aut(ℂ/E*), the conjugate σ(A) is isogenous to A via an isogeny controlled by the reflex norm and the Artin map of the reflex field E*.",
+      "aliases": [
+        "Shimura–Taniyama reciprocity for CM"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIII"
+    },
+    {
+      "id": "s_serre_tate_good_reduction_cm",
+      "kind": "theorem",
+      "name": "Serre–Tate theorem (good reduction of CM abelian varieties)",
+      "type_signature": "",
+      "description": "An abelian variety with sufficiently many complex multiplications has potentially good reduction at every finite place; it acquires good reduction over a finite extension of the base field.",
+      "aliases": [],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIII"
+    },
+    {
+      "id": "s_iwasawa_class_number_theorem",
+      "kind": "theorem",
+      "name": "Iwasawa's theorem on class numbers in ℤ_p-extensions",
+      "type_signature": "",
+      "description": "For a ℤ_p-extension K_∞/K with intermediate fields K_n, the p-part of the class number satisfies v_p(h_n) = μp^n + λn + ν for sufficiently large n, with Iwasawa invariants μ, λ, ν.",
+      "aliases": [
+        "Iwasawa class number formula"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XIV"
+    },
+    {
+      "id": "s_local_functional_equation_tate",
+      "kind": "theorem",
+      "name": "Local functional equation (Tate)",
+      "type_signature": "",
+      "description": "The local zeta integral satisfies Z(f̂, χ⁻¹, 1−s) = ε(χ, s, ψ)·Z(f, χ, s) where f̂ is the Fourier transform, ψ is an additive character, and ε is the local epsilon factor.",
+      "aliases": [],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XV (Tate's Thesis)"
+    },
+    {
+      "id": "s_global_functional_equation_tate",
+      "kind": "theorem",
+      "name": "Global functional equation (Tate's thesis)",
+      "type_signature": "",
+      "description": "The global zeta integral Z(f, χ, s) has meromorphic continuation to all s ∈ ℂ and satisfies Z(f̂, χ⁻¹, 1−s) = Z(f, χ, s); implies the functional equation and analytic continuation of all Hecke L-functions.",
+      "aliases": [],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XV (Tate's Thesis)"
+    },
+    {
+      "id": "s_l_function_euler_product_local",
+      "kind": "theorem",
+      "name": "Decomposition of L-functions into local zeta integrals",
+      "type_signature": "",
+      "description": "For factorizable Schwartz–Bruhat functions f = ∏_v f_v, the global zeta integral decomposes as Z(f, χ, s) = ∏_v Z(f_v, χ_v, s); with standard choices, this recovers the Euler product of the Hecke L-function.",
+      "aliases": [
+        "Euler product from local factors"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. XV (Tate's Thesis)"
+    },
+    {
+      "id": "s_global_local_compatibility_reciprocity",
+      "kind": "theorem",
+      "name": "Global–local compatibility of reciprocity maps",
+      "type_signature": "",
+      "description": "The global Artin map r_K restricted to K_v* (via the natural embedding K_v* → I_K → C_K) equals the local Artin map φ_{K_v} for each place v.",
+      "aliases": [
+        "compatibility of local and global Artin maps"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. VII"
+    },
+    {
+      "id": "s_hilbert_different_formula",
+      "kind": "theorem",
+      "name": "Hilbert's different formula",
+      "type_signature": "",
+      "description": "For a Galois extension of local fields with ramification groups G_i, the different exponent equals ∑_{i=0}^∞ (|G_i| − 1), linking the different ideal to the higher ramification filtration.",
+      "aliases": [
+        "Hilbert's formula for the different"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. I"
+    },
+    {
+      "id": "s_first_inequality_cft",
+      "kind": "theorem",
+      "name": "First inequality (global class field theory)",
+      "type_signature": "",
+      "description": "For L/K cyclic of degree n, [C_K : N_{L/K}C_L] ≥ n; proved analytically using the non-vanishing of L(1, χ) for nontrivial characters.",
+      "aliases": [
+        "first inequality"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. VII"
+    },
+    {
+      "id": "s_second_inequality_cft",
+      "kind": "theorem",
+      "name": "Second inequality (global class field theory)",
+      "type_signature": "",
+      "description": "For L/K cyclic of degree n, |H²(Gal(L/K), C_L)| ≤ n; combined with the first inequality yields |Ĥ⁰| = n and |Ĥ⁻¹| = 1 for the Tate cohomology of C_L.",
+      "aliases": [
+        "second inequality"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. VII"
+    },
+    {
+      "id": "s_krull_theorem_infinite_galois",
+      "kind": "theorem",
+      "name": "Krull's theorem (infinite Galois theory)",
+      "type_signature": "",
+      "description": "For an infinite Galois extension L/K, there is an inclusion-reversing bijection between intermediate fields and closed subgroups of Gal(L/K) in the Krull topology.",
+      "aliases": [
+        "fundamental theorem of infinite Galois theory"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. V"
+    },
+    {
+      "id": "s_herbrand_theorem_upper_numbering",
+      "kind": "theorem",
+      "name": "Herbrand's theorem (upper numbering of ramification groups)",
+      "type_signature": "",
+      "description": "The ramification groups in upper numbering G^t = G_{ψ(t)} (defined via the Hasse–Arf function φ) are compatible with passage to quotients: for H normal in G, (G/H)^t = G^t·H/H.",
+      "aliases": [
+        "Herbrand's upper numbering theorem"
+      ],
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. I"
+    },
+    {
+      "id": "t_bar_resolution",
+      "kind": "technique",
+      "name": "Standard complex (bar resolution)",
+      "function_signature": "(G-Module M) → (Group cohomology H^n(G,M), Group homology H_n(G,M))",
+      "description": "The explicit free resolution of ℤ over ℤ[G] with B_n = ℤ[G^{n+1}] and boundary maps; produces group (co)homology via cochains/chains and enables concrete computations.",
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. IV"
+    },
+    {
+      "id": "t_cohomology_of_ideles",
+      "kind": "technique",
+      "name": "Cohomology of idèles (local-to-global reduction)",
+      "function_signature": "(Galois extension L/K, Idèle group I_L) → (H^n(Gal(L/K), I_L) via local cohomology)",
+      "description": "Reduces the computation of H^n(Gal(L/K), I_L) to local cohomology computations via the decomposition I_L = ∏'_w L_w* and Shapiro's lemma.",
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. VII"
+    },
+    {
+      "id": "t_lyndon_hochschild_serre_spectral_sequence",
+      "kind": "technique",
+      "name": "Lyndon–Hochschild–Serre spectral sequence",
+      "function_signature": "(Group extension 1 → N → G → G/N → 1, G-Module M) → (Spectral sequence E₂^{p,q} = H^p(G/N, H^q(N,M)) ⟹ H^{p+q}(G,M))",
+      "description": "For N normal in G, a spectral sequence converging to H^*(G,M) with E₂ page given by the cohomology of G/N with coefficients in H^*(N,M); the five-term exact sequence is its low-degree truncation.",
+      "source": "Cassels & Fröhlich, Algebraic Number Theory (1967), Ch. IV"
     }
   ],
   "edges": [
@@ -189858,6 +190295,314 @@
       "role": "output",
       "parameter_binding": {},
       "used_in_theorem": "s_dirichlet_theorem_primes_number_fields"
+    },
+    {
+      "id": "e_12930",
+      "from": "s_g_module_discrete",
+      "to": "t_bar_resolution",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12931",
+      "from": "t_bar_resolution",
+      "to": "s_group_cohomology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12932",
+      "from": "t_bar_resolution",
+      "to": "s_group_homology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12933",
+      "from": "s_pro_p_group",
+      "to": "t_bar_resolution",
+      "role": "input",
+      "parameter_binding": {
+        "context": "presentations of pro-p groups"
+      },
+      "used_in_theorem": "s_golod_shafarevich_theorem"
+    },
+    {
+      "id": "e_12934",
+      "from": "t_bar_resolution",
+      "to": "s_golod_shafarevich_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "context": "generator-relation counting"
+      },
+      "used_in_theorem": "s_golod_shafarevich_theorem"
+    },
+    {
+      "id": "e_12935",
+      "from": "s_group_cohomology",
+      "to": "t_lyndon_hochschild_serre_spectral_sequence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12936",
+      "from": "t_lyndon_hochschild_serre_spectral_sequence",
+      "to": "s_hochschild_serre_exact_sequence",
+      "role": "output",
+      "parameter_binding": {
+        "truncation": "low-degree"
+      },
+      "used_in_theorem": "s_hochschild_serre_exact_sequence"
+    },
+    {
+      "id": "e_12937",
+      "from": "t_lyndon_hochschild_serre_spectral_sequence",
+      "to": "s_inflation_restriction_exact_sequence",
+      "role": "output",
+      "parameter_binding": {
+        "truncation": "five-term"
+      },
+      "used_in_theorem": "s_inflation_restriction_exact_sequence"
+    },
+    {
+      "id": "e_12938",
+      "from": "s_idele_group",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_inequality_cft"
+    },
+    {
+      "id": "e_12939",
+      "from": "s_shapiros_lemma",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_inequality_cft"
+    },
+    {
+      "id": "e_12940",
+      "from": "t_cohomology_of_ideles",
+      "to": "s_first_inequality_cft",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_inequality_cft"
+    },
+    {
+      "id": "e_12941",
+      "from": "t_cohomology_of_ideles",
+      "to": "s_second_inequality_cft",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_second_inequality_cft"
+    },
+    {
+      "id": "e_12942",
+      "from": "s_quasi_character",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_functional_equation_tate"
+    },
+    {
+      "id": "e_12943",
+      "from": "s_global_zeta_integral_tate",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_functional_equation_tate"
+    },
+    {
+      "id": "e_12944",
+      "from": "s_self_dual_measure",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_functional_equation_tate"
+    },
+    {
+      "id": "e_12945",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_local_functional_equation_tate",
+      "role": "output",
+      "parameter_binding": {
+        "scope": "local"
+      },
+      "used_in_theorem": "s_local_functional_equation_tate"
+    },
+    {
+      "id": "e_12946",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_global_functional_equation_tate",
+      "role": "output",
+      "parameter_binding": {
+        "scope": "global"
+      },
+      "used_in_theorem": "s_global_functional_equation_tate"
+    },
+    {
+      "id": "e_12947",
+      "from": "t_tate_thesis_adelic",
+      "to": "s_l_function_euler_product_local",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_l_function_euler_product_local"
+    },
+    {
+      "id": "e_12948",
+      "from": "t_herbrand_quotient_computation",
+      "to": "s_second_inequality_cft",
+      "role": "output",
+      "parameter_binding": {
+        "application": "idèle class group"
+      },
+      "used_in_theorem": "s_second_inequality_cft"
+    },
+    {
+      "id": "e_12949",
+      "from": "t_dimension_shifting_cohomology",
+      "to": "s_group_homology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12950",
+      "from": "s_class_field_tower",
+      "to": "t_bar_resolution",
+      "role": "input",
+      "parameter_binding": {
+        "context": "Galois group of tower"
+      },
+      "used_in_theorem": "s_existence_infinite_class_field_towers"
+    },
+    {
+      "id": "e_12951",
+      "from": "t_bar_resolution",
+      "to": "s_existence_infinite_class_field_towers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_infinite_class_field_towers"
+    },
+    {
+      "id": "e_12952",
+      "from": "s_restricted_topological_product",
+      "to": "t_tate_thesis_adelic",
+      "role": "input",
+      "parameter_binding": {
+        "construction": "adèle ring"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12953",
+      "from": "s_cm_type",
+      "to": "t_lubin_tate_construction",
+      "role": "input",
+      "parameter_binding": {
+        "context": "CM abelian varieties"
+      },
+      "used_in_theorem": "s_main_theorem_complex_multiplication"
+    },
+    {
+      "id": "e_12954",
+      "from": "t_lubin_tate_construction",
+      "to": "s_main_theorem_complex_multiplication",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_main_theorem_complex_multiplication"
+    },
+    {
+      "id": "e_12955",
+      "from": "s_profinite_group",
+      "to": "t_lyndon_hochschild_serre_spectral_sequence",
+      "role": "input",
+      "parameter_binding": {
+        "context": "infinite Galois extensions"
+      },
+      "used_in_theorem": "s_krull_theorem_infinite_galois"
+    },
+    {
+      "id": "e_12956",
+      "from": "t_lyndon_hochschild_serre_spectral_sequence",
+      "to": "s_continuous_cohomology_profinite",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_12957",
+      "from": "s_ramification_filtration",
+      "to": "t_bar_resolution",
+      "role": "input",
+      "parameter_binding": {
+        "context": "ramification group analysis"
+      },
+      "used_in_theorem": "s_hilbert_different_formula"
+    },
+    {
+      "id": "e_12958",
+      "from": "s_different_ideal_definition",
+      "to": "t_bar_resolution",
+      "role": "input",
+      "parameter_binding": {
+        "context": "different exponent computation"
+      },
+      "used_in_theorem": "s_hilbert_different_formula"
+    },
+    {
+      "id": "e_12959",
+      "from": "t_bar_resolution",
+      "to": "s_hilbert_different_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilbert_different_formula"
+    },
+    {
+      "id": "e_12960",
+      "from": "s_global_artin_map",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_local_compatibility_reciprocity"
+    },
+    {
+      "id": "e_12961",
+      "from": "s_local_norm_residue_symbol",
+      "to": "t_cohomology_of_ideles",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_local_compatibility_reciprocity"
+    },
+    {
+      "id": "e_12962",
+      "from": "t_cohomology_of_ideles",
+      "to": "s_global_local_compatibility_reciprocity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_local_compatibility_reciprocity"
+    },
+    {
+      "id": "e_12963",
+      "from": "s_z_l_extension",
+      "to": "t_dimension_shifting_cohomology",
+      "role": "input",
+      "parameter_binding": {
+        "context": "ℤ_p-towers"
+      },
+      "used_in_theorem": "s_iwasawa_class_number_theorem"
+    },
+    {
+      "id": "e_12964",
+      "from": "t_dimension_shifting_cohomology",
+      "to": "s_iwasawa_class_number_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_iwasawa_class_number_theorem"
     }
   ],
   "subgraphs": [
