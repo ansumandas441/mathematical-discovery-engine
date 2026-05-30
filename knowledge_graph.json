@@ -79641,6 +79641,902 @@
       "name": "Hilbert function method",
       "function_signature": "(Graded module or local ring with 𝔪-primary ideal) → (Dimension, multiplicity, and growth data from the Hilbert polynomial)",
       "description": "Using the Hilbert function or Hilbert-Samuel polynomial to extract numerical invariants from graded or filtered algebraic structures."
+    },
+    {
+      "id": "t_determinant_trick",
+      "kind": "technique",
+      "name": "Determinant trick",
+      "function_signature": "(Finitely generated module M, endomorphism φ with φ(M) ⊆ IM) → (Monic relation φⁿ + a₁φⁿ⁻¹ + ··· + aₙ = 0 with aᵢ ∈ Iⁱ)",
+      "description": "Applying the Cayley-Hamilton theorem to an endomorphism of a finitely generated module to produce integral dependence or annihilation relations."
+    },
+    {
+      "id": "s_residue_field",
+      "kind": "state",
+      "name": "Residue field",
+      "type_signature": "κ(𝔭) = R_𝔭/𝔭R_𝔭",
+      "description": "The residue field of a prime ideal 𝔭 in a commutative ring R, defined as the quotient of the localization R_𝔭 by its maximal ideal 𝔭R_𝔭."
+    },
+    {
+      "id": "s_idempotents_and_connected_components_of_spec",
+      "kind": "theorem",
+      "name": "Idempotents and connected components of Spec",
+      "type_signature": "",
+      "description": "The connected components of Spec(R) correspond bijectively to primitive idempotents of R; R decomposes as a product of rings iff Spec(R) is disconnected."
+    },
+    {
+      "id": "s_prime_filtration",
+      "kind": "state",
+      "name": "Prime filtration of a module",
+      "type_signature": "",
+      "description": "A chain 0 = M₀ ⊂ M₁ ⊂ ··· ⊂ Mₙ = M with each successive quotient Mᵢ/Mᵢ₋₁ ≅ R/𝔭ᵢ for prime ideals 𝔭ᵢ; exists for every finitely generated module over a Noetherian ring."
+    },
+    {
+      "id": "s_finiteness_of_associated_primes",
+      "kind": "theorem",
+      "name": "Finiteness of associated primes",
+      "type_signature": "",
+      "description": "For a finitely generated module M over a Noetherian ring R, the set Ass(M) of associated primes is finite."
+    },
+    {
+      "id": "s_zero_divisors_equal_union_of_associated_primes",
+      "kind": "theorem",
+      "name": "Zero divisors equal union of associated primes",
+      "type_signature": "",
+      "description": "For a finitely generated module M over a Noetherian ring, the set of zero divisors on M equals the union of the associated primes of M."
+    },
+    {
+      "id": "s_ufd_implies_integrally_closed",
+      "kind": "theorem",
+      "name": "UFD implies integrally closed",
+      "type_signature": "",
+      "description": "Every unique factorization domain is integrally closed in its field of fractions."
+    },
+    {
+      "id": "s_zariskis_lemma",
+      "kind": "theorem",
+      "name": "Zariski's lemma",
+      "type_signature": "",
+      "description": "If k is a field and K is a finitely generated k-algebra that is also a field, then K is a finite (algebraic) extension of k."
+    },
+    {
+      "id": "s_filtration_of_a_module",
+      "kind": "axiom",
+      "name": "Filtration of a module",
+      "type_signature": "",
+      "description": "A descending chain of submodules M = M₀ ⊇ M₁ ⊇ M₂ ⊇ ··· compatible with the ring filtration; the I-adic filtration Mₙ = IⁿM is the primary example."
+    },
+    {
+      "id": "s_stable_filtration",
+      "kind": "state",
+      "name": "Stable filtration (I-stable)",
+      "type_signature": "",
+      "description": "An I-filtration {Mₙ} is I-stable if Mₙ₊₁ = I·Mₙ for all sufficiently large n, equivalently the Rees module ⊕Mₙ is finitely generated over R[It]."
+    },
+    {
+      "id": "s_tangent_cone",
+      "kind": "state",
+      "name": "Tangent cone",
+      "type_signature": "gr_𝔪(R) = ⊕ₙ 𝔪ⁿ/𝔪ⁿ⁺¹",
+      "description": "The associated graded ring of a local ring (R, 𝔪) with respect to the maximal ideal, whose Proj is the projectivized tangent cone at the corresponding point of a variety."
+    },
+    {
+      "id": "s_localization_is_flat",
+      "kind": "theorem",
+      "name": "Localization is flat",
+      "type_signature": "",
+      "description": "For any multiplicative set S in a commutative ring R, the localization S⁻¹R is a flat R-algebra."
+    },
+    {
+      "id": "s_flat_base_change_for_tor",
+      "kind": "theorem",
+      "name": "Flat base change for Tor",
+      "type_signature": "",
+      "description": "If R → S is a flat ring homomorphism, then Torᵢᴿ(M, N) ⊗_R S ≅ Torᵢˢ(M ⊗_R S, N ⊗_R S) for all i."
+    },
+    {
+      "id": "s_lazards_theorem",
+      "kind": "theorem",
+      "name": "Lazard's theorem",
+      "type_signature": "",
+      "description": "An R-module is flat if and only if it is a filtered colimit of finitely generated free modules."
+    },
+    {
+      "id": "s_flat_equals_locally_free_for_fp",
+      "kind": "theorem",
+      "name": "Flat equals locally free for finitely presented modules",
+      "type_signature": "",
+      "description": "A finitely presented module over a commutative ring is flat if and only if it is locally free (free after localization at every prime ideal)."
+    },
+    {
+      "id": "s_weierstrass_preparation_theorem_formal",
+      "kind": "theorem",
+      "name": "Weierstrass preparation theorem (formal power series)",
+      "type_signature": "",
+      "description": "In k[[x₁,...,xₙ]], a power series distinguished of order d in xₙ factors uniquely as a unit times a Weierstrass polynomial of degree d in xₙ."
+    },
+    {
+      "id": "t_lifting_idempotents",
+      "kind": "technique",
+      "name": "Lifting idempotents",
+      "function_signature": "(Complete ring R, idempotent ē ∈ R/I) → (Idempotent e ∈ R with e mod I = ē)",
+      "description": "Lifting an idempotent from R/I to the I-adically complete ring R by iterative Newton-type approximation, used for decomposing modules over complete local rings."
+    },
+    {
+      "id": "s_embedding_dimension",
+      "kind": "state",
+      "name": "Embedding dimension",
+      "type_signature": "edim(R) = dim_k(𝔪/𝔪²)",
+      "description": "The minimal number of generators of the maximal ideal 𝔪 of a local ring (R, 𝔪, k), equal to dim_k(𝔪/𝔪²); a regular local ring has edim(R) = dim(R)."
+    },
+    {
+      "id": "s_fiber_ring",
+      "kind": "state",
+      "name": "Fiber ring of a ring map",
+      "type_signature": "κ(𝔭) ⊗_R S",
+      "description": "The fiber of a ring map φ: R → S over a prime 𝔭 of R, defined as κ(𝔭) ⊗_R S; its Spec is the scheme-theoretic fiber of Spec S → Spec R over 𝔭."
+    },
+    {
+      "id": "s_total_ring_of_fractions",
+      "kind": "state",
+      "name": "Total ring of fractions",
+      "type_signature": "Q(R) = S⁻¹R where S = non-zero-divisors",
+      "description": "The localization of R at the multiplicative set of all non-zero-divisors; generalizes the fraction field to rings that are not necessarily domains."
+    },
+    {
+      "id": "s_i_adic_valuation",
+      "kind": "state",
+      "name": "I-adic valuation",
+      "type_signature": "v_I(x) = sup{n : x ∈ Iⁿ}",
+      "description": "For a Noetherian ring R and ideal I with ∩Iⁿ = 0, the function assigning to each element the largest power of I containing it, inducing the I-adic topology."
+    },
+    {
+      "id": "s_reduced_ring",
+      "kind": "axiom",
+      "name": "Reduced ring",
+      "type_signature": "",
+      "description": "A commutative ring with no nonzero nilpotent elements, equivalently one whose nilradical is zero."
+    },
+    {
+      "id": "s_homogeneous_nullstellensatz",
+      "kind": "theorem",
+      "name": "Homogeneous Nullstellensatz (projective Nullstellensatz)",
+      "type_signature": "",
+      "description": "A homogeneous ideal I in k[x₀,...,xₙ] over an algebraically closed field defines the empty projective variety iff rad(I) contains the irrelevant ideal (x₀,...,xₙ)."
+    },
+    {
+      "id": "t_rees_algebra_technique",
+      "kind": "technique",
+      "name": "Rees algebra technique",
+      "function_signature": "(Ring R, ideal I, I-filtration) → (Graded module over R[It] encoding filtration data)",
+      "description": "Encoding an I-adic filtration as a graded module over the Rees algebra R[It] to reduce filtration questions to graded algebra; key to proving the Artin-Rees lemma."
+    },
+    {
+      "id": "s_geometric_primary_decomposition",
+      "kind": "state",
+      "name": "Geometric interpretation of primary decomposition",
+      "type_signature": "",
+      "description": "Primary decomposition I = ∩Qᵢ decomposes V(I) into irreducible components (minimal primes) with embedded structure (embedded primes encoding nilpotent or higher-multiplicity behavior)."
+    },
+    {
+      "id": "s_module_of_finite_length",
+      "kind": "state",
+      "name": "Module of finite length",
+      "type_signature": "ℓ(M) < ∞",
+      "description": "A module admitting a composition series of finite length, equivalently both Noetherian and Artinian; the length ℓ(M) is additive on short exact sequences."
+    },
+    {
+      "id": "s_completion_is_faithfully_flat",
+      "kind": "theorem",
+      "name": "Completion is faithfully flat",
+      "type_signature": "",
+      "description": "For a Noetherian local ring (R, 𝔪), the 𝔪-adic completion R̂ is faithfully flat over R; in particular R → R̂ is injective and detects exactness."
+    },
+    {
+      "id": "s_affine_rings_universally_catenary",
+      "kind": "theorem",
+      "name": "Affine rings are universally catenary",
+      "type_signature": "",
+      "description": "Every finitely generated algebra over a field or over ℤ is universally catenary."
+    },
+    {
+      "id": "s_krull_dimension_of_a_module",
+      "kind": "state",
+      "name": "Krull dimension of a module",
+      "type_signature": "dim(M) = dim(R/Ann(M))",
+      "description": "The Krull dimension of an R-module M, defined as the Krull dimension of the quotient ring R/Ann(M)."
+    },
+    {
+      "id": "s_codimension_of_an_ideal",
+      "kind": "state",
+      "name": "Codimension (height) of an ideal",
+      "type_signature": "codim(I) = inf{ht(𝔭) : 𝔭 ⊇ I}",
+      "description": "The codimension of an ideal I in a ring R is the infimum of heights of prime ideals containing I."
+    },
+    {
+      "id": "s_equidimensional_ring",
+      "kind": "axiom",
+      "name": "Equidimensional ring",
+      "type_signature": "",
+      "description": "A Noetherian ring in which all minimal primes have the same coheight, equivalently all irreducible components of Spec(R) have the same dimension."
+    },
+    {
+      "id": "s_dimension_via_m_primary_ideals",
+      "kind": "theorem",
+      "name": "Dimension via 𝔪-primary ideals",
+      "type_signature": "",
+      "description": "The Krull dimension of a Noetherian local ring (R, 𝔪) equals the minimum number of generators of an 𝔪-primary ideal."
+    },
+    {
+      "id": "s_existence_of_systems_of_parameters",
+      "kind": "theorem",
+      "name": "Existence of systems of parameters",
+      "type_signature": "",
+      "description": "Every Noetherian local ring (R, 𝔪) of dimension d admits a system of parameters: d elements x₁,...,x_d generating an 𝔪-primary ideal."
+    },
+    {
+      "id": "s_dimension_drop_by_one_element",
+      "kind": "theorem",
+      "name": "Dimension drop by one element",
+      "type_signature": "",
+      "description": "If (R, 𝔪) is a Noetherian local ring and x ∈ 𝔪, then dim(R/(x)) ≥ dim(R) − 1, with equality when x avoids all minimal primes of maximal dimension."
+    },
+    {
+      "id": "s_parameter_ideal",
+      "kind": "state",
+      "name": "Parameter ideal",
+      "type_signature": "",
+      "description": "An ideal in a Noetherian local ring of dimension d generated by a system of parameters; it is 𝔪-primary with exactly d generators."
+    },
+    {
+      "id": "s_regular_system_of_parameters",
+      "kind": "state",
+      "name": "Regular system of parameters",
+      "type_signature": "",
+      "description": "In a regular local ring (R, 𝔪), a system of parameters x₁,...,x_d that generates the maximal ideal 𝔪, equivalently whose images form a k-basis of 𝔪/𝔪²."
+    },
+    {
+      "id": "s_dimension_of_fiber",
+      "kind": "theorem",
+      "name": "Dimension of fibers of a ring map",
+      "type_signature": "",
+      "description": "For a local homomorphism φ: (R, 𝔪) → (S, 𝔫) of Noetherian local rings, dim(S) ≤ dim(R) + dim(S/𝔪S), with equality when φ is flat."
+    },
+    {
+      "id": "s_serre_criterion_for_normality",
+      "kind": "theorem",
+      "name": "Serre's criterion for normality (R₁ + S₂)",
+      "type_signature": "",
+      "description": "A Noetherian ring is normal (integrally closed in its total ring of fractions) iff it satisfies R₁ (regular in codimension ≤ 1) and S₂ (depth ≥ min(2, ht 𝔭) at every prime 𝔭)."
+    },
+    {
+      "id": "s_serre_condition_rk",
+      "kind": "axiom",
+      "name": "Serre's condition Rₖ",
+      "type_signature": "",
+      "description": "A Noetherian ring satisfies (Rₖ) if the localization R_𝔭 is a regular local ring for every prime 𝔭 of height at most k."
+    },
+    {
+      "id": "s_serre_condition_sk",
+      "kind": "axiom",
+      "name": "Serre's condition Sₖ",
+      "type_signature": "",
+      "description": "A Noetherian ring satisfies (Sₖ) if depth(R_𝔭) ≥ min(k, ht(𝔭)) for every prime ideal 𝔭; Cohen-Macaulay rings satisfy Sₖ for all k."
+    },
+    {
+      "id": "s_serre_criterion_for_reducedness",
+      "kind": "theorem",
+      "name": "Serre's criterion for reducedness (R₀ + S₁)",
+      "type_signature": "",
+      "description": "A Noetherian ring is reduced if and only if it satisfies R₀ (regular at all minimal primes) and S₁ (no embedded associated primes of the zero ideal)."
+    },
+    {
+      "id": "s_divisor_class_group_ring",
+      "kind": "state",
+      "name": "Divisor class group of a normal domain",
+      "type_signature": "Cl(R)",
+      "description": "The group of Weil divisor classes on a Noetherian normal domain R: the free abelian group on height-1 primes modulo principal divisors div(f)."
+    },
+    {
+      "id": "s_reflexive_module",
+      "kind": "axiom",
+      "name": "Reflexive module",
+      "type_signature": "",
+      "description": "A finitely generated module M such that the canonical map M → M** = Hom(Hom(M, R), R) is an isomorphism; rank-1 reflexives over a normal domain correspond to divisorial ideals."
+    },
+    {
+      "id": "s_ufd_iff_trivial_class_group",
+      "kind": "theorem",
+      "name": "UFD iff trivial divisor class group",
+      "type_signature": "",
+      "description": "A Noetherian normal domain is a UFD if and only if its divisor class group Cl(R) is trivial, equivalently every height-1 prime ideal is principal."
+    },
+    {
+      "id": "s_conductor_ideal",
+      "kind": "state",
+      "name": "Conductor ideal",
+      "type_signature": "𝔠 = Ann_R(R̄/R)",
+      "description": "For a reduced ring R with integral closure R̄, the conductor 𝔠 = {x ∈ R̄ : xR̄ ⊆ R} is the largest ideal of R̄ that is also an ideal of R."
+    },
+    {
+      "id": "s_integral_closure_1dim_is_dedekind",
+      "kind": "theorem",
+      "name": "Integral closure of a 1-dimensional Noetherian domain is Dedekind",
+      "type_signature": "",
+      "description": "The integral closure of a one-dimensional Noetherian domain in its fraction field is a Noetherian ring, hence a Dedekind domain."
+    },
+    {
+      "id": "s_multiplicity_one_implies_regularity",
+      "kind": "theorem",
+      "name": "Multiplicity one implies regularity",
+      "type_signature": "",
+      "description": "A Noetherian local ring has Hilbert-Samuel multiplicity e(R) = 1 if and only if it is a regular local ring."
+    },
+    {
+      "id": "s_associativity_formula_for_multiplicities",
+      "kind": "theorem",
+      "name": "Associativity formula for multiplicities",
+      "type_signature": "",
+      "description": "For a Noetherian local ring (R, 𝔪) of dimension d and 𝔪-primary ideal q, e(q; M) = Σ_𝔭 e(q; R/𝔭)·ℓ_{R_𝔭}(M_𝔭), summed over minimal primes 𝔭 with dim(R/𝔭) = dim(M)."
+    },
+    {
+      "id": "s_reduction_of_an_ideal",
+      "kind": "state",
+      "name": "Reduction of an ideal",
+      "type_signature": "",
+      "description": "An ideal J ⊆ I is a reduction of I if JIⁿ = Iⁿ⁺¹ for some n ≥ 0; minimal reductions have exactly dim(R) generators and share the same multiplicity as I."
+    },
+    {
+      "id": "s_noether_normalization_nagata",
+      "kind": "theorem",
+      "name": "Noether normalization (Nagata version)",
+      "type_signature": "",
+      "description": "A version of Noether normalization for finitely generated algebras over any Noetherian ring, where the polynomial subring may require localization; due to Nagata."
+    },
+    {
+      "id": "s_noether_normalization_graded",
+      "kind": "theorem",
+      "name": "Noether normalization for graded rings",
+      "type_signature": "",
+      "description": "For a finitely generated graded k-algebra S, there exist algebraically independent homogeneous elements y₁,...,y_d such that S is a finite module over k[y₁,...,y_d]."
+    },
+    {
+      "id": "s_finiteness_of_integral_closure_affine",
+      "kind": "theorem",
+      "name": "Finiteness of integral closure of affine domains",
+      "type_signature": "",
+      "description": "The integral closure of a finitely generated domain over a field (or over ℤ) in a finite extension of its fraction field is a finitely generated module."
+    },
+    {
+      "id": "s_generic_freeness_lemma",
+      "kind": "theorem",
+      "name": "Generic freeness lemma (Grothendieck)",
+      "type_signature": "",
+      "description": "If R is a Noetherian domain and M is a finitely generated R-algebra or R-module, then there exists nonzero f ∈ R such that M_f is free over R_f."
+    },
+    {
+      "id": "s_dimension_formula_affine_domains",
+      "kind": "theorem",
+      "name": "Dimension formula for affine domains",
+      "type_signature": "",
+      "description": "For a prime 𝔭 in a finitely generated domain R over a field k: ht(𝔭) + dim(R/𝔭) = dim(R)."
+    },
+    {
+      "id": "s_semicontinuity_of_fiber_dimension",
+      "kind": "theorem",
+      "name": "Semicontinuity of fiber dimension",
+      "type_signature": "",
+      "description": "For a morphism of finite type between Noetherian schemes, the function y ↦ dim(f⁻¹(y)) is upper semicontinuous on the target."
+    },
+    {
+      "id": "s_going_down_for_flat_extensions",
+      "kind": "theorem",
+      "name": "Going-down for flat extensions",
+      "type_signature": "",
+      "description": "If R → S is a flat ring homomorphism, then the going-down property holds: primes in R that are contained in the contraction of a prime of S lift to primes of S."
+    },
+    {
+      "id": "s_hilbert_polynomial_of_hypersurface",
+      "kind": "theorem",
+      "name": "Hilbert polynomial of a hypersurface",
+      "type_signature": "",
+      "description": "The Hilbert polynomial of a hypersurface V(f) ⊆ Pⁿ of degree d is P(t) = C(t+n,n) − C(t+n−d,n), so deg(V(f)) = d."
+    },
+    {
+      "id": "t_dimension_via_parameter_chains",
+      "kind": "technique",
+      "name": "Dimension computation via parameter chains",
+      "function_signature": "(Noetherian local ring (R, 𝔪)) → (System of parameters and Krull dimension)",
+      "description": "Computing Krull dimension by iteratively choosing elements avoiding minimal primes to reduce dimension by one at each step, building a system of parameters."
+    },
+    {
+      "id": "s_extension_theorem_elimination",
+      "kind": "theorem",
+      "name": "Extension theorem (elimination theory)",
+      "type_signature": "",
+      "description": "Conditions under which a partial solution in the elimination ideal extends to a full solution of the original polynomial system over an algebraically closed field."
+    },
+    {
+      "id": "s_fiber_dimension_theorem",
+      "kind": "theorem",
+      "name": "Fiber dimension theorem",
+      "type_signature": "",
+      "description": "For a dominant morphism of irreducible varieties f: X → Y, every irreducible component of a fiber f⁻¹(y) has dimension at least dim(X) − dim(Y), with equality on a dense open set."
+    },
+    {
+      "id": "s_lexicographic_order",
+      "kind": "axiom",
+      "name": "Lexicographic monomial order",
+      "type_signature": "",
+      "description": "A monomial order on k[x₁,...,xₙ] where x^α > x^β iff the leftmost nonzero entry of α − β is positive; favored for elimination but computationally expensive."
+    },
+    {
+      "id": "s_grevlex_order",
+      "kind": "axiom",
+      "name": "Graded reverse lexicographic order (grevlex)",
+      "type_signature": "",
+      "description": "A monomial order comparing first by total degree, then breaking ties by the rightmost nonzero entry of α − β being negative; the most efficient order for Gröbner basis computation."
+    },
+    {
+      "id": "s_initial_term",
+      "kind": "state",
+      "name": "Initial term (leading term)",
+      "type_signature": "in_>(f)",
+      "description": "The largest monomial term of a polynomial f with respect to a fixed monomial order >, written in(f) or LT(f)."
+    },
+    {
+      "id": "s_initial_ideal",
+      "kind": "state",
+      "name": "Initial ideal",
+      "type_signature": "in_>(I)",
+      "description": "The monomial ideal generated by the initial terms of all nonzero elements of an ideal I; determines the Hilbert function and leading behavior of I."
+    },
+    {
+      "id": "s_s_polynomial",
+      "kind": "state",
+      "name": "S-polynomial",
+      "type_signature": "",
+      "description": "For polynomials f, g, the combination S(f,g) = (lcm(LM(f),LM(g))/LT(f))·f − (lcm(LM(f),LM(g))/LT(g))·g designed to cancel leading terms; central to Buchberger's algorithm."
+    },
+    {
+      "id": "s_reduced_groebner_basis",
+      "kind": "state",
+      "name": "Reduced Gröbner basis",
+      "type_signature": "",
+      "description": "A Gröbner basis where each element is monic and no monomial of any element lies in the initial ideal of the others; unique for a given ideal and monomial order."
+    },
+    {
+      "id": "s_flat_degeneration_to_initial_ideal",
+      "kind": "theorem",
+      "name": "Flat degeneration to initial ideal",
+      "type_signature": "",
+      "description": "There exists a flat one-parameter family over A¹ whose general fiber is R/I and special fiber is R/in(I), realizing the initial ideal as a flat degeneration preserving Hilbert function."
+    },
+    {
+      "id": "s_dicksons_lemma",
+      "kind": "theorem",
+      "name": "Dickson's lemma",
+      "type_signature": "",
+      "description": "Every monomial ideal in k[x₁,...,xₙ] is finitely generated, equivalently every antichain in (ℕⁿ, ≤) is finite."
+    },
+    {
+      "id": "t_groebner_basis_syzygies",
+      "kind": "technique",
+      "name": "Gröbner basis and syzygies technique",
+      "function_signature": "(Gröbner basis G of ideal I, monomial order) → (Generators of first syzygy module syz(G))",
+      "description": "Computing syzygies from a Gröbner basis by lifting S-polynomial reductions to syzygy relations, yielding free resolutions via Schreyer's theorem."
+    },
+    {
+      "id": "s_universal_derivation",
+      "kind": "state",
+      "name": "Universal derivation",
+      "type_signature": "d: S → Ω_{S/R}",
+      "description": "The canonical R-derivation d: S → Ω_{S/R} such that every R-derivation from S to an S-module M factors uniquely through d, characterizing the module of Kähler differentials."
+    },
+    {
+      "id": "s_conormal_module",
+      "kind": "state",
+      "name": "Conormal module I/I²",
+      "type_signature": "",
+      "description": "For a surjection S ↠ S/I, the S/I-module I/I² measuring first-order deformation of the ideal I; appears in the second exact sequence of Kähler differentials."
+    },
+    {
+      "id": "s_kahler_differentials_polynomial_ring",
+      "kind": "theorem",
+      "name": "Kähler differentials of a polynomial ring",
+      "type_signature": "",
+      "description": "The module Ω_{R[x₁,...,xₙ]/R} is the free R[x₁,...,xₙ]-module of rank n with basis dx₁,...,dxₙ."
+    },
+    {
+      "id": "s_kahler_differentials_and_separability",
+      "kind": "theorem",
+      "name": "Kähler differentials and separability",
+      "type_signature": "",
+      "description": "A finite field extension L/K is separable if and only if Ω_{L/K} = 0; more generally dim_L Ω_{L/K} = tr.deg(L/K) for finitely generated field extensions."
+    },
+    {
+      "id": "s_smoothness_via_differentials",
+      "kind": "theorem",
+      "name": "Smoothness via Kähler differentials",
+      "type_signature": "",
+      "description": "A finitely presented k-algebra A (k perfect) is smooth over k iff Ω_{A/k} is projective of rank equal to dim(A)."
+    },
+    {
+      "id": "s_generic_smoothness",
+      "kind": "theorem",
+      "name": "Generic smoothness",
+      "type_signature": "",
+      "description": "A dominant morphism of varieties over a perfect field is smooth on a dense open subset of the source; equivalently, the generic fiber is geometrically regular."
+    },
+    {
+      "id": "s_jacobian_criterion_smoothness",
+      "kind": "theorem",
+      "name": "Jacobian criterion for smoothness",
+      "type_signature": "",
+      "description": "For A = k[x₁,...,xₙ]/(f₁,...,fₘ) with k perfect, A is smooth at a prime 𝔭 iff the Jacobian matrix (∂fᵢ/∂xⱼ) has rank n − dim(A_𝔭) modulo 𝔭."
+    },
+    {
+      "id": "s_koszul_complex_as_tensor_product",
+      "kind": "theorem",
+      "name": "Koszul complex as tensor product",
+      "type_signature": "",
+      "description": "The Koszul complex K(x₁,...,xₙ; R) is isomorphic to the tensor product K(x₁;R) ⊗_R ··· ⊗_R K(xₙ;R) of one-element Koszul complexes."
+    },
+    {
+      "id": "s_koszul_homology",
+      "kind": "state",
+      "name": "Koszul homology",
+      "type_signature": "Hᵢ(x₁,...,xₙ; M)",
+      "description": "The homology groups Hᵢ(K(x₁,...,xₙ) ⊗ M) of the Koszul complex; H₀ = M/(x₁,...,xₙ)M and higher Hᵢ detect failure of the sequence to be regular."
+    },
+    {
+      "id": "s_depth_via_koszul_homology",
+      "kind": "theorem",
+      "name": "Depth via Koszul homology",
+      "type_signature": "",
+      "description": "For a Noetherian local ring (R, 𝔪) and ideal I = (x₁,...,xₙ), depth_I(M) = n − max{i : Hᵢ(x₁,...,xₙ; M) ≠ 0}."
+    },
+    {
+      "id": "s_self_duality_of_koszul_complex",
+      "kind": "theorem",
+      "name": "Self-duality of the Koszul complex",
+      "type_signature": "",
+      "description": "The Koszul complex K(x₁,...,xₙ; R) is self-dual: Hom_R(Kᵢ, R) ≅ K_{n−i}, inducing isomorphisms Hᵢ(K) ≅ Hⁿ⁻ⁱ(K)."
+    },
+    {
+      "id": "s_koszul_and_tor",
+      "kind": "theorem",
+      "name": "Koszul homology computes Tor",
+      "type_signature": "",
+      "description": "If x₁,...,xₙ is a regular sequence on R, then Hᵢ(x₁,...,xₙ; M) ≅ Torᵢᴿ(R/(x₁,...,xₙ), M) for all i."
+    },
+    {
+      "id": "s_regular_sequence_permutation",
+      "kind": "theorem",
+      "name": "Regular sequences are permutable in local rings",
+      "type_signature": "",
+      "description": "In a Noetherian local ring, any permutation of a regular sequence on a finitely generated module is again a regular sequence."
+    },
+    {
+      "id": "s_grade_of_an_ideal",
+      "kind": "state",
+      "name": "Grade of an ideal",
+      "type_signature": "grade(I, M) = min{i : Extⁱ_R(R/I, M) ≠ 0}",
+      "description": "The length of a maximal regular sequence in I on M, equal to min{i : Extⁱ_R(R/I, M) ≠ 0}; agrees with depth_I(M)."
+    },
+    {
+      "id": "s_depth_inequality",
+      "kind": "theorem",
+      "name": "Depth inequality (depth ≤ dim)",
+      "type_signature": "",
+      "description": "For a finitely generated module M ≠ 0 over a Noetherian local ring (R, 𝔪), depth(M) ≤ dim(M); equality defines the Cohen-Macaulay condition."
+    },
+    {
+      "id": "s_cm_polynomial_ring",
+      "kind": "theorem",
+      "name": "Polynomial rings over Cohen-Macaulay rings are Cohen-Macaulay",
+      "type_signature": "",
+      "description": "If R is Cohen-Macaulay, then R[x₁,...,xₙ] and R[[x₁,...,xₙ]] are also Cohen-Macaulay; in particular k[x₁,...,xₙ] is Cohen-Macaulay."
+    },
+    {
+      "id": "s_flatness_and_depth",
+      "kind": "theorem",
+      "name": "Flatness and depth formula",
+      "type_signature": "",
+      "description": "If φ: (R, 𝔪) → (S, 𝔫) is a flat local homomorphism and M is a finitely generated S-module, then depth_S(M) = depth_R(M) + depth_{S/𝔪S}(M/𝔪M)."
+    },
+    {
+      "id": "s_cm_implies_catenary",
+      "kind": "theorem",
+      "name": "Cohen-Macaulay rings are universally catenary",
+      "type_signature": "",
+      "description": "Every Cohen-Macaulay ring is universally catenary: all maximal chains of primes between any two comparable primes have the same length."
+    },
+    {
+      "id": "s_cm_equidimensional",
+      "kind": "theorem",
+      "name": "Cohen-Macaulay local rings are equidimensional",
+      "type_signature": "",
+      "description": "A Cohen-Macaulay local ring is equidimensional: all minimal primes have the same coheight, so all irreducible components have the same dimension."
+    },
+    {
+      "id": "s_minimal_free_resolution",
+      "kind": "state",
+      "name": "Minimal free resolution",
+      "type_signature": "",
+      "description": "A free resolution of a module M over a local ring (R, 𝔪) where all differentials have entries in 𝔪; unique up to isomorphism with ranks given by Betti numbers."
+    },
+    {
+      "id": "s_uniqueness_minimal_free_resolution",
+      "kind": "theorem",
+      "name": "Uniqueness of minimal free resolutions",
+      "type_signature": "",
+      "description": "Over a Noetherian local ring, the minimal free resolution of a finitely generated module is unique up to isomorphism of chain complexes."
+    },
+    {
+      "id": "s_betti_numbers",
+      "kind": "state",
+      "name": "Betti numbers (algebraic)",
+      "type_signature": "βᵢ(M) = dim_k Torᵢᴿ(k, M)",
+      "description": "The ranks βᵢ(M) of the free modules in a minimal free resolution of M over a local ring (R, 𝔪, k); invariants measuring the complexity of M."
+    },
+    {
+      "id": "s_regularity_preserved_by_localization",
+      "kind": "theorem",
+      "name": "Regularity is preserved by localization",
+      "type_signature": "",
+      "description": "If R is a regular local ring and 𝔭 is a prime ideal, then R_𝔭 is also regular; follows from the Auslander-Buchsbaum-Serre characterization."
+    },
+    {
+      "id": "s_stably_free_is_free_over_local",
+      "kind": "theorem",
+      "name": "Stably free modules are free over local rings",
+      "type_signature": "",
+      "description": "Over a local ring, every stably free module (M with M ⊕ Rᵐ ≅ Rⁿ) is free; a consequence of Nakayama's lemma."
+    },
+    {
+      "id": "s_ferrand_vasconcelos",
+      "kind": "theorem",
+      "name": "Ferrand-Vasconcelos theorem",
+      "type_signature": "",
+      "description": "If I is an ideal in a Noetherian local ring with I/I² free over R/I and pd_R(R/I) < ∞, then I is generated by a regular sequence."
+    },
+    {
+      "id": "s_nagatas_lemma",
+      "kind": "theorem",
+      "name": "Nagata's lemma",
+      "type_signature": "",
+      "description": "If R is a Noetherian domain, x a nonzero nonunit with (x) prime, and R[1/x] is a UFD, then R is a UFD; used to prove regular local rings are UFDs."
+    },
+    {
+      "id": "s_fitting_ideal",
+      "kind": "state",
+      "name": "Fitting ideal",
+      "type_signature": "Fitt_i(M)",
+      "description": "For a finitely presented module M with presentation matrix A, the i-th Fitting ideal Fittᵢ(M) is generated by the (n−i)-minors of A; independent of presentation."
+    },
+    {
+      "id": "s_fitting_ideals_and_annihilator",
+      "kind": "theorem",
+      "name": "Fitting ideals and annihilator",
+      "type_signature": "",
+      "description": "For a finitely presented module with n generators, Fitt₀(M) ⊆ Ann(M)ⁿ ⊆ Fitt₀(M); in particular V(Fitt₀(M)) = V(Ann(M)) = Supp(M)."
+    },
+    {
+      "id": "s_buchsbaum_eisenbud_acyclicity",
+      "kind": "theorem",
+      "name": "Buchsbaum-Eisenbud acyclicity criterion",
+      "type_signature": "",
+      "description": "A complex of free modules is acyclic iff at each step the rank condition holds and the ideal of appropriately sized minors of each differential has sufficient depth."
+    },
+    {
+      "id": "s_eagon_northcott_complex",
+      "kind": "state",
+      "name": "Eagon-Northcott complex",
+      "type_signature": "",
+      "description": "A canonical free complex resolving the ideal of maximal minors of a matrix (or cokernel of a generic map), built from symmetric and exterior powers."
+    },
+    {
+      "id": "s_determinantal_ideal",
+      "kind": "axiom",
+      "name": "Determinantal ideal",
+      "type_signature": "I_t(A)",
+      "description": "The ideal I_t(A) generated by all t×t minors of a matrix A with entries in a ring R; a fundamental class of ideals in commutative algebra and algebraic geometry."
+    },
+    {
+      "id": "s_expected_codimension_determinantal",
+      "kind": "theorem",
+      "name": "Expected codimension of determinantal ideals",
+      "type_signature": "",
+      "description": "For a generic m×n matrix, the ideal of t×t minors has codimension (m−t+1)(n−t+1); this is the maximum possible codimension for any determinantal ideal."
+    },
+    {
+      "id": "s_perfect_ideal",
+      "kind": "axiom",
+      "name": "Perfect ideal",
+      "type_signature": "",
+      "description": "An ideal I such that pd_R(R/I) = grade(I); equivalently R/I has a finite free resolution of length equal to the grade of I."
+    },
+    {
+      "id": "s_perfect_ideals_unmixed",
+      "kind": "theorem",
+      "name": "Perfect ideals are unmixed",
+      "type_signature": "",
+      "description": "A perfect ideal in a Cohen-Macaulay ring is unmixed: all its associated primes have height equal to the grade of the ideal."
+    },
+    {
+      "id": "s_syzygy_module",
+      "kind": "state",
+      "name": "Syzygy module",
+      "type_signature": "Syz_k(M)",
+      "description": "The k-th syzygy module of M is the image of the k-th differential in a free resolution, measuring higher-order relations among generators."
+    },
+    {
+      "id": "s_existence_of_canonical_module",
+      "kind": "theorem",
+      "name": "Existence of canonical module",
+      "type_signature": "",
+      "description": "A Cohen-Macaulay local ring that is a quotient of a Gorenstein local ring possesses a canonical module ω_R, unique up to isomorphism."
+    },
+    {
+      "id": "s_gorenstein_iff_canonical_is_ring",
+      "kind": "theorem",
+      "name": "Gorenstein iff canonical module is the ring",
+      "type_signature": "",
+      "description": "A Cohen-Macaulay local ring possessing a canonical module is Gorenstein if and only if ω_R ≅ R, equivalently the type r(R) = 1."
+    },
+    {
+      "id": "s_type_of_cm_ring",
+      "kind": "state",
+      "name": "Type of a Cohen-Macaulay ring",
+      "type_signature": "r(R) = dim_k Ext^d_R(k, R)",
+      "description": "The type of a Cohen-Macaulay local ring (R, 𝔪, k) of dimension d, equal to dim_k Ext^d_R(k, R); Gorenstein rings are precisely the CM rings of type 1."
+    },
+    {
+      "id": "s_complete_intersection_ring",
+      "kind": "axiom",
+      "name": "Complete intersection ring",
+      "type_signature": "",
+      "description": "A Noetherian local ring whose completion is isomorphic to a regular local ring modulo an ideal generated by a regular sequence; sits between regular and Gorenstein in the hierarchy."
+    },
+    {
+      "id": "s_complete_intersection_is_gorenstein",
+      "kind": "theorem",
+      "name": "Complete intersections are Gorenstein",
+      "type_signature": "",
+      "description": "Every complete intersection local ring is Gorenstein, giving the hierarchy: regular ⊂ complete intersection ⊂ Gorenstein ⊂ Cohen-Macaulay."
+    },
+    {
+      "id": "s_duality_maximal_cm_modules",
+      "kind": "theorem",
+      "name": "Duality for maximal Cohen-Macaulay modules",
+      "type_signature": "",
+      "description": "Over a Gorenstein local ring R, the functor Hom_R(−, R) gives a duality (contravariant self-equivalence) on the category of maximal Cohen-Macaulay modules."
+    },
+    {
+      "id": "s_maximal_cohen_macaulay_module",
+      "kind": "axiom",
+      "name": "Maximal Cohen-Macaulay module",
+      "type_signature": "",
+      "description": "A finitely generated module M over a Cohen-Macaulay local ring (R, 𝔪) with depth(M) = dim(R), the maximum possible value."
+    },
+    {
+      "id": "s_bass_numbers",
+      "kind": "state",
+      "name": "Bass numbers",
+      "type_signature": "μᵢ(𝔭, M) = dim_{κ(𝔭)} Extⁱ_{R_𝔭}(κ(𝔭), M_𝔭)",
+      "description": "Invariants measuring the multiplicity of the indecomposable injective E(R/𝔭) in the i-th term of a minimal injective resolution of M."
+    },
+    {
+      "id": "s_structure_of_injective_modules_noetherian",
+      "kind": "theorem",
+      "name": "Structure of injective modules over Noetherian rings",
+      "type_signature": "",
+      "description": "Every injective module over a Noetherian ring decomposes uniquely as a direct sum of indecomposable injectives E(R/𝔭) for various primes 𝔭, with multiplicities given by Bass numbers."
+    },
+    {
+      "id": "s_poincare_duality_gorenstein",
+      "kind": "theorem",
+      "name": "Poincaré duality for Gorenstein rings",
+      "type_signature": "",
+      "description": "For a Gorenstein local ring of dimension d, H^i_𝔪(R) = 0 for i ≠ d and H^d_𝔪(R) ≅ E(k), giving Poincaré-type duality via local cohomology."
+    },
+    {
+      "id": "s_local_cohomology_via_cech",
+      "kind": "theorem",
+      "name": "Local cohomology via Čech complex",
+      "type_signature": "",
+      "description": "For an ideal I = (f₁,...,fᵣ), local cohomology H^i_I(M) is computed as the cohomology of the Čech complex built from localizations M_{f_{j₁}···f_{jₖ}}."
+    },
+    {
+      "id": "s_vanishing_local_cohomology",
+      "kind": "theorem",
+      "name": "Vanishing of local cohomology",
+      "type_signature": "",
+      "description": "H^i_I(M) = 0 for i < depth_I(M) and for i > dim(M); the first nonvanishing degree equals the depth and the last equals the dimension."
+    },
+    {
+      "id": "s_grothendieck_vanishing",
+      "kind": "theorem",
+      "name": "Grothendieck vanishing theorem",
+      "type_signature": "",
+      "description": "For a Noetherian local ring (R, 𝔪) and finitely generated M, H^i_𝔪(M) = 0 for all i > dim(M)."
+    },
+    {
+      "id": "s_depth_via_local_cohomology",
+      "kind": "theorem",
+      "name": "Depth via local cohomology",
+      "type_signature": "",
+      "description": "For a finitely generated module M over a Noetherian ring, depth_I(M) = min{i : H^i_I(M) ≠ 0}, characterizing depth cohomologically."
+    },
+    {
+      "id": "s_local_cohomology_sheaf_cohomology",
+      "kind": "theorem",
+      "name": "Local cohomology and sheaf cohomology comparison",
+      "type_signature": "",
+      "description": "For X = Proj(S) and a graded S-module M, there is a long exact sequence relating H^i_𝔪(M), the module M, and sheaf cohomology H^i(X, M̃(n))."
+    },
+    {
+      "id": "s_divided_power_algebra",
+      "kind": "axiom",
+      "name": "Divided power algebra",
+      "type_signature": "Γ_R(M)",
+      "description": "The algebra with divided power operations γₙ satisfying γₙ(x)γₘ(x) = C(n+m,n)γ_{n+m}(x); used in constructing Eagon-Northcott and Buchsbaum-Rim complexes."
+    },
+    {
+      "id": "s_schur_functor",
+      "kind": "axiom",
+      "name": "Schur functor",
+      "type_signature": "L_λ",
+      "description": "The functor L_λ associating to a free module F the GL(F)-representation indexed by partition λ, generalizing symmetric and exterior powers."
+    },
+    {
+      "id": "s_buchsbaum_rim_complex",
+      "kind": "state",
+      "name": "Buchsbaum-Rim complex",
+      "type_signature": "",
+      "description": "A generalization of the Eagon-Northcott complex providing a free resolution of the cokernel of a map of free modules when the Fitting ideal has expected depth."
+    },
+    {
+      "id": "s_mapping_cone",
+      "kind": "state",
+      "name": "Mapping cone",
+      "type_signature": "",
+      "description": "For a chain map f: C → D, the complex cone(f) with cone(f)ₙ = Cₙ₋₁ ⊕ Dₙ fitting into the exact triangle C → D → cone(f) → C[−1]."
+    },
+    {
+      "id": "s_spectral_sequence_filtered_complex",
+      "kind": "state",
+      "name": "Spectral sequence of a filtered complex",
+      "type_signature": "",
+      "description": "A filtered chain complex gives rise to a spectral sequence converging to the homology of the total complex, with E₀ page determined by the associated graded."
+    },
+    {
+      "id": "s_spectral_sequence_double_complex",
+      "kind": "theorem",
+      "name": "Spectral sequences of a double complex",
+      "type_signature": "",
+      "description": "A double complex has two spectral sequences from row and column filtrations, both converging to H*(Tot(C)); the E₂ pages are iterated homology in the two directions."
+    },
+    {
+      "id": "s_mittag_leffler_condition",
+      "kind": "axiom",
+      "name": "Mittag-Leffler condition",
+      "type_signature": "",
+      "description": "An inverse system {Aₙ} satisfies the Mittag-Leffler condition if for each n the images im(Aₘ → Aₙ) stabilize for large m; ensures lim¹ = 0 and exactness of inverse limits."
+    },
+    {
+      "id": "s_p_basis",
+      "kind": "state",
+      "name": "p-basis of a field",
+      "type_signature": "",
+      "description": "A set {bᵢ} in a field K of characteristic p such that {bᵢ^{eᵢ} : 0 ≤ eᵢ < p} form a basis of K over K^p; measures the degree of imperfection of K."
+    },
+    {
+      "id": "s_auslander_depth_formula",
+      "kind": "theorem",
+      "name": "Auslander depth formula",
+      "type_signature": "",
+      "description": "For finitely generated modules M, N over a regular local ring R with Torᵢ(M,N) = 0 for i > 0: depth(M) + depth(N) = depth(R) + depth(M ⊗ N)."
     }
   ],
   "edges": [
@@ -210215,6 +211111,878 @@
       "role": "input",
       "parameter_binding": {},
       "used_in_theorem": "s_dimension_inequality_for_extensions"
+    },
+    {
+      "id": "e_14632",
+      "from": "s_cayley_hamilton_theorem",
+      "to": "t_determinant_trick",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14633",
+      "from": "t_determinant_trick",
+      "to": "s_nakayama_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nakayama_lemma"
+    },
+    {
+      "id": "e_14634",
+      "from": "t_determinant_trick",
+      "to": "s_integral_closure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14635",
+      "from": "t_determinant_trick",
+      "to": "s_ufd_implies_integrally_closed",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ufd_implies_integrally_closed"
+    },
+    {
+      "id": "e_14636",
+      "from": "s_i_adic_completion",
+      "to": "t_lifting_idempotents",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14637",
+      "from": "t_lifting_idempotents",
+      "to": "s_idempotents_and_connected_components_of_spec",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14638",
+      "from": "t_lifting_idempotents",
+      "to": "s_cohen_structure_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cohen_structure_theorem"
+    },
+    {
+      "id": "e_14639",
+      "from": "s_rees_algebra_construction",
+      "to": "t_rees_algebra_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14640",
+      "from": "s_filtration_of_a_module",
+      "to": "t_rees_algebra_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14641",
+      "from": "t_rees_algebra_technique",
+      "to": "s_artin_rees_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_artin_rees_lemma"
+    },
+    {
+      "id": "e_14642",
+      "from": "t_rees_algebra_technique",
+      "to": "s_stable_filtration",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14643",
+      "from": "s_noetherian_local_ring",
+      "to": "t_dimension_via_parameter_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14644",
+      "from": "s_prime_avoidance_lemma",
+      "to": "t_dimension_via_parameter_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14645",
+      "from": "s_krull_hauptidealsatz",
+      "to": "t_dimension_via_parameter_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14646",
+      "from": "t_dimension_via_parameter_chains",
+      "to": "s_system_of_parameters",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14647",
+      "from": "t_dimension_via_parameter_chains",
+      "to": "s_existence_of_systems_of_parameters",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_of_systems_of_parameters"
+    },
+    {
+      "id": "e_14648",
+      "from": "s_grobner_basis",
+      "to": "t_groebner_basis_syzygies",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14649",
+      "from": "s_s_polynomial",
+      "to": "t_groebner_basis_syzygies",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14650",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_syzygy_module",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14651",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_minimal_free_resolution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14652",
+      "from": "s_localization_is_flat",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14653",
+      "from": "s_associated_prime",
+      "to": "t_primary_decomposition_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14654",
+      "from": "t_primary_decomposition_technique",
+      "to": "s_finiteness_of_associated_primes",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_associated_primes"
+    },
+    {
+      "id": "e_14655",
+      "from": "t_primary_decomposition_technique",
+      "to": "s_zero_divisors_equal_union_of_associated_primes",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_zero_divisors_equal_union_of_associated_primes"
+    },
+    {
+      "id": "e_14656",
+      "from": "t_primary_decomposition_technique",
+      "to": "s_prime_filtration",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14657",
+      "from": "t_primary_decomposition_technique",
+      "to": "s_geometric_primary_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14658",
+      "from": "s_noether_normalization_lemma",
+      "to": "t_noether_normalization_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14659",
+      "from": "t_noether_normalization_technique",
+      "to": "s_noether_normalization_graded",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_noether_normalization_graded"
+    },
+    {
+      "id": "e_14660",
+      "from": "t_noether_normalization_technique",
+      "to": "s_noether_normalization_nagata",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_noether_normalization_nagata"
+    },
+    {
+      "id": "e_14661",
+      "from": "t_noether_normalization_technique",
+      "to": "s_zariskis_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_zariskis_lemma"
+    },
+    {
+      "id": "e_14662",
+      "from": "t_noether_normalization_technique",
+      "to": "s_dimension_formula_affine_domains",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dimension_formula_affine_domains"
+    },
+    {
+      "id": "e_14663",
+      "from": "t_noether_normalization_technique",
+      "to": "s_affine_rings_universally_catenary",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_affine_rings_universally_catenary"
+    },
+    {
+      "id": "e_14664",
+      "from": "t_noether_normalization_technique",
+      "to": "s_finiteness_of_integral_closure_affine",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finiteness_of_integral_closure_affine"
+    },
+    {
+      "id": "e_14665",
+      "from": "t_noether_normalization_technique",
+      "to": "s_generic_freeness_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generic_freeness_lemma"
+    },
+    {
+      "id": "e_14666",
+      "from": "s_regular_sequence",
+      "to": "t_koszul_complex_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14667",
+      "from": "s_koszul_complex",
+      "to": "t_koszul_complex_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14668",
+      "from": "t_koszul_complex_technique",
+      "to": "s_koszul_homology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14669",
+      "from": "t_koszul_complex_technique",
+      "to": "s_depth_via_koszul_homology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_depth_via_koszul_homology"
+    },
+    {
+      "id": "e_14670",
+      "from": "t_koszul_complex_technique",
+      "to": "s_koszul_and_tor",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_koszul_and_tor"
+    },
+    {
+      "id": "e_14671",
+      "from": "t_koszul_complex_technique",
+      "to": "s_self_duality_of_koszul_complex",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_self_duality_of_koszul_complex"
+    },
+    {
+      "id": "e_14672",
+      "from": "t_koszul_complex_technique",
+      "to": "s_regular_sequence_permutation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_regular_sequence_permutation"
+    },
+    {
+      "id": "e_14673",
+      "from": "t_koszul_complex_technique",
+      "to": "s_grade_of_an_ideal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14674",
+      "from": "t_koszul_complex_technique",
+      "to": "s_depth_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_depth_inequality"
+    },
+    {
+      "id": "e_14675",
+      "from": "s_nakayama_lemma",
+      "to": "t_nakayamas_lemma_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14676",
+      "from": "t_nakayamas_lemma_argument",
+      "to": "s_embedding_dimension",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14677",
+      "from": "t_nakayamas_lemma_argument",
+      "to": "s_minimal_free_resolution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14678",
+      "from": "t_nakayamas_lemma_argument",
+      "to": "s_stably_free_is_free_over_local",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stably_free_is_free_over_local"
+    },
+    {
+      "id": "e_14679",
+      "from": "s_hilbert_function",
+      "to": "t_hilbert_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14680",
+      "from": "t_hilbert_function_method",
+      "to": "s_dimension_via_m_primary_ideals",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dimension_via_m_primary_ideals"
+    },
+    {
+      "id": "e_14681",
+      "from": "t_hilbert_function_method",
+      "to": "s_multiplicity_one_implies_regularity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_multiplicity_one_implies_regularity"
+    },
+    {
+      "id": "e_14682",
+      "from": "t_hilbert_function_method",
+      "to": "s_associativity_formula_for_multiplicities",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_associativity_formula_for_multiplicities"
+    },
+    {
+      "id": "e_14683",
+      "from": "t_hilbert_function_method",
+      "to": "s_hilbert_polynomial_of_hypersurface",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilbert_polynomial_of_hypersurface"
+    },
+    {
+      "id": "e_14684",
+      "from": "s_i_adic_completion",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14685",
+      "from": "t_completion_technique",
+      "to": "s_completion_is_faithfully_flat",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_completion_is_faithfully_flat"
+    },
+    {
+      "id": "e_14686",
+      "from": "t_completion_technique",
+      "to": "s_weierstrass_preparation_theorem_formal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weierstrass_preparation_theorem_formal"
+    },
+    {
+      "id": "e_14687",
+      "from": "s_integral_closure",
+      "to": "t_integral_closure_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14688",
+      "from": "t_integral_closure_technique",
+      "to": "s_conductor_ideal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14689",
+      "from": "t_integral_closure_technique",
+      "to": "s_integral_closure_1dim_is_dedekind",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_integral_closure_1dim_is_dedekind"
+    },
+    {
+      "id": "e_14690",
+      "from": "t_integral_closure_technique",
+      "to": "s_serre_criterion_for_normality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_serre_criterion_for_normality"
+    },
+    {
+      "id": "e_14691",
+      "from": "s_faithfully_flat_module",
+      "to": "t_faithfully_flat_descent",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14692",
+      "from": "t_faithfully_flat_descent",
+      "to": "s_going_down_for_flat_extensions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_going_down_for_flat_extensions"
+    },
+    {
+      "id": "e_14693",
+      "from": "t_faithfully_flat_descent",
+      "to": "s_flatness_and_depth",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_flatness_and_depth"
+    },
+    {
+      "id": "e_14694",
+      "from": "t_faithfully_flat_descent",
+      "to": "s_semicontinuity_of_fiber_dimension",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_semicontinuity_of_fiber_dimension"
+    },
+    {
+      "id": "e_14695",
+      "from": "s_s_polynomial",
+      "to": "t_buchbergers_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14696",
+      "from": "s_initial_ideal",
+      "to": "t_buchbergers_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14697",
+      "from": "t_buchbergers_algorithm",
+      "to": "s_reduced_groebner_basis",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14698",
+      "from": "t_buchbergers_algorithm",
+      "to": "s_dicksons_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14699",
+      "from": "t_buchbergers_algorithm",
+      "to": "s_flat_degeneration_to_initial_ideal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_flat_degeneration_to_initial_ideal"
+    },
+    {
+      "id": "e_14700",
+      "from": "s_hensels_lemma",
+      "to": "t_hensel_lifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14701",
+      "from": "t_hensel_lifting",
+      "to": "s_weierstrass_preparation_theorem_formal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weierstrass_preparation_theorem_formal"
+    },
+    {
+      "id": "e_14702",
+      "from": "s_depth",
+      "to": "t_koszul_complex_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14703",
+      "from": "t_koszul_complex_technique",
+      "to": "s_auslander_buchsbaum_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_auslander_buchsbaum_formula"
+    },
+    {
+      "id": "e_14704",
+      "from": "s_cohenmacaulay_module",
+      "to": "t_koszul_complex_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14705",
+      "from": "t_koszul_complex_technique",
+      "to": "s_cm_implies_catenary",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cm_implies_catenary"
+    },
+    {
+      "id": "e_14706",
+      "from": "t_koszul_complex_technique",
+      "to": "s_cm_equidimensional",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cm_equidimensional"
+    },
+    {
+      "id": "e_14707",
+      "from": "t_koszul_complex_technique",
+      "to": "s_cm_polynomial_ring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cm_polynomial_ring"
+    },
+    {
+      "id": "e_14708",
+      "from": "t_koszul_complex_technique",
+      "to": "s_perfect_ideals_unmixed",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_perfect_ideals_unmixed"
+    },
+    {
+      "id": "e_14709",
+      "from": "s_gorenstein_ring",
+      "to": "t_koszul_complex_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14710",
+      "from": "t_koszul_complex_technique",
+      "to": "s_complete_intersection_is_gorenstein",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_complete_intersection_is_gorenstein"
+    },
+    {
+      "id": "e_14711",
+      "from": "t_koszul_complex_technique",
+      "to": "s_gorenstein_iff_canonical_is_ring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gorenstein_iff_canonical_is_ring"
+    },
+    {
+      "id": "e_14712",
+      "from": "t_koszul_complex_technique",
+      "to": "s_duality_maximal_cm_modules",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_duality_maximal_cm_modules"
+    },
+    {
+      "id": "e_14713",
+      "from": "t_koszul_complex_technique",
+      "to": "s_poincare_duality_gorenstein",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_duality_gorenstein"
+    },
+    {
+      "id": "e_14714",
+      "from": "s_serre_condition_rk",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14715",
+      "from": "s_serre_condition_sk",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14716",
+      "from": "t_localization_at_prime",
+      "to": "s_serre_criterion_for_normality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_serre_criterion_for_normality"
+    },
+    {
+      "id": "e_14717",
+      "from": "t_localization_at_prime",
+      "to": "s_serre_criterion_for_reducedness",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_serre_criterion_for_reducedness"
+    },
+    {
+      "id": "e_14718",
+      "from": "s_local_cohomology",
+      "to": "t_koszul_complex_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14719",
+      "from": "t_koszul_complex_technique",
+      "to": "s_depth_via_local_cohomology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_depth_via_local_cohomology"
+    },
+    {
+      "id": "e_14720",
+      "from": "t_koszul_complex_technique",
+      "to": "s_vanishing_local_cohomology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_vanishing_local_cohomology"
+    },
+    {
+      "id": "e_14721",
+      "from": "t_koszul_complex_technique",
+      "to": "s_grothendieck_vanishing",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_grothendieck_vanishing"
+    },
+    {
+      "id": "e_14722",
+      "from": "t_koszul_complex_technique",
+      "to": "s_local_cohomology_via_cech",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_cohomology_via_cech"
+    },
+    {
+      "id": "e_14723",
+      "from": "s_auslanderbuchsbaumserre_theorem",
+      "to": "t_koszul_complex_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14724",
+      "from": "t_koszul_complex_technique",
+      "to": "s_regularity_preserved_by_localization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_regularity_preserved_by_localization"
+    },
+    {
+      "id": "e_14725",
+      "from": "t_koszul_complex_technique",
+      "to": "s_nagatas_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nagatas_lemma"
+    },
+    {
+      "id": "e_14726",
+      "from": "t_koszul_complex_technique",
+      "to": "s_ferrand_vasconcelos",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ferrand_vasconcelos"
+    },
+    {
+      "id": "e_14727",
+      "from": "s_module_of_kahler_differentials",
+      "to": "t_koszul_complex_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14728",
+      "from": "t_koszul_complex_technique",
+      "to": "s_kahler_differentials_and_separability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kahler_differentials_and_separability"
+    },
+    {
+      "id": "e_14729",
+      "from": "t_koszul_complex_technique",
+      "to": "s_smoothness_via_differentials",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_smoothness_via_differentials"
+    },
+    {
+      "id": "e_14730",
+      "from": "t_koszul_complex_technique",
+      "to": "s_generic_smoothness",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generic_smoothness"
+    },
+    {
+      "id": "e_14731",
+      "from": "t_koszul_complex_technique",
+      "to": "s_jacobian_criterion_smoothness",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_jacobian_criterion_smoothness"
+    },
+    {
+      "id": "e_14732",
+      "from": "s_minimal_free_resolution",
+      "to": "t_groebner_basis_syzygies",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14733",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_fitting_ideal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14734",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_betti_numbers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14735",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_buchsbaum_eisenbud_acyclicity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_buchsbaum_eisenbud_acyclicity"
+    },
+    {
+      "id": "e_14736",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_eagon_northcott_complex",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14737",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_buchsbaum_rim_complex",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_14738",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_fitting_ideals_and_annihilator",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fitting_ideals_and_annihilator"
+    },
+    {
+      "id": "e_14739",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_expected_codimension_determinantal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_expected_codimension_determinantal"
+    },
+    {
+      "id": "e_14740",
+      "from": "t_groebner_basis_syzygies",
+      "to": "s_uniqueness_minimal_free_resolution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_uniqueness_minimal_free_resolution"
     }
   ],
   "subgraphs": [
