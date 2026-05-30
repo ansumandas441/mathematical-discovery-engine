@@ -359,7 +359,13 @@
     hoverNode = null;
 
     if (!Graph) {
-      Graph = ForceGraph3D()(document.getElementById("graph-container"))
+      Graph = ForceGraph3D({
+        rendererConfig: {
+          antialias: true,
+          powerPreference: 'high-performance',
+          precision: 'lowp'
+        }
+      })(document.getElementById("graph-container"))
         .backgroundColor("#060612")
         .showNavInfo(false)
         .nodeId("id")
@@ -378,7 +384,7 @@
         })
         .nodeVal(n => n._val)
         .nodeOpacity(0.92)
-        .nodeResolution(12)
+        .nodeResolution(6)
         .linkSource("source")
         .linkTarget("target")
         .linkColor(link => {
@@ -390,17 +396,12 @@
           if (src?.kind === "technique" || tgt?.kind === "technique") return "rgba(240, 136, 62, 0.15)";
           return "rgba(140, 160, 200, 0.12)";
         })
-        .linkWidth(link => highlightLinks.has(link) ? 3 : 1.0)
+        .linkWidth(link => highlightLinks.has(link) ? 3 : 0.5)
         .linkOpacity(0.8)
-        .linkDirectionalParticles(link => highlightLinks.has(link) ? 4 : 1)
-        .linkDirectionalParticleWidth(link => highlightLinks.has(link) ? 2.5 : 1.0)
-        .linkDirectionalParticleSpeed(0.004)
-        .linkDirectionalParticleColor(link => {
-          if (highlightLinks.has(link)) return "#79c0ff";
-          const src = typeof link.source === "object" ? link.source : null;
-          if (src && src.kind === "technique") return "rgba(240, 136, 62, 0.6)";
-          return "rgba(120, 180, 255, 0.5)";
-        })
+        .linkDirectionalParticles(link => highlightLinks.has(link) ? 3 : 0)
+        .linkDirectionalParticleWidth(link => highlightLinks.has(link) ? 2 : 0)
+        .linkDirectionalParticleSpeed(0.006)
+        .linkDirectionalParticleColor(() => "#79c0ff")
         .onNodeHover(node => {
           document.body.style.cursor = node ? "pointer" : "default";
           highlightNodes.clear();
@@ -417,7 +418,6 @@
           if (node) {
             selectedNode = node;
             showDetails(node);
-            // Focus camera
             const dist = 120;
             const pos = node;
             Graph.cameraPosition(
@@ -435,10 +435,10 @@
         .onBackgroundClick(() => {
           closeDetails();
         })
-        .warmupTicks(120)
-        .cooldownTicks(300)
-        .d3AlphaDecay(0.025)
-        .d3VelocityDecay(0.35);
+        .warmupTicks(200)
+        .cooldownTicks(0)
+        .d3AlphaDecay(0.03)
+        .d3VelocityDecay(0.4);
 
       // Auto-rotate camera
       Graph.controls().autoRotate = true;
