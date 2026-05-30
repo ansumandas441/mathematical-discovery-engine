@@ -80537,6 +80537,292 @@
       "name": "Auslander depth formula",
       "type_signature": "",
       "description": "For finitely generated modules M, N over a regular local ring R with Torᵢ(M,N) = 0 for i > 0: depth(M) + depth(N) = depth(R) + depth(M ⊗ N)."
+    },
+    {
+      "id": "s_formally_smooth_algebra",
+      "kind": "axiom",
+      "name": "Formally smooth algebra",
+      "type_signature": "",
+      "description": "An R-algebra S such that for every R-algebra A and nilpotent ideal N of A, every R-homomorphism S → A/N lifts to S → A.",
+      "aliases": [
+        "smooth algebra",
+        "formally smooth morphism"
+      ]
+    },
+    {
+      "id": "s_formally_unramified_algebra",
+      "kind": "axiom",
+      "name": "Formally unramified algebra",
+      "type_signature": "",
+      "description": "An R-algebra S with Ω_{S/R} = 0, equivalently liftings in the formal smoothness definition are unique when they exist.",
+      "aliases": [
+        "unramified algebra"
+      ]
+    },
+    {
+      "id": "s_formally_etale_algebra",
+      "kind": "axiom",
+      "name": "Formally étale algebra",
+      "type_signature": "",
+      "description": "An R-algebra S that is both formally smooth and formally unramified, so liftings of homomorphisms past nilpotent ideals exist and are unique.",
+      "aliases": [
+        "étale algebra",
+        "formally étale morphism"
+      ]
+    },
+    {
+      "id": "s_g_ring",
+      "kind": "axiom",
+      "name": "G-ring (Grothendieck ring)",
+      "type_signature": "",
+      "description": "A Noetherian ring R such that for every prime p, the completion map R_p → R̂_p is a regular homomorphism, i.e., has geometrically regular formal fibres.",
+      "aliases": [
+        "Grothendieck ring",
+        "G-ring"
+      ]
+    },
+    {
+      "id": "s_quasi_excellent_ring",
+      "kind": "axiom",
+      "name": "Quasi-excellent ring",
+      "type_signature": "",
+      "description": "A Noetherian G-ring R such that for every finitely generated R-algebra S, the singular locus of Spec(S) is closed.",
+      "aliases": [
+        "quasi-excellent"
+      ]
+    },
+    {
+      "id": "s_n_1_ring",
+      "kind": "axiom",
+      "name": "N-1 ring",
+      "type_signature": "",
+      "description": "A Noetherian integral domain whose integral closure in its own fraction field is a finite module over itself.",
+      "aliases": [
+        "N-1 domain"
+      ]
+    },
+    {
+      "id": "s_buchsbaum_ring",
+      "kind": "axiom",
+      "name": "Buchsbaum ring",
+      "type_signature": "",
+      "description": "A Noetherian local ring (R, m) such that the difference ℓ(R/(x₁,…,x_d)) − e(x₁,…,x_d; R) is independent of the choice of system of parameters.",
+      "aliases": [
+        "Buchsbaum local ring"
+      ]
+    },
+    {
+      "id": "s_geometrically_regular_formal_fibres",
+      "kind": "axiom",
+      "name": "Geometrically regular formal fibres",
+      "type_signature": "",
+      "description": "The condition on a Noetherian local ring (R, m) that all formal fibres R̂ ⊗_R κ(p) are geometrically regular algebras over κ(p) for every prime p.",
+      "aliases": [
+        "regular formal fibres"
+      ]
+    },
+    {
+      "id": "s_attached_primes",
+      "kind": "axiom",
+      "name": "Attached primes",
+      "type_signature": "",
+      "description": "For an Artinian module M over a Noetherian ring, Att(M) = {p ∈ Spec(R) : p = Ann(M/N) for some submodule N}, the dual notion to associated primes.",
+      "aliases": [
+        "attached prime ideals",
+        "Att(M)"
+      ]
+    },
+    {
+      "id": "s_dualizing_complex",
+      "kind": "axiom",
+      "name": "Dualizing complex",
+      "type_signature": "",
+      "description": "A bounded complex D• of injective modules with finitely generated cohomology such that the natural map R → RHom_R(D•, D•) is a quasi-isomorphism; exists for quotients of Gorenstein rings.",
+      "aliases": [
+        "residual complex"
+      ]
+    },
+    {
+      "id": "s_singular_locus",
+      "kind": "state",
+      "name": "Singular locus",
+      "type_signature": "",
+      "description": "Sing(R) = {p ∈ Spec(R) : R_p is not a regular local ring}, the subset of primes where a Noetherian ring fails to be regular.",
+      "aliases": [
+        "non-regular locus",
+        "Sing(R)"
+      ]
+    },
+    {
+      "id": "s_formal_fibre",
+      "kind": "state",
+      "name": "Formal fibre",
+      "type_signature": "",
+      "description": "For a Noetherian local ring (R, m) and prime p, the formal fibre at p is Spec(R̂ ⊗_R κ(p)), the fibre of the completion morphism Spec(R̂) → Spec(R) over p.",
+      "aliases": [
+        "formal fiber"
+      ]
+    },
+    {
+      "id": "s_henselization",
+      "kind": "state",
+      "name": "Henselization",
+      "type_signature": "",
+      "description": "The Henselization R^h of a local ring (R, m) is the smallest Henselian local ring through which R → R̂ factors, constructed as a filtered colimit of étale neighborhoods.",
+      "aliases": [
+        "Henselization of a local ring",
+        "R^h"
+      ]
+    },
+    {
+      "id": "s_strict_henselization",
+      "kind": "state",
+      "name": "Strict Henselization",
+      "type_signature": "",
+      "description": "The strict Henselization R^{sh} of a local ring (R, m) is the Henselization with respect to the separable closure of the residue field, the maximal unramified extension of R.",
+      "aliases": [
+        "strict Henselization",
+        "R^{sh}"
+      ]
+    },
+    {
+      "id": "s_local_criterion_for_flatness",
+      "kind": "theorem",
+      "name": "Local criterion for flatness",
+      "type_signature": "",
+      "description": "For a local homomorphism (R, m) → (S, n) of Noetherian local rings, S is R-flat iff Tor₁^R(R/m, S) = 0, iff the natural map m ⊗_R S → mS is an isomorphism.",
+      "aliases": [
+        "local flatness criterion"
+      ]
+    },
+    {
+      "id": "s_equational_criterion_for_flatness",
+      "kind": "theorem",
+      "name": "Equational criterion for flatness",
+      "type_signature": "",
+      "description": "An R-module M is flat iff every linear relation ∑aᵢmᵢ = 0 can be trivialized: there exist nⱼ ∈ M and bᵢⱼ ∈ R with mᵢ = ∑bᵢⱼnⱼ and ∑aᵢbᵢⱼ = 0 for all j.",
+      "aliases": [
+        "equational flatness criterion",
+        "Lazard criterion"
+      ]
+    },
+    {
+      "id": "s_generic_flatness_theorem",
+      "kind": "theorem",
+      "name": "Generic flatness theorem",
+      "type_signature": "",
+      "description": "If R is a Noetherian domain and M a finitely generated R-module (or R-algebra), there exists nonzero f ∈ R such that M_f is free over R_f.",
+      "aliases": [
+        "generic freeness",
+        "generic flatness lemma"
+      ]
+    },
+    {
+      "id": "s_grothendieck_non_vanishing_theorem",
+      "kind": "theorem",
+      "name": "Grothendieck's non-vanishing theorem",
+      "type_signature": "",
+      "description": "For a Noetherian local ring (R, m) and finitely generated module M, H^d_m(M) ≠ 0 where d = dim(M), so local cohomology does not vanish at the dimension.",
+      "aliases": [
+        "non-vanishing of local cohomology at dimension"
+      ]
+    },
+    {
+      "id": "s_hochster_big_cm_modules",
+      "kind": "theorem",
+      "name": "Hochster's theorem on big Cohen-Macaulay modules",
+      "type_signature": "",
+      "description": "Every Noetherian local ring containing a field admits a (possibly non-finitely-generated) balanced big Cohen-Macaulay module on which every system of parameters is a regular sequence.",
+      "aliases": [
+        "existence of big CM modules",
+        "Hochster's big CM theorem"
+      ]
+    },
+    {
+      "id": "s_openness_of_regular_locus",
+      "kind": "theorem",
+      "name": "Openness of the regular locus",
+      "type_signature": "",
+      "description": "In an excellent ring (or a ring with geometrically regular formal fibres), the set {p ∈ Spec(R) : R_p is regular} is Zariski-open.",
+      "aliases": [
+        "regular locus is open"
+      ]
+    },
+    {
+      "id": "s_fibre_dimension_formula_flat",
+      "kind": "theorem",
+      "name": "Fibre dimension formula for flat local homomorphisms",
+      "type_signature": "",
+      "description": "For a flat local homomorphism φ: (R, m) → (S, n) of Noetherian local rings, dim(S) = dim(R) + dim(S/mS), relating source, target, and fibre dimensions.",
+      "aliases": [
+        "dimension formula for flat extensions"
+      ]
+    },
+    {
+      "id": "s_finitistic_dimension_theorem",
+      "kind": "theorem",
+      "name": "Finitistic dimension theorem",
+      "type_signature": "",
+      "description": "For a commutative Noetherian local ring (R, m), the finitistic projective dimension (supremum of pd(M) over modules M with pd(M) < ∞) equals depth(R).",
+      "aliases": [
+        "finitistic projective dimension equals depth"
+      ]
+    },
+    {
+      "id": "s_cohen_structure_theorem_mixed_char",
+      "kind": "theorem",
+      "name": "Cohen structure theorem (mixed characteristic)",
+      "type_signature": "",
+      "description": "A complete Noetherian local ring (R, m) of mixed characteristic p with residue field k is a quotient of V[[x₁, …, xₙ]] where V is a complete DVR with residue field k.",
+      "aliases": [
+        "Cohen's structure theorem for mixed characteristic"
+      ]
+    },
+    {
+      "id": "s_power_series_ring_is_local",
+      "kind": "theorem",
+      "name": "Power series ring over a local ring is local",
+      "type_signature": "",
+      "description": "If (R, m) is a local ring, then R[[x₁, …, xₙ]] is a local ring with maximal ideal (m, x₁, …, xₙ).",
+      "aliases": []
+    },
+    {
+      "id": "s_power_series_ring_faithfully_flat",
+      "kind": "theorem",
+      "name": "Power series ring is faithfully flat",
+      "type_signature": "",
+      "description": "The natural inclusion R → R[[x]] is a faithfully flat ring homomorphism.",
+      "aliases": []
+    },
+    {
+      "id": "s_grothendieck_formal_functions",
+      "kind": "theorem",
+      "name": "Grothendieck's theorem on formal functions",
+      "type_signature": "",
+      "description": "Relates the completion of higher direct image sheaves to the cohomology of formal completions along fibres, connecting local and global cohomology in algebraic geometry.",
+      "aliases": [
+        "theorem on formal functions"
+      ]
+    },
+    {
+      "id": "t_cohen_macaulay_approximation",
+      "kind": "technique",
+      "name": "Cohen-Macaulay approximation",
+      "function_signature": "(Finitely generated module M over CM local ring R) → (Short exact sequence 0 → Y → X → M → 0 with X maximal CM and Y of finite injective dimension)",
+      "description": "Approximating modules over Cohen-Macaulay rings by maximal Cohen-Macaulay modules via short exact sequences, introduced by Auslander-Buchweitz.",
+      "aliases": [
+        "Auslander-Buchweitz approximation"
+      ]
+    },
+    {
+      "id": "t_secondary_representation",
+      "kind": "technique",
+      "name": "Secondary representation",
+      "function_signature": "(Artinian module M) → (Decomposition M = M₁ + ⋯ + Mₙ into secondary submodules with attached primes)",
+      "description": "Decomposing an Artinian module as a sum of secondary submodules, dual to primary decomposition for Noetherian modules.",
+      "aliases": [
+        "secondary decomposition"
+      ]
     }
   ],
   "edges": [
@@ -211983,6 +212269,524 @@
       "role": "output",
       "parameter_binding": {},
       "used_in_theorem": "s_uniqueness_minimal_free_resolution"
+    },
+    {
+      "id": "e_14741",
+      "from": "s_formally_smooth_algebra",
+      "to": "t_faithfully_flat_descent",
+      "role": "input",
+      "parameter_binding": {}
+    },
+    {
+      "id": "e_14742",
+      "from": "t_faithfully_flat_descent",
+      "to": "s_formally_smooth_algebra",
+      "role": "output",
+      "parameter_binding": {}
+    },
+    {
+      "id": "e_14743",
+      "from": "s_formally_unramified_algebra",
+      "to": "t_faithfully_flat_descent",
+      "role": "input",
+      "parameter_binding": {}
+    },
+    {
+      "id": "e_14744",
+      "from": "s_formally_etale_algebra",
+      "to": "t_faithfully_flat_descent",
+      "role": "input",
+      "parameter_binding": {}
+    },
+    {
+      "id": "e_14745",
+      "from": "s_formally_etale_algebra",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_henselization"
+    },
+    {
+      "id": "e_14746",
+      "from": "t_completion_technique",
+      "to": "s_henselization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_henselization"
+    },
+    {
+      "id": "e_14747",
+      "from": "s_henselian_ring",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_henselization"
+    },
+    {
+      "id": "e_14748",
+      "from": "s_henselization",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strict_henselization"
+    },
+    {
+      "id": "e_14749",
+      "from": "t_completion_technique",
+      "to": "s_strict_henselization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strict_henselization"
+    },
+    {
+      "id": "e_14750",
+      "from": "s_i_adic_completion",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_formal_fibre"
+    },
+    {
+      "id": "e_14751",
+      "from": "t_completion_technique",
+      "to": "s_formal_fibre",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_formal_fibre"
+    },
+    {
+      "id": "e_14752",
+      "from": "s_formal_fibre",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_geometrically_regular_formal_fibres"
+    },
+    {
+      "id": "e_14753",
+      "from": "t_completion_technique",
+      "to": "s_geometrically_regular_formal_fibres",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_geometrically_regular_formal_fibres"
+    },
+    {
+      "id": "e_14754",
+      "from": "s_geometrically_regular_formal_fibres",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_g_ring"
+    },
+    {
+      "id": "e_14755",
+      "from": "t_completion_technique",
+      "to": "s_g_ring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_g_ring"
+    },
+    {
+      "id": "e_14756",
+      "from": "s_g_ring",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quasi_excellent_ring"
+    },
+    {
+      "id": "e_14757",
+      "from": "s_singular_locus",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quasi_excellent_ring"
+    },
+    {
+      "id": "e_14758",
+      "from": "t_completion_technique",
+      "to": "s_quasi_excellent_ring",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quasi_excellent_ring"
+    },
+    {
+      "id": "e_14759",
+      "from": "s_quasi_excellent_ring",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_excellent_ring"
+    },
+    {
+      "id": "e_14760",
+      "from": "s_nagata_ring",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_excellent_ring"
+    },
+    {
+      "id": "e_14761",
+      "from": "s_n_1_ring",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nagata_ring"
+    },
+    {
+      "id": "e_14762",
+      "from": "s_regular_local_ring",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_singular_locus"
+    },
+    {
+      "id": "e_14763",
+      "from": "t_localization_at_prime",
+      "to": "s_singular_locus",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_singular_locus"
+    },
+    {
+      "id": "e_14764",
+      "from": "s_excellent_ring",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_openness_of_regular_locus"
+    },
+    {
+      "id": "e_14765",
+      "from": "s_singular_locus",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_openness_of_regular_locus"
+    },
+    {
+      "id": "e_14766",
+      "from": "t_localization_at_prime",
+      "to": "s_openness_of_regular_locus",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_openness_of_regular_locus"
+    },
+    {
+      "id": "e_14767",
+      "from": "s_flat_module",
+      "to": "t_hom_tensor_change_of_rings",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_criterion_for_flatness"
+    },
+    {
+      "id": "e_14768",
+      "from": "s_tor_functor",
+      "to": "t_hom_tensor_change_of_rings",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_criterion_for_flatness"
+    },
+    {
+      "id": "e_14769",
+      "from": "t_hom_tensor_change_of_rings",
+      "to": "s_local_criterion_for_flatness",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_criterion_for_flatness"
+    },
+    {
+      "id": "e_14770",
+      "from": "s_flat_module",
+      "to": "t_hom_tensor_change_of_rings",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equational_criterion_for_flatness"
+    },
+    {
+      "id": "e_14771",
+      "from": "t_hom_tensor_change_of_rings",
+      "to": "s_equational_criterion_for_flatness",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equational_criterion_for_flatness"
+    },
+    {
+      "id": "e_14772",
+      "from": "s_noetherian_ring_R",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generic_flatness_theorem"
+    },
+    {
+      "id": "e_14773",
+      "from": "s_flat_module",
+      "to": "t_localization_at_prime",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generic_flatness_theorem"
+    },
+    {
+      "id": "e_14774",
+      "from": "t_localization_at_prime",
+      "to": "s_generic_flatness_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generic_flatness_theorem"
+    },
+    {
+      "id": "e_14775",
+      "from": "s_flat_module",
+      "to": "t_hom_tensor_change_of_rings",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fibre_dimension_formula_flat"
+    },
+    {
+      "id": "e_14776",
+      "from": "t_hom_tensor_change_of_rings",
+      "to": "s_fibre_dimension_formula_flat",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fibre_dimension_formula_flat"
+    },
+    {
+      "id": "e_14777",
+      "from": "s_local_cohomology",
+      "to": "t_dimension_shifting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_grothendieck_non_vanishing_theorem"
+    },
+    {
+      "id": "e_14778",
+      "from": "s_depth",
+      "to": "t_dimension_shifting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_grothendieck_non_vanishing_theorem"
+    },
+    {
+      "id": "e_14779",
+      "from": "t_dimension_shifting_technique",
+      "to": "s_grothendieck_non_vanishing_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_grothendieck_non_vanishing_theorem"
+    },
+    {
+      "id": "e_14780",
+      "from": "s_cohen_macaulay_ring",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hochster_big_cm_modules"
+    },
+    {
+      "id": "e_14781",
+      "from": "s_regular_sequence",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hochster_big_cm_modules"
+    },
+    {
+      "id": "e_14782",
+      "from": "t_completion_technique",
+      "to": "s_hochster_big_cm_modules",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hochster_big_cm_modules"
+    },
+    {
+      "id": "e_14783",
+      "from": "s_depth",
+      "to": "t_dimension_shifting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finitistic_dimension_theorem"
+    },
+    {
+      "id": "e_14784",
+      "from": "s_projective_dimension",
+      "to": "t_dimension_shifting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finitistic_dimension_theorem"
+    },
+    {
+      "id": "e_14785",
+      "from": "t_dimension_shifting_technique",
+      "to": "s_finitistic_dimension_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finitistic_dimension_theorem"
+    },
+    {
+      "id": "e_14786",
+      "from": "s_cohen_structure_theorem",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cohen_structure_theorem_mixed_char"
+    },
+    {
+      "id": "e_14787",
+      "from": "s_discrete_valuation_ring",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cohen_structure_theorem_mixed_char"
+    },
+    {
+      "id": "e_14788",
+      "from": "t_completion_technique",
+      "to": "s_cohen_structure_theorem_mixed_char",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cohen_structure_theorem_mixed_char"
+    },
+    {
+      "id": "e_14789",
+      "from": "s_formal_power_series_ring",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_power_series_ring_is_local"
+    },
+    {
+      "id": "e_14790",
+      "from": "t_completion_technique",
+      "to": "s_power_series_ring_is_local",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_power_series_ring_is_local"
+    },
+    {
+      "id": "e_14791",
+      "from": "s_formal_power_series_ring",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_power_series_ring_faithfully_flat"
+    },
+    {
+      "id": "e_14792",
+      "from": "s_faithfully_flat_module",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_power_series_ring_faithfully_flat"
+    },
+    {
+      "id": "e_14793",
+      "from": "t_completion_technique",
+      "to": "s_power_series_ring_faithfully_flat",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_power_series_ring_faithfully_flat"
+    },
+    {
+      "id": "e_14794",
+      "from": "s_i_adic_completion",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_grothendieck_formal_functions"
+    },
+    {
+      "id": "e_14795",
+      "from": "s_local_cohomology",
+      "to": "t_completion_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_grothendieck_formal_functions"
+    },
+    {
+      "id": "e_14796",
+      "from": "t_completion_technique",
+      "to": "s_grothendieck_formal_functions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_grothendieck_formal_functions"
+    },
+    {
+      "id": "e_14797",
+      "from": "s_gorenstein_ring",
+      "to": "t_hom_tensor_change_of_rings",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dualizing_complex"
+    },
+    {
+      "id": "e_14798",
+      "from": "s_injective_module",
+      "to": "t_hom_tensor_change_of_rings",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dualizing_complex"
+    },
+    {
+      "id": "e_14799",
+      "from": "t_hom_tensor_change_of_rings",
+      "to": "s_dualizing_complex",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dualizing_complex"
+    },
+    {
+      "id": "e_14800",
+      "from": "s_buchsbaum_ring",
+      "to": "t_dimension_shifting_technique",
+      "role": "input",
+      "parameter_binding": {}
+    },
+    {
+      "id": "e_14801",
+      "from": "s_cohen_macaulay_ring",
+      "to": "t_dimension_shifting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_buchsbaum_ring"
+    },
+    {
+      "id": "e_14802",
+      "from": "s_artinian_module",
+      "to": "t_secondary_representation",
+      "role": "input",
+      "parameter_binding": {}
+    },
+    {
+      "id": "e_14803",
+      "from": "t_secondary_representation",
+      "to": "s_attached_primes",
+      "role": "output",
+      "parameter_binding": {}
+    },
+    {
+      "id": "e_14804",
+      "from": "s_maximal_cohen_macaulay_module",
+      "to": "t_cohen_macaulay_approximation",
+      "role": "input",
+      "parameter_binding": {}
+    },
+    {
+      "id": "e_14805",
+      "from": "s_cohen_macaulay_ring",
+      "to": "t_cohen_macaulay_approximation",
+      "role": "input",
+      "parameter_binding": {}
+    },
+    {
+      "id": "e_14806",
+      "from": "t_cohen_macaulay_approximation",
+      "to": "s_maximal_cohen_macaulay_module",
+      "role": "output",
+      "parameter_binding": {}
     }
   ],
   "subgraphs": [
