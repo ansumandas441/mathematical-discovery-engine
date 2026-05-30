@@ -217,6 +217,8 @@
   let fullData = null;
   let nodeIndex = {};
   let fanIn = {}, fanOut = {};
+  let hoverTimer = null;
+  let pendingHoverNode = null;
   let Graph = null;
   let currentGraphData = { nodes: [], links: [] };
   let highlightNodes = new Set();
@@ -402,17 +404,28 @@
         .linkDirectionalParticleWidth(link => highlightLinks.has(link) ? 2 : 0)
         .linkDirectionalParticleSpeed(0.006)
         .linkDirectionalParticleColor(() => "#79c0ff")
+        .nodeLabel(() => '')
         .onNodeHover(node => {
           document.body.style.cursor = node ? "pointer" : "default";
-          highlightNodes.clear();
-          highlightLinks.clear();
-          if (node) {
+          clearTimeout(hoverTimer);
+          pendingHoverNode = node || null;
+          if (!node) {
+            highlightNodes.clear();
+            highlightLinks.clear();
+            hoverNode = null;
+            updateHighlight();
+            return;
+          }
+          hoverTimer = setTimeout(() => {
+            if (pendingHoverNode !== node) return;
+            highlightNodes.clear();
+            highlightLinks.clear();
             highlightNodes.add(node);
             if (node.neighbors) node.neighbors.forEach(n => highlightNodes.add(n));
             if (node.links) node.links.forEach(l => highlightLinks.add(l));
-          }
-          hoverNode = node || null;
-          updateHighlight();
+            hoverNode = node;
+            updateHighlight();
+          }, 2000);
         })
         .onNodeClick(node => {
           if (node) {
