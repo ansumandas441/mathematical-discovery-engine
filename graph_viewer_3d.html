@@ -145,8 +145,8 @@
   </div>
   <div class="group" id="kind-filters">
     <span class="label">Show</span>
-    <label><input type="checkbox" data-kind="axiom"> axiom</label>
-    <label><input type="checkbox" data-kind="state"> state</label>
+    <label><input type="checkbox" data-kind="axiom" checked> axiom</label>
+    <label><input type="checkbox" data-kind="state" checked> state</label>
     <label><input type="checkbox" data-kind="theorem" checked> theorem</label>
     <label><input type="checkbox" data-kind="technique" checked> technique</label>
   </div>
@@ -350,7 +350,7 @@
 
   // ── GRAPH RENDERING ──
 
-  const MAX_NODES = 6000;
+  const MAX_NODES = 12000;
 
   function renderGraph(data, centerNodeId) {
     currentGraphData = data;
@@ -726,7 +726,7 @@
       document.getElementById("cluster").value = "";
       document.getElementById("mode").value = "overview";
       document.querySelectorAll("#kind-filters input").forEach(c => {
-        c.checked = (c.getAttribute("data-kind") === "technique" || c.getAttribute("data-kind") === "theorem");
+        c.checked = true;
       });
       closeDetails();
       document.getElementById("banner").classList.remove("visible");
