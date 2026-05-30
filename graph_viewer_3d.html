@@ -108,16 +108,53 @@
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     background: #060612;
     display: flex; align-items: center; justify-content: center; flex-direction: column;
-    z-index: 100; transition: opacity 0.5s;
+    z-index: 100; transition: opacity 0.6s ease-out;
   }
   #loading.hidden { opacity: 0; pointer-events: none; }
   #loading .spinner {
-    width: 36px; height: 36px; border: 3px solid rgba(255,255,255,0.08);
+    width: 44px; height: 44px; border: 3px solid rgba(255,255,255,0.06);
     border-top-color: #58a6ff; border-radius: 50%;
-    animation: spin 0.8s linear infinite; margin-bottom: 14px;
+    animation: spin 0.9s linear infinite; margin-bottom: 20px;
   }
-  #loading .text { color: #8b949e; font-size: 13px; }
+  #loading .text { color: #c9d1d9; font-size: 14px; font-weight: 500; margin-bottom: 24px; }
   @keyframes spin { to { transform: rotate(360deg); } }
+
+  #loading .progress-wrap {
+    width: 280px; display: flex; flex-direction: column; gap: 6px;
+  }
+  #loading .progress-bar {
+    width: 100%; height: 4px; background: rgba(255,255,255,0.06);
+    border-radius: 2px; overflow: hidden;
+  }
+  #loading .progress-bar .fill {
+    height: 100%; width: 0%; background: #58a6ff; border-radius: 2px;
+    transition: width 0.4s ease-out;
+  }
+  #loading .progress-steps {
+    display: flex; flex-direction: column; gap: 8px; margin-top: 12px;
+  }
+  #loading .step {
+    display: flex; align-items: center; gap: 8px; font-size: 12px; color: #484f58;
+    transition: color 0.3s;
+  }
+  #loading .step.active { color: #8b949e; }
+  #loading .step.done { color: #3fb950; }
+  #loading .step .icon {
+    width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;
+    font-size: 11px; flex-shrink: 0;
+  }
+  #loading .step.active .icon::after {
+    content: ''; width: 10px; height: 10px;
+    border: 2px solid #484f58; border-top-color: #58a6ff; border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  #loading .step.done .icon::after { content: '✓'; }
+  #loading .step.pending .icon::after { content: '·'; font-size: 16px; }
+  #loading .step-label { white-space: nowrap; }
+  #loading .step-detail {
+    margin-left: auto; font-size: 11px; opacity: 0.6;
+    font-family: "SF Mono", Menlo, monospace;
+  }
 
   /* Banner notifications */
   #banner {
@@ -177,6 +214,31 @@
 <div id="loading">
   <div class="spinner"></div>
   <div class="text">Loading knowledge graph…</div>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="fill" id="progress-fill"></div></div>
+    <div class="progress-steps">
+      <div class="step pending" id="step-fetch">
+        <span class="icon"></span>
+        <span class="step-label">Fetching graph data</span>
+        <span class="step-detail" id="step-fetch-detail"></span>
+      </div>
+      <div class="step pending" id="step-parse">
+        <span class="icon"></span>
+        <span class="step-label">Parsing JSON</span>
+        <span class="step-detail" id="step-parse-detail"></span>
+      </div>
+      <div class="step pending" id="step-index">
+        <span class="icon"></span>
+        <span class="step-label">Building indexes</span>
+        <span class="step-detail" id="step-index-detail"></span>
+      </div>
+      <div class="step pending" id="step-render">
+        <span class="icon"></span>
+        <span class="step-label">Rendering 3D graph</span>
+        <span class="step-detail" id="step-render-detail"></span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -756,30 +818,110 @@
     }
   }
 
+  // ── LOADER HELPERS ──
+
+  function setProgress(pct) {
+    document.getElementById("progress-fill").style.width = pct + "%";
+  }
+
+  function stepState(id, state, detail) {
+    const el = document.getElementById(id);
+    el.className = "step " + state;
+    if (detail !== undefined) {
+      const d = document.getElementById(id + "-detail");
+      if (d) d.textContent = detail;
+    }
+  }
+
   // ── INIT ──
 
   async function init() {
     const loading = document.getElementById("loading");
+    const loadText = loading.querySelector(".text");
+
+    // Step 1: Fetch
+    stepState("step-fetch", "active");
+    loadText.textContent = "Fetching graph data…";
+    setProgress(5);
+
+    let rawText;
     try {
       const r = await fetch("./knowledge_graph.json");
       if (!r.ok) throw new Error("HTTP " + r.status);
-      fullData = await r.json();
+      const contentLength = r.headers.get("content-length");
+      if (contentLength && r.body) {
+        const total = parseInt(contentLength, 10);
+        const reader = r.body.getReader();
+        const chunks = [];
+        let received = 0;
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          chunks.push(value);
+          received += value.length;
+          const pct = Math.min(40, Math.round((received / total) * 40));
+          setProgress(5 + pct);
+          const mb = (received / 1048576).toFixed(1);
+          const totalMb = (total / 1048576).toFixed(1);
+          stepState("step-fetch", "active", `${mb} / ${totalMb} MB`);
+        }
+        const buf = new Uint8Array(received);
+        let pos = 0;
+        for (const chunk of chunks) { buf.set(chunk, pos); pos += chunk.length; }
+        rawText = new TextDecoder().decode(buf);
+      } else {
+        rawText = await r.text();
+      }
     } catch (err) {
-      loading.querySelector(".text").textContent = "Failed to load: " + err.message;
+      loadText.textContent = "Failed to load: " + err.message;
       loading.querySelector(".spinner").style.display = "none";
+      stepState("step-fetch", "done", "error");
       return;
     }
+    stepState("step-fetch", "done", "✓");
+    setProgress(45);
+
+    // Step 2: Parse
+    stepState("step-parse", "active");
+    loadText.textContent = "Parsing JSON…";
+    await new Promise(r => setTimeout(r, 30));
+
+    try {
+      fullData = JSON.parse(rawText);
+    } catch (err) {
+      loadText.textContent = "JSON parse error: " + err.message;
+      loading.querySelector(".spinner").style.display = "none";
+      stepState("step-parse", "done", "error");
+      return;
+    }
+    rawText = null;
+    const nn = fullData.nodes.length.toLocaleString();
+    const ne = fullData.edges.length.toLocaleString();
+    stepState("step-parse", "done", `${nn} nodes, ${ne} edges`);
+    setProgress(60);
+
+    // Step 3: Build indexes
+    stepState("step-index", "active");
+    loadText.textContent = "Building indexes…";
+    await new Promise(r => setTimeout(r, 30));
 
     buildIndexes();
     updateHeaderStats();
     wireControls();
+    stepState("step-index", "done", "✓");
+    setProgress(75);
 
-    loading.querySelector(".text").textContent = "Building 3D graph…";
+    // Step 4: Render
+    stepState("step-render", "active");
+    loadText.textContent = "Rendering 3D graph…";
     await new Promise(r => setTimeout(r, 50));
 
     buildOverview();
+    stepState("step-render", "done", "✓");
+    setProgress(100);
+    loadText.textContent = "Ready";
 
-    setTimeout(() => loading.classList.add("hidden"), 800);
+    setTimeout(() => loading.classList.add("hidden"), 700);
   }
 
   init();
