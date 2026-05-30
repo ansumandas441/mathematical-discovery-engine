@@ -7,3 +7,8 @@ __pycache__/
 resources.md
 prompt.md
 RESEARCH_PROMPT.md
+temp_resources_list.md
+temp_prompt.md
+run_resources.sh
+run_resources.log
+.run_progress

@@ -84545,6 +84545,715 @@
       "name": "Godement calculus",
       "function_signature": "(Natural transformations) → (Algebraic manipulation via horizontal/vertical composition)",
       "description": "The systematic calculus using horizontal and vertical composition with the interchange law for algebraic manipulation of functors and natural transformations."
+    },
+    {
+      "id": "s_dual_contragredient_representation",
+      "kind": "state",
+      "name": "Dual (contragredient) representation",
+      "type_signature": "",
+      "description": "The representation on the dual space V* given by (g.f)(v) = f(g^{-1}.v), also called the contragredient representation.",
+      "aliases": [
+        "contragredient representation",
+        "dual representation"
+      ]
+    },
+    {
+      "id": "s_hom_representation",
+      "kind": "state",
+      "name": "Hom representation",
+      "type_signature": "",
+      "description": "The G-representation on Hom(V,W) defined by (g.phi)(v) = g.phi(g^{-1}.v), naturally isomorphic to V* tensor W.",
+      "aliases": [
+        "Hom(V,W) representation"
+      ]
+    },
+    {
+      "id": "s_space_of_invariants",
+      "kind": "state",
+      "name": "Space of invariants V^G",
+      "type_signature": "",
+      "description": "The subspace V^G = {v in V : g.v = v for all g in G} of vectors fixed by every group element, equal to Hom_G(trivial, V).",
+      "aliases": [
+        "G-invariants",
+        "fixed subspace"
+      ]
+    },
+    {
+      "id": "s_second_orthogonality_relation",
+      "kind": "theorem",
+      "name": "Second orthogonality relation for characters",
+      "type_signature": "",
+      "description": "For a finite group G, sum_chi chi(g)conj(chi(h)) = |C_G(g)| if g and h are conjugate and 0 otherwise, where the sum runs over all irreducible characters.",
+      "aliases": [
+        "column orthogonality"
+      ]
+    },
+    {
+      "id": "s_character_determines_representation",
+      "kind": "theorem",
+      "name": "Character determines representation",
+      "type_signature": "",
+      "description": "Two finite-dimensional complex representations of a finite group are isomorphic if and only if they have the same character.",
+      "aliases": []
+    },
+    {
+      "id": "s_projection_formula_representation",
+      "kind": "state",
+      "name": "Projection formula for representations",
+      "type_signature": "",
+      "description": "The projection onto the isotypic component of type V_i in a representation V is p_i = (dim V_i / |G|) sum_{g in G} conj(chi_i(g)) rho(g).",
+      "aliases": [
+        "idempotent projection formula"
+      ]
+    },
+    {
+      "id": "s_representations_of_abelian_groups",
+      "kind": "theorem",
+      "name": "Representations of abelian groups",
+      "type_signature": "",
+      "description": "Every irreducible complex representation of a finite abelian group is one-dimensional; the number of such equals |G|, and they form the character group G-hat.",
+      "aliases": []
+    },
+    {
+      "id": "s_standard_representation_of_S_n",
+      "kind": "state",
+      "name": "Standard representation of S_n",
+      "type_signature": "",
+      "description": "The (n-1)-dimensional irreducible representation of S_n obtained as the complement of the trivial subrepresentation in the permutation representation on C^n.",
+      "aliases": [
+        "standard representation of symmetric group"
+      ]
+    },
+    {
+      "id": "s_sign_representation",
+      "kind": "state",
+      "name": "Sign (alternating) representation",
+      "type_signature": "",
+      "description": "The one-dimensional representation sgn: S_n -> {+1,-1} sending each permutation to its sign; the unique nontrivial one-dimensional representation of S_n for n >= 2.",
+      "aliases": [
+        "alternating representation",
+        "signature representation",
+        "sgn representation"
+      ]
+    },
+    {
+      "id": "s_character_of_induced_representation",
+      "kind": "theorem",
+      "name": "Character of induced representation",
+      "type_signature": "",
+      "description": "The character of Ind_H^G(sigma) at g in G is chi^G(g) = (1/|H|) sum_{t in G, t^{-1}gt in H} chi_sigma(t^{-1}gt).",
+      "aliases": [
+        "induced character formula"
+      ]
+    },
+    {
+      "id": "s_conjugate_partition",
+      "kind": "state",
+      "name": "Conjugate (transpose) partition",
+      "type_signature": "",
+      "description": "The partition lambda' obtained by transposing the Young diagram of lambda, interchanging rows and columns.",
+      "aliases": [
+        "transpose partition",
+        "dual partition"
+      ]
+    },
+    {
+      "id": "s_row_group_column_group",
+      "kind": "state",
+      "name": "Row group and column group of a Young tableau",
+      "type_signature": "",
+      "description": "For a Young tableau T, the row group R_T is the subgroup of permutations preserving rows, and the column group C_T preserves columns; they generate the Young symmetrizer.",
+      "aliases": [
+        "row stabilizer",
+        "column stabilizer"
+      ]
+    },
+    {
+      "id": "s_young_symmetrizer",
+      "kind": "state",
+      "name": "Young symmetrizer",
+      "type_signature": "",
+      "description": "The element c_T = a_T b_T in C[S_d] where a_T = sum_{sigma in R_T} sigma and b_T = sum_{tau in C_T} sgn(tau) tau; the image c_T C[S_d] is an irreducible S_d-module.",
+      "aliases": [
+        "Young idempotent"
+      ]
+    },
+    {
+      "id": "s_specht_module",
+      "kind": "state",
+      "name": "Specht module V_lambda",
+      "type_signature": "",
+      "description": "The irreducible representation of S_d corresponding to a partition lambda, constructed as the image of the Young symmetrizer c_T in C[S_d].",
+      "aliases": [
+        "Specht representation"
+      ]
+    },
+    {
+      "id": "s_branching_rule_S_d",
+      "kind": "theorem",
+      "name": "Branching rule for S_d",
+      "type_signature": "",
+      "description": "The restriction of the Specht module V_lambda from S_d to S_{d-1} decomposes as Res V_lambda = direct_sum V_mu where mu ranges over all partitions obtained by removing a corner box from lambda.",
+      "aliases": [
+        "restriction rule for symmetric groups"
+      ]
+    },
+    {
+      "id": "s_sign_twist_specht",
+      "kind": "theorem",
+      "name": "Sign twist of Specht modules",
+      "type_signature": "",
+      "description": "Tensoring the Specht module V_lambda with the sign representation gives V_{lambda'}, where lambda' is the conjugate partition.",
+      "aliases": []
+    },
+    {
+      "id": "s_frobenius_character_formula",
+      "kind": "theorem",
+      "name": "Frobenius character formula",
+      "type_signature": "",
+      "description": "The character value chi^lambda(mu) of the Specht module V_lambda on the conjugacy class of cycle type mu equals the coefficient connecting representation theory of S_d to symmetric functions via the Frobenius characteristic map.",
+      "aliases": []
+    },
+    {
+      "id": "s_murnaghan_nakayama_rule",
+      "kind": "theorem",
+      "name": "Murnaghan--Nakayama rule",
+      "type_signature": "",
+      "description": "A combinatorial formula for the character chi^lambda(mu) of S_d as an alternating sum over rim-hook (border-strip) tableaux of shape lambda and type mu.",
+      "aliases": [
+        "Murnaghan-Nakayama formula"
+      ]
+    },
+    {
+      "id": "s_youngs_rule",
+      "kind": "theorem",
+      "name": "Young's rule",
+      "type_signature": "",
+      "description": "The permutation module M^mu = Ind_{S_mu}^{S_d}(trivial) decomposes as M^mu = direct_sum K_{lambda,mu} V_lambda where K_{lambda,mu} are the Kostka numbers.",
+      "aliases": []
+    },
+    {
+      "id": "s_semistandard_young_tableau",
+      "kind": "axiom",
+      "name": "Semistandard Young tableau",
+      "type_signature": "",
+      "description": "A filling of a Young diagram with positive integers that is weakly increasing along rows and strictly increasing down columns.",
+      "aliases": [
+        "SSYT",
+        "column-strict tableau"
+      ]
+    },
+    {
+      "id": "s_young_subgroup",
+      "kind": "state",
+      "name": "Young subgroup",
+      "type_signature": "",
+      "description": "For a composition mu of d, the subgroup S_mu = S_{mu_1} x ... x S_{mu_k} embedded in S_d as permutations preserving the blocks of sizes mu_i.",
+      "aliases": [
+        "parabolic subgroup of S_d"
+      ]
+    },
+    {
+      "id": "s_representation_ring_of_symmetric_groups",
+      "kind": "state",
+      "name": "Representation ring of symmetric groups",
+      "type_signature": "",
+      "description": "The graded ring R = direct_sum_d R(S_d) with multiplication given by induction of external tensor products, isomorphic to the ring of symmetric functions Lambda via the Frobenius characteristic map.",
+      "aliases": []
+    },
+    {
+      "id": "s_center_of_group_algebra",
+      "kind": "state",
+      "name": "Center of the group algebra",
+      "type_signature": "",
+      "description": "The center Z(C[G]) consists of class sums for each conjugacy class C; it has dimension equal to the number of conjugacy classes and acts on irreducible representations by scalars.",
+      "aliases": [
+        "class sums"
+      ]
+    },
+    {
+      "id": "s_idempotents_in_group_algebra",
+      "kind": "state",
+      "name": "Primitive idempotents in the group algebra",
+      "type_signature": "",
+      "description": "The central primitive idempotents e_i = (dim V_i / |G|) sum_{g} chi_i(g^{-1}) g in C[G] satisfy e_i e_j = delta_{ij} e_i and sum e_i = 1, giving the Artin-Wedderburn decomposition.",
+      "aliases": [
+        "primitive central idempotents"
+      ]
+    },
+    {
+      "id": "s_schur_weyl_duality",
+      "kind": "theorem",
+      "name": "Schur--Weyl duality",
+      "type_signature": "",
+      "description": "The actions of GL(V) and S_d on V^{tensor d} generate each other's commutant, yielding V^{tensor d} = direct_sum S^lambda(V) tensor V_lambda as a (GL(V) x S_d)-module.",
+      "aliases": [
+        "Schur-Weyl duality"
+      ]
+    },
+    {
+      "id": "s_plethysm",
+      "kind": "state",
+      "name": "Plethysm",
+      "type_signature": "",
+      "description": "The operation on symmetric functions corresponding to composition of polynomial functors: S^lambda(S^mu(V)), whose expansion in the Schur basis is combinatorially difficult.",
+      "aliases": []
+    },
+    {
+      "id": "s_matrix_lie_group",
+      "kind": "axiom",
+      "name": "Matrix Lie group",
+      "type_signature": "",
+      "description": "A closed subgroup of GL(n,C) or GL(n,R); equivalently a Lie group realized as a group of invertible matrices.",
+      "aliases": [
+        "linear Lie group"
+      ]
+    },
+    {
+      "id": "s_one_parameter_subgroup",
+      "kind": "state",
+      "name": "One-parameter subgroup of a Lie group",
+      "type_signature": "",
+      "description": "A smooth homomorphism gamma: R -> G from the additive reals to a Lie group, necessarily of the form gamma(t) = exp(tX) for a unique X in the Lie algebra.",
+      "aliases": []
+    },
+    {
+      "id": "s_representation_of_lie_group",
+      "kind": "axiom",
+      "name": "Representation of a Lie group",
+      "type_signature": "",
+      "description": "A smooth homomorphism rho: G -> GL(V) from a Lie group to the general linear group of a finite-dimensional vector space.",
+      "aliases": [
+        "Lie group representation"
+      ]
+    },
+    {
+      "id": "s_lie_bracket_of_matrices",
+      "kind": "state",
+      "name": "Lie bracket of matrices",
+      "type_signature": "",
+      "description": "The commutator bracket [A,B] = AB - BA on gl(n), defining the Lie algebra structure on the tangent space at the identity of a matrix Lie group.",
+      "aliases": [
+        "matrix commutator bracket"
+      ]
+    },
+    {
+      "id": "s_semisimple_direct_sum_of_simples",
+      "kind": "theorem",
+      "name": "Semisimple Lie algebra is a direct sum of simple ideals",
+      "type_signature": "",
+      "description": "A semisimple Lie algebra decomposes uniquely as a direct sum of simple ideals; conversely any direct sum of simple Lie algebras is semisimple.",
+      "aliases": []
+    },
+    {
+      "id": "s_preservation_of_jordan_decomposition",
+      "kind": "theorem",
+      "name": "Preservation of Jordan decomposition under representations",
+      "type_signature": "",
+      "description": "Every representation of a semisimple Lie algebra preserves the abstract Jordan decomposition: phi(x_s) = phi(x)_s and phi(x_n) = phi(x)_n.",
+      "aliases": []
+    },
+    {
+      "id": "s_lie_group_lie_algebra_rep_correspondence",
+      "kind": "theorem",
+      "name": "Correspondence between Lie group and Lie algebra representations",
+      "type_signature": "",
+      "description": "For a simply connected Lie group G with Lie algebra g, differentiation gives an equivalence between finite-dimensional representations of G and of g.",
+      "aliases": [
+        "Lie's third theorem for representations"
+      ]
+    },
+    {
+      "id": "s_sl2_C",
+      "kind": "state",
+      "name": "The Lie algebra sl_2(C)",
+      "type_signature": "",
+      "description": "The 3-dimensional simple complex Lie algebra of 2x2 traceless matrices, with standard basis H, E, F satisfying [H,E]=2E, [H,F]=-2F, [E,F]=H.",
+      "aliases": [
+        "sl(2,C)",
+        "sl_2"
+      ]
+    },
+    {
+      "id": "s_standard_basis_sl2",
+      "kind": "state",
+      "name": "Standard basis {H,E,F} of sl_2",
+      "type_signature": "",
+      "description": "The basis H = diag(1,-1), E = e_{12}, F = e_{21} of sl_2(C) with relations [H,E]=2E, [H,F]=-2F, [E,F]=H.",
+      "aliases": []
+    },
+    {
+      "id": "s_heisenberg_algebra",
+      "kind": "state",
+      "name": "Heisenberg algebra",
+      "type_signature": "",
+      "description": "The nilpotent Lie algebra with basis {p,q,z} and sole nontrivial bracket [p,q]=z; the Lie algebra of the Heisenberg group.",
+      "aliases": [
+        "Heisenberg Lie algebra"
+      ]
+    },
+    {
+      "id": "s_irreducible_representations_of_sl2",
+      "kind": "theorem",
+      "name": "Classification of irreducible representations of sl_2",
+      "type_signature": "",
+      "description": "For each non-negative integer n, there is a unique (n+1)-dimensional irreducible representation V_n of sl_2(C) with weights n, n-2, ..., -n; these exhaust all finite-dimensional irreducibles.",
+      "aliases": [
+        "irreps of sl(2)"
+      ]
+    },
+    {
+      "id": "s_highest_weight_vector",
+      "kind": "axiom",
+      "name": "Highest weight vector",
+      "type_signature": "",
+      "description": "A nonzero vector v in a representation annihilated by all positive root vectors (e_alpha.v = 0 for all alpha > 0), generating a highest weight submodule.",
+      "aliases": [
+        "maximal vector",
+        "primitive vector"
+      ]
+    },
+    {
+      "id": "s_sl3_C",
+      "kind": "state",
+      "name": "The Lie algebra sl_3(C)",
+      "type_signature": "",
+      "description": "The 8-dimensional simple complex Lie algebra of 3x3 traceless matrices, of type A_2 with rank 2; the prototypical example for developing semisimple Lie algebra theory.",
+      "aliases": [
+        "sl(3,C)",
+        "sl_3"
+      ]
+    },
+    {
+      "id": "s_root_and_root_space",
+      "kind": "axiom",
+      "name": "Root and root space",
+      "type_signature": "",
+      "description": "A root alpha is a nonzero weight of the adjoint representation; its root space g_alpha = {x in g : [h,x] = alpha(h)x for all h in h} is one-dimensional for semisimple g.",
+      "aliases": [
+        "root of a Lie algebra"
+      ]
+    },
+    {
+      "id": "s_weight_diagram",
+      "kind": "state",
+      "name": "Weight diagram",
+      "type_signature": "",
+      "description": "The graphical depiction of the weights of a representation as lattice points in h*_R with multiplicities, displaying representation structure.",
+      "aliases": [
+        "weight lattice diagram"
+      ]
+    },
+    {
+      "id": "s_partial_order_on_weights",
+      "kind": "state",
+      "name": "Partial order on weights",
+      "type_signature": "",
+      "description": "The partial order mu <= lambda defined by lambda - mu being a non-negative integer combination of simple roots; every irreducible highest weight module has a unique maximal weight.",
+      "aliases": [
+        "dominance order on weights"
+      ]
+    },
+    {
+      "id": "s_weight_lattice",
+      "kind": "state",
+      "name": "Weight lattice",
+      "type_signature": "",
+      "description": "The lattice P = {lambda in h* : <lambda, alpha^v> in Z for all coroots} of integral weights, containing the root lattice Q as a sublattice.",
+      "aliases": [
+        "integral weight lattice"
+      ]
+    },
+    {
+      "id": "s_weyl_group_action_on_weights",
+      "kind": "theorem",
+      "name": "Weyl group action on weights",
+      "type_signature": "",
+      "description": "The Weyl group W preserves the set of weights of any representation, with equal multiplicities on each W-orbit.",
+      "aliases": []
+    },
+    {
+      "id": "s_weyl_vector_rho",
+      "kind": "state",
+      "name": "Weyl vector rho",
+      "type_signature": "",
+      "description": "The half-sum of positive roots rho = (1/2) sum_{alpha > 0} alpha = omega_1 + ... + omega_n; satisfies <rho, alpha_i^v> = 1 and appears in Weyl character and dimension formulas.",
+      "aliases": [
+        "half-sum of positive roots"
+      ]
+    },
+    {
+      "id": "s_rank_of_lie_algebra",
+      "kind": "state",
+      "name": "Rank of a Lie algebra",
+      "type_signature": "",
+      "description": "The dimension of a Cartan subalgebra of a semisimple Lie algebra, equivalently the number of simple roots or Dynkin diagram nodes.",
+      "aliases": [
+        "Lie algebra rank"
+      ]
+    },
+    {
+      "id": "s_fundamental_representations_sl_n",
+      "kind": "state",
+      "name": "Fundamental representations of sl_n",
+      "type_signature": "",
+      "description": "The n-1 fundamental representations of sl_n(C) are the exterior powers Lambda^k(C^n) for k = 1,...,n-1, with highest weights omega_k.",
+      "aliases": []
+    },
+    {
+      "id": "s_irreps_sl_n_via_young_diagrams",
+      "kind": "state",
+      "name": "Irreducible representations of sl_n via Young diagrams",
+      "type_signature": "",
+      "description": "The irreducible representations of sl_n are indexed by partitions with at most n-1 parts, realized by the Schur functor S^lambda(C^n).",
+      "aliases": []
+    },
+    {
+      "id": "s_weyl_dimension_formula_sl_n",
+      "kind": "theorem",
+      "name": "Weyl dimension formula for sl_n",
+      "type_signature": "",
+      "description": "For sl_n(C) with highest weight lambda, dim V_lambda = prod_{1<=i<j<=n} (l_i - l_j)/(j - i) where l_i = lambda_i + n - i.",
+      "aliases": []
+    },
+    {
+      "id": "s_fundamental_representations_so_n",
+      "kind": "state",
+      "name": "Fundamental representations of so_n",
+      "type_signature": "",
+      "description": "The fundamental representations of so_n(C): exterior powers and spin/half-spin representations, varying by type B_m or D_m.",
+      "aliases": []
+    },
+    {
+      "id": "s_fundamental_representations_sp_2n",
+      "kind": "state",
+      "name": "Fundamental representations of sp_{2n}",
+      "type_signature": "",
+      "description": "The n fundamental representations of sp_{2n}(C) obtained as kernels of contraction maps on exterior powers of the standard representation.",
+      "aliases": []
+    },
+    {
+      "id": "s_exceptional_isomorphisms_low_rank",
+      "kind": "theorem",
+      "name": "Exceptional isomorphisms of low-rank Lie algebras",
+      "type_signature": "",
+      "description": "The coincidences A_1=B_1=C_1, B_2=C_2, D_2=A_1xA_1, A_3=D_3 arising from Dynkin diagram coincidences in small rank.",
+      "aliases": [
+        "accidental isomorphisms"
+      ]
+    },
+    {
+      "id": "s_spin_representation_odd",
+      "kind": "state",
+      "name": "Spin representation of so_{2m+1}",
+      "type_signature": "",
+      "description": "The unique 2^m-dimensional irreducible representation of so_{2m+1}(C) with highest weight omega_m, constructed via the Clifford algebra.",
+      "aliases": [
+        "spinor representation of type B"
+      ]
+    },
+    {
+      "id": "s_half_spin_representations",
+      "kind": "state",
+      "name": "Half-spin representations of so_{2m}",
+      "type_signature": "",
+      "description": "The two 2^{m-1}-dimensional irreducible representations S+ and S- of so_{2m}(C) corresponding to the two chiralities of the even Clifford algebra.",
+      "aliases": [
+        "chiral spinor representations",
+        "Weyl spinors"
+      ]
+    },
+    {
+      "id": "s_triality_so_8",
+      "kind": "theorem",
+      "name": "Triality for so_8",
+      "type_signature": "",
+      "description": "The Dynkin diagram D_4 has an order-3 automorphism that cyclically permutes the vector and two half-spin representations of so_8, giving an outer automorphism of Spin(8).",
+      "aliases": [
+        "D_4 triality"
+      ]
+    },
+    {
+      "id": "s_weyl_denominator_formula",
+      "kind": "theorem",
+      "name": "Weyl denominator formula",
+      "type_signature": "",
+      "description": "The identity sum_{w in W} (-1)^{l(w)} e^{w(rho)} = e^rho prod_{alpha > 0} (1 - e^{-alpha}), the lambda=0 case of the Weyl character formula.",
+      "aliases": [
+        "Weyl denominator identity"
+      ]
+    },
+    {
+      "id": "s_steinbergs_formula",
+      "kind": "theorem",
+      "name": "Steinberg's formula for tensor product decomposition",
+      "type_signature": "",
+      "description": "The multiplicity of L(nu) in L(lambda) tensor L(mu) expressed via an alternating sum over pairs of Weyl group elements using the Kostant partition function.",
+      "aliases": [
+        "Steinberg tensor product multiplicity formula"
+      ]
+    },
+    {
+      "id": "s_klimyks_formula",
+      "kind": "theorem",
+      "name": "Klimyk's formula",
+      "type_signature": "",
+      "description": "The tensor product L(lambda) tensor L(mu) decomposed by summing over weights of L(mu) with multiplicities, giving a quick but redundant formula.",
+      "aliases": [
+        "Klimyk's tensor product formula"
+      ]
+    },
+    {
+      "id": "s_cartan_involution",
+      "kind": "axiom",
+      "name": "Cartan involution",
+      "type_signature": "",
+      "description": "An involutive automorphism theta of a real semisimple Lie algebra such that B_theta(X,Y) = -B(X,theta(Y)) is positive definite; gives the Cartan decomposition g = k + p.",
+      "aliases": []
+    },
+    {
+      "id": "s_maximal_compact_subgroup",
+      "kind": "state",
+      "name": "Maximal compact subgroup",
+      "type_signature": "",
+      "description": "A compact subgroup K of a connected semisimple Lie group G not contained in any larger compact subgroup; K = G^theta is unique up to conjugacy and G/K is contractible.",
+      "aliases": []
+    },
+    {
+      "id": "s_real_forms_classification",
+      "kind": "state",
+      "name": "Classification of real forms of a complex semisimple Lie algebra",
+      "type_signature": "",
+      "description": "Real forms are classified by conjugacy classes of involutions; they include the compact real form and one or more non-compact forms including the split form.",
+      "aliases": [
+        "real forms of semisimple Lie algebras"
+      ]
+    },
+    {
+      "id": "s_split_real_form",
+      "kind": "state",
+      "name": "Split real form",
+      "type_signature": "",
+      "description": "The real form of a complex semisimple Lie algebra in which a Cartan subalgebra is entirely real (maximally split); e.g., sl_n(R) for sl_n(C).",
+      "aliases": [
+        "maximally split real form"
+      ]
+    },
+    {
+      "id": "s_satake_diagram",
+      "kind": "axiom",
+      "name": "Satake diagram",
+      "type_signature": "",
+      "description": "A decorated Dynkin diagram encoding a real form: painted/unpainted nodes and arrows classifying real forms of complex semisimple Lie algebras up to isomorphism.",
+      "aliases": [
+        "Tits-Satake diagram"
+      ]
+    },
+    {
+      "id": "s_longest_element_w0",
+      "kind": "state",
+      "name": "Longest element w_0 of the Weyl group",
+      "type_signature": "",
+      "description": "The unique element w_0 in W of maximal length with w_0(Phi^+) = Phi^-; its length equals |Phi^+| and it sends highest weights to negatives of dual highest weights.",
+      "aliases": [
+        "w_0",
+        "longest Weyl group element"
+      ]
+    },
+    {
+      "id": "s_dual_representation_via_w0",
+      "kind": "theorem",
+      "name": "Dual representation via the longest element",
+      "type_signature": "",
+      "description": "The dual of L(lambda) is L(-w_0(lambda)); L(lambda) is self-dual iff -w_0(lambda) = lambda.",
+      "aliases": []
+    },
+    {
+      "id": "s_prv_theorem",
+      "kind": "theorem",
+      "name": "Parthasarathy--Ranga Rao--Varadarajan (PRV) theorem",
+      "type_signature": "",
+      "description": "For dominant weights lambda, mu, the irreducible L(lambda + w(mu)) occurs in L(lambda) tensor L(mu) for each w in W, with L(lambda + w_0(mu)) appearing with multiplicity one.",
+      "aliases": [
+        "PRV theorem",
+        "PRV conjecture"
+      ]
+    },
+    {
+      "id": "s_exceptional_lie_algebra_G2",
+      "kind": "state",
+      "name": "Exceptional Lie algebra G_2",
+      "type_signature": "",
+      "description": "The 14-dimensional exceptional simple complex Lie algebra of rank 2, the automorphism algebra of the octonions.",
+      "aliases": [
+        "G2"
+      ]
+    },
+    {
+      "id": "s_exceptional_lie_algebra_F4",
+      "kind": "state",
+      "name": "Exceptional Lie algebra F_4",
+      "type_signature": "",
+      "description": "The 52-dimensional exceptional simple complex Lie algebra of rank 4, the automorphism algebra of the exceptional Jordan algebra.",
+      "aliases": [
+        "F4"
+      ]
+    },
+    {
+      "id": "s_exceptional_lie_algebra_E6",
+      "kind": "state",
+      "name": "Exceptional Lie algebra E_6",
+      "type_signature": "",
+      "description": "The 78-dimensional exceptional simple complex Lie algebra of rank 6, with a 27-dimensional fundamental representation.",
+      "aliases": [
+        "E6"
+      ]
+    },
+    {
+      "id": "s_exceptional_lie_algebra_E7",
+      "kind": "state",
+      "name": "Exceptional Lie algebra E_7",
+      "type_signature": "",
+      "description": "The 133-dimensional exceptional simple complex Lie algebra of rank 7, with a 56-dimensional fundamental representation.",
+      "aliases": [
+        "E7"
+      ]
+    },
+    {
+      "id": "s_exceptional_lie_algebra_E8",
+      "kind": "state",
+      "name": "Exceptional Lie algebra E_8",
+      "type_signature": "",
+      "description": "The 248-dimensional exceptional simple complex Lie algebra of rank 8; its smallest representation is the adjoint (248-dimensional).",
+      "aliases": [
+        "E8"
+      ]
+    },
+    {
+      "id": "t_decomposition_via_inner_products",
+      "kind": "technique",
+      "name": "Decomposition via character inner products",
+      "function_signature": "(chi_V, {chi_i}) -> {m_i}",
+      "description": "Compute multiplicities m_i = <chi_V, chi_i> to decompose a representation V into irreducible summands.",
+      "aliases": []
+    },
+    {
+      "id": "t_weight_string_analysis",
+      "kind": "technique",
+      "name": "Weight string analysis",
+      "function_signature": "(g, V, alpha, mu) -> weight_string",
+      "description": "Analyze the string of weights through mu in the direction of root alpha using the sl_2-subalgebra, constraining multiplicities and proving integrality.",
+      "aliases": [
+        "alpha-string through mu"
+      ]
+    },
+    {
+      "id": "t_clifford_construction_of_spin_reps",
+      "kind": "technique",
+      "name": "Clifford algebra construction of spin representations",
+      "function_signature": "(V, Q) -> Cl(V,Q) -> spin module S",
+      "description": "Construct spin representations via the Clifford algebra Cl(V,Q), identifying so(V) with Cl^2(V) and letting it act on a minimal left ideal.",
+      "aliases": []
     }
   ],
   "edges": [
@@ -221178,6 +221887,1526 @@
       "role": "output",
       "parameter_binding": {},
       "used_in_theorem": "s_limit_as_end"
+    },
+    {
+      "id": "e_15398",
+      "from": "s_irreducible_character",
+      "to": "t_decomposition_via_inner_products",
+      "role": "input",
+      "parameter_binding": {
+        "chi_i": "irreducible characters of G"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15399",
+      "from": "s_character_orthogonality_theorem",
+      "to": "t_decomposition_via_inner_products",
+      "role": "input",
+      "parameter_binding": {
+        "orthogonality": "<chi_i, chi_j> = delta_{ij}"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15400",
+      "from": "s_space_of_invariants",
+      "to": "t_decomposition_via_inner_products",
+      "role": "input",
+      "parameter_binding": {
+        "V^G": "dimension counts trivial summands"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15401",
+      "from": "t_decomposition_via_inner_products",
+      "to": "s_projection_formula_representation",
+      "role": "output",
+      "parameter_binding": {
+        "m_i": "multiplicities determine projection idempotents"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15402",
+      "from": "t_decomposition_via_inner_products",
+      "to": "s_character_determines_representation",
+      "role": "output",
+      "parameter_binding": {
+        "m_i": "equal multiplicities iff equal characters"
+      },
+      "used_in_theorem": "s_character_determines_representation"
+    },
+    {
+      "id": "e_15403",
+      "from": "s_root_system",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "alpha": "root direction"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15404",
+      "from": "s_root_and_root_space",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "g_alpha": "root space for sl_2 subalgebra"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15405",
+      "from": "s_cartan_subalgebra",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "h": "weights are elements of h*"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15406",
+      "from": "s_irreducible_representations_of_sl2",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "V_n": "sl_2 representation theory constrains string"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15407",
+      "from": "t_weight_string_analysis",
+      "to": "s_weight_diagram",
+      "role": "output",
+      "parameter_binding": {
+        "weight_string": "populates weight diagram"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15408",
+      "from": "t_weight_string_analysis",
+      "to": "s_irreducible_representations_of_sl2",
+      "role": "output",
+      "parameter_binding": {
+        "weight_string": "string length determines sl_2 rep type"
+      },
+      "used_in_theorem": "s_irreducible_representations_of_sl2"
+    },
+    {
+      "id": "e_15409",
+      "from": "s_orthogonal_group",
+      "to": "t_clifford_construction_of_spin_reps",
+      "role": "input",
+      "parameter_binding": {
+        "V": "orthogonal space with quadratic form"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15410",
+      "from": "t_clifford_construction_of_spin_reps",
+      "to": "s_spin_representation_odd",
+      "role": "output",
+      "parameter_binding": {
+        "S": "2^m-dim spin module for so_{2m+1}"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15411",
+      "from": "t_clifford_construction_of_spin_reps",
+      "to": "s_half_spin_representations",
+      "role": "output",
+      "parameter_binding": {
+        "S+,S-": "two half-spin modules for so_{2m}"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15412",
+      "from": "s_specht_module",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "V_lambda": "irreducible S_d-module indexed by partition"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15413",
+      "from": "s_young_symmetrizer",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "c_T": "generates irreducible module in C[S_d]"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15414",
+      "from": "s_row_group_column_group",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "R_T,C_T": "row and column stabilizers build Young symmetrizer"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15415",
+      "from": "s_murnaghan_nakayama_rule",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "chi^lambda(mu)": "combinatorial character values"
+      },
+      "used_in_theorem": "s_murnaghan_nakayama_rule"
+    },
+    {
+      "id": "e_15416",
+      "from": "s_conjugate_partition",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "lambda'": "transpose indexes sign-twisted Specht module"
+      },
+      "used_in_theorem": "s_sign_twist_specht"
+    },
+    {
+      "id": "e_15417",
+      "from": "s_character_of_induced_representation",
+      "to": "t_frobenius_reciprocity_method",
+      "role": "input",
+      "parameter_binding": {
+        "chi^G": "induced character formula"
+      },
+      "used_in_theorem": "s_character_of_induced_representation"
+    },
+    {
+      "id": "e_15418",
+      "from": "s_young_subgroup",
+      "to": "t_frobenius_reciprocity_method",
+      "role": "input",
+      "parameter_binding": {
+        "S_mu": "Young subgroup as inducing subgroup"
+      },
+      "used_in_theorem": "s_youngs_rule"
+    },
+    {
+      "id": "e_15419",
+      "from": "t_frobenius_reciprocity_method",
+      "to": "s_youngs_rule",
+      "role": "output",
+      "parameter_binding": {
+        "M^mu": "permutation module decomposition via Kostka numbers"
+      },
+      "used_in_theorem": "s_youngs_rule"
+    },
+    {
+      "id": "e_15420",
+      "from": "t_frobenius_reciprocity_method",
+      "to": "s_character_of_induced_representation",
+      "role": "output",
+      "parameter_binding": {
+        "chi^G(g)": "formula for induced character"
+      },
+      "used_in_theorem": "s_character_of_induced_representation"
+    },
+    {
+      "id": "e_15421",
+      "from": "t_frobenius_reciprocity_method",
+      "to": "s_branching_rule_S_d",
+      "role": "output",
+      "parameter_binding": {
+        "Res": "restriction from S_d to S_{d-1}"
+      },
+      "used_in_theorem": "s_branching_rule_S_d"
+    },
+    {
+      "id": "e_15422",
+      "from": "s_character_of_induced_representation",
+      "to": "t_induction_restriction_technique",
+      "role": "input",
+      "parameter_binding": {
+        "chi^G": "induced character computation"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15423",
+      "from": "s_branching_rule_S_d",
+      "to": "t_induction_restriction_technique",
+      "role": "input",
+      "parameter_binding": {
+        "Res": "restriction rule removes corner box"
+      },
+      "used_in_theorem": "s_branching_rule_S_d"
+    },
+    {
+      "id": "e_15424",
+      "from": "s_young_subgroup",
+      "to": "t_induction_restriction_technique",
+      "role": "input",
+      "parameter_binding": {
+        "S_mu": "parabolic subgroup for induction"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15425",
+      "from": "s_second_orthogonality_relation",
+      "to": "t_orthogonality_of_characters",
+      "role": "input",
+      "parameter_binding": {
+        "column_orthogonality": "sum over irreps"
+      },
+      "used_in_theorem": "s_second_orthogonality_relation"
+    },
+    {
+      "id": "e_15426",
+      "from": "t_orthogonality_of_characters",
+      "to": "s_second_orthogonality_relation",
+      "role": "output",
+      "parameter_binding": {
+        "column_sum": "column orthogonality follows from row orthogonality"
+      },
+      "used_in_theorem": "s_second_orthogonality_relation"
+    },
+    {
+      "id": "e_15427",
+      "from": "t_orthogonality_of_characters",
+      "to": "s_representations_of_abelian_groups",
+      "role": "output",
+      "parameter_binding": {
+        "abelian": "all irreps 1-dim by orthogonality + commutativity"
+      },
+      "used_in_theorem": "s_representations_of_abelian_groups"
+    },
+    {
+      "id": "e_15428",
+      "from": "t_orthogonality_of_characters",
+      "to": "s_character_determines_representation",
+      "role": "output",
+      "parameter_binding": {
+        "inner_product": "<chi_V - chi_W, chi_V - chi_W> = 0 iff equal"
+      },
+      "used_in_theorem": "s_character_determines_representation"
+    },
+    {
+      "id": "e_15429",
+      "from": "s_character_determines_representation",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "chi_V": "character suffices to identify rep"
+      },
+      "used_in_theorem": "s_character_determines_representation"
+    },
+    {
+      "id": "e_15430",
+      "from": "s_projection_formula_representation",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "p_i": "projection onto isotypic component"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15431",
+      "from": "s_frobenius_character_formula",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "chi^lambda": "Frobenius formula connects to symmetric functions"
+      },
+      "used_in_theorem": "s_frobenius_character_formula"
+    },
+    {
+      "id": "e_15432",
+      "from": "s_second_orthogonality_relation",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "column_orthogonality": "column sums detect conjugacy"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15433",
+      "from": "s_frobenius_schur_indicator",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "nu_2": "indicator detects real/quaternionic type"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15434",
+      "from": "t_weyl_s_unitary_trick",
+      "to": "s_lie_group_lie_algebra_rep_correspondence",
+      "role": "output",
+      "parameter_binding": {
+        "complexification": "correspondence via compact real form"
+      },
+      "used_in_theorem": "s_lie_group_lie_algebra_rep_correspondence"
+    },
+    {
+      "id": "e_15435",
+      "from": "t_weyl_s_unitary_trick",
+      "to": "s_maximal_compact_subgroup",
+      "role": "output",
+      "parameter_binding": {
+        "K": "compact subgroup for unitary trick"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15436",
+      "from": "t_double_centralizer_decompose",
+      "to": "s_schur_weyl_duality",
+      "role": "output",
+      "parameter_binding": {
+        "GL x S_d": "mutual commutant on V^{tensor d}"
+      },
+      "used_in_theorem": "s_schur_weyl_duality"
+    },
+    {
+      "id": "e_15437",
+      "from": "s_space_of_invariants",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "V^G": "dim V^G = <chi_V, chi_trivial>"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15438",
+      "from": "s_center_of_group_algebra",
+      "to": "t_semisimple_decomposition_via_idempotents",
+      "role": "input",
+      "parameter_binding": {
+        "Z(C[G])": "class sums span center"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15439",
+      "from": "s_idempotents_in_group_algebra",
+      "to": "t_semisimple_decomposition_via_idempotents",
+      "role": "input",
+      "parameter_binding": {
+        "e_i": "primitive central idempotents"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15440",
+      "from": "t_semisimple_decomposition_via_idempotents",
+      "to": "s_idempotents_in_group_algebra",
+      "role": "output",
+      "parameter_binding": {
+        "Artin-Wedderburn": "decomposition yields idempotents"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15441",
+      "from": "t_semisimple_decomposition_via_idempotents",
+      "to": "s_projection_formula_representation",
+      "role": "output",
+      "parameter_binding": {
+        "p_i": "idempotent projection from Wedderburn"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15442",
+      "from": "s_center_of_group_algebra",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {
+        "Z(C[G])": "center acts by scalars on irreducibles"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15443",
+      "from": "s_idempotents_in_group_algebra",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {
+        "e_i": "idempotent determines module summand"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15444",
+      "from": "s_matrix_lie_group",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "G": "matrix Lie group as source"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15445",
+      "from": "s_one_parameter_subgroup",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "gamma(t)": "one-parameter subgroup tangent gives Lie algebra element"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15446",
+      "from": "s_lie_bracket_of_matrices",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "[A,B]": "matrix commutator defines Lie bracket"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15447",
+      "from": "t_lie_functor",
+      "to": "s_lie_bracket_of_matrices",
+      "role": "output",
+      "parameter_binding": {
+        "bracket": "differentiation of group law yields bracket"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15448",
+      "from": "s_representation_of_lie_group",
+      "to": "t_integration_of_lie_algebra_homomorphisms",
+      "role": "input",
+      "parameter_binding": {
+        "rho": "smooth homomorphism G -> GL(V)"
+      },
+      "used_in_theorem": "s_lie_group_lie_algebra_rep_correspondence"
+    },
+    {
+      "id": "e_15449",
+      "from": "s_lie_group_lie_algebra_rep_correspondence",
+      "to": "t_integration_of_lie_algebra_homomorphisms",
+      "role": "input",
+      "parameter_binding": {
+        "equivalence": "simply connected case gives bijection"
+      },
+      "used_in_theorem": "s_lie_group_lie_algebra_rep_correspondence"
+    },
+    {
+      "id": "e_15450",
+      "from": "t_integration_of_lie_algebra_homomorphisms",
+      "to": "s_lie_group_lie_algebra_rep_correspondence",
+      "role": "output",
+      "parameter_binding": {
+        "integration": "integrate Lie algebra map to group map"
+      },
+      "used_in_theorem": "s_lie_group_lie_algebra_rep_correspondence"
+    },
+    {
+      "id": "e_15451",
+      "from": "s_dual_contragredient_representation",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "V*": "chi_{V*}(g) = conj(chi_V(g))"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15452",
+      "from": "s_hom_representation",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "Hom(V,W)": "isomorphic to V* tensor W as representation"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15453",
+      "from": "s_standard_representation_of_S_n",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "n-1 dim": "complement of trivial in permutation rep"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15454",
+      "from": "s_sign_representation",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "sgn": "1-dim rep by sign of permutation"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15455",
+      "from": "t_character_table_computation",
+      "to": "s_projection_formula_representation",
+      "role": "output",
+      "parameter_binding": {
+        "p_i": "character table entries yield projection formula"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15456",
+      "from": "t_character_table_computation",
+      "to": "s_character_determines_representation",
+      "role": "output",
+      "parameter_binding": {
+        "chi": "completed table determines all reps"
+      },
+      "used_in_theorem": "s_character_determines_representation"
+    },
+    {
+      "id": "e_15457",
+      "from": "t_character_table_computation",
+      "to": "s_frobenius_character_formula",
+      "role": "output",
+      "parameter_binding": {
+        "chi^lambda": "Frobenius formula computes symmetric group characters"
+      },
+      "used_in_theorem": "s_frobenius_character_formula"
+    },
+    {
+      "id": "e_15458",
+      "from": "t_character_table_computation",
+      "to": "s_murnaghan_nakayama_rule",
+      "role": "output",
+      "parameter_binding": {
+        "chi^lambda(mu)": "MN rule is efficient character computation"
+      },
+      "used_in_theorem": "s_murnaghan_nakayama_rule"
+    },
+    {
+      "id": "e_15459",
+      "from": "s_sign_twist_specht",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "V_lambda tensor sgn": "sign twist gives conjugate partition"
+      },
+      "used_in_theorem": "s_sign_twist_specht"
+    },
+    {
+      "id": "e_15460",
+      "from": "s_semistandard_young_tableau",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "SSYT": "count SSYTs for Kostka numbers"
+      },
+      "used_in_theorem": "s_youngs_rule"
+    },
+    {
+      "id": "e_15461",
+      "from": "s_young_diagram",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "lambda": "partition shape indexes Specht module"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15462",
+      "from": "s_representation_ring_of_symmetric_groups",
+      "to": "t_induction_restriction_technique",
+      "role": "input",
+      "parameter_binding": {
+        "R": "graded ring with induction product"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15463",
+      "from": "s_representation_ring_of_symmetric_groups",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "R cong Lambda": "isomorphic to symmetric functions"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15464",
+      "from": "s_schur_weyl_duality",
+      "to": "t_double_centralizer_decompose",
+      "role": "input",
+      "parameter_binding": {
+        "GL x S_d": "mutual commutant on tensor space"
+      },
+      "used_in_theorem": "s_schur_weyl_duality"
+    },
+    {
+      "id": "e_15465",
+      "from": "s_general_linear_group",
+      "to": "t_double_centralizer_decompose",
+      "role": "input",
+      "parameter_binding": {
+        "GL(V)": "acts on V^{tensor d} by diagonal action"
+      },
+      "used_in_theorem": "s_schur_weyl_duality"
+    },
+    {
+      "id": "e_15466",
+      "from": "s_plethysm",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "S^lambda(S^mu)": "composition of Schur functors"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15467",
+      "from": "s_sl2_C",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "sl_2": "prototype for weight analysis"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15468",
+      "from": "s_standard_basis_sl2",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "H,E,F": "standard basis determines weight spaces"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15469",
+      "from": "s_sl3_C",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "sl_3": "8-dim simple Lie algebra of type A_2"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15470",
+      "from": "s_semisimple_direct_sum_of_simples",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "g = g_1 + ... + g_k": "decomposition into simple ideals"
+      },
+      "used_in_theorem": "s_semisimple_direct_sum_of_simples"
+    },
+    {
+      "id": "e_15471",
+      "from": "s_highest_weight_vector",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "v_lambda": "annihilated by positive root vectors"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15472",
+      "from": "s_partial_order_on_weights",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "mu <= lambda": "dominance constrains string direction"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15473",
+      "from": "s_weight_lattice",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "P": "integral weight lattice"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15474",
+      "from": "s_weyl_group_action_on_weights",
+      "to": "t_orthogonality_of_characters",
+      "role": "input",
+      "parameter_binding": {
+        "W-orbit": "Weyl group preserves multiplicities"
+      },
+      "used_in_theorem": "s_weyl_group_action_on_weights"
+    },
+    {
+      "id": "e_15475",
+      "from": "s_weyl_vector_rho",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "rho": "half-sum of positive roots in Weyl formula"
+      },
+      "used_in_theorem": "s_weyl_character_formula"
+    },
+    {
+      "id": "e_15476",
+      "from": "s_rank_of_lie_algebra",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "rank": "dim of Cartan subalgebra"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15477",
+      "from": "s_fundamental_representations_sl_n",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "Lambda^k(C^n)": "fundamental representations as exterior powers"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15478",
+      "from": "s_irreps_sl_n_via_young_diagrams",
+      "to": "t_character_table_computation",
+      "role": "input",
+      "parameter_binding": {
+        "S^lambda(C^n)": "Schur functor realizes irreps"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15479",
+      "from": "s_irreps_sl_n_via_young_diagrams",
+      "to": "t_double_centralizer_decompose",
+      "role": "input",
+      "parameter_binding": {
+        "S^lambda(C^n)": "Schur-Weyl yields Young diagram parametrization"
+      },
+      "used_in_theorem": "s_schur_weyl_duality"
+    },
+    {
+      "id": "e_15480",
+      "from": "s_weyl_dimension_formula_sl_n",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "dim V_lambda": "hook-content formula for sl_n"
+      },
+      "used_in_theorem": "s_weyl_dimension_formula_sl_n"
+    },
+    {
+      "id": "e_15481",
+      "from": "s_fundamental_representations_so_n",
+      "to": "t_clifford_construction_of_spin_reps",
+      "role": "input",
+      "parameter_binding": {
+        "so_n": "includes spin as fundamental rep"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15482",
+      "from": "s_fundamental_representations_sp_2n",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "sp_{2n}": "fundamental reps via contraction"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15483",
+      "from": "s_exceptional_isomorphisms_low_rank",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "A_1=B_1=C_1,...": "accidental isomorphisms in small rank"
+      },
+      "used_in_theorem": "s_exceptional_isomorphisms_low_rank"
+    },
+    {
+      "id": "e_15484",
+      "from": "s_triality_so_8",
+      "to": "t_clifford_construction_of_spin_reps",
+      "role": "input",
+      "parameter_binding": {
+        "D_4": "triality permutes vector and half-spin reps"
+      },
+      "used_in_theorem": "s_triality_so_8"
+    },
+    {
+      "id": "e_15485",
+      "from": "t_clifford_construction_of_spin_reps",
+      "to": "s_triality_so_8",
+      "role": "output",
+      "parameter_binding": {
+        "S+,S-,V": "three 8-dim reps of so_8"
+      },
+      "used_in_theorem": "s_triality_so_8"
+    },
+    {
+      "id": "e_15486",
+      "from": "s_weyl_denominator_formula",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "denominator": "lambda=0 case of Weyl character formula"
+      },
+      "used_in_theorem": "s_weyl_denominator_formula"
+    },
+    {
+      "id": "e_15487",
+      "from": "s_steinbergs_formula",
+      "to": "t_character_decomposition_count",
+      "role": "input",
+      "parameter_binding": {
+        "mult(nu)": "alternating sum over W x W"
+      },
+      "used_in_theorem": "s_steinbergs_formula"
+    },
+    {
+      "id": "e_15488",
+      "from": "s_klimyks_formula",
+      "to": "t_character_decomposition_count",
+      "role": "input",
+      "parameter_binding": {
+        "L(lambda) tensor L(mu)": "sum over weights with multiplicities"
+      },
+      "used_in_theorem": "s_klimyks_formula"
+    },
+    {
+      "id": "e_15489",
+      "from": "s_cartan_involution",
+      "to": "t_weyl_s_unitary_trick",
+      "role": "input",
+      "parameter_binding": {
+        "theta": "involution gives compact real form"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15490",
+      "from": "s_maximal_compact_subgroup",
+      "to": "t_weyl_s_unitary_trick",
+      "role": "input",
+      "parameter_binding": {
+        "K": "compact subgroup for averaging"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15491",
+      "from": "s_satake_diagram",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "diagram": "decorated Dynkin diagram for real forms"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15492",
+      "from": "s_longest_element_w0",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "w_0": "sends positive roots to negative"
+      },
+      "used_in_theorem": "s_dual_representation_via_w0"
+    },
+    {
+      "id": "e_15493",
+      "from": "s_dual_representation_via_w0",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "L(lambda)*": "dual is L(-w_0(lambda))"
+      },
+      "used_in_theorem": "s_dual_representation_via_w0"
+    },
+    {
+      "id": "e_15494",
+      "from": "s_prv_theorem",
+      "to": "t_character_decomposition_count",
+      "role": "input",
+      "parameter_binding": {
+        "L(lambda+w(mu))": "guaranteed summand in tensor product"
+      },
+      "used_in_theorem": "s_prv_theorem"
+    },
+    {
+      "id": "e_15495",
+      "from": "s_exceptional_lie_algebra_G2",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "G_2": "14-dim exceptional, rank 2"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15496",
+      "from": "s_exceptional_lie_algebra_F4",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "F_4": "52-dim exceptional, rank 4"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15497",
+      "from": "s_exceptional_lie_algebra_E6",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "E_6": "78-dim exceptional, rank 6"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15498",
+      "from": "s_exceptional_lie_algebra_E7",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "E_7": "133-dim exceptional, rank 7"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15499",
+      "from": "s_exceptional_lie_algebra_E8",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "E_8": "248-dim exceptional, rank 8"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15500",
+      "from": "s_preservation_of_jordan_decomposition",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "phi(x_s)": "semisimple/nilpotent preserved"
+      },
+      "used_in_theorem": "s_preservation_of_jordan_decomposition"
+    },
+    {
+      "id": "e_15501",
+      "from": "s_heisenberg_algebra",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "h": "nilpotent Lie algebra with [p,q]=z"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15502",
+      "from": "t_character_methods",
+      "to": "s_sign_twist_specht",
+      "role": "output",
+      "parameter_binding": {
+        "V_lambda tensor sgn = V_{lambda'}": "character method proves sign twist"
+      },
+      "used_in_theorem": "s_sign_twist_specht"
+    },
+    {
+      "id": "e_15503",
+      "from": "t_character_methods",
+      "to": "s_weyl_dimension_formula_sl_n",
+      "role": "output",
+      "parameter_binding": {
+        "dim": "dimension formula from Weyl character formula"
+      },
+      "used_in_theorem": "s_weyl_dimension_formula_sl_n"
+    },
+    {
+      "id": "e_15504",
+      "from": "s_specht_module",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {
+        "V_lambda": "Specht module as C[S_d]-module"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15505",
+      "from": "s_young_symmetrizer",
+      "to": "t_representations_as_modules",
+      "role": "input",
+      "parameter_binding": {
+        "c_T": "element of C[S_d] generating module"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15506",
+      "from": "s_standard_representation_of_S_n",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "chi_std": "(n-1)-dim irreducible character of S_n"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15507",
+      "from": "s_sign_representation",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "sgn": "1-dim character sending sigma to sign(sigma)"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15508",
+      "from": "t_character_table_computation",
+      "to": "s_standard_representation_of_S_n",
+      "role": "output",
+      "parameter_binding": {
+        "chi_std": "standard rep identified from character table"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15509",
+      "from": "s_semistandard_young_tableau",
+      "to": "t_frobenius_reciprocity_method",
+      "role": "input",
+      "parameter_binding": {
+        "SSYT": "Kostka numbers count SSYTs"
+      },
+      "used_in_theorem": "s_youngs_rule"
+    },
+    {
+      "id": "e_15510",
+      "from": "s_specht_module",
+      "to": "t_induction_restriction_technique",
+      "role": "input",
+      "parameter_binding": {
+        "V_lambda": "restrict/induce between S_d levels"
+      },
+      "used_in_theorem": "s_branching_rule_S_d"
+    },
+    {
+      "id": "e_15511",
+      "from": "t_lie_functor",
+      "to": "s_sl2_C",
+      "role": "output",
+      "parameter_binding": {
+        "Lie(SL_2)": "Lie algebra of SL_2(C)"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15512",
+      "from": "t_lie_functor",
+      "to": "s_sl3_C",
+      "role": "output",
+      "parameter_binding": {
+        "Lie(SL_3)": "Lie algebra of SL_3(C)"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15513",
+      "from": "t_lie_functor",
+      "to": "s_matrix_lie_group",
+      "role": "output",
+      "parameter_binding": {
+        "G <= GL(n)": "matrix groups as Lie groups"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15514",
+      "from": "t_lie_functor",
+      "to": "s_one_parameter_subgroup",
+      "role": "output",
+      "parameter_binding": {
+        "exp(tX)": "exponential map from Lie algebra"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15515",
+      "from": "s_irreducible_representations_of_sl2",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "V_n": "(n+1)-dim irrep with weights n,n-2,...,-n"
+      },
+      "used_in_theorem": "s_irreducible_representations_of_sl2"
+    },
+    {
+      "id": "e_15516",
+      "from": "t_character_decomposition_count",
+      "to": "s_steinbergs_formula",
+      "role": "output",
+      "parameter_binding": {
+        "mult(nu)": "Steinberg formula for tensor multiplicities"
+      },
+      "used_in_theorem": "s_steinbergs_formula"
+    },
+    {
+      "id": "e_15517",
+      "from": "t_character_decomposition_count",
+      "to": "s_klimyks_formula",
+      "role": "output",
+      "parameter_binding": {
+        "decomposition": "Klimyk formula for tensor products"
+      },
+      "used_in_theorem": "s_klimyks_formula"
+    },
+    {
+      "id": "e_15518",
+      "from": "t_character_decomposition_count",
+      "to": "s_prv_theorem",
+      "role": "output",
+      "parameter_binding": {
+        "L(lambda+w_0(mu))": "PRV component with multiplicity one"
+      },
+      "used_in_theorem": "s_prv_theorem"
+    },
+    {
+      "id": "e_15519",
+      "from": "s_exceptional_lie_algebra_G2",
+      "to": "t_weight_string_analysis",
+      "role": "input",
+      "parameter_binding": {
+        "G_2": "rank 2 exceptional, weight analysis applicable"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15520",
+      "from": "s_exceptional_lie_algebra_G2",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "G_2": "14-dim exceptional Lie algebra"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15521",
+      "from": "t_weyl_s_unitary_trick",
+      "to": "s_real_forms_classification",
+      "role": "output",
+      "parameter_binding": {
+        "compact_form": "compact real form from unitary trick"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15522",
+      "from": "t_weyl_s_unitary_trick",
+      "to": "s_cartan_involution",
+      "role": "output",
+      "parameter_binding": {
+        "theta": "Cartan involution from compact form"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15523",
+      "from": "t_extension_of_scalars",
+      "to": "s_real_forms_classification",
+      "role": "output",
+      "parameter_binding": {
+        "complexification": "real form via restriction of scalars"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15524",
+      "from": "t_extension_of_scalars",
+      "to": "s_split_real_form",
+      "role": "output",
+      "parameter_binding": {
+        "split": "split form from Chevalley basis"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15525",
+      "from": "s_representation_of_lie_group",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "rho: G -> GL(V)": "differentiate to get Lie algebra rep"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15526",
+      "from": "s_dual_representation_via_w0",
+      "to": "t_character_decomposition_count",
+      "role": "input",
+      "parameter_binding": {
+        "L(lambda)*": "identifies dual highest weight for tensor decomposition"
+      },
+      "used_in_theorem": "s_dual_representation_via_w0"
+    },
+    {
+      "id": "e_15527",
+      "from": "s_fundamental_representations_so_n",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "so_n fundl": "exterior powers and spin reps"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15528",
+      "from": "t_character_methods",
+      "to": "s_weyl_denominator_formula",
+      "role": "output",
+      "parameter_binding": {
+        "denominator": "special case lambda=0 of Weyl formula"
+      },
+      "used_in_theorem": "s_weyl_denominator_formula"
+    },
+    {
+      "id": "e_15529",
+      "from": "t_character_methods",
+      "to": "s_dual_representation_via_w0",
+      "role": "output",
+      "parameter_binding": {
+        "chi_{V*}": "character of dual via w_0"
+      },
+      "used_in_theorem": "s_dual_representation_via_w0"
+    },
+    {
+      "id": "e_15530",
+      "from": "s_representation_ring_of_symmetric_groups",
+      "to": "t_frobenius_reciprocity_method",
+      "role": "input",
+      "parameter_binding": {
+        "R": "ring structure from induction product"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15531",
+      "from": "t_frobenius_reciprocity_method",
+      "to": "s_representation_ring_of_symmetric_groups",
+      "role": "output",
+      "parameter_binding": {
+        "R cong Lambda": "Frobenius gives ring isomorphism"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15532",
+      "from": "s_satake_diagram",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "real_form_data": "restricted root system from Satake diagram"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15533",
+      "from": "s_exceptional_lie_algebra_F4",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "F_4": "52-dim exceptional"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15534",
+      "from": "s_exceptional_lie_algebra_E6",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "E_6": "27-dim fundamental rep"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15535",
+      "from": "s_exceptional_lie_algebra_E7",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "E_7": "56-dim fundamental rep"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15536",
+      "from": "s_exceptional_lie_algebra_E8",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "E_8": "248-dim adjoint rep"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15537",
+      "from": "t_clifford_construction_of_spin_reps",
+      "to": "s_fundamental_representations_so_n",
+      "role": "output",
+      "parameter_binding": {
+        "spin": "spin rep is fundamental for so_n"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15538",
+      "from": "s_semisimple_direct_sum_of_simples",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "direct_sum": "characters of direct sum decompose"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15539",
+      "from": "t_induction_restriction_technique",
+      "to": "s_branching_rule_S_d",
+      "role": "output",
+      "parameter_binding": {
+        "restriction": "remove corner box from Young diagram"
+      },
+      "used_in_theorem": "s_branching_rule_S_d"
+    },
+    {
+      "id": "e_15540",
+      "from": "t_induction_restriction_technique",
+      "to": "s_character_of_induced_representation",
+      "role": "output",
+      "parameter_binding": {
+        "induced_char": "formula for induced character"
+      },
+      "used_in_theorem": "s_character_of_induced_representation"
+    },
+    {
+      "id": "e_15541",
+      "from": "s_conjugate_partition",
+      "to": "t_induction_restriction_technique",
+      "role": "input",
+      "parameter_binding": {
+        "lambda'": "transpose partition for sign twist"
+      },
+      "used_in_theorem": "s_sign_twist_specht"
+    },
+    {
+      "id": "e_15542",
+      "from": "t_decomposition_via_inner_products",
+      "to": "s_space_of_invariants",
+      "role": "output",
+      "parameter_binding": {
+        "m_trivial": "multiplicity of trivial = dim V^G"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15543",
+      "from": "s_highest_weight_vector",
+      "to": "t_character_methods",
+      "role": "input",
+      "parameter_binding": {
+        "v_lambda": "generates highest weight module"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15544",
+      "from": "s_root_and_root_space",
+      "to": "t_lie_functor",
+      "role": "input",
+      "parameter_binding": {
+        "g_alpha": "root spaces in adjoint representation"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15545",
+      "from": "t_lie_functor",
+      "to": "s_root_and_root_space",
+      "role": "output",
+      "parameter_binding": {
+        "ad": "adjoint rep yields root decomposition"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15546",
+      "from": "s_young_symmetrizer",
+      "to": "t_semisimple_decomposition_via_idempotents",
+      "role": "input",
+      "parameter_binding": {
+        "c_T": "Young symmetrizer is (scaled) idempotent in C[S_d]"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15547",
+      "from": "t_character_table_computation",
+      "to": "s_specht_module",
+      "role": "output",
+      "parameter_binding": {
+        "V_lambda": "Specht modules are the irreps of S_d"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15548",
+      "from": "s_space_of_invariants",
+      "to": "t_orthogonality_of_characters",
+      "role": "input",
+      "parameter_binding": {
+        "dim V^G": "equals <chi_V, 1>"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_15549",
+      "from": "t_character_methods",
+      "to": "s_irreducible_representations_of_sl2",
+      "role": "output",
+      "parameter_binding": {
+        "V_n": "character computation classifies sl_2 irreps"
+      },
+      "used_in_theorem": "s_irreducible_representations_of_sl2"
     }
   ],
   "subgraphs": [
