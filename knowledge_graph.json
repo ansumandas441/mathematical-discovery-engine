@@ -92580,6 +92580,328 @@
       "name": "Higher-order linear ODE reduction to first-order system",
       "function_signature": "(n-th order ODE y⁽ⁿ⁾ + aₙ₋₁y⁽ⁿ⁻¹⁾ + ⋯ + a₀y = f) → (First-order system Y' = AY + F in ℝⁿ)",
       "description": "Converts a scalar n-th order linear ODE to an equivalent first-order system by introducing y₁ = y, y₂ = y', …, yₙ = y⁽ⁿ⁻¹⁾, reducing all higher-order theory to the first-order framework."
+    },
+    {
+      "id": "s_phase_space_ode",
+      "kind": "axiom",
+      "name": "Phase space of a dynamical system",
+      "type_signature": "(Set of all states M) : TopologicalSpace",
+      "description": "The space M of all possible states of a system, in which the evolution of the system is described as motion of a point along a phase curve."
+    },
+    {
+      "id": "s_phase_curve",
+      "kind": "axiom",
+      "name": "Phase curve (integral curve of an ODE)",
+      "type_signature": "(Phase flow g^t, Initial point x₀) → Curve γ ⊂ M",
+      "description": "The image {g^t(x₀) : t ∈ I} of a solution trajectory in phase space; the orbit of a point under the phase flow."
+    },
+    {
+      "id": "s_phase_portrait",
+      "kind": "axiom",
+      "name": "Phase portrait",
+      "type_signature": "(Autonomous ODE on M) → Partition of M into phase curves",
+      "description": "The partition of the phase space into the union of all phase curves, providing a complete qualitative picture of the dynamics."
+    },
+    {
+      "id": "s_phase_flow",
+      "kind": "axiom",
+      "name": "Phase flow",
+      "type_signature": "(Autonomous ODE ẋ = v(x)) → One-parameter group {g^t : M → M}",
+      "description": "The one-parameter group of diffeomorphisms g^t: M → M defined by g^t(x₀) = φ(t; x₀), where φ is the solution of ẋ = v(x) with φ(0) = x₀."
+    },
+    {
+      "id": "s_phase_velocity_vector_field",
+      "kind": "axiom",
+      "name": "Phase velocity vector field",
+      "type_signature": "(Phase flow {g^t}) → Vector field v : M → TM",
+      "description": "The vector field v(x) = (d/dt)g^t(x)|_{t=0} whose integral curves are the phase curves of the flow, equivalently the right-hand side of ẋ = v(x)."
+    },
+    {
+      "id": "s_non_autonomous_ode",
+      "kind": "axiom",
+      "name": "Non-autonomous ODE",
+      "type_signature": "(f : ℝ × M → TM) : ODE ẋ = f(t, x)",
+      "description": "An ordinary differential equation ẋ = f(t, x) in which the right-hand side depends explicitly on time, reducible to an autonomous system on the extended phase space ℝ × M."
+    },
+    {
+      "id": "s_direction_field",
+      "kind": "axiom",
+      "name": "Direction field (line element field)",
+      "type_signature": "(First-order ODE y' = f(x, y)) → Field of line elements in ℝ²",
+      "description": "The field assigning to each point (x, y) the line through (x, y) with slope f(x, y), whose integral curves are the solutions of y' = f(x, y)."
+    },
+    {
+      "id": "t_quadrature_barrow",
+      "kind": "technique",
+      "name": "Solution by quadrature (Barrow's formula)",
+      "function_signature": "(Scalar autonomous ODE ẋ = v(x)) → (Implicit solution via ∫dx/v(x) = t + C)",
+      "description": "Solving a one-dimensional autonomous ODE ẋ = v(x) by direct integration: t − t₀ = ∫_{x₀}^{x} ds/v(s), the fundamental antiderivative method."
+    },
+    {
+      "id": "t_separation_of_variables_ode",
+      "kind": "technique",
+      "name": "Separation of variables for ODEs",
+      "function_signature": "(ODE of form dy/dx = f(x)g(y)) → (∫dy/g(y) = ∫f(x)dx + C)",
+      "description": "Solving a first-order ODE dy/dx = f(x)g(y) by separating the variables and integrating each side independently."
+    },
+    {
+      "id": "s_rectification_theorem",
+      "kind": "theorem",
+      "name": "Rectification theorem (flow box theorem)",
+      "type_signature": "(v(x₀) ≠ 0, v smooth) ⟹ Local diffeomorphism straightening v to ∂/∂x₁",
+      "description": "Near any non-singular point of a smooth vector field, there exists a local coordinate system in which the field equals the constant field ∂/∂x₁ and the flow is a translation."
+    },
+    {
+      "id": "s_extension_theorem_ode",
+      "kind": "theorem",
+      "name": "Extension theorem for ODE solutions",
+      "type_signature": "(Local Lipschitz ODE on open U) ⟹ Solution extends until it leaves every compact K ⊂ U",
+      "description": "A solution of ẋ = f(t, x) on a maximal interval (α, β) with β < ∞ must eventually leave every compact subset of the domain; equivalently, bounded solutions on open domains extend to the boundary of the interval."
+    },
+    {
+      "id": "s_differentiable_dependence_on_initial_conditions",
+      "kind": "theorem",
+      "name": "Differentiable dependence on initial conditions",
+      "type_signature": "(f ∈ Cᵏ) ⟹ (Flow map x₀ ↦ φ(t; x₀) is Cᵏ)",
+      "description": "If the right-hand side f of ẋ = f(t, x) is Cᵏ in (t, x), then the solution φ(t; t₀, x₀) is Cᵏ in the initial condition x₀, with the derivative satisfying the variational equation."
+    },
+    {
+      "id": "s_superposition_principle_linear_ode",
+      "kind": "theorem",
+      "name": "Superposition principle for linear ODE systems",
+      "type_signature": "(Linear ODE ẋ = A(t)x, Solutions x₁,...,xₖ) ⟹ ∑cᵢxᵢ is a solution",
+      "description": "Any linear combination of solutions of a homogeneous linear system ẋ = A(t)x is again a solution; the solution set forms a vector space of dimension n."
+    },
+    {
+      "id": "s_wronskian",
+      "kind": "state",
+      "name": "Wronskian",
+      "type_signature": "(Solutions x₁,...,xₙ of linear ODE) → W(t) = det[x₁(t)|...|xₙ(t)]",
+      "description": "The determinant of the matrix whose columns are n solutions of an n-dimensional linear system; nonzero at one point if and only if the solutions are linearly independent (form a fundamental system)."
+    },
+    {
+      "id": "s_quasi_polynomial",
+      "kind": "axiom",
+      "name": "Quasi-polynomial",
+      "type_signature": "t^k e^{λt} : ℝ → ℝ (or ℂ)",
+      "description": "A function of the form p(t)e^{λt} where p is a polynomial, arising as a solution component of a constant-coefficient linear ODE when λ is an eigenvalue of multiplicity exceeding the polynomial degree plus one."
+    },
+    {
+      "id": "t_complexification_linear_operator",
+      "kind": "technique",
+      "name": "Complexification of a real linear operator",
+      "function_signature": "(Real vector space V, Operator A : V → V) → (V_ℂ = V ⊗ ℂ, A_ℂ = A ⊗ id_ℂ)",
+      "description": "Extending a real linear operator A to the complexified space V ⊗ ℂ to exploit the algebraic closure of ℂ, enabling diagonalization and spectral decomposition even when real eigenvalues do not exist."
+    },
+    {
+      "id": "t_decomplexification",
+      "kind": "technique",
+      "name": "Decomplexification (realification)",
+      "function_signature": "(Complex eigenvalue λ = α + iβ, Complex eigenvector z) → (Real 2D invariant subspace, Rotation-dilation block)",
+      "description": "Converting complex eigendata of a real operator back to real form: a conjugate pair λ, λ̄ with eigenvectors z, z̄ yields a real invariant 2-plane on which the operator acts as e^{αt}(cos βt · I + sin βt · J)."
+    },
+    {
+      "id": "s_stable_node",
+      "kind": "axiom",
+      "name": "Stable node",
+      "type_signature": "(2D linear system ẋ = Ax, eigenvalues λ₁ ≤ λ₂ < 0 real) : Equilibrium type",
+      "description": "An equilibrium of a planar linear system where both eigenvalues are real and negative, so all trajectories approach the origin tangent to the eigenvector of the eigenvalue of larger absolute value."
+    },
+    {
+      "id": "s_unstable_node",
+      "kind": "axiom",
+      "name": "Unstable node",
+      "type_signature": "(2D linear system ẋ = Ax, eigenvalues 0 < λ₁ ≤ λ₂ real) : Equilibrium type",
+      "description": "An equilibrium of a planar linear system where both eigenvalues are real and positive, so all trajectories recede from the origin; the time-reversal of a stable node."
+    },
+    {
+      "id": "s_saddle_point_ode",
+      "kind": "axiom",
+      "name": "Saddle point (planar linear system)",
+      "type_signature": "(2D linear system ẋ = Ax, eigenvalues λ₁ < 0 < λ₂) : Equilibrium type",
+      "description": "An equilibrium of a planar linear system with one positive and one negative real eigenvalue; the stable and unstable eigenspaces are invariant lines, and all other orbits are hyperbolas asymptotic to them."
+    },
+    {
+      "id": "s_stable_focus",
+      "kind": "axiom",
+      "name": "Stable focus (spiral sink)",
+      "type_signature": "(2D linear system ẋ = Ax, eigenvalues α ± iβ with α < 0) : Equilibrium type",
+      "description": "An equilibrium of a planar linear system with complex conjugate eigenvalues having negative real part, so trajectories spiral inward toward the origin."
+    },
+    {
+      "id": "s_unstable_focus",
+      "kind": "axiom",
+      "name": "Unstable focus (spiral source)",
+      "type_signature": "(2D linear system ẋ = Ax, eigenvalues α ± iβ with α > 0) : Equilibrium type",
+      "description": "An equilibrium of a planar linear system with complex conjugate eigenvalues having positive real part, so trajectories spiral outward from the origin."
+    },
+    {
+      "id": "s_center_equilibrium",
+      "kind": "axiom",
+      "name": "Center (elliptic equilibrium)",
+      "type_signature": "(2D linear system ẋ = Ax, eigenvalues ±iβ, β ≠ 0) : Equilibrium type",
+      "description": "An equilibrium of a planar linear system with purely imaginary eigenvalues, surrounded by a family of closed elliptical orbits; Lyapunov stable but not asymptotically stable."
+    },
+    {
+      "id": "s_topological_classification_planar_linear_systems",
+      "kind": "theorem",
+      "name": "Topological classification of planar linear systems",
+      "type_signature": "(Two 2D linear systems ẋ = Ax, ẏ = By) ⟹ Topologically equivalent iff same type (node/saddle/focus/center)",
+      "description": "Two non-degenerate planar linear systems are topologically equivalent (related by a homeomorphism sending orbits to orbits preserving orientation) if and only if they have the same qualitative type determined by the signs of eigenvalue real parts."
+    },
+    {
+      "id": "s_stability_equilibrium_linear_system",
+      "kind": "theorem",
+      "name": "Stability of equilibrium of a linear system",
+      "type_signature": "(Linear system ẋ = Ax) ⟹ (Stable iff Re(λᵢ) ≤ 0 with simple elementary divisors for Re(λᵢ)=0; asymptotically stable iff Re(λᵢ) < 0 for all i)",
+      "description": "The equilibrium x = 0 of ẋ = Ax is Lyapunov stable if and only if all eigenvalues have non-positive real part and those on the imaginary axis have equal algebraic and geometric multiplicity, and asymptotically stable if and only if all eigenvalues have strictly negative real part."
+    },
+    {
+      "id": "t_proof_differentiable_dependence_gronwall",
+      "kind": "technique",
+      "name": "Proof of differentiable dependence via Gronwall",
+      "function_signature": "(Variational equation, Gronwall inequality) → (Cᵏ dependence of solutions on initial data)",
+      "description": "Establishing that the difference quotient of the flow in the initial condition converges to the solution of the variational equation, using Gronwall's inequality to control the error."
+    },
+    {
+      "id": "s_tangent_vector",
+      "kind": "axiom",
+      "name": "Tangent vector",
+      "type_signature": "(Smooth manifold M, Point p ∈ M) → v ∈ TₚM",
+      "description": "An equivalence class of curves through p in a smooth manifold, or equivalently a derivation on the algebra of germs of smooth functions at p, representing an infinitesimal displacement at p."
+    },
+    {
+      "id": "s_tangent_space",
+      "kind": "axiom",
+      "name": "Tangent space",
+      "type_signature": "(Smooth manifold M, Point p ∈ M) → TₚM : n-dimensional real vector space",
+      "description": "The vector space TₚM of all tangent vectors at a point p of an n-dimensional smooth manifold M, isomorphic to ℝⁿ via any chart."
+    },
+    {
+      "id": "s_one_parameter_group_of_diffeomorphisms",
+      "kind": "axiom",
+      "name": "One-parameter group of diffeomorphisms",
+      "type_signature": "(Smooth manifold M) → Group homomorphism g : (ℝ, +) → Diff(M)",
+      "description": "A smooth action g : ℝ × M → M such that each g^t is a diffeomorphism, g⁰ = id, and g^{s+t} = g^s ∘ g^t, equivalently a global flow on M."
+    },
+    {
+      "id": "s_completeness_of_vector_field",
+      "kind": "axiom",
+      "name": "Completeness of a vector field",
+      "type_signature": "(Vector field v on M) : Property",
+      "description": "A vector field is complete if every maximal integral curve is defined for all t ∈ ℝ, equivalently if it generates a global one-parameter group of diffeomorphisms."
+    },
+    {
+      "id": "s_compactness_implies_completeness_vector_field",
+      "kind": "theorem",
+      "name": "Compactness implies completeness of vector fields",
+      "type_signature": "(M compact, v smooth on M) ⟹ v is complete",
+      "description": "Every smooth vector field on a compact manifold is complete: since solutions cannot escape a compact set, the extension theorem guarantees they exist for all time."
+    },
+    {
+      "id": "s_lie_bracket_vector_fields",
+      "kind": "axiom",
+      "name": "Lie bracket of vector fields",
+      "type_signature": "(Vector fields X, Y on M) → [X, Y] : Vector field on M",
+      "description": "The Lie bracket [X, Y] = XY − YX as derivations on C^∞(M), measuring the failure of the flows of X and Y to commute to second order."
+    },
+    {
+      "id": "s_lie_algebra_of_vector_fields",
+      "kind": "state",
+      "name": "Lie algebra of vector fields",
+      "type_signature": "(Smooth manifold M) → (𝔛(M), [·,·]) : Infinite-dimensional Lie algebra",
+      "description": "The space 𝔛(M) of all smooth vector fields on M equipped with the Lie bracket, forming an infinite-dimensional Lie algebra over ℝ satisfying skew-symmetry and the Jacobi identity."
+    },
+    {
+      "id": "s_commutativity_of_flows_vanishing_bracket",
+      "kind": "theorem",
+      "name": "Commutativity of flows iff vanishing Lie bracket",
+      "type_signature": "(Complete vector fields X, Y) ⟹ (Flows commute ⟺ [X, Y] = 0)",
+      "description": "Two complete vector fields on a manifold have commuting flows (g^s_X ∘ g^t_Y = g^t_Y ∘ g^s_X for all s, t) if and only if their Lie bracket vanishes identically."
+    },
+    {
+      "id": "s_lie_derivative_vector_field",
+      "kind": "state",
+      "name": "Lie derivative of a vector field",
+      "type_signature": "(Vector fields X, Y on M) → L_X Y = [X, Y] : Vector field",
+      "description": "The derivative of Y along the flow of X, defined as L_X Y = lim_{t→0} ((g^{-t}_*)Y − Y)/t, which equals the Lie bracket [X, Y]."
+    },
+    {
+      "id": "s_pushforward_of_vector_field",
+      "kind": "axiom",
+      "name": "Pushforward of a vector field by a diffeomorphism",
+      "type_signature": "(Diffeomorphism φ : M → N, Vector field X on M) → φ_*X : Vector field on N",
+      "description": "The image of a vector field X under a diffeomorphism φ, defined by (φ_*X)_{φ(p)} = dφ_p(X_p), giving the natural action of Diff(M) on 𝔛(M)."
+    },
+    {
+      "id": "t_linearization_at_equilibrium",
+      "kind": "technique",
+      "name": "Linearization at an equilibrium",
+      "function_signature": "(Nonlinear ODE ẋ = f(x), Equilibrium f(x₀) = 0) → (Linear system δx' = Df(x₀)·δx)",
+      "description": "Replacing a nonlinear system by its first-order Taylor approximation at an equilibrium point to study local qualitative behavior, justified by the Hartman-Grobman theorem when the equilibrium is hyperbolic."
+    },
+    {
+      "id": "s_lyapunov_indirect_method",
+      "kind": "theorem",
+      "name": "Lyapunov's indirect method (stability by linearization)",
+      "type_signature": "(ẋ = f(x), f(0) = 0, A = Df(0)) ⟹ (Re(λᵢ(A)) < 0 ⟹ asymptotically stable; ∃ Re(λᵢ) > 0 ⟹ unstable)",
+      "description": "If all eigenvalues of the Jacobian Df(0) have strictly negative real part, the equilibrium of the nonlinear system is asymptotically stable; if any eigenvalue has positive real part, it is unstable."
+    },
+    {
+      "id": "s_periodic_orbit",
+      "kind": "axiom",
+      "name": "Periodic orbit",
+      "type_signature": "(Autonomous ODE on M, Period T > 0) → γ = {φ(t; x₀) : 0 ≤ t < T} : Closed curve in M",
+      "description": "A phase curve γ for which there exists a minimal T > 0 such that φ(t + T; x₀) = φ(t; x₀) for all t, forming a closed loop in phase space distinct from an equilibrium point."
+    },
+    {
+      "id": "s_poincare_index",
+      "kind": "axiom",
+      "name": "Poincaré index of a singular point",
+      "type_signature": "(Planar vector field v, Isolated singular point p) → ind_p(v) ∈ ℤ",
+      "description": "The winding number of the vector field v around a simple closed curve enclosing an isolated singular point p, counting the number of full turns of v(x) as x traverses the curve counterclockwise."
+    },
+    {
+      "id": "s_sturm_liouville_equation",
+      "kind": "axiom",
+      "name": "Sturm-Liouville equation",
+      "type_signature": "−(p(x)y')' + q(x)y = λw(x)y on [a,b]",
+      "description": "A second-order linear ODE eigenvalue problem of the form −(p(x)y')' + q(x)y = λw(x)y with p > 0, w > 0, and prescribed boundary conditions, whose spectral theory yields orthogonal eigenfunction expansions."
+    },
+    {
+      "id": "s_boundary_value_problem_ode",
+      "kind": "axiom",
+      "name": "Boundary value problem for second-order ODEs",
+      "type_signature": "(ODE L[y] = f on [a,b], Conditions B_a[y] = α, B_b[y] = β) : BVP",
+      "description": "The problem of finding a solution of a second-order ODE on an interval [a, b] subject to conditions imposed at both endpoints, in contrast to an initial value problem where all conditions are at one point."
+    },
+    {
+      "id": "s_homoclinic_orbit",
+      "kind": "axiom",
+      "name": "Homoclinic orbit",
+      "type_signature": "(Autonomous ODE, Equilibrium p) → γ : Orbit with α(γ) = ω(γ) = {p}",
+      "description": "A non-equilibrium trajectory that is biasymptotic to the same equilibrium point, approaching it as t → +∞ and as t → −∞, lying in the intersection of the stable and unstable manifolds of p."
+    },
+    {
+      "id": "s_heteroclinic_orbit",
+      "kind": "axiom",
+      "name": "Heteroclinic orbit (saddle connection)",
+      "type_signature": "(Autonomous ODE, Equilibria p ≠ q) → γ : Orbit with α(γ) = {p}, ω(γ) = {q}",
+      "description": "A trajectory connecting two distinct equilibrium points, lying in the intersection of the unstable manifold of p and the stable manifold of q."
+    },
+    {
+      "id": "s_first_integral",
+      "kind": "axiom",
+      "name": "First integral (constant of motion)",
+      "type_signature": "(ODE ẋ = v(x), Smooth function F : M → ℝ) : dF/dt ≡ 0 along solutions",
+      "description": "A smooth function F that is constant along every solution trajectory, satisfying ∇F · v = 0, whose level sets are invariant under the flow and reduce the dimension of the system by one."
+    },
+    {
+      "id": "s_invariance_ode_under_coordinate_changes",
+      "kind": "theorem",
+      "name": "Invariance of ODE systems under coordinate changes",
+      "type_signature": "(ODE ẋ = v(x), Diffeomorphism y = φ(x)) ⟹ ẏ = Dφ(φ⁻¹(y)) · v(φ⁻¹(y))",
+      "description": "Under a smooth change of coordinates y = φ(x), the vector field v transforms by the pushforward φ_*v, showing that the qualitative theory of ODEs is intrinsic to the manifold structure and independent of coordinate choice."
     }
   ],
   "edges": [
@@ -252794,6 +253116,1302 @@
       "id": "e_18309",
       "from": "s_linear_ode_with_constant_coefficients",
       "to": "t_application_of_laplace_transform_to_linear_ode",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18310",
+      "from": "s_autonomous_ode",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18311",
+      "from": "s_non_autonomous_ode",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18312",
+      "from": "s_phase_space_ode",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18313",
+      "from": "s_phase_velocity_vector_field",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18314",
+      "from": "s_direction_field",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18315",
+      "from": "s_completeness_of_vector_field",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18316",
+      "from": "s_first_integral",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18317",
+      "from": "s_phase_flow",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_rectification_theorem"
+    },
+    {
+      "id": "e_18318",
+      "from": "s_inverse_function_theorem",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_rectification_theorem"
+    },
+    {
+      "id": "e_18319",
+      "from": "s_compact_metric_space",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_implies_completeness_vector_field"
+    },
+    {
+      "id": "e_18320",
+      "from": "s_tangent_vector_field",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18321",
+      "from": "s_tangent_vector",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18322",
+      "from": "s_tangent_space",
+      "to": "t_quadrature_barrow",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18323",
+      "from": "t_quadrature_barrow",
+      "to": "s_phase_curve",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18324",
+      "from": "t_quadrature_barrow",
+      "to": "s_rectification_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18325",
+      "from": "t_quadrature_barrow",
+      "to": "s_one_parameter_group_of_diffeomorphisms",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18326",
+      "from": "t_quadrature_barrow",
+      "to": "s_phase_flow",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18327",
+      "from": "t_quadrature_barrow",
+      "to": "s_compactness_implies_completeness_vector_field",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18328",
+      "from": "t_quadrature_barrow",
+      "to": "s_extension_theorem_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18329",
+      "from": "s_non_autonomous_ode",
+      "to": "t_separation_of_variables_ode",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18330",
+      "from": "s_autonomous_ode",
+      "to": "t_separation_of_variables_ode",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18331",
+      "from": "s_direction_field",
+      "to": "t_separation_of_variables_ode",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18332",
+      "from": "s_first_integral",
+      "to": "t_separation_of_variables_ode",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18333",
+      "from": "t_separation_of_variables_ode",
+      "to": "s_phase_curve",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18334",
+      "from": "s_linear_ode_with_constant_coefficients",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18335",
+      "from": "s_eigenvalue",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18336",
+      "from": "s_jordan_normal_form",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18337",
+      "from": "s_jordan_block",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18338",
+      "from": "s_matrix_exponential",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18339",
+      "from": "s_characteristic_polynomial",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18340",
+      "from": "s_classification_equilibria_r2",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18341",
+      "from": "s_stable_node",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18342",
+      "from": "s_unstable_node",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18343",
+      "from": "s_saddle_point_ode",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18344",
+      "from": "s_stable_focus",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18345",
+      "from": "s_unstable_focus",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18346",
+      "from": "s_center_equilibrium",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18347",
+      "from": "s_stability_equilibrium_linear_system",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18348",
+      "from": "s_quasi_polynomial",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18349",
+      "from": "s_fundamental_matrix",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18350",
+      "from": "s_lie_bracket_of_matrices",
+      "to": "t_complexification_linear_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18351",
+      "from": "t_complexification_linear_operator",
+      "to": "s_quasi_polynomial",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18352",
+      "from": "t_complexification_linear_operator",
+      "to": "s_fundamental_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18353",
+      "from": "t_complexification_linear_operator",
+      "to": "s_phase_flow",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18354",
+      "from": "t_complexification_linear_operator",
+      "to": "s_phase_portrait",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18355",
+      "from": "t_complexification_linear_operator",
+      "to": "s_topological_classification_planar_linear_systems",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18356",
+      "from": "t_complexification_linear_operator",
+      "to": "s_linear_ode_with_constant_coefficients",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18357",
+      "from": "t_complexification_linear_operator",
+      "to": "s_wronskian",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18358",
+      "from": "s_quasi_polynomial",
+      "to": "t_decomplexification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18359",
+      "from": "s_eigenvalue",
+      "to": "t_decomplexification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18360",
+      "from": "s_stability_equilibrium_linear_system",
+      "to": "t_decomplexification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18361",
+      "from": "s_classification_equilibria_r2",
+      "to": "t_decomplexification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18362",
+      "from": "s_jordan_normal_form",
+      "to": "t_decomplexification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18363",
+      "from": "t_decomplexification",
+      "to": "s_fundamental_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18364",
+      "from": "t_decomplexification",
+      "to": "s_stable_focus",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18365",
+      "from": "t_decomplexification",
+      "to": "s_unstable_focus",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18366",
+      "from": "t_decomplexification",
+      "to": "s_center_equilibrium",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18367",
+      "from": "t_decomplexification",
+      "to": "s_stable_node",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18368",
+      "from": "t_decomplexification",
+      "to": "s_unstable_node",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18369",
+      "from": "t_decomplexification",
+      "to": "s_saddle_point_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_classification_planar_linear_systems"
+    },
+    {
+      "id": "e_18370",
+      "from": "t_decomplexification",
+      "to": "s_phase_portrait",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18371",
+      "from": "t_decomplexification",
+      "to": "s_quasi_polynomial",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18372",
+      "from": "s_equilibrium_point",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18373",
+      "from": "s_autonomous_ode",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18374",
+      "from": "s_phase_velocity_vector_field",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18375",
+      "from": "s_phase_space_ode",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18376",
+      "from": "s_tangent_vector",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18377",
+      "from": "s_tangent_space",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18378",
+      "from": "s_tangent_vector_field",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18379",
+      "from": "s_smooth_manifold",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18380",
+      "from": "s_differentiable_dependence_on_initial_conditions",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18381",
+      "from": "s_eigenvalue",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_indirect_method"
+    },
+    {
+      "id": "e_18382",
+      "from": "s_saddle_point_ode",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18383",
+      "from": "s_one_parameter_group_of_diffeomorphisms",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18384",
+      "from": "s_lie_bracket_vector_fields",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_commutativity_of_flows_vanishing_bracket"
+    },
+    {
+      "id": "e_18385",
+      "from": "s_pushforward_of_vector_field",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_invariance_ode_under_coordinate_changes"
+    },
+    {
+      "id": "e_18386",
+      "from": "s_smooth_diffeomorphism",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_invariance_ode_under_coordinate_changes"
+    },
+    {
+      "id": "e_18387",
+      "from": "s_lie_derivative_vector_field",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18388",
+      "from": "s_lie_algebra_of_vector_fields",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18389",
+      "from": "s_phase_flow",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_commutativity_of_flows_vanishing_bracket"
+    },
+    {
+      "id": "e_18390",
+      "from": "s_lyapunov_indirect_method",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18391",
+      "from": "s_invariance_ode_under_coordinate_changes",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18392",
+      "from": "s_homoclinic_orbit",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stable_manifold_theorem"
+    },
+    {
+      "id": "e_18393",
+      "from": "s_heteroclinic_orbit",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stable_manifold_theorem"
+    },
+    {
+      "id": "e_18394",
+      "from": "s_stable_node",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hopf_bifurcation_theorem"
+    },
+    {
+      "id": "e_18395",
+      "from": "s_center_equilibrium",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hopf_bifurcation_theorem"
+    },
+    {
+      "id": "e_18396",
+      "from": "s_periodic_orbit",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_bendixson_theorem"
+    },
+    {
+      "id": "e_18397",
+      "from": "s_hyperbolic_equilibrium_of_smooth_vector_field",
+      "to": "t_linearization_at_equilibrium",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hartman_grobman_theorem"
+    },
+    {
+      "id": "e_18398",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_variational_equation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18399",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_linear_ode_with_constant_coefficients",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18400",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_lyapunov_indirect_method",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_indirect_method"
+    },
+    {
+      "id": "e_18401",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_hyperbolic_equilibrium_of_smooth_vector_field",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hartman_grobman_theorem"
+    },
+    {
+      "id": "e_18402",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_phase_portrait",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18403",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_asymptotic_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_indirect_method"
+    },
+    {
+      "id": "e_18404",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_stability_equilibrium_linear_system",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18405",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_poincare_index",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18406",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_homoclinic_orbit",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18407",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_heteroclinic_orbit",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18408",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_tangent_space",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18409",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_commutativity_of_flows_vanishing_bracket",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18410",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_invariance_ode_under_coordinate_changes",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18411",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_lie_derivative_vector_field",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18412",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_lie_algebra_of_vector_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18413",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_lie_bracket_vector_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18414",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_pushforward_of_vector_field",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18415",
+      "from": "t_linearization_at_equilibrium",
+      "to": "s_one_parameter_group_of_diffeomorphisms",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18416",
+      "from": "s_gronwall_inequality",
+      "to": "t_proof_differentiable_dependence_gronwall",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18417",
+      "from": "s_gronwall_inequality_integral_form",
+      "to": "t_proof_differentiable_dependence_gronwall",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18418",
+      "from": "s_variational_equation",
+      "to": "t_proof_differentiable_dependence_gronwall",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18419",
+      "from": "s_picard_lindelof_theorem",
+      "to": "t_proof_differentiable_dependence_gronwall",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18420",
+      "from": "s_continuous_dependence_on_initial_conditions",
+      "to": "t_proof_differentiable_dependence_gronwall",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18421",
+      "from": "s_differentiable_dependence_on_parameters",
+      "to": "t_proof_differentiable_dependence_gronwall",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18422",
+      "from": "s_fundamental_matrix",
+      "to": "t_proof_differentiable_dependence_gronwall",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18423",
+      "from": "t_proof_differentiable_dependence_gronwall",
+      "to": "s_differentiable_dependence_on_initial_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18424",
+      "from": "t_proof_differentiable_dependence_gronwall",
+      "to": "s_differentiable_dependence_on_parameters",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18425",
+      "from": "s_phase_flow",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18426",
+      "from": "s_periodic_orbit",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18427",
+      "from": "s_homoclinic_orbit",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18428",
+      "from": "s_heteroclinic_orbit",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18429",
+      "from": "s_poincare_index",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_hopf_theorem"
+    },
+    {
+      "id": "e_18430",
+      "from": "s_limit_cycle",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18431",
+      "from": "s_omega_limit_set",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_bendixson_theorem"
+    },
+    {
+      "id": "e_18432",
+      "from": "s_phase_portrait",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18433",
+      "from": "t_poincare_section",
+      "to": "s_periodic_orbit",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18434",
+      "from": "t_poincare_section",
+      "to": "s_homoclinic_orbit",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18435",
+      "from": "t_poincare_section",
+      "to": "s_heteroclinic_orbit",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18436",
+      "from": "t_poincare_section",
+      "to": "s_poincare_index",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18437",
+      "from": "s_superposition_principle_linear_ode",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18438",
+      "from": "s_wronskian",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18439",
+      "from": "s_linear_independence",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_superposition_principle_linear_ode"
+    },
+    {
+      "id": "e_18440",
+      "from": "s_abels_liouville_formula",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18441",
+      "from": "t_variation_of_constants",
+      "to": "s_superposition_principle_linear_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18442",
+      "from": "t_variation_of_constants",
+      "to": "s_wronskian",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18443",
+      "from": "s_wronskian",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18444",
+      "from": "s_sturm_liouville_equation",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18445",
+      "from": "s_boundary_value_problem_ode",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18446",
+      "from": "t_picard_iteration",
+      "to": "s_phase_curve",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18447",
+      "from": "s_maximal_solution_of_an_ode",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_extension_theorem_ode"
+    },
+    {
+      "id": "e_18448",
+      "from": "t_picard_iteration",
+      "to": "s_extension_theorem_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18449",
+      "from": "s_non_autonomous_ode",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18450",
+      "from": "s_completeness_of_vector_field",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compactness_implies_completeness_vector_field"
+    },
+    {
+      "id": "e_18451",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_phase_space_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18452",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_phase_velocity_vector_field",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18453",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_direction_field",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18454",
+      "from": "s_sturm_liouville_equation",
+      "to": "t_higher_order_ode_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18455",
+      "from": "s_sturm_liouville_equation",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18456",
+      "from": "s_boundary_value_problem_ode",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18457",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_boundary_value_problem_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18458",
+      "from": "s_sturm_liouville_equation",
+      "to": "t_separation_of_variables",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sturm_liouville_eigenvalue_theorem"
+    },
+    {
+      "id": "e_18459",
+      "from": "s_boundary_value_problem_ode",
+      "to": "t_separation_of_variables",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18460",
+      "from": "s_sturm_liouville_equation",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sturm_oscillation_theorem"
+    },
+    {
+      "id": "e_18461",
+      "from": "s_boundary_value_problem_ode",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18462",
+      "from": "s_first_integral",
+      "to": "t_conserved_quantity",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18463",
+      "from": "t_conserved_quantity",
+      "to": "s_first_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18464",
+      "from": "s_phase_flow",
+      "to": "t_conserved_quantity",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18465",
+      "from": "s_hamiltonian_vector_field",
+      "to": "t_conserved_quantity",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18466",
+      "from": "s_periodic_orbit",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18467",
+      "from": "s_phase_flow",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18468",
+      "from": "s_completeness_of_vector_field",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18469",
+      "from": "s_direction_field",
+      "to": "t_euler_polygonal_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18470",
+      "from": "t_euler_polygonal_approximation",
+      "to": "s_phase_curve",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18471",
+      "from": "s_one_parameter_group_of_diffeomorphisms",
+      "to": "t_conserved_quantity",
       "role": "input",
       "parameter_binding": {},
       "used_in_theorem": ""
