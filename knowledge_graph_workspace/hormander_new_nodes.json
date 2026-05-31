@@ -1,0 +1,751 @@
+[
+  {
+    "id": "s_division_of_distributions",
+    "kind": "state",
+    "name": "Division of distributions",
+    "type_signature": "𝒟'(ℝ) × C^∞(ℝ) → 𝒟'(ℝ)",
+    "description": "Given a distribution u and a smooth function f, finding a distribution v with fv = u; solvable when f vanishes only to finite order, requiring careful treatment at zeros of f."
+  },
+  {
+    "id": "t_schwartz_kernel_method",
+    "kind": "technique",
+    "name": "Schwartz kernel method",
+    "type_signature": "Lin(𝒟(Ω₂), 𝒟'(Ω₁)) → 𝒟'(Ω₁ × Ω₂)",
+    "description": "Representing continuous linear maps between distribution spaces via their Schwartz kernel to reduce operator-theoretic questions to distributional properties of the kernel; used to prove regularity, boundedness, and composition results."
+  },
+  {
+    "id": "s_p_convexity_for_supports",
+    "kind": "axiom",
+    "name": "P-convexity for supports",
+    "type_signature": "Ω ⊂ ℝⁿ open, P(D) const-coeff → Bool",
+    "description": "An open set Ω ⊂ ℝⁿ is P-convex for supports if for every compact K ⊂ Ω, the set {x ∈ Ω : supp E_x ∩ K ≠ ∅} is relatively compact in Ω, where E_x denotes the translate of a fundamental solution. Equivalent to: if u ∈ ℰ'(ℝⁿ) with P(D)u ∈ C_c^∞(Ω) then supp u ⊂ Ω. Required for solvability of P(D)u = f for all f ∈ C^∞(Ω)."
+  },
+  {
+    "id": "s_p_convexity_for_singular_supports",
+    "kind": "axiom",
+    "name": "P-convexity for singular supports",
+    "type_signature": "Ω ⊂ ℝⁿ open, P(D) const-coeff → Bool",
+    "description": "An open set Ω is P-convex for singular supports if for every compact K ⊂ Ω, the set {x ∈ Ω : sing supp E_x ∩ K ≠ ∅} is relatively compact in Ω. Required for existence of C^∞ solutions to P(D)u = f when f ∈ C^∞(Ω), and equivalent to solvability in 𝒟'(Ω) with the same singular support control."
+  },
+  {
+    "id": "s_malgrange_exponential_polynomial_approximation",
+    "kind": "theorem",
+    "name": "Exponential-polynomial solution approximation (Malgrange)",
+    "type_signature": "P(D) const-coeff, Ω convex → density result",
+    "description": "For a convex open set Ω and constant-coefficient operator P(D), the exponential-polynomial solutions (finite sums of x^α e^{⟨ζ,x⟩} with P(ζ) = 0) are dense in the space of all C^∞ solutions of P(D)u = 0 on Ω in the C^∞ topology."
+  },
+  {
+    "id": "s_geometric_characterization_p_convexity",
+    "kind": "theorem",
+    "name": "Geometric characterization of P-convexity",
+    "type_signature": "P(D) const-coeff, Ω ⊂ ℝⁿ → geometric criterion",
+    "description": "P-convexity for supports is characterized by the condition that for each compact K ⊂ Ω, the convex hull of K with respect to the propagation cone of P remains compact in Ω. For the wave operator, this reduces to a condition on the geometry of Ω relative to the light cone."
+  },
+  {
+    "id": "s_existence_theorem_p_convex_domains",
+    "kind": "theorem",
+    "name": "Existence theorem for PDE on P-convex domains",
+    "type_signature": "P(D) const-coeff, Ω P-convex → surjectivity",
+    "description": "If Ω is P-convex for supports, then P(D): 𝒟'(Ω) → 𝒟'(Ω) is surjective (every distribution right-hand side has a distributional solution). If also P-convex for singular supports, then P(D): C^∞(Ω) → C^∞(Ω) is surjective."
+  },
+  {
+    "id": "s_convexity_implies_p_convexity",
+    "kind": "theorem",
+    "name": "Convexity implies P-convexity",
+    "type_signature": "Ω convex → Ω is P-convex for all P",
+    "description": "Every convex open set Ω ⊂ ℝⁿ is P-convex for supports and for singular supports for every constant-coefficient operator P(D). This gives the Malgrange–Ehrenpreis solvability on convex domains as a special case."
+  },
+  {
+    "id": "s_regularity_index_hypoelliptic",
+    "kind": "state",
+    "name": "Regularity index of a hypoelliptic operator",
+    "type_signature": "P(D) hypoelliptic → δ ∈ (0,1]",
+    "description": "The regularity index δ of a hypoelliptic constant-coefficient operator P(D) is the supremum of σ such that |ξ|^σ = O(|P(ξ)|) as |ξ| → ∞; it measures the gain in Sobolev regularity: if P(D)u ∈ H^s then u ∈ H^{s+mδ}. For elliptic operators δ = 1; for the heat operator δ = 1/2."
+  },
+  {
+    "id": "s_analytically_hypoelliptic_operator",
+    "kind": "axiom",
+    "name": "Analytically hypoelliptic operator",
+    "type_signature": "P(D) linear PDE operator → Bool",
+    "description": "A linear PDE operator P is analytically hypoelliptic if whenever Pu is real-analytic on an open set U, the solution u is also real-analytic on U. Stronger than hypoellipticity (which only gives C^∞ regularity). Elliptic operators with analytic coefficients are analytically hypoelliptic."
+  },
+  {
+    "id": "s_characterization_analytically_hypoelliptic",
+    "kind": "theorem",
+    "name": "Characterization of analytically hypoelliptic operators",
+    "type_signature": "P(D) const-coeff → necessary and sufficient condition",
+    "description": "A constant-coefficient operator P(D) is analytically hypoelliptic if and only if P(ξ + iη)/P(ξ) → 0 as |ξ| → ∞ for each fixed η ∈ ℝⁿ, and moreover P satisfies the condition that the variety V(P) = {ζ ∈ ℂⁿ : P(ζ) = 0} has no real points at infinity. This is strictly stronger than the Hörmander hypoellipticity condition."
+  },
+  {
+    "id": "s_well_posedness_garding_petrowsky",
+    "kind": "theorem",
+    "name": "Well-posedness of Cauchy problem (Gårding–Petrowsky)",
+    "type_signature": "P(D) const-coeff, hyperbolicity → well-posedness in C^∞",
+    "description": "The Cauchy problem for a constant-coefficient operator P(D_t, D_x) with data on t = 0 is well-posed in C^∞ if and only if P is hyperbolic with respect to the t-direction: the principal polynomial P_m(τ,ξ) has only real roots τ for each ξ ∈ ℝⁿ, and lower-order terms satisfy the Petrowsky condition."
+  },
+  {
+    "id": "s_hyperbolic_polynomial",
+    "kind": "axiom",
+    "name": "Hyperbolic polynomial",
+    "type_signature": "P: ℝⁿ⁺¹ → ℝ homogeneous, N ∈ ℝⁿ⁺¹ → Bool",
+    "description": "A homogeneous polynomial P(ξ) of degree m is hyperbolic with respect to a direction N if P(N) ≠ 0 and for every ξ ∈ ℝⁿ⁺¹ the equation P(ξ + τN) = 0 has only real roots τ. The connected component of {N : P(N) ≠ 0} containing N is a convex cone (Gårding's theorem). Examples: the wave operator symbol τ² − |ξ|² is hyperbolic w.r.t. N = (1,0,...,0)."
+  },
+  {
+    "id": "s_petrowsky_lacuna",
+    "kind": "axiom",
+    "name": "Petrowsky lacuna",
+    "type_signature": "P(D) hyperbolic → region where fundamental solution vanishes",
+    "description": "A connected component of the complement of the wave front surface of the fundamental solution of a hyperbolic operator where the fundamental solution vanishes identically. The sharp Huygens principle for the wave equation in odd dimensions ≥ 3 is the classical example: the fundamental solution is supported on the light cone, leaving a lacuna inside."
+  },
+  {
+    "id": "s_herglotz_petrovsky_leray_formula",
+    "kind": "theorem",
+    "name": "Herglotz–Petrovsky–Leray formula",
+    "type_signature": "P(D) hyperbolic, fundamental solution → integral representation",
+    "description": "An explicit integral representation of the fundamental solution of a hyperbolic operator as a period integral over a cycle in projective space determined by the characteristic surface. The vanishing or non-vanishing of these period integrals characterizes the Petrowsky lacunae."
+  },
+  {
+    "id": "s_atiyah_bott_garding_lacuna_criterion",
+    "kind": "theorem",
+    "name": "Atiyah–Bott–Gårding lacuna criterion",
+    "type_signature": "P(D) hyperbolic → topological criterion for lacunae",
+    "description": "A Petrowsky lacuna for a strongly hyperbolic operator P is characterized by the vanishing of the Petrovsky cycle in the homology of the complement of the complexified characteristic surface. Atiyah, Bott, and Gårding (1970, 1973) gave necessary and sufficient topological conditions using the theory of hyperbolic polynomials and algebraic topology."
+  },
+  {
+    "id": "s_operator_of_constant_strength",
+    "kind": "axiom",
+    "name": "Operator of constant strength",
+    "type_signature": "P(x,D) variable-coeff → Bool",
+    "description": "A variable-coefficient operator P(x,D) = ∑ a_α(x) D^α has constant strength if for every pair x₀, x₁ in the domain, the frozen operators P(x₀,D) and P(x₁,D) are equally strong: P(x₀,ξ)/P(x₁,ξ) and P(x₁,ξ)/P(x₀,ξ) are bounded for large ξ. This class includes elliptic, hypoelliptic, and certain parabolic operators."
+  },
+  {
+    "id": "s_existence_theorem_constant_strength",
+    "kind": "theorem",
+    "name": "Existence theorem for operators of constant strength",
+    "type_signature": "P(x,D) constant strength, Ω ⊂ ℝⁿ → local solvability",
+    "description": "If P(x,D) has constant strength and its frozen operators P(x₀,D) satisfy appropriate solvability conditions, then P(x,D)u = f is locally solvable near every point. The proof reduces to the constant-coefficient case via parametrix construction with a perturbation argument."
+  },
+  {
+    "id": "s_hypoellipticity_constant_strength",
+    "kind": "theorem",
+    "name": "Hypoellipticity for operators of constant strength",
+    "type_signature": "P(x,D) constant strength, frozen P(x₀,D) hypoelliptic → P hypoelliptic",
+    "description": "If P(x,D) has constant strength and each frozen operator P(x₀,D) is hypoelliptic, then P(x,D) itself is hypoelliptic. The regularity index is preserved: solutions gain the same Sobolev regularity as for the constant-coefficient freeze."
+  },
+  {
+    "id": "s_abstract_cauchy_kovalevsky_theorem",
+    "kind": "theorem",
+    "name": "Abstract Cauchy–Kovalevsky theorem (Nirenberg–Nishida)",
+    "type_signature": "Banach scale {E_s}, nonlinear operator → local existence in analytic category",
+    "description": "An abstract version of the Cauchy–Kovalevsky theorem formulated in a scale of Banach spaces {E_s}_{0<s≤1}: if F: E_s → E_{s'} (s' < s) satisfies a Lipschitz condition with norm ≤ C/(s−s'), then du/dt = F(u), u(0) = u₀ has a unique solution on a small time interval. Proved by Nirenberg (1972) and Nishida (1977), it unifies existence results for various nonlinear analytic PDE."
+  },
+  {
+    "id": "s_fbi_transform",
+    "kind": "axiom",
+    "name": "FBI transform",
+    "type_signature": "𝒟'(ℝⁿ) → C^∞(ℝⁿ × ℝⁿ × ℝ₊)",
+    "description": "The Fourier–Bros–Iagolnitzer transform Tu(x,ξ,λ) = ∫ e^{iλ⟨y−x,ξ⟩ − λ|y−x|²/2} u(y) dy, a Gaussian-windowed Fourier transform that characterizes microlocal regularity: (x₀,ξ₀) ∉ WF(u) iff Tu decays exponentially in λ near (x₀,ξ₀). Provides a phase-space localization finer than the standard wavefront set."
+  },
+  {
+    "id": "s_analytic_wave_front_set",
+    "kind": "axiom",
+    "name": "Analytic wave front set WF_A(u)",
+    "type_signature": "𝒟'(Ω) → subset of T*Ω \\ 0",
+    "description": "The analytic wave front set WF_A(u) ⊂ T*Ω \\ 0 refines WF(u) by measuring failure of analytic (rather than C^∞) regularity at each codirection. Defined via exponential decay of the FBI transform: (x₀,ξ₀) ∉ WF_A(u) iff Tu(x,ξ,λ) = O(e^{−cλ}) near (x₀,ξ₀). Always WF_A(u) ⊃ WF(u)."
+  },
+  {
+    "id": "s_fbi_characterization_analytic_regularity",
+    "kind": "theorem",
+    "name": "FBI characterization of analytic regularity",
+    "type_signature": "u ∈ 𝒟'(Ω) → WF_A(u) characterization",
+    "description": "A distribution u is real-analytic near x₀ if and only if WF_A(u) ∩ ({x₀} × (ℝⁿ\\0)) = ∅. More precisely, (x₀,ξ₀) ∉ WF_A(u) if and only if the FBI transform Tu(x,ξ,λ) decays exponentially as λ → ∞ uniformly in a neighborhood of (x₀,ξ₀). This provides a microlocal characterization of analyticity."
+  },
+  {
+    "id": "s_holmgren_john_global_uniqueness",
+    "kind": "theorem",
+    "name": "Holmgren–John global uniqueness",
+    "type_signature": "P(x,D) analytic coefficients, non-characteristic surface → global uniqueness",
+    "description": "Global extension of Holmgren's theorem: if P has analytic coefficients and S is a non-characteristic hypersurface, then uniqueness of solutions vanishing on one side of S propagates along bicharacteristics. John's contribution extends the local Holmgren result to a global statement by sweeping the non-characteristic surface."
+  },
+  {
+    "id": "s_ehrenpreis_fundamental_principle",
+    "kind": "theorem",
+    "name": "Ehrenpreis fundamental principle",
+    "type_signature": "P(D) const-coeff, system → representation of solutions",
+    "description": "Every solution of a system of constant-coefficient PDE P(D)u = 0 on a convex open set can be represented as an integral over the characteristic variety V(P) = {ζ ∈ ℂⁿ : P(ζ) = 0} with respect to a measure satisfying exponential growth conditions. This is the distributional analogue of the representation of solutions as superpositions of exponential solutions."
+  },
+  {
+    "id": "s_mean_periodic_function",
+    "kind": "axiom",
+    "name": "Mean-periodic function",
+    "type_signature": "f ∈ C(ℝ) → Bool",
+    "description": "A continuous function f on ℝ is mean-periodic if there exists a nonzero compactly supported distribution μ ∈ ℰ'(ℝ) such that μ ∗ f = 0. Equivalently, the closed translation-invariant subspace generated by f is a proper subspace of C(ℝ). Generalizes periodic functions (where μ = δ_T − δ_0) and solutions of constant-coefficient ODE."
+  },
+  {
+    "id": "s_spectral_synthesis_mean_periodic",
+    "kind": "theorem",
+    "name": "Spectral synthesis for mean-periodic functions",
+    "type_signature": "f mean-periodic → exponential-polynomial representation",
+    "description": "Every mean-periodic function on ℝ can be approximated (in the C^∞ topology on compact sets) by finite sums of exponential-polynomials x^k e^{λx} where λ ranges over the zeros of μ̂(ζ) (the Fourier–Laplace transform of the annihilating distribution). This is the Delsarte–Schwartz theorem on spectral synthesis for mean-periodic functions."
+  },
+  {
+    "id": "s_noetherian_operator_pde",
+    "kind": "state",
+    "name": "Noetherian operator (PDE)",
+    "type_signature": "differential operator with polynomial coefficients",
+    "description": "In the Ehrenpreis–Palamodov theory, Noetherian operators are differential operators with polynomial coefficients N_j(ζ, D_ζ) that, applied to the exponential e^{i⟨x,ζ⟩} and integrated over the characteristic variety V(P), generate all solutions of P(D)u = 0. They encode the multiplicity structure of V(P) and replace the role of Jordan blocks in ODE theory."
+  },
+  {
+    "id": "s_division_theorem_ehrenpreis_malgrange",
+    "kind": "theorem",
+    "name": "Division theorem for distributions (Ehrenpreis–Malgrange)",
+    "type_signature": "P polynomial, u ∈ 𝒮'(ℝⁿ) → v ∈ 𝒮'(ℝⁿ) with Pv = u",
+    "description": "For any nonzero polynomial P and any tempered distribution u ∈ 𝒮'(ℝⁿ), there exists a tempered distribution v such that Pv = u. Equivalently, multiplication by P is surjective on 𝒮'(ℝⁿ). Proved independently by Ehrenpreis and Malgrange, this is a key ingredient in proving the Malgrange–Ehrenpreis existence theorem."
+  },
+  {
+    "id": "s_slowly_decreasing_condition",
+    "kind": "axiom",
+    "name": "Slowly decreasing condition",
+    "type_signature": "μ̂: ℂⁿ → ℂ → Bool",
+    "description": "The Fourier–Laplace transform μ̂(ζ) of μ ∈ ℰ'(ℝⁿ) is slowly decreasing if there exist C, N > 0 such that for every ζ ∈ ℂⁿ there exists ζ' with |ζ − ζ'| ≤ C log(2 + |ζ|) and |μ̂(ζ')| ≥ (2 + |ζ'|)^{−N}. This condition on μ is necessary and sufficient for the convolution operator f ↦ μ ∗ f to be surjective on C^∞(ℝⁿ)."
+  },
+  {
+    "id": "s_surjectivity_convolution_operators_smooth",
+    "kind": "theorem",
+    "name": "Surjectivity of convolution operators on C^∞",
+    "type_signature": "μ ∈ ℰ'(ℝⁿ) → μ∗: C^∞(ℝⁿ) → C^∞(ℝⁿ) surjective iff slowly decreasing",
+    "description": "The convolution operator f ↦ μ ∗ f is surjective on C^∞(ℝⁿ) if and only if μ̂ is slowly decreasing. For n = 1, every nonzero μ ∈ ℰ'(ℝ) has slowly decreasing Fourier–Laplace transform (Ehrenpreis), so convolution equations μ ∗ f = g are always solvable in C^∞(ℝ)."
+  },
+  {
+    "id": "s_supports_theorem_convolution",
+    "kind": "theorem",
+    "name": "Supports theorem for convolution (Titchmarsh generalization)",
+    "type_signature": "u, v ∈ ℰ'(ℝⁿ) → convex hull of support",
+    "description": "If u, v ∈ ℰ'(ℝⁿ), then ch(supp(u ∗ v)) = ch(supp u) + ch(supp v), where ch denotes the convex hull and + is Minkowski sum. In dimension 1, this is the classical Titchmarsh convolution theorem: if supp u ⊂ [a,∞) and supp v ⊂ [b,∞), then supp(u ∗ v) ⊂ [a+b,∞) with equality of infima of supports."
+  },
+  {
+    "id": "s_subelliptic_estimate",
+    "kind": "state",
+    "name": "Subelliptic estimate",
+    "type_signature": "P diff operator, ε > 0 → a priori estimate",
+    "description": "An a priori estimate of the form ‖u‖_{H^{s+ε}} ≤ C(‖Pu‖_{H^s} + ‖u‖_{H^{s₀}}) with 0 < ε < 1 (loss of derivatives compared to elliptic case where ε = m). The Kohn Laplacian on strongly pseudoconvex CR manifolds satisfies a subelliptic estimate with ε = 1/2. Hörmander's sum-of-squares operators satisfy subelliptic estimates with ε depending on the bracket-generation step."
+  },
+  {
+    "id": "t_kohn_subelliptic_multiplier_method",
+    "kind": "technique",
+    "name": "Kohn's subelliptic multiplier method",
+    "type_signature": "∂̄-Neumann problem → subelliptic estimate via ideal of multipliers",
+    "description": "Kohn's method for establishing subelliptic estimates for the ∂̄-Neumann problem by constructing an ideal of subelliptic multipliers. Starting from the defining function of the domain, one iteratively generates new multipliers using Lie brackets and algebraic operations until the ideal contains a nonvanishing function, proving the subelliptic estimate."
+  },
+  {
+    "id": "s_rothschild_stein_lifting_theorem",
+    "kind": "theorem",
+    "name": "Rothschild–Stein lifting theorem",
+    "type_signature": "Hörmander vector fields → free nilpotent approximation",
+    "description": "For vector fields X₁,...,X_k satisfying Hörmander's bracket condition of step r, there exist additional vector fields such that the lifted system is locally approximated by left-invariant vector fields on a free nilpotent Lie group of step r. This reduces regularity questions for Hörmander operators to the analysis of homogeneous operators on nilpotent groups, yielding sharp subelliptic estimates."
+  },
+  {
+    "id": "s_classical_symbol_class",
+    "kind": "axiom",
+    "name": "Classical symbol class S^m_cl",
+    "type_signature": "m ∈ ℝ → symbol space",
+    "description": "The subclass of symbols a ∈ S^m_{1,0}(ℝⁿ × ℝⁿ) admitting an asymptotic expansion a(x,ξ) ~ ∑_{j≥0} a_{m-j}(x,ξ) where each a_{m-j} is positively homogeneous of degree m−j in ξ for |ξ| ≥ 1. The leading term a_m is the principal symbol. Most operators arising from differential geometry and physics have classical symbols."
+  },
+  {
+    "id": "s_pseudodifferential_operator_definition",
+    "kind": "state",
+    "name": "Pseudodifferential operator Op(a)",
+    "type_signature": "a ∈ S^m_{ρ,δ} → Op(a): C_c^∞(ℝⁿ) → C^∞(ℝⁿ)",
+    "description": "The operator Op(a)u(x) = (2π)^{−n} ∫ e^{i⟨x,ξ⟩} a(x,ξ) û(ξ) dξ defined by the standard (Kohn–Nirenberg) quantization of a symbol a(x,ξ) ∈ S^m_{ρ,δ}. Extends naturally to distributions; differential operators of order m correspond to symbols polynomial of degree m in ξ."
+  },
+  {
+    "id": "s_asymptotic_expansion_of_symbols",
+    "kind": "state",
+    "name": "Asymptotic expansion of symbols",
+    "type_signature": "sequence a_j ∈ S^{m_j} with m_j → −∞ → a ∈ S^{m_0}",
+    "description": "Given symbols a_j ∈ S^{m_j}_{ρ,δ} with m_j ↘ −∞, there exists a ∈ S^{m_0}_{ρ,δ} such that a − ∑_{j<N} a_j ∈ S^{m_N}_{ρ,δ} for all N. This a is unique modulo S^{−∞} (smoothing symbols). The Borel-type construction is fundamental for defining parametrices and composing pseudodifferential operators."
+  },
+  {
+    "id": "s_composition_formula_pseudodifferential",
+    "kind": "theorem",
+    "name": "Composition formula for pseudodifferential operators",
+    "type_signature": "Op(a) ∘ Op(b) = Op(a#b), a#b ∈ S^{m₁+m₂}",
+    "description": "If a ∈ S^{m₁}_{ρ,δ} and b ∈ S^{m₂}_{ρ,δ} with ρ > δ, then Op(a) ∘ Op(b) = Op(c) with c ∈ S^{m₁+m₂}_{ρ,δ} given by c(x,ξ) ~ ∑_α (1/α!) ∂^α_ξ a(x,ξ) D^α_x b(x,ξ). The leading term is ab, so the principal symbol of the composition is the product of principal symbols."
+  },
+  {
+    "id": "s_adjoint_formula_pseudodifferential",
+    "kind": "theorem",
+    "name": "Adjoint formula for pseudodifferential operators",
+    "type_signature": "Op(a)* = Op(a*), a* ∈ S^m",
+    "description": "The formal L² adjoint of Op(a) with a ∈ S^m_{ρ,δ} (ρ > δ) is Op(a*) where a*(x,ξ) ~ ∑_α (1/α!) ∂^α_ξ D^α_x ā(x,ξ). The leading term is ā(x,ξ), so the principal symbol of the adjoint is the complex conjugate of the principal symbol."
+  },
+  {
+    "id": "s_kernel_characterization_pseudodifferential",
+    "kind": "theorem",
+    "name": "Kernel characterization of pseudodifferential operators",
+    "type_signature": "A: C_c^∞ → 𝒟' → A ∈ Ψ^m iff kernel conditions",
+    "description": "A continuous linear operator A: C_c^∞(ℝⁿ) → 𝒟'(ℝⁿ) belongs to Ψ^m_{ρ,δ} if and only if its Schwartz kernel K(x,y) is C^∞ off the diagonal and satisfies specific singular estimates near x = y. Equivalently, A ∈ Ψ^m iff [ad(x_j)]^α [ad(D_{x_j})]^β A maps H^s to H^{s−m+ρ|β|−δ|α|}."
+  },
+  {
+    "id": "s_elliptic_symbol",
+    "kind": "axiom",
+    "name": "Elliptic symbol",
+    "type_signature": "a ∈ S^m → Bool",
+    "description": "A symbol a ∈ S^m_{ρ,δ}(ℝⁿ × ℝⁿ) is elliptic if |a(x,ξ)| ≥ c|ξ|^m for |ξ| large enough and some c > 0. Equivalently, a⁻¹ ∈ S^{−m} for large ξ. Ellipticity of the symbol guarantees the existence of a parametrix and elliptic regularity."
+  },
+  {
+    "id": "s_elliptic_parametrix_construction",
+    "kind": "theorem",
+    "name": "Elliptic parametrix construction",
+    "type_signature": "a ∈ S^m elliptic → b ∈ S^{−m} with Op(a)Op(b) = I mod Ψ^{−∞}",
+    "description": "For an elliptic symbol a ∈ S^m_{ρ,δ} (ρ > δ), one constructs b₀ = 1/a (for large ξ), then iteratively corrects: b ~ b₀ + b₁ + ... with b_j ∈ S^{−m−j(ρ−δ)} so that Op(a)Op(b) = I + R with R ∈ Ψ^{−∞} (smoothing). This gives elliptic regularity: Op(a)u = f ∈ H^s implies u ∈ H^{s+m}."
+  },
+  {
+    "id": "s_elliptic_regularity_pseudodifferential",
+    "kind": "theorem",
+    "name": "Elliptic regularity for pseudodifferential operators",
+    "type_signature": "P ∈ Ψ^m elliptic, Pu = f → u regularity",
+    "description": "If P ∈ Ψ^m(ℝⁿ) is elliptic and Pu = f with f ∈ H^s_{loc}, then u ∈ H^{s+m}_{loc}. More precisely, WF(u) = WF(Pu), giving microlocal elliptic regularity. This extends to pseudodifferential operators on manifolds and gives the classical elliptic regularity theorem as a special case."
+  },
+  {
+    "id": "s_calderon_vaillancourt_theorem",
+    "kind": "theorem",
+    "name": "Calderón–Vaillancourt theorem",
+    "type_signature": "a ∈ S^0_{0,0} → Op(a): L² → L² bounded",
+    "description": "If a ∈ S^0_{ρ,ρ}(ℝⁿ × ℝⁿ) with 0 ≤ ρ < 1 (in particular ρ = 0), then Op(a) is bounded on L²(ℝⁿ). The norm bound depends on finitely many symbol seminorms. This fails for ρ = 1 (the exotic class S⁰_{1,1}). For classical symbols S⁰_{1,0}, L² boundedness follows from Calderón–Zygmund theory."
+  },
+  {
+    "id": "s_beals_characterization_pseudodifferential",
+    "kind": "theorem",
+    "name": "Beals characterization of pseudodifferential operators",
+    "type_signature": "A: L² → L² → A ∈ Ψ^0 iff iterated commutator bounds",
+    "description": "A bounded operator A on L²(ℝⁿ) belongs to Ψ^0_{ρ,δ} if and only if the iterated commutators ad(x_{j₁}) ⋯ ad(x_{jₖ}) ad(D_{l₁}) ⋯ ad(D_{lₘ}) A are bounded on L² with norm O(1) for all k, m. This gives an intrinsic (quantization-free) characterization of pseudodifferential operators."
+  },
+  {
+    "id": "s_weyl_quantization",
+    "kind": "state",
+    "name": "Weyl quantization",
+    "type_signature": "a ∈ S^m → Op^w(a): C_c^∞ → 𝒟'",
+    "description": "The Weyl quantization Op^w(a)u(x) = (2π)^{−n} ∫∫ e^{i⟨x−y,ξ⟩} a((x+y)/2, ξ) u(y) dy dξ, which symmetrizes the roles of x and ξ. Its key advantage: Op^w(a)* = Op^w(ā), so real symbols give formally self-adjoint operators. The composition Op^w(a) ∘ Op^w(b) = Op^w(a #_w b) where a #_w b is the Moyal product."
+  },
+  {
+    "id": "s_moyal_product",
+    "kind": "state",
+    "name": "Moyal product",
+    "type_signature": "a, b ∈ S^m → a #_w b ∈ S^{m₁+m₂}",
+    "description": "The composition law for Weyl symbols: (a #_w b)(x,ξ) = exp(i/2 (D_ξ · D_y − D_x · D_η)) a(x,ξ) b(y,η)|_{y=x,η=ξ}, with asymptotic expansion a#_w b ~ ab + (i/2){a,b} + ... where {a,b} is the Poisson bracket. The Moyal product makes the space of symbols a noncommutative associative algebra isomorphic to the algebra of Weyl operators."
+  },
+  {
+    "id": "s_sharp_garding_inequality",
+    "kind": "theorem",
+    "name": "Sharp Gårding inequality",
+    "type_signature": "a ∈ S^m, a ≥ 0 → Re⟨Op(a)u, u⟩ ≥ −C‖u‖²_{H^{(m-1)/2}}",
+    "description": "If a(x,ξ) ∈ S^m_{1,0}(ℝⁿ × ℝⁿ) satisfies a(x,ξ) ≥ 0 for all (x,ξ), then Re⟨Op(a)u, u⟩ ≥ −C‖u‖²_{H^{(m−1)/2}} for all u ∈ C_c^∞. This improves Gårding's inequality by losing only (m−1)/2 derivatives instead of m/2. Proved via Friedrichs symmetrization."
+  },
+  {
+    "id": "s_fefferman_phong_inequality",
+    "kind": "theorem",
+    "name": "Fefferman–Phong inequality",
+    "type_signature": "a ∈ S^m, a ≥ 0 → Re⟨Op(a)u, u⟩ ≥ −C‖u‖²_{H^{(m-2)/2}}",
+    "description": "If a(x,ξ) ∈ S²_{1,0}(ℝⁿ × ℝⁿ) (or more generally S^m with m = 2) satisfies a ≥ 0, then Op(a) + C ≥ 0 as an operator on L², i.e., ⟨Op(a)u, u⟩ ≥ −C‖u‖²_{L²}. This gains a full derivative over the sharp Gårding inequality. The proof uses a decomposition into coherent states (wave packets)."
+  },
+  {
+    "id": "t_symbol_smoothing",
+    "kind": "technique",
+    "name": "Symbol smoothing (Friedrichs symmetrization)",
+    "type_signature": "a ∈ S^m, a ≥ 0 → b ∈ S^m with Op(b) ≥ −C and a − b ∈ S^{m-1}",
+    "description": "Regularizing a non-negative symbol a by convolving with a Gaussian in phase space to obtain b(x,ξ) = ∫ a(y,η) g(x−y,ξ−η) dy dη where g is a Gaussian at scale |ξ|^{−1/2}. The smoothed symbol b satisfies Op(b) ≥ 0 and a − b ∈ S^{m−1}, proving the sharp Gårding inequality."
+  },
+  {
+    "id": "s_pseudodifferential_operators_on_manifolds",
+    "kind": "axiom",
+    "name": "Pseudodifferential operators on manifolds Ψ^m(M)",
+    "type_signature": "M smooth manifold → Ψ^m(M) operator algebra",
+    "description": "An operator A: C^∞(M) → 𝒟'(M) belongs to Ψ^m(M) if in every local coordinate chart its expression is a pseudodifferential operator with symbol in S^m_{1,0} modulo smoothing operators, and the Schwartz kernel of A is smooth off the diagonal. The principal symbol σ_m(A) is a well-defined function on T*M \\ 0, homogeneous of degree m."
+  },
+  {
+    "id": "s_principal_symbol_on_manifold",
+    "kind": "state",
+    "name": "Principal symbol on a manifold",
+    "type_signature": "A ∈ Ψ^m(M) → σ_m(A) ∈ C^∞(T*M \\ 0)",
+    "description": "The principal symbol σ_m(A) of A ∈ Ψ^m(M) is the equivalence class of the full symbol modulo S^{m−1}, which transforms as a function on T*M \\ 0 homogeneous of degree m in the fiber variable. It is invariantly defined (independent of coordinate chart) and multiplicative: σ_{m₁+m₂}(AB) = σ_{m₁}(A) σ_{m₂}(B)."
+  },
+  {
+    "id": "s_fredholm_property_elliptic_compact_manifold",
+    "kind": "theorem",
+    "name": "Fredholm property of elliptic operators on compact manifolds",
+    "type_signature": "P ∈ Ψ^m(M), M compact, P elliptic → P Fredholm",
+    "description": "If M is a compact manifold without boundary and P ∈ Ψ^m(M) is elliptic (σ_m(P) ≠ 0 on T*M \\ 0), then P: H^s(M) → H^{s−m}(M) is Fredholm for every s ∈ ℝ. The index ind(P) = dim ker P − dim coker P is independent of s and is computed by the Atiyah–Singer index theorem."
+  },
+  {
+    "id": "s_seeley_complex_powers",
+    "kind": "state",
+    "name": "Seeley's complex powers",
+    "type_signature": "P ∈ Ψ^m(M) elliptic, positive → P^z ∈ Ψ^{mz}(M)",
+    "description": "For an elliptic positive self-adjoint operator P ∈ Ψ^m(M) on a compact manifold, Seeley constructed the complex powers P^z for z ∈ ℂ as a holomorphic family of pseudodifferential operators of order mRe(z). The trace Tr(P^{−z}) is meromorphic in z with poles at z = (n−k)/m (k = 0,1,...), yielding the spectral zeta function and zeta-regularized determinants."
+  },
+  {
+    "id": "s_weyl_law_sharp_remainder",
+    "kind": "theorem",
+    "name": "Weyl's law with sharp remainder (Hörmander)",
+    "type_signature": "P ∈ Ψ^m(M), M compact → N(λ) = c_n λ^{n/m} + O(λ^{(n-1)/m})",
+    "description": "For a positive elliptic self-adjoint operator P of order m on a compact n-dimensional manifold, the eigenvalue counting function N(λ) = #{λ_j ≤ λ} satisfies N(λ) = (2π)^{−n} vol({(x,ξ) : p_m(x,ξ) ≤ λ}) + O(λ^{(n−1)/m}). Hörmander (1968) proved this sharp remainder using the wave equation method and the propagation of singularities."
+  },
+  {
+    "id": "s_calderon_projector",
+    "kind": "state",
+    "name": "Calderón projector",
+    "type_signature": "P elliptic on M, ∂M boundary → projection onto Cauchy data",
+    "description": "For an elliptic operator P on a manifold M with boundary ∂M, the Calderón projector C is a pseudodifferential operator on ∂M that projects the space of all boundary Cauchy data onto the subspace of Cauchy data of solutions of Pu = 0 in M. It is a projector of order 0 in Ψ^0(∂M) and its principal symbol encodes the boundary behavior of the elliptic operator."
+  },
+  {
+    "id": "s_shapiro_lopatinskii_condition",
+    "kind": "axiom",
+    "name": "Shapiro–Lopatinskii condition",
+    "type_signature": "(P, B) elliptic BVP → Bool",
+    "description": "The compatibility condition between an elliptic operator P on a domain Ω and boundary operators B_j on ∂Ω ensuring that the boundary value problem {Pu = f in Ω, B_ju = g_j on ∂Ω} is Fredholm. At each boundary point, the ODE obtained by freezing coefficients and Fourier-transforming tangentially must have a unique solution decaying into the interior for each boundary datum. Also called the Lopatinskii–Shapiro or covering condition."
+  },
+  {
+    "id": "s_boutet_de_monvel_calculus",
+    "kind": "axiom",
+    "name": "Boutet de Monvel calculus",
+    "type_signature": "M manifold with boundary → algebra of boundary operators",
+    "description": "A calculus of pseudodifferential boundary operators on a manifold with boundary, extending the classical theory of elliptic BVPs. Elements are 2×2 matrices [P+G, K; T, S] combining: interior pseudodifferential operators P, singular Green operators G, potential (Poisson) operators K, trace operators T, and pseudodifferential operators S on the boundary. The calculus is closed under composition and gives a Fredholm theory for elliptic BVPs."
+  },
+  {
+    "id": "s_poisson_operator_boutet",
+    "kind": "state",
+    "name": "Poisson operator (Boutet de Monvel)",
+    "type_signature": "K: C^∞(∂M) → C^∞(M̄)",
+    "description": "An operator K mapping boundary data on ∂M to functions on M̄ that solves the Dirichlet problem for the leading part: K maps H^s(∂M) → H^{s+m−1/2}(M) continuously. In the Boutet de Monvel calculus, K appears as the off-diagonal entry mapping boundary data into the interior. Its Schwartz kernel is smooth on M × ∂M away from the diagonal."
+  },
+  {
+    "id": "s_singular_green_operator",
+    "kind": "state",
+    "name": "Singular Green operator",
+    "type_signature": "G: C^∞(M̄) → C^∞(M̄)",
+    "description": "An operator in the Boutet de Monvel calculus that maps functions on M̄ to functions on M̄, has a Schwartz kernel supported near ∂M × ∂M and singular only at the boundary diagonal. Singular Green operators arise as the difference between the true solution operator and its pseudodifferential approximation; they capture boundary effects invisible to the interior calculus."
+  },
+  {
+    "id": "s_fredholm_property_elliptic_bvp",
+    "kind": "theorem",
+    "name": "Fredholm property for elliptic BVPs",
+    "type_signature": "(P, B) elliptic BVP satisfying Shapiro–Lopatinskii → Fredholm",
+    "description": "If (P, B) is an elliptic boundary value problem on a compact manifold with boundary satisfying the Shapiro–Lopatinskii condition, then the operator (P, B): H^s(M) → H^{s−m}(M) × ∏ H^{s−m_j−1/2}(∂M) is Fredholm. The index is computed by the Atiyah–Bott index formula (or Boutet de Monvel's index theorem for the full calculus)."
+  },
+  {
+    "id": "s_hodge_decomposition_elliptic_complexes",
+    "kind": "theorem",
+    "name": "Hodge decomposition for elliptic complexes",
+    "type_signature": "elliptic complex on compact M → orthogonal decomposition",
+    "description": "For an elliptic complex 0 → Γ(E₀) →^{d₀} Γ(E₁) →^{d₁} ⋯ on a compact manifold M (with Riemannian metric and Hermitian metrics on bundles), each space Γ(E_k) decomposes orthogonally as ker Δ_k ⊕ im d_{k-1} ⊕ im d_k*, where Δ_k = d_{k-1}d_{k-1}* + d_k*d_k is the Laplacian. The harmonic space ker Δ_k ≅ H^k (cohomology). Generalizes the classical Hodge theorem for the de Rham complex."
+  },
+  {
+    "id": "s_symplectic_classification_submanifolds",
+    "kind": "state",
+    "name": "Symplectic classification of submanifolds",
+    "type_signature": "Σ ⊂ (T*M, ω) submanifold → type",
+    "description": "Submanifolds of a symplectic manifold are classified by the restriction of the symplectic form: Lagrangian (ω|_Σ = 0, dim Σ = n), symplectic (ω|_Σ non-degenerate), isotropic (ω|_Σ = 0, dim Σ < n), coisotropic (Σ^ω ⊂ Σ), or involutive. Bicharacteristic strips lie on the characteristic variety (a coisotropic or involutive submanifold for operators of principal type)."
+  },
+  {
+    "id": "s_bicharacteristic_strip",
+    "kind": "state",
+    "name": "Bicharacteristic strip",
+    "type_signature": "p_m ∈ C^∞(T*M \\ 0), integral curve of H_{p_m} on Char(P)",
+    "description": "A bicharacteristic strip is an integral curve of the Hamilton vector field H_{p_m} = ∑(∂p_m/∂ξ_j ∂/∂x_j − ∂p_m/∂x_j ∂/∂ξ_j) lying on the characteristic set {p_m = 0}. Its projection to the base manifold is a bicharacteristic curve (ray). Singularities of solutions propagate along bicharacteristic strips by Hörmander's theorem."
+  },
+  {
+    "id": "s_operator_of_principal_type",
+    "kind": "axiom",
+    "name": "Operator of principal type",
+    "type_signature": "P ∈ Ψ^m(M) → Bool",
+    "description": "A pseudodifferential operator P of order m is of principal type if dp_m ≠ 0 on the characteristic set Char(P) = {(x,ξ) : p_m(x,ξ) = 0, ξ ≠ 0}. Equivalently, the Hamilton vector field H_{p_m} is nonvanishing on Char(P). This condition ensures that bicharacteristics are well-defined curves and is the natural setting for propagation of singularities."
+  },
+  {
+    "id": "s_condition_psi_nirenberg_treves",
+    "kind": "axiom",
+    "name": "Condition (Ψ) (Nirenberg–Treves)",
+    "type_signature": "P ∈ Ψ^m, principal symbol p_m → Bool",
+    "description": "The imaginary part of the principal symbol Im(p_m) does not change sign from − to + along any oriented bicharacteristic of Re(p_m). Nirenberg and Treves conjectured (1970) that this condition is necessary and sufficient for local solvability of P. Necessity was proved by Hörmander; sufficiency was proved by Dencker (2006) in full generality."
+  },
+  {
+    "id": "s_subelliptic_operators_loss_delta",
+    "kind": "state",
+    "name": "Subelliptic operators (loss of δ derivatives)",
+    "type_signature": "P ∈ Ψ^m, 0 < δ ≤ 1 → subelliptic estimate with loss δ",
+    "description": "An operator P ∈ Ψ^m is subelliptic with loss of δ derivatives if ‖u‖_{H^{s+m−δ}} ≤ C(‖Pu‖_{H^s} + ‖u‖_{H^{s₀}}) for all u ∈ C_c^∞. The loss δ = 0 is elliptic; δ = 1 is the maximal loss compatible with local solvability. Operators satisfying condition (Ψ) but violating condition (P) (no sign change at all) may have loss δ = 1."
+  },
+  {
+    "id": "s_microlocal_hypoellipticity",
+    "kind": "state",
+    "name": "Microlocal hypoellipticity",
+    "type_signature": "P ∈ Ψ^m, (x₀,ξ₀) ∈ T*M \\ 0 → Bool",
+    "description": "P is microlocally hypoelliptic at (x₀,ξ₀) if (x₀,ξ₀) ∉ WF(u) whenever (x₀,ξ₀) ∉ WF(Pu). Elliptic operators are microlocally hypoelliptic everywhere. For operators of principal type with complex principal symbol, microlocal hypoellipticity at a characteristic point is related to the Nirenberg–Treves condition and subelliptic estimates."
+  },
+  {
+    "id": "s_strictly_hyperbolic_operator",
+    "kind": "axiom",
+    "name": "Strictly hyperbolic operator (PDE)",
+    "type_signature": "P(x,D_t,D_x) order m → Bool",
+    "description": "A differential operator P = D_t^m + ∑_{j<m} A_j(t,x,D_x) D_t^{m−j} is strictly hyperbolic if its principal symbol p_m(t,x,τ,ξ) = 0 has m distinct real roots τ = τ_j(t,x,ξ) for each (t,x,ξ) with ξ ≠ 0. Strict hyperbolicity implies well-posedness of the Cauchy problem in C^∞ and in Sobolev spaces, with finite speed of propagation."
+  },
+  {
+    "id": "s_well_posedness_strictly_hyperbolic_cauchy",
+    "kind": "theorem",
+    "name": "Well-posedness of strictly hyperbolic Cauchy problem",
+    "type_signature": "P strictly hyperbolic, Cauchy data → unique H^s solution",
+    "description": "If P is strictly hyperbolic of order m with smooth coefficients, then the Cauchy problem Pu = f, D_t^j u|_{t=0} = g_j (j = 0,...,m−1) has a unique solution u ∈ C([0,T]; H^s) for f ∈ L¹([0,T]; H^s) and g_j ∈ H^{s+m−1−j}. The solution satisfies energy estimates and has finite speed of propagation determined by the characteristic roots."
+  },
+  {
+    "id": "s_parametrix_strictly_hyperbolic_cauchy",
+    "kind": "state",
+    "name": "Parametrix for strictly hyperbolic Cauchy problem",
+    "type_signature": "P strictly hyperbolic → FIO parametrix",
+    "description": "The solution operator for the strictly hyperbolic Cauchy problem is a Fourier integral operator whose canonical relation is the graph of the Hamilton flow of the principal symbol. The construction uses the Lax parametrix method: factoring P into first-order factors microlocally and composing their individual solution operators, each a half-wave FIO."
+  },
+  {
+    "id": "s_propagation_singularities_hyperbolic",
+    "kind": "theorem",
+    "name": "Propagation of singularities for hyperbolic equations",
+    "type_signature": "P hyperbolic, Pu = f → WF(u) propagates along bicharacteristics",
+    "description": "For a strictly hyperbolic operator P, WF(u) \\ WF(f) is a union of bicharacteristic strips of P. In particular, singularities of the initial data propagate along rays (projections of bicharacteristics) at the characteristic speeds. Combined with the FIO parametrix construction, this gives the sharp description of the singular support of solutions."
+  },
+  {
+    "id": "t_lax_parametrix_construction",
+    "kind": "technique",
+    "name": "Lax parametrix construction",
+    "type_signature": "P strictly hyperbolic → approximate solution via oscillatory integrals",
+    "description": "Constructing the parametrix for a strictly hyperbolic operator by seeking the solution in the form u(t,x) = ∫ e^{iφ(t,x,ξ)} a(t,x,ξ) û₀(ξ) dξ, where the phase φ solves the eikonal equation ∂_t φ = τ_j(t,x,∇_x φ) and the amplitude a solves transport equations. The phases are generating functions of the bicharacteristic flow, producing an FIO."
+  },
+  {
+    "id": "t_hadamard_fundamental_solution_construction",
+    "kind": "technique",
+    "name": "Hadamard's construction of fundamental solutions",
+    "type_signature": "P hyperbolic, second order → fundamental solution via Riesz distributions",
+    "description": "Hadamard's method constructs fundamental solutions of second-order hyperbolic operators by writing E = ∑ U_j Γ^{j−(n−2)/2} + (log Γ) ∑ V_j Γ^j where Γ is the squared geodesic distance (Lorentzian). The coefficients U_j, V_j are determined recursively by transport equations along null geodesics. This gives the Hadamard parametrix and reveals the structure of the singularity on the light cone."
+  },
+  {
+    "id": "s_glancing_rays",
+    "kind": "state",
+    "name": "Glancing rays",
+    "type_signature": "bicharacteristic tangent to boundary → ray type",
+    "description": "Bicharacteristic rays of a hyperbolic operator that are tangent to the boundary ∂Ω at a point, neither entering nor leaving Ω transversally. At a glancing point, the bicharacteristic touches the boundary to finite order. The propagation of singularities near glancing rays requires the Melrose–Sjöstrand theory, which distinguishes between diffractive and gliding behavior."
+  },
+  {
+    "id": "s_diffractive_rays",
+    "kind": "state",
+    "name": "Diffractive rays",
+    "type_signature": "glancing bicharacteristic leaving boundary → ray type",
+    "description": "Bicharacteristic rays that are tangent to the boundary and then leave the boundary, entering the interior. At diffractive points, singularities can split: part propagates along the boundary as a gliding ray and part diffracts into the interior along the reflected/transmitted bicharacteristic. Diffractive rays carry singularities weaker by a factor related to the contact order."
+  },
+  {
+    "id": "s_melrose_sjostrand_propagation_theorem",
+    "kind": "theorem",
+    "name": "Melrose–Sjöstrand propagation theorem",
+    "type_signature": "P hyperbolic, Ω with boundary → WF(u) propagation along generalized rays",
+    "description": "Singularities of solutions to the wave equation in a domain with boundary propagate along generalized bicharacteristic rays, which follow the broken ray law (reflection) at transversal boundary points and the generalized bicharacteristic flow at glancing points. The theorem of Melrose–Sjöstrand (1978, 1982) gives a complete description: singularities either reflect, glide along the boundary, or diffract."
+  },
+  {
+    "id": "s_gliding_rays",
+    "kind": "state",
+    "name": "Gliding rays",
+    "type_signature": "bicharacteristic trapped on boundary → ray type",
+    "description": "Bicharacteristic rays confined to the boundary ∂Ω, arising when the Hamilton flow of the principal symbol restricted to T*∂Ω keeps the ray on the boundary. Gliding rays carry singularities along the boundary in the shadow region behind an obstacle. In the exterior of a convex obstacle, gliding rays are the geodesics on the boundary (creeping rays)."
+  },
+  {
+    "id": "s_non_degenerate_phase_function",
+    "kind": "axiom",
+    "name": "Non-degenerate phase function",
+    "type_signature": "φ ∈ C^∞(X × ℝᴺ \\ 0) → Bool",
+    "description": "A real-valued phase function φ(x,θ) that is positively homogeneous of degree 1 in θ with dφ ≠ 0 and the differentials d(∂φ/∂θ_j) are linearly independent on the critical set C_φ = {(x,θ) : ∂φ/∂θ = 0}. Non-degeneracy ensures that the critical set C_φ is a smooth manifold and the map C_φ ∋ (x,θ) ↦ (x, d_x φ) parameterizes a Lagrangian submanifold Λ_φ ⊂ T*X."
+  },
+  {
+    "id": "s_canonical_relation",
+    "kind": "axiom",
+    "name": "Canonical relation",
+    "type_signature": "Λ ⊂ T*X × T*Y Lagrangian → morphism",
+    "description": "A Lagrangian submanifold Λ of T*X × T*Y (with the symplectic form π₁*ω_X − π₂*ω_Y) that serves as the geometric invariant of a Fourier integral operator A: C_c^∞(Y) → 𝒟'(X). The canonical relation generalizes the graph of a symplectomorphism. Composition of FIOs corresponds to composition of canonical relations (when the intersection is clean or transversal)."
+  },
+  {
+    "id": "s_lagrangian_distribution",
+    "kind": "axiom",
+    "name": "Lagrangian distribution I^μ(X, Λ)",
+    "type_signature": "X manifold, Λ ⊂ T*X Lagrangian, μ ∈ ℝ → distribution space",
+    "description": "The space I^μ(X, Λ) of distributions on X whose wavefront set is contained in the Lagrangian submanifold Λ ⊂ T*X and whose singularity has a specific order μ (measured by the symbol). Locally, u ∈ I^μ(X, Λ) can be written as an oscillatory integral u(x) = ∫ e^{iφ(x,θ)} a(x,θ) dθ with a ∈ S^{μ+n/4−N/2} where φ parameterizes Λ."
+  },
+  {
+    "id": "s_principal_symbol_lagrangian_distribution",
+    "kind": "state",
+    "name": "Principal symbol of a Lagrangian distribution",
+    "type_signature": "u ∈ I^μ(X, Λ) → σ(u) ∈ Ω^{1/2}(Λ) ⊗ M_Λ",
+    "description": "The principal symbol of a Lagrangian distribution u ∈ I^μ(X, Λ) is an element of the half-density bundle tensored with the Maslov bundle on Λ. It is an invariant (independent of the choice of phase function and amplitude) that determines u modulo I^{μ−1}. The symbol is multiplicative under composition of FIOs."
+  },
+  {
+    "id": "s_maslov_index",
+    "kind": "axiom",
+    "name": "Maslov index",
+    "type_signature": "γ loop in Lagrangian Grassmannian → ℤ",
+    "description": "An integer-valued topological invariant of a loop in the Lagrangian Grassmannian Λ(n) measuring the total rotation of a Lagrangian plane relative to a reference plane. Equivalently, the first Chern class of the Maslov line bundle (or Maslov bundle) over Λ(n). In the WKB approximation, the Maslov index gives the phase shift at caustics, contributing a factor of e^{−iπ/2} for each caustic crossing."
+  },
+  {
+    "id": "s_maslov_bundle",
+    "kind": "state",
+    "name": "Maslov bundle",
+    "type_signature": "Λ ⊂ T*X Lagrangian → flat line bundle M_Λ on Λ",
+    "description": "A flat complex line bundle M_Λ on a Lagrangian submanifold Λ whose holonomy around a loop γ ⊂ Λ is e^{−iπμ(γ)/2} where μ(γ) is the Maslov index. The principal symbol of a Lagrangian distribution takes values in sections of Ω^{1/2}(Λ) ⊗ M_Λ; the Maslov bundle accounts for the phase shifts at caustics in the WKB approximation."
+  },
+  {
+    "id": "s_clean_intersection_composition_fio",
+    "kind": "theorem",
+    "name": "Clean intersection composition of FIOs",
+    "type_signature": "A ∈ I^μ(X×Y, C₁), B ∈ I^ν(Y×Z, C₂), clean intersection → A∘B ∈ I^{μ+ν+e/2}",
+    "description": "If A has canonical relation C₁ ⊂ T*X × T*Y and B has canonical relation C₂ ⊂ T*Y × T*Z, and the composition C₁ ∘ C₂ is clean with excess e (the fiber dimension of the intersection above the composed relation), then A ∘ B ∈ I^{μ+ν+e/2}(X × Z, C₁ ∘ C₂). The excess e = 0 gives the transversal case with no loss."
+  },
+  {
+    "id": "s_transversal_composition_fio",
+    "kind": "theorem",
+    "name": "Transversal composition of FIOs",
+    "type_signature": "A ∈ I^μ, B ∈ I^ν, transversal intersection → A∘B ∈ I^{μ+ν}",
+    "description": "When the canonical relations C₁ and C₂ intersect transversally (the fiber product T*Y ×_{C₁×C₂} T*Y has the expected dimension), the composition A ∘ B is an FIO of order μ + ν with canonical relation C₁ ∘ C₂. The principal symbol of A ∘ B is the product of the principal symbols (after appropriate identification via the canonical relation)."
+  },
+  {
+    "id": "s_l2_continuity_fio",
+    "kind": "theorem",
+    "name": "L² continuity of FIOs",
+    "type_signature": "A ∈ I^0(X×Y, C), C local canonical graph → A: L² → L² bounded",
+    "description": "A Fourier integral operator A ∈ I^0(X × Y, C) whose canonical relation C is a local canonical graph (locally the graph of a symplectomorphism) is bounded on L²(Y) → L²(X). The order 0 is sharp. When C is not a local canonical graph, L² boundedness may fail and the operator maps L² to L^p for appropriate p (Hörmander's FIO L^p estimates)."
+  },
+  {
+    "id": "s_hormander_sato_lemma",
+    "kind": "theorem",
+    "name": "Hörmander–Sato lemma on WF of FIOs",
+    "type_signature": "A FIO, canonical relation C → WF(Au) ⊂ C ∘ WF(u)",
+    "description": "If A is an FIO with canonical relation C ⊂ T*X × T*Y, then WF(Au) ⊂ C ∘ WF(u) = {(x,ξ) : ∃(y,η) ∈ WF(u) with ((x,ξ),(y,η)) ∈ C}. This gives a precise microlocal mapping property of FIOs, showing that they propagate singularities along their canonical relations."
+  },
+  {
+    "id": "t_global_calculus_oscillatory_integrals",
+    "kind": "technique",
+    "name": "Global calculus of oscillatory integrals",
+    "type_signature": "phase function + symbol → invariant FIO theory",
+    "description": "Patching together local oscillatory integral representations to define FIOs globally on manifolds. Involves showing that the class of Lagrangian distributions I^μ(X,Λ) is independent of the choice of non-degenerate phase function parameterizing Λ, and that the principal symbol transforms correctly under changes of phase. Uses partition of unity and equivalence of phase functions."
+  },
+  {
+    "id": "t_refined_symbol_calculus_type_1_0",
+    "kind": "technique",
+    "name": "Refined symbol calculus for type (1,0)",
+    "type_signature": "S^m_{1,0} symbols → improved composition estimates",
+    "description": "Sharper estimates for the composition, adjoint, and commutator of operators with symbols in the standard class S^m_{1,0}, exploiting the full asymptotic expansion rather than just the leading term. Includes the precise dependence of remainder terms on symbol seminorms, needed for Fefferman–Phong inequality, sharp Gårding inequality, and L² boundedness results."
+  },
+  {
+    "id": "s_carleman_estimate",
+    "kind": "theorem",
+    "name": "Carleman estimate (general form)",
+    "type_signature": "P diff operator, φ weight function → weighted a priori estimate",
+    "description": "An estimate of the form ∑_{|α|≤m−1} τ^{m−1−|α|} ‖e^{τφ} D^α u‖_{L²} ≤ C ‖e^{τφ} Pu‖_{L²} for τ ≥ τ₀ and u ∈ C_c^∞, where φ is a weight function satisfying a pseudo-convexity condition. These exponentially weighted estimates, introduced by Carleman (1939), are the main tool for proving unique continuation results for PDE. Distinct from Carleman's inequality in analysis."
+  },
+  {
+    "id": "s_strong_pseudo_convexity_condition",
+    "kind": "axiom",
+    "name": "Strong pseudo-convexity condition",
+    "type_signature": "P diff operator, φ ∈ C^∞(Ω) → Bool",
+    "description": "A weight function φ satisfies the strong pseudo-convexity condition for a differential operator P if the Poisson bracket {p_m, p̄_m}/(2i) > 0 on the set {(x,ξ+iτ∇φ) : p_m(x,ξ+iτ∇φ) = 0, ξ ∈ ℝⁿ, τ > 0}. This condition ensures that Carleman estimates hold with the weight e^{τφ} and is the natural geometric condition for unique continuation."
+  },
+  {
+    "id": "s_holmgren_uniqueness_microlocal",
+    "kind": "theorem",
+    "name": "Holmgren's uniqueness (microlocal version)",
+    "type_signature": "P(x,D) analytic coefficients → WF_A propagation",
+    "description": "Microlocal refinement of Holmgren's uniqueness theorem: if P has analytic coefficients and Pu = 0, then the analytic wavefront set WF_A(u) propagates along bicharacteristic strips of the principal symbol. In particular, if u vanishes on one side of a non-characteristic hypersurface S, then WF_A(u) cannot contain covectors conormal to S."
+  },
+  {
+    "id": "s_calderon_uniqueness_theorem",
+    "kind": "theorem",
+    "name": "Calderón uniqueness theorem",
+    "type_signature": "P second-order, non-characteristic surface → unique continuation",
+    "description": "If P is a second-order operator with Lipschitz coefficients and u satisfies Pu = 0 near a non-characteristic surface S, with u = 0 on one side of S, then u = 0 in a neighborhood of S. Calderón's proof (1958) uses Carleman estimates with linear weights. This extends Holmgren's theorem from analytic to non-analytic coefficients for second-order operators."
+  },
+  {
+    "id": "s_strong_unique_continuation_property",
+    "kind": "theorem",
+    "name": "Strong unique continuation property",
+    "type_signature": "P elliptic or parabolic, u vanishes to infinite order → u ≡ 0",
+    "description": "If P is a second-order elliptic operator with bounded measurable coefficients and u satisfies |Pu| ≤ C(|u| + |∇u|), and u vanishes to infinite order at a point x₀ (meaning u(x) = O(|x − x₀|^N) for all N), then u ≡ 0 in a connected neighborhood. Proved by Carleman estimates with logarithmic weights (Jerison–Kenig, Sogge)."
+  },
+  {
+    "id": "s_unique_continuation_across_non_characteristic",
+    "kind": "theorem",
+    "name": "Unique continuation across non-characteristic surfaces",
+    "type_signature": "P(x,D) smooth coefficients, S non-characteristic → uniqueness",
+    "description": "For a differential operator P of any order with smooth (not necessarily analytic) coefficients, if S is a strongly pseudo-convex non-characteristic surface and u satisfies Pu = 0 with u = 0 on one side of S, then u = 0 near S. The proof uses Carleman estimates with the distance function to S as weight. Extends Calderón's result to higher-order operators."
+  },
+  {
+    "id": "t_tauberian_theorem_spectral_function",
+    "kind": "technique",
+    "name": "Tauberian theorem for spectral function",
+    "type_signature": "wave trace asymptotics → eigenvalue counting asymptotics",
+    "description": "Converting knowledge of the singularity structure of the wave trace (or spectral distribution) into asymptotic formulas for the eigenvalue counting function N(λ). The key Tauberian argument passes from the distributional Fourier transform of dN(λ) (the wave trace) to pointwise asymptotics of N(λ) itself, yielding Weyl's law with remainder."
+  },
+  {
+    "id": "s_spectral_function_asymptotic",
+    "kind": "theorem",
+    "name": "Spectral function asymptotic",
+    "type_signature": "P ∈ Ψ^m(M) elliptic → e(x,y,λ) asymptotic",
+    "description": "The spectral function e(x,y,λ) = ∑_{λ_j ≤ λ} φ_j(x)φ_j(y) (summed over eigenfunctions of P) satisfies the on-diagonal asymptotic e(x,x,λ) = (2π)^{−n} ∫_{p_m(x,ξ)≤λ} dξ + O(λ^{(n−1)/m}) uniformly in x. Integrating over M gives Weyl's law. The sharp remainder requires microlocal analysis of the half-wave group."
+  },
+  {
+    "id": "s_wave_trace_formula",
+    "kind": "theorem",
+    "name": "Wave trace formula",
+    "type_signature": "M compact Riemannian → Tr(cos(t√Δ)) singularity structure",
+    "description": "The distributional trace Tr(cos(t√Δ)) = ∑ cos(t√λ_j) is a distribution on ℝ whose singular support is contained in {0} ∪ {±L : L is the length of a closed geodesic on M}. Near t = 0, the singularity gives Weyl's law; the singularities at t = ±L encode geometric information about closed geodesics via their Poincaré maps."
+  },
+  {
+    "id": "s_sharpness_weyl_remainder",
+    "kind": "theorem",
+    "name": "Sharpness of remainder in Weyl's law",
+    "type_signature": "S^n round sphere → N(λ) − c λ^n ≠ o(λ^{n-1})",
+    "description": "The O(λ^{(n−1)/m}) remainder in Weyl's law is optimal in general: for the Laplacian on the round sphere S^n, the eigenvalue counting function N(λ) has oscillations of order λ^{n−1} due to the high multiplicity of eigenvalues (caused by all geodesics being closed with the same period). Improved o(λ^{(n−1)/m}) remainders hold when the set of periodic bicharacteristics has measure zero."
+  },
+  {
+    "id": "s_local_weyl_law",
+    "kind": "theorem",
+    "name": "Local Weyl law",
+    "type_signature": "P ∈ Ψ^m(M), A ∈ Ψ^0 → ∑ ⟨Aφ_j, φ_j⟩ asymptotic",
+    "description": "For a positive elliptic operator P of order m on a compact manifold and any pseudodifferential operator A ∈ Ψ^0(M), the sum ∑_{λ_j ≤ λ} ⟨Aφ_j, φ_j⟩ = (2π)^{−n} ∫_{p_m ≤ λ} σ_0(A) dω + O(λ^{(n−1)/m}) where dω is the Liouville measure. This gives the quantum ergodicity theorem as a consequence when the geodesic flow is ergodic."
+  },
+  {
+    "id": "s_asymptotic_completeness_long_range",
+    "kind": "theorem",
+    "name": "Asymptotic completeness for long-range potentials",
+    "type_signature": "H = −Δ + V, V long-range → modified wave operators complete",
+    "description": "For potentials V(x) satisfying |∂^α V(x)| ≤ C_α ⟨x⟩^{−ρ−|α|} with ρ > 0 (long-range), the Dollard modified wave operators Ω±_D exist and are complete: Ran(Ω±_D) = H_{ac}(H). The proof combines Mourre estimates, propagation estimates, and phase space analysis. For ρ > 1 (short-range), ordinary wave operators suffice."
+  },
+  {
+    "id": "s_limiting_absorption_principle_long_range",
+    "kind": "theorem",
+    "name": "Limiting absorption principle (long-range)",
+    "type_signature": "H = −Δ + V, V long-range → resolvent boundary values",
+    "description": "For long-range potentials, the resolvent boundary values (H − λ ± i0)^{−1} exist as bounded operators from ⟨x⟩^{−s} L² to ⟨x⟩^s L² (s > 1/2) for λ in the absolutely continuous spectrum, but the convergence rate in ε is slower than for short-range potentials. The proof uses Mourre theory or the method of positive commutators."
+  },
+  {
+    "id": "s_scattering_matrix_long_range",
+    "kind": "state",
+    "name": "Scattering matrix for long-range potentials",
+    "type_signature": "H = −Δ + V long-range → S(λ) on L²(S^{n−1})",
+    "description": "The scattering matrix S(λ) for long-range potentials, defined via Dollard modified wave operators, is a unitary operator on L²(S^{n−1}) of the form S(λ) = e^{iΦ(λ)} S_short(λ) where Φ(λ) is a phase modification and S_short is Fredholm of index 0. Its singularity structure encodes the long-range tail of the potential."
+  },
+  {
+    "id": "t_phase_space_scattering_long_range",
+    "kind": "technique",
+    "name": "Phase space characterization of long-range scattering",
+    "type_signature": "propagation observables → asymptotic velocity operator",
+    "description": "Characterizing scattering states for long-range potentials via phase space propagation estimates and the asymptotic velocity operator P± = s-lim_{t→±∞} x(t)/t. The completeness of modified wave operators is established by showing that on the continuous spectral subspace, the asymptotic velocity exists and determines the scattering channel. Uses Mourre estimates and propagation observables."
+  },
+  {
+    "id": "s_sommerfeld_radiation_condition",
+    "kind": "axiom",
+    "name": "Sommerfeld radiation condition (generalized)",
+    "type_signature": "u solution of (Δ + k²)u = f → outgoing behavior at infinity",
+    "description": "The condition ∂u/∂r − iku = o(r^{−(n−1)/2}) as r → ∞, selecting the unique outgoing solution of the Helmholtz equation. In the generalized form for variable-coefficient operators H = −Δ + V, the radiation condition is formulated using the limiting absorption principle: u = (H − λ − i0)^{−1}f is the unique solution satisfying the outgoing condition."
+  }
+]
