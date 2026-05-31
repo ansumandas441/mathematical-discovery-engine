@@ -196,6 +196,41 @@
         "theorem": 14,
         "technique": 5
       }
+    },
+    "mcduff_salamon_integration": {
+      "date": "2026-05-31",
+      "source": "McDuff & Salamon — Introduction to Symplectic Topology (Oxford, 3rd ed.)",
+      "new_edge_count": 192,
+      "edge_id_range": "e_20376–e_20567",
+      "techniques_wired": [
+        "t_moser_method",
+        "t_thurston_symplectic_fibration",
+        "t_symplectic_cutting",
+        "t_generating_function_lagrangian",
+        "t_neck_stretching",
+        "t_gromov_compactification",
+        "t_symplectic_sum_construction",
+        "t_symplectic_blowup",
+        "t_hamiltonian_perturbation"
+      ],
+      "existing_techniques_connected": [
+        "t_localization_on_moduli_spaces",
+        "t_blow_up_technique",
+        "t_cobordism_argument",
+        "t_parametric_transversality_method",
+        "t_compactness_argument",
+        "t_homotopy_operator",
+        "t_chern_weil_construction",
+        "t_elliptic_regularity_bootstrap",
+        "t_energy_method_for_pde",
+        "t_minimax_methods_critical_points",
+        "t_flow_box_straightening",
+        "t_contraction_fixed_point",
+        "t_stokes_theorem_technique",
+        "t_variational_methods_geodesics"
+      ],
+      "new_nodes_wired": 81,
+      "distinct_theorems_referenced": 31
     }
   },
   "nodes": [
@@ -99283,6 +99318,188 @@
       "name": "Integration pairing for topological invariants",
       "function_signature": "(de Rham class [omega] in H^k(M), Cycle [C]) -> integral_C omega in R",
       "description": "Pair a de Rham cohomology class with a homology cycle by integration, yielding topological invariants such as the degree, Euler characteristic, or linking number."
+    },
+    {
+      "id": "s_compactly_supported_de_rham_cohomology",
+      "kind": "axiom",
+      "name": "Compactly supported de Rham cohomology",
+      "type_signature": "(SmoothManifold M) → GradedVectorSpace H*_c(M)",
+      "description": "The cohomology H^k_c(M) of the complex Ω^*_c(M) of differential forms with compact support, covariant for proper maps and contravariant (with reversed arrows) for open inclusions."
+    },
+    {
+      "id": "s_compact_vertical_support_cohomology",
+      "kind": "axiom",
+      "name": "Cohomology with compact vertical support",
+      "type_signature": "(VectorBundle π: E → M) → GradedVectorSpace H*_cv(E)",
+      "description": "The cohomology H^*_cv(E) of forms on a vector bundle E that have compact support along the fibers, used to define the Thom class and prove the Thom isomorphism via integration along the fiber."
+    },
+    {
+      "id": "s_bump_form",
+      "kind": "axiom",
+      "name": "Bump form",
+      "type_signature": "Ω^n_c(ℝⁿ)",
+      "description": "A smooth compactly supported n-form on ℝⁿ with total integral 1, serving as the generator of H^n_c(ℝⁿ) ≅ ℝ and the basic building block for Thom forms and Poincaré duals of submanifolds."
+    },
+    {
+      "id": "s_relative_de_rham_cohomology",
+      "kind": "axiom",
+      "name": "Relative de Rham cohomology",
+      "type_signature": "(SmoothManifold M, ClosedSubmanifold A) → GradedVectorSpace H*(M, A)",
+      "description": "The cohomology H*(Ω*(M, A)) of the complex of forms ω on M with i*ω = 0 on A, fitting into a long exact sequence with H*(M) and H*(A)."
+    },
+    {
+      "id": "s_acyclic_cover",
+      "kind": "axiom",
+      "name": "Acyclic cover (Leray cover)",
+      "type_signature": "",
+      "description": "An open cover U = {U_α} such that every finite intersection U_{α₀} ∩ ··· ∩ U_{αₚ} has vanishing higher cohomology with respect to the sheaf in question; for such covers Čech cohomology equals sheaf cohomology."
+    },
+    {
+      "id": "s_tautological_bundle_grassmannian",
+      "kind": "axiom",
+      "name": "Tautological bundle over the Grassmannian",
+      "type_signature": "(Grassmannian G_k(V)) → VectorBundle(γ^k, rank k)",
+      "description": "The rank-k vector bundle γ^k → G_k(V) whose fiber over a k-plane W ∈ G_k(V) is W itself; the universal bundle for rank-k vector bundles, pulling back to any rank-k bundle via the classifying map."
+    },
+    {
+      "id": "s_integration_along_fiber",
+      "kind": "state",
+      "name": "Integration along the fiber",
+      "type_signature": "(OrientedFiberBundle π: E → M, fiber F^k) → (LinearMap π_*: Ω^{n+k}(E) → Ω^n(M))",
+      "description": "The pushforward map π_*: Ω^{n+k}(E) → Ω^n(M) defined by fiberwise integration of (n+k)-forms over the k-dimensional fiber, commuting with d and inducing a map on cohomology."
+    },
+    {
+      "id": "s_global_angular_form",
+      "kind": "state",
+      "name": "Global angular form",
+      "type_signature": "",
+      "description": "A (k−1)-form ψ on the total space of an oriented sphere bundle S^{k-1} → E → M whose restriction to each fiber is the volume form of S^{k-1}, with dψ = −π*e(E) where e(E) is the Euler class."
+    },
+    {
+      "id": "s_diagonal_class",
+      "kind": "state",
+      "name": "Diagonal class",
+      "type_signature": "H^n(M × M)",
+      "description": "The cohomology class δ_M ∈ H^n(M × M) that is Poincaré dual to the diagonal Δ ⊂ M × M; under the Künneth decomposition δ_M = Σ_a η_a × η_a^∨ where {η_a} and {η_a^∨} are Poincaré dual bases."
+    },
+    {
+      "id": "s_spectral_sequence_collapse",
+      "kind": "state",
+      "name": "Collapsing of a spectral sequence",
+      "type_signature": "",
+      "description": "A spectral sequence collapses at the E_r page if d_k = 0 for all k ≥ r, so E_r ≅ E_{r+1} ≅ ··· ≅ E_∞; this occurs when E_r^{p,q} = 0 unless p or q lies in a single row or column."
+    },
+    {
+      "id": "s_cohomology_of_SO_n",
+      "kind": "state",
+      "name": "Cohomology of SO(n)",
+      "type_signature": "",
+      "description": "The de Rham cohomology ring of SO(n), computed inductively using the Wang sequence for the fibration SO(n−1) → SO(n) → S^{n−1}; for odd n, H*(SO(2k+1)) is an exterior algebra on generators in degrees 3, 7, …, 4k−1."
+    },
+    {
+      "id": "s_flag_bundle",
+      "kind": "state",
+      "name": "Flag bundle",
+      "type_signature": "(VectorBundle E → M, rank n) → FiberBundle(Fl(E) → M, fiber = Fl(ℂⁿ))",
+      "description": "The associated fiber bundle Fl(E) → M whose fiber over x is the complete flag manifold of E_x; the pullback of E to Fl(E) splits as a direct sum of line bundles, implementing the splitting principle."
+    },
+    {
+      "id": "s_poincare_lemma_compact_support",
+      "kind": "theorem",
+      "name": "Poincaré lemma for compactly supported cohomology",
+      "type_signature": "",
+      "description": "H^k_c(ℝⁿ) ≅ ℝ if k = n and H^k_c(ℝⁿ) = 0 otherwise, the compactly supported analogue of the Poincaré lemma with cohomology concentrated in the top degree."
+    },
+    {
+      "id": "s_mayer_vietoris_compact_support",
+      "kind": "theorem",
+      "name": "Mayer-Vietoris sequence for compact supports",
+      "type_signature": "",
+      "description": "For M = U ∪ V open, the long exact sequence ··· → H^k_c(U∩V) → H^k_c(U) ⊕ H^k_c(V) → H^k_c(M) → H^{k+1}_c(U∩V) → ···, with arrows reversed relative to the ordinary Mayer-Vietoris."
+    },
+    {
+      "id": "s_finite_dimensionality_de_rham",
+      "kind": "theorem",
+      "name": "Finite-dimensionality of de Rham cohomology",
+      "type_signature": "",
+      "description": "For a manifold admitting a finite good cover, each H^k_{dR}(M) is a finite-dimensional vector space, proved by Mayer-Vietoris induction on the number of open sets in the cover."
+    },
+    {
+      "id": "s_generalized_mayer_vietoris_principle",
+      "kind": "theorem",
+      "name": "Generalized Mayer-Vietoris principle",
+      "type_signature": "",
+      "description": "For a good cover U of M, the natural maps Ω*(M) → Č*(U, Ω*) ← Č*(U, ℝ) are quasi-isomorphisms of the de Rham complex into and out of the Čech-de Rham double complex, yielding a proof of the de Rham theorem."
+    },
+    {
+      "id": "s_partition_of_unity_presheaf_acyclicity",
+      "kind": "theorem",
+      "name": "Partition of unity argument for presheaves of forms",
+      "type_signature": "",
+      "description": "The presheaf Ω^q of differential q-forms on a manifold has vanishing higher Čech cohomology Ȟ^p(U, Ω^q) = 0 for p ≥ 1 with respect to any open cover, because smooth partitions of unity provide the required cochain homotopy."
+    },
+    {
+      "id": "s_long_exact_sequence_compact_support",
+      "kind": "theorem",
+      "name": "Long exact sequence of a pair for compact supports",
+      "type_signature": "",
+      "description": "For U ⊂ M open, the long exact sequence ··· → H^k_c(U) → H^k_c(M) → H^k_c(M \\ U) → H^{k+1}_c(U ∩ V) → ··· induced by extension by zero of compactly supported forms."
+    },
+    {
+      "id": "s_infinite_grassmannian_classifying_space",
+      "kind": "theorem",
+      "name": "Infinite Grassmannian as classifying space",
+      "type_signature": "",
+      "description": "G_k(ℝ^∞) ≅ BO(k) and G_k(ℂ^∞) ≅ BU(k); every rank-k real (resp. complex) vector bundle over a paracompact base is the pullback of the tautological bundle via a map unique up to homotopy."
+    },
+    {
+      "id": "s_cohomology_of_BU_k",
+      "kind": "theorem",
+      "name": "Cohomology of BU(k)",
+      "type_signature": "",
+      "description": "H*(BU(k); ℝ) ≅ ℝ[c₁, c₂, …, cₖ], a polynomial ring generated by the universal Chern classes cᵢ in degree 2i, computed via the Leray-Hirsch theorem and induction on the fibration U(k)/U(k−1) ≅ S^{2k−1}."
+    },
+    {
+      "id": "s_cohomology_of_BO_k",
+      "kind": "theorem",
+      "name": "Cohomology of BO(k)",
+      "type_signature": "",
+      "description": "H*(BO(k); ℝ) ≅ ℝ[p₁, p₂, …, p_{⌊k/2⌋}] (times an additional Euler class generator e in degree k when k is even), a polynomial ring in the universal Pontryagin classes pᵢ in degree 4i."
+    },
+    {
+      "id": "s_naturality_of_characteristic_classes",
+      "kind": "theorem",
+      "name": "Naturality of characteristic classes",
+      "type_signature": "",
+      "description": "For a smooth map f: N → M and vector bundle E → M, the characteristic classes satisfy c_k(f*E) = f*(c_k(E)), and similarly for Pontryagin, Euler, and Stiefel-Whitney classes; characteristic classes are natural transformations from the bundle functor to cohomology."
+    },
+    {
+      "id": "s_homotopy_axiom_cech_cohomology",
+      "kind": "theorem",
+      "name": "Homotopy axiom for Čech cohomology",
+      "type_signature": "",
+      "description": "If f: X → Y is a homotopy equivalence between spaces admitting good covers, then f*: Ȟ*(Y; ℝ) → Ȟ*(X; ℝ) is an isomorphism; proved via the generalized Mayer-Vietoris principle and homotopy invariance of de Rham cohomology."
+    },
+    {
+      "id": "t_zigzag_double_complex",
+      "kind": "technique",
+      "name": "Zigzag argument in a double complex",
+      "function_signature": "(Čech-de Rham double complex, local cocycles) → (Global closed form or global Čech cocycle)",
+      "description": "Constructing a global cocycle from compatible local data by alternately applying horizontal and vertical coboundary operators in a double complex, descending the staircase from one edge to the other."
+    },
+    {
+      "id": "t_cochain_homotopy",
+      "kind": "technique",
+      "name": "Cochain homotopy construction",
+      "function_signature": "(Homotopy H: M × [0,1] → N, differential forms on N) → (Cochain homotopy K with dK + Kd = g* − f*)",
+      "description": "Explicitly constructing a degree −1 operator K via integration along the fiber of the projection M × [0,1] → M, proving that homotopic maps induce identical maps on de Rham cohomology."
+    },
+    {
+      "id": "t_compact_exhaustion_direct_limit",
+      "kind": "technique",
+      "name": "Compact exhaustion and direct limit for H*_c",
+      "function_signature": "(Non-compact manifold M, exhaustion K₁ ⊂ K₂ ⊂ ···) → H*_c(M) = lim_{→} H*_c(U_i)",
+      "description": "Computing compactly supported cohomology of a non-compact manifold as the direct limit over an exhaustion by precompact open subsets, using extension by zero to form the directed system."
     }
   ],
   "edges": [
@@ -275280,6 +275497,1988 @@
       "to": "t_pullback_technique",
       "role": "input",
       "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20323",
+      "from": "s_cech_double_complex",
+      "to": "t_zigzag_double_complex",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_mayer_vietoris_principle"
+    },
+    {
+      "id": "e_20324",
+      "from": "s_double_complex",
+      "to": "t_zigzag_double_complex",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20325",
+      "from": "s_good_cover_with_contractible_intersections",
+      "to": "t_zigzag_double_complex",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_mayer_vietoris_principle"
+    },
+    {
+      "id": "e_20326",
+      "from": "s_poincare_lemma",
+      "to": "t_zigzag_double_complex",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_mayer_vietoris_principle"
+    },
+    {
+      "id": "e_20327",
+      "from": "s_presheaf_on_a_topological_space",
+      "to": "t_zigzag_double_complex",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_partition_of_unity_presheaf_acyclicity"
+    },
+    {
+      "id": "e_20328",
+      "from": "t_zigzag_double_complex",
+      "to": "s_generalized_mayer_vietoris_principle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_mayer_vietoris_principle"
+    },
+    {
+      "id": "e_20329",
+      "from": "t_zigzag_double_complex",
+      "to": "s_de_rham_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_de_rham_theorem"
+    },
+    {
+      "id": "e_20330",
+      "from": "t_zigzag_double_complex",
+      "to": "s_partition_of_unity_presheaf_acyclicity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_partition_of_unity_presheaf_acyclicity"
+    },
+    {
+      "id": "e_20331",
+      "from": "s_de_rham_cohomology",
+      "to": "t_cochain_homotopy",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_homotopy_invariance_de_rham"
+    },
+    {
+      "id": "e_20332",
+      "from": "s_de_rham_complex",
+      "to": "t_cochain_homotopy",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_homotopy_invariance_de_rham"
+    },
+    {
+      "id": "e_20333",
+      "from": "s_integration_along_fiber",
+      "to": "t_cochain_homotopy",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_homotopy_invariance_de_rham"
+    },
+    {
+      "id": "e_20334",
+      "from": "s_compactly_supported_de_rham_cohomology",
+      "to": "t_cochain_homotopy",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_lemma_compact_support"
+    },
+    {
+      "id": "e_20335",
+      "from": "s_bump_form",
+      "to": "t_cochain_homotopy",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_lemma_compact_support"
+    },
+    {
+      "id": "e_20336",
+      "from": "t_cochain_homotopy",
+      "to": "s_homotopy_invariance_de_rham",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_homotopy_invariance_de_rham"
+    },
+    {
+      "id": "e_20337",
+      "from": "t_cochain_homotopy",
+      "to": "s_homotopy_axiom_cech_cohomology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_homotopy_axiom_cech_cohomology"
+    },
+    {
+      "id": "e_20338",
+      "from": "t_cochain_homotopy",
+      "to": "s_poincare_lemma_compact_support",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_lemma_compact_support"
+    },
+    {
+      "id": "e_20339",
+      "from": "s_compactly_supported_de_rham_cohomology",
+      "to": "t_compact_exhaustion_direct_limit",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20340",
+      "from": "s_bump_form",
+      "to": "t_compact_exhaustion_direct_limit",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20341",
+      "from": "s_poincare_lemma_compact_support",
+      "to": "t_compact_exhaustion_direct_limit",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mayer_vietoris_compact_support"
+    },
+    {
+      "id": "e_20342",
+      "from": "t_compact_exhaustion_direct_limit",
+      "to": "s_long_exact_sequence_compact_support",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_long_exact_sequence_compact_support"
+    },
+    {
+      "id": "e_20343",
+      "from": "t_compact_exhaustion_direct_limit",
+      "to": "s_mayer_vietoris_compact_support",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mayer_vietoris_compact_support"
+    },
+    {
+      "id": "e_20344",
+      "from": "s_compactly_supported_de_rham_cohomology",
+      "to": "t_mayer_vietoris_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_duality"
+    },
+    {
+      "id": "e_20345",
+      "from": "s_good_cover_with_contractible_intersections",
+      "to": "t_mayer_vietoris_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finite_dimensionality_de_rham"
+    },
+    {
+      "id": "e_20346",
+      "from": "s_poincare_lemma_compact_support",
+      "to": "t_mayer_vietoris_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_duality"
+    },
+    {
+      "id": "e_20347",
+      "from": "s_mayer_vietoris_compact_support",
+      "to": "t_mayer_vietoris_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_duality"
+    },
+    {
+      "id": "e_20348",
+      "from": "t_mayer_vietoris_induction",
+      "to": "s_finite_dimensionality_de_rham",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_finite_dimensionality_de_rham"
+    },
+    {
+      "id": "e_20349",
+      "from": "t_mayer_vietoris_induction",
+      "to": "s_poincare_duality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_duality"
+    },
+    {
+      "id": "e_20350",
+      "from": "s_spectral_sequence_collapse",
+      "to": "t_spectral_sequence_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_leray_hirsch_theorem"
+    },
+    {
+      "id": "e_20351",
+      "from": "s_integration_along_fiber",
+      "to": "t_spectral_sequence_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gysin_sequence"
+    },
+    {
+      "id": "e_20352",
+      "from": "t_spectral_sequence_argument",
+      "to": "s_cohomology_of_SO_n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20353",
+      "from": "t_spectral_sequence_argument",
+      "to": "s_cohomology_of_BU_k",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cohomology_of_BU_k"
+    },
+    {
+      "id": "e_20354",
+      "from": "t_spectral_sequence_argument",
+      "to": "s_cohomology_of_BO_k",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cohomology_of_BO_k"
+    },
+    {
+      "id": "e_20355",
+      "from": "s_flag_bundle",
+      "to": "t_splitting_principle",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_splitting_principle"
+    },
+    {
+      "id": "e_20356",
+      "from": "t_splitting_principle",
+      "to": "s_naturality_of_characteristic_classes",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_naturality_of_characteristic_classes"
+    },
+    {
+      "id": "e_20357",
+      "from": "s_compact_vertical_support_cohomology",
+      "to": "t_chern_weil_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_thom_isomorphism"
+    },
+    {
+      "id": "e_20358",
+      "from": "t_chern_weil_construction",
+      "to": "s_naturality_of_characteristic_classes",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_naturality_of_characteristic_classes"
+    },
+    {
+      "id": "e_20359",
+      "from": "s_tautological_bundle_grassmannian",
+      "to": "t_clutching_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_infinite_grassmannian_classifying_space"
+    },
+    {
+      "id": "e_20360",
+      "from": "t_clutching_construction",
+      "to": "s_infinite_grassmannian_classifying_space",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_infinite_grassmannian_classifying_space"
+    },
+    {
+      "id": "e_20361",
+      "from": "s_acyclic_cover",
+      "to": "t_cech_cohomology_computation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cech_singular_iso_good_cover"
+    },
+    {
+      "id": "e_20362",
+      "from": "s_partition_of_unity_presheaf_acyclicity",
+      "to": "t_cech_cohomology_computation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_mayer_vietoris_principle"
+    },
+    {
+      "id": "e_20363",
+      "from": "t_cech_cohomology_computation",
+      "to": "s_homotopy_axiom_cech_cohomology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_homotopy_axiom_cech_cohomology"
+    },
+    {
+      "id": "e_20364",
+      "from": "s_global_angular_form",
+      "to": "t_spectral_sequence_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gysin_sequence"
+    },
+    {
+      "id": "e_20365",
+      "from": "s_euler_class",
+      "to": "t_spectral_sequence_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gysin_sequence"
+    },
+    {
+      "id": "e_20366",
+      "from": "s_compact_vertical_support_cohomology",
+      "to": "t_mayer_vietoris_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_thom_isomorphism"
+    },
+    {
+      "id": "e_20367",
+      "from": "s_integration_along_fiber",
+      "to": "t_mayer_vietoris_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_thom_isomorphism"
+    },
+    {
+      "id": "e_20368",
+      "from": "t_mayer_vietoris_induction",
+      "to": "s_thom_isomorphism",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_thom_isomorphism"
+    },
+    {
+      "id": "e_20369",
+      "from": "s_diagonal_class",
+      "to": "t_mayer_vietoris_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lefschetz_fixed_point_theorem"
+    },
+    {
+      "id": "e_20370",
+      "from": "s_wang_sequence",
+      "to": "t_spectral_sequence_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20371",
+      "from": "s_tautological_bundle_grassmannian",
+      "to": "t_spectral_sequence_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cohomology_of_BU_k"
+    },
+    {
+      "id": "e_20372",
+      "from": "s_grassmannian_grkn",
+      "to": "t_clutching_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_infinite_grassmannian_classifying_space"
+    },
+    {
+      "id": "e_20373",
+      "from": "s_leray_hirsch_theorem",
+      "to": "t_spectral_sequence_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cohomology_of_BU_k"
+    },
+    {
+      "id": "e_20374",
+      "from": "s_acyclic_cover",
+      "to": "t_zigzag_double_complex",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_mayer_vietoris_principle"
+    },
+    {
+      "id": "e_20375",
+      "from": "s_relative_de_rham_cohomology",
+      "to": "t_mayer_vietoris_induction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20376",
+      "from": "s_symplectic_manifold",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moser_isotopy_lemma_relative"
+    },
+    {
+      "id": "e_20377",
+      "from": "s_symplectic_form_on_vector_space",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_darboux_theorem_symplectic"
+    },
+    {
+      "id": "e_20378",
+      "from": "s_moser_homotopy_of_symplectic_forms",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moser_isotopy_lemma_relative"
+    },
+    {
+      "id": "e_20379",
+      "from": "s_hamiltonian_isotopy",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moser_isotopy_lemma_relative"
+    },
+    {
+      "id": "e_20380",
+      "from": "s_symplectic_form_on_surfaces",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20381",
+      "from": "s_lagrangian_submanifold",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weinstein_neighbourhood"
+    },
+    {
+      "id": "e_20382",
+      "from": "s_isotropic_submanifold",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weinstein_isotropic_neighbourhood"
+    },
+    {
+      "id": "e_20383",
+      "from": "s_symplectic_subspace",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20384",
+      "from": "s_lagrangian_subspace",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weinstein_neighbourhood"
+    },
+    {
+      "id": "e_20385",
+      "from": "s_isotropic_subspace",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weinstein_isotropic_neighbourhood"
+    },
+    {
+      "id": "e_20386",
+      "from": "s_coisotropic_subspace",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20387",
+      "from": "s_symplectic_group",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_polar_decomposition_sp2n"
+    },
+    {
+      "id": "e_20388",
+      "from": "s_compatible_complex_structure_symplectic",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_polar_decomposition_sp2n"
+    },
+    {
+      "id": "e_20389",
+      "from": "s_contact_hypersurface",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20390",
+      "from": "s_coisotropic_submanifold",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20391",
+      "from": "s_kahler_manifold",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20392",
+      "from": "s_lagrangian_grassmannian",
+      "to": "t_moser_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_polar_decomposition_sp2n"
+    },
+    {
+      "id": "e_20393",
+      "from": "t_moser_method",
+      "to": "s_moser_isotopy_lemma_relative",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moser_isotopy_lemma_relative"
+    },
+    {
+      "id": "e_20394",
+      "from": "t_moser_method",
+      "to": "s_darboux_theorem_symplectic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_darboux_theorem_symplectic"
+    },
+    {
+      "id": "e_20395",
+      "from": "t_moser_method",
+      "to": "s_darboux_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_darboux_theorem"
+    },
+    {
+      "id": "e_20396",
+      "from": "t_moser_method",
+      "to": "s_weinstein_neighbourhood",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weinstein_neighbourhood"
+    },
+    {
+      "id": "e_20397",
+      "from": "t_moser_method",
+      "to": "s_weinstein_isotropic_neighbourhood",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weinstein_isotropic_neighbourhood"
+    },
+    {
+      "id": "e_20398",
+      "from": "t_moser_method",
+      "to": "s_symplectomorphism",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moser_isotopy_lemma_relative"
+    },
+    {
+      "id": "e_20399",
+      "from": "t_moser_method",
+      "to": "s_polar_decomposition_sp2n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_polar_decomposition_sp2n"
+    },
+    {
+      "id": "e_20400",
+      "from": "t_moser_method",
+      "to": "s_positive_compatible_triple",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20401",
+      "from": "t_moser_method",
+      "to": "s_space_of_compatible_complex_structures",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_contractibility_of_J_M_omega"
+    },
+    {
+      "id": "e_20402",
+      "from": "t_moser_method",
+      "to": "s_contractibility_of_J_M_omega",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_contractibility_of_J_M_omega"
+    },
+    {
+      "id": "e_20403",
+      "from": "t_moser_method",
+      "to": "s_lagrangian_grassmannian",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20404",
+      "from": "t_moser_method",
+      "to": "s_maslov_index_for_paths",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20405",
+      "from": "t_moser_method",
+      "to": "s_maslov_cycle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20406",
+      "from": "t_moser_method",
+      "to": "s_symplectic_form_on_surfaces",
+      "role": "output",
+      "parameter_binding": {
+        "role": "classification"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20407",
+      "from": "t_moser_method",
+      "to": "s_characteristic_foliation_coisotropic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20408",
+      "from": "t_moser_method",
+      "to": "s_symplectic_complement",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20409",
+      "from": "s_symplectic_fiber_bundle",
+      "to": "t_thurston_symplectic_fibration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20410",
+      "from": "s_symplectic_connection_on_fibration",
+      "to": "t_thurston_symplectic_fibration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20411",
+      "from": "s_symplectic_manifold",
+      "to": "t_thurston_symplectic_fibration",
+      "role": "input",
+      "parameter_binding": {
+        "role": "fiber"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20412",
+      "from": "s_symplectic_vector_bundle",
+      "to": "t_thurston_symplectic_fibration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20413",
+      "from": "t_thurston_symplectic_fibration",
+      "to": "s_symplectic_manifold",
+      "role": "output",
+      "parameter_binding": {
+        "role": "total_space"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20414",
+      "from": "t_thurston_symplectic_fibration",
+      "to": "s_symplectic_connection_on_fibration",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20415",
+      "from": "t_thurston_symplectic_fibration",
+      "to": "s_symplectic_vector_bundle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20416",
+      "from": "s_symplectic_manifold",
+      "to": "t_symplectic_cutting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_symplectic_reduction_at_general_level"
+    },
+    {
+      "id": "e_20417",
+      "from": "s_hamiltonian_isotopy",
+      "to": "t_symplectic_cutting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20418",
+      "from": "s_hamiltonian_circle_action",
+      "to": "t_symplectic_cutting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20419",
+      "from": "s_hamiltonian_lie_group_action_with_moment_map",
+      "to": "t_symplectic_cutting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_uniqueness_moment_maps"
+    },
+    {
+      "id": "e_20420",
+      "from": "s_symplectic_complement",
+      "to": "t_symplectic_cutting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20421",
+      "from": "s_coisotropic_subspace",
+      "to": "t_symplectic_cutting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20422",
+      "from": "s_marsden_weinstein_reduction",
+      "to": "t_symplectic_cutting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_symplectic_reduction_at_general_level"
+    },
+    {
+      "id": "e_20423",
+      "from": "s_delzant_polytope",
+      "to": "t_symplectic_cutting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_delzant_theorem"
+    },
+    {
+      "id": "e_20424",
+      "from": "s_coadjoint_orbit",
+      "to": "t_symplectic_cutting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_coadjoint_orbits_symplectic"
+    },
+    {
+      "id": "e_20425",
+      "from": "t_symplectic_cutting",
+      "to": "s_symplectic_manifold",
+      "role": "output",
+      "parameter_binding": {
+        "role": "cut_manifold"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20426",
+      "from": "t_symplectic_cutting",
+      "to": "s_symplectic_reduction_at_general_level",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_symplectic_reduction_at_general_level"
+    },
+    {
+      "id": "e_20427",
+      "from": "t_symplectic_cutting",
+      "to": "s_toric_symplectic_manifold",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_delzant_theorem"
+    },
+    {
+      "id": "e_20428",
+      "from": "t_symplectic_cutting",
+      "to": "s_existence_uniqueness_moment_maps",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_uniqueness_moment_maps"
+    },
+    {
+      "id": "e_20429",
+      "from": "t_symplectic_cutting",
+      "to": "s_coadjoint_orbits_symplectic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_coadjoint_orbits_symplectic"
+    },
+    {
+      "id": "e_20430",
+      "from": "t_symplectic_cutting",
+      "to": "s_delzant_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_delzant_theorem"
+    },
+    {
+      "id": "e_20431",
+      "from": "t_symplectic_cutting",
+      "to": "s_atiyah_guillemin_sternberg",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_atiyah_guillemin_sternberg"
+    },
+    {
+      "id": "e_20432",
+      "from": "s_lagrangian_submanifold",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20433",
+      "from": "s_cotangent_bundle_symplectic",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20434",
+      "from": "s_exact_lagrangian_submanifold",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20435",
+      "from": "s_lagrangian_grassmannian",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20436",
+      "from": "s_maslov_cycle",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20437",
+      "from": "s_maslov_index_for_paths",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20438",
+      "from": "s_conley_zehnder_index",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arnold_conjecture"
+    },
+    {
+      "id": "e_20439",
+      "from": "s_maslov_index",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20440",
+      "from": "s_symplectic_capacity_axiomatic",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ekeland_hofer_capacities"
+    },
+    {
+      "id": "e_20441",
+      "from": "s_lagrangian_floer_homology",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20442",
+      "from": "s_exact_symplectic_manifold",
+      "to": "t_generating_function_lagrangian",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20443",
+      "from": "t_generating_function_lagrangian",
+      "to": "s_lagrangian_submanifold",
+      "role": "output",
+      "parameter_binding": {
+        "role": "critical_set"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20444",
+      "from": "t_generating_function_lagrangian",
+      "to": "s_spectral_invariants_floer",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20445",
+      "from": "t_generating_function_lagrangian",
+      "to": "s_arnold_conjecture",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arnold_conjecture"
+    },
+    {
+      "id": "e_20446",
+      "from": "t_generating_function_lagrangian",
+      "to": "s_maslov_index_for_paths",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20447",
+      "from": "t_generating_function_lagrangian",
+      "to": "s_ekeland_hofer_capacities",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ekeland_hofer_capacities"
+    },
+    {
+      "id": "e_20448",
+      "from": "t_generating_function_lagrangian",
+      "to": "s_lagrangian_floer_homology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20449",
+      "from": "s_contact_hypersurface",
+      "to": "t_neck_stretching",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20450",
+      "from": "s_j_holomorphic_curve",
+      "to": "t_neck_stretching",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20451",
+      "from": "s_compatible_almost_complex_structure_manifold",
+      "to": "t_neck_stretching",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20452",
+      "from": "s_energy_j_holomorphic_curve",
+      "to": "t_neck_stretching",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_energy_identity_j_holomorphic"
+    },
+    {
+      "id": "e_20453",
+      "from": "s_contact_structure",
+      "to": "t_neck_stretching",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20454",
+      "from": "s_liouville_vector_field",
+      "to": "t_neck_stretching",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20455",
+      "from": "s_symplectization",
+      "to": "t_neck_stretching",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20456",
+      "from": "s_exact_symplectic_manifold",
+      "to": "t_neck_stretching",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20457",
+      "from": "s_floer_homology_hamiltonian",
+      "to": "t_neck_stretching",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20458",
+      "from": "t_neck_stretching",
+      "to": "s_floer_homology_hamiltonian",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20459",
+      "from": "t_neck_stretching",
+      "to": "s_bubbling_phenomenon",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20460",
+      "from": "t_neck_stretching",
+      "to": "s_symplectization",
+      "role": "output",
+      "parameter_binding": {
+        "role": "cylindrical_end"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20461",
+      "from": "s_moduli_space_j_holomorphic",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_compactness_j_holomorphic"
+    },
+    {
+      "id": "e_20462",
+      "from": "s_j_holomorphic_curve",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_compactness_j_holomorphic"
+    },
+    {
+      "id": "e_20463",
+      "from": "s_energy_j_holomorphic_curve",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_compactness_j_holomorphic"
+    },
+    {
+      "id": "e_20464",
+      "from": "s_bubbling_phenomenon",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_compactness_j_holomorphic"
+    },
+    {
+      "id": "e_20465",
+      "from": "s_stable_map_gw",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20466",
+      "from": "s_almost_complex_structure",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20467",
+      "from": "s_tame_almost_complex_structure",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_compactness_j_holomorphic"
+    },
+    {
+      "id": "e_20468",
+      "from": "s_compatible_almost_complex_structure_manifold",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20469",
+      "from": "s_fredholm_theory_dbar_J",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transversality_simple_curves"
+    },
+    {
+      "id": "e_20470",
+      "from": "s_simple_j_holomorphic_curve",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transversality_simple_curves"
+    },
+    {
+      "id": "e_20471",
+      "from": "s_symplectic_capacity_axiomatic",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_nonsqueezing_theorem"
+    },
+    {
+      "id": "e_20472",
+      "from": "s_gromov_width",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_nonsqueezing_theorem"
+    },
+    {
+      "id": "e_20473",
+      "from": "s_symplectic_isotopy_problem",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20474",
+      "from": "s_first_chern_class",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_adjunction_formula_j_holomorphic"
+    },
+    {
+      "id": "e_20475",
+      "from": "s_symplectic_manifold",
+      "to": "t_gromov_compactification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_nonsqueezing_theorem"
+    },
+    {
+      "id": "e_20476",
+      "from": "t_gromov_compactification",
+      "to": "s_gromov_compactness_j_holomorphic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_compactness_j_holomorphic"
+    },
+    {
+      "id": "e_20477",
+      "from": "t_gromov_compactification",
+      "to": "s_gromovwitten_invariant",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20478",
+      "from": "t_gromov_compactification",
+      "to": "s_evaluation_map_gw",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20479",
+      "from": "t_gromov_compactification",
+      "to": "s_quantum_cohomology",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20480",
+      "from": "t_gromov_compactification",
+      "to": "s_energy_identity_j_holomorphic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_energy_identity_j_holomorphic"
+    },
+    {
+      "id": "e_20481",
+      "from": "t_gromov_compactification",
+      "to": "s_fredholm_theory_dbar_J",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20482",
+      "from": "t_gromov_compactification",
+      "to": "s_virtual_dimension_moduli",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transversality_simple_curves"
+    },
+    {
+      "id": "e_20483",
+      "from": "t_gromov_compactification",
+      "to": "s_transversality_simple_curves",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transversality_simple_curves"
+    },
+    {
+      "id": "e_20484",
+      "from": "t_gromov_compactification",
+      "to": "s_removal_of_singularities_j_holo",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_removal_of_singularities_j_holo"
+    },
+    {
+      "id": "e_20485",
+      "from": "t_gromov_compactification",
+      "to": "s_monotonicity_lemma_j_holo",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_monotonicity_lemma_j_holo"
+    },
+    {
+      "id": "e_20486",
+      "from": "t_gromov_compactification",
+      "to": "s_gromov_width",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_nonsqueezing_theorem"
+    },
+    {
+      "id": "e_20487",
+      "from": "t_gromov_compactification",
+      "to": "s_gromov_nonsqueezing_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_nonsqueezing_theorem"
+    },
+    {
+      "id": "e_20488",
+      "from": "t_gromov_compactification",
+      "to": "s_mcduff_rational_ruled",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mcduff_rational_ruled"
+    },
+    {
+      "id": "e_20489",
+      "from": "t_gromov_compactification",
+      "to": "s_taubes_sw_equals_gr",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_taubes_sw_equals_gr"
+    },
+    {
+      "id": "e_20490",
+      "from": "t_gromov_compactification",
+      "to": "s_existence_j_holo_curves_taubes",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_j_holo_curves_taubes"
+    },
+    {
+      "id": "e_20491",
+      "from": "t_gromov_compactification",
+      "to": "s_positivity_of_intersections",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_positivity_of_intersections"
+    },
+    {
+      "id": "e_20492",
+      "from": "t_gromov_compactification",
+      "to": "s_adjunction_formula_j_holomorphic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_adjunction_formula_j_holomorphic"
+    },
+    {
+      "id": "e_20493",
+      "from": "t_gromov_compactification",
+      "to": "s_symplectic_isotopy_problem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20494",
+      "from": "t_gromov_compactification",
+      "to": "s_moduli_space_j_holomorphic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20495",
+      "from": "s_symplectic_manifold",
+      "to": "t_symplectic_sum_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20496",
+      "from": "s_symplectic_form_on_surfaces",
+      "to": "t_symplectic_sum_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20497",
+      "from": "t_symplectic_sum_construction",
+      "to": "s_symplectic_manifold",
+      "role": "output",
+      "parameter_binding": {
+        "role": "fiber_sum"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20498",
+      "from": "t_symplectic_sum_construction",
+      "to": "s_symplectic_isotopy_problem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20499",
+      "from": "t_symplectic_sum_construction",
+      "to": "s_mcduff_rational_ruled",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mcduff_rational_ruled"
+    },
+    {
+      "id": "e_20500",
+      "from": "s_symplectic_manifold",
+      "to": "t_symplectic_blowup",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20501",
+      "from": "s_fubini_study_metric",
+      "to": "t_symplectic_blowup",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20502",
+      "from": "s_symplectic_embedding",
+      "to": "t_symplectic_blowup",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20503",
+      "from": "s_blowup",
+      "to": "t_symplectic_blowup",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20504",
+      "from": "s_symplectic_packing",
+      "to": "t_symplectic_blowup",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20505",
+      "from": "s_gromov_width",
+      "to": "t_symplectic_blowup",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20506",
+      "from": "t_symplectic_blowup",
+      "to": "s_symplectic_manifold",
+      "role": "output",
+      "parameter_binding": {
+        "role": "blowup"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20507",
+      "from": "t_symplectic_blowup",
+      "to": "s_blowup",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20508",
+      "from": "t_symplectic_blowup",
+      "to": "s_exceptional_divisor",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20509",
+      "from": "t_symplectic_blowup",
+      "to": "s_symplectic_packing",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20510",
+      "from": "t_symplectic_blowup",
+      "to": "s_mcduff_rational_ruled",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mcduff_rational_ruled"
+    },
+    {
+      "id": "e_20511",
+      "from": "s_lagrangian_submanifold",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20512",
+      "from": "s_hamiltonian_diffeomorphism_phi_H",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20513",
+      "from": "s_hamiltonian_vector_field",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20514",
+      "from": "s_hofer_zehnder_capacity",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_energy_capacity_inequality"
+    },
+    {
+      "id": "e_20515",
+      "from": "s_displacement_energy",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hofer_nondegeneracy_theorem"
+    },
+    {
+      "id": "e_20516",
+      "from": "s_hofer_metric",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hofer_nondegeneracy_theorem"
+    },
+    {
+      "id": "e_20517",
+      "from": "s_poisson_bracket",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20518",
+      "from": "s_hamiltonian_isotopy",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_flux_conjecture_ono"
+    },
+    {
+      "id": "e_20519",
+      "from": "s_flux_homomorphism",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_flux_conjecture_ono"
+    },
+    {
+      "id": "e_20520",
+      "from": "s_calabi_homomorphism",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20521",
+      "from": "s_conley_zehnder_index",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arnold_conjecture"
+    },
+    {
+      "id": "e_20522",
+      "from": "s_symplectomorphism",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eliashberg_rigidity"
+    },
+    {
+      "id": "e_20523",
+      "from": "s_liouville_measure_symplectic",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_hamiltonian"
+    },
+    {
+      "id": "e_20524",
+      "from": "s_contact_hypersurface",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weinstein_conjecture_3d"
+    },
+    {
+      "id": "e_20525",
+      "from": "s_symplectic_capacity_axiomatic",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20526",
+      "from": "s_floer_homology_hamiltonian",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arnold_conjecture"
+    },
+    {
+      "id": "e_20527",
+      "from": "s_spectral_invariants_floer",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20528",
+      "from": "s_hamiltonian_diffeomorphism_phi_H",
+      "to": "t_hamiltonian_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arnold_conjecture"
+    },
+    {
+      "id": "e_20529",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_lagrangian_submanifold",
+      "role": "output",
+      "parameter_binding": {
+        "role": "perturbed"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20530",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_displacement_energy",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20531",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_arnold_conjecture",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arnold_conjecture"
+    },
+    {
+      "id": "e_20532",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_floer_homology_hamiltonian",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arnold_conjecture"
+    },
+    {
+      "id": "e_20533",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_energy_capacity_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_energy_capacity_inequality"
+    },
+    {
+      "id": "e_20534",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_hofer_zehnder_capacity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20535",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_hofer_nondegeneracy_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hofer_nondegeneracy_theorem"
+    },
+    {
+      "id": "e_20536",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_recurrence_hamiltonian",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_hamiltonian"
+    },
+    {
+      "id": "e_20537",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_flux_conjecture_ono",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_flux_conjecture_ono"
+    },
+    {
+      "id": "e_20538",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_spectral_invariants_floer",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20539",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_eliashberg_rigidity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eliashberg_rigidity"
+    },
+    {
+      "id": "e_20540",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_weinstein_conjecture_3d",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weinstein_conjecture_3d"
+    },
+    {
+      "id": "e_20541",
+      "from": "t_hamiltonian_perturbation",
+      "to": "s_hofer_metric",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hofer_nondegeneracy_theorem"
+    },
+    {
+      "id": "e_20542",
+      "from": "s_j_holomorphic_curve",
+      "to": "t_localization_on_moduli_spaces",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20543",
+      "from": "s_moduli_space_j_holomorphic",
+      "to": "t_localization_on_moduli_spaces",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20544",
+      "from": "s_evaluation_map_gw",
+      "to": "t_localization_on_moduli_spaces",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20545",
+      "from": "s_virtual_dimension_moduli",
+      "to": "t_localization_on_moduli_spaces",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20546",
+      "from": "t_localization_on_moduli_spaces",
+      "to": "s_gromovwitten_invariant",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20547",
+      "from": "s_symplectic_manifold",
+      "to": "t_blow_up_technique",
+      "role": "input",
+      "parameter_binding": {
+        "context": "symplectic"
+      },
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20548",
+      "from": "t_blow_up_technique",
+      "to": "s_symplectic_packing",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20549",
+      "from": "s_taubes_sw_equals_gr",
+      "to": "t_cobordism_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_taubes_sw_equals_gr"
+    },
+    {
+      "id": "e_20550",
+      "from": "s_simple_j_holomorphic_curve",
+      "to": "t_parametric_transversality_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transversality_simple_curves"
+    },
+    {
+      "id": "e_20551",
+      "from": "t_parametric_transversality_method",
+      "to": "s_transversality_simple_curves",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transversality_simple_curves"
+    },
+    {
+      "id": "e_20552",
+      "from": "s_energy_j_holomorphic_curve",
+      "to": "t_compactness_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_compactness_j_holomorphic"
+    },
+    {
+      "id": "e_20553",
+      "from": "t_compactness_argument",
+      "to": "s_gromov_compactness_j_holomorphic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gromov_compactness_j_holomorphic"
+    },
+    {
+      "id": "e_20554",
+      "from": "s_hamiltonian_vector_field",
+      "to": "t_flow_box_straightening",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20555",
+      "from": "s_hamiltonian_isotopy",
+      "to": "t_contraction_fixed_point",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moser_isotopy_lemma_relative"
+    },
+    {
+      "id": "e_20556",
+      "from": "s_space_of_compatible_complex_structures",
+      "to": "t_homotopy_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_contractibility_of_J_M_omega"
+    },
+    {
+      "id": "e_20557",
+      "from": "t_homotopy_operator",
+      "to": "s_contractibility_of_J_M_omega",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_contractibility_of_J_M_omega"
+    },
+    {
+      "id": "e_20558",
+      "from": "s_compatible_almost_complex_structure_manifold",
+      "to": "t_chern_weil_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20559",
+      "from": "s_j_holomorphic_curve",
+      "to": "t_elliptic_regularity_bootstrap",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20560",
+      "from": "t_elliptic_regularity_bootstrap",
+      "to": "s_removal_of_singularities_j_holo",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_removal_of_singularities_j_holo"
+    },
+    {
+      "id": "e_20561",
+      "from": "s_j_holomorphic_curve",
+      "to": "t_energy_method_for_pde",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_energy_identity_j_holomorphic"
+    },
+    {
+      "id": "e_20562",
+      "from": "t_energy_method_for_pde",
+      "to": "s_energy_identity_j_holomorphic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_energy_identity_j_holomorphic"
+    },
+    {
+      "id": "e_20563",
+      "from": "t_energy_method_for_pde",
+      "to": "s_energy_j_holomorphic_curve",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20564",
+      "from": "s_hofer_zehnder_capacity",
+      "to": "t_minimax_methods_critical_points",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20565",
+      "from": "t_minimax_methods_critical_points",
+      "to": "s_ekeland_hofer_capacities",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ekeland_hofer_capacities"
+    },
+    {
+      "id": "e_20566",
+      "from": "s_flux_homomorphism",
+      "to": "t_stokes_theorem_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_20567",
+      "from": "s_hamiltonian_diffeomorphism_phi_H",
+      "to": "t_variational_methods_geodesics",
+      "role": "input",
+      "parameter_binding": {
+        "context": "Hofer_geometry"
+      },
       "used_in_theorem": ""
     }
   ],
