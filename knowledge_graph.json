@@ -90477,6 +90477,552 @@
       "name": "Weak Convergence Methods in Sobolev Spaces",
       "function_signature": "(Minimizing sequence for energy functional in reflexive Sobolev space) → (Existence of minimizer via weak compactness + compact embedding + lower semicontinuity)",
       "description": "Combines weak sequential compactness in reflexive spaces, compact Sobolev embeddings, and weak lower semicontinuity of convex integrals to prove existence of minimizers in variational problems."
+    },
+    {
+      "id": "s_hardy_littlewood_maximal_theorem",
+      "kind": "theorem",
+      "name": "Hardy–Littlewood maximal theorem",
+      "type_signature": "f ∈ L^p(ℝⁿ) → Weak (1,1) and strong (p,p) bounds",
+      "description": "The Hardy–Littlewood maximal operator M is of weak type (1,1) with bound |{Mf > λ}| ≤ C_n‖f‖₁/λ, and bounded on L^p for 1 < p ≤ ∞."
+    },
+    {
+      "id": "s_dyadic_cubes",
+      "kind": "axiom",
+      "name": "Dyadic cubes in ℝⁿ",
+      "type_signature": "ℤ × ℤⁿ → Cube",
+      "description": "The collection 𝒟 = {2^{−k}([0,1)ⁿ + m) : k ∈ ℤ, m ∈ ℤⁿ} of half-open cubes forming a nested filtration of ℝⁿ with each cube split into 2ⁿ children."
+    },
+    {
+      "id": "s_weak_type_p_p_estimate",
+      "kind": "state",
+      "name": "Weak-type (p,p) estimate",
+      "type_signature": "(Sublinear operator T, exponent p) → Bound",
+      "description": "A sublinear operator T is of weak type (p,p) if |{|Tf| > λ}| ≤ (C‖f‖_p / λ)^p for all f ∈ L^p and λ > 0."
+    },
+    {
+      "id": "s_maximal_function_characterization_of_Lp",
+      "kind": "theorem",
+      "name": "Maximal function characterization of L^p",
+      "type_signature": "f ∈ L^1_loc(ℝⁿ), 1 < p ≤ ∞ → Equivalence",
+      "description": "A function f belongs to L^p(ℝⁿ) for 1 < p ≤ ∞ if and only if its Hardy–Littlewood maximal function Mf belongs to L^p, with equivalent norms."
+    },
+    {
+      "id": "s_hilbert_transform",
+      "kind": "axiom",
+      "name": "Hilbert transform",
+      "type_signature": "𝒮(ℝ) → 𝒮′(ℝ)",
+      "description": "The singular integral operator Hf(x) = (1/π) p.v. ∫ f(y)/(x − y) dy, equivalently the Fourier multiplier with symbol −i sgn(ξ)."
+    },
+    {
+      "id": "s_truncated_singular_integral",
+      "kind": "state",
+      "name": "Truncated singular integral",
+      "type_signature": "(CZ kernel K, ε > 0, f ∈ L^p) → Function",
+      "description": "The ε-truncated singular integral T_ε f(x) = ∫_{|x−y|>ε} K(x−y)f(y) dy, a well-defined absolutely convergent integral for f ∈ L^p."
+    },
+    {
+      "id": "s_pointwise_convergence_truncated_singular_integrals",
+      "kind": "theorem",
+      "name": "Pointwise convergence of truncated singular integrals",
+      "type_signature": "f ∈ L^p(ℝⁿ), 1 ≤ p < ∞ → a.e. limit",
+      "description": "For f ∈ L^p(ℝⁿ) with 1 ≤ p < ∞ and T a Calderón–Zygmund operator, the truncated integrals T_ε f(x) converge to Tf(x) as ε → 0 for almost every x."
+    },
+    {
+      "id": "s_maximal_singular_integral_operator",
+      "kind": "state",
+      "name": "Maximal singular integral operator",
+      "type_signature": "f ∈ L^p(ℝⁿ) → Measurable function",
+      "description": "The operator T*f(x) = sup_{ε>0} |T_ε f(x)| controlling the pointwise convergence of truncated Calderón–Zygmund singular integrals."
+    },
+    {
+      "id": "s_cotlar_inequality",
+      "kind": "theorem",
+      "name": "Cotlar's inequality",
+      "type_signature": "CZ operator T → Pointwise bound",
+      "description": "For a Calderón–Zygmund operator T, the maximal singular integral satisfies T*f(x) ≤ C(M(Tf)(x) + Mf(x)) pointwise, reducing L^p bounds for T* to those for T."
+    },
+    {
+      "id": "t_calderon_zygmund_rotation_method",
+      "kind": "technique",
+      "name": "Calderón–Zygmund rotation method",
+      "function_signature": "(Odd CZ kernel on ℝⁿ) → (Reduction to Hilbert transform on ℝ)",
+      "description": "Reduces L^p bounds for singular integrals with odd homogeneous kernels on ℝⁿ to one-dimensional Hilbert transform bounds by averaging over rotations on S^{n−1}."
+    },
+    {
+      "id": "s_hormander_kernel_condition",
+      "kind": "axiom",
+      "name": "Hörmander kernel condition",
+      "type_signature": "Kernel K : ℝⁿ \\ {0} → ℂ → Bound",
+      "description": "The integral condition sup_{y≠0} ∫_{|x|>2|y|} |K(x−y) − K(x)| dx ≤ C, sufficient together with L² boundedness to imply L^p boundedness of the associated operator."
+    },
+    {
+      "id": "s_fourier_multiplier_representation_singular_integrals",
+      "kind": "theorem",
+      "name": "Fourier multiplier representation of singular integrals",
+      "type_signature": "T CZ operator on ℝⁿ → Bounded multiplier",
+      "description": "Every translation-invariant Calderón–Zygmund singular integral operator T with kernel K has Fourier multiplier representation (Tf)^∧ = m f̂ where m(ξ) = K̂(ξ) is bounded and homogeneous of degree 0."
+    },
+    {
+      "id": "s_Lp_boundedness_of_riesz_transforms",
+      "kind": "theorem",
+      "name": "L^p boundedness of Riesz transforms",
+      "type_signature": "f ∈ L^p(ℝⁿ), 1 < p < ∞ → L^p bound",
+      "description": "Each Riesz transform R_j is bounded on L^p(ℝⁿ) for 1 < p < ∞ and of weak type (1,1), with ‖R_j f‖_p ≤ C_p‖f‖_p."
+    },
+    {
+      "id": "s_riesz_transforms_and_laplacian",
+      "kind": "theorem",
+      "name": "Riesz transforms and the Laplacian",
+      "type_signature": "f ∈ 𝒮(ℝⁿ) → Identity",
+      "description": "The Riesz transforms satisfy R_j = ∂_j(−Δ)^{−1/2} and Σ_j R_j² = −I, providing a singular-integral factorization of the Laplacian: ∂_i∂_j(−Δ)^{−1} = −R_iR_j."
+    },
+    {
+      "id": "s_conjugate_poisson_integral",
+      "kind": "state",
+      "name": "Conjugate Poisson integral",
+      "type_signature": "(f ∈ L^p(ℝⁿ), y > 0) → Function on ℝ^{n+1}_+",
+      "description": "The vector-valued function Q_y ∗ f(x) where Q_y is the conjugate Poisson kernel, forming the system of conjugate harmonic functions in the upper half-space."
+    },
+    {
+      "id": "s_spherical_harmonic_decomposition",
+      "kind": "theorem",
+      "name": "Spherical harmonic decomposition of L²(S^{n−1})",
+      "type_signature": "L²(S^{n−1}) → Direct sum",
+      "description": "L²(S^{n−1}) = ⊕_{k=0}^∞ H_k where H_k is the finite-dimensional space of spherical harmonics of degree k, mutually orthogonal eigenspaces of the Laplace–Beltrami operator."
+    },
+    {
+      "id": "s_hecke_identity_spherical_harmonics",
+      "kind": "theorem",
+      "name": "Hecke's identity for spherical harmonics",
+      "type_signature": "Y_k ∈ H_k → Fourier transform identity",
+      "description": "The Fourier transform of a function of the form P_k(x)f(|x|), where P_k is a solid harmonic of degree k, factors as i^{−k}P_k(ξ)g(|ξ|) for an explicit radial function g involving Bessel functions."
+    },
+    {
+      "id": "s_boundary_behavior_poisson_integrals",
+      "kind": "theorem",
+      "name": "Boundary behavior of Poisson integrals in ℝ^{n+1}_+",
+      "type_signature": "f ∈ L^p(ℝⁿ), 1 ≤ p ≤ ∞ → Nontangential convergence",
+      "description": "The Poisson integral u(x,y) = P_y ∗ f(x) in the upper half-space ℝ^{n+1}_+ converges nontangentially to f(x) at almost every x ∈ ℝⁿ for f ∈ L^p."
+    },
+    {
+      "id": "s_multiplier_formula_spherical_harmonics",
+      "kind": "theorem",
+      "name": "Multiplier formula via spherical harmonics",
+      "type_signature": "m homogeneous of degree 0 on ℝⁿ → Spherical harmonic expansion",
+      "description": "A homogeneous-of-degree-0 Fourier multiplier of a Calderón–Zygmund operator can be expanded in spherical harmonics, and L^p boundedness is determined by the decay of the coefficients."
+    },
+    {
+      "id": "s_littlewood_paley_g_function",
+      "kind": "axiom",
+      "name": "Littlewood–Paley g-function",
+      "type_signature": "f ∈ L^p(ℝⁿ) → Measurable function",
+      "description": "The square function g(f)(x) = (∫₀^∞ |∇u(x,t)|² t dt)^{1/2} where u = P_t ∗ f is the Poisson integral, measuring oscillation of f via its harmonic extension."
+    },
+    {
+      "id": "s_littlewood_paley_g_lambda_star_function",
+      "kind": "axiom",
+      "name": "Littlewood–Paley g*_λ function",
+      "type_signature": "f ∈ L^p(ℝⁿ), λ > 0 → Measurable function",
+      "description": "The nontangential variant g*_λ(f)(x) = (∫∫_{ℝ^{n+1}_+} (t/(t+|x−y|))^{nλ} |∇u(y,t)|² t^{1−n} dy dt)^{1/2}, controlling the area integral with parameter λ."
+    },
+    {
+      "id": "s_lusin_area_integral",
+      "kind": "axiom",
+      "name": "Lusin area integral (S-function)",
+      "type_signature": "f ∈ L^p(ℝⁿ) → Measurable function",
+      "description": "The area integral S(f)(x) = (∫∫_{Γ(x)} |∇u(y,t)|² t^{1−n} dy dt)^{1/2} over the cone Γ(x) = {(y,t) : |x−y| < t}, measuring nontangential variation of the Poisson extension."
+    },
+    {
+      "id": "s_S_function_Lp_equivalence",
+      "kind": "theorem",
+      "name": "S-function L^p norm equivalence",
+      "type_signature": "f ∈ L^p(ℝⁿ), 1 < p < ∞ → Norm equivalence",
+      "description": "For 1 < p < ∞, the Lusin area integral satisfies ‖S(f)‖_p ≈ ‖f‖_p, providing an equivalent characterization of L^p norms via the area function."
+    },
+    {
+      "id": "s_marcinkiewicz_multiplier_theorem",
+      "kind": "theorem",
+      "name": "Marcinkiewicz multiplier theorem",
+      "type_signature": "m : ℝⁿ → ℂ satisfying Marcinkiewicz condition → L^p bound",
+      "description": "A bounded function m on ℝⁿ satisfying coordinate-wise bounded variation conditions in each variable separately defines an L^p-bounded Fourier multiplier for 1 < p < ∞."
+    },
+    {
+      "id": "s_partial_sums_operator_fourier",
+      "kind": "state",
+      "name": "Partial sums operator for Fourier integrals",
+      "type_signature": "(f ∈ L^p(ℝⁿ), R > 0) → L^p function",
+      "description": "The operator S_R f = (χ_{B(0,R)} f̂)^∨ projecting f onto frequencies in the ball of radius R, whose L^p boundedness in dimension n ≥ 2 fails for p ≠ 2."
+    },
+    {
+      "id": "s_Lp_boundedness_partial_sums_1d",
+      "kind": "theorem",
+      "name": "L^p boundedness of Fourier partial sums in one dimension",
+      "type_signature": "f ∈ L^p(ℝ), 1 < p < ∞ → L^p bound",
+      "description": "In one dimension the partial sums operator S_R is bounded on L^p(ℝ) for 1 < p < ∞, reducible to compositions of the Hilbert transform."
+    },
+    {
+      "id": "s_bessel_potential_space",
+      "kind": "axiom",
+      "name": "Bessel potential space L^p_α",
+      "type_signature": "(α ∈ ℝ, 1 < p < ∞) → Banach space",
+      "description": "The space L^p_α(ℝⁿ) = {f ∈ 𝒮′ : (1+|ξ|²)^{α/2} f̂ ∈ L^p} = J_{−α}(L^p), where J_α = (I − Δ)^{−α/2} is the Bessel potential operator."
+    },
+    {
+      "id": "s_equivalence_sobolev_bessel_potential_spaces",
+      "kind": "theorem",
+      "name": "Equivalence of Sobolev and Bessel potential spaces",
+      "type_signature": "(k ∈ ℕ, 1 < p < ∞) → Isomorphism",
+      "description": "For integer k ≥ 0 and 1 < p < ∞, W^{k,p}(ℝⁿ) = L^p_k(ℝⁿ) with equivalent norms, identifying classical Sobolev spaces with Bessel potential spaces."
+    },
+    {
+      "id": "s_lipschitz_space_Lambda_alpha",
+      "kind": "axiom",
+      "name": "Lipschitz space Λ_α",
+      "type_signature": "(α > 0) → Banach space",
+      "description": "The space Λ_α(ℝⁿ) defined for 0 < α < 1 by the Hölder condition |f(x+h) − f(x)| ≤ C|h|^α, and for general α > 0 by iterated differences of order k > α."
+    },
+    {
+      "id": "s_zygmund_class",
+      "kind": "axiom",
+      "name": "Zygmund class Λ_*",
+      "type_signature": "→ Banach space",
+      "description": "The space Λ_*(ℝⁿ) of continuous functions satisfying |f(x+h) + f(x−h) − 2f(x)| ≤ C|h|, strictly larger than Lip₁ and the correct substitute for Lipschitz order 1 in the Littlewood–Paley scale."
+    },
+    {
+      "id": "s_characterization_Lambda_alpha_via_poisson",
+      "kind": "theorem",
+      "name": "Characterization of Λ_α via Poisson integral",
+      "type_signature": "f ∈ Λ_α(ℝⁿ), α > 0 → Growth condition",
+      "description": "A tempered distribution f belongs to Λ_α if and only if its Poisson integral u(x,t) satisfies |∂_t^k u(x,t)| ≤ Ct^{α−k} for all integers k > α."
+    },
+    {
+      "id": "s_characterization_Lp_alpha_via_littlewood_paley",
+      "kind": "theorem",
+      "name": "Characterization of L^p_α via Littlewood–Paley theory",
+      "type_signature": "f ∈ 𝒮′(ℝⁿ) → L^p_α equivalence",
+      "description": "A tempered distribution f belongs to L^p_α(ℝⁿ) if and only if (Σ_j 2^{2jα}|Δ_j f|²)^{1/2} is in L^p, where Δ_j is the j-th Littlewood–Paley projection."
+    },
+    {
+      "id": "s_homogeneous_sobolev_space",
+      "kind": "axiom",
+      "name": "Homogeneous Sobolev space Ẇ^{s,p}",
+      "type_signature": "(s ∈ ℝ, 1 < p < ∞) → Seminormed space",
+      "description": "The homogeneous Sobolev space Ẇ^{s,p}(ℝⁿ) defined by the seminorm ‖(−Δ)^{s/2}f‖_{L^p}, lacking lower-order terms present in the inhomogeneous space W^{s,p}."
+    },
+    {
+      "id": "s_riesz_potential_characterization_of_sobolev_spaces",
+      "kind": "theorem",
+      "name": "Riesz potential characterization of Sobolev spaces",
+      "type_signature": "(k ∈ ℕ, 1 < p < n/k) → Representation",
+      "description": "For 1 < p < n/k, the homogeneous Sobolev space Ẇ^{k,p}(ℝⁿ) consists precisely of functions representable as I_k(g) for g ∈ L^p, where I_k is the Riesz potential of order k."
+    },
+    {
+      "id": "s_difference_characterization_bessel_potential_spaces",
+      "kind": "theorem",
+      "name": "Difference characterization of Bessel potential spaces",
+      "type_signature": "f ∈ L^p_α(ℝⁿ) → Integral condition",
+      "description": "For α > 0 and 1 < p < ∞, f ∈ L^p_α(ℝⁿ) iff f ∈ L^p and ∫(|Δ_h^M f(x)|^p / |h|^{n+αp}) dh ∈ L¹ for M > α, characterizing Bessel potential spaces via integrated differences."
+    },
+    {
+      "id": "s_extension_theorem_sobolev_lipschitz_domains",
+      "kind": "theorem",
+      "name": "Extension theorem for Sobolev spaces on Lipschitz domains",
+      "type_signature": "(Ω Lipschitz, k ∈ ℕ, 1 ≤ p ≤ ∞) → Bounded extension",
+      "description": "There exists a bounded linear extension operator E : W^{k,p}(Ω) → W^{k,p}(ℝⁿ) with Ef|_Ω = f, valid simultaneously for all k and p when Ω has Lipschitz boundary."
+    },
+    {
+      "id": "s_total_extension_operator",
+      "kind": "state",
+      "name": "Stein's total extension operator",
+      "type_signature": "(Half-space or Lipschitz domain) → Bounded extension operator",
+      "description": "A single linear operator extending functions from a half-space to all of ℝⁿ that is bounded on every W^{k,p} simultaneously, constructed via regularized reflection."
+    },
+    {
+      "id": "s_restriction_theorem_riesz_potentials",
+      "kind": "theorem",
+      "name": "Restriction theorem for Riesz potentials",
+      "type_signature": "f ∈ L^p_α(ℝⁿ), α > 0 → Trace on submanifold",
+      "description": "Riesz potentials I_α f of L^p functions restrict to lower-dimensional submanifolds with bounds determined by the codimension and the relation of α, p, and n."
+    },
+    {
+      "id": "t_reflection_method",
+      "kind": "technique",
+      "name": "Reflection method for Sobolev extension",
+      "function_signature": "(f on half-space ℝⁿ_+) → (Extension to ℝⁿ via reflected averages)",
+      "description": "Extends a Sobolev function from the half-space to all of ℝⁿ by defining the extension for x_n < 0 as a linear combination of f evaluated at reflected points, preserving differentiability."
+    },
+    {
+      "id": "s_nontangential_maximal_function",
+      "kind": "axiom",
+      "name": "Nontangential maximal function",
+      "type_signature": "u : ℝ^{n+1}_+ → ℂ → Measurable function on ℝⁿ",
+      "description": "The function N(u)(x) = sup_{(y,t)∈Γ(x)} |u(y,t)| where Γ(x) = {(y,t) : |x−y| < t} is the cone at x, controlling the size of a function in the upper half-space."
+    },
+    {
+      "id": "s_nontangential_convergence",
+      "kind": "state",
+      "name": "Nontangential convergence",
+      "type_signature": "u : ℝ^{n+1}_+ → ℂ, x₀ ∈ ℝⁿ → Limit",
+      "description": "A function u(y,t) in the upper half-space converges nontangentially to L at x₀ if u(y,t) → L as (y,t) → (x₀,0) within every cone Γ_α(x₀) = {(y,t) : |y−x₀| < αt}."
+    },
+    {
+      "id": "s_fatou_theorem_upper_half_space",
+      "kind": "theorem",
+      "name": "Fatou's theorem for the upper half-space",
+      "type_signature": "u harmonic in ℝ^{n+1}_+ with sup_t ‖u(·,t)‖_p < ∞ → a.e. nontangential limits",
+      "description": "A harmonic function u in ℝ^{n+1}_+ with bounded L^p means for some 1 ≤ p ≤ ∞ has nontangential boundary limits at almost every point of ℝⁿ."
+    },
+    {
+      "id": "s_harmonic_function_characterization_area_integral",
+      "kind": "theorem",
+      "name": "Area integral characterization of harmonic functions",
+      "type_signature": "u harmonic in ℝ^{n+1}_+ → S(u) ∈ L^p iff N(u) ∈ L^p",
+      "description": "For a harmonic function u in the upper half-space, the L^p norm of the area integral S(u) is comparable to the L^p norm of the nontangential maximal function N(u) for 0 < p < ∞."
+    },
+    {
+      "id": "s_Hp_Lp_equivalence",
+      "kind": "theorem",
+      "name": "H^p–L^p equivalence for p > 1",
+      "type_signature": "1 < p < ∞ → Space identification",
+      "description": "For 1 < p < ∞ the real Hardy space H^p(ℝⁿ) coincides with L^p(ℝⁿ) with equivalent norms; the two spaces differ only when p ≤ 1."
+    },
+    {
+      "id": "s_singular_integrals_Linfty_to_BMO",
+      "kind": "theorem",
+      "name": "Singular integrals map L^∞ to BMO",
+      "type_signature": "T CZ operator, f ∈ L^∞(ℝⁿ) → Tf ∈ BMO",
+      "description": "A Calderón–Zygmund singular integral operator T maps L^∞(ℝⁿ) boundedly into BMO(ℝⁿ) with ‖Tf‖_{BMO} ≤ C‖f‖_∞, the endpoint substitute for the failing L^∞ → L^∞ bound."
+    },
+    {
+      "id": "s_area_integral_characterization_Hp",
+      "kind": "theorem",
+      "name": "Area integral characterization of H^p",
+      "type_signature": "f ∈ H^p(ℝⁿ), 0 < p < ∞ → S(u) ∈ L^p",
+      "description": "A tempered distribution f belongs to H^p(ℝⁿ) iff the area integral S(u) of its Poisson extension u = P ∗ f belongs to L^p, with ‖S(u)‖_p ≈ ‖f‖_{H^p}."
+    },
+    {
+      "id": "s_nontangential_maximal_characterization_Hp",
+      "kind": "theorem",
+      "name": "Nontangential maximal function characterization of H^p",
+      "type_signature": "f ∈ 𝒮′(ℝⁿ), 0 < p < ∞ → H^p membership",
+      "description": "A tempered distribution f belongs to H^p(ℝⁿ) iff the nontangential maximal function N(P∗f) belongs to L^p, and ‖f‖_{H^p} ≈ ‖N(P∗f)‖_p."
+    },
+    {
+      "id": "s_conjugate_function_characterization_Hp",
+      "kind": "theorem",
+      "name": "Conjugate function characterization of H^p",
+      "type_signature": "f ∈ L¹(ℝⁿ) → H^p membership",
+      "description": "For n/(n+1) < p ≤ 1, f ∈ H^p(ℝⁿ) iff f and all its Riesz transforms R_jf belong to L^p, with ‖f‖_{H^p} ≈ ‖f‖_p + Σ_j‖R_jf‖_p."
+    },
+    {
+      "id": "s_sharp_function",
+      "kind": "axiom",
+      "name": "Fefferman–Stein sharp function",
+      "type_signature": "f ∈ L¹_loc(ℝⁿ) → Measurable function",
+      "description": "The sharp maximal function f^#(x) = sup_Q (1/|Q|)∫_Q |f(y) − f_Q| dy, measuring local oscillation of f and controlling the BMO seminorm."
+    },
+    {
+      "id": "s_fefferman_stein_sharp_function_inequality",
+      "kind": "theorem",
+      "name": "Fefferman–Stein inequality for the sharp function",
+      "type_signature": "f ∈ L^p(ℝⁿ), 1 < p < ∞ → Norm equivalence",
+      "description": "For 1 < p < ∞, ‖f‖_p ≤ C_p‖f^#‖_p, so that L^p norms are controlled by the sharp maximal function, bridging pointwise oscillation and global integrability."
+    },
+    {
+      "id": "s_Lp_differentiability",
+      "kind": "state",
+      "name": "L^p differentiability",
+      "type_signature": "f ∈ W^{1,p}(ℝⁿ) → L^p-approximate derivative a.e.",
+      "description": "A function f is L^p-differentiable at x if there exists a linear map L such that (r^{−n}∫_{B(x,r)} |f(y) − f(x) − L(y−x)|^p dy)^{1/p} = o(r) as r → 0."
+    },
+    {
+      "id": "s_calderon_theorem_Lp_differentiability",
+      "kind": "theorem",
+      "name": "Calderón's theorem on L^p differentiability",
+      "type_signature": "f ∈ W^{1,p}(ℝⁿ), 1 < p ≤ ∞ → a.e. L^p differentiability",
+      "description": "Every function in the Sobolev space W^{1,p}(ℝⁿ) for 1 < p ≤ ∞ is L^p-differentiable at almost every point."
+    },
+    {
+      "id": "s_CZ_theorem_ae_differentiability",
+      "kind": "theorem",
+      "name": "Calderón–Zygmund theorem on a.e. differentiability",
+      "type_signature": "f ∈ W^{k,p}(ℝⁿ) → a.e. differentiability",
+      "description": "If f ∈ W^{k,p}(ℝⁿ) with kp > n, then f is classically differentiable of order k−1 a.e.; for kp ≤ n, f is L^p-differentiable of order k at almost every point."
+    },
+    {
+      "id": "s_maximal_operator_sobolev_functions",
+      "kind": "state",
+      "name": "Maximal operator for Sobolev functions",
+      "type_signature": "f ∈ W^{1,p}(ℝⁿ), 1 < p ≤ n → Sobolev-type bound",
+      "description": "The Hardy–Littlewood maximal function Mf of f ∈ W^{1,p}(ℝⁿ), 1 < p ≤ n, belongs to W^{1,p} with ‖∇Mf‖_p ≤ C‖∇f‖_p."
+    },
+    {
+      "id": "s_lebesgue_point_theorem_sobolev_functions",
+      "kind": "theorem",
+      "name": "Lebesgue point theorem for Sobolev functions",
+      "type_signature": "f ∈ W^{1,p}(ℝⁿ), 1 ≤ p ≤ n → a.e. Lebesgue points",
+      "description": "Every f ∈ W^{1,p}(ℝⁿ) has Lebesgue points at all x outside a set of p-capacity zero, a finer statement than the measure-zero exceptional set of classical Lebesgue differentiation."
+    },
+    {
+      "id": "s_p_capacity",
+      "kind": "axiom",
+      "name": "p-capacity",
+      "type_signature": "(E ⊂ ℝⁿ, 1 ≤ p ≤ n) → [0,∞]",
+      "description": "Cap_p(E) = inf{‖u‖_{W^{1,p}}^p : u ≥ 1 on E, u ∈ W^{1,p}(ℝⁿ)}, measuring the size of E from the viewpoint of Sobolev functions; the correct notion of exceptional sets for Sobolev-space theory."
+    },
+    {
+      "id": "t_real_interpolation_method",
+      "kind": "technique",
+      "name": "Real interpolation method (K-functional)",
+      "function_signature": "(Compatible couple (A₀,A₁), θ ∈ (0,1), q ∈ [1,∞]) → Interpolation space (A₀,A₁)_{θ,q}",
+      "description": "Constructs the interpolation space (A₀,A₁)_{θ,q} using the Peetre K-functional K(t,a) = inf_{a=a₀+a₁}(‖a₀‖_{A₀} + t‖a₁‖_{A₁}) with norm (∫(t^{−θ}K(t,a))^q dt/t)^{1/q}."
+    },
+    {
+      "id": "t_complex_interpolation_method",
+      "kind": "technique",
+      "name": "Complex interpolation method",
+      "function_signature": "(Compatible couple (A₀,A₁), θ ∈ (0,1)) → Interpolation space [A₀,A₁]_θ",
+      "description": "Constructs [A₀,A₁]_θ as the values f(θ) where f is bounded analytic on the strip {0 < Re z < 1} with continuous boundary values in A₀ and A₁."
+    },
+    {
+      "id": "t_good_lambda_inequality",
+      "kind": "technique",
+      "name": "Good-λ inequality technique",
+      "function_signature": "(Operators S, T) → (L^p comparison of S and T)",
+      "description": "Proves ‖Sf‖_p ≤ C‖Tf‖_p by showing |{Sf > 2λ, Tf ≤ γλ}| ≤ c(γ)|{Sf > λ}| for small γ, then integrating over λ to transfer L^p bounds."
+    },
+    {
+      "id": "t_CZ_L2_boundedness_via_fourier",
+      "kind": "technique",
+      "name": "L² boundedness of CZ operators via Fourier transform",
+      "function_signature": "(CZ operator T with kernel K) → (L² bound via Plancherel)",
+      "description": "Establishes L² boundedness of a CZ operator by showing its Fourier multiplier m = K̂ is bounded, using homogeneity and smoothness of K; combined with CZ theorem gives all L^p bounds."
+    },
+    {
+      "id": "t_duality_argument_weak_type",
+      "kind": "technique",
+      "name": "Duality argument for weak-type estimates",
+      "function_signature": "(Sublinear operator T, dual pairing) → (Weak-type bound)",
+      "description": "Proves weak-type (1,1) bounds by dualizing and using the adjoint T* together with the Calderón–Zygmund decomposition to handle the singular part."
+    },
+    {
+      "id": "t_subordination_formula",
+      "kind": "technique",
+      "name": "Subordination formula for Poisson semigroup",
+      "function_signature": "(Heat semigroup e^{tΔ}) → (Poisson semigroup e^{−t√{−Δ}})",
+      "description": "Recovers the Poisson semigroup from the heat semigroup via e^{−t√{−Δ}}f = (t/(2√π))∫₀^∞ s^{−3/2}e^{−t²/(4s)}e^{sΔ}f ds, transferring heat kernel estimates to Poisson kernel estimates."
+    },
+    {
+      "id": "s_multiplier_problem_for_the_ball",
+      "kind": "state",
+      "name": "Multiplier problem for the ball",
+      "type_signature": "n ≥ 2, p ≠ 2 → Failure of L^p boundedness",
+      "description": "The characteristic function χ_{B(0,1)} is not an L^p Fourier multiplier for p ≠ 2 when n ≥ 2 (Fefferman's theorem), in contrast to the one-dimensional case."
+    },
+    {
+      "id": "s_bochner_riesz_conjecture",
+      "kind": "state",
+      "name": "Bochner–Riesz conjecture",
+      "type_signature": "n ≥ 2, δ > 0 → Conjectured L^p range",
+      "description": "The conjecture that Bochner–Riesz means S^δ_R are bounded on L^p(ℝⁿ) iff δ > max(n|1/p − 1/2| − 1/2, 0); proved for n = 2, open in higher dimensions."
+    },
+    {
+      "id": "s_CZ_lemma_dyadic",
+      "kind": "theorem",
+      "name": "Calderón–Zygmund lemma (dyadic version)",
+      "type_signature": "(f ∈ L¹(ℝⁿ), λ > 0) → Decomposition",
+      "description": "For f ∈ L¹(ℝⁿ) and λ > 0, there exist disjoint dyadic cubes {Q_j} with averages exceeding λ and summing to at most ‖f‖₁/λ, yielding the canonical good/bad decomposition."
+    },
+    {
+      "id": "s_fractional_laplacian",
+      "kind": "axiom",
+      "name": "Fractional Laplacian (−Δ)^s",
+      "type_signature": "(s ∈ (0,1), f ∈ 𝒮(ℝⁿ)) → 𝒮′(ℝⁿ)",
+      "description": "The operator (−Δ)^s defined via ((−Δ)^s f)^∧(ξ) = |ξ|^{2s}f̂(ξ), equivalently c_{n,s} p.v. ∫(f(x) − f(y))/|x−y|^{n+2s} dy, interpolating between identity and Laplacian."
+    },
+    {
+      "id": "s_singular_integral_on_domain",
+      "kind": "state",
+      "name": "Singular integral operator restricted to a domain",
+      "type_signature": "(T CZ operator, Ω domain in ℝⁿ) → Operator on L^p(Ω)",
+      "description": "The operator T_Ω f(x) = ∫_Ω K(x,y)f(y) dy for f supported in Ω, whose L^p boundedness follows from that of T on ℝⁿ by extension and restriction."
+    },
+    {
+      "id": "s_elliptic_regularity_in_Lp",
+      "kind": "theorem",
+      "name": "L^p elliptic regularity via singular integrals",
+      "type_signature": "(Lu = f, L elliptic of order 2k, f ∈ L^p) → u ∈ W^{2k,p}",
+      "description": "For a uniformly elliptic operator L of order 2k with 1 < p < ∞, Lu = f with f ∈ L^p implies u ∈ W^{2k,p}_{loc}, proved via representation through Calderón–Zygmund singular integrals."
+    },
+    {
+      "id": "s_newtonian_potential",
+      "kind": "axiom",
+      "name": "Newtonian potential",
+      "type_signature": "(f ∈ L^p(ℝⁿ), n ≥ 3) → W^{2,p}_{loc} function",
+      "description": "The convolution Nf(x) = c_n ∫ f(y)/|x−y|^{n−2} dy solving −Δ(Nf) = f, whose second derivatives are Calderón–Zygmund singular integrals yielding W^{2,p} regularity."
+    },
+    {
+      "id": "s_calderon_commutator_theorem",
+      "kind": "theorem",
+      "name": "Calderón commutator theorem",
+      "type_signature": "(A Lipschitz, H Hilbert transform) → L² bound",
+      "description": "The first Calderón commutator C₁f(x) = p.v. ∫(A(x)−A(y))/(x−y)² f(y) dy is bounded on L² when A is Lipschitz, with ‖C₁‖ ≤ C‖A′‖_∞."
+    },
+    {
+      "id": "s_homogeneous_distribution",
+      "kind": "axiom",
+      "name": "Homogeneous distribution",
+      "type_signature": "(λ ∈ ℂ, n ∈ ℕ) → 𝒮′(ℝⁿ)",
+      "description": "A tempered distribution u satisfying u(tx) = t^λ u(x) in the distributional sense for all t > 0; Calderón–Zygmund kernels are homogeneous distributions of degree −n with cancellation."
+    },
+    {
+      "id": "s_laplace_beltrami_operator_sphere",
+      "kind": "axiom",
+      "name": "Laplace–Beltrami operator on S^{n−1}",
+      "type_signature": "C²(S^{n−1}) → C⁰(S^{n−1})",
+      "description": "The intrinsic Laplacian Δ_{S^{n−1}} on the unit sphere, with eigenvalues −k(k+n−2) for k = 0,1,2,… and eigenspaces the spaces of spherical harmonics of degree k."
+    },
+    {
+      "id": "s_stein_maximal_principle",
+      "kind": "theorem",
+      "name": "Stein's maximal principle",
+      "type_signature": "(Family of operators {T_t}, t > 0) → Maximal bound",
+      "description": "If {T_t} converges to the identity a.e. on a dense subclass of L^p and the maximal operator T*f = sup_t|T_tf| is of weak type, then T_tf → f a.e. for all f ∈ L^p."
+    },
+    {
+      "id": "s_semigroup_characterization_bessel_potentials",
+      "kind": "theorem",
+      "name": "Semigroup characterization of Bessel potentials",
+      "type_signature": "α > 0 → Integral formula",
+      "description": "The Bessel potential J_α f = (I−Δ)^{−α/2}f equals (1/Γ(α/2))∫₀^∞ e^{−t}e^{tΔ}f t^{α/2−1} dt, expressing Bessel potentials via the heat semigroup."
+    },
+    {
+      "id": "s_heat_kernel_Rn",
+      "kind": "axiom",
+      "name": "Heat kernel on ℝⁿ",
+      "type_signature": "(t > 0, x ∈ ℝⁿ) → (0,∞)",
+      "description": "The Gaussian kernel W_t(x) = (4πt)^{−n/2}exp(−|x|²/(4t)), the fundamental solution of the heat equation ∂_tu = Δu, whose convolution W_t∗f defines the heat semigroup."
+    },
+    {
+      "id": "s_dual_characterization_H1",
+      "kind": "theorem",
+      "name": "Dual characterization of H¹",
+      "type_signature": "f ∈ L¹(ℝⁿ) → H¹ membership via dual action",
+      "description": "H¹(ℝⁿ) is the subspace of L¹ consisting of distributions f with sup{|⟨f,φ⟩| : φ ∈ BMO, ‖φ‖_{BMO} ≤ 1} finite, equivalently the predual of BMO."
+    },
+    {
+      "id": "s_interpolation_H1_Linfty",
+      "kind": "theorem",
+      "name": "Interpolation between H¹ and L^∞",
+      "type_signature": "(H¹(ℝⁿ), L^∞(ℝⁿ), θ ∈ (0,1)) → Interpolation space",
+      "description": "The complex interpolation space [H¹, L^∞]_θ = L^p for 1/p = 1−θ, extending the classical L^p interpolation scale through the Hardy space endpoint."
+    },
+    {
+      "id": "s_calderon_formula_sobolev_norms",
+      "kind": "theorem",
+      "name": "Calderón's formula for Sobolev norms",
+      "type_signature": "f ∈ L^p_α(ℝⁿ) → Integral representation",
+      "description": "The L^p_α norm of f equals ‖(∫₀^∞ |t^{−α}ψ_t∗f|² dt/t)^{1/2}‖_p for suitable ψ, connecting the Calderón reproducing formula to Sobolev-space norms."
     }
   ],
   "edges": [
@@ -244430,6 +244976,1046 @@
       "role": "input",
       "parameter_binding": {},
       "used_in_theorem": ""
+    },
+    {
+      "from": "s_hardy_littlewood_maximal_function",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hardy_littlewood_maximal_theorem",
+      "id": "e_17527"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_hardy_littlewood_maximal_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hardy_littlewood_maximal_theorem",
+      "id": "e_17528"
+    },
+    {
+      "from": "s_vitali_covering_lemma",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hardy_littlewood_maximal_theorem",
+      "id": "e_17529"
+    },
+    {
+      "from": "s_weak_type_p_p_estimate",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hardy_littlewood_maximal_theorem",
+      "id": "e_17530"
+    },
+    {
+      "from": "s_dyadic_cubes",
+      "to": "t_calderon_zygmund_decomposition_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_zygmund_decomposition",
+      "id": "e_17531"
+    },
+    {
+      "from": "s_dyadic_cubes",
+      "to": "t_calderon_zygmund_decomposition_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_CZ_lemma_dyadic",
+      "id": "e_17532"
+    },
+    {
+      "from": "t_calderon_zygmund_decomposition_technique",
+      "to": "s_CZ_lemma_dyadic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_CZ_lemma_dyadic",
+      "id": "e_17533"
+    },
+    {
+      "from": "s_hardy_littlewood_maximal_function",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_function_characterization_of_Lp",
+      "id": "e_17534"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_maximal_function_characterization_of_Lp",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_function_characterization_of_Lp",
+      "id": "e_17535"
+    },
+    {
+      "from": "s_hilbert_transform",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilbert_transform_Lp_bound",
+      "id": "e_17536"
+    },
+    {
+      "from": "s_truncated_singular_integral",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pointwise_convergence_truncated_singular_integrals",
+      "id": "e_17537"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_pointwise_convergence_truncated_singular_integrals",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pointwise_convergence_truncated_singular_integrals",
+      "id": "e_17538"
+    },
+    {
+      "from": "s_truncated_singular_integral",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cotlar_inequality",
+      "id": "e_17539"
+    },
+    {
+      "from": "s_maximal_singular_integral_operator",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cotlar_inequality",
+      "id": "e_17540"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_cotlar_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cotlar_inequality",
+      "id": "e_17541"
+    },
+    {
+      "from": "s_hilbert_transform",
+      "to": "t_calderon_zygmund_rotation_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_zygmund_Lp_bound",
+      "id": "e_17542"
+    },
+    {
+      "from": "s_hormander_kernel_condition",
+      "to": "t_calderon_zygmund_rotation_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_zygmund_Lp_bound",
+      "id": "e_17543"
+    },
+    {
+      "from": "t_calderon_zygmund_rotation_method",
+      "to": "s_calderon_zygmund_Lp_bound",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_zygmund_Lp_bound",
+      "id": "e_17544"
+    },
+    {
+      "from": "s_hilbert_transform",
+      "to": "t_CZ_L2_boundedness_via_fourier",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilbert_transform_Lp_bound",
+      "id": "e_17545"
+    },
+    {
+      "from": "s_plancherel_theorem",
+      "to": "t_CZ_L2_boundedness_via_fourier",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilbert_transform_Lp_bound",
+      "id": "e_17546"
+    },
+    {
+      "from": "t_CZ_L2_boundedness_via_fourier",
+      "to": "s_L2_boundedness_of_singular_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_L2_boundedness_of_singular_integral",
+      "id": "e_17547"
+    },
+    {
+      "from": "s_calderon_zygmund_kernel_on_Rn",
+      "to": "t_CZ_L2_boundedness_via_fourier",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fourier_multiplier_representation_singular_integrals",
+      "id": "e_17548"
+    },
+    {
+      "from": "t_CZ_L2_boundedness_via_fourier",
+      "to": "s_fourier_multiplier_representation_singular_integrals",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fourier_multiplier_representation_singular_integrals",
+      "id": "e_17549"
+    },
+    {
+      "from": "s_riesz_transform",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_Lp_boundedness_of_riesz_transforms",
+      "id": "e_17550"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_Lp_boundedness_of_riesz_transforms",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_Lp_boundedness_of_riesz_transforms",
+      "id": "e_17551"
+    },
+    {
+      "from": "s_riesz_transform",
+      "to": "t_CZ_L2_boundedness_via_fourier",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riesz_transforms_and_laplacian",
+      "id": "e_17552"
+    },
+    {
+      "from": "s_fractional_laplacian",
+      "to": "t_CZ_L2_boundedness_via_fourier",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riesz_transforms_and_laplacian",
+      "id": "e_17553"
+    },
+    {
+      "from": "t_CZ_L2_boundedness_via_fourier",
+      "to": "s_riesz_transforms_and_laplacian",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riesz_transforms_and_laplacian",
+      "id": "e_17554"
+    },
+    {
+      "from": "s_spherical_harmonics_y_lm",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_spherical_harmonic_decomposition",
+      "id": "e_17555"
+    },
+    {
+      "from": "s_laplace_beltrami_operator_sphere",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_spherical_harmonic_decomposition",
+      "id": "e_17556"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_spherical_harmonic_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_spherical_harmonic_decomposition",
+      "id": "e_17557"
+    },
+    {
+      "from": "s_spherical_harmonics_y_lm",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hecke_identity_spherical_harmonics",
+      "id": "e_17558"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_hecke_identity_spherical_harmonics",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hecke_identity_spherical_harmonics",
+      "id": "e_17559"
+    },
+    {
+      "from": "s_poisson_integral_representation",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_boundary_behavior_poisson_integrals",
+      "id": "e_17560"
+    },
+    {
+      "from": "s_hardy_littlewood_maximal_theorem",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_boundary_behavior_poisson_integrals",
+      "id": "e_17561"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_boundary_behavior_poisson_integrals",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_boundary_behavior_poisson_integrals",
+      "id": "e_17562"
+    },
+    {
+      "from": "s_spherical_harmonics_y_lm",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_multiplier_formula_spherical_harmonics",
+      "id": "e_17563"
+    },
+    {
+      "from": "s_fourier_multiplier_representation_singular_integrals",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_multiplier_formula_spherical_harmonics",
+      "id": "e_17564"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_multiplier_formula_spherical_harmonics",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_multiplier_formula_spherical_harmonics",
+      "id": "e_17565"
+    },
+    {
+      "from": "s_littlewood_paley_g_function",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_littlewood_paley_square_function_theorem",
+      "id": "e_17566"
+    },
+    {
+      "from": "s_lusin_area_integral",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_S_function_Lp_equivalence",
+      "id": "e_17567"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_S_function_Lp_equivalence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_S_function_Lp_equivalence",
+      "id": "e_17568"
+    },
+    {
+      "from": "s_bounded_fourier_multiplier_m",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_marcinkiewicz_multiplier_theorem",
+      "id": "e_17569"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_marcinkiewicz_multiplier_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_marcinkiewicz_multiplier_theorem",
+      "id": "e_17570"
+    },
+    {
+      "from": "s_partial_sums_operator_fourier",
+      "to": "t_hilbert_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_Lp_boundedness_partial_sums_1d",
+      "id": "e_17571"
+    },
+    {
+      "from": "s_hilbert_transform",
+      "to": "t_hilbert_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_Lp_boundedness_partial_sums_1d",
+      "id": "e_17572"
+    },
+    {
+      "from": "t_hilbert_transform",
+      "to": "s_Lp_boundedness_partial_sums_1d",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_Lp_boundedness_partial_sums_1d",
+      "id": "e_17573"
+    },
+    {
+      "from": "s_bessel_potential_space",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equivalence_sobolev_bessel_potential_spaces",
+      "id": "e_17574"
+    },
+    {
+      "from": "s_sobolev_space_Wkp",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equivalence_sobolev_bessel_potential_spaces",
+      "id": "e_17575"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_equivalence_sobolev_bessel_potential_spaces",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equivalence_sobolev_bessel_potential_spaces",
+      "id": "e_17576"
+    },
+    {
+      "from": "s_bessel_potential_space",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characterization_Lp_alpha_via_littlewood_paley",
+      "id": "e_17577"
+    },
+    {
+      "from": "s_littlewood_paley_square_function_theorem",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characterization_Lp_alpha_via_littlewood_paley",
+      "id": "e_17578"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_characterization_Lp_alpha_via_littlewood_paley",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characterization_Lp_alpha_via_littlewood_paley",
+      "id": "e_17579"
+    },
+    {
+      "from": "s_lipschitz_space_Lambda_alpha",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characterization_Lambda_alpha_via_poisson",
+      "id": "e_17580"
+    },
+    {
+      "from": "s_poisson_integral_representation",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characterization_Lambda_alpha_via_poisson",
+      "id": "e_17581"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_characterization_Lambda_alpha_via_poisson",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characterization_Lambda_alpha_via_poisson",
+      "id": "e_17582"
+    },
+    {
+      "from": "s_homogeneous_sobolev_space",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riesz_potential_characterization_of_sobolev_spaces",
+      "id": "e_17583"
+    },
+    {
+      "from": "s_riesz_potential_kernel",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riesz_potential_characterization_of_sobolev_spaces",
+      "id": "e_17584"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_riesz_potential_characterization_of_sobolev_spaces",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riesz_potential_characterization_of_sobolev_spaces",
+      "id": "e_17585"
+    },
+    {
+      "from": "s_bessel_potential_space",
+      "to": "t_real_interpolation_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_difference_characterization_bessel_potential_spaces",
+      "id": "e_17586"
+    },
+    {
+      "from": "t_real_interpolation_method",
+      "to": "s_difference_characterization_bessel_potential_spaces",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_difference_characterization_bessel_potential_spaces",
+      "id": "e_17587"
+    },
+    {
+      "from": "s_sobolev_space_Wkp",
+      "to": "t_reflection_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_extension_theorem_sobolev_lipschitz_domains",
+      "id": "e_17588"
+    },
+    {
+      "from": "s_bounded_lipschitz_domain_in_Rn",
+      "to": "t_reflection_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_extension_theorem_sobolev_lipschitz_domains",
+      "id": "e_17589"
+    },
+    {
+      "from": "t_reflection_method",
+      "to": "s_extension_theorem_sobolev_lipschitz_domains",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_extension_theorem_sobolev_lipschitz_domains",
+      "id": "e_17590"
+    },
+    {
+      "from": "t_reflection_method",
+      "to": "s_total_extension_operator",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_extension_theorem_sobolev_lipschitz_domains",
+      "id": "e_17591"
+    },
+    {
+      "from": "s_riesz_potential_kernel",
+      "to": "t_real_interpolation_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_restriction_theorem_riesz_potentials",
+      "id": "e_17592"
+    },
+    {
+      "from": "t_real_interpolation_method",
+      "to": "s_restriction_theorem_riesz_potentials",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_restriction_theorem_riesz_potentials",
+      "id": "e_17593"
+    },
+    {
+      "from": "s_nontangential_maximal_function",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fatou_theorem_upper_half_space",
+      "id": "e_17594"
+    },
+    {
+      "from": "s_nontangential_convergence",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fatou_theorem_upper_half_space",
+      "id": "e_17595"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_fatou_theorem_upper_half_space",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fatou_theorem_upper_half_space",
+      "id": "e_17596"
+    },
+    {
+      "from": "s_lusin_area_integral",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_harmonic_function_characterization_area_integral",
+      "id": "e_17597"
+    },
+    {
+      "from": "s_nontangential_maximal_function",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_harmonic_function_characterization_area_integral",
+      "id": "e_17598"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_harmonic_function_characterization_area_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_harmonic_function_characterization_area_integral",
+      "id": "e_17599"
+    },
+    {
+      "from": "s_real_hardy_space_H1_on_Rn",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_Hp_Lp_equivalence",
+      "id": "e_17600"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_Hp_Lp_equivalence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_Hp_Lp_equivalence",
+      "id": "e_17601"
+    },
+    {
+      "from": "s_bmo_space_on_Rn",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_singular_integrals_Linfty_to_BMO",
+      "id": "e_17602"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_singular_integrals_Linfty_to_BMO",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_singular_integrals_Linfty_to_BMO",
+      "id": "e_17603"
+    },
+    {
+      "from": "s_lusin_area_integral",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_area_integral_characterization_Hp",
+      "id": "e_17604"
+    },
+    {
+      "from": "s_real_hardy_space_H1_on_Rn",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_area_integral_characterization_Hp",
+      "id": "e_17605"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_area_integral_characterization_Hp",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_area_integral_characterization_Hp",
+      "id": "e_17606"
+    },
+    {
+      "from": "s_nontangential_maximal_function",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nontangential_maximal_characterization_Hp",
+      "id": "e_17607"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_nontangential_maximal_characterization_Hp",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nontangential_maximal_characterization_Hp",
+      "id": "e_17608"
+    },
+    {
+      "from": "s_riesz_transform",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conjugate_function_characterization_Hp",
+      "id": "e_17609"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_conjugate_function_characterization_Hp",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conjugate_function_characterization_Hp",
+      "id": "e_17610"
+    },
+    {
+      "from": "s_sharp_function",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fefferman_stein_sharp_function_inequality",
+      "id": "e_17611"
+    },
+    {
+      "from": "s_hardy_littlewood_maximal_function",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fefferman_stein_sharp_function_inequality",
+      "id": "e_17612"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_fefferman_stein_sharp_function_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fefferman_stein_sharp_function_inequality",
+      "id": "e_17613"
+    },
+    {
+      "from": "s_sobolev_space_Wkp",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_theorem_Lp_differentiability",
+      "id": "e_17614"
+    },
+    {
+      "from": "s_Lp_differentiability",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_theorem_Lp_differentiability",
+      "id": "e_17615"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_calderon_theorem_Lp_differentiability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_theorem_Lp_differentiability",
+      "id": "e_17616"
+    },
+    {
+      "from": "s_sobolev_space_Wkp",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_CZ_theorem_ae_differentiability",
+      "id": "e_17617"
+    },
+    {
+      "from": "s_sobolev_embedding_theorem",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_CZ_theorem_ae_differentiability",
+      "id": "e_17618"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_CZ_theorem_ae_differentiability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_CZ_theorem_ae_differentiability",
+      "id": "e_17619"
+    },
+    {
+      "from": "s_hardy_littlewood_maximal_function",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_operator_sobolev_functions",
+      "id": "e_17620"
+    },
+    {
+      "from": "s_sobolev_space_Wkp",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_operator_sobolev_functions",
+      "id": "e_17621"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_maximal_operator_sobolev_functions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_operator_sobolev_functions",
+      "id": "e_17622"
+    },
+    {
+      "from": "s_p_capacity",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lebesgue_point_theorem_sobolev_functions",
+      "id": "e_17623"
+    },
+    {
+      "from": "s_sobolev_space_Wkp",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lebesgue_point_theorem_sobolev_functions",
+      "id": "e_17624"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_lebesgue_point_theorem_sobolev_functions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lebesgue_point_theorem_sobolev_functions",
+      "id": "e_17625"
+    },
+    {
+      "from": "s_hardy_littlewood_maximal_function",
+      "to": "t_good_lambda_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_zygmund_Lp_bound",
+      "id": "e_17626"
+    },
+    {
+      "from": "s_maximal_singular_integral_operator",
+      "to": "t_good_lambda_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cotlar_inequality",
+      "id": "e_17627"
+    },
+    {
+      "from": "t_good_lambda_inequality",
+      "to": "s_cotlar_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cotlar_inequality",
+      "id": "e_17628"
+    },
+    {
+      "from": "s_weak_type_p_p_estimate",
+      "to": "t_duality_argument_weak_type",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_zygmund_Lp_bound",
+      "id": "e_17629"
+    },
+    {
+      "from": "t_duality_argument_weak_type",
+      "to": "s_weak_type_p_p_estimate",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_zygmund_Lp_bound",
+      "id": "e_17630"
+    },
+    {
+      "from": "s_heat_kernel_Rn",
+      "to": "t_subordination_formula",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_semigroup_characterization_bessel_potentials",
+      "id": "e_17631"
+    },
+    {
+      "from": "t_subordination_formula",
+      "to": "s_semigroup_characterization_bessel_potentials",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_semigroup_characterization_bessel_potentials",
+      "id": "e_17632"
+    },
+    {
+      "from": "t_subordination_formula",
+      "to": "s_bessel_potential_representation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_semigroup_characterization_bessel_potentials",
+      "id": "e_17633"
+    },
+    {
+      "from": "s_newtonian_potential",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_elliptic_regularity_in_Lp",
+      "id": "e_17634"
+    },
+    {
+      "from": "s_riesz_transform",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_elliptic_regularity_in_Lp",
+      "id": "e_17635"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_elliptic_regularity_in_Lp",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_elliptic_regularity_in_Lp",
+      "id": "e_17636"
+    },
+    {
+      "from": "s_hilbert_transform",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_commutator_theorem",
+      "id": "e_17637"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_calderon_commutator_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_commutator_theorem",
+      "id": "e_17638"
+    },
+    {
+      "from": "s_partial_sums_operator_fourier",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_multiplier_problem_for_the_ball",
+      "id": "e_17639"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_multiplier_problem_for_the_ball",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_multiplier_problem_for_the_ball",
+      "id": "e_17640"
+    },
+    {
+      "from": "s_bochner_riesz_lp_bound",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bochner_riesz_conjecture",
+      "id": "e_17641"
+    },
+    {
+      "from": "s_weak_type_p_p_estimate",
+      "to": "t_maximal_function_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stein_maximal_principle",
+      "id": "e_17642"
+    },
+    {
+      "from": "t_maximal_function_technique",
+      "to": "s_stein_maximal_principle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stein_maximal_principle",
+      "id": "e_17643"
+    },
+    {
+      "from": "s_singular_integral_on_domain",
+      "to": "t_reflection_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_elliptic_regularity_in_Lp",
+      "id": "e_17644"
+    },
+    {
+      "from": "s_calderon_reproducing_formula",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_formula_sobolev_norms",
+      "id": "e_17645"
+    },
+    {
+      "from": "s_bessel_potential_space",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_formula_sobolev_norms",
+      "id": "e_17646"
+    },
+    {
+      "from": "t_fourier_transform",
+      "to": "s_calderon_formula_sobolev_norms",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_formula_sobolev_norms",
+      "id": "e_17647"
+    },
+    {
+      "from": "s_real_hardy_space_H1_on_Rn",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dual_characterization_H1",
+      "id": "e_17648"
+    },
+    {
+      "from": "s_bmo_space_on_Rn",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dual_characterization_H1",
+      "id": "e_17649"
+    },
+    {
+      "from": "t_calderon_zygmund_operator",
+      "to": "s_dual_characterization_H1",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dual_characterization_H1",
+      "id": "e_17650"
+    },
+    {
+      "from": "s_real_hardy_space_H1_on_Rn",
+      "to": "t_complex_interpolation_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_interpolation_H1_Linfty",
+      "id": "e_17651"
+    },
+    {
+      "from": "t_complex_interpolation_method",
+      "to": "s_interpolation_H1_Linfty",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_interpolation_H1_Linfty",
+      "id": "e_17652"
+    },
+    {
+      "from": "s_hormander_kernel_condition",
+      "to": "t_calderon_zygmund_operator",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_calderon_zygmund_Lp_bound",
+      "id": "e_17653"
+    },
+    {
+      "from": "s_fractional_laplacian",
+      "to": "t_fourier_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riesz_transforms_and_laplacian",
+      "id": "e_17654"
+    },
+    {
+      "from": "s_poisson_integral_representation",
+      "to": "t_hilbert_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conjugate_poisson_integral",
+      "id": "e_17655"
+    },
+    {
+      "from": "t_hilbert_transform",
+      "to": "s_conjugate_poisson_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conjugate_poisson_integral",
+      "id": "e_17656"
     }
   ],
   "subgraphs": [
