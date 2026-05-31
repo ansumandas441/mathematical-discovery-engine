@@ -99500,6 +99500,573 @@
       "name": "Compact exhaustion and direct limit for H*_c",
       "function_signature": "(Non-compact manifold M, exhaustion K₁ ⊂ K₂ ⊂ ···) → H*_c(M) = lim_{→} H*_c(U_i)",
       "description": "Computing compactly supported cohomology of a non-compact manifold as the direct limit over an exhaustion by precompact open subsets, using extension by zero to form the directed system."
+    },
+    {
+      "id": "s_symplectic_subspace",
+      "kind": "axiom",
+      "name": "Symplectic subspace",
+      "type_signature": "(SymplecticVectorSpace (V,ω), Subspace W) → SymplecticVectorSpace (W, ω|_W)",
+      "description": "A linear subspace W of a symplectic vector space (V,ω) such that ω|_W is nondegenerate; equivalently W ∩ W^ω = {0}."
+    },
+    {
+      "id": "s_isotropic_subspace",
+      "kind": "axiom",
+      "name": "Isotropic subspace",
+      "type_signature": "(SymplecticVectorSpace (V,ω), Subspace W) → Prop",
+      "description": "A linear subspace W of (V,ω) with ω|_W = 0, equivalently W ⊂ W^ω; necessarily dim W ≤ n."
+    },
+    {
+      "id": "s_coisotropic_subspace",
+      "kind": "axiom",
+      "name": "Coisotropic subspace",
+      "type_signature": "(SymplecticVectorSpace (V,ω), Subspace W) → Prop",
+      "description": "A linear subspace W of (V,ω) satisfying W^ω ⊂ W; necessarily dim W ≥ n."
+    },
+    {
+      "id": "s_lagrangian_subspace",
+      "kind": "axiom",
+      "name": "Lagrangian subspace",
+      "type_signature": "(SymplecticVectorSpace (V,ω), Subspace L) → Prop",
+      "description": "A linear subspace L of (V,ω) with L = L^ω, equivalently isotropic of maximal dimension n; simultaneously isotropic and coisotropic."
+    },
+    {
+      "id": "s_symplectic_complement",
+      "kind": "state",
+      "name": "Symplectic complement",
+      "type_signature": "(SymplecticVectorSpace (V,ω), Subspace W) → Subspace W^ω",
+      "description": "The symplectic complement W^ω = {v ∈ V : ω(v,w) = 0 for all w ∈ W}; satisfies dim W + dim W^ω = dim V and (W^ω)^ω = W."
+    },
+    {
+      "id": "s_lagrangian_grassmannian",
+      "kind": "state",
+      "name": "Lagrangian Grassmannian Λ(n)",
+      "type_signature": "ℕ → SmoothManifold",
+      "description": "The manifold of all Lagrangian subspaces of (ℝ²ⁿ, ω₀), diffeomorphic to U(n)/O(n); has dimension n(n+1)/2 and fundamental group π₁(Λ(n)) ≅ ℤ."
+    },
+    {
+      "id": "s_compatible_complex_structure_symplectic",
+      "kind": "axiom",
+      "name": "Compatible complex structure on symplectic vector space",
+      "type_signature": "(SymplecticVectorSpace (V,ω)) → LinearMap J: V → V",
+      "description": "A linear map J with J² = -Id such that g(u,v) = ω(u,Jv) defines a positive definite inner product; equivalently ω(Ju,Jv) = ω(u,v) and ω(v,Jv) > 0."
+    },
+    {
+      "id": "s_positive_compatible_triple",
+      "kind": "state",
+      "name": "Positive compatible triple (ω, J, g)",
+      "type_signature": "(ω: SymplecticForm, J: ComplexStructure, g: InnerProduct) → Prop",
+      "description": "A triple (ω, J, g) on a vector space V where any two determine the third via g(u,v) = ω(u,Jv); the space of such triples is contractible."
+    },
+    {
+      "id": "s_space_of_compatible_complex_structures",
+      "kind": "state",
+      "name": "Space of compatible complex structures J(V,ω)",
+      "type_signature": "SymplecticVectorSpace (V,ω) → TopologicalSpace",
+      "description": "The space of all ω-compatible complex structures on V, diffeomorphic to Sp(2n)/U(n); contractible, hence all compatible choices are homotopy equivalent."
+    },
+    {
+      "id": "s_polar_decomposition_sp2n",
+      "kind": "theorem",
+      "name": "Polar decomposition in Sp(2n)",
+      "type_signature": "Sp(2n,ℝ) → Sp(2n,ℝ)⁺ × U(n)",
+      "description": "Every A ∈ Sp(2n) decomposes uniquely as A = PO with P symmetric positive definite symplectic and O ∈ Sp(2n) ∩ O(2n) = U(n); proves Sp(2n) deformation retracts onto U(n)."
+    },
+    {
+      "id": "s_maslov_index_for_paths",
+      "kind": "state",
+      "name": "Maslov index for paths of Lagrangian subspaces",
+      "type_signature": "(Path in Λ(n), Reference L) → ℤ",
+      "description": "An integer index for a path of Lagrangian subspaces relative to a fixed Lagrangian L, defined by counting signed crossings of the Maslov cycle Σ_L; extends the loop index via the boundary map."
+    },
+    {
+      "id": "s_maslov_cycle",
+      "kind": "state",
+      "name": "Maslov cycle",
+      "type_signature": "Lagrangian L ∈ Λ(n) → Codimension-1 cycle Σ_L ⊂ Λ(n)",
+      "description": "The algebraic variety Σ_L = {L' ∈ Λ(n) : L' ∩ L ≠ {0}} of codimension 1 in the Lagrangian Grassmannian; its complement has two connected components and generates H^1(Λ(n);ℤ)."
+    },
+    {
+      "id": "s_conley_zehnder_index",
+      "kind": "state",
+      "name": "Conley-Zehnder index",
+      "type_signature": "Path Ψ: [0,1] → Sp(2n) with Ψ(0) = Id, det(Ψ(1) - Id) ≠ 0 → ℤ",
+      "description": "An integer-valued index for nondegenerate paths in Sp(2n) starting at the identity; assigns a winding number measuring the rotation of eigenvalues; fundamental in grading Floer homology."
+    },
+    {
+      "id": "s_moser_isotopy_lemma_relative",
+      "kind": "theorem",
+      "name": "Moser isotopy lemma (relative version)",
+      "type_signature": "(M compact, ω₀ = ω₁ near submanifold N, [ω_t] constant) → Isotopy φ_t",
+      "description": "If two symplectic forms on a compact manifold agree on a neighborhood of a submanifold and are connected by a path with constant cohomology class, there exists an isotopy pulling one back to the other, fixing the submanifold."
+    },
+    {
+      "id": "s_weinstein_isotropic_neighbourhood",
+      "kind": "theorem",
+      "name": "Weinstein isotropic neighborhood theorem",
+      "type_signature": "(Isotropic N ⊂ (M,ω)) → Neighborhood N ≅ Standard model",
+      "description": "A neighborhood of a compact isotropic submanifold N in (M,ω) is symplectomorphic to a standard neighborhood determined by the symplectic normal bundle; generalizes the Weinstein Lagrangian neighborhood theorem."
+    },
+    {
+      "id": "s_isotropic_submanifold",
+      "kind": "axiom",
+      "name": "Isotropic submanifold",
+      "type_signature": "(SymplecticManifold (M,ω), Submanifold N) → Prop",
+      "description": "A submanifold N of (M,ω) with ω|_N = 0, equivalently TₚN is isotropic in (TₚM, ωₚ) for all p; dim N ≤ n."
+    },
+    {
+      "id": "s_coisotropic_submanifold",
+      "kind": "axiom",
+      "name": "Coisotropic submanifold",
+      "type_signature": "(SymplecticManifold (M,ω), Submanifold C) → Prop",
+      "description": "A submanifold C of (M,ω) with (TₚC)^ω ⊂ TₚC for all p; the null distribution (TC)^ω is integrable, giving the characteristic foliation."
+    },
+    {
+      "id": "s_symplectic_fiber_bundle",
+      "kind": "state",
+      "name": "Symplectic fiber bundle",
+      "type_signature": "(Bundle π: P → B, Fiber (F,σ), StructureGroup Symp(F,σ)) → FiberBundle",
+      "description": "A locally trivial fiber bundle whose fiber is a symplectic manifold (F,σ) and whose structure group is the symplectomorphism group Symp(F,σ)."
+    },
+    {
+      "id": "s_symplectic_connection_on_fibration",
+      "kind": "state",
+      "name": "Symplectic connection on a fibration",
+      "type_signature": "SymplecticFibration π: (P,Ω) → B → Distribution Hor ⊂ TP",
+      "description": "A horizontal distribution on a symplectic fibration whose parallel transport maps are symplectomorphisms of fibers; equivalently an Ehresmann connection preserving the fiberwise symplectic form."
+    },
+    {
+      "id": "s_hamiltonian_isotopy",
+      "kind": "axiom",
+      "name": "Hamiltonian isotopy",
+      "type_signature": "(SymplecticManifold (M,ω), H: [0,1] × M → ℝ) → Isotopy {φ_t}",
+      "description": "A smooth family of symplectomorphisms {φ_t}_{t∈[0,1]} with φ₀ = id generated by a time-dependent Hamiltonian H_t via dφ_t/dt = X_{H_t} ∘ φ_t; two Hamiltonian isotopies compose to another."
+    },
+    {
+      "id": "s_poisson_bracket",
+      "kind": "state",
+      "name": "Poisson bracket",
+      "type_signature": "(SymplecticManifold (M,ω)) → BilinearMap C^∞(M) × C^∞(M) → C^∞(M)",
+      "description": "The bracket {F,G} = ω(X_F, X_G) = X_F(G) making C^∞(M) a Lie algebra; satisfies Leibniz rule, antisymmetry, Jacobi identity; {F,G} = 0 iff F is constant along X_G flow."
+    },
+    {
+      "id": "s_existence_uniqueness_moment_maps",
+      "kind": "theorem",
+      "name": "Existence and uniqueness of moment maps",
+      "type_signature": "(Symplectic G-action on (M,ω)) → Conditions for moment map μ: M → g*",
+      "description": "A symplectic G-action admits a moment map iff the lifted map g → C^∞(M) is a Lie algebra homomorphism; obstructions lie in H¹(g, H¹(M;ℝ)) and uniqueness fails by (g*)^G."
+    },
+    {
+      "id": "s_symplectic_reduction_at_general_level",
+      "kind": "theorem",
+      "name": "Symplectic reduction at a general level",
+      "type_signature": "(Hamiltonian G-action, μ: M → g*, ξ ∈ g*) → SymplecticManifold μ⁻¹(ξ)/G_ξ",
+      "description": "For coadjoint orbit value ξ, if G_ξ acts freely on μ⁻¹(ξ), the quotient μ⁻¹(ξ)/G_ξ inherits a natural symplectic structure; generalizes Marsden-Weinstein reduction at 0."
+    },
+    {
+      "id": "s_coadjoint_orbit",
+      "kind": "state",
+      "name": "Coadjoint orbit",
+      "type_signature": "LieGroup G, ξ ∈ g* → Submanifold O_ξ ⊂ g*",
+      "description": "The orbit O_ξ = {Ad*_g(ξ) : g ∈ G} ⊂ g* under the coadjoint action; carries the Kirillov-Kostant-Souriau symplectic form ω_ξ(ad*_X ξ, ad*_Y ξ) = ξ([X,Y])."
+    },
+    {
+      "id": "s_coadjoint_orbits_symplectic",
+      "kind": "theorem",
+      "name": "Coadjoint orbits as symplectic manifolds",
+      "type_signature": "CoadjointOrbit O_ξ → SymplecticManifold (O_ξ, ω_{KKS})",
+      "description": "Every coadjoint orbit of a Lie group carries a natural symplectic structure via the Kirillov-Kostant-Souriau form; the inclusion O_ξ ↪ g* is a moment map for the coadjoint action."
+    },
+    {
+      "id": "s_flux_homomorphism",
+      "kind": "state",
+      "name": "Flux homomorphism",
+      "type_signature": "π₁(Symp₀(M,ω)) → H¹(M;ℝ)/Γ",
+      "description": "The homomorphism Flux({φ_t}) = ∫₀¹ [ι_{X_t}ω] dt from the universal cover of Symp₀(M,ω) to H¹(M;ℝ); its kernel is the Hamiltonian group Ham(M,ω)."
+    },
+    {
+      "id": "s_flux_conjecture_ono",
+      "kind": "theorem",
+      "name": "Flux conjecture (Ono)",
+      "type_signature": "",
+      "description": "The flux group Γ_ω = Image(Flux: π₁(Symp₀) → H¹(M;ℝ)) is discrete; equivalently Ham(M,ω) is C¹-closed in Symp₀(M,ω). Proved by Ono (2006)."
+    },
+    {
+      "id": "s_calabi_homomorphism",
+      "kind": "state",
+      "name": "Calabi homomorphism",
+      "type_signature": "Ham_c(M,ω) → ℝ",
+      "description": "A surjective homomorphism Cal: Ham_c(M,ω) → ℝ defined by Cal(φ_H) = ∫₀¹ ∫_M H_t ωⁿ dt for compactly supported Hamiltonian diffeomorphisms; its kernel is a simple group."
+    },
+    {
+      "id": "s_hofer_metric",
+      "kind": "axiom",
+      "name": "Hofer metric on Ham(M,ω)",
+      "type_signature": "Ham(M,ω) × Ham(M,ω) → ℝ≥0",
+      "description": "The bi-invariant Finsler metric d(φ,ψ) = inf_H ∫₀¹ (max H_t - min H_t) dt on Ham(M,ω); nondegeneracy proved by Hofer using holomorphic curves or capacities."
+    },
+    {
+      "id": "s_hofer_nondegeneracy_theorem",
+      "kind": "theorem",
+      "name": "Hofer's nondegeneracy theorem",
+      "type_signature": "",
+      "description": "The Hofer metric on Ham(M,ω) is nondegenerate: d(id, φ) > 0 for φ ≠ id; equivalently the Hofer norm ||φ|| = inf_H ∫₀¹ osc(H_t) dt is a genuine norm."
+    },
+    {
+      "id": "s_hofer_zehnder_capacity",
+      "kind": "state",
+      "name": "Hofer-Zehnder capacity",
+      "type_signature": "SymplecticManifold (M,ω) → ℝ≥0 ∪ {∞}",
+      "description": "The symplectic capacity c_{HZ}(M,ω) = sup{max H : H admissible, flow of H has no nonconstant periodic orbit of period ≤ 1}; satisfies monotonicity, conformality, and normalization axioms."
+    },
+    {
+      "id": "s_displacement_energy",
+      "kind": "state",
+      "name": "Displacement energy",
+      "type_signature": "(Subset A ⊂ (M,ω)) → ℝ≥0 ∪ {∞}",
+      "description": "e(A) = inf{||φ||_Hofer : φ ∈ Ham(M,ω), φ(A) ∩ A = ∅}; satisfies e(A) ≥ c(A) for any capacity c, providing a lower bound on energy needed to displace A."
+    },
+    {
+      "id": "s_tame_almost_complex_structure",
+      "kind": "axiom",
+      "name": "Tame almost complex structure",
+      "type_signature": "(SymplecticManifold (M,ω), AlmostComplexStructure J) → Prop",
+      "description": "An almost complex structure J on (M,ω) such that ω(v, Jv) > 0 for all nonzero v; weaker than compatibility but sufficient for Gromov's theory of J-holomorphic curves."
+    },
+    {
+      "id": "s_compatible_almost_complex_structure_manifold",
+      "kind": "axiom",
+      "name": "Compatible almost complex structure on symplectic manifold",
+      "type_signature": "(SymplecticManifold (M,ω), AlmostComplexStructure J) → Prop",
+      "description": "An almost complex structure J satisfying ω(v,Jv) > 0 and ω(Jv,Jw) = ω(v,w); the triple (ω,J,g) with g = ω(·,J·) is a compatible Hermitian structure."
+    },
+    {
+      "id": "s_contractibility_of_J_M_omega",
+      "kind": "theorem",
+      "name": "Contractibility of J(M,ω)",
+      "type_signature": "",
+      "description": "The space J(M,ω) of ω-compatible (or ω-tame) almost complex structures on a symplectic manifold is nonempty and contractible; proved using the pointwise contractibility of Sp(2n)/U(n)."
+    },
+    {
+      "id": "s_symplectic_capacity_axiomatic",
+      "kind": "axiom",
+      "name": "Symplectic capacity (axiomatic)",
+      "type_signature": "(SymplecticManifolds₂ₙ) → ℝ≥0 ∪ {∞}",
+      "description": "A functor c satisfying monotonicity under symplectic embeddings, conformality c(M,λw) = |λ|c(M,ω), and normalization c(B²ⁿ(1)) = π = c(Z²ⁿ(1))."
+    },
+    {
+      "id": "s_gromov_width",
+      "kind": "state",
+      "name": "Gromov width",
+      "type_signature": "SymplecticManifold (M,ω) → ℝ≥0",
+      "description": "w_G(M,ω) = sup{πr² : B²ⁿ(r) symplectically embeds into (M,ω)}; the smallest symplectic capacity, measuring the radius of the largest embeddable ball."
+    },
+    {
+      "id": "s_ekeland_hofer_capacities",
+      "kind": "state",
+      "name": "Ekeland-Hofer capacities",
+      "type_signature": "SymplecticManifold (M,ω) → Sequence c₁ ≤ c₂ ≤ c₃ ≤ ⋯ in ℝ≥0 ∪ {∞}",
+      "description": "An infinite sequence of symplectic capacities c_k defined via variational methods on the loop space; c₁ equals the Gromov width on ellipsoids and c_k(B²ⁿ(1)) = π for all k."
+    },
+    {
+      "id": "s_j_holomorphic_curve",
+      "kind": "axiom",
+      "name": "J-holomorphic curve",
+      "type_signature": "(RiemannSurface (Σ,j), AlmostComplexManifold (M,J)) → Map u: Σ → M",
+      "description": "A smooth map u: (Σ,j) → (M,J) satisfying the Cauchy-Riemann equation du ∘ j = J ∘ du, equivalently ∂̄_J(u) = 0; the fundamental object of Gromov's symplectic topology."
+    },
+    {
+      "id": "s_energy_j_holomorphic_curve",
+      "kind": "state",
+      "name": "Energy of a J-holomorphic curve",
+      "type_signature": "J-holomorphic u: Σ → (M,ω,J) → ℝ≥0",
+      "description": "E(u) = ½∫_Σ |du|² vol_Σ = ∫_Σ u*ω for ω-tame J; the energy identity E(u) = [ω]·[u] shows energy equals the symplectic area of the homology class."
+    },
+    {
+      "id": "s_energy_identity_j_holomorphic",
+      "kind": "theorem",
+      "name": "Energy identity for J-holomorphic curves",
+      "type_signature": "",
+      "description": "For an ω-compatible J, the energy E(u) = ½∫|du|² equals the symplectic area ∫u*ω; implies J-holomorphic curves are absolute minima of energy in their homology class."
+    },
+    {
+      "id": "s_moduli_space_j_holomorphic",
+      "kind": "state",
+      "name": "Moduli space of J-holomorphic curves",
+      "type_signature": "(A ∈ H₂(M), genus g, AlmostComplexStructure J) → TopologicalSpace M_{g,k}(M,A,J)",
+      "description": "The space of equivalence classes of J-holomorphic maps u: Σ → M representing class A with k marked points, modulo reparametrization; for generic J, a smooth manifold of the expected dimension."
+    },
+    {
+      "id": "s_fredholm_theory_dbar_J",
+      "kind": "state",
+      "name": "Fredholm theory for the ∂̄_J operator",
+      "type_signature": "Linearization D_u ∂̄_J → FredholmOperator",
+      "description": "The linearization of the Cauchy-Riemann operator at a J-holomorphic curve u is a real Cauchy-Riemann operator, hence Fredholm; its index gives the virtual dimension via the Riemann-Roch formula."
+    },
+    {
+      "id": "s_virtual_dimension_moduli",
+      "kind": "state",
+      "name": "Virtual dimension of moduli space of J-holomorphic curves",
+      "type_signature": "",
+      "description": "virdim M_{g,k}(M,A,J) = n(2-2g) + 2c₁(A) + 2k - 6; determined by the Fredholm index of D_u via Riemann-Roch; equals actual dimension when transversality holds."
+    },
+    {
+      "id": "s_simple_j_holomorphic_curve",
+      "kind": "axiom",
+      "name": "Simple (somewhere injective) J-holomorphic curve",
+      "type_signature": "",
+      "description": "A J-holomorphic curve u: Σ → M not factoring as u = v ∘ φ for a branched cover φ of degree > 1; equivalently ∃z with u⁻¹(u(z)) = {z} and du(z) ≠ 0. Transversality can be achieved for simple curves."
+    },
+    {
+      "id": "s_transversality_simple_curves",
+      "kind": "theorem",
+      "name": "Transversality for simple J-holomorphic curves",
+      "type_signature": "",
+      "description": "For a generic (Baire second category) ω-tame J, every simple J-holomorphic curve is regular (D_u surjective) and the moduli space is a smooth manifold of the expected dimension."
+    },
+    {
+      "id": "s_bubbling_phenomenon",
+      "kind": "state",
+      "name": "Bubbling phenomenon for J-holomorphic curves",
+      "type_signature": "",
+      "description": "When a sequence of J-holomorphic curves has bounded energy but gradient blow-up, rescaling produces a nonconstant J-holomorphic sphere; the energy splits: E(u_∞) + ΣE(bubbles) = lim E(u_n)."
+    },
+    {
+      "id": "s_stable_map_gw",
+      "kind": "axiom",
+      "name": "Stable map",
+      "type_signature": "",
+      "description": "A J-holomorphic map from a nodal marked Riemann surface with finite automorphism group on each unstable component; the objects compactifying the moduli space M̄_{g,k}(M,A,J)."
+    },
+    {
+      "id": "s_evaluation_map_gw",
+      "kind": "state",
+      "name": "Evaluation map in Gromov-Witten theory",
+      "type_signature": "M̄_{g,k}(M,A,J) → M^k",
+      "description": "The map ev = (ev₁,...,ev_k) sending a stable map to the images of its marked points; used to define GW invariants as ∫_{[M̄]^{vir}} ev₁*α₁ ∧ ⋯ ∧ ev_k*α_k."
+    },
+    {
+      "id": "s_removal_of_singularities_j_holo",
+      "kind": "theorem",
+      "name": "Removal of singularities for J-holomorphic curves",
+      "type_signature": "",
+      "description": "A J-holomorphic map u: D\\{0} → (M,J) with finite energy extends smoothly across the puncture to ū: D → M; the symplectic analogue of Riemann's removable singularity theorem."
+    },
+    {
+      "id": "s_monotonicity_lemma_j_holo",
+      "kind": "theorem",
+      "name": "Monotonicity lemma for J-holomorphic curves",
+      "type_signature": "",
+      "description": "If u: Σ → (M,J,g) is J-holomorphic passing through p, the area of u(Σ) ∩ B(p,r) is at least πr² for small r; provides uniform local area bounds preventing energy concentration without bubbling."
+    },
+    {
+      "id": "s_symplectic_packing",
+      "kind": "state",
+      "name": "Symplectic packing problem",
+      "type_signature": "",
+      "description": "The problem of determining the maximal volume fraction fillable by k disjoint symplectically embedded balls; Gromov showed the answer is not always 1, revealing symplectic rigidity beyond volume."
+    },
+    {
+      "id": "s_symplectic_form_on_surfaces",
+      "kind": "state",
+      "name": "Symplectic form on surfaces",
+      "type_signature": "ClosedOrientedSurface Σ → SymplecticStructure",
+      "description": "On a closed oriented surface, any area form is symplectic; Moser's theorem implies the symplectic structure is determined up to symplectomorphism by total area and genus."
+    },
+    {
+      "id": "s_eliashberg_rigidity",
+      "kind": "theorem",
+      "name": "Eliashberg rigidity theorem",
+      "type_signature": "",
+      "description": "The group Symp(M,ω) is C⁰-closed in Diff(M); a C⁰-limit of symplectomorphisms that is smooth is itself a symplectomorphism. Shows symplectic topology is not purely smooth."
+    },
+    {
+      "id": "s_mcduff_rational_ruled",
+      "kind": "theorem",
+      "name": "McDuff's theorem on rational and ruled symplectic 4-manifolds",
+      "type_signature": "",
+      "description": "A closed symplectic 4-manifold containing a symplectically embedded sphere of nonnegative self-intersection is rational or ruled; proved using J-holomorphic curve techniques."
+    },
+    {
+      "id": "s_taubes_sw_equals_gr",
+      "kind": "theorem",
+      "name": "Taubes' theorem (SW = Gr)",
+      "type_signature": "",
+      "description": "On a closed symplectic 4-manifold, Seiberg-Witten invariants equal the Gromov invariants counting embedded J-holomorphic curves; establishes SW(M, s_can) = 1 bridging gauge theory and symplectic topology."
+    },
+    {
+      "id": "s_existence_j_holo_curves_taubes",
+      "kind": "theorem",
+      "name": "Existence of J-holomorphic curves via Taubes",
+      "type_signature": "",
+      "description": "On any closed symplectic 4-manifold with b₂⁺ > 1, the canonical class K has nonvanishing SW invariant; by SW = Gr there exist J-holomorphic curves representing PD(K) for generic J."
+    },
+    {
+      "id": "s_symplectic_isotopy_problem",
+      "kind": "state",
+      "name": "Symplectic isotopy problem",
+      "type_signature": "",
+      "description": "The question of whether symplectomorphic submanifolds in the same homology class are symplectically isotopic; related to the topology of Symp(M,ω) and braid monodromy factorizations."
+    },
+    {
+      "id": "s_positivity_of_intersections",
+      "kind": "theorem",
+      "name": "Positivity of intersections of J-holomorphic curves",
+      "type_signature": "",
+      "description": "Two distinct J-holomorphic curves in an almost complex 4-manifold intersect with positive local intersection number at each point; algebraic and geometric intersection numbers agree for distinct curves."
+    },
+    {
+      "id": "s_adjunction_formula_j_holomorphic",
+      "kind": "theorem",
+      "name": "Adjunction formula for J-holomorphic curves",
+      "type_signature": "",
+      "description": "For a simple closed J-holomorphic curve u: Σ → M⁴ representing A: 2g(Σ) - 2 = A·A - c₁(A) + 2δ(u) where δ(u) ≥ 0 counts singularities; embedded iff δ(u) = 0."
+    },
+    {
+      "id": "s_recurrence_hamiltonian",
+      "kind": "theorem",
+      "name": "Recurrence theorem for Hamiltonian diffeomorphisms",
+      "type_signature": "",
+      "description": "On a closed symplectic manifold, every Hamiltonian diffeomorphism is recurrent: for every open set U, there exists n > 0 with φⁿ(U) ∩ U ≠ ∅; follows from Liouville volume preservation."
+    },
+    {
+      "id": "s_liouville_measure_symplectic",
+      "kind": "state",
+      "name": "Liouville measure on a symplectic manifold",
+      "type_signature": "SymplecticManifold (M²ⁿ, ω) → Measure μ_L",
+      "description": "The canonical volume measure μ_L = ωⁿ/n! on a 2n-dimensional symplectic manifold; invariant under all symplectomorphisms and Hamiltonian flows (Liouville's theorem)."
+    },
+    {
+      "id": "s_contact_hypersurface",
+      "kind": "axiom",
+      "name": "Contact-type hypersurface in a symplectic manifold",
+      "type_signature": "(SymplecticManifold (M,ω), Hypersurface Σ) → Prop",
+      "description": "A hypersurface Σ ⊂ (M,ω) admitting a Liouville vector field Y (L_Yω = ω) defined near Σ and transverse to Σ; then α = ι_Yω|_Σ is a contact form on Σ."
+    },
+    {
+      "id": "s_liouville_vector_field",
+      "kind": "state",
+      "name": "Liouville vector field",
+      "type_signature": "(SymplecticManifold (M,ω)) → VectorField Y with L_Yω = ω",
+      "description": "A vector field Y satisfying L_Yω = ω, equivalently d(ι_Yω) = ω; its flow dilates the symplectic form by e^t. Exists globally on exact symplectic manifolds where ω = dλ."
+    },
+    {
+      "id": "s_symplectization",
+      "kind": "state",
+      "name": "Symplectization of a contact manifold",
+      "type_signature": "ContactManifold (Σ, ξ = ker α) → SymplecticManifold (ℝ × Σ, d(e^t α))",
+      "description": "The symplectic manifold (ℝ × Σ, d(e^t α)) associated to a contact manifold (Σ, α); equivalently the symplectic cone (ℝ₊ × Σ, d(rα))."
+    },
+    {
+      "id": "s_symplectic_vector_bundle",
+      "kind": "axiom",
+      "name": "Symplectic vector bundle",
+      "type_signature": "VectorBundle E → M → Prop",
+      "description": "A vector bundle E → M with a smoothly varying nondegenerate skew-symmetric bilinear form on each fiber; the structure group reduces from GL(2n) to Sp(2n)."
+    },
+    {
+      "id": "s_characteristic_foliation_coisotropic",
+      "kind": "state",
+      "name": "Characteristic foliation on a coisotropic submanifold",
+      "type_signature": "CoisotropicSubmanifold C ⊂ (M,ω) → Foliation F on C",
+      "description": "The integrable distribution (TC)^ω on C whose leaves are isotropic; the leaf space C/(TC)^ω inherits a symplectic structure when smooth (symplectic reduction)."
+    },
+    {
+      "id": "s_exact_lagrangian_submanifold",
+      "kind": "axiom",
+      "name": "Exact Lagrangian submanifold",
+      "type_signature": "(ExactSymplecticManifold (M, dλ), Lagrangian L) → Prop",
+      "description": "A Lagrangian L in (M, dλ) with λ|_L exact (λ|_L = df for f: L → ℝ); in T*Q the zero section is the canonical example."
+    },
+    {
+      "id": "s_exact_symplectic_manifold",
+      "kind": "axiom",
+      "name": "Exact symplectic manifold",
+      "type_signature": "(M, ω = dλ) → ExactSymplecticManifold",
+      "description": "A symplectic manifold (M,ω) with ω = dλ for a global 1-form λ; necessarily noncompact since ∫_M ωⁿ ≠ 0. Examples: T*Q, Stein manifolds."
+    },
+    {
+      "id": "s_spectral_invariants_floer",
+      "kind": "state",
+      "name": "Spectral invariants in Hamiltonian Floer theory",
+      "type_signature": "(Hamiltonian H, Quantum cohomology class a) → ℝ",
+      "description": "Real numbers c(a, H) defined as minimax values of the action functional over Floer cycles representing a ∈ QH*(M); satisfy Hofer-Lipschitz continuity, spectrality, and triangle inequality."
+    },
+    {
+      "id": "s_floer_homology_hamiltonian",
+      "kind": "state",
+      "name": "Hamiltonian Floer homology",
+      "type_signature": "SymplecticManifold (M,ω), Hamiltonian H → GradedVectorSpace HF*(H)",
+      "description": "Homology of a chain complex generated by 1-periodic orbits of X_H with differential counting Floer cylinders; isomorphic to quantum homology QH*(M) by the PSS isomorphism."
+    },
+    {
+      "id": "s_energy_capacity_inequality",
+      "kind": "theorem",
+      "name": "Energy-capacity inequality",
+      "type_signature": "",
+      "description": "For any compact A ⊂ (M,ω), the displacement energy e(A) ≥ c(A) for any symplectic capacity c; in particular e(B²ⁿ(r)) ≥ πr². Links Hofer geometry to symplectic capacities."
+    },
+    {
+      "id": "t_moser_method",
+      "kind": "technique",
+      "name": "Moser's method",
+      "function_signature": "(Family of cohomologous symplectic forms ω_t) → (Isotopy φ_t with φ_t*ω_t = ω₀)",
+      "description": "Constructs a diffeomorphism isotopy by solving for the vector field X_t via ι_{X_t}ω_t = -σ_t; the key technique behind Darboux, Moser stability, and Weinstein neighborhood theorems."
+    },
+    {
+      "id": "t_thurston_symplectic_fibration",
+      "kind": "technique",
+      "name": "Thurston's construction for symplectic fiber bundles",
+      "function_signature": "(Symplectic fibration π: P → B with closed coupling form) → (Symplectic form on total space P)",
+      "description": "Constructs a symplectic form on the total space of a symplectic fibration by adding a large multiple of the pullback of the base form to a closed extension of the fiber form."
+    },
+    {
+      "id": "t_symplectic_cutting",
+      "kind": "technique",
+      "name": "Symplectic cutting",
+      "function_signature": "(Hamiltonian S¹-action on (M,ω), level c ∈ ℝ) → (Symplectic manifold M_cut)",
+      "description": "Lerman's construction: forms M × ℂ with diagonal S¹-action and reduces at level c to obtain a symplectic manifold that cuts M along μ⁻¹(c)."
+    },
+    {
+      "id": "t_generating_function_lagrangian",
+      "kind": "technique",
+      "name": "Generating function for Lagrangians",
+      "function_signature": "(Lagrangian submanifold L ⊂ T*M) → (Function S: M × ℝᴺ → ℝ with L = critical set)",
+      "description": "Represents a Lagrangian as the critical set of a generating function S(x,ξ); reduces symplectic intersection questions to Morse-theoretic ones via the Chaperon-Sikorav-Viterbo framework."
+    },
+    {
+      "id": "t_neck_stretching",
+      "kind": "technique",
+      "name": "Neck-stretching technique",
+      "function_signature": "(Contact hypersurface Σ ⊂ (M,ω), Sequence J_n with neck → ∞) → (Holomorphic buildings in SFT)",
+      "description": "Deforms the almost complex structure near a contact-type hypersurface by stretching the neck to infinity; in the limit, J-holomorphic curves decompose into holomorphic buildings."
+    },
+    {
+      "id": "t_gromov_compactification",
+      "kind": "technique",
+      "name": "Gromov compactification of moduli spaces",
+      "function_signature": "(Moduli space M(A,J)) → (Compact space M̄(A,J) with boundary strata of stable maps)",
+      "description": "Compactifies the moduli space of J-holomorphic curves by adding nodal stable maps as boundary strata; the key tool for defining Gromov-Witten invariants."
+    },
+    {
+      "id": "t_symplectic_sum_construction",
+      "kind": "technique",
+      "name": "Symplectic sum construction",
+      "function_signature": "((M₁,ω₁,Σ₁), (M₂,ω₂,Σ₂), Σ₁ ≅ Σ₂) → SymplecticManifold M₁ #_Σ M₂",
+      "description": "Gompf's construction: removes tubular neighborhoods of codimension-2 symplectic submanifolds with opposite normal Euler classes and glues boundaries to produce a new symplectic manifold."
+    },
+    {
+      "id": "t_symplectic_blowup",
+      "kind": "technique",
+      "name": "Symplectic blowup",
+      "function_signature": "(SymplecticManifold (M,ω), Point p, Size ε) → (SymplecticManifold (M̃, ω̃))",
+      "description": "Replaces a symplectic ball B²ⁿ(ε) at p by its projectivization, producing (M̃, ω̃) with exceptional divisor E ≅ ℂPⁿ⁻¹ of area ε; depends on the embedding and ε."
+    },
+    {
+      "id": "t_hamiltonian_perturbation",
+      "kind": "technique",
+      "name": "Hamiltonian perturbation technique",
+      "function_signature": "(Lagrangian L, Hamiltonian H) → Perturbed Lagrangian φ_H(L)",
+      "description": "Displaces a Lagrangian by a Hamiltonian diffeomorphism to achieve transversality; intersection points L ∩ φ_H(L) correspond to time-1 Hamiltonian chords, connecting to Floer theory."
     }
   ],
   "edges": [
