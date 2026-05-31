@@ -117,6 +117,18 @@
         "theorem": 46,
         "technique": 4
       }
+    },
+    "coddington_levinson_integration": {
+      "date": "2026-05-31",
+      "source": "Coddington & Levinson — Theory of Ordinary Differential Equations (McGraw-Hill, 1955)",
+      "new_node_count": 59,
+      "new_edge_count": 204,
+      "node_breakdown": {
+        "axiom": 14,
+        "state": 12,
+        "theorem": 23,
+        "technique": 10
+      }
     }
   },
   "nodes": [
@@ -92155,6 +92167,419 @@
       "name": "Wirtinger’s inequality",
       "type_signature": "f ∈ C¹(𝕋), ∫f = 0 → ‖f‖₂ ≤ (1/(2π))‖f’‖₂",
       "description": "For a mean-zero C¹ function on 𝕋, ‖f‖₂ ≤ (1/(2π))‖f’‖₂, with equality iff f is a first-order trigonometric polynomial."
+    },
+    {
+      "id": "s_gronwall_inequality_integral_form",
+      "kind": "theorem",
+      "name": "Gronwall inequality (integral form)",
+      "type_signature": "",
+      "description": "If u(t) ≤ α + ∫₀ᵗ β(s)u(s) ds with β ≥ 0, then u(t) ≤ α exp(∫₀ᵗ β(s) ds); the integral version of Gronwall’s inequality used for stability and continuous dependence estimates."
+    },
+    {
+      "id": "s_continuous_dependence_on_initial_conditions",
+      "kind": "theorem",
+      "name": "Continuous dependence on initial conditions",
+      "type_signature": "",
+      "description": "Solutions of y' = f(t, y) depend continuously on the initial data (t₀, y₀) in the topology of uniform convergence on compact subintervals of the maximal existence interval."
+    },
+    {
+      "id": "s_continuous_dependence_on_parameters",
+      "kind": "theorem",
+      "name": "Continuous dependence on parameters",
+      "type_signature": "",
+      "description": "If f(t, y, λ) is continuous in all variables and Lipschitz in y, then the solution y(t; λ) of y' = f(t, y, λ) is continuous in the parameter λ uniformly on compact time intervals."
+    },
+    {
+      "id": "s_differentiability_wrt_initial_conditions",
+      "kind": "theorem",
+      "name": "Differentiability with respect to initial conditions",
+      "type_signature": "",
+      "description": "If f(t, y) is Cᵏ, then the solution y(t; t₀, y₀) is Cᵏ in the initial data (t₀, y₀), and the derivative ∂y/∂y₀ satisfies the variational equation."
+    },
+    {
+      "id": "s_variational_equation",
+      "kind": "axiom",
+      "name": "Variational equation",
+      "type_signature": "",
+      "description": "The linearization Z' = (∂f/∂y)(t, y(t))Z of an ODE y' = f(t, y) along a solution y(t), governing the first-order sensitivity of solutions to perturbations in initial data."
+    },
+    {
+      "id": "s_characteristic_multipliers",
+      "kind": "state",
+      "name": "Characteristic multipliers (Floquet multipliers)",
+      "type_signature": "",
+      "description": "The eigenvalues ρ₁, …, ρₙ of the monodromy matrix M = Φ(T) of a T-periodic linear system; their moduli determine stability: |ρᵢ| < 1 for all i implies asymptotic stability."
+    },
+    {
+      "id": "s_floquet_normal_form",
+      "kind": "state",
+      "name": "Floquet normal form",
+      "type_signature": "",
+      "description": "The representation Φ(t) = P(t)e^{tB} of the fundamental matrix of a T-periodic system, where P(t) is T-periodic and B is a constant matrix (the Floquet exponent matrix)."
+    },
+    {
+      "id": "s_stability_zones_periodic_ode",
+      "kind": "state",
+      "name": "Stability zones for periodic equations",
+      "type_signature": "",
+      "description": "Regions in parameter space where all solutions of a periodic ODE (e.g., Hill’s or Mathieu’s equation) remain bounded, separated by instability zones where solutions grow exponentially."
+    },
+    {
+      "id": "s_self_adjointness_sturm_liouville",
+      "kind": "theorem",
+      "name": "Self-adjointness of Sturm–Liouville operators",
+      "type_signature": "",
+      "description": "The operator L[y] = −(py’)’ + qy with separated boundary conditions on [a,b] is self-adjoint in L²([a,b], w), ensuring real eigenvalues and orthogonal eigenfunctions."
+    },
+    {
+      "id": "s_sturm_separation_theorem",
+      "kind": "theorem",
+      "name": "Sturm separation theorem",
+      "type_signature": "",
+      "description": "Between any two consecutive zeros of one non-trivial solution of a second-order linear ODE, there lies exactly one zero of every linearly independent solution."
+    },
+    {
+      "id": "s_sturm_oscillation_theorem",
+      "kind": "theorem",
+      "name": "Sturm oscillation theorem",
+      "type_signature": "",
+      "description": "The n-th eigenfunction of a regular Sturm–Liouville problem has exactly n−1 zeros in the open interval (a, b), and the eigenvalues form an increasing sequence tending to infinity."
+    },
+    {
+      "id": "s_greens_function_bvp",
+      "kind": "state",
+      "name": "Green’s function for ODE boundary value problem",
+      "type_signature": "",
+      "description": "The kernel G(t, s) that inverts a linear differential operator with boundary conditions, so that the unique solution of L[y] = f is y(t) = ∫ G(t, s)f(s) ds."
+    },
+    {
+      "id": "s_eigenfunction_expansion_theorem",
+      "kind": "theorem",
+      "name": "Eigenfunction expansion theorem (Sturm–Liouville)",
+      "type_signature": "",
+      "description": "Every function in L²([a,b], w) can be expanded as a convergent series in the eigenfunctions of a regular Sturm–Liouville problem, with convergence in L² and pointwise convergence under regularity."
+    },
+    {
+      "id": "s_min_max_principle_eigenvalues",
+      "kind": "theorem",
+      "name": "Min-max principle for eigenvalues (Sturm–Liouville)",
+      "type_signature": "",
+      "description": "The n-th eigenvalue λₙ of a self-adjoint Sturm–Liouville operator equals the min over n-dimensional subspaces V of the max Rayleigh quotient over V, providing variational characterization of eigenvalues."
+    },
+    {
+      "id": "s_asymptotic_stability",
+      "kind": "axiom",
+      "name": "Asymptotic stability",
+      "type_signature": "",
+      "description": "An equilibrium y* is asymptotically stable if it is Lyapunov stable and additionally all solutions starting sufficiently close converge to y* as t → ∞."
+    },
+    {
+      "id": "s_lyapunov_instability_theorem",
+      "kind": "theorem",
+      "name": "Lyapunov instability theorem",
+      "type_signature": "",
+      "description": "If there exists a function V with V̇ > 0 in a punctured neighborhood of an equilibrium and V takes positive values arbitrarily close to the equilibrium, then the equilibrium is unstable."
+    },
+    {
+      "id": "s_lyapunov_equation_linear_systems",
+      "kind": "theorem",
+      "name": "Lyapunov equation for linear systems",
+      "type_signature": "",
+      "description": "The linear matrix equation AᵀP + PA = −Q; a Hurwitz matrix A admits a unique positive-definite solution P for every positive-definite Q, providing a Lyapunov function V(x) = xᵀPx."
+    },
+    {
+      "id": "s_exponential_stability",
+      "kind": "axiom",
+      "name": "Exponential stability",
+      "type_signature": "",
+      "description": "An equilibrium is exponentially stable if nearby solutions satisfy ‖y(t) − y*‖ ≤ Ce^{−αt}‖y(0) − y*‖ for constants C, α > 0; stronger than asymptotic stability."
+    },
+    {
+      "id": "s_uniform_stability",
+      "kind": "axiom",
+      "name": "Uniform stability",
+      "type_signature": "",
+      "description": "The equilibrium of a non-autonomous system y' = f(t, y) is uniformly stable if the δ in Lyapunov stability can be chosen independent of the initial time t₀."
+    },
+    {
+      "id": "s_phase_plane",
+      "kind": "axiom",
+      "name": "Phase plane",
+      "type_signature": "",
+      "description": "The (y₁, y₂)-plane for a two-dimensional autonomous system, in which solution trajectories (phase curves) provide a qualitative picture of the global dynamics."
+    },
+    {
+      "id": "s_omega_limit_set",
+      "kind": "axiom",
+      "name": "ω-limit set",
+      "type_signature": "",
+      "description": "The set ω(γ) of all accumulation points of a forward trajectory γ(t) as t → +∞; a non-empty compact connected invariant set when the trajectory is bounded."
+    },
+    {
+      "id": "s_alpha_limit_set",
+      "kind": "axiom",
+      "name": "α-limit set",
+      "type_signature": "",
+      "description": "The set α(γ) of all accumulation points of a trajectory γ(t) as t → −∞; the time-reversed analogue of the ω-limit set."
+    },
+    {
+      "id": "s_limit_cycle",
+      "kind": "state",
+      "name": "Limit cycle",
+      "type_signature": "",
+      "description": "An isolated periodic orbit in the phase plane, i.e., a closed trajectory with no other periodic orbit in a neighborhood; the simplest non-equilibrium attractor or repeller in ℝ²."
+    },
+    {
+      "id": "s_bendixson_criterion",
+      "kind": "theorem",
+      "name": "Bendixson criterion (negative criterion)",
+      "type_signature": "",
+      "description": "If div(f) = ∂f₁/∂y₁ + ∂f₂/∂y₂ does not change sign in a simply connected region, then the planar system y' = f(y) has no periodic orbit in that region."
+    },
+    {
+      "id": "s_orbital_stability",
+      "kind": "axiom",
+      "name": "Orbital stability",
+      "type_signature": "",
+      "description": "A periodic orbit γ is orbitally stable if every trajectory starting near γ remains close to the orbit (not to a specific point on it) for all future time."
+    },
+    {
+      "id": "s_index_of_closed_curve",
+      "kind": "state",
+      "name": "Index of a closed curve (Poincaré index)",
+      "type_signature": "",
+      "description": "The winding number of the vector field f(y) around a simple closed curve not passing through any equilibrium; equals the sum of indices of equilibria enclosed."
+    },
+    {
+      "id": "s_index_theorem_equilibria",
+      "kind": "theorem",
+      "name": "Index theorem for equilibria",
+      "type_signature": "",
+      "description": "The index of an isolated equilibrium of a planar vector field is +1 for a node, focus, or center, and −1 for a simple saddle; the index of any closed curve equals the sum of indices of enclosed equilibria."
+    },
+    {
+      "id": "s_poincare_expansion_theorem",
+      "kind": "theorem",
+      "name": "Poincaré expansion theorem",
+      "type_signature": "",
+      "description": "If f(t, y, ε) is analytic in ε, the solution y(t, ε) of the initial value problem is analytic in ε for |ε| sufficiently small, justifying regular perturbation series."
+    },
+    {
+      "id": "s_singular_perturbation",
+      "kind": "axiom",
+      "name": "Singular perturbation",
+      "type_signature": "",
+      "description": "A perturbation problem εy'' + a(t)y' + b(t)y = 0 where setting ε = 0 reduces the order of the equation, causing non-uniform convergence and boundary layers."
+    },
+    {
+      "id": "s_boundary_layer",
+      "kind": "state",
+      "name": "Boundary layer",
+      "type_signature": "",
+      "description": "A narrow region (of width O(ε) or O(ε^α)) near the boundary where the solution of a singularly perturbed ODE transitions rapidly between the outer solution and a boundary condition."
+    },
+    {
+      "id": "s_classification_equilibria_r2",
+      "kind": "state",
+      "name": "Classification of equilibria in ℝ²",
+      "type_signature": "",
+      "description": "For a linear system ẏ = Ay in ℝ², the eigenvalues of A classify the equilibrium as a stable/unstable node, saddle, stable/unstable focus, center, or degenerate node/star."
+    },
+    {
+      "id": "s_separatrices",
+      "kind": "state",
+      "name": "Separatrices",
+      "type_signature": "",
+      "description": "Distinguished trajectories (typically stable/unstable manifolds of saddle points) that divide the phase plane into regions of qualitatively different behavior."
+    },
+    {
+      "id": "s_topological_equivalence_phase_portraits",
+      "kind": "axiom",
+      "name": "Topological equivalence of phase portraits",
+      "type_signature": "",
+      "description": "Two autonomous systems are topologically equivalent if there is a homeomorphism mapping orbits of one to orbits of the other preserving orientation; the natural notion of qualitative sameness."
+    },
+    {
+      "id": "s_weyl_limit_point_limit_circle",
+      "kind": "theorem",
+      "name": "Weyl limit-point/limit-circle classification",
+      "type_signature": "",
+      "description": "At a singular endpoint of a Sturm–Liouville problem, either all solutions are L² (limit-circle case) or exactly one solution is L² (limit-point case); determines whether a boundary condition is needed."
+    },
+    {
+      "id": "s_weyl_m_function",
+      "kind": "state",
+      "name": "Weyl m-function",
+      "type_signature": "",
+      "description": "The Herglotz–Nevanlinna function m(z) selecting the unique L² solution at a singular endpoint of a Sturm–Liouville problem; its boundary values on ℝ encode the spectral measure."
+    },
+    {
+      "id": "s_titchmarsh_weyl_theory",
+      "kind": "theorem",
+      "name": "Titchmarsh–Weyl theory",
+      "type_signature": "",
+      "description": "The spectral theory of singular Sturm–Liouville operators via the Weyl m-function, establishing the eigenfunction expansion and spectral measure for operators on a half-line or the full line."
+    },
+    {
+      "id": "s_singular_sturm_liouville_problem",
+      "kind": "axiom",
+      "name": "Singular Sturm–Liouville problem",
+      "type_signature": "",
+      "description": "A Sturm–Liouville problem −(py’)’ + qy = λwy on an interval where at least one endpoint is singular (infinite, or p, w vanish/q is unbounded), requiring Weyl theory for spectral analysis."
+    },
+    {
+      "id": "s_eigenfunction_expansion_half_line",
+      "kind": "theorem",
+      "name": "Eigenfunction expansion on half-line",
+      "type_signature": "",
+      "description": "For a singular Sturm–Liouville problem on [0, ∞), every L²-function admits a generalized Fourier transform f̂(λ) = ∫ f(t)φ(t,λ) dt with Parseval equality via the spectral measure dρ(λ)."
+    },
+    {
+      "id": "s_regular_singular_point",
+      "kind": "axiom",
+      "name": "Regular singular point of an ODE",
+      "type_signature": "",
+      "description": "A point z₀ where the coefficient functions of a linear ODE have poles, but (z−z₀)p(z) and (z−z₀)²q(z) are analytic; solutions have at most algebraic-logarithmic growth near z₀."
+    },
+    {
+      "id": "s_irregular_singular_point",
+      "kind": "axiom",
+      "name": "Irregular singular point of an ODE",
+      "type_signature": "",
+      "description": "A singular point that is not regular; solutions generically have essential singularities with exponential growth/decay, and formal series solutions are typically divergent (asymptotic)."
+    },
+    {
+      "id": "s_logarithmic_solutions_regular_singular",
+      "kind": "state",
+      "name": "Logarithmic solutions at regular singular points",
+      "type_signature": "",
+      "description": "When indicial exponents differ by an integer at a regular singular point, a second linearly independent solution may require a log(z−z₀) term: y₂ = cy₁ log(z−z₀) + z^{r₂} Σ bₙ zⁿ."
+    },
+    {
+      "id": "s_fuchs_theorem",
+      "kind": "theorem",
+      "name": "Fuchs’s theorem",
+      "type_signature": "",
+      "description": "A linear ODE has all its singular points regular (is Fuchsian) if and only if the sum of all indicial exponents at all singular points (including ∞) satisfies the Fuchs relation."
+    },
+    {
+      "id": "s_asymptotic_solutions_irregular_singular",
+      "kind": "theorem",
+      "name": "Asymptotic solutions at irregular singular points",
+      "type_signature": "",
+      "description": "Near an irregular singular point of rank r, there exist formal solutions of the form e^{Q(z)} z^ρ Σ aₙ z⁻ⁿ where Q is a polynomial of degree r; these are asymptotic to true solutions in Stokes sectors."
+    },
+    {
+      "id": "s_ordinary_point_ode_complex",
+      "kind": "axiom",
+      "name": "Ordinary point of an ODE in ℂ",
+      "type_signature": "",
+      "description": "A point z₀ where all coefficient functions of a linear ODE are analytic; solutions are analytic in a disk centered at z₀ with radius equal to the distance to the nearest singularity."
+    },
+    {
+      "id": "s_monodromy_representation",
+      "kind": "state",
+      "name": "Monodromy representation",
+      "type_signature": "",
+      "description": "The group homomorphism ρ: π₁(ℂ \\ {singularities}, z₀) → GL(n, ℂ) sending each loop to the linear transformation on the solution space obtained by analytic continuation around the loop."
+    },
+    {
+      "id": "s_riemann_hilbert_problem_ode",
+      "kind": "theorem",
+      "name": "Riemann–Hilbert problem (for linear ODE)",
+      "type_signature": "",
+      "description": "Given points a₁, …, aₘ in ℂP¹ and a representation ρ: π₁(ℂP¹ \\ {aᵢ}) → GL(n, ℂ), find a Fuchsian system with those singularities and that monodromy; solvable with possible apparent singularities by Plemelj, with negative results (Bolibruch) for strict Fuchsian systems."
+    },
+    {
+      "id": "s_perron_asymptotic_integration",
+      "kind": "theorem",
+      "name": "Perron’s theorem on asymptotic integration",
+      "type_signature": "",
+      "description": "For the system y' = (A + R(t))y where A is a constant matrix with distinct eigenvalues and R(t) → 0 as t → ∞, there exist solutions asymptotic to e^{λᵢt}vᵢ where λᵢ, vᵢ are eigenvalue-eigenvector pairs of A."
+    },
+    {
+      "id": "s_levinson_asymptotic_integration",
+      "kind": "theorem",
+      "name": "Levinson’s theorem (asymptotic integration)",
+      "type_signature": "",
+      "description": "Refines Perron’s theorem: if A has distinct real parts and ∫₀^∞ ‖R(t)‖ dt < ∞, then y' = (A + R(t))y has a fundamental system of solutions yₖ(t) ~ e^{λₖt}vₖ as t → ∞, with precise error estimates."
+    },
+    {
+      "id": "s_global_existence_linear_ode",
+      "kind": "theorem",
+      "name": "Global existence for linear ODE systems",
+      "type_signature": "",
+      "description": "If A(t) and b(t) are continuous on [a, b], then the solution of y' = A(t)y + b(t), y(t₀) = y₀ exists on the entire interval [a, b]; linear systems cannot blow up in finite time."
+    },
+    {
+      "id": "t_euler_polygonal_approximation",
+      "kind": "technique",
+      "name": "Euler polygonal approximation method",
+      "function_signature": "(ODE y' = f(t,y), step size h) → (Piecewise-linear approximate solution)",
+      "description": "Constructs piecewise-linear approximations yₙ₊₁ = yₙ + hf(tₙ, yₙ) used in Peano’s existence proof and as the simplest numerical ODE integrator."
+    },
+    {
+      "id": "t_greens_function_construction_bvp",
+      "kind": "technique",
+      "name": "Green’s function construction for BVP",
+      "function_signature": "(Linear ODE L[y] = f, boundary conditions) → (Green’s function G(t,s))",
+      "description": "Constructs G(t, s) by patching two solutions satisfying opposite boundary conditions at t = s with a jump in the derivative determined by the Wronskian."
+    },
+    {
+      "id": "t_prufer_transformation",
+      "kind": "technique",
+      "name": "Prüfer transformation",
+      "function_signature": "(Second-order linear ODE y'' + q(t)y = 0) → (Polar variables (r(t), θ(t)) with θ' = cos²θ + q sin²θ)",
+      "description": "Transforms a second-order ODE into a system for amplitude and angle, reducing oscillation and comparison questions to the monotonicity analysis of the angle variable θ(t)."
+    },
+    {
+      "id": "t_regular_perturbation",
+      "kind": "technique",
+      "name": "Regular perturbation method",
+      "function_signature": "(ODE y' = f(t, y, ε), small parameter ε) → (Power series solution y = y₀ + εy₁ + ε²y₂ + ⋯)",
+      "description": "Expands the solution in powers of a small parameter ε and solves order-by-order; valid when the solution depends analytically on ε."
+    },
+    {
+      "id": "t_matched_asymptotic_expansions",
+      "kind": "technique",
+      "name": "Matched asymptotic expansions",
+      "function_signature": "(Singularly perturbed ODE) → (Composite asymptotic solution uniformly valid on full interval)",
+      "description": "Constructs separate inner (boundary-layer) and outer expansions and determines free constants by matching in an overlap region where both are valid."
+    },
+    {
+      "id": "t_averaging_method",
+      "kind": "technique",
+      "name": "Averaging method",
+      "function_signature": "(Slowly varying system ẋ = εf(t, x)) → (Averaged autonomous system ẋ = εf̄(x))",
+      "description": "Replaces a rapidly oscillating non-autonomous system by its time-averaged autonomous approximation, with error O(ε) on time intervals of length O(1/ε)."
+    },
+    {
+      "id": "t_analytic_continuation_of_solutions",
+      "kind": "technique",
+      "name": "Analytic continuation of ODE solutions",
+      "function_signature": "(Local analytic ODE solution near z₀, path γ in ℂ avoiding singularities) → (Continued solution along γ)",
+      "description": "Extends a local analytic solution of a linear ODE along a path in the complex plane; the result depends on the homotopy class of the path, generating the monodromy representation."
+    },
+    {
+      "id": "t_reduction_of_order",
+      "kind": "technique",
+      "name": "Reduction of order",
+      "function_signature": "(n-th order linear ODE, one known solution y₁) → ((n−1)-th order ODE for the remaining solutions)",
+      "description": "Given one solution y₁ of a homogeneous linear ODE, substitutes y = y₁v and reduces to a lower-order equation in v’, lowering the problem by one degree."
+    },
+    {
+      "id": "t_differential_inequality",
+      "kind": "technique",
+      "name": "Differential inequality technique",
+      "function_signature": "(Differential inequality u' ≤ f(t, u) and comparison ODE v' = f(t, v)) → (Bound u(t) ≤ v(t))",
+      "description": "Bounds solutions of an ODE above or below by comparing with solutions of a simpler inequality via the comparison principle, yielding a priori estimates."
+    },
+    {
+      "id": "t_higher_order_ode_reduction",
+      "kind": "technique",
+      "name": "Higher-order linear ODE reduction to first-order system",
+      "function_signature": "(n-th order ODE y⁽ⁿ⁾ + aₙ₋₁y⁽ⁿ⁻¹⁾ + ⋯ + a₀y = f) → (First-order system Y' = AY + F in ℝⁿ)",
+      "description": "Converts a scalar n-th order linear ODE to an equivalent first-order system by introducing y₁ = y, y₂ = y', …, yₙ = y⁽ⁿ⁻¹⁾, reducing all higher-order theory to the first-order framework."
     }
   ],
   "edges": [
@@ -249260,6 +249685,3118 @@
       "role": "output",
       "parameter_binding": {},
       "used_in_theorem": "s_fejer_kernel_is_good"
+    },
+    {
+      "id": "e_17921",
+      "from": "s_gronwall_inequality",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gronwall_inequality"
+    },
+    {
+      "id": "e_17922",
+      "from": "t_differential_inequality",
+      "to": "s_gronwall_inequality_integral_form",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gronwall_inequality_integral_form"
+    },
+    {
+      "id": "e_17923",
+      "from": "s_gronwall_inequality_integral_form",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuous_dependence_on_initial_conditions"
+    },
+    {
+      "id": "e_17924",
+      "from": "s_picard_lindelof_theorem",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuous_dependence_on_initial_conditions"
+    },
+    {
+      "id": "e_17925",
+      "from": "t_picard_iteration",
+      "to": "s_continuous_dependence_on_initial_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuous_dependence_on_initial_conditions"
+    },
+    {
+      "id": "e_17926",
+      "from": "s_gronwall_inequality_integral_form",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuous_dependence_on_parameters"
+    },
+    {
+      "id": "e_17927",
+      "from": "t_differential_inequality",
+      "to": "s_continuous_dependence_on_parameters",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuous_dependence_on_parameters"
+    },
+    {
+      "id": "e_17928",
+      "from": "s_continuous_dependence_on_initial_conditions",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_differentiability_wrt_initial_conditions"
+    },
+    {
+      "id": "e_17929",
+      "from": "t_differential_inequality",
+      "to": "s_differentiability_wrt_initial_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_differentiability_wrt_initial_conditions"
+    },
+    {
+      "id": "e_17930",
+      "from": "s_variational_equation",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_differentiability_wrt_initial_conditions"
+    },
+    {
+      "id": "e_17931",
+      "from": "t_variation_of_constants",
+      "to": "s_differentiability_wrt_initial_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_differentiability_wrt_initial_conditions"
+    },
+    {
+      "id": "e_17932",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_euler_polygonal_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_peano_existence_theorem"
+    },
+    {
+      "id": "e_17933",
+      "from": "t_euler_polygonal_approximation",
+      "to": "s_peano_existence_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_peano_existence_theorem"
+    },
+    {
+      "id": "e_17934",
+      "from": "s_arzela_ascoli_theorem",
+      "to": "t_euler_polygonal_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_peano_existence_theorem"
+    },
+    {
+      "id": "e_17935",
+      "from": "s_floquet_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17936",
+      "from": "t_poincare_section",
+      "to": "s_characteristic_multipliers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_floquet_theorem"
+    },
+    {
+      "id": "e_17937",
+      "from": "s_monodromy_matrix_M",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17938",
+      "from": "t_poincare_section",
+      "to": "s_floquet_normal_form",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_floquet_theorem"
+    },
+    {
+      "id": "e_17939",
+      "from": "s_floquet_exponent_matrix_B",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17940",
+      "from": "s_characteristic_multipliers",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17941",
+      "from": "t_poincare_section",
+      "to": "s_stability_zones_periodic_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17942",
+      "from": "s_hill_equation",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17943",
+      "from": "s_hill_discriminant",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17944",
+      "from": "s_regular_sturm_liouville_problem",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_self_adjointness_sturm_liouville"
+    },
+    {
+      "id": "e_17945",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_self_adjointness_sturm_liouville",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_self_adjointness_sturm_liouville"
+    },
+    {
+      "id": "e_17946",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_greens_function_bvp",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17947",
+      "from": "s_greens_function_bvp",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17948",
+      "from": "s_regular_sturm_liouville_problem",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sturm_oscillation_theorem"
+    },
+    {
+      "id": "e_17949",
+      "from": "t_prufer_transformation",
+      "to": "s_sturm_separation_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sturm_separation_theorem"
+    },
+    {
+      "id": "e_17950",
+      "from": "t_prufer_transformation",
+      "to": "s_sturm_oscillation_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sturm_oscillation_theorem"
+    },
+    {
+      "id": "e_17951",
+      "from": "s_sturm_comparison_theorem",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sturm_comparison_theorem"
+    },
+    {
+      "id": "e_17952",
+      "from": "s_self_adjointness_sturm_liouville",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eigenfunction_expansion_theorem"
+    },
+    {
+      "id": "e_17953",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_eigenfunction_expansion_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eigenfunction_expansion_theorem"
+    },
+    {
+      "id": "e_17954",
+      "from": "s_sturm_liouville_eigenvalue_theorem",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eigenfunction_expansion_theorem"
+    },
+    {
+      "id": "e_17955",
+      "from": "s_sturm_liouville_eigenvalue_theorem",
+      "to": "t_galerkin_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_min_max_principle_eigenvalues"
+    },
+    {
+      "id": "e_17956",
+      "from": "t_galerkin_method",
+      "to": "s_min_max_principle_eigenvalues",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_min_max_principle_eigenvalues"
+    },
+    {
+      "id": "e_17957",
+      "from": "s_lyapunov_function_V",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_stability_theorem"
+    },
+    {
+      "id": "e_17958",
+      "from": "t_differential_inequality",
+      "to": "s_asymptotic_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_stability_theorem"
+    },
+    {
+      "id": "e_17959",
+      "from": "s_lyapunov_stability_theorem",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_instability_theorem"
+    },
+    {
+      "id": "e_17960",
+      "from": "t_differential_inequality",
+      "to": "s_lyapunov_instability_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_instability_theorem"
+    },
+    {
+      "id": "e_17961",
+      "from": "s_linear_ordinary_differential_equation",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_equation_linear_systems"
+    },
+    {
+      "id": "e_17962",
+      "from": "t_variation_of_constants",
+      "to": "s_lyapunov_equation_linear_systems",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_equation_linear_systems"
+    },
+    {
+      "id": "e_17963",
+      "from": "s_lyapunov_equation_linear_systems",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17964",
+      "from": "t_differential_inequality",
+      "to": "s_exponential_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_equation_linear_systems"
+    },
+    {
+      "id": "e_17965",
+      "from": "s_asymptotic_stability",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17966",
+      "from": "t_differential_inequality",
+      "to": "s_uniform_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17967",
+      "from": "s_gronwall_inequality_integral_form",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_exponential_stability"
+    },
+    {
+      "id": "e_17968",
+      "from": "s_massera_converse_lyapunov",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17969",
+      "from": "s_autonomous_ode",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17970",
+      "from": "t_poincare_section",
+      "to": "s_phase_plane",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17971",
+      "from": "s_equilibrium_point",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17972",
+      "from": "t_poincare_section",
+      "to": "s_omega_limit_set",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17973",
+      "from": "t_poincare_section",
+      "to": "s_alpha_limit_set",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17974",
+      "from": "s_omega_limit_set",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_bendixson_theorem"
+    },
+    {
+      "id": "e_17975",
+      "from": "t_poincare_section",
+      "to": "s_limit_cycle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_bendixson_theorem"
+    },
+    {
+      "id": "e_17976",
+      "from": "s_poincare_bendixson_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_bendixson_theorem"
+    },
+    {
+      "id": "e_17977",
+      "from": "s_phase_plane",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bendixson_criterion"
+    },
+    {
+      "id": "e_17978",
+      "from": "t_poincare_section",
+      "to": "s_bendixson_criterion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bendixson_criterion"
+    },
+    {
+      "id": "e_17979",
+      "from": "s_dulac_criterion",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bendixson_criterion"
+    },
+    {
+      "id": "e_17980",
+      "from": "s_limit_cycle",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_orbital_stability"
+    },
+    {
+      "id": "e_17981",
+      "from": "t_poincare_section",
+      "to": "s_orbital_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17982",
+      "from": "t_poincare_section",
+      "to": "s_index_of_closed_curve",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17983",
+      "from": "s_index_of_closed_curve",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_index_theorem_equilibria"
+    },
+    {
+      "id": "e_17984",
+      "from": "t_poincare_section",
+      "to": "s_index_theorem_equilibria",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_index_theorem_equilibria"
+    },
+    {
+      "id": "e_17985",
+      "from": "s_poincare_asymptotic_expansion",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_expansion_theorem"
+    },
+    {
+      "id": "e_17986",
+      "from": "t_regular_perturbation",
+      "to": "s_poincare_expansion_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_expansion_theorem"
+    },
+    {
+      "id": "e_17987",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_expansion_theorem"
+    },
+    {
+      "id": "e_17988",
+      "from": "s_continuous_dependence_on_parameters",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_expansion_theorem"
+    },
+    {
+      "id": "e_17989",
+      "from": "s_singular_perturbation",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17990",
+      "from": "t_matched_asymptotic_expansions",
+      "to": "s_boundary_layer",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17991",
+      "from": "s_poincare_asymptotic_expansion",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17992",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17993",
+      "from": "s_autonomous_ode",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17994",
+      "from": "s_gronwall_inequality_integral_form",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17995",
+      "from": "t_averaging_method",
+      "to": "s_limit_cycle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17996",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17997",
+      "from": "s_hartman_grobman_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_17998",
+      "from": "t_poincare_section",
+      "to": "s_classification_equilibria_r2",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hartman_grobman_theorem"
+    },
+    {
+      "id": "e_17999",
+      "from": "s_stable_manifold_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18000",
+      "from": "t_poincare_section",
+      "to": "s_separatrices",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stable_manifold_theorem"
+    },
+    {
+      "id": "e_18001",
+      "from": "s_classification_equilibria_r2",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18002",
+      "from": "t_poincare_section",
+      "to": "s_topological_equivalence_phase_portraits",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18003",
+      "from": "s_poincare_linearization_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_equivalence_phase_portraits"
+    },
+    {
+      "id": "e_18004",
+      "from": "s_regular_sturm_liouville_problem",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weyl_limit_point_limit_circle"
+    },
+    {
+      "id": "e_18005",
+      "from": "t_prufer_transformation",
+      "to": "s_weyl_limit_point_limit_circle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weyl_limit_point_limit_circle"
+    },
+    {
+      "id": "e_18006",
+      "from": "s_deficiency_indices",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weyl_limit_point_limit_circle"
+    },
+    {
+      "id": "e_18007",
+      "from": "s_singular_sturm_liouville_problem",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_titchmarsh_weyl_theory"
+    },
+    {
+      "id": "e_18008",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_weyl_m_function",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_titchmarsh_weyl_theory"
+    },
+    {
+      "id": "e_18009",
+      "from": "s_weyl_limit_point_limit_circle",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_titchmarsh_weyl_theory"
+    },
+    {
+      "id": "e_18010",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_titchmarsh_weyl_theory",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_titchmarsh_weyl_theory"
+    },
+    {
+      "id": "e_18011",
+      "from": "s_weyl_m_function",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eigenfunction_expansion_half_line"
+    },
+    {
+      "id": "e_18012",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_eigenfunction_expansion_half_line",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eigenfunction_expansion_half_line"
+    },
+    {
+      "id": "e_18013",
+      "from": "s_titchmarsh_weyl_theory",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eigenfunction_expansion_half_line"
+    },
+    {
+      "id": "e_18014",
+      "from": "s_hilbert_space",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eigenfunction_expansion_half_line"
+    },
+    {
+      "id": "e_18015",
+      "from": "s_unbounded_operator",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weyl_limit_point_limit_circle"
+    },
+    {
+      "id": "e_18016",
+      "from": "s_regular_singular_point",
+      "to": "t_fuchs_frobenius_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fuchs_theorem"
+    },
+    {
+      "id": "e_18017",
+      "from": "t_fuchs_frobenius_theory",
+      "to": "s_fuchs_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fuchs_theorem"
+    },
+    {
+      "id": "e_18018",
+      "from": "t_fuchs_frobenius_theory",
+      "to": "s_logarithmic_solutions_regular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fuchs_theorem"
+    },
+    {
+      "id": "e_18019",
+      "from": "s_riemann_p_symbol",
+      "to": "t_fuchs_frobenius_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fuchs_theorem"
+    },
+    {
+      "id": "e_18020",
+      "from": "s_irregular_singular_point",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_asymptotic_solutions_irregular_singular"
+    },
+    {
+      "id": "e_18021",
+      "from": "t_matched_asymptotic_expansions",
+      "to": "s_asymptotic_solutions_irregular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_asymptotic_solutions_irregular_singular"
+    },
+    {
+      "id": "e_18022",
+      "from": "s_stokes_phenomenon",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_asymptotic_solutions_irregular_singular"
+    },
+    {
+      "id": "e_18023",
+      "from": "s_ordinary_point_ode_complex",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18024",
+      "from": "s_analytic_continuation",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18025",
+      "from": "t_analytic_continuation_of_solutions",
+      "to": "s_monodromy_representation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18026",
+      "from": "s_monodromy_group_linear_ode",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18027",
+      "from": "t_analytic_continuation_of_solutions",
+      "to": "s_riemann_hilbert_problem_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riemann_hilbert_problem_ode"
+    },
+    {
+      "id": "e_18028",
+      "from": "s_monodromy_representation",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riemann_hilbert_problem_ode"
+    },
+    {
+      "id": "e_18029",
+      "from": "s_fundamental_group",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_riemann_hilbert_problem_ode"
+    },
+    {
+      "id": "e_18030",
+      "from": "s_linear_ordinary_differential_equation",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18031",
+      "from": "s_homogeneous_linear_ode",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18032",
+      "from": "s_abels_liouville_formula",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18033",
+      "from": "t_reduction_of_order",
+      "to": "s_logarithmic_solutions_regular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18034",
+      "from": "s_fundamental_matrix",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_existence_linear_ode"
+    },
+    {
+      "id": "e_18035",
+      "from": "t_variation_of_constants",
+      "to": "s_global_existence_linear_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_existence_linear_ode"
+    },
+    {
+      "id": "e_18036",
+      "from": "s_linear_ordinary_differential_equation",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_existence_linear_ode"
+    },
+    {
+      "id": "e_18037",
+      "from": "s_gronwall_inequality_integral_form",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_existence_linear_ode"
+    },
+    {
+      "id": "e_18038",
+      "from": "t_picard_iteration",
+      "to": "s_global_existence_linear_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_existence_linear_ode"
+    },
+    {
+      "id": "e_18039",
+      "from": "s_matrix_exponential",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_existence_linear_ode"
+    },
+    {
+      "id": "e_18040",
+      "from": "s_linear_ode_with_constant_coefficients",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lyapunov_equation_linear_systems"
+    },
+    {
+      "id": "e_18041",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_higher_order_ode_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18042",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_linear_ordinary_differential_equation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18043",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_phase_plane",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18044",
+      "from": "s_linear_ordinary_differential_equation",
+      "to": "t_higher_order_ode_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18045",
+      "from": "s_picard_lindelof_theorem",
+      "to": "t_euler_polygonal_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18046",
+      "from": "t_euler_polygonal_approximation",
+      "to": "s_continuous_dependence_on_initial_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuous_dependence_on_initial_conditions"
+    },
+    {
+      "id": "e_18047",
+      "from": "s_ode_comparison_principle",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ode_comparison_principle"
+    },
+    {
+      "id": "e_18048",
+      "from": "s_maximal_solution_of_an_ode",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18049",
+      "from": "t_differential_inequality",
+      "to": "s_gronwall_inequality_integral_form",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gronwall_inequality_integral_form"
+    },
+    {
+      "id": "e_18050",
+      "from": "s_contraction_mapping",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_picard_lindelof_theorem"
+    },
+    {
+      "id": "e_18051",
+      "from": "s_linear_ordinary_differential_equation",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18052",
+      "from": "s_lasalle_invariance_principle",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18053",
+      "from": "t_differential_inequality",
+      "to": "s_asymptotic_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lasalle_invariance_principle"
+    },
+    {
+      "id": "e_18054",
+      "from": "s_linear_ordinary_differential_equation",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_perron_asymptotic_integration"
+    },
+    {
+      "id": "e_18055",
+      "from": "t_differential_inequality",
+      "to": "s_perron_asymptotic_integration",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_perron_asymptotic_integration"
+    },
+    {
+      "id": "e_18056",
+      "from": "s_matrix_exponential",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_perron_asymptotic_integration"
+    },
+    {
+      "id": "e_18057",
+      "from": "s_perron_asymptotic_integration",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levinson_asymptotic_integration"
+    },
+    {
+      "id": "e_18058",
+      "from": "t_differential_inequality",
+      "to": "s_levinson_asymptotic_integration",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levinson_asymptotic_integration"
+    },
+    {
+      "id": "e_18059",
+      "from": "s_gronwall_inequality_integral_form",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levinson_asymptotic_integration"
+    },
+    {
+      "id": "e_18060",
+      "from": "t_variation_of_constants",
+      "to": "s_levinson_asymptotic_integration",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levinson_asymptotic_integration"
+    },
+    {
+      "id": "e_18061",
+      "from": "s_floquet_normal_form",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18062",
+      "from": "s_mathieu_equation",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18063",
+      "from": "t_regular_perturbation",
+      "to": "s_stability_zones_periodic_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18064",
+      "from": "s_regular_singular_point",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18065",
+      "from": "s_irregular_singular_point",
+      "to": "t_fuchs_frobenius_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18066",
+      "from": "s_fuchs_theorem",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18067",
+      "from": "t_analytic_continuation_of_solutions",
+      "to": "s_monodromy_representation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fuchs_theorem"
+    },
+    {
+      "id": "e_18068",
+      "from": "s_jordan_normal_form",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18069",
+      "from": "s_flow",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18070",
+      "from": "s_bifurcation",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18071",
+      "from": "s_separatrices",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18072",
+      "from": "s_implicit_function_theorem",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_expansion_theorem"
+    },
+    {
+      "id": "e_18073",
+      "from": "s_eigenvalue",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sturm_oscillation_theorem"
+    },
+    {
+      "id": "e_18074",
+      "from": "s_singular_sturm_liouville_problem",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weyl_limit_point_limit_circle"
+    },
+    {
+      "id": "e_18075",
+      "from": "s_covering_space",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18076",
+      "from": "s_poincare_asymptotic_expansion",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_asymptotic_solutions_irregular_singular"
+    },
+    {
+      "id": "e_18077",
+      "from": "t_averaging_method",
+      "to": "s_asymptotic_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18078",
+      "from": "s_equilibrium_point",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18079",
+      "from": "t_averaging_method",
+      "to": "s_orbital_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18080",
+      "from": "s_greens_function_bvp",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18081",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gronwall_inequality_integral_form"
+    },
+    {
+      "id": "e_18082",
+      "from": "s_min_max_principle_eigenvalues",
+      "to": "t_galerkin_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18083",
+      "from": "s_alpha_limit_set",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18084",
+      "from": "s_variational_equation",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18085",
+      "from": "t_regular_perturbation",
+      "to": "s_differentiability_wrt_initial_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_differentiability_wrt_initial_conditions"
+    },
+    {
+      "id": "e_18086",
+      "from": "s_exponential_stability",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18087",
+      "from": "s_uniform_stability",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18088",
+      "from": "s_self_adjointness_sturm_liouville",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eigenfunction_expansion_theorem"
+    },
+    {
+      "id": "e_18089",
+      "from": "t_prufer_transformation",
+      "to": "s_eigenfunction_expansion_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eigenfunction_expansion_theorem"
+    },
+    {
+      "id": "e_18090",
+      "from": "s_boundary_layer",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18091",
+      "from": "t_fuchs_frobenius_theory",
+      "to": "s_asymptotic_solutions_irregular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_asymptotic_solutions_irregular_singular"
+    },
+    {
+      "id": "e_18092",
+      "from": "s_ordinary_point_ode_complex",
+      "to": "t_fuchs_frobenius_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18093",
+      "from": "t_euler_polygonal_approximation",
+      "to": "s_maximal_solution_of_an_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18094",
+      "from": "s_topological_equivalence_phase_portraits",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18095",
+      "from": "s_bendixson_criterion",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18096",
+      "from": "s_stokes_phenomenon",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18097",
+      "from": "t_matched_asymptotic_expansions",
+      "to": "s_boundary_layer",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_singular_perturbation"
+    },
+    {
+      "id": "e_18098",
+      "from": "s_greens_theorem",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18099",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_equilibrium_point",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18100",
+      "from": "s_variational_equation",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18101",
+      "from": "s_divergence_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bendixson_criterion"
+    },
+    {
+      "id": "e_18102",
+      "from": "t_regular_perturbation",
+      "to": "s_continuous_dependence_on_parameters",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuous_dependence_on_parameters"
+    },
+    {
+      "id": "e_18103",
+      "from": "s_inner_product_space",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_self_adjointness_sturm_liouville"
+    },
+    {
+      "id": "e_18104",
+      "from": "s_complex_numbers",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18105",
+      "from": "s_index_theorem_equilibria",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18106",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_euler_polygonal_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18107",
+      "from": "s_continuity",
+      "to": "t_euler_polygonal_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18108",
+      "from": "s_arzela_ascoli_theorem",
+      "to": "t_euler_polygonal_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18109",
+      "from": "t_euler_polygonal_approximation",
+      "to": "s_peano_existence_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18110",
+      "from": "s_linear_ode",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18111",
+      "from": "s_regular_sturm_liouville_problem",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18112",
+      "from": "s_fundamental_matrix",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18113",
+      "from": "s_wronskian_witness",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18114",
+      "from": "s_self_adjointness_sturm_liouville",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18115",
+      "from": "s_sturm_liouville_eigenvalue_theorem",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18116",
+      "from": "s_rayleigh_quotient_with_extremal_property",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18117",
+      "from": "s_spectral_theorem_self_adjoint",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18118",
+      "from": "s_herglotz_representation",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18119",
+      "from": "s_hilbert_space",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18120",
+      "from": "s_inner_product_space",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18121",
+      "from": "s_parseval_identity",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18122",
+      "from": "s_deficiency_indices",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18123",
+      "from": "s_spectral_measure_for_A",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18124",
+      "from": "s_singular_sturm_liouville_problem",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18125",
+      "from": "s_compact_self_adjoint_inverse",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18126",
+      "from": "s_bounded_linear_operator",
+      "to": "t_greens_function_construction_bvp",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18127",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_greens_function_bvp",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18128",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_eigenfunction_expansion_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18129",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_min_max_principle_eigenvalues",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18130",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_weyl_m_function",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18131",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_titchmarsh_weyl_theory",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18132",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_eigenfunction_expansion_half_line",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18133",
+      "from": "t_greens_function_construction_bvp",
+      "to": "s_weyl_limit_point_limit_circle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18134",
+      "from": "s_regular_sturm_liouville_problem",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18135",
+      "from": "s_homogeneous_linear_ode",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18136",
+      "from": "s_self_adjointness_sturm_liouville",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18137",
+      "from": "s_singular_sturm_liouville_problem",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18138",
+      "from": "s_deficiency_indices",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18139",
+      "from": "s_phase_plane",
+      "to": "t_prufer_transformation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18140",
+      "from": "t_prufer_transformation",
+      "to": "s_sturm_separation_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18141",
+      "from": "t_prufer_transformation",
+      "to": "s_sturm_oscillation_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18142",
+      "from": "t_prufer_transformation",
+      "to": "s_sturm_comparison_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18143",
+      "from": "t_prufer_transformation",
+      "to": "s_weyl_limit_point_limit_circle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18144",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18145",
+      "from": "s_picard_lindelof_theorem",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18146",
+      "from": "s_lipschitz_condition",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18147",
+      "from": "s_variational_equation",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18148",
+      "from": "s_center_manifold_theorem",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18149",
+      "from": "s_poincare_linearization_theorem",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18150",
+      "from": "s_asymptotic_stability",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18151",
+      "from": "s_continuous_dependence_on_initial_conditions",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18152",
+      "from": "s_continuous_dependence_on_parameters",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18153",
+      "from": "s_singular_perturbation",
+      "to": "t_regular_perturbation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18154",
+      "from": "t_regular_perturbation",
+      "to": "s_poincare_expansion_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18155",
+      "from": "t_regular_perturbation",
+      "to": "s_poincare_asymptotic_expansion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18156",
+      "from": "s_singular_perturbation",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18157",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18158",
+      "from": "s_asymptotic_expansion",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18159",
+      "from": "s_boundary_layer",
+      "to": "t_matched_asymptotic_expansions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18160",
+      "from": "t_matched_asymptotic_expansions",
+      "to": "s_boundary_layer",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18161",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18162",
+      "from": "s_linear_ode_with_t_periodic_coefficient_A_t",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18163",
+      "from": "s_characteristic_multipliers",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18164",
+      "from": "s_floquet_normal_form",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18165",
+      "from": "s_matrix_exponential",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18166",
+      "from": "s_floquet_theorem",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18167",
+      "from": "s_floquet_exponent_matrix_B",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18168",
+      "from": "s_picard_lindelof_theorem",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18169",
+      "from": "s_hill_equation",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18170",
+      "from": "s_mathieu_equation",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18171",
+      "from": "s_hill_discriminant",
+      "to": "t_averaging_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18172",
+      "from": "t_averaging_method",
+      "to": "s_stability_zones_periodic_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18173",
+      "from": "t_averaging_method",
+      "to": "s_floquet_normal_form",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18174",
+      "from": "t_averaging_method",
+      "to": "s_characteristic_multipliers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18175",
+      "from": "s_ordinary_point_ode_complex",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18176",
+      "from": "s_regular_singular_point",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18177",
+      "from": "s_analytic_continuation",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18178",
+      "from": "s_fundamental_group",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18179",
+      "from": "s_monodromy_matrix_M",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18180",
+      "from": "s_complex_numbers",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18181",
+      "from": "s_monodromy_representation",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18182",
+      "from": "s_riemann_p_symbol",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18183",
+      "from": "s_riemann_hilbert_correspondence",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18184",
+      "from": "s_fuchs_theorem",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18185",
+      "from": "s_stokes_phenomenon",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18186",
+      "from": "s_picardfuchs_equation",
+      "to": "t_analytic_continuation_of_solutions",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18187",
+      "from": "t_analytic_continuation_of_solutions",
+      "to": "s_monodromy_representation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18188",
+      "from": "t_analytic_continuation_of_solutions",
+      "to": "s_monodromy_group_linear_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18189",
+      "from": "t_analytic_continuation_of_solutions",
+      "to": "s_connection_formulas_hypergeometric",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18190",
+      "from": "t_analytic_continuation_of_solutions",
+      "to": "s_riemann_hilbert_problem_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18191",
+      "from": "t_analytic_continuation_of_solutions",
+      "to": "s_riemann_hilbert_correspondence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18192",
+      "from": "t_analytic_continuation_of_solutions",
+      "to": "s_asymptotic_solutions_irregular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18193",
+      "from": "s_homogeneous_linear_ode",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18194",
+      "from": "s_linear_ode",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18195",
+      "from": "s_wronskian_witness",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18196",
+      "from": "s_eigenvalue",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18197",
+      "from": "s_abels_liouville_formula",
+      "to": "t_reduction_of_order",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18198",
+      "from": "t_reduction_of_order",
+      "to": "s_logarithmic_solutions_regular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18199",
+      "from": "t_reduction_of_order",
+      "to": "s_abels_liouville_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18200",
+      "from": "s_gronwall_inequality",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18201",
+      "from": "s_gronwall_inequality_integral_form",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18202",
+      "from": "s_ode_comparison_principle",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18203",
+      "from": "s_maximal_solution_of_an_ode",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18204",
+      "from": "s_lyapunov_function_V",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18205",
+      "from": "s_lyapunov_stability_theorem",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18206",
+      "from": "s_picard_lindelof_theorem",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18207",
+      "from": "s_equilibrium_point",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18208",
+      "from": "s_omega_limit_set",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18209",
+      "from": "s_alpha_limit_set",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18210",
+      "from": "s_divergence_theorem",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18211",
+      "from": "s_lasalle_invariance_principle",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18212",
+      "from": "s_massera_converse_lyapunov",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18213",
+      "from": "s_phase_plane",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18214",
+      "from": "s_uniform_stability",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18215",
+      "from": "s_variational_equation",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18216",
+      "from": "s_perron_asymptotic_integration",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18217",
+      "from": "s_levinson_asymptotic_integration",
+      "to": "t_differential_inequality",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18218",
+      "from": "t_differential_inequality",
+      "to": "s_continuous_dependence_on_initial_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18219",
+      "from": "t_differential_inequality",
+      "to": "s_continuous_dependence_on_parameters",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18220",
+      "from": "t_differential_inequality",
+      "to": "s_gronwall_inequality_integral_form",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18221",
+      "from": "t_differential_inequality",
+      "to": "s_global_existence_linear_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18222",
+      "from": "t_differential_inequality",
+      "to": "s_blowup_criterion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18223",
+      "from": "t_differential_inequality",
+      "to": "s_asymptotic_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18224",
+      "from": "t_differential_inequality",
+      "to": "s_exponential_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18225",
+      "from": "t_differential_inequality",
+      "to": "s_uniform_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18226",
+      "from": "t_differential_inequality",
+      "to": "s_lyapunov_instability_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18227",
+      "from": "t_differential_inequality",
+      "to": "s_lyapunov_equation_linear_systems",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18228",
+      "from": "t_differential_inequality",
+      "to": "s_bendixson_criterion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18229",
+      "from": "t_differential_inequality",
+      "to": "s_poincare_bendixson_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18230",
+      "from": "s_linear_ordinary_differential_equation",
+      "to": "t_higher_order_ode_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18231",
+      "from": "s_ordinary_differential_equation_ode",
+      "to": "t_higher_order_ode_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18232",
+      "from": "s_jordan_normal_form",
+      "to": "t_higher_order_ode_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18233",
+      "from": "s_linear_ode_with_constant_coefficients",
+      "to": "t_higher_order_ode_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18234",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_linear_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18235",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_fundamental_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18236",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_classification_equilibria_r2",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18237",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_phase_plane",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18238",
+      "from": "t_higher_order_ode_reduction",
+      "to": "s_lyapunov_equation_linear_systems",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18239",
+      "from": "s_lipschitz_condition",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18240",
+      "from": "s_gronwall_inequality_integral_form",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18241",
+      "from": "s_variational_equation",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18242",
+      "from": "s_lyapunov_function_V",
+      "to": "t_picard_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18243",
+      "from": "t_picard_iteration",
+      "to": "s_continuous_dependence_on_initial_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuous_dependence_on_initial_conditions"
+    },
+    {
+      "id": "e_18244",
+      "from": "t_picard_iteration",
+      "to": "s_continuous_dependence_on_parameters",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuous_dependence_on_parameters"
+    },
+    {
+      "id": "e_18245",
+      "from": "t_picard_iteration",
+      "to": "s_differentiability_wrt_initial_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_differentiability_wrt_initial_conditions"
+    },
+    {
+      "id": "e_18246",
+      "from": "t_picard_iteration",
+      "to": "s_poincare_expansion_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poincare_expansion_theorem"
+    },
+    {
+      "id": "e_18247",
+      "from": "t_picard_iteration",
+      "to": "s_global_existence_linear_ode",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_global_existence_linear_ode"
+    },
+    {
+      "id": "e_18248",
+      "from": "t_picard_iteration",
+      "to": "s_variational_equation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18249",
+      "from": "s_regular_singular_point",
+      "to": "t_fuchs_frobenius_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18250",
+      "from": "s_irregular_singular_point",
+      "to": "t_fuchs_frobenius_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18251",
+      "from": "s_hypergeometric_differential_equation",
+      "to": "t_fuchs_frobenius_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18252",
+      "from": "s_bessel_differential_equation",
+      "to": "t_fuchs_frobenius_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18253",
+      "from": "s_airy_differential_equation",
+      "to": "t_fuchs_frobenius_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18254",
+      "from": "t_fuchs_frobenius_theory",
+      "to": "s_logarithmic_solutions_regular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18255",
+      "from": "t_fuchs_frobenius_theory",
+      "to": "s_fuchs_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18256",
+      "from": "t_fuchs_frobenius_theory",
+      "to": "s_ordinary_point_ode_complex",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18257",
+      "from": "t_fuchs_frobenius_theory",
+      "to": "s_convergent_power_series_solution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18258",
+      "from": "s_linear_ode",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18259",
+      "from": "s_fundamental_matrix",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18260",
+      "from": "s_matrix_exponential",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18261",
+      "from": "s_linear_ode_with_constant_coefficients",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18262",
+      "from": "s_eigenvalue",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18263",
+      "from": "s_variational_equation",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18264",
+      "from": "s_exponential_stability",
+      "to": "t_variation_of_constants",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18265",
+      "from": "t_variation_of_constants",
+      "to": "s_perron_asymptotic_integration",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18266",
+      "from": "t_variation_of_constants",
+      "to": "s_levinson_asymptotic_integration",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18267",
+      "from": "s_limit_cycle",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18268",
+      "from": "s_orbital_stability",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18269",
+      "from": "s_omega_limit_set",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18270",
+      "from": "s_phase_plane",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18271",
+      "from": "s_autonomous_ode",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18272",
+      "from": "s_floquet_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18273",
+      "from": "s_equilibrium_point",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18274",
+      "from": "s_hartman_grobman_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18275",
+      "from": "s_stable_manifold_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18276",
+      "from": "s_dulac_criterion",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18277",
+      "from": "s_index_of_closed_curve",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18278",
+      "from": "s_winding_number_map_pi_1_to_Z",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18279",
+      "from": "s_homeomorphism",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18280",
+      "from": "s_hyperbolic_equilibrium_of_smooth_vector_field",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18281",
+      "from": "s_hopf_bifurcation_theorem",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18282",
+      "from": "s_first_lyapunov_coefficient",
+      "to": "t_poincare_section",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18283",
+      "from": "t_poincare_section",
+      "to": "s_characteristic_multipliers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18284",
+      "from": "t_poincare_section",
+      "to": "s_poincare_bendixson_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18285",
+      "from": "t_poincare_section",
+      "to": "s_separatrices",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18286",
+      "from": "t_poincare_section",
+      "to": "s_topological_equivalence_phase_portraits",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18287",
+      "from": "t_poincare_section",
+      "to": "s_index_theorem_equilibria",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18288",
+      "from": "t_poincare_section",
+      "to": "s_index_of_closed_curve",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18289",
+      "from": "t_poincare_section",
+      "to": "s_orbital_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18290",
+      "from": "t_poincare_section",
+      "to": "s_limit_cycle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18291",
+      "from": "t_poincare_section",
+      "to": "s_omega_limit_set",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18292",
+      "from": "t_poincare_section",
+      "to": "s_alpha_limit_set",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18293",
+      "from": "t_contraction_fixed_point",
+      "to": "s_picard_lindelof_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18294",
+      "from": "t_contraction_fixed_point",
+      "to": "s_cauchy_lipschitz_local_existence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18295",
+      "from": "s_singular_perturbation",
+      "to": "t_perturbation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18296",
+      "from": "t_perturbation_theory",
+      "to": "s_boundary_layer",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18297",
+      "from": "t_perturbation_theory",
+      "to": "s_poincare_expansion_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18298",
+      "from": "s_irregular_singular_point",
+      "to": "t_asymptotic_perturbation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18299",
+      "from": "t_asymptotic_perturbation_theory",
+      "to": "s_asymptotic_solutions_irregular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18300",
+      "from": "s_singular_sturm_liouville_problem",
+      "to": "t_liouville_green_wkb_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18301",
+      "from": "s_regular_singular_point",
+      "to": "t_liouville_green_wkb_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18302",
+      "from": "t_liouville_green_wkb_approximation",
+      "to": "s_asymptotic_solutions_irregular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18303",
+      "from": "s_stokes_phenomenon",
+      "to": "t_exponentially_improved_asymptotics",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18304",
+      "from": "s_asymptotic_solutions_irregular_singular",
+      "to": "t_exponentially_improved_asymptotics",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18305",
+      "from": "s_irregular_singular_point",
+      "to": "t_hyperasymptotics",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18306",
+      "from": "t_hyperasymptotics",
+      "to": "s_asymptotic_solutions_irregular_singular",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18307",
+      "from": "t_separation_of_variables",
+      "to": "s_regular_sturm_liouville_problem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18308",
+      "from": "t_separation_of_variables",
+      "to": "s_singular_sturm_liouville_problem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_18309",
+      "from": "s_linear_ode_with_constant_coefficients",
+      "to": "t_application_of_laplace_transform_to_linear_ode",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
     }
   ],
   "subgraphs": [
