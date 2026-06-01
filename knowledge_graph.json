@@ -108967,6 +108967,608 @@
       "type_signature": "",
       "description": "Classification of each boundary point of a one-dimensional diffusion into four types — regular, exit, entrance, or natural — based on convergence of integrals involving the scale function and speed measure. Regular boundaries are both entrance and exit; natural boundaries are inaccessible.",
       "source": "cinlar"
+    },
+    {
+      "id": "s_column_space",
+      "kind": "axiom",
+      "name": "Column Space (Range)",
+      "type_signature": "A ∈ ℂ^{m×n} → col(A) = {Ax : x ∈ ℂ^n} ⊆ ℂ^m",
+      "description": "The subspace of ℂ^m spanned by the columns of A, equal to the image (range) of the linear map x ↦ Ax."
+    },
+    {
+      "id": "s_row_space",
+      "kind": "axiom",
+      "name": "Row Space",
+      "type_signature": "A ∈ ℂ^{m×n} → row(A) = col(A*) ⊆ ℂ^n",
+      "description": "The subspace of ℂ^n spanned by the rows of A, equivalently the column space of the conjugate transpose A*."
+    },
+    {
+      "id": "s_null_space",
+      "kind": "axiom",
+      "name": "Null Space (Kernel)",
+      "type_signature": "A ∈ ℂ^{m×n} → null(A) = {x ∈ ℂ^n : Ax = 0}",
+      "description": "The subspace of ℂ^n consisting of all vectors mapped to zero by A."
+    },
+    {
+      "id": "s_matrix_rank",
+      "kind": "axiom",
+      "name": "Rank of a Matrix",
+      "type_signature": "A ∈ ℂ^{m×n} → rank(A) ∈ ℕ",
+      "description": "The dimension of the column space of A, equivalently the number of nonzero singular values."
+    },
+    {
+      "id": "s_unitary_matrix",
+      "kind": "axiom",
+      "name": "Unitary Matrix",
+      "type_signature": "Q ∈ ℂ^{m×m}, Q*Q = QQ* = I",
+      "description": "A square complex matrix whose columns form an orthonormal basis of ℂ^m; equivalently Q* = Q⁻¹, preserving inner products and 2-norms."
+    },
+    {
+      "id": "s_conjugate_transpose",
+      "kind": "axiom",
+      "name": "Conjugate Transpose (Adjoint)",
+      "type_signature": "A ∈ ℂ^{m×n} → A* ∈ ℂ^{n×m}, (A*)_{ij} = ā_{ji}",
+      "description": "The matrix obtained by transposing A and taking complex conjugates of all entries; satisfies ⟨Ax, y⟩ = ⟨x, A*y⟩."
+    },
+    {
+      "id": "s_frobenius_norm",
+      "kind": "axiom",
+      "name": "Frobenius Norm",
+      "type_signature": "A ∈ ℂ^{m×n} → ‖A‖_F = (∑_{i,j} |a_{ij}|²)^{1/2}",
+      "description": "The entrywise 2-norm of a matrix, equal to the square root of the sum of squared singular values: ‖A‖_F = (σ₁² + ⋯ + σ_r²)^{1/2}."
+    },
+    {
+      "id": "s_matrix_operator_norm",
+      "kind": "axiom",
+      "name": "Matrix Operator Norm (Induced Norm)",
+      "type_signature": "A ∈ ℂ^{m×n} → ‖A‖ = sup_{x≠0} ‖Ax‖/‖x‖",
+      "description": "The norm on matrices induced by vector norms on domain and codomain; the 2-norm equals the largest singular value σ₁."
+    },
+    {
+      "id": "s_submultiplicativity_of_matrix_norms",
+      "kind": "theorem",
+      "name": "Submultiplicativity of Matrix Norms",
+      "type_signature": "‖AB‖ ≤ ‖A‖·‖B‖",
+      "description": "For any operator norm (and the Frobenius norm), the norm of a product is at most the product of the norms."
+    },
+    {
+      "id": "s_singular_values",
+      "kind": "axiom",
+      "name": "Singular Values",
+      "type_signature": "A ∈ ℂ^{m×n} → σ₁ ≥ σ₂ ≥ ⋯ ≥ σ_p ≥ 0, p = min(m,n)",
+      "description": "The nonnegative square roots of the eigenvalues of A*A, ordered decreasingly; they measure the semiaxes of the image of the unit ball under A."
+    },
+    {
+      "id": "s_reduced_svd",
+      "kind": "state",
+      "name": "Reduced (Thin) SVD",
+      "type_signature": "A ∈ ℂ^{m×n} (m ≥ n) → A = Û Σ̂ V*,  Û ∈ ℂ^{m×n}, Σ̂ ∈ ℝ^{n×n}, V ∈ ℂ^{n×n}",
+      "description": "The economy-size singular value decomposition retaining only the first n left singular vectors, reducing storage from O(m²) to O(mn)."
+    },
+    {
+      "id": "s_eckart_young_theorem",
+      "kind": "theorem",
+      "name": "Eckart–Young–Mirsky Theorem",
+      "type_signature": "inf_{rank(B)≤k} ‖A − B‖₂ = σ_{k+1},  inf_{rank(B)≤k} ‖A − B‖_F = (σ_{k+1}² + ⋯ + σ_r²)^{1/2}",
+      "description": "The best rank-k approximation to A in the 2-norm or Frobenius norm is the truncated SVD A_k = ∑_{i=1}^{k} σᵢ uᵢ vᵢ*."
+    },
+    {
+      "id": "s_moore_penrose_pseudoinverse",
+      "kind": "axiom",
+      "name": "Moore–Penrose Pseudoinverse",
+      "type_signature": "A ∈ ℂ^{m×n} → A⁺ ∈ ℂ^{n×m}",
+      "description": "The unique matrix satisfying the four Penrose conditions (AA⁺A=A, A⁺AA⁺=A⁺, (AA⁺)*=AA⁺, (A⁺A)*=A⁺A); computable via SVD as A⁺ = VΣ⁺U*."
+    },
+    {
+      "id": "s_orthogonal_projector",
+      "kind": "axiom",
+      "name": "Orthogonal Projector",
+      "type_signature": "P ∈ ℂ^{m×m}, P² = P, P* = P",
+      "description": "An idempotent Hermitian matrix projecting onto a subspace S along S⊥; satisfies ‖P‖₂ = 1 (unless P = 0) and range(P) = S."
+    },
+    {
+      "id": "s_qr_factorization",
+      "kind": "state",
+      "name": "QR Factorization",
+      "type_signature": "A ∈ ℂ^{m×n} (m ≥ n) → A = QR, Q ∈ ℂ^{m×m} unitary, R ∈ ℂ^{m×n} upper triangular",
+      "description": "Decomposition of a matrix into a unitary factor Q and an upper triangular factor R; unique (up to signs) when A has full column rank and diagonal entries of R are positive."
+    },
+    {
+      "id": "s_upper_triangular_matrix",
+      "kind": "axiom",
+      "name": "Upper Triangular Matrix",
+      "type_signature": "R ∈ ℂ^{n×n}, r_{ij} = 0 for i > j",
+      "description": "A square matrix with all entries below the main diagonal equal to zero; its eigenvalues are the diagonal entries."
+    },
+    {
+      "id": "s_lower_triangular_matrix",
+      "kind": "axiom",
+      "name": "Lower Triangular Matrix",
+      "type_signature": "L ∈ ℂ^{n×n}, l_{ij} = 0 for i < j",
+      "description": "A square matrix with all entries above the main diagonal equal to zero."
+    },
+    {
+      "id": "s_householder_reflector",
+      "kind": "axiom",
+      "name": "Householder Reflector",
+      "type_signature": "v ∈ ℂ^m, v ≠ 0 → F = I − 2vv*/‖v‖²",
+      "description": "A unitary Hermitian matrix that reflects vectors across the hyperplane orthogonal to v; used to zero out subdiagonal entries column by column."
+    },
+    {
+      "id": "s_least_squares_problem",
+      "kind": "axiom",
+      "name": "Least Squares Problem",
+      "type_signature": "A ∈ ℂ^{m×n}, b ∈ ℂ^m → x* = argmin_x ‖Ax − b‖₂",
+      "description": "The problem of finding x minimizing the 2-norm of the residual Ax − b, arising when the system Ax = b is overdetermined (m > n)."
+    },
+    {
+      "id": "s_normal_equations",
+      "kind": "state",
+      "name": "Normal Equations",
+      "type_signature": "A*Ax = A*b",
+      "description": "The n×n system whose solution gives the least squares minimizer; equivalent to projecting b onto col(A), but squaring the condition number makes direct solution ill-advised."
+    },
+    {
+      "id": "s_condition_number_of_linear_system",
+      "kind": "theorem",
+      "name": "Conditioning of Ax = b",
+      "type_signature": "‖δx‖/‖x‖ ≤ κ(A)(‖δb‖/‖b‖ + ‖δA‖/‖A‖)",
+      "description": "The relative error in the solution of Ax = b is bounded by κ(A) = ‖A‖‖A⁻¹‖ times the relative perturbation in data, so κ(A) measures sensitivity of linear systems."
+    },
+    {
+      "id": "s_machine_epsilon",
+      "kind": "axiom",
+      "name": "Machine Epsilon",
+      "type_signature": "ε_mach ∈ ℝ_{>0}",
+      "description": "The smallest positive floating-point number such that fl(1 + ε) > 1; equivalently half the spacing between 1 and the next representable number (ε_mach ≈ 1.11 × 10⁻¹⁶ in IEEE double)."
+    },
+    {
+      "id": "s_fundamental_axiom_of_floating_point",
+      "kind": "axiom",
+      "name": "Fundamental Axiom of Floating-Point Arithmetic",
+      "type_signature": "fl(x ∘ y) = (x ∘ y)(1 + ε), |ε| ≤ ε_mach",
+      "description": "Every elementary floating-point operation (+ − × ÷) produces a result that is the exact result rounded: the relative error of each operation is at most machine epsilon."
+    },
+    {
+      "id": "s_backward_stability",
+      "kind": "axiom",
+      "name": "Backward Stability",
+      "type_signature": "f̃(x) = f(x + δx), ‖δx‖/‖x‖ = O(ε_mach)",
+      "description": "A numerical algorithm is backward stable if for every input x, its computed output f̃(x) is the exact answer to a nearby problem f(x + δx) with ‖δx‖/‖x‖ = O(ε_mach)."
+    },
+    {
+      "id": "s_backward_stability_implies_accuracy",
+      "kind": "theorem",
+      "name": "Backward Stability Implies Forward Accuracy",
+      "type_signature": "‖f̃(x) − f(x)‖/‖f(x)‖ ≤ κ(problem) · O(ε_mach)",
+      "description": "If an algorithm is backward stable and the problem has condition number κ, then the relative forward error is at most O(κ · ε_mach)."
+    },
+    {
+      "id": "s_accuracy_equals_condition_times_stability",
+      "kind": "theorem",
+      "name": "Accuracy = Condition × Stability",
+      "type_signature": "forward_error ≤ κ(problem) × backward_error",
+      "description": "The central principle of numerical analysis: the accuracy achievable by an algorithm is the product of the problem's condition number and the algorithm's backward error."
+    },
+    {
+      "id": "s_backward_stability_of_householder_qr",
+      "kind": "theorem",
+      "name": "Backward Stability of Householder QR",
+      "type_signature": "Q̃R̃ = A + δA, ‖δA‖/‖A‖ = O(ε_mach)",
+      "description": "Householder triangularization is backward stable: the computed factors Q̃, R̃ are the exact QR factors of a matrix A + δA with ‖δA‖/‖A‖ = O(ε_mach)."
+    },
+    {
+      "id": "s_lu_factorization",
+      "kind": "state",
+      "name": "LU Factorization",
+      "type_signature": "A ∈ ℂ^{n×n} → A = LU, L lower triangular, U upper triangular",
+      "description": "Decomposition of a square matrix into a product of a lower triangular matrix L and an upper triangular matrix U; exists without pivoting when all leading principal minors are nonzero."
+    },
+    {
+      "id": "s_partial_pivoting",
+      "kind": "axiom",
+      "name": "Partial Pivoting",
+      "type_signature": "At step k, swap rows to place max_{i≥k} |a_{ik}| on the diagonal",
+      "description": "Row interchange strategy in Gaussian elimination that selects the largest magnitude entry in the current column as pivot, ensuring |l_{ij}| ≤ 1 in L."
+    },
+    {
+      "id": "s_permutation_matrix",
+      "kind": "axiom",
+      "name": "Permutation Matrix",
+      "type_signature": "P ∈ {0,1}^{n×n}, PP* = I",
+      "description": "A matrix with exactly one entry of 1 in each row and column and 0s elsewhere, representing a permutation of coordinates; orthogonal and its inverse is its transpose."
+    },
+    {
+      "id": "s_growth_factor",
+      "kind": "state",
+      "name": "Growth Factor",
+      "type_signature": "ρ = max_{i,j,k} |a_{ij}^{(k)}| / max_{i,j} |a_{ij}|",
+      "description": "The ratio of the largest entry encountered during Gaussian elimination to the largest entry of the original matrix; controls the backward error of LU factorization."
+    },
+    {
+      "id": "s_backward_stability_of_gepp",
+      "kind": "theorem",
+      "name": "Backward Stability of GEPP",
+      "type_signature": "(L̃Ũ = PA + δA), ‖δA‖ = O(ρ ε_mach ‖A‖)",
+      "description": "Gaussian elimination with partial pivoting is backward stable provided the growth factor ρ is moderate; in practice ρ = O(1) for virtually all matrices."
+    },
+    {
+      "id": "s_hermitian_positive_definite_matrix",
+      "kind": "axiom",
+      "name": "Hermitian Positive Definite Matrix",
+      "type_signature": "A ∈ ℂ^{n×n}, A* = A, x*Ax > 0 ∀x ≠ 0",
+      "description": "A Hermitian matrix all of whose eigenvalues are strictly positive; equivalently x*Ax > 0 for every nonzero vector x."
+    },
+    {
+      "id": "s_cholesky_factorization",
+      "kind": "state",
+      "name": "Cholesky Factorization",
+      "type_signature": "A ∈ ℂ^{n×n} HPD → A = R*R, R upper triangular with positive diagonal",
+      "description": "The unique decomposition of a Hermitian positive definite matrix into the product of an upper triangular matrix and its conjugate transpose; costs (1/3)n³ flops, half that of LU."
+    },
+    {
+      "id": "s_hessenberg_matrix",
+      "kind": "axiom",
+      "name": "Hessenberg Matrix",
+      "type_signature": "H ∈ ℂ^{n×n}, h_{ij} = 0 for i > j + 1",
+      "description": "An upper Hessenberg matrix has zeros below the first subdiagonal; a natural intermediate form for eigenvalue computation since it preserves eigenvalues under unitary similarity and enables O(n²) QR steps."
+    },
+    {
+      "id": "s_tridiagonal_matrix",
+      "kind": "axiom",
+      "name": "Tridiagonal Matrix",
+      "type_signature": "T ∈ ℂ^{n×n}, t_{ij} = 0 for |i−j| > 1",
+      "description": "A matrix with nonzero entries only on the main diagonal and the two adjacent diagonals; arises from Hessenberg reduction of Hermitian matrices and enables O(n) per QR step."
+    },
+    {
+      "id": "s_givens_rotation",
+      "kind": "axiom",
+      "name": "Givens Rotation",
+      "type_signature": "G(i,j,θ) ∈ ℝ^{n×n}, orthogonal, differs from I only in rows/columns i,j",
+      "description": "A rotation in the (i,j)-plane by angle θ that selectively zeros a single matrix entry; used in QR factorization of Hessenberg matrices and in Jacobi eigenvalue iterations."
+    },
+    {
+      "id": "s_bidiagonal_matrix",
+      "kind": "axiom",
+      "name": "Bidiagonal Matrix",
+      "type_signature": "B ∈ ℝ^{n×n}, b_{ij} = 0 for j ∉ {i, i+1}",
+      "description": "A matrix with nonzero entries only on the main diagonal and the first superdiagonal; the intermediate form in SVD computation."
+    },
+    {
+      "id": "s_sparse_matrix",
+      "kind": "axiom",
+      "name": "Sparse Matrix",
+      "type_signature": "A ∈ ℂ^{n×n} with O(n) nonzero entries",
+      "description": "A matrix in which most entries are zero, typically with O(n) nonzeros; enables matrix-vector products in O(n) time, making Krylov methods practical for large systems."
+    },
+    {
+      "id": "s_preconditioner",
+      "kind": "axiom",
+      "name": "Preconditioner",
+      "type_signature": "M ≈ A, M⁻¹ easy to apply → solve M⁻¹Ax = M⁻¹b",
+      "description": "A matrix M approximating A such that M⁻¹A has clustered spectrum or small condition number, transforming the original system into one for which Krylov methods converge rapidly."
+    },
+    {
+      "id": "s_wilkinson_shift",
+      "kind": "state",
+      "name": "Wilkinson Shift",
+      "type_signature": "μ = eigenvalue of trailing 2×2 block of H closer to h_{nn}",
+      "description": "The shift strategy for QR iteration that selects the eigenvalue of the trailing 2×2 submatrix of H closer to h_{nn}; guarantees at least quadratic convergence for Hermitian matrices and cubic in practice."
+    },
+    {
+      "id": "s_ritz_values",
+      "kind": "state",
+      "name": "Ritz Values and Vectors",
+      "type_signature": "θ_i = eigenvalues of H_k ∈ ℂ^{k×k} (Arnoldi projection)",
+      "description": "The eigenvalues of the projected Hessenberg matrix H_k obtained from Arnoldi iteration; they approximate eigenvalues of A, with extremal eigenvalues typically converging first."
+    },
+    {
+      "id": "s_ilu_preconditioner",
+      "kind": "state",
+      "name": "Incomplete LU (ILU) Preconditioner",
+      "type_signature": "A ≈ LU with fill restricted to sparsity pattern S",
+      "description": "An approximate LU factorization that discards fill-in entries outside a prescribed sparsity pattern, yielding a sparse triangular preconditioner applicable in O(nnz) operations."
+    },
+    {
+      "id": "s_incomplete_cholesky_preconditioner",
+      "kind": "state",
+      "name": "Incomplete Cholesky Preconditioner",
+      "type_signature": "A ∈ HPD → A ≈ R*R with fill restricted to pattern S",
+      "description": "The symmetric positive definite analogue of ILU: an approximate Cholesky factor with fill limited to a sparsity pattern, preserving positive definiteness under mild conditions."
+    },
+    {
+      "id": "s_domain_decomposition_preconditioner",
+      "kind": "state",
+      "name": "Domain Decomposition Preconditioner",
+      "type_signature": "Ω = ∪ Ωᵢ → M⁻¹ via local solves on Ωᵢ",
+      "description": "Decomposes the computational domain into overlapping or non-overlapping subdomains, solves local subproblems independently or with interface coupling, and assembles a global preconditioner."
+    },
+    {
+      "id": "s_convergence_via_polynomial_approximation",
+      "kind": "theorem",
+      "name": "Convergence of Krylov Methods via Polynomial Approximation",
+      "type_signature": "‖e_k‖_A ≤ min_{p ∈ P_k, p(0)=1} max_{λ ∈ σ(A)} |p(λ)| · ‖e_0‖_A",
+      "description": "The error of a Krylov method after k steps is bounded by the best polynomial approximation to zero on the spectrum, connecting iterative solver convergence to approximation theory."
+    },
+    {
+      "id": "s_gmres_convergence",
+      "kind": "theorem",
+      "name": "GMRES Convergence Bound",
+      "type_signature": "‖r_k‖/‖r_0‖ ≤ min_{p ∈ P_k, p(0)=1} max_{λ ∈ σ(A)} |p(λ)|",
+      "description": "GMRES convergence is governed by how well polynomials of degree k bounded by 1 at the origin can be made small on the spectrum (or field of values) of A."
+    },
+    {
+      "id": "s_lanczos_gauss_quadrature_connection",
+      "kind": "theorem",
+      "name": "Lanczos–Gauss Quadrature Connection",
+      "type_signature": "e₁ᵀ f(T_k) e₁ = Gauss quadrature of bᵀ f(A) b / ‖b‖²",
+      "description": "The k-step Lanczos approximation to bᵀf(A)b equals a k-point Gauss quadrature rule for the Riemann–Stieltjes integral ∫f(λ)dμ(λ) defined by the spectral measure of A with respect to b."
+    },
+    {
+      "id": "s_cg_lanczos_equivalence",
+      "kind": "theorem",
+      "name": "CG–Lanczos Equivalence",
+      "type_signature": "CG iterates ↔ Lanczos vectors for A ∈ HPD",
+      "description": "The conjugate gradient method applied to Ax = b produces iterates equivalent to the Lanczos process applied to A with starting vector b; the CG residuals are scalar multiples of the Lanczos vectors."
+    },
+    {
+      "id": "s_cg_convergence_bound",
+      "kind": "theorem",
+      "name": "CG Convergence Bound",
+      "type_signature": "‖e_k‖_A / ‖e_0‖_A ≤ 2((√κ − 1)/(√κ + 1))^k",
+      "description": "The A-norm of the error in conjugate gradients after k iterations is bounded by 2((√κ(A) − 1)/(√κ(A) + 1))^k, where κ(A) = λ_max/λ_min is the spectral condition number."
+    },
+    {
+      "id": "s_faber_manteuffel_theorem",
+      "kind": "theorem",
+      "name": "Faber–Manteuffel Theorem",
+      "type_signature": "A ∈ ℂ^{n×n} → short-recurrence optimal Krylov method exists ⟺ A is normal (or A = αI + βN, N normal)",
+      "description": "A short-recurrence Krylov method minimizing a norm of the residual at each step can exist only for matrices that are normal (up to a shift and scaling), explaining why GMRES needs long recurrences for general A."
+    },
+    {
+      "id": "s_bauer_fike_theorem",
+      "kind": "theorem",
+      "name": "Bauer–Fike Theorem",
+      "type_signature": "min_{λ ∈ σ(A)} |μ − λ| ≤ κ_p(V) ‖E‖_p, where (A+E)v = μv",
+      "description": "For a diagonalizable matrix A = VDV⁻¹, every eigenvalue μ of A + E satisfies min_λ|μ − λ| ≤ κ(V)‖E‖, quantifying eigenvalue sensitivity via the eigenvector condition number."
+    },
+    {
+      "id": "s_cauchy_interlacing_theorem",
+      "kind": "theorem",
+      "name": "Cauchy Interlacing Theorem",
+      "type_signature": "A ∈ ℂ^{n×n} Hermitian, B principal (n−1)×(n−1) submatrix → λ₁(A) ≥ λ₁(B) ≥ λ₂(A) ≥ ⋯ ≥ λ_{n−1}(B) ≥ λ_n(A)",
+      "description": "The eigenvalues of a principal submatrix of a Hermitian matrix interlace with the eigenvalues of the full matrix."
+    },
+    {
+      "id": "t_classical_gram_schmidt",
+      "kind": "technique",
+      "name": "Classical Gram–Schmidt (CGS)",
+      "function_signature": "(A ∈ ℂ^{m×n}) → (Q ∈ ℂ^{m×n} orthonormal, R ∈ ℂ^{n×n} upper triangular)",
+      "description": "Orthogonalizes columns of A by subtracting projections onto all previously computed basis vectors simultaneously; numerically unstable due to cancellation."
+    },
+    {
+      "id": "t_modified_gram_schmidt",
+      "kind": "technique",
+      "name": "Modified Gram–Schmidt (MGS)",
+      "function_signature": "(A ∈ ℂ^{m×n}) → (Q ∈ ℂ^{m×n} orthonormal, R ∈ ℂ^{n×n} upper triangular)",
+      "description": "Orthogonalizes columns of A by sequentially projecting out each new basis vector from all remaining columns, yielding improved numerical stability over CGS."
+    },
+    {
+      "id": "t_householder_triangularization",
+      "kind": "technique",
+      "name": "Householder Triangularization",
+      "function_signature": "(A ∈ ℂ^{m×n}) → (Q ∈ ℂ^{m×m} unitary, R ∈ ℂ^{m×n} upper triangular)",
+      "description": "Computes the QR factorization by applying a sequence of Householder reflectors to introduce zeros below the diagonal; costs 2mn² − (2/3)n³ flops and is backward stable."
+    },
+    {
+      "id": "t_least_squares_via_qr",
+      "kind": "technique",
+      "name": "Least Squares via QR Factorization",
+      "function_signature": "(A ∈ ℂ^{m×n}, b ∈ ℂ^m) → (x* = R̂⁻¹ Q̂*b)",
+      "description": "Solves the least squares problem by computing the reduced QR factorization A = Q̂R̂ and back-substituting; backward stable and O(2mn² − (2/3)n³) flops."
+    },
+    {
+      "id": "t_least_squares_via_svd",
+      "kind": "technique",
+      "name": "Least Squares via SVD",
+      "function_signature": "(A ∈ ℂ^{m×n}, b ∈ ℂ^m) → (x* = A⁺b = VΣ⁺U*b)",
+      "description": "Solves the least squares problem using the pseudoinverse from the SVD; most robust method, especially for rank-deficient problems."
+    },
+    {
+      "id": "t_back_substitution",
+      "kind": "technique",
+      "name": "Back Substitution",
+      "function_signature": "(R ∈ ℂ^{n×n} upper triangular, b ∈ ℂ^n) → (x: Rx = b)",
+      "description": "Solves an upper triangular system by computing x_n, x_{n−1}, ..., x_1 sequentially in O(n²) flops; backward stable."
+    },
+    {
+      "id": "t_forward_substitution",
+      "kind": "technique",
+      "name": "Forward Substitution",
+      "function_signature": "(L ∈ ℂ^{n×n} lower triangular, b ∈ ℂ^n) → (x: Lx = b)",
+      "description": "Solves a lower triangular system by computing x_1, x_2, ..., x_n sequentially in O(n²) flops."
+    },
+    {
+      "id": "t_gaussian_elimination_with_partial_pivoting",
+      "kind": "technique",
+      "name": "Gaussian Elimination with Partial Pivoting (GEPP)",
+      "function_signature": "(A ∈ ℂ^{n×n}, b ∈ ℂ^n) → (PA = LU, x = U⁻¹L⁻¹Pb)",
+      "description": "Computes PA = LU by choosing the largest-magnitude pivot in each column, then solves via forward and back substitution; costs (2/3)n³ flops and is backward stable in practice."
+    },
+    {
+      "id": "t_cholesky_algorithm",
+      "kind": "technique",
+      "name": "Cholesky Algorithm",
+      "function_signature": "(A ∈ ℂ^{n×n} HPD) → (R ∈ ℂ^{n×n} upper triangular, A = R*R)",
+      "description": "Computes the Cholesky factor by a modified form of Gaussian elimination exploiting symmetry; no pivoting needed, always stable, and costs (1/3)n³ flops."
+    },
+    {
+      "id": "t_hessenberg_reduction",
+      "kind": "technique",
+      "name": "Hessenberg Reduction",
+      "function_signature": "(A ∈ ℂ^{n×n}) → (Q*AQ = H, H upper Hessenberg, Q unitary)",
+      "description": "Reduces A to upper Hessenberg form via n−2 Householder reflectors applied from left and right; costs (10/3)n³ flops for general A, (4/3)n³ for Hermitian A yielding tridiagonal T."
+    },
+    {
+      "id": "t_power_iteration",
+      "kind": "technique",
+      "name": "Power Iteration",
+      "function_signature": "(A ∈ ℂ^{n×n}, v₀) → (λ₁ dominant eigenvalue, v₁ eigenvector)",
+      "description": "Iterates v^{(k+1)} = Av^{(k)}/‖Av^{(k)}‖ to converge to the eigenvector of the largest-magnitude eigenvalue; convergence rate is |λ₂/λ₁|."
+    },
+    {
+      "id": "t_inverse_iteration",
+      "kind": "technique",
+      "name": "Inverse Iteration",
+      "function_signature": "(A ∈ ℂ^{n×n}, shift μ) → (eigenvalue nearest μ, eigenvector)",
+      "description": "Applies power iteration to (A − μI)⁻¹ to find the eigenvalue closest to a given shift μ; converges as |λ_nearest − μ|/|λ_next − μ| per step."
+    },
+    {
+      "id": "t_rayleigh_quotient_iteration",
+      "kind": "technique",
+      "name": "Rayleigh Quotient Iteration",
+      "function_signature": "(A ∈ ℂ^{n×n} Hermitian, v₀) → (eigenvalue λ, eigenvector v)",
+      "description": "Inverse iteration with the shift updated to the Rayleigh quotient ρ(v^{(k)}) = (v^{(k)*}Av^{(k)})/(v^{(k)*}v^{(k)}) at each step; achieves cubic convergence for Hermitian matrices."
+    },
+    {
+      "id": "t_qr_algorithm",
+      "kind": "technique",
+      "name": "QR Algorithm (Unshifted)",
+      "function_signature": "(A ∈ ℂ^{n×n}) → (eigenvalues on diagonal of limit matrix)",
+      "description": "Iterates A^{(k+1)} = R^{(k)}Q^{(k)} where A^{(k)} = Q^{(k)}R^{(k)} is a QR factorization; equivalent to simultaneous iteration with identity matrix, converging to Schur form under eigenvalue separation."
+    },
+    {
+      "id": "t_shifted_qr_algorithm",
+      "kind": "technique",
+      "name": "Shifted QR Algorithm",
+      "function_signature": "(H ∈ ℂ^{n×n} Hessenberg) → (Schur form T = Q*HQ)",
+      "description": "QR iteration with shifts μ^{(k)} chosen to accelerate convergence; each step factors H − μI = QR then forms H_new = RQ + μI, achieving quadratic or cubic convergence per eigenvalue."
+    },
+    {
+      "id": "t_simultaneous_iteration",
+      "kind": "technique",
+      "name": "Simultaneous Iteration (Subspace Iteration)",
+      "function_signature": "(A ∈ ℂ^{n×n}, initial subspace V₀ ∈ ℂ^{n×p}) → (p dominant eigenvalues and eigenvectors)",
+      "description": "Block generalization of power iteration: multiply a block of vectors by A and orthogonalize at each step to converge to the dominant invariant subspace."
+    },
+    {
+      "id": "t_implicit_qr_step_francis",
+      "kind": "technique",
+      "name": "Implicit QR Step (Francis Algorithm)",
+      "function_signature": "(H ∈ ℝ^{n×n} Hessenberg, shifts μ₁, μ₂) → (H̃ similar Hessenberg)",
+      "description": "Performs a QR step implicitly without forming Q and R: introduces a bulge in H via the implicit Q theorem and chases it down the subdiagonal, enabling real arithmetic with complex conjugate shift pairs."
+    },
+    {
+      "id": "t_deflation",
+      "kind": "technique",
+      "name": "Deflation in Eigenvalue Computation",
+      "function_signature": "(H ∈ ℂ^{n×n} with h_{k+1,k} ≈ 0) → (H₁ ∈ ℂ^{k×k}, H₂ ∈ ℂ^{(n−k)×(n−k)})",
+      "description": "When a subdiagonal entry of a Hessenberg matrix becomes negligible, decouple the problem into two independent smaller eigenvalue problems."
+    },
+    {
+      "id": "t_jacobi_eigenvalue_algorithm",
+      "kind": "technique",
+      "name": "Jacobi Eigenvalue Algorithm",
+      "function_signature": "(A ∈ ℝ^{n×n} symmetric) → (eigenvalues, eigenvectors)",
+      "description": "Diagonalizes a real symmetric matrix by iteratively applying plane (Givens) rotations to zero out the largest off-diagonal entry; converges unconditionally with ultimate quadratic rate."
+    },
+    {
+      "id": "t_divide_and_conquer_eigenvalue",
+      "kind": "technique",
+      "name": "Divide-and-Conquer Eigenvalue Algorithm",
+      "function_signature": "(T ∈ ℝ^{n×n} symmetric tridiagonal) → (all eigenvalues and eigenvectors)",
+      "description": "Splits a tridiagonal matrix into two half-sized tridiagonals plus a rank-one correction, recurses, then merges via the secular equation; O(n² to n³) depending on deflation."
+    },
+    {
+      "id": "t_bisection_for_eigenvalues",
+      "kind": "technique",
+      "name": "Bisection for Symmetric Tridiagonal Eigenvalues",
+      "function_signature": "(T ∈ ℝ^{n×n} symmetric tridiagonal, interval [a,b]) → (eigenvalues in [a,b])",
+      "description": "Counts eigenvalues in an interval using the Sturm sequence property of LDLT factorizations of T − μI, then bisects to isolate each eigenvalue to prescribed accuracy."
+    },
+    {
+      "id": "t_mrrr_algorithm",
+      "kind": "technique",
+      "name": "MRRR Algorithm (Multiple Relatively Robust Representations)",
+      "function_signature": "(T ∈ ℝ^{n×n} symmetric tridiagonal) → (all eigenvalues and orthogonal eigenvectors in O(n²))",
+      "description": "Computes all eigenvalues and eigenvectors of a symmetric tridiagonal matrix in O(n²) time by choosing locally well-conditioned LDLT representations near each eigenvalue cluster."
+    },
+    {
+      "id": "t_svd_algorithm",
+      "kind": "technique",
+      "name": "SVD Algorithm (Golub–Kahan)",
+      "function_signature": "(A ∈ ℂ^{m×n}) → (U, Σ, V: A = UΣV*)",
+      "description": "Computes the SVD by first reducing A to bidiagonal form via Householder reflectors, then applying implicit shifted QR to the bidiagonal matrix to converge to Σ."
+    },
+    {
+      "id": "t_bidiagonalization",
+      "kind": "technique",
+      "name": "Bidiagonalization (Golub–Kahan)",
+      "function_signature": "(A ∈ ℂ^{m×n}) → (U*AV = B, B bidiagonal, U, V unitary)",
+      "description": "Reduces A to upper bidiagonal form by alternating Householder reflectors on the left and right; costs 4mn² − (4/3)n³ flops when m ≫ n."
+    },
+    {
+      "id": "t_arnoldi_iteration",
+      "kind": "technique",
+      "name": "Arnoldi Iteration",
+      "function_signature": "(A ∈ ℂ^{n×n}, b ∈ ℂ^n, k) → (Q_{k+1}, H_k: AQ_k = Q_{k+1} H̃_k)",
+      "description": "Builds an orthonormal basis of the Krylov subspace K_k(A,b) and a (k+1)×k upper Hessenberg matrix H̃_k via modified Gram-Schmidt; foundation of GMRES and non-Hermitian eigenvalue methods."
+    },
+    {
+      "id": "t_implicitly_restarted_arnoldi",
+      "kind": "technique",
+      "name": "Implicitly Restarted Arnoldi (IRAM / ARPACK)",
+      "function_signature": "(A ∈ ℂ^{n×n}, k desired eigenvalues, p extra) → (k eigenvalues and eigenvectors)",
+      "description": "Runs Arnoldi to length k+p, then applies p implicit QR shifts to filter out unwanted Ritz values, effectively restarting with an improved Krylov basis; the algorithm underlying ARPACK/eigs."
+    },
+    {
+      "id": "t_gmres",
+      "kind": "technique",
+      "name": "GMRES (Generalized Minimal Residual)",
+      "function_signature": "(A ∈ ℂ^{n×n}, b ∈ ℂ^n) → (x_k ∈ x_0 + K_k(A,r_0) minimizing ‖b − Ax‖₂)",
+      "description": "At step k, finds the vector in the affine Krylov subspace x_0 + K_k(A, r_0) that minimizes the 2-norm of the residual; implemented via Arnoldi plus a least squares solve, applicable to general nonsymmetric systems."
+    },
+    {
+      "id": "t_lanczos_iteration",
+      "kind": "technique",
+      "name": "Lanczos Iteration",
+      "function_signature": "(A ∈ ℂ^{n×n} Hermitian, b ∈ ℂ^n, k) → (Q_k, T_k: AQ_k = Q_k T_k + β_{k+1} q_{k+1} e_k*)",
+      "description": "The specialization of Arnoldi to Hermitian matrices producing a symmetric tridiagonal matrix T_k via a three-term recurrence; costs only O(n) per step but suffers from loss of orthogonality in finite arithmetic."
+    },
+    {
+      "id": "t_bicg",
+      "kind": "technique",
+      "name": "BiCG (Biconjugate Gradient)",
+      "function_signature": "(A ∈ ℂ^{n×n}, b ∈ ℂ^n) → (approximate solution x_k)",
+      "description": "Extends CG to nonsymmetric systems by running coupled Lanczos-type recurrences with A and A*; generates biorthogonal residual sequences but may break down and does not minimize a norm."
+    },
+    {
+      "id": "t_cgs_method",
+      "kind": "technique",
+      "name": "CGS (Conjugate Gradient Squared)",
+      "function_signature": "(A ∈ ℂ^{n×n}, b ∈ ℂ^n) → (approximate solution x_k)",
+      "description": "Applies the BiCG polynomial twice without requiring A*, squaring the convergence rate but also amplifying irregular convergence behavior."
+    },
+    {
+      "id": "t_bicgstab",
+      "kind": "technique",
+      "name": "BiCGSTAB (Bi-Conjugate Gradient Stabilized)",
+      "function_signature": "(A ∈ ℂ^{n×n}, b ∈ ℂ^n) → (approximate solution x_k)",
+      "description": "Stabilized variant of BiCG due to van der Vorst that avoids the irregular convergence of CGS by combining a BiCG step with a minimization step; does not require A*."
+    },
+    {
+      "id": "t_qmr",
+      "kind": "technique",
+      "name": "QMR (Quasi-Minimal Residual)",
+      "function_signature": "(A ∈ ℂ^{n×n}, b ∈ ℂ^n) → (approximate solution x_k with quasi-minimal residual)",
+      "description": "Based on the Lanczos biorthogonalization, applies a quasi-minimization of the residual norm to obtain smooth convergence behavior; more robust against breakdown than BiCG."
+    },
+    {
+      "id": "t_preconditioned_cg",
+      "kind": "technique",
+      "name": "Preconditioned Conjugate Gradient",
+      "function_signature": "(A ∈ HPD, M ∈ HPD preconditioner, b) → (x: Ax = b)",
+      "description": "Applies CG to the preconditioned system M⁻¹Ax = M⁻¹b (in implicit form preserving symmetry via M = CC*) with convergence governed by κ(M⁻¹A) instead of κ(A)."
     }
   ],
   "edges": [
@@ -309468,6 +310070,1470 @@
       "id": "e_23332",
       "from": "s_markov_semigroup_on_banach",
       "to": "t_semigroup_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23333",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_classical_gram_schmidt",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23334",
+      "from": "s_inner_product",
+      "to": "t_classical_gram_schmidt",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23335",
+      "from": "t_classical_gram_schmidt",
+      "to": "s_qr_factorization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23336",
+      "from": "t_classical_gram_schmidt",
+      "to": "s_orthonormal_system",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23337",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_modified_gram_schmidt",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23338",
+      "from": "s_inner_product",
+      "to": "t_modified_gram_schmidt",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23339",
+      "from": "t_modified_gram_schmidt",
+      "to": "s_qr_factorization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23340",
+      "from": "t_modified_gram_schmidt",
+      "to": "s_orthonormal_system",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23341",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_householder_triangularization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23342",
+      "from": "s_householder_reflector",
+      "to": "t_householder_triangularization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23343",
+      "from": "s_unitary_matrix",
+      "to": "t_householder_triangularization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23344",
+      "from": "t_householder_triangularization",
+      "to": "s_qr_factorization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23345",
+      "from": "t_householder_triangularization",
+      "to": "s_upper_triangular_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23346",
+      "from": "t_householder_triangularization",
+      "to": "s_backward_stability_of_householder_qr",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_backward_stability_of_householder_qr"
+    },
+    {
+      "id": "e_23347",
+      "from": "s_backward_stability",
+      "to": "t_householder_triangularization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_backward_stability_of_householder_qr"
+    },
+    {
+      "id": "e_23348",
+      "from": "s_machine_epsilon",
+      "to": "t_householder_triangularization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_backward_stability_of_householder_qr"
+    },
+    {
+      "id": "e_23349",
+      "from": "s_least_squares_problem",
+      "to": "t_least_squares_via_qr",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23350",
+      "from": "s_qr_factorization",
+      "to": "t_least_squares_via_qr",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23351",
+      "from": "s_upper_triangular_matrix",
+      "to": "t_least_squares_via_qr",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23352",
+      "from": "t_least_squares_via_qr",
+      "to": "s_normal_equations",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23353",
+      "from": "s_least_squares_problem",
+      "to": "t_least_squares_via_svd",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23354",
+      "from": "s_singular_value_decomposition",
+      "to": "t_least_squares_via_svd",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23355",
+      "from": "t_least_squares_via_svd",
+      "to": "s_moore_penrose_pseudoinverse",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moore_penrose_pseudoinverse"
+    },
+    {
+      "id": "e_23356",
+      "from": "s_upper_triangular_matrix",
+      "to": "t_back_substitution",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23357",
+      "from": "t_back_substitution",
+      "to": "s_matrix_inverse",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23358",
+      "from": "s_lower_triangular_matrix",
+      "to": "t_forward_substitution",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23359",
+      "from": "t_forward_substitution",
+      "to": "s_lu_factorization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23360",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_gaussian_elimination_with_partial_pivoting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23361",
+      "from": "s_partial_pivoting",
+      "to": "t_gaussian_elimination_with_partial_pivoting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23362",
+      "from": "s_permutation_matrix",
+      "to": "t_gaussian_elimination_with_partial_pivoting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23363",
+      "from": "t_gaussian_elimination_with_partial_pivoting",
+      "to": "s_lu_factorization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23364",
+      "from": "t_gaussian_elimination_with_partial_pivoting",
+      "to": "s_lower_triangular_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23365",
+      "from": "t_gaussian_elimination_with_partial_pivoting",
+      "to": "s_upper_triangular_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23366",
+      "from": "t_gaussian_elimination_with_partial_pivoting",
+      "to": "s_growth_factor",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23367",
+      "from": "t_gaussian_elimination_with_partial_pivoting",
+      "to": "s_backward_stability_of_gepp",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_backward_stability_of_gepp"
+    },
+    {
+      "id": "e_23368",
+      "from": "s_growth_factor",
+      "to": "t_gaussian_elimination_with_partial_pivoting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_backward_stability_of_gepp"
+    },
+    {
+      "id": "e_23369",
+      "from": "s_backward_stability",
+      "to": "t_gaussian_elimination_with_partial_pivoting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_backward_stability_of_gepp"
+    },
+    {
+      "id": "e_23370",
+      "from": "s_hermitian_positive_definite_matrix",
+      "to": "t_cholesky_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23371",
+      "from": "t_cholesky_algorithm",
+      "to": "s_cholesky_factorization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23372",
+      "from": "t_cholesky_algorithm",
+      "to": "s_lower_triangular_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23373",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_hessenberg_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23374",
+      "from": "s_householder_reflector",
+      "to": "t_hessenberg_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23375",
+      "from": "s_unitary_matrix",
+      "to": "t_hessenberg_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23376",
+      "from": "s_self_adjoint_linear_map",
+      "to": "t_hessenberg_reduction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23377",
+      "from": "t_hessenberg_reduction",
+      "to": "s_hessenberg_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23378",
+      "from": "t_hessenberg_reduction",
+      "to": "s_tridiagonal_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23379",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_bidiagonalization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23380",
+      "from": "s_householder_reflector",
+      "to": "t_bidiagonalization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23381",
+      "from": "t_bidiagonalization",
+      "to": "s_bidiagonal_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23382",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_power_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23383",
+      "from": "t_power_iteration",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23384",
+      "from": "t_power_iteration",
+      "to": "s_eigenvector",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23385",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_inverse_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23386",
+      "from": "s_lu_factorization",
+      "to": "t_inverse_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23387",
+      "from": "s_eigenvalue",
+      "to": "t_inverse_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23388",
+      "from": "t_inverse_iteration",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23389",
+      "from": "t_inverse_iteration",
+      "to": "s_eigenvector",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23390",
+      "from": "s_self_adjoint_linear_map",
+      "to": "t_rayleigh_quotient_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23391",
+      "from": "s_rayleigh_quotient_with_extremal_property",
+      "to": "t_rayleigh_quotient_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23392",
+      "from": "t_rayleigh_quotient_iteration",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23393",
+      "from": "t_rayleigh_quotient_iteration",
+      "to": "s_eigenvector",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23394",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_simultaneous_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23395",
+      "from": "s_qr_factorization",
+      "to": "t_simultaneous_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23396",
+      "from": "t_simultaneous_iteration",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23397",
+      "from": "t_simultaneous_iteration",
+      "to": "s_schur_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23398",
+      "from": "s_hessenberg_matrix",
+      "to": "t_qr_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23399",
+      "from": "s_qr_factorization",
+      "to": "t_qr_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23400",
+      "from": "s_abel_ruffini",
+      "to": "t_qr_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23401",
+      "from": "t_qr_algorithm",
+      "to": "s_schur_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23402",
+      "from": "t_qr_algorithm",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23403",
+      "from": "s_hessenberg_matrix",
+      "to": "t_shifted_qr_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23404",
+      "from": "s_wilkinson_shift",
+      "to": "t_shifted_qr_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23405",
+      "from": "s_qr_factorization",
+      "to": "t_shifted_qr_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23406",
+      "from": "t_shifted_qr_algorithm",
+      "to": "s_schur_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23407",
+      "from": "t_shifted_qr_algorithm",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23408",
+      "from": "s_hessenberg_matrix",
+      "to": "t_implicit_qr_step_francis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23409",
+      "from": "s_wilkinson_shift",
+      "to": "t_implicit_qr_step_francis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23410",
+      "from": "s_givens_rotation",
+      "to": "t_implicit_qr_step_francis",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23411",
+      "from": "t_implicit_qr_step_francis",
+      "to": "s_hessenberg_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23412",
+      "from": "s_hessenberg_matrix",
+      "to": "t_deflation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23413",
+      "from": "t_deflation",
+      "to": "s_hessenberg_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23414",
+      "from": "t_deflation",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23415",
+      "from": "s_self_adjoint_linear_map",
+      "to": "t_jacobi_eigenvalue_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23416",
+      "from": "s_givens_rotation",
+      "to": "t_jacobi_eigenvalue_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23417",
+      "from": "t_jacobi_eigenvalue_algorithm",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23418",
+      "from": "t_jacobi_eigenvalue_algorithm",
+      "to": "s_eigenvector",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23419",
+      "from": "s_tridiagonal_matrix",
+      "to": "t_divide_and_conquer_eigenvalue",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23420",
+      "from": "t_divide_and_conquer_eigenvalue",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23421",
+      "from": "t_divide_and_conquer_eigenvalue",
+      "to": "s_eigenvector",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23422",
+      "from": "s_tridiagonal_matrix",
+      "to": "t_bisection_for_eigenvalues",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23423",
+      "from": "t_bisection_for_eigenvalues",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23424",
+      "from": "s_tridiagonal_matrix",
+      "to": "t_mrrr_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23425",
+      "from": "t_mrrr_algorithm",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23426",
+      "from": "t_mrrr_algorithm",
+      "to": "s_eigenvector",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23427",
+      "from": "s_bidiagonal_matrix",
+      "to": "t_svd_algorithm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23428",
+      "from": "t_svd_algorithm",
+      "to": "s_singular_value_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23429",
+      "from": "t_svd_algorithm",
+      "to": "s_singular_values",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23430",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_arnoldi_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23431",
+      "from": "s_krylov_subspace",
+      "to": "t_arnoldi_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23432",
+      "from": "s_sparse_matrix",
+      "to": "t_arnoldi_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23433",
+      "from": "t_arnoldi_iteration",
+      "to": "s_hessenberg_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23434",
+      "from": "t_arnoldi_iteration",
+      "to": "s_ritz_values",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23435",
+      "from": "t_arnoldi_iteration",
+      "to": "s_orthonormal_system",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23436",
+      "from": "s_krylov_subspace",
+      "to": "t_implicitly_restarted_arnoldi",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23437",
+      "from": "s_hessenberg_matrix",
+      "to": "t_implicitly_restarted_arnoldi",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23438",
+      "from": "s_ritz_values",
+      "to": "t_implicitly_restarted_arnoldi",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23439",
+      "from": "t_implicitly_restarted_arnoldi",
+      "to": "s_eigenvalue",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23440",
+      "from": "t_implicitly_restarted_arnoldi",
+      "to": "s_eigenvector",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23441",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_gmres",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23442",
+      "from": "s_krylov_subspace",
+      "to": "t_gmres",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23443",
+      "from": "s_least_squares_problem",
+      "to": "t_gmres",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23444",
+      "from": "s_sparse_matrix",
+      "to": "t_gmres",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23445",
+      "from": "s_preconditioner",
+      "to": "t_gmres",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23446",
+      "from": "t_gmres",
+      "to": "s_gmres_convergence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gmres_convergence"
+    },
+    {
+      "id": "e_23447",
+      "from": "t_gmres",
+      "to": "s_convergence_via_polynomial_approximation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_convergence_via_polynomial_approximation"
+    },
+    {
+      "id": "e_23448",
+      "from": "t_gmres",
+      "to": "s_faber_manteuffel_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_faber_manteuffel_theorem"
+    },
+    {
+      "id": "e_23449",
+      "from": "s_self_adjoint_linear_map",
+      "to": "t_lanczos_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23450",
+      "from": "s_krylov_subspace",
+      "to": "t_lanczos_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23451",
+      "from": "s_sparse_matrix",
+      "to": "t_lanczos_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23452",
+      "from": "t_lanczos_iteration",
+      "to": "s_tridiagonal_matrix",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23453",
+      "from": "t_lanczos_iteration",
+      "to": "s_ritz_values",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23454",
+      "from": "t_lanczos_iteration",
+      "to": "s_lanczos_gauss_quadrature_connection",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lanczos_gauss_quadrature_connection"
+    },
+    {
+      "id": "e_23455",
+      "from": "t_lanczos_iteration",
+      "to": "s_cg_lanczos_equivalence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cg_lanczos_equivalence"
+    },
+    {
+      "id": "e_23456",
+      "from": "s_conjugate_gradient_method",
+      "to": "t_lanczos_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cg_lanczos_equivalence"
+    },
+    {
+      "id": "e_23457",
+      "from": "s_gaussian_quadrature",
+      "to": "t_lanczos_iteration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lanczos_gauss_quadrature_connection"
+    },
+    {
+      "id": "e_23458",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_bicg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23459",
+      "from": "s_krylov_subspace",
+      "to": "t_bicg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23460",
+      "from": "s_conjugate_transpose",
+      "to": "t_bicg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23461",
+      "from": "t_bicg",
+      "to": "s_matrix_inverse",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23462",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_cgs_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23463",
+      "from": "s_krylov_subspace",
+      "to": "t_cgs_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23464",
+      "from": "t_cgs_method",
+      "to": "s_matrix_inverse",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23465",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_bicgstab",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23466",
+      "from": "s_krylov_subspace",
+      "to": "t_bicgstab",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23467",
+      "from": "s_sparse_matrix",
+      "to": "t_bicgstab",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23468",
+      "from": "t_bicgstab",
+      "to": "s_matrix_inverse",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23469",
+      "from": "s_matrix_algebra_M_n",
+      "to": "t_qmr",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23470",
+      "from": "s_krylov_subspace",
+      "to": "t_qmr",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23471",
+      "from": "t_qmr",
+      "to": "s_matrix_inverse",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23472",
+      "from": "s_hermitian_positive_definite_matrix",
+      "to": "t_preconditioned_cg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23473",
+      "from": "s_preconditioner",
+      "to": "t_preconditioned_cg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23474",
+      "from": "s_conjugate_gradient_method",
+      "to": "t_preconditioned_cg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23475",
+      "from": "s_sparse_matrix",
+      "to": "t_preconditioned_cg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23476",
+      "from": "s_ilu_preconditioner",
+      "to": "t_preconditioned_cg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23477",
+      "from": "s_incomplete_cholesky_preconditioner",
+      "to": "t_preconditioned_cg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23478",
+      "from": "s_domain_decomposition_preconditioner",
+      "to": "t_preconditioned_cg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23479",
+      "from": "s_condition_number_a",
+      "to": "t_preconditioned_cg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cg_convergence_bound"
+    },
+    {
+      "id": "e_23480",
+      "from": "s_chebyshev_polynomial_first_kind",
+      "to": "t_preconditioned_cg",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cg_convergence_bound"
+    },
+    {
+      "id": "e_23481",
+      "from": "t_preconditioned_cg",
+      "to": "s_matrix_inverse",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23482",
+      "from": "t_preconditioned_cg",
+      "to": "s_cg_convergence_bound",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cg_convergence_bound"
+    },
+    {
+      "id": "e_23483",
+      "from": "s_singular_values",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eckart_young_theorem"
+    },
+    {
+      "id": "e_23484",
+      "from": "s_frobenius_norm",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eckart_young_theorem"
+    },
+    {
+      "id": "e_23485",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_eckart_young_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_eckart_young_theorem"
+    },
+    {
+      "id": "e_23486",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_reduced_svd",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23487",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_singular_values",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23488",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_column_space",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23489",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_row_space",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23490",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_null_space",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23491",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_matrix_rank",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23492",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_frobenius_norm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23493",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_matrix_operator_norm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23494",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_orthogonal_projector",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23495",
+      "from": "s_condition_number_a",
+      "to": "t_perturbation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_condition_number_of_linear_system"
+    },
+    {
+      "id": "e_23496",
+      "from": "s_matrix_operator_norm",
+      "to": "t_perturbation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_condition_number_of_linear_system"
+    },
+    {
+      "id": "e_23497",
+      "from": "t_perturbation_theory",
+      "to": "s_condition_number_of_linear_system",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_condition_number_of_linear_system"
+    },
+    {
+      "id": "e_23498",
+      "from": "s_backward_stability",
+      "to": "t_perturbation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_backward_stability_implies_accuracy"
+    },
+    {
+      "id": "e_23499",
+      "from": "t_perturbation_theory",
+      "to": "s_backward_stability_implies_accuracy",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_backward_stability_implies_accuracy"
+    },
+    {
+      "id": "e_23500",
+      "from": "s_machine_epsilon",
+      "to": "t_perturbation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_accuracy_equals_condition_times_stability"
+    },
+    {
+      "id": "e_23501",
+      "from": "t_perturbation_theory",
+      "to": "s_accuracy_equals_condition_times_stability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_accuracy_equals_condition_times_stability"
+    },
+    {
+      "id": "e_23502",
+      "from": "s_eigenvalue",
+      "to": "t_perturbation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bauer_fike_theorem"
+    },
+    {
+      "id": "e_23503",
+      "from": "t_perturbation_theory",
+      "to": "s_bauer_fike_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bauer_fike_theorem"
+    },
+    {
+      "id": "e_23504",
+      "from": "s_self_adjoint_linear_map",
+      "to": "t_perturbation_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cauchy_interlacing_theorem"
+    },
+    {
+      "id": "e_23505",
+      "from": "t_perturbation_theory",
+      "to": "s_cauchy_interlacing_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cauchy_interlacing_theorem"
+    },
+    {
+      "id": "e_23506",
+      "from": "s_partial_pivoting",
+      "to": "t_row_reduction_gaussian_elimination",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23507",
+      "from": "s_permutation_matrix",
+      "to": "t_row_reduction_gaussian_elimination",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23508",
+      "from": "t_row_reduction_gaussian_elimination",
+      "to": "s_lu_factorization",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23509",
+      "from": "s_matrix_operator_norm",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_submultiplicativity_of_matrix_norms"
+    },
+    {
+      "id": "e_23510",
+      "from": "t_svd_and_spectral_decomposition",
+      "to": "s_submultiplicativity_of_matrix_norms",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_submultiplicativity_of_matrix_norms"
+    },
+    {
+      "id": "e_23511",
+      "from": "s_unitary_matrix",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23512",
+      "from": "s_column_space",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23513",
+      "from": "s_null_space",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23514",
+      "from": "s_matrix_rank",
+      "to": "t_svd_and_spectral_decomposition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_23515",
+      "from": "s_fundamental_axiom_of_floating_point",
+      "to": "t_perturbation_theory",
       "role": "input",
       "parameter_binding": {},
       "used_in_theorem": ""
