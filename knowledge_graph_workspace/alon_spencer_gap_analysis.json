@@ -1,0 +1,685 @@
+{
+  "metadata": {
+    "source": "Alon & Spencer — The Probabilistic Method (4th ed., 2016)",
+    "date": "2026-06-01",
+    "candidates_total": 138,
+    "skipped_existing": 49,
+    "new_nodes": 89
+  },
+  "skipped": [
+    { "candidate_id": "s_erdos_ramsey_lower_bound", "reason": "EXISTS as s_erdos_ramsey_lower (theorem) + s_erdos_ramsey_lower_bound (iter3 theorem). Same R(k,k) >= 2^{k/2} result." },
+    { "candidate_id": "t_alteration_method", "reason": "EXISTS as t_alteration_method (technique). Identical concept." },
+    { "candidate_id": "s_ramsey_multiplicity_bound", "reason": "EXISTS as s_ramsey_multiplicity (state). Same concept — min monochromatic K_k count." },
+    { "candidate_id": "t_second_moment_method", "reason": "EXISTS as t_second_moment_method (technique). Same Chebyshev-based method." },
+    { "candidate_id": "s_markov_inequality", "reason": "EXISTS as s_markov_inequality (theorem). Same Pr[X>=t] <= E[X]/t." },
+    { "candidate_id": "s_chebyshev_inequality", "reason": "EXISTS as s_chebyshev_inequality (theorem). Same Pr[|X-EX|>=t] <= Var/t^2." },
+    { "candidate_id": "s_bollobas_set_pairs_inequality", "reason": "EXISTS as s_bollobas_set_pair_inequality (theorem). Same set-pairs inequality." },
+    { "candidate_id": "a_ramsey_number", "reason": "EXISTS as s_ramsey_number (axiom). Same definition R(s,t)." },
+    { "candidate_id": "s_lovasz_local_lemma_general", "reason": "EXISTS as s_lovasz_local_lemma (theorem). General LLL covered by existing node." },
+    { "candidate_id": "a_dependency_graph", "reason": "EXISTS as s_dependency_graph_of_events (axiom). Same concept." },
+    { "candidate_id": "s_harris_inequality", "reason": "EXISTS as s_harrisfkg_inequality (theorem). Harris = Harris-FKG. Same Pr[A cap B] >= Pr[A]Pr[B]." },
+    { "candidate_id": "s_azuma_hoeffding_inequality", "reason": "EXISTS as s_azuma_hoeffding (theorem). Same bounded-difference martingale inequality." },
+    { "candidate_id": "s_mcdiarmid_inequality", "reason": "EXISTS as s_mcdiarmid_inequality (theorem). Same bounded differences inequality." },
+    { "candidate_id": "s_talagrand_concentration_inequality", "reason": "EXISTS as s_talagrand_concentration (theorem). Same Talagrand concentration on product spaces." },
+    { "candidate_id": "s_stein_chen_poisson_bound", "reason": "EXISTS as s_stein_chen_poisson (theorem). Same Poisson approximation TV bound." },
+    { "candidate_id": "s_subgraph_appearance_threshold", "reason": "EXISTS as s_subgraph_appearance_threshold (theorem). Same p = n^{-1/rho(H)} result." },
+    { "candidate_id": "a_poisson_distribution", "reason": "EXISTS as s_poisson_distribution (axiom-like state). Same Pr[X=k] = lambda^k e^{-lambda}/k!." },
+    { "candidate_id": "s_expander_mixing_lemma", "reason": "EXISTS as s_expander_mixing_lemma (theorem). Same |e(S,T) - d|S||T|/n| <= lambda sqrt(|S||T|)." },
+    { "candidate_id": "s_cheeger_inequality_graphs", "reason": "EXISTS as s_discrete_cheeger_inequality (theorem). Same h^2/(2d) vs d-lambda_2 relationship." },
+    { "candidate_id": "s_ramanujan_graph_existence", "reason": "EXISTS as s_lps_construction (state). Same LPS/Margulis construction of Ramanujan graphs." },
+    { "candidate_id": "s_alon_boppana_bound", "reason": "EXISTS as s_alon_boppana_bound (theorem). Same liminf lambda_2 >= 2sqrt(d-1)." },
+    { "candidate_id": "a_expander_graph", "reason": "EXISTS as s_expander_graph (axiom). Same definition of expander graph family." },
+    { "candidate_id": "a_ramanujan_graph", "reason": "EXISTS as s_ramanujan_graph (axiom). Same |lambda| <= 2sqrt(d-1) definition." },
+    { "candidate_id": "s_erdos_renyi_connectivity_threshold", "reason": "EXISTS as s_erdos_renyi_connectivity_threshold + s_connectivity_threshold. Same p = (log n)/n." },
+    { "candidate_id": "s_giant_component_phase_transition", "reason": "EXISTS as s_giant_component_threshold + s_erdos_renyi_giant_component. Same c<1/c>1 phase transition." },
+    { "candidate_id": "s_hamiltonicity_threshold", "reason": "EXISTS as s_hamilton_threshold (theorem). Same p = (log n + log log n)/n." },
+    { "candidate_id": "a_erdos_renyi_gnp", "reason": "EXISTS as s_erdos_renyi_model (axiom) + s_erdos_renyi_graph_G_n_p. Same G(n,p) model." },
+    { "candidate_id": "s_erdos_ko_rado_theorem", "reason": "EXISTS as s_erdos_ko_rado + s_erdos_ko_rado_theorem. Same max intersecting family C(n-1,k-1)." },
+    { "candidate_id": "a_intersecting_family", "reason": "EXISTS as s_intersecting_family_property (axiom). Same A cap B != empty definition." },
+    { "candidate_id": "s_spencer_six_standard_deviations", "reason": "EXISTS as s_spencer_six_sigma_theorem (theorem). Same disc <= 6sqrt(n)." },
+    { "candidate_id": "s_beck_fiala_theorem", "reason": "EXISTS as s_beck_fiala_theorem (theorem). Same disc <= 2t-2." },
+    { "candidate_id": "s_chernoff_bound_multiplicative", "reason": "EXISTS as s_chernoff_bound (theorem). Same exponential tail for sums of independent [0,1] RVs." },
+    { "candidate_id": "s_hoeffding_bound", "reason": "EXISTS as s_hoeffding_inequality (theorem). Same additive bound for bounded independent RVs." },
+    { "candidate_id": "s_janson_inequality", "reason": "EXISTS as s_janson_inequality (theorem). Same Pr[X=0] <= exp(-mu + Delta/2)." },
+    { "candidate_id": "s_loomis_whitney_inequality", "reason": "EXISTS as s_loomis_whitney_inequality (theorem). Same |A|^{n-1} <= prod |pi_i(A)|." },
+    { "candidate_id": "s_turan_theorem", "reason": "EXISTS as s_turan_theorem (theorem). Same max edges in K_{r+1}-free graph." },
+    { "candidate_id": "s_szemeredi_regularity_lemma", "reason": "EXISTS as s_szemeredi_regularity_lemma + s_szemeredi_regularity_diestel. Same epsilon-regular partition." },
+    { "candidate_id": "a_chromatic_number", "reason": "EXISTS as s_chromatic_number (axiom) + s_chromatic_number_definition. Same min colors." },
+    { "candidate_id": "a_independence_number", "reason": "EXISTS as s_independence_number_g (state). Same max independent set size." },
+    { "candidate_id": "a_epsilon_regular_pair", "reason": "EXISTS as s_epsilon_regular_pair (axiom). Same density-uniformity definition." },
+    { "candidate_id": "t_first_moment_method", "reason": "EXISTS as t_first_moment_method (technique). Same E[X] bound to show existence/non-existence." },
+    { "candidate_id": "s_erdos_distinct_distances", "reason": "EXISTS as s_guth_katz_distinct_distances (theorem). Same distinct distances problem (Guth-Katz is the final resolution, Erdos is the original problem — same mathematical object)." },
+    { "candidate_id": "s_random_graph_evolution", "reason": "EXISTS as s_evolution_random_graphs (state). Same description of phase transitions in G(n,p)." },
+    { "candidate_id": "s_chromatic_number_random_graph", "reason": "EXISTS as s_chromatic_number_random (theorem). Same chi(G(n,1/2)) = Theta(n/log n)." },
+    { "candidate_id": "s_clique_number_random_graph", "reason": "EXISTS as s_clique_number_random_graph (state). Same omega ~ 2 log_2 n." },
+    { "candidate_id": "a_shannon_entropy", "reason": "EXISTS as s_shannon_entropy_of_partition (axiom-like). Same H(X) = -sum p log p." },
+    { "candidate_id": "s_hales_jewett_probabilistic", "reason": "EXISTS as s_hales_jewett + s_hales_jewett_theorem + s_density_hales_jewett. Same theorem family." },
+    { "candidate_id": "s_threshold_functions_random_graphs", "reason": "EXISTS as s_threshold_function (axiom) already encodes the existence of thresholds for monotone properties. The Bollobás–Thomason theorem that every monotone property has a threshold is implicit in that axiom." },
+    { "candidate_id": "a_threshold_function_graph_property", "reason": "EXISTS as s_threshold_function (axiom). Same definition of threshold function t(n)." }
+  ],
+  "new_nodes": [
+    {
+      "id": "t_uniform_random_coloring",
+      "kind": "technique",
+      "name": "Uniform random coloring",
+      "function_signature": "(Combinatorial structure, Palette of c colors) -> (Expected bad-event count, Existence of good coloring)",
+      "description": "Color each element independently and uniformly at random from a palette, then compute expected bad events to prove existence of a good coloring."
+    },
+    {
+      "id": "s_property_b_existence_uniform",
+      "kind": "theorem",
+      "name": "Property B existence for uniform hypergraphs",
+      "type_signature": "Proposition",
+      "description": "Every n-uniform hypergraph with fewer than 2^{n-1} edges is 2-colorable (has Property B)."
+    },
+    {
+      "id": "s_max_cut_probabilistic_lower_bound",
+      "kind": "theorem",
+      "name": "Max-cut probabilistic lower bound",
+      "type_signature": "Graph(m edges) -> Proposition",
+      "description": "Every graph on m edges has a bipartite subgraph (cut) with at least m/2 edges."
+    },
+    {
+      "id": "s_sum_free_set_probabilistic_bound",
+      "kind": "theorem",
+      "name": "Sum-free subset probabilistic bound",
+      "type_signature": "Set(Z \\ {0}, size n) -> Proposition",
+      "description": "Every set of n nonzero integers contains a sum-free subset of size greater than n/3."
+    },
+    {
+      "id": "a_property_b_hypergraph",
+      "kind": "axiom",
+      "name": "Property B of a hypergraph",
+      "type_signature": "Hypergraph -> Bool",
+      "description": "A hypergraph has Property B if its vertex set can be 2-colored so that no edge is monochromatic."
+    },
+    {
+      "id": "t_linearity_of_expectation",
+      "kind": "technique",
+      "name": "Linearity of expectation technique",
+      "function_signature": "(Random variable as sum of indicators) -> (E[X] = sum E[X_i], Existence bound via first moment)",
+      "description": "Decompose a random variable as a sum of indicator random variables, compute E[X] = sum E[X_i] without requiring independence, then apply the first moment method."
+    },
+    {
+      "id": "s_tournament_domination_bound",
+      "kind": "theorem",
+      "name": "Tournament dominating set bound",
+      "type_signature": "Tournament(n vertices) -> Proposition",
+      "description": "Every tournament on n players has a dominating set of size at most ceil(log_2 n) + 1."
+    },
+    {
+      "id": "s_balancing_vectors_bound",
+      "kind": "theorem",
+      "name": "Balancing vectors bound",
+      "type_signature": "Vectors(R^n, unit ball) -> Proposition",
+      "description": "Given n vectors v_1,...,v_n in R^n with ||v_i||_2 <= 1, there exist signs epsilon_i in {+1,-1} with ||sum epsilon_i v_i||_infinity <= sqrt(2 ln(2n))."
+    },
+    {
+      "id": "s_unbalancing_lights",
+      "kind": "theorem",
+      "name": "Unbalancing lights",
+      "type_signature": "{+/-1}^{n x n} -> Proposition",
+      "description": "For any n x n matrix A with entries in {+1,-1}, there exist epsilon in {+/-1}^n with ||A epsilon||_infinity >= sqrt(n * 2/pi)."
+    },
+    {
+      "id": "s_independence_number_greedy_expectation",
+      "kind": "theorem",
+      "name": "Independence number greedy-expectation bound",
+      "type_signature": "Graph -> Proposition",
+      "description": "For any graph G, alpha(G) >= sum_{v in V} 1/(d(v)+1) where d(v) is the degree of vertex v."
+    },
+    {
+      "id": "s_crossing_number_inequality",
+      "kind": "theorem",
+      "name": "Crossing number inequality",
+      "type_signature": "Graph(n vertices, m edges) -> Proposition",
+      "description": "For any graph with m >= 4n edges, the crossing number satisfies cr(G) >= m^3/(64n^2)."
+    },
+    {
+      "id": "s_ramsey_lower_bound_alteration",
+      "kind": "theorem",
+      "name": "Ramsey lower bound via alteration",
+      "type_signature": "Proposition",
+      "description": "R(k,k) >= (1+o(1))(k/(e*sqrt(2))) * 2^{k/2}, improving the basic probabilistic bound by alteration."
+    },
+    {
+      "id": "s_shearer_independence_triangle_free",
+      "kind": "theorem",
+      "name": "Shearer's bound for triangle-free graphs",
+      "type_signature": "TriangleFree(d-regular, n vertices) -> Proposition",
+      "description": "Every triangle-free d-regular graph on n vertices satisfies alpha(G) >= Omega(sqrt(n log n / d))."
+    },
+    {
+      "id": "s_independent_transversal_alteration",
+      "kind": "theorem",
+      "name": "Independent transversal via alteration",
+      "type_signature": "PartitionedGraph -> Proposition",
+      "description": "If each partition class has size >= 2*Delta(G), then an independent transversal exists."
+    },
+    {
+      "id": "s_paley_zygmund_inequality",
+      "kind": "theorem",
+      "name": "Paley-Zygmund inequality",
+      "type_signature": "NonNegativeRV -> Proposition",
+      "description": "For a nonnegative random variable X, Pr[X > 0] >= (E[X])^2 / E[X^2]."
+    },
+    {
+      "id": "s_paley_graph_properties",
+      "kind": "state",
+      "name": "Paley graph properties",
+      "type_signature": "PrimeField(q) -> Graph",
+      "description": "The Paley graph P(q) on F_q has no clique or independent set of size exceeding (1+o(1)) log_2 q."
+    },
+    {
+      "id": "a_variance",
+      "kind": "axiom",
+      "name": "Variance",
+      "type_signature": "RV -> R>=0",
+      "description": "Var[X] = E[X^2] - (E[X])^2, measuring the expected squared deviation of X from its mean."
+    },
+    {
+      "id": "t_lovasz_local_lemma_technique",
+      "kind": "technique",
+      "name": "Lovasz Local Lemma technique",
+      "function_signature": "(Bad events {A_i}, Dependency graph G) -> (Pr[cap A_i^c] > 0, Existence of object avoiding all bad events)",
+      "description": "Define bad events, construct a dependency graph, verify the LLL condition ep(d+1) <= 1 (symmetric) or x_i weights (general), then conclude all bad events can be simultaneously avoided."
+    },
+    {
+      "id": "s_lovasz_local_lemma_symmetric",
+      "kind": "theorem",
+      "name": "Lovasz Local Lemma (symmetric form)",
+      "type_signature": "Proposition",
+      "description": "If each event A_i has Pr[A_i] <= p and is dependent on at most d others, and ep(d+1) <= 1, then Pr[intersection of all A_i^c] > 0."
+    },
+    {
+      "id": "s_lopsided_lovasz_local_lemma",
+      "kind": "theorem",
+      "name": "Lopsided Lovasz Local Lemma",
+      "type_signature": "Proposition",
+      "description": "The LLL holds under the weaker condition of a lopsidependency graph, where Pr[A_i | intersection of A_j^c for j in S] <= Pr[A_i] for non-neighbors S."
+    },
+    {
+      "id": "s_moser_tardos_algorithmic_lll",
+      "kind": "theorem",
+      "name": "Moser-Tardos algorithmic LLL",
+      "type_signature": "Proposition",
+      "description": "The Moser-Tardos resampling algorithm finds a satisfying assignment in expected O(sum x_i/(1-x_i)) steps under the LLL conditions."
+    },
+    {
+      "id": "s_k_sat_lll_bound",
+      "kind": "theorem",
+      "name": "k-SAT LLL bound",
+      "type_signature": "k-CNF -> Proposition",
+      "description": "A k-CNF formula in which each clause shares variables with at most 2^k/e - 1 other clauses is satisfiable."
+    },
+    {
+      "id": "s_latin_transversal_lll",
+      "kind": "theorem",
+      "name": "Latin transversal via LLL",
+      "type_signature": "n x n Array -> Proposition",
+      "description": "An n x n array where each symbol appears at most n/(4e) times has a Latin transversal."
+    },
+    {
+      "id": "a_lopsidependency_graph",
+      "kind": "axiom",
+      "name": "Lopsidependency graph",
+      "type_signature": "Events -> Graph",
+      "description": "A graph on events where Pr[A_i | intersection of A_j^c for j in S] <= Pr[A_i] for every set S of non-neighbors of i."
+    },
+    {
+      "id": "s_fkg_inequality",
+      "kind": "theorem",
+      "name": "FKG inequality",
+      "type_signature": "Proposition",
+      "description": "On a finite distributive lattice with a log-supermodular measure mu, for increasing functions f and g: E[fg] >= E[f]E[g]."
+    },
+    {
+      "id": "s_four_functions_theorem",
+      "kind": "theorem",
+      "name": "Four functions theorem (Ahlswede-Daykin)",
+      "type_signature": "Proposition",
+      "description": "If alpha, beta, gamma, delta are nonneg functions on a finite lattice with alpha(a)beta(b) <= gamma(a v b)delta(a ^ b) for all a,b, then (sum alpha)(sum beta) <= (sum gamma)(sum delta)."
+    },
+    {
+      "id": "s_reimer_inequality",
+      "kind": "theorem",
+      "name": "Reimer inequality (BK inequality)",
+      "type_signature": "Proposition",
+      "description": "For events A, B on {0,1}^n, Pr[A box B] <= Pr[A]*Pr[B], where A box B denotes disjoint occurrence. Proved by Reimer, resolving the van den Berg-Kesten conjecture."
+    },
+    {
+      "id": "a_increasing_event",
+      "kind": "axiom",
+      "name": "Increasing event",
+      "type_signature": "{0,1}^n -> Bool",
+      "description": "An event A in {0,1}^n such that omega in A and omega <= omega' coordinatewise implies omega' in A."
+    },
+    {
+      "id": "a_disjoint_occurrence",
+      "kind": "axiom",
+      "name": "Disjoint occurrence (box product)",
+      "type_signature": "Event x Event -> Event",
+      "description": "A box B is the event that disjoint witness sets of coordinates certify A and B simultaneously."
+    },
+    {
+      "id": "t_azuma_hoeffding_technique",
+      "kind": "technique",
+      "name": "Azuma-Hoeffding technique",
+      "function_signature": "(Function f, Sequential exposure of variables) -> (Doob martingale, Bounded differences, Exponential tail bound)",
+      "description": "Construct a Doob martingale by sequential exposure, verify bounded-difference conditions, then apply Azuma-Hoeffding to obtain exponential concentration."
+    },
+    {
+      "id": "t_vertex_exposure_martingale",
+      "kind": "technique",
+      "name": "Vertex exposure martingale",
+      "function_signature": "(Graph parameter f, G(n,p)) -> (Doob martingale via vertex-by-vertex exposure, Concentration bound)",
+      "description": "Expose vertices of G(n,p) one by one; the resulting Doob martingale gives concentration for Lipschitz graph parameters."
+    },
+    {
+      "id": "t_edge_exposure_martingale",
+      "kind": "technique",
+      "name": "Edge exposure martingale",
+      "function_signature": "(Graph parameter f, G(n,p)) -> (Doob martingale via edge-by-edge exposure, Tighter concentration bound)",
+      "description": "Expose potential edges of G(n,p) one by one; yields tighter concentration than vertex exposure when the parameter is edge-Lipschitz."
+    },
+    {
+      "id": "s_chromatic_number_concentration",
+      "kind": "theorem",
+      "name": "Chromatic number concentration",
+      "type_signature": "G(n,1/2) -> Proposition",
+      "description": "The chromatic number chi(G(n,1/2)) is concentrated in an interval of width O(sqrt(n))."
+    },
+    {
+      "id": "s_kim_vu_polynomial_concentration",
+      "kind": "theorem",
+      "name": "Kim-Vu polynomial concentration",
+      "type_signature": "Proposition",
+      "description": "Tight concentration bounds for multilinear polynomials of independent {0,1} random variables."
+    },
+    {
+      "id": "a_doob_martingale_combinatorial",
+      "kind": "axiom",
+      "name": "Doob martingale (combinatorial)",
+      "type_signature": "(Function f, Filtration {F_i}) -> Martingale",
+      "description": "M_i = E[f | F_i] defines a martingale by sequential exposure of random variables; the fundamental tool for applying martingale concentration in combinatorics."
+    },
+    {
+      "id": "a_lipschitz_function_product_space",
+      "kind": "axiom",
+      "name": "Lipschitz function on product space",
+      "type_signature": "(Omega_1 x ... x Omega_n -> R) -> Bool",
+      "description": "A function f on a product space is c-Lipschitz if changing any single coordinate changes f by at most c."
+    },
+    {
+      "id": "t_stein_chen_poisson_approximation",
+      "kind": "technique",
+      "name": "Stein-Chen Poisson approximation",
+      "function_signature": "(Sum of weakly dependent indicators) -> (Poisson approximation, Explicit TV distance bound)",
+      "description": "Approximate the distribution of a sum of weakly dependent indicator random variables by a Poisson distribution, with explicit total-variation bounds."
+    },
+    {
+      "id": "s_triangle_threshold_gnp",
+      "kind": "theorem",
+      "name": "Triangle threshold in G(n,p)",
+      "type_signature": "G(n,p) -> Proposition",
+      "description": "The threshold for triangles in G(n,p) is p = n^{-1}; when p = c/n the number of triangles converges in distribution to Poisson(c^3/6)."
+    },
+    {
+      "id": "s_bonferroni_inequalities",
+      "kind": "theorem",
+      "name": "Bonferroni inequalities",
+      "type_signature": "Events {A_1,...,A_n} -> Proposition",
+      "description": "Truncated inclusion-exclusion sums yield alternating upper and lower bounds for Pr[union of A_i]."
+    },
+    {
+      "id": "t_expander_mixing_technique",
+      "kind": "technique",
+      "name": "Expander mixing technique",
+      "function_signature": "((n,d,lambda)-graph, Vertex subsets S,T) -> (Edge count approximation, Pseudo-random bound)",
+      "description": "Use the spectral gap of a regular graph to show that edge distribution between vertex subsets approximates that of a random graph."
+    },
+    {
+      "id": "s_paley_graph_pseudo_random",
+      "kind": "theorem",
+      "name": "Paley graph pseudo-randomness",
+      "type_signature": "PrimeField(q) -> Proposition",
+      "description": "The Paley graph is an (n, (n-1)/2, O(sqrt(n)))-graph, exhibiting strong pseudo-random properties."
+    },
+    {
+      "id": "a_ndlambda_graph",
+      "kind": "axiom",
+      "name": "(n,d,lambda)-graph",
+      "type_signature": "Graph -> (N, N, R>=0)",
+      "description": "A d-regular graph on n vertices whose second-largest eigenvalue (in absolute value) of the adjacency matrix is at most lambda."
+    },
+    {
+      "id": "a_erdos_renyi_gnm",
+      "kind": "axiom",
+      "name": "Erdos-Renyi G(n,m) model",
+      "type_signature": "N x N -> RandomGraph",
+      "description": "A uniform random graph on n labelled vertices with exactly m edges."
+    },
+    {
+      "id": "s_katona_cyclic_permutation_proof",
+      "kind": "state",
+      "name": "Katona's cyclic permutation proof of EKR",
+      "type_signature": "CyclicPermutations -> Proof",
+      "description": "Katona's elegant proof of the Erdos-Ko-Rado theorem using counting over cyclic permutations and arcs."
+    },
+    {
+      "id": "s_lovasz_theta_sandwich",
+      "kind": "theorem",
+      "name": "Lovasz theta sandwich theorem",
+      "type_signature": "Graph -> Proposition",
+      "description": "For any graph G, alpha(G) <= theta(G) <= chi_bar(G), sandwiching the Lovasz theta function between the independence number and the fractional chromatic number."
+    },
+    {
+      "id": "s_shannon_capacity_c5",
+      "kind": "theorem",
+      "name": "Shannon capacity of C_5",
+      "type_signature": "Proposition",
+      "description": "The Shannon capacity of the 5-cycle is Theta(C_5) = sqrt(5), determined by Lovasz via the theta function."
+    },
+    {
+      "id": "s_lovasz_theta_ramsey_bound",
+      "kind": "theorem",
+      "name": "Ramsey bound via Lovasz theta function",
+      "type_signature": "Proposition",
+      "description": "R(3,k) >= Omega(k^2/log^2 k), obtained using the Lovasz theta function."
+    },
+    {
+      "id": "a_shannon_capacity",
+      "kind": "axiom",
+      "name": "Shannon capacity of a graph",
+      "type_signature": "Graph -> R>=0",
+      "description": "Theta(G) = lim_{n->inf} (alpha(G^{box n}))^{1/n}, the zero-error capacity of a noisy channel with confusability graph G."
+    },
+    {
+      "id": "a_lovasz_theta_function",
+      "kind": "axiom",
+      "name": "Lovasz theta function",
+      "type_signature": "Graph -> R>=0",
+      "description": "An SDP-computable graph parameter theta(G) satisfying alpha(G) <= theta(G) <= chi_bar(G)."
+    },
+    {
+      "id": "t_partial_coloring_method",
+      "kind": "technique",
+      "name": "Partial coloring method",
+      "function_signature": "(Set system, Pigeonhole/entropy argument) -> (Partial coloring with low discrepancy, Iteration to full coloring)",
+      "description": "Find a partial coloring of low discrepancy by pigeonhole or entropy arguments, then iterate to color all elements."
+    },
+    {
+      "id": "t_beck_fiala_technique",
+      "kind": "technique",
+      "name": "Beck-Fiala technique",
+      "function_signature": "(Set system with bounded degree t) -> (Coloring with discrepancy <= 2t-2)",
+      "description": "Fix colors of elements appearing in few active sets by a dimension/linear algebra argument, iterating until all elements are colored."
+    },
+    {
+      "id": "s_partial_coloring_lemma",
+      "kind": "theorem",
+      "name": "Partial coloring lemma",
+      "type_signature": "Proposition",
+      "description": "There exists a coloring with at least n/2 nonzero entries and discrepancy O(sqrt(n)) for any n sets on n elements."
+    },
+    {
+      "id": "s_discrepancy_arithmetic_progressions",
+      "kind": "theorem",
+      "name": "Discrepancy of arithmetic progressions",
+      "type_signature": "Proposition",
+      "description": "The discrepancy of the set system of arithmetic progressions in [n] is Theta(n^{1/4})."
+    },
+    {
+      "id": "a_combinatorial_discrepancy",
+      "kind": "axiom",
+      "name": "Combinatorial discrepancy",
+      "type_signature": "SetSystem -> R>=0",
+      "description": "disc(S) = min_{chi: X -> {-1,+1}} max_{S in S} |sum_{x in S} chi(x)|, the minimum worst-case imbalance over all 2-colorings."
+    },
+    {
+      "id": "t_conditional_expectations_method",
+      "kind": "technique",
+      "name": "Method of conditional expectations",
+      "function_signature": "(Probabilistic existence argument with E[X]) -> (Deterministic sequential construction achieving E[X] bound)",
+      "description": "Sequentially set each random variable to the value that keeps the conditional expectation favorable, derandomizing a probabilistic proof."
+    },
+    {
+      "id": "t_pairwise_independence_derandomization",
+      "kind": "technique",
+      "name": "Pairwise independence derandomization",
+      "function_signature": "(Probabilistic argument using only 1st/2nd moments) -> (Deterministic construction with O(log n) random bits)",
+      "description": "Replace full independence with pairwise independence, preserving first and second moment arguments while reducing randomness."
+    },
+    {
+      "id": "t_k_wise_independence_derandomization",
+      "kind": "technique",
+      "name": "k-wise independence derandomization",
+      "function_signature": "(Probabilistic argument using k-th moments) -> (Deterministic construction with O(k log n) bits)",
+      "description": "Use k-wise independent random variables constructible from O(k log n) random bits to derandomize arguments depending on k-th moments."
+    },
+    {
+      "id": "s_derandomized_ramsey_bound",
+      "kind": "theorem",
+      "name": "Derandomized Ramsey lower bound",
+      "type_signature": "Proposition",
+      "description": "Constructive proof that R(k,k) >= 2^{k/2} via the method of conditional expectations."
+    },
+    {
+      "id": "s_deterministic_max_cut",
+      "kind": "theorem",
+      "name": "Deterministic max-cut algorithm",
+      "type_signature": "Graph(m edges) -> Proposition",
+      "description": "A polynomial-time greedy algorithm produces a cut with at least m/2 edges, derandomizing the probabilistic max-cut bound."
+    },
+    {
+      "id": "a_k_wise_independent_rv",
+      "kind": "axiom",
+      "name": "k-wise independent random variables",
+      "type_signature": "RVs -> Bool",
+      "description": "A collection of random variables where every subset of size at most k is mutually independent."
+    },
+    {
+      "id": "a_pairwise_independent_rv",
+      "kind": "axiom",
+      "name": "Pairwise independent random variables",
+      "type_signature": "RVs -> Bool",
+      "description": "Random variables satisfying E[X_i X_j] = E[X_i]E[X_j] for all i != j, i.e., 2-wise independence."
+    },
+    {
+      "id": "t_graph_property_testing",
+      "kind": "technique",
+      "name": "Graph property testing",
+      "function_signature": "(Graph property, Error parameter epsilon) -> (Constant-query randomized test)",
+      "description": "Test a graph property by querying a random constant-size induced subgraph and checking the property on it."
+    },
+    {
+      "id": "s_graph_property_testability",
+      "kind": "theorem",
+      "name": "Testability of hereditary graph properties",
+      "type_signature": "Proposition",
+      "description": "Every hereditary graph property is testable with a constant number of queries (depending only on epsilon)."
+    },
+    {
+      "id": "s_triangle_removal_lemma",
+      "kind": "theorem",
+      "name": "Triangle removal lemma",
+      "type_signature": "Graph(n vertices) -> Proposition",
+      "description": "A graph with at most delta*n^3 triangles can be made triangle-free by removing at most epsilon*n^2 edges."
+    },
+    {
+      "id": "s_ruzsa_szemeredi_theorem",
+      "kind": "theorem",
+      "name": "Ruzsa-Szemeredi (6,3)-theorem",
+      "type_signature": "Graph(n vertices) -> Proposition",
+      "description": "A graph on n vertices in which every edge belongs to exactly one triangle has o(n^2) edges."
+    },
+    {
+      "id": "t_chernoff_bound_technique",
+      "kind": "technique",
+      "name": "Chernoff bound technique",
+      "function_signature": "(Sum of independent RVs, Tail parameter t) -> (Exponential tail bound via MGF optimization)",
+      "description": "Bound tail probabilities by optimizing the exponential moment E[exp(lambda X)] over lambda (exponential tilting / Cramér method)."
+    },
+    {
+      "id": "t_janson_inequality_technique",
+      "kind": "technique",
+      "name": "Janson inequality technique",
+      "function_signature": "(Dependent indicators {I_A}, Pairwise dependency measure Delta) -> (Lower tail bound Pr[X=0])",
+      "description": "Control pairwise correlations among dependent indicators to obtain lower tail bounds, bounding Pr[X=0] <= exp(-mu + Delta/2)."
+    },
+    {
+      "id": "s_janson_extended_inequality",
+      "kind": "theorem",
+      "name": "Janson extended inequality",
+      "type_signature": "Proposition",
+      "description": "Pr[X=0] <= exp(-mu^2/(2 Delta)) when the dependency measure Delta >= mu, giving a stronger bound in the high-dependency regime."
+    },
+    {
+      "id": "s_subgraph_count_concentration",
+      "kind": "theorem",
+      "name": "Subgraph count concentration",
+      "type_signature": "G(n,p) x Graph H -> Proposition",
+      "description": "The number of copies of a fixed subgraph H in G(n,p) is concentrated around its expectation."
+    },
+    {
+      "id": "s_weierstrass_product_inequality",
+      "kind": "theorem",
+      "name": "Weierstrass product inequality",
+      "type_signature": "Proposition",
+      "description": "For x_i in [0,1]: prod_{i}(1 - x_i) >= 1 - sum_{i} x_i, a basic inequality used in probabilistic lower bounds."
+    },
+    {
+      "id": "t_entropy_method_combinatorics",
+      "kind": "technique",
+      "name": "Entropy method in combinatorics",
+      "function_signature": "(Combinatorial counting problem) -> (Counting bound via subadditivity, chain rule, max-entropy principle)",
+      "description": "Use subadditivity of Shannon entropy, the chain rule, and the maximum entropy principle to derive combinatorial counting and discrepancy bounds."
+    },
+    {
+      "id": "s_shearer_entropy_lemma",
+      "kind": "theorem",
+      "name": "Shearer's entropy lemma",
+      "type_signature": "Proposition",
+      "description": "If each coordinate is covered at least t times by sets A_1,...,A_m, then t*H(X) <= sum_{i} H(X_{A_i})."
+    },
+    {
+      "id": "s_bregman_theorem",
+      "kind": "theorem",
+      "name": "Bregman's theorem (permanent bound)",
+      "type_signature": "0-1 Matrix -> Proposition",
+      "description": "For a 0-1 matrix A with row sums r_1,...,r_n, the permanent satisfies perm(A) <= prod_{i} (r_i!)^{1/r_i}."
+    },
+    {
+      "id": "s_kahn_zhao_independent_sets",
+      "kind": "theorem",
+      "name": "Kahn-Zhao theorem on independent sets",
+      "type_signature": "d-RegularBipartiteGraph -> Proposition",
+      "description": "The number of independent sets in a d-regular bipartite graph on 2n vertices is at most (2^{d+1} - 1)^{n/d}, with equality for a disjoint union of K_{d,d}."
+    },
+    {
+      "id": "s_shearer_independent_set_bound",
+      "kind": "theorem",
+      "name": "Shearer's independent set bound via entropy",
+      "type_signature": "Graph -> Proposition",
+      "description": "Entropy-based bound on the number of independent sets in a graph, strengthening the naive 2^n bound using local structure."
+    },
+    {
+      "id": "t_container_method",
+      "kind": "technique",
+      "name": "Hypergraph container method",
+      "function_signature": "(r-uniform hypergraph H) -> (Small collection of containers, Each independent set in some container)",
+      "description": "Construct a small collection of 'containers' (almost-independent vertex sets) such that every independent set of the hypergraph is contained in some container."
+    },
+    {
+      "id": "s_saxton_thomason_container_theorem",
+      "kind": "theorem",
+      "name": "Saxton-Thomason container theorem",
+      "type_signature": "Proposition",
+      "description": "For uniform hypergraphs satisfying codegree conditions, there exists a small family of containers for independent sets with controlled supersaturation."
+    },
+    {
+      "id": "s_balogh_morris_samotij_container_theorem",
+      "kind": "theorem",
+      "name": "Balogh-Morris-Samotij container theorem",
+      "type_signature": "Proposition",
+      "description": "An independent container theorem for hypergraphs using a supersaturation approach, yielding strong bounds on the number of independent sets."
+    },
+    {
+      "id": "s_sum_free_sets_count_container",
+      "kind": "theorem",
+      "name": "Sum-free subsets count via containers",
+      "type_signature": "Proposition",
+      "description": "The number of sum-free subsets of [n] is 2^{n/2 + o(n)}, proved using the container method."
+    },
+    {
+      "id": "s_triangle_free_graph_count_container",
+      "kind": "theorem",
+      "name": "Triangle-free graph count via containers",
+      "type_signature": "Proposition",
+      "description": "The number of triangle-free graphs on n labelled vertices is 2^{n^2/4 + o(n^2)}, proved using the container method."
+    },
+    {
+      "id": "t_sparse_regularity_method",
+      "kind": "technique",
+      "name": "Sparse regularity method",
+      "function_signature": "(Sparse graph with density p, Epsilon parameter) -> (Sparse epsilon-regular partition, Counting/embedding results)",
+      "description": "Adapt Szemeredi's regularity lemma to sparse graphs with edge density p, obtaining meaningful partitions and counting lemmas relative to p."
+    },
+    {
+      "id": "s_sparse_regularity_lemma",
+      "kind": "theorem",
+      "name": "Kohayakawa-Rodl sparse regularity lemma",
+      "type_signature": "Proposition",
+      "description": "Every graph satisfying an upper-uniformity condition admits an epsilon-regular partition relative to its density, extending Szemeredi regularity to sparse graphs."
+    },
+    {
+      "id": "s_sparse_counting_lemma",
+      "kind": "theorem",
+      "name": "Sparse counting lemma",
+      "type_signature": "Proposition",
+      "description": "A counting lemma for sparse epsilon-regular graphs: the number of copies of a fixed graph in a sparse regular setup matches the expected count up to a small error."
+    },
+    {
+      "id": "s_sparse_ramsey_theorem",
+      "kind": "theorem",
+      "name": "Rodl-Rucinski sparse Ramsey theorem",
+      "type_signature": "Proposition",
+      "description": "For any graph H and integer r, there exists a threshold p_0(n) such that for p >> p_0, every r-coloring of edges of G(n,p) a.a.s. contains a monochromatic copy of H."
+    },
+    {
+      "id": "s_shamir_spencer_chromatic_concentration",
+      "kind": "theorem",
+      "name": "Shamir-Spencer chromatic concentration",
+      "type_signature": "G(n,p) -> Proposition",
+      "description": "For constant p in (0,1), the chromatic number chi(G(n,p)) is concentrated on an interval of length about sqrt(n)."
+    },
+    {
+      "id": "s_ramsey_upper_bound_lll",
+      "kind": "state",
+      "name": "Off-diagonal Ramsey bound via LLL",
+      "type_signature": "Proposition",
+      "description": "R(3,k) >= Omega(k^2/log k) obtained via the Lovasz Local Lemma and Property B arguments."
+    },
+    {
+      "id": "s_chromatic_lower_bound_theta",
+      "kind": "theorem",
+      "name": "Chromatic number lower bound via theta",
+      "type_signature": "Graph -> Proposition",
+      "description": "chi(G) >= n/theta(G), giving a lower bound on the chromatic number using the Lovasz theta function of the complement."
+    },
+    {
+      "id": "a_2_density",
+      "kind": "axiom",
+      "name": "2-density of a graph",
+      "type_signature": "Graph -> R>=0",
+      "description": "m_2(H) = max_{J subseteq H, v(J) >= 3} (e(J)-1)/(v(J)-2), the maximum 2-density over subgraphs, governing thresholds for balanced subgraph appearance."
+    },
+    {
+      "id": "a_upper_uniformity_condition",
+      "kind": "axiom",
+      "name": "Upper uniformity condition",
+      "type_signature": "Graph -> Bool",
+      "description": "A no-dense-spots condition requiring that no subgraph is significantly denser than the ambient density p, needed for sparse regularity to be meaningful."
+    }
+  ]
+}

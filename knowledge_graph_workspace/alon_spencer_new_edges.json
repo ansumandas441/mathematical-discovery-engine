@@ -1,0 +1,1332 @@
+[
+  {
+    "id": "e_21777",
+    "from": "a_property_b_hypergraph",
+    "to": "t_uniform_random_coloring",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_property_b_existence_uniform"
+  },
+  {
+    "id": "e_21778",
+    "from": "s_product_probability_space",
+    "to": "t_uniform_random_coloring",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21779",
+    "from": "s_expectation",
+    "to": "t_uniform_random_coloring",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_property_b_existence_uniform"
+  },
+  {
+    "id": "e_21780",
+    "from": "t_uniform_random_coloring",
+    "to": "s_property_b_existence_uniform",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_property_b_existence_uniform"
+  },
+  {
+    "id": "e_21781",
+    "from": "s_expectation",
+    "to": "t_linearity_of_expectation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21782",
+    "from": "t_linearity_of_expectation",
+    "to": "s_max_cut_probabilistic_lower_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_max_cut_probabilistic_lower_bound"
+  },
+  {
+    "id": "e_21783",
+    "from": "t_linearity_of_expectation",
+    "to": "s_tournament_domination_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_tournament_domination_bound"
+  },
+  {
+    "id": "e_21784",
+    "from": "t_linearity_of_expectation",
+    "to": "s_balancing_vectors_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_balancing_vectors_bound"
+  },
+  {
+    "id": "e_21785",
+    "from": "t_linearity_of_expectation",
+    "to": "s_unbalancing_lights",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unbalancing_lights"
+  },
+  {
+    "id": "e_21786",
+    "from": "t_linearity_of_expectation",
+    "to": "s_independence_number_greedy_expectation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_independence_number_greedy_expectation"
+  },
+  {
+    "id": "e_21787",
+    "from": "t_linearity_of_expectation",
+    "to": "s_crossing_number_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_crossing_number_inequality"
+  },
+  {
+    "id": "e_21788",
+    "from": "s_lovasz_local_lemma_symmetric",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21789",
+    "from": "s_dependency_graph_of_events",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21790",
+    "from": "s_lopsided_lovasz_local_lemma",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_latin_transversal_lll"
+  },
+  {
+    "id": "e_21791",
+    "from": "a_lopsidependency_graph",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_latin_transversal_lll"
+  },
+  {
+    "id": "e_21792",
+    "from": "t_lovasz_local_lemma_technique",
+    "to": "s_k_sat_lll_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_k_sat_lll_bound"
+  },
+  {
+    "id": "e_21793",
+    "from": "t_lovasz_local_lemma_technique",
+    "to": "s_latin_transversal_lll",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_latin_transversal_lll"
+  },
+  {
+    "id": "e_21794",
+    "from": "t_lovasz_local_lemma_technique",
+    "to": "s_independent_transversal_alteration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_independent_transversal_alteration"
+  },
+  {
+    "id": "e_21795",
+    "from": "t_lovasz_local_lemma_technique",
+    "to": "s_ramsey_upper_bound_lll",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ramsey_upper_bound_lll"
+  },
+  {
+    "id": "e_21796",
+    "from": "s_azuma_hoeffding",
+    "to": "t_azuma_hoeffding_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21797",
+    "from": "a_doob_martingale_combinatorial",
+    "to": "t_azuma_hoeffding_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21798",
+    "from": "t_azuma_hoeffding_technique",
+    "to": "s_chromatic_number_concentration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chromatic_number_concentration"
+  },
+  {
+    "id": "e_21799",
+    "from": "a_doob_martingale_combinatorial",
+    "to": "t_vertex_exposure_martingale",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21800",
+    "from": "s_erdos_renyi_graph_G_n_p",
+    "to": "t_vertex_exposure_martingale",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21801",
+    "from": "t_vertex_exposure_martingale",
+    "to": "s_chromatic_number_concentration",
+    "role": "output",
+    "parameter_binding": {
+      "exposure": "vertex"
+    },
+    "used_in_theorem": "s_chromatic_number_concentration"
+  },
+  {
+    "id": "e_21802",
+    "from": "t_vertex_exposure_martingale",
+    "to": "s_shamir_spencer_chromatic_concentration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shamir_spencer_chromatic_concentration"
+  },
+  {
+    "id": "e_21803",
+    "from": "a_doob_martingale_combinatorial",
+    "to": "t_edge_exposure_martingale",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21804",
+    "from": "s_erdos_renyi_graph_G_n_p",
+    "to": "t_edge_exposure_martingale",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21805",
+    "from": "t_edge_exposure_martingale",
+    "to": "s_subgraph_count_concentration",
+    "role": "output",
+    "parameter_binding": {
+      "exposure": "edge"
+    },
+    "used_in_theorem": "s_subgraph_count_concentration"
+  },
+  {
+    "id": "e_21806",
+    "from": "s_poisson_distribution",
+    "to": "t_stein_chen_poisson_approximation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21807",
+    "from": "s_total_variation_distance_markov",
+    "to": "t_stein_chen_poisson_approximation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21808",
+    "from": "t_stein_chen_poisson_approximation",
+    "to": "s_triangle_threshold_gnp",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_triangle_threshold_gnp"
+  },
+  {
+    "id": "e_21809",
+    "from": "t_stein_chen_poisson_approximation",
+    "to": "s_stein_chen_poisson",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_stein_chen_poisson"
+  },
+  {
+    "id": "e_21810",
+    "from": "s_expander_mixing_lemma",
+    "to": "t_expander_mixing_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21811",
+    "from": "t_expander_mixing_technique",
+    "to": "s_paley_graph_pseudo_random",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_paley_graph_pseudo_random"
+  },
+  {
+    "id": "e_21812",
+    "from": "s_set_system_on_n_points",
+    "to": "t_partial_coloring_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21813",
+    "from": "a_combinatorial_discrepancy",
+    "to": "t_partial_coloring_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21814",
+    "from": "t_partial_coloring_method",
+    "to": "s_spencer_six_sigma_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spencer_six_sigma_theorem"
+  },
+  {
+    "id": "e_21815",
+    "from": "t_partial_coloring_method",
+    "to": "s_partial_coloring_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_partial_coloring_lemma"
+  },
+  {
+    "id": "e_21816",
+    "from": "t_partial_coloring_method",
+    "to": "s_discrepancy_arithmetic_progressions",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_discrepancy_arithmetic_progressions"
+  },
+  {
+    "id": "e_21817",
+    "from": "s_set_system_on_n_points",
+    "to": "t_beck_fiala_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_beck_fiala_theorem"
+  },
+  {
+    "id": "e_21818",
+    "from": "a_combinatorial_discrepancy",
+    "to": "t_beck_fiala_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_beck_fiala_theorem"
+  },
+  {
+    "id": "e_21819",
+    "from": "t_beck_fiala_technique",
+    "to": "s_beck_fiala_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_beck_fiala_theorem"
+  },
+  {
+    "id": "e_21820",
+    "from": "s_expectation",
+    "to": "t_conditional_expectations_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21821",
+    "from": "s_conditional_expectation",
+    "to": "t_conditional_expectations_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21822",
+    "from": "t_conditional_expectations_method",
+    "to": "s_derandomized_ramsey_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_derandomized_ramsey_bound"
+  },
+  {
+    "id": "e_21823",
+    "from": "t_conditional_expectations_method",
+    "to": "s_deterministic_max_cut",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_deterministic_max_cut"
+  },
+  {
+    "id": "e_21824",
+    "from": "a_pairwise_independent_rv",
+    "to": "t_pairwise_independence_derandomization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21825",
+    "from": "a_k_wise_independent_rv",
+    "to": "t_k_wise_independence_derandomization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21826",
+    "from": "s_szemeredi_regularity_lemma",
+    "to": "t_graph_property_testing",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_graph_property_testability"
+  },
+  {
+    "id": "e_21827",
+    "from": "s_epsilon_regular_pair",
+    "to": "t_graph_property_testing",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_graph_property_testability"
+  },
+  {
+    "id": "e_21828",
+    "from": "t_graph_property_testing",
+    "to": "s_graph_property_testability",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_graph_property_testability"
+  },
+  {
+    "id": "e_21829",
+    "from": "s_moment_generating_function",
+    "to": "t_chernoff_bound_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21830",
+    "from": "s_markov_inequality",
+    "to": "t_chernoff_bound_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21831",
+    "from": "t_chernoff_bound_technique",
+    "to": "s_chernoff_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chernoff_bound"
+  },
+  {
+    "id": "e_21832",
+    "from": "t_chernoff_bound_technique",
+    "to": "s_subgraph_count_concentration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_subgraph_count_concentration"
+  },
+  {
+    "id": "e_21833",
+    "from": "s_erdos_renyi_graph_G_n_p",
+    "to": "t_janson_inequality_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21834",
+    "from": "t_janson_inequality_technique",
+    "to": "s_janson_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_janson_inequality"
+  },
+  {
+    "id": "e_21835",
+    "from": "t_janson_inequality_technique",
+    "to": "s_janson_extended_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_janson_extended_inequality"
+  },
+  {
+    "id": "e_21836",
+    "from": "t_janson_inequality_technique",
+    "to": "s_subgraph_count_concentration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_subgraph_count_concentration"
+  },
+  {
+    "id": "e_21837",
+    "from": "s_shannon_entropy_of_partition",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21838",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_shearer_entropy_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shearer_entropy_lemma"
+  },
+  {
+    "id": "e_21839",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_bregman_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bregman_theorem"
+  },
+  {
+    "id": "e_21840",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_loomis_whitney_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_loomis_whitney_inequality"
+  },
+  {
+    "id": "e_21841",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_kahn_zhao_independent_sets",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kahn_zhao_independent_sets"
+  },
+  {
+    "id": "e_21842",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_shearer_independent_set_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shearer_independent_set_bound"
+  },
+  {
+    "id": "e_21843",
+    "from": "s_independent_set_graph",
+    "to": "t_container_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21844",
+    "from": "t_container_method",
+    "to": "s_saxton_thomason_container_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_saxton_thomason_container_theorem"
+  },
+  {
+    "id": "e_21845",
+    "from": "t_container_method",
+    "to": "s_balogh_morris_samotij_container_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_balogh_morris_samotij_container_theorem"
+  },
+  {
+    "id": "e_21846",
+    "from": "t_container_method",
+    "to": "s_sum_free_sets_count_container",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sum_free_sets_count_container"
+  },
+  {
+    "id": "e_21847",
+    "from": "t_container_method",
+    "to": "s_triangle_free_graph_count_container",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_triangle_free_graph_count_container"
+  },
+  {
+    "id": "e_21848",
+    "from": "s_szemeredi_regularity_lemma",
+    "to": "t_sparse_regularity_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21849",
+    "from": "a_upper_uniformity_condition",
+    "to": "t_sparse_regularity_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21850",
+    "from": "t_sparse_regularity_method",
+    "to": "s_sparse_regularity_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sparse_regularity_lemma"
+  },
+  {
+    "id": "e_21851",
+    "from": "t_sparse_regularity_method",
+    "to": "s_sparse_counting_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sparse_counting_lemma"
+  },
+  {
+    "id": "e_21852",
+    "from": "t_sparse_regularity_method",
+    "to": "s_sparse_ramsey_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sparse_ramsey_theorem"
+  },
+  {
+    "id": "e_21853",
+    "from": "t_first_moment_method",
+    "to": "s_property_b_existence_uniform",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_property_b_existence_uniform"
+  },
+  {
+    "id": "e_21854",
+    "from": "t_first_moment_method",
+    "to": "s_max_cut_probabilistic_lower_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_max_cut_probabilistic_lower_bound"
+  },
+  {
+    "id": "e_21855",
+    "from": "t_first_moment_method",
+    "to": "s_sum_free_set_probabilistic_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sum_free_set_probabilistic_bound"
+  },
+  {
+    "id": "e_21856",
+    "from": "t_alteration_method",
+    "to": "s_ramsey_lower_bound_alteration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ramsey_lower_bound_alteration"
+  },
+  {
+    "id": "e_21857",
+    "from": "s_erdos_ramsey_lower_bound",
+    "to": "t_alteration_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ramsey_lower_bound_alteration"
+  },
+  {
+    "id": "e_21858",
+    "from": "t_alteration_method",
+    "to": "s_shearer_independence_triangle_free",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shearer_independence_triangle_free"
+  },
+  {
+    "id": "e_21859",
+    "from": "s_independence_number_g",
+    "to": "t_alteration_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shearer_independence_triangle_free"
+  },
+  {
+    "id": "e_21860",
+    "from": "t_alteration_method",
+    "to": "s_independent_transversal_alteration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_independent_transversal_alteration"
+  },
+  {
+    "id": "e_21861",
+    "from": "s_paley_zygmund_inequality",
+    "to": "t_second_moment_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21862",
+    "from": "t_expander_mixing_technique",
+    "to": "s_paley_graph_properties",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_paley_graph_properties"
+  },
+  {
+    "id": "e_21863",
+    "from": "s_hasse_weil_bound",
+    "to": "t_expander_mixing_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_paley_graph_properties"
+  },
+  {
+    "id": "e_21864",
+    "from": "t_probabilistic_existence",
+    "to": "s_lovasz_local_lemma_symmetric",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lovasz_local_lemma_symmetric"
+  },
+  {
+    "id": "e_21865",
+    "from": "t_probabilistic_existence",
+    "to": "s_lopsided_lovasz_local_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lopsided_lovasz_local_lemma"
+  },
+  {
+    "id": "e_21866",
+    "from": "a_lopsidependency_graph",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lopsided_lovasz_local_lemma"
+  },
+  {
+    "id": "e_21867",
+    "from": "s_lovasz_local_lemma",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {
+      "variant": "algorithmic"
+    },
+    "used_in_theorem": "s_moser_tardos_algorithmic_lll"
+  },
+  {
+    "id": "e_21868",
+    "from": "t_lovasz_local_lemma_technique",
+    "to": "s_moser_tardos_algorithmic_lll",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_moser_tardos_algorithmic_lll"
+  },
+  {
+    "id": "e_21869",
+    "from": "s_sat_boolean_satisfiability",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_k_sat_lll_bound"
+  },
+  {
+    "id": "e_21870",
+    "from": "s_latin_square",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_latin_transversal_lll"
+  },
+  {
+    "id": "e_21871",
+    "from": "s_harrisfkg_inequality",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fkg_inequality"
+  },
+  {
+    "id": "e_21872",
+    "from": "t_probabilistic_existence",
+    "to": "s_fkg_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fkg_inequality"
+  },
+  {
+    "id": "e_21873",
+    "from": "a_increasing_event",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fkg_inequality"
+  },
+  {
+    "id": "e_21874",
+    "from": "s_fkg_inequality",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_four_functions_theorem"
+  },
+  {
+    "id": "e_21875",
+    "from": "t_probabilistic_existence",
+    "to": "s_four_functions_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_four_functions_theorem"
+  },
+  {
+    "id": "e_21876",
+    "from": "a_disjoint_occurrence",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_reimer_inequality"
+  },
+  {
+    "id": "e_21877",
+    "from": "t_probabilistic_existence",
+    "to": "s_reimer_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_reimer_inequality"
+  },
+  {
+    "id": "e_21878",
+    "from": "s_chromatic_number",
+    "to": "t_vertex_exposure_martingale",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chromatic_number_concentration"
+  },
+  {
+    "id": "e_21879",
+    "from": "s_chromatic_number",
+    "to": "t_azuma_hoeffding_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chromatic_number_concentration"
+  },
+  {
+    "id": "e_21880",
+    "from": "t_chernoff_bound_technique",
+    "to": "s_kim_vu_polynomial_concentration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kim_vu_polynomial_concentration"
+  },
+  {
+    "id": "e_21881",
+    "from": "s_erdos_renyi_graph_G_n_p",
+    "to": "t_stein_chen_poisson_approximation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_triangle_threshold_gnp"
+  },
+  {
+    "id": "e_21882",
+    "from": "s_principle_of_inclusion_exclusion",
+    "to": "t_sieve_inclusion_exclusion",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bonferroni_inequalities"
+  },
+  {
+    "id": "e_21883",
+    "from": "t_sieve_inclusion_exclusion",
+    "to": "s_bonferroni_inequalities",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bonferroni_inequalities"
+  },
+  {
+    "id": "e_21884",
+    "from": "s_paley_graph_properties",
+    "to": "t_expander_mixing_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_paley_graph_pseudo_random"
+  },
+  {
+    "id": "e_21885",
+    "from": "s_erdos_ko_rado_theorem",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_katona_cyclic_permutation_proof"
+  },
+  {
+    "id": "e_21886",
+    "from": "t_probabilistic_existence",
+    "to": "s_katona_cyclic_permutation_proof",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_katona_cyclic_permutation_proof"
+  },
+  {
+    "id": "e_21887",
+    "from": "a_lovasz_theta_function",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lovasz_theta_sandwich"
+  },
+  {
+    "id": "e_21888",
+    "from": "t_probabilistic_existence",
+    "to": "s_lovasz_theta_sandwich",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lovasz_theta_sandwich"
+  },
+  {
+    "id": "e_21889",
+    "from": "s_independence_number_g",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lovasz_theta_sandwich"
+  },
+  {
+    "id": "e_21890",
+    "from": "s_chromatic_number",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lovasz_theta_sandwich"
+  },
+  {
+    "id": "e_21891",
+    "from": "a_shannon_capacity",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shannon_capacity_c5"
+  },
+  {
+    "id": "e_21892",
+    "from": "a_lovasz_theta_function",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shannon_capacity_c5"
+  },
+  {
+    "id": "e_21893",
+    "from": "t_probabilistic_existence",
+    "to": "s_shannon_capacity_c5",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shannon_capacity_c5"
+  },
+  {
+    "id": "e_21894",
+    "from": "a_lovasz_theta_function",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lovasz_theta_ramsey_bound"
+  },
+  {
+    "id": "e_21895",
+    "from": "s_ramsey_number",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lovasz_theta_ramsey_bound"
+  },
+  {
+    "id": "e_21896",
+    "from": "t_probabilistic_existence",
+    "to": "s_lovasz_theta_ramsey_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lovasz_theta_ramsey_bound"
+  },
+  {
+    "id": "e_21897",
+    "from": "s_arithmetic_progression",
+    "to": "t_partial_coloring_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_discrepancy_arithmetic_progressions"
+  },
+  {
+    "id": "e_21898",
+    "from": "s_erdos_ramsey_lower_bound",
+    "to": "t_conditional_expectations_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_derandomized_ramsey_bound"
+  },
+  {
+    "id": "e_21899",
+    "from": "s_max_cut_probabilistic_lower_bound",
+    "to": "t_conditional_expectations_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_deterministic_max_cut"
+  },
+  {
+    "id": "e_21900",
+    "from": "s_szemeredi_regularity_lemma",
+    "to": "t_graph_property_testing",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_triangle_removal_lemma"
+  },
+  {
+    "id": "e_21901",
+    "from": "t_graph_property_testing",
+    "to": "s_triangle_removal_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_triangle_removal_lemma"
+  },
+  {
+    "id": "e_21902",
+    "from": "s_triangle_removal_lemma",
+    "to": "t_graph_property_testing",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ruzsa_szemeredi_theorem"
+  },
+  {
+    "id": "e_21903",
+    "from": "t_graph_property_testing",
+    "to": "s_ruzsa_szemeredi_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ruzsa_szemeredi_theorem"
+  },
+  {
+    "id": "e_21904",
+    "from": "s_weierstrass_product_inequality",
+    "to": "t_chernoff_bound_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21905",
+    "from": "s_weierstrass_product_inequality",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21906",
+    "from": "s_triangle_free_graph_property",
+    "to": "t_container_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_triangle_free_graph_count_container"
+  },
+  {
+    "id": "e_21907",
+    "from": "a_2_density",
+    "to": "t_sparse_regularity_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sparse_ramsey_theorem"
+  },
+  {
+    "id": "e_21908",
+    "from": "s_ramsey_number",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ramsey_upper_bound_lll"
+  },
+  {
+    "id": "e_21909",
+    "from": "a_lovasz_theta_function",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chromatic_lower_bound_theta"
+  },
+  {
+    "id": "e_21910",
+    "from": "s_chromatic_number",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chromatic_lower_bound_theta"
+  },
+  {
+    "id": "e_21911",
+    "from": "t_probabilistic_existence",
+    "to": "s_chromatic_lower_bound_theta",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chromatic_lower_bound_theta"
+  },
+  {
+    "id": "e_21912",
+    "from": "a_property_b_hypergraph",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21913",
+    "from": "a_increasing_event",
+    "to": "t_probabilistic_existence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_harrisfkg_inequality"
+  },
+  {
+    "id": "e_21914",
+    "from": "a_lipschitz_function_product_space",
+    "to": "t_azuma_hoeffding_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mcdiarmid_inequality"
+  },
+  {
+    "id": "e_21915",
+    "from": "t_azuma_hoeffding_technique",
+    "to": "s_mcdiarmid_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mcdiarmid_inequality"
+  },
+  {
+    "id": "e_21916",
+    "from": "a_ndlambda_graph",
+    "to": "t_expander_mixing_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_expander_graph"
+  },
+  {
+    "id": "e_21917",
+    "from": "a_erdos_renyi_gnm",
+    "to": "t_vertex_exposure_martingale",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21918",
+    "from": "a_erdos_renyi_gnm",
+    "to": "t_edge_exposure_martingale",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21919",
+    "from": "s_shearer_independent_set_bound",
+    "to": "t_container_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_saxton_thomason_container_theorem"
+  },
+  {
+    "id": "e_21920",
+    "from": "s_shearer_entropy_lemma",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kahn_zhao_independent_sets"
+  },
+  {
+    "id": "e_21921",
+    "from": "t_pairwise_independence_derandomization",
+    "to": "s_derandomized_ramsey_bound",
+    "role": "output",
+    "parameter_binding": {
+      "independence_level": "pairwise"
+    },
+    "used_in_theorem": "s_derandomized_ramsey_bound"
+  },
+  {
+    "id": "e_21922",
+    "from": "s_moser_tardos_algorithmic_lll",
+    "to": "t_lovasz_local_lemma_technique",
+    "role": "input",
+    "parameter_binding": {
+      "variant": "constructive"
+    },
+    "used_in_theorem": "s_k_sat_lll_bound"
+  },
+  {
+    "id": "e_21923",
+    "from": "s_bonferroni_inequalities",
+    "to": "t_stein_chen_poisson_approximation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21924",
+    "from": "s_epsilon_regular_pair",
+    "to": "t_sparse_regularity_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21925",
+    "from": "s_ramsey_number",
+    "to": "t_sparse_regularity_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sparse_ramsey_theorem"
+  },
+  {
+    "id": "e_21926",
+    "from": "s_turan_theorem",
+    "to": "t_graph_property_testing",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_triangle_removal_lemma"
+  },
+  {
+    "id": "e_21927",
+    "from": "a_variance",
+    "to": "t_second_moment_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chebyshev_inequality"
+  },
+  {
+    "id": "e_21928",
+    "from": "a_doob_martingale_combinatorial",
+    "to": "t_chernoff_bound_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kim_vu_polynomial_concentration"
+  },
+  {
+    "id": "e_21929",
+    "from": "s_fkg_inequality",
+    "to": "t_janson_inequality_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21930",
+    "from": "s_arithmetic_progression",
+    "to": "t_graph_property_testing",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ruzsa_szemeredi_theorem"
+  },
+  {
+    "id": "e_21931",
+    "from": "s_sum_free_set_probabilistic_bound",
+    "to": "t_container_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sum_free_sets_count_container"
+  },
+  {
+    "id": "e_21932",
+    "from": "s_turan_theorem",
+    "to": "t_linearity_of_expectation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_crossing_number_inequality"
+  },
+  {
+    "id": "e_21933",
+    "from": "s_independence_number_g",
+    "to": "t_linearity_of_expectation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_independence_number_greedy_expectation"
+  },
+  {
+    "id": "e_21934",
+    "from": "s_ramsey_number",
+    "to": "t_alteration_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ramsey_lower_bound_alteration"
+  },
+  {
+    "id": "e_21935",
+    "from": "s_erdos_renyi_graph_G_n_p",
+    "to": "t_alteration_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ramsey_lower_bound_alteration"
+  },
+  {
+    "id": "e_21936",
+    "from": "s_expander_graph",
+    "to": "t_expander_mixing_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21937",
+    "from": "s_ramanujan_graph",
+    "to": "t_expander_mixing_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_21938",
+    "from": "s_set_system_on_n_points",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bregman_theorem"
+  },
+  {
+    "id": "e_21939",
+    "from": "t_azuma_hoeffding_technique",
+    "to": "s_talagrand_concentration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_talagrand_concentration"
+  },
+  {
+    "id": "e_21940",
+    "from": "t_chernoff_bound_technique",
+    "to": "s_hoeffding_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hoeffding_inequality"
+  },
+  {
+    "id": "e_21941",
+    "from": "s_independent_bounded_random_variables",
+    "to": "t_chernoff_bound_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hoeffding_inequality"
+  }
+]
