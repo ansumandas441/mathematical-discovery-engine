@@ -287,6 +287,19 @@
         "axiom": 16,
         "state": 3
       }
+    },
+    "jukna_extremal_combinatorics": {
+      "date": "2026-06-01",
+      "source": "Jukna — Extremal Combinatorics (Springer, 2nd ed.)",
+      "new_node_count": 69,
+      "new_edge_count": 101,
+      "node_breakdown": {
+        "axiom": 18,
+        "state": 11,
+        "theorem": 25,
+        "technique": 15
+      },
+      "notes": "Skipped s_turan_graph (s_turan_graph_tnr already exists)"
     }
   },
   "nodes": [
@@ -104638,6 +104651,489 @@
       "name": "Upper uniformity condition",
       "type_signature": "Graph -> Bool",
       "description": "A no-dense-spots condition requiring that no subgraph is significantly denser than the ambient density p, needed for sparse regularity to be meaningful."
+    },
+    {
+      "id": "s_k_uniform_set_system",
+      "kind": "axiom",
+      "name": "k-uniform set system (k-graph)",
+      "type_signature": "",
+      "description": "A family F ⊆ ([n] choose k) where every member has exactly k elements; the combinatorial analogue of a k-uniform hypergraph."
+    },
+    {
+      "id": "s_chain_in_poset",
+      "kind": "axiom",
+      "name": "Chain in a poset",
+      "type_signature": "",
+      "description": "A totally ordered subset of a partially ordered set; in 2^[n], a sequence ∅ ⊂ A₁ ⊂ A₂ ⊂ ··· ⊂ [n]."
+    },
+    {
+      "id": "s_shattering_trace",
+      "kind": "axiom",
+      "name": "Shattering",
+      "type_signature": "",
+      "description": "A set system F shatters S ⊆ X if the trace F|_S = {A ∩ S : A ∈ F} equals 2^S, realizing all 2^|S| subsets."
+    },
+    {
+      "id": "s_trace_of_set_system",
+      "kind": "axiom",
+      "name": "Trace of a set system",
+      "type_signature": "",
+      "description": "For F ⊆ 2^X and S ⊆ X, the trace F|_S = {A ∩ S : A ∈ F}, the projection of F onto the coordinate set S."
+    },
+    {
+      "id": "s_covering_number_tau",
+      "kind": "axiom",
+      "name": "Covering number (τ)",
+      "type_signature": "",
+      "description": "The minimum size of a set T ⊆ X such that T ∩ A ≠ ∅ for all A ∈ F; the transversal number of the hypergraph."
+    },
+    {
+      "id": "s_packing_number_matching",
+      "kind": "axiom",
+      "name": "Packing number (matching number)",
+      "type_signature": "",
+      "description": "The maximum number of pairwise disjoint sets in a family F; the matching number ν(F) of the hypergraph."
+    },
+    {
+      "id": "s_epsilon_net_def",
+      "kind": "axiom",
+      "name": "Epsilon-net",
+      "type_signature": "",
+      "description": "For a set system (X, F) and probability measure μ on X, a subset N ⊆ X is an ε-net if N ∩ A ≠ ∅ for every A ∈ F with μ(A) ≥ ε."
+    },
+    {
+      "id": "s_boolean_function_def",
+      "kind": "axiom",
+      "name": "Boolean function",
+      "type_signature": "{0,1}^n → {0,1}",
+      "description": "A function f: {0,1}^n → {0,1}; the fundamental object of study in combinatorial complexity and analysis of Boolean functions."
+    },
+    {
+      "id": "s_sensitivity_boolean",
+      "kind": "axiom",
+      "name": "Sensitivity of a Boolean function",
+      "type_signature": "",
+      "description": "The sensitivity s(f) = max_x |{i : f(x) ≠ f(x ⊕ eᵢ)}|, the maximum number of sensitive coordinates over all inputs."
+    },
+    {
+      "id": "s_block_sensitivity",
+      "kind": "axiom",
+      "name": "Block sensitivity",
+      "type_signature": "",
+      "description": "bs(f) = max_x max over disjoint blocks B₁,...,Bₖ with f(x) ≠ f(x ⊕ Bⱼ) for all j; always satisfies bs(f) ≥ s(f)."
+    },
+    {
+      "id": "s_certificate_complexity",
+      "kind": "axiom",
+      "name": "Certificate complexity",
+      "type_signature": "",
+      "description": "C(f,x) = min{|S| : S ⊆ [n], for all y with y|_S = x|_S we have f(y) = f(x)}, the minimum bits certifying the output on input x."
+    },
+    {
+      "id": "s_decision_tree_complexity",
+      "kind": "axiom",
+      "name": "Decision tree complexity",
+      "type_signature": "",
+      "description": "D(f) = minimum depth of a decision tree computing f; the worst-case number of variable queries needed to evaluate f."
+    },
+    {
+      "id": "s_influence_of_variable",
+      "kind": "axiom",
+      "name": "Influence of a variable",
+      "type_signature": "",
+      "description": "Inf_i(f) = Pr[f(x) ≠ f(x ⊕ eᵢ)] where x is uniform on {0,1}^n; the probability that the i-th variable is pivotal."
+    },
+    {
+      "id": "s_total_influence",
+      "kind": "axiom",
+      "name": "Total influence",
+      "type_signature": "",
+      "description": "I(f) = ∑ᵢ Inf_i(f), the sum of all variable influences; equals the average sensitivity and the edge-boundary measure on the Boolean cube."
+    },
+    {
+      "id": "s_error_correcting_code",
+      "kind": "axiom",
+      "name": "Error-correcting code",
+      "type_signature": "",
+      "description": "A subset C ⊆ F_q^n with minimum Hamming distance d(C) = min{d(x,y) : x ≠ y ∈ C}; an [n,k,d]-code if |C| = q^k."
+    },
+    {
+      "id": "s_partition_regularity",
+      "kind": "axiom",
+      "name": "Partition regularity",
+      "type_signature": "",
+      "description": "A system of equations Ax = 0 is partition regular if for every finite coloring of ℕ there exists a monochromatic solution; characterized by Rado's theorem."
+    },
+    {
+      "id": "s_noise_sensitivity",
+      "kind": "axiom",
+      "name": "Noise sensitivity",
+      "type_signature": "",
+      "description": "A Boolean function f is noise sensitive if Corr(f(x), f(x_ε)) → 0 as n → ∞ where x_ε flips each bit of x independently with probability ε."
+    },
+    {
+      "id": "s_monotone_boolean_function",
+      "kind": "axiom",
+      "name": "Monotone Boolean function",
+      "type_signature": "",
+      "description": "A Boolean function f with f(x) ≤ f(y) whenever x ≤ y componentwise; computable by a circuit with only AND and OR gates."
+    },
+    {
+      "id": "s_turan_density",
+      "kind": "state",
+      "name": "Turán density π(F)",
+      "type_signature": "",
+      "description": "For a forbidden k-uniform hypergraph F, π(F) = lim_{n→∞} ex_k(n,F)/(n choose k), the asymptotic extremal density."
+    },
+    {
+      "id": "s_extremal_number_set_system",
+      "kind": "state",
+      "name": "Extremal number for set systems",
+      "type_signature": "",
+      "description": "The maximum |G| over k-uniform families G on [n] containing no copy of the forbidden configuration F; the hypergraph Turán number ex_k(n,F)."
+    },
+    {
+      "id": "s_hypergraph_ramsey_number",
+      "kind": "state",
+      "name": "Hypergraph Ramsey number",
+      "type_signature": "",
+      "description": "R_k(s,t) = min N such that every 2-coloring of ([N] choose k) contains a monochromatic s-set or t-set; grows as a tower of height k−1."
+    },
+    {
+      "id": "s_van_der_waerden_number",
+      "kind": "state",
+      "name": "Van der Waerden number W(k,r)",
+      "type_signature": "",
+      "description": "The minimum N such that every r-coloring of [N] contains a monochromatic k-term arithmetic progression."
+    },
+    {
+      "id": "s_hales_jewett_number",
+      "kind": "state",
+      "name": "Hales-Jewett number HJ(k,r)",
+      "type_signature": "",
+      "description": "The minimum n such that every r-coloring of [k]^n contains a monochromatic combinatorial line."
+    },
+    {
+      "id": "s_dual_set_system",
+      "kind": "state",
+      "name": "Dual set system",
+      "type_signature": "",
+      "description": "For F ⊆ 2^[n], the dual F* has ground set F and sets {A ∈ F : i ∈ A} for each i ∈ [n]; transposes the incidence matrix."
+    },
+    {
+      "id": "s_growth_function_shatter",
+      "kind": "state",
+      "name": "Growth function (shatter function)",
+      "type_signature": "",
+      "description": "π_F(m) = max_{|S|=m} |F|_S|, the maximum trace size on m-element sets; bounded by Φ_d(m) = ∑_{i≤d} (m choose i) when VC-dim(F) = d."
+    },
+    {
+      "id": "s_nisan_wigderson",
+      "kind": "state",
+      "name": "Nisan-Wigderson design",
+      "type_signature": "",
+      "description": "A combinatorial design yielding pseudorandom generators: a family of sets with bounded pairwise intersections used for hardness-based derandomization."
+    },
+    {
+      "id": "s_symmetric_chain_decomposition",
+      "kind": "state",
+      "name": "Symmetric chain decomposition of 2^[n]",
+      "type_signature": "",
+      "description": "A partition of the Boolean lattice 2^[n] into (n choose ⌊n/2⌋) symmetric chains, each a maximal chain symmetric about level n/2."
+    },
+    {
+      "id": "s_normalized_matching_property",
+      "kind": "state",
+      "name": "Normalized matching property",
+      "type_signature": "",
+      "description": "A graded poset satisfies the normalized matching property if for consecutive levels, the ratio of up-degree to level size is non-increasing; implies the LYM inequality."
+    },
+    {
+      "id": "s_turan_forbidden_trace",
+      "kind": "state",
+      "name": "Turán problem for forbidden traces",
+      "type_signature": "",
+      "description": "The problem of bounding the maximum size of F ⊆ 2^[n] whose trace on every m-set avoids a forbidden configuration; connects VC dimension to forbidden subconfigurations."
+    },
+    {
+      "id": "s_hilton_milner",
+      "kind": "theorem",
+      "name": "Hilton-Milner theorem",
+      "type_signature": "",
+      "description": "If n ≥ 2k and F ⊆ ([n] choose k) is intersecting but not a principal family, then |F| ≤ (n-1 choose k-1) − (n-k-1 choose k-1) + 1."
+    },
+    {
+      "id": "s_frankl_t_intersecting",
+      "kind": "theorem",
+      "name": "Frankl's theorem on t-intersecting families",
+      "type_signature": "",
+      "description": "For n sufficiently large relative to k and t, if F ⊆ ([n] choose k) is t-intersecting, then |F| ≤ (n-t choose k-t)."
+    },
+    {
+      "id": "s_lovasz_kruskal_katona",
+      "kind": "theorem",
+      "name": "Lovász continuous Kruskal-Katona theorem",
+      "type_signature": "",
+      "description": "If |F| = (x choose k) for real x ≥ k, then |∂F| ≥ (x choose k−1); a continuous extension of the Kruskal-Katona shadow bound."
+    },
+    {
+      "id": "s_ramsey_theorem_hypergraph",
+      "kind": "theorem",
+      "name": "Ramsey's theorem (hypergraph version)",
+      "type_signature": "",
+      "description": "For all k, r, s there exists N such that every r-coloring of ([N] choose k) contains a monochromatic s-element set; numbers grow as towers of height k."
+    },
+    {
+      "id": "s_rado_partition_regularity",
+      "kind": "theorem",
+      "name": "Rado's theorem (partition regularity)",
+      "type_signature": "",
+      "description": "A system Ax = 0 is partition regular over ℕ if and only if the columns of A satisfy the columns condition, a nested divisibility condition on column sums."
+    },
+    {
+      "id": "s_pajor_lemma",
+      "kind": "theorem",
+      "name": "Pajor's lemma",
+      "type_signature": "",
+      "description": "For a down-closed family F ⊆ 2^[n], the number of subsets shattered by F equals |F|; relates the trace structure to family size."
+    },
+    {
+      "id": "s_haussler_packing",
+      "kind": "theorem",
+      "name": "Haussler packing lemma",
+      "type_signature": "",
+      "description": "For a set system of VC dimension d, the maximum number of ε-separated sets (packing number) is O((1/ε)^d)."
+    },
+    {
+      "id": "s_epsilon_net_theorem",
+      "kind": "theorem",
+      "name": "Epsilon-net theorem (Haussler-Welzl)",
+      "type_signature": "",
+      "description": "For a set system of VC dimension d and any probability measure, there exists an ε-net of size O((d/ε) log(1/ε))."
+    },
+    {
+      "id": "s_fractional_helly",
+      "kind": "theorem",
+      "name": "Fractional Helly theorem",
+      "type_signature": "",
+      "description": "If among all (d+1)-tuples of n convex sets in ℝ^d at least α-fraction intersect, then some point lies in at least β(α,d)·n of the sets."
+    },
+    {
+      "id": "s_colorful_helly",
+      "kind": "theorem",
+      "name": "Colorful Helly theorem (Bárány)",
+      "type_signature": "",
+      "description": "Given d+1 families of convex sets in ℝ^d each with nonempty common intersection, if every colorful (d+1)-tuple intersects, then one family has a common point."
+    },
+    {
+      "id": "s_p_q_theorem",
+      "kind": "theorem",
+      "name": "(p,q)-theorem (Alon-Kleitman)",
+      "type_signature": "",
+      "description": "For p ≥ q ≥ d+1, there exists c(p,q,d) such that if among every p convex sets in ℝ^d some q intersect, then c points pierce all sets."
+    },
+    {
+      "id": "s_ray_chaudhuri_wilson",
+      "kind": "theorem",
+      "name": "Ray-Chaudhuri-Wilson theorem",
+      "type_signature": "",
+      "description": "If F ⊆ 2^[n] and |A ∩ B| takes at most s distinct values for A ≠ B ∈ F, then |F| ≤ (n choose s)."
+    },
+    {
+      "id": "s_oddtown_theorem",
+      "kind": "theorem",
+      "name": "Oddtown theorem",
+      "type_signature": "",
+      "description": "If F ⊆ 2^[n] with |A| odd for all A ∈ F and |A ∩ B| even for all distinct A, B ∈ F, then |F| ≤ n."
+    },
+    {
+      "id": "s_two_distance_sets",
+      "kind": "theorem",
+      "name": "Two-distance sets theorem",
+      "type_signature": "",
+      "description": "The maximum number of points in ℝ^d with only two distinct pairwise distances is at most (d+2 choose 2)."
+    },
+    {
+      "id": "s_combinatorial_nullstellensatz",
+      "kind": "theorem",
+      "name": "Combinatorial Nullstellensatz (Alon)",
+      "type_signature": "",
+      "description": "If f ∈ F[x₁,...,xₙ] has degree ∑tᵢ and the coefficient of ∏xᵢ^{tᵢ} is nonzero, then for sets Sᵢ with |Sᵢ| > tᵢ there exists a ∈ ∏Sᵢ with f(a) ≠ 0."
+    },
+    {
+      "id": "s_johnson_bound",
+      "kind": "theorem",
+      "name": "Johnson bound",
+      "type_signature": "",
+      "description": "An upper bound on code size refining the Hamming bound by bounding the list-decodability radius as a function of code parameters."
+    },
+    {
+      "id": "s_kkl_theorem",
+      "kind": "theorem",
+      "name": "KKL theorem (Kahn-Kalai-Linial)",
+      "type_signature": "",
+      "description": "For any Boolean function f with Pr[f=1] = p ∈ (0,1), there exists a variable i with Inf_i(f) ≥ Ω(p(1−p) log n / n)."
+    },
+    {
+      "id": "s_friedgut_sharp_thresholds",
+      "kind": "theorem",
+      "name": "Friedgut's theorem on sharp thresholds",
+      "type_signature": "",
+      "description": "A monotone Boolean function with bounded total influence and transitive symmetry exhibits a sharp threshold: transition from Pr[f=1] ≈ 0 to ≈ 1 in an interval of width O(1/log n)."
+    },
+    {
+      "id": "s_bollobas_two_families_general",
+      "kind": "theorem",
+      "name": "Bollobás two-families theorem (generalized)",
+      "type_signature": "",
+      "description": "If (Aᵢ,Bᵢ) are set pairs with |Aᵢ|=aᵢ, |Bᵢ|=bᵢ, and Aᵢ ∩ Bⱼ = ∅ iff i=j, then ∑ 1/(aᵢ+bᵢ choose aᵢ) ≤ 1."
+    },
+    {
+      "id": "s_katona_intersection",
+      "kind": "theorem",
+      "name": "Katona's intersection theorem",
+      "type_signature": "",
+      "description": "For an intersecting family F ⊆ 2^[n] (not necessarily uniform), |F| ≤ 2^{n−1}; the non-uniform generalization of Erdős-Ko-Rado."
+    },
+    {
+      "id": "s_bondy_theorem_traces",
+      "kind": "theorem",
+      "name": "Bondy's theorem on traces",
+      "type_signature": "",
+      "description": "If |F| > Φ_{d−1}(n) = ∑_{i<d} (n choose i) then F shatters some d-element set; a converse to the Sauer-Shelah lemma."
+    },
+    {
+      "id": "s_alon_babai_suzuki",
+      "kind": "theorem",
+      "name": "Alon-Babai-Suzuki theorem",
+      "type_signature": "",
+      "description": "If F ⊆ ([n] choose k) with k ≡ 0 mod p and |Aᵢ ∩ Aⱼ| mod p ∈ L for i ≠ j where 0 ∉ L and |L| = s, then |F| ≤ (n choose s)."
+    },
+    {
+      "id": "s_elias_bassalygo",
+      "kind": "theorem",
+      "name": "Elias-Bassalygo bound",
+      "type_signature": "",
+      "description": "An upper bound on code rate: R ≤ 1 − H_q(J_q(δ)) where J_q is the Johnson radius, improving the Hamming bound for certain distance ranges."
+    },
+    {
+      "id": "s_threshold_phenomenon",
+      "kind": "theorem",
+      "name": "Threshold phenomenon for monotone properties",
+      "type_signature": "",
+      "description": "Every monotone increasing graph property has a threshold p_c such that Pr_{G(n,p)}[property holds] transitions sharply from 0 to 1 as p crosses p_c."
+    },
+    {
+      "id": "s_sunflower_conjecture",
+      "kind": "theorem",
+      "name": "Improved sunflower lemma (Alweiss-Lovett-Wu-Zhang)",
+      "type_signature": "",
+      "description": "A family of more than (C·log s)^s sets of size s contains a sunflower with 3 petals, exponentially improving the Erdős-Ko (p−1)^s·s! bound."
+    },
+    {
+      "id": "t_compression_shifting",
+      "kind": "technique",
+      "name": "Compression / shifting",
+      "function_signature": "(Set family F, ordering on ground set) → (Left-compressed family F' with |F'|=|F| and extremal properties preserved)",
+      "description": "Replacing A by (A\\{j})∪{i} for i<j when the result is absent; pushes families toward extremal configurations while preserving size and intersection properties."
+    },
+    {
+      "id": "t_sunflower_extraction",
+      "kind": "technique",
+      "name": "Sunflower extraction (greedy peeling)",
+      "function_signature": "(Family F of bounded-size sets) → (Sunflower with prescribed petal count)",
+      "description": "Iteratively selecting and removing sets to extract a sunflower; the greedy argument underlying the sunflower lemma proof."
+    },
+    {
+      "id": "t_dimension_argument",
+      "kind": "technique",
+      "name": "Dimension argument (linear algebra bound)",
+      "function_signature": "(Family of combinatorial objects) → (Upper bound via vector space dimension)",
+      "description": "Associating vectors to combinatorial objects and bounding family size by the dimension of the ambient vector space; if vectors are independent in F^n, the family has ≤ n elements."
+    },
+    {
+      "id": "t_lexicographic_cascading",
+      "kind": "technique",
+      "name": "Cascading representation",
+      "function_signature": "(Integer m, parameter k) → (Unique binomial representation m = (a_k choose k) + (a_{k−1} choose k−1) + ···)",
+      "description": "Decomposing integers via binomial coefficients in the cascading (falling factorial) representation; used to state and prove the Kruskal-Katona theorem."
+    },
+    {
+      "id": "t_weight_function_method",
+      "kind": "technique",
+      "name": "Weight function method",
+      "function_signature": "(Antichain or family F) → (Bound on |F| via weight sum ≤ 1)",
+      "description": "Assigning weights to sets (e.g., 1/(n choose |A|) in LYM) and showing the total weight is at most 1 to derive bounds on family size."
+    },
+    {
+      "id": "t_product_tensor_argument",
+      "kind": "technique",
+      "name": "Product / tensor argument",
+      "function_signature": "(Combinatorial structure, dimension parameter n) → (Pattern forced in high-dimensional product)",
+      "description": "Taking Cartesian products or tensor powers of structures to force patterns; used in Hales-Jewett and density arguments where product structure guarantees substructures."
+    },
+    {
+      "id": "t_stepping_up_ramsey",
+      "kind": "technique",
+      "name": "Stepping-up technique",
+      "function_signature": "(k-uniform Ramsey lower bound) → ((k+1)-uniform Ramsey lower bound via tower growth)",
+      "description": "A recursive construction lifting Ramsey lower bounds from k-uniform to (k+1)-uniform hypergraphs by encoding colorings via orderings; produces tower-type growth."
+    },
+    {
+      "id": "t_derandomization",
+      "kind": "technique",
+      "name": "Derandomization via conditional expectations",
+      "function_signature": "(Probabilistic existence proof) → (Deterministic construction)",
+      "description": "Converting a probabilistic existence proof into a deterministic construction by iteratively fixing random choices to maintain or improve the expected value."
+    },
+    {
+      "id": "t_fourier_analysis_boolean",
+      "kind": "technique",
+      "name": "Fourier analysis on the Boolean cube",
+      "function_signature": "(Boolean function f: {0,1}^n → ℝ) → (Fourier expansion f = ∑_S f̂(S)χ_S with spectral analysis)",
+      "description": "Expanding functions on {0,1}^n in the Walsh-Fourier basis to analyze influence, noise sensitivity, and threshold phenomena via spectral properties."
+    },
+    {
+      "id": "t_chain_partition",
+      "kind": "technique",
+      "name": "Chain partition technique",
+      "function_signature": "(Poset P) → (Partition into chains witnessing Dilworth's theorem)",
+      "description": "Constructing chain decompositions of posets via matching, flow, or greedy algorithms; the constructive dual of antichain bounds."
+    },
+    {
+      "id": "t_multilinear_extension",
+      "kind": "technique",
+      "name": "Multilinear polynomial representation",
+      "function_signature": "(Set system F ⊆ 2^[n]) → (Multilinear polynomials encoding membership)",
+      "description": "Representing sets as multilinear polynomials over a field and using polynomial degree/independence to bound family size; key to the linear algebra method."
+    },
+    {
+      "id": "t_algebraic_rank_argument",
+      "kind": "technique",
+      "name": "Algebraic rank argument",
+      "function_signature": "(Family of sets with intersection constraints) → (Rank bound on incidence matrix)",
+      "description": "Constructing a matrix whose rows correspond to sets, showing full rank to bound family size; proves Oddtown, Fisher's inequality, and Frankl-Wilson."
+    },
+    {
+      "id": "t_turan_extremal_method",
+      "kind": "technique",
+      "name": "Turán-type extremal method",
+      "function_signature": "(Forbidden substructure F, host structure on n elements) → (Maximum size of F-free family)",
+      "description": "Determining the maximum size of a structure avoiding a forbidden substructure by analyzing the extremal configuration; generalizes from graphs to hypergraphs and set systems."
+    },
+    {
+      "id": "t_amalgamation",
+      "kind": "technique",
+      "name": "Amalgamation technique",
+      "function_signature": "(Collection of certified local structures) → (Global structure with combined properties)",
+      "description": "Combining Ramsey-type and density-type arguments by gluing smaller certified pieces while maintaining global properties."
+    },
+    {
+      "id": "t_inclusion_exclusion",
+      "kind": "technique",
+      "name": "Inclusion-exclusion as counting technique",
+      "function_signature": "(Overlapping sets A₁,...,Aₙ) → (|A₁ ∪ ··· ∪ Aₙ| via alternating signed intersection sums)",
+      "description": "Computing union sizes via alternating sums of intersection sizes; used in sieve methods, derangement counting, and chromatic polynomial computations."
     }
   ],
   "edges": [
@@ -293886,6 +294382,816 @@
       "role": "input",
       "parameter_binding": {},
       "used_in_theorem": "s_hoeffding_inequality"
+    },
+    {
+      "id": "e_21942",
+      "from": "t_compression_shifting",
+      "to": "s_erdos_ko_rado",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_erdos_ko_rado"
+    },
+    {
+      "id": "e_21943",
+      "from": "t_compression_shifting",
+      "to": "s_kruskal_katona_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kruskal_katona_theorem"
+    },
+    {
+      "id": "e_21944",
+      "from": "t_compression_shifting",
+      "to": "s_hilton_milner",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hilton_milner"
+    },
+    {
+      "id": "e_21945",
+      "from": "t_compression_shifting",
+      "to": "s_frankl_t_intersecting",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_frankl_t_intersecting"
+    },
+    {
+      "id": "e_21946",
+      "from": "t_compression_shifting",
+      "to": "s_pajor_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pajor_lemma"
+    },
+    {
+      "id": "e_21947",
+      "from": "t_compression_shifting",
+      "to": "s_bondy_theorem_traces",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bondy_theorem_traces"
+    },
+    {
+      "id": "e_21948",
+      "from": "t_compression_shifting",
+      "to": "s_katona_intersection",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_katona_intersection"
+    },
+    {
+      "id": "e_21949",
+      "from": "t_sunflower_extraction",
+      "to": "s_sunflower_lemma_erdsko",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sunflower_lemma_erdsko"
+    },
+    {
+      "id": "e_21950",
+      "from": "t_sunflower_extraction",
+      "to": "s_sunflower_conjecture",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sunflower_conjecture"
+    },
+    {
+      "id": "e_21951",
+      "from": "t_dimension_argument",
+      "to": "s_oddtown_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_oddtown_theorem"
+    },
+    {
+      "id": "e_21952",
+      "from": "t_dimension_argument",
+      "to": "s_fisher_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fisher_inequality"
+    },
+    {
+      "id": "e_21953",
+      "from": "t_dimension_argument",
+      "to": "s_ray_chaudhuri_wilson",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ray_chaudhuri_wilson"
+    },
+    {
+      "id": "e_21954",
+      "from": "t_dimension_argument",
+      "to": "s_two_distance_sets",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_two_distance_sets"
+    },
+    {
+      "id": "e_21955",
+      "from": "t_dimension_argument",
+      "to": "s_colorful_helly",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_colorful_helly"
+    },
+    {
+      "id": "e_21956",
+      "from": "t_algebraic_rank_argument",
+      "to": "s_frankl_wilson_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_frankl_wilson_theorem"
+    },
+    {
+      "id": "e_21957",
+      "from": "t_algebraic_rank_argument",
+      "to": "s_oddtown_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_oddtown_theorem"
+    },
+    {
+      "id": "e_21958",
+      "from": "t_algebraic_rank_argument",
+      "to": "s_bollobas_set_pair_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bollobas_set_pair_inequality"
+    },
+    {
+      "id": "e_21959",
+      "from": "t_algebraic_rank_argument",
+      "to": "s_bollobas_two_families_general",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bollobas_two_families_general"
+    },
+    {
+      "id": "e_21960",
+      "from": "t_algebraic_rank_argument",
+      "to": "s_rado_partition_regularity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_rado_partition_regularity"
+    },
+    {
+      "id": "e_21961",
+      "from": "t_lexicographic_cascading",
+      "to": "s_kruskal_katona_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kruskal_katona_theorem"
+    },
+    {
+      "id": "e_21962",
+      "from": "t_lexicographic_cascading",
+      "to": "s_lovasz_kruskal_katona",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lovasz_kruskal_katona"
+    },
+    {
+      "id": "e_21963",
+      "from": "t_weight_function_method",
+      "to": "s_lym_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lym_inequality"
+    },
+    {
+      "id": "e_21964",
+      "from": "t_weight_function_method",
+      "to": "s_sperner_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sperner_theorem"
+    },
+    {
+      "id": "e_21965",
+      "from": "t_weight_function_method",
+      "to": "s_normalized_matching_property",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_normalized_matching_property"
+    },
+    {
+      "id": "e_21966",
+      "from": "t_chain_partition",
+      "to": "s_dilworth_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dilworth_theorem"
+    },
+    {
+      "id": "e_21967",
+      "from": "t_chain_partition",
+      "to": "s_symmetric_chain_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_symmetric_chain_decomposition"
+    },
+    {
+      "id": "e_21968",
+      "from": "t_product_tensor_argument",
+      "to": "s_hales_jewett",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hales_jewett"
+    },
+    {
+      "id": "e_21969",
+      "from": "t_product_tensor_argument",
+      "to": "s_density_hales_jewett",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_density_hales_jewett"
+    },
+    {
+      "id": "e_21970",
+      "from": "t_product_tensor_argument",
+      "to": "s_van_der_waerden_number",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_van_der_waerden"
+    },
+    {
+      "id": "e_21971",
+      "from": "t_product_tensor_argument",
+      "to": "s_hales_jewett_number",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hales_jewett"
+    },
+    {
+      "id": "e_21972",
+      "from": "t_stepping_up_ramsey",
+      "to": "s_stepping_up_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stepping_up_lemma"
+    },
+    {
+      "id": "e_21973",
+      "from": "t_stepping_up_ramsey",
+      "to": "s_hypergraph_ramsey_number",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramsey_theorem_hypergraph"
+    },
+    {
+      "id": "e_21974",
+      "from": "t_stepping_up_ramsey",
+      "to": "s_ramsey_theorem_hypergraph",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramsey_theorem_hypergraph"
+    },
+    {
+      "id": "e_21975",
+      "from": "t_fourier_analysis_boolean",
+      "to": "s_kkl_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kkl_theorem"
+    },
+    {
+      "id": "e_21976",
+      "from": "t_fourier_analysis_boolean",
+      "to": "s_friedgut_sharp_thresholds",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_friedgut_sharp_thresholds"
+    },
+    {
+      "id": "e_21977",
+      "from": "t_fourier_analysis_boolean",
+      "to": "s_threshold_phenomenon",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_threshold_phenomenon"
+    },
+    {
+      "id": "e_21978",
+      "from": "t_turan_extremal_method",
+      "to": "s_turan_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_turan_theorem"
+    },
+    {
+      "id": "e_21979",
+      "from": "t_turan_extremal_method",
+      "to": "s_turan_density",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_21980",
+      "from": "t_turan_extremal_method",
+      "to": "s_extremal_number_set_system",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_21981",
+      "from": "t_turan_extremal_method",
+      "to": "s_p_q_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_p_q_theorem"
+    },
+    {
+      "id": "e_21982",
+      "from": "t_turan_extremal_method",
+      "to": "s_turan_forbidden_trace",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_21983",
+      "from": "t_derandomization",
+      "to": "s_lovasz_local_lemma",
+      "role": "output",
+      "parameter_binding": {
+        "note": "constructive LLL applications"
+      },
+      "used_in_theorem": "s_lovasz_local_lemma"
+    },
+    {
+      "id": "e_21984",
+      "from": "t_multilinear_extension",
+      "to": "s_combinatorial_nullstellensatz",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_combinatorial_nullstellensatz"
+    },
+    {
+      "id": "e_21985",
+      "from": "t_amalgamation",
+      "to": "s_ramsey_theorem_finite",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramsey_theorem_finite"
+    },
+    {
+      "id": "e_21986",
+      "from": "t_inclusion_exclusion",
+      "to": "s_principle_of_inclusion_exclusion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_principle_of_inclusion_exclusion"
+    },
+    {
+      "id": "e_21987",
+      "from": "t_polynomial_method",
+      "to": "s_combinatorial_nullstellensatz",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_combinatorial_nullstellensatz"
+    },
+    {
+      "id": "e_21988",
+      "from": "t_polynomial_method",
+      "to": "s_chevalley_warning_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chevalley_warning_theorem"
+    },
+    {
+      "id": "e_21989",
+      "from": "t_polynomial_method",
+      "to": "s_alon_babai_suzuki",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_alon_babai_suzuki"
+    },
+    {
+      "id": "e_21990",
+      "from": "t_probabilistic_method",
+      "to": "s_epsilon_net_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_epsilon_net_theorem"
+    },
+    {
+      "id": "e_21991",
+      "from": "t_probabilistic_method",
+      "to": "s_gilbert_varshamov_bound",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gilbert_varshamov_bound"
+    },
+    {
+      "id": "e_21992",
+      "from": "t_double_counting_technique",
+      "to": "s_fractional_helly",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fractional_helly"
+    },
+    {
+      "id": "e_21993",
+      "from": "t_double_counting_technique",
+      "to": "s_haussler_packing",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_haussler_packing"
+    },
+    {
+      "id": "e_21994",
+      "from": "t_double_counting_technique",
+      "to": "s_johnson_bound",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_johnson_bound"
+    },
+    {
+      "id": "e_21995",
+      "from": "t_double_counting_technique",
+      "to": "s_elias_bassalygo",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_elias_bassalygo"
+    },
+    {
+      "id": "e_21996",
+      "from": "s_k_uniform_set_system",
+      "to": "t_compression_shifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_21997",
+      "from": "s_intersecting_family_property",
+      "to": "t_compression_shifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_erdos_ko_rado"
+    },
+    {
+      "id": "e_21998",
+      "from": "s_t_intersecting_family_property",
+      "to": "t_compression_shifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_frankl_t_intersecting"
+    },
+    {
+      "id": "e_21999",
+      "from": "s_trace_of_set_system",
+      "to": "t_compression_shifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22000",
+      "from": "s_sauer_shelah_lemma",
+      "to": "t_compression_shifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bondy_theorem_traces"
+    },
+    {
+      "id": "e_22001",
+      "from": "s_set_system_on_n_points",
+      "to": "t_sunflower_extraction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sunflower_lemma_erdsko"
+    },
+    {
+      "id": "e_22002",
+      "from": "s_sunflower_system",
+      "to": "t_sunflower_extraction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sunflower_lemma_erdsko"
+    },
+    {
+      "id": "e_22003",
+      "from": "s_vc_dimension_definition",
+      "to": "t_dimension_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22004",
+      "from": "s_boolean_function_def",
+      "to": "t_fourier_analysis_boolean",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22005",
+      "from": "s_influence_of_variable",
+      "to": "t_fourier_analysis_boolean",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kkl_theorem"
+    },
+    {
+      "id": "e_22006",
+      "from": "s_total_influence",
+      "to": "t_fourier_analysis_boolean",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_friedgut_sharp_thresholds"
+    },
+    {
+      "id": "e_22007",
+      "from": "s_monotone_boolean_function",
+      "to": "t_fourier_analysis_boolean",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_threshold_phenomenon"
+    },
+    {
+      "id": "e_22008",
+      "from": "s_noise_sensitivity",
+      "to": "t_fourier_analysis_boolean",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22009",
+      "from": "s_sensitivity_boolean",
+      "to": "t_fourier_analysis_boolean",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22010",
+      "from": "s_block_sensitivity",
+      "to": "t_fourier_analysis_boolean",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22011",
+      "from": "s_partition_regularity",
+      "to": "t_product_tensor_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_rado_partition_regularity"
+    },
+    {
+      "id": "e_22012",
+      "from": "s_hales_jewett",
+      "to": "t_product_tensor_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hales_jewett"
+    },
+    {
+      "id": "e_22013",
+      "from": "s_van_der_waerden",
+      "to": "t_product_tensor_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_van_der_waerden"
+    },
+    {
+      "id": "e_22014",
+      "from": "s_ramsey_theorem_finite",
+      "to": "t_stepping_up_ramsey",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ramsey_theorem_hypergraph"
+    },
+    {
+      "id": "e_22015",
+      "from": "s_chain_in_poset",
+      "to": "t_chain_partition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22016",
+      "from": "s_partition_regularity",
+      "to": "t_algebraic_rank_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_rado_partition_regularity"
+    },
+    {
+      "id": "e_22017",
+      "from": "s_helly_theorem",
+      "to": "t_turan_extremal_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_p_q_theorem"
+    },
+    {
+      "id": "e_22018",
+      "from": "s_k_uniform_set_system",
+      "to": "t_turan_extremal_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22019",
+      "from": "s_vc_dimension_definition",
+      "to": "t_probabilistic_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_epsilon_net_theorem"
+    },
+    {
+      "id": "e_22020",
+      "from": "s_epsilon_net_def",
+      "to": "t_probabilistic_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_epsilon_net_theorem"
+    },
+    {
+      "id": "e_22021",
+      "from": "s_sauer_shelah_lemma",
+      "to": "t_probabilistic_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_epsilon_net_theorem"
+    },
+    {
+      "id": "e_22022",
+      "from": "s_error_correcting_code",
+      "to": "t_probabilistic_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gilbert_varshamov_bound"
+    },
+    {
+      "id": "e_22023",
+      "from": "s_helly_theorem",
+      "to": "t_double_counting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fractional_helly"
+    },
+    {
+      "id": "e_22024",
+      "from": "s_vc_dimension_definition",
+      "to": "t_double_counting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_haussler_packing"
+    },
+    {
+      "id": "e_22025",
+      "from": "s_error_correcting_code",
+      "to": "t_double_counting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_johnson_bound"
+    },
+    {
+      "id": "e_22026",
+      "from": "s_k_uniform_set_system",
+      "to": "t_polynomial_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_alon_babai_suzuki"
+    },
+    {
+      "id": "e_22027",
+      "from": "s_set_system_on_n_points",
+      "to": "t_multilinear_extension",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22028",
+      "from": "s_chain_in_poset",
+      "to": "t_weight_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lym_inequality"
+    },
+    {
+      "id": "e_22029",
+      "from": "s_k_uniform_set_system",
+      "to": "t_lexicographic_cascading",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kruskal_katona_theorem"
+    },
+    {
+      "id": "e_22030",
+      "from": "s_lovasz_local_lemma",
+      "to": "t_derandomization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22031",
+      "from": "s_error_correcting_code",
+      "to": "t_alteration_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22032",
+      "from": "s_covering_number_tau",
+      "to": "t_double_counting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22033",
+      "from": "s_packing_number_matching",
+      "to": "t_double_counting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22034",
+      "from": "s_dual_set_system",
+      "to": "t_dimension_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22035",
+      "from": "t_compression_shifting",
+      "to": "s_growth_function_shatter",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sauer_shelah_lemma"
+    },
+    {
+      "id": "e_22036",
+      "from": "s_decision_tree_complexity",
+      "to": "t_fourier_analysis_boolean",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22037",
+      "from": "s_certificate_complexity",
+      "to": "t_fourier_analysis_boolean",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22038",
+      "from": "s_trace_of_set_system",
+      "to": "t_turan_extremal_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22039",
+      "from": "t_derandomization",
+      "to": "s_nisan_wigderson",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22040",
+      "from": "s_radon_theorem",
+      "to": "t_dimension_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_colorful_helly"
+    },
+    {
+      "id": "e_22041",
+      "from": "s_shattering_trace",
+      "to": "t_compression_shifting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sauer_shelah_lemma"
+    },
+    {
+      "id": "e_22042",
+      "from": "s_hamming_bound",
+      "to": "t_double_counting_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_elias_bassalygo"
     }
   ],
   "subgraphs": [
