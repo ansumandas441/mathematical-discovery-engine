@@ -105134,6 +105134,1562 @@
       "name": "Inclusion-exclusion as counting technique",
       "function_signature": "(Overlapping sets A₁,...,Aₙ) → (|A₁ ∪ ··· ∪ Aₙ| via alternating signed intersection sums)",
       "description": "Computing union sizes via alternating sums of intersection sizes; used in sieve methods, derangement counting, and chromatic polynomial computations."
+    },
+    {
+      "id": "s_difference_set",
+      "kind": "axiom",
+      "name": "Difference set A−B",
+      "type_signature": "𝒫(G) × 𝒫(G) → 𝒫(G)",
+      "description": "A−B = {a−b : a ∈ A, b ∈ B}; the set of all pairwise differences between elements of A and B in an abelian group."
+    },
+    {
+      "id": "s_iterated_sumset",
+      "kind": "axiom",
+      "name": "Iterated sumset kA",
+      "type_signature": "ℕ × 𝒫(G) → 𝒫(G)",
+      "description": "kA = A + A + ⋯ + A (k copies), the k-fold sumset; distinct from the dilation k·A = {ka : a ∈ A}."
+    },
+    {
+      "id": "s_doubling_constant",
+      "kind": "axiom",
+      "name": "Doubling constant σ(A)",
+      "type_signature": "𝒫_fin(G) → ℝ≥1",
+      "description": "σ(A) = |A+A|/|A|, measuring how far A is from being a subgroup or coset; σ(A) = 1 iff A is a coset of a finite subgroup."
+    },
+    {
+      "id": "s_ruzsa_distance",
+      "kind": "axiom",
+      "name": "Ruzsa distance d(A,B)",
+      "type_signature": "𝒫_fin(G) × 𝒫_fin(G) → ℝ≥0",
+      "description": "d(A,B) = log(|A−B|/√(|A||B|)), a pseudo-metric on finite subsets of an abelian group satisfying the triangle inequality up to additive constants."
+    },
+    {
+      "id": "s_additive_energy",
+      "kind": "axiom",
+      "name": "Additive energy E(A,B)",
+      "type_signature": "𝒫_fin(G) × 𝒫_fin(G) → ℕ",
+      "description": "E(A,B) = |{(a₁,a₂,b₁,b₂) ∈ A²×B² : a₁+b₁ = a₂+b₂}|; measures the additive structure shared by A and B, with E(A,A) ∈ [|A|², |A|³]."
+    },
+    {
+      "id": "s_freiman_homomorphism",
+      "kind": "axiom",
+      "name": "Freiman homomorphism of order s",
+      "type_signature": "(A ⊂ G) → (B ⊂ H)",
+      "description": "A map φ: A → B such that a₁+⋯+aₛ = a'₁+⋯+a'ₛ implies φ(a₁)+⋯+φ(aₛ) = φ(a'₁)+⋯+φ(a'ₛ); preserves additive structure up to s-fold sums."
+    },
+    {
+      "id": "s_freiman_isomorphism",
+      "kind": "axiom",
+      "name": "Freiman isomorphism of order s",
+      "type_signature": "(A ⊂ G) ↔ (B ⊂ H)",
+      "description": "A bijective Freiman s-homomorphism whose inverse is also a Freiman s-homomorphism; the correct notion of structural equivalence in additive combinatorics."
+    },
+    {
+      "id": "s_generalized_arithmetic_progression",
+      "kind": "axiom",
+      "name": "Generalized arithmetic progression (GAP)",
+      "type_signature": "",
+      "description": "P = {a₀ + x₁v₁ + ⋯ + xₐvₐ : 0 ≤ xᵢ < Nᵢ} for base point a₀, generators v₁,…,vₐ, and lengths N₁,…,Nₐ; a d-dimensional GAP has rank/dimension d."
+    },
+    {
+      "id": "s_proper_gap",
+      "kind": "axiom",
+      "name": "Proper generalized arithmetic progression",
+      "type_signature": "",
+      "description": "A GAP P = {a₀ + ∑xᵢvᵢ : 0 ≤ xᵢ < Nᵢ} is proper if |P| = ∏Nᵢ, i.e., all sums are distinct and the representation map is injective."
+    },
+    {
+      "id": "s_bohr_set",
+      "kind": "axiom",
+      "name": "Bohr set B(S,ε)",
+      "type_signature": "𝒫(Ĝ) × ℝ₊ → 𝒫(G)",
+      "description": "B(S,ε) = {x ∈ G : |χ(x)−1| ≤ ε for all χ ∈ S} for a finite set S of characters; a structured neighborhood of 0 that generalizes subgroups."
+    },
+    {
+      "id": "s_dissociated_set",
+      "kind": "axiom",
+      "name": "Dissociated set",
+      "type_signature": "",
+      "description": "A set Λ ⊂ G such that any equation ∑_{λ∈Λ} ε_λ λ = 0 with ε_λ ∈ {−1,0,1} forces all ε_λ = 0; the combinatorial analog of linear independence for sumset problems."
+    },
+    {
+      "id": "s_k_approximate_group",
+      "kind": "axiom",
+      "name": "K-approximate group",
+      "type_signature": "",
+      "description": "A finite symmetric set A containing the identity in a group G such that A·A can be covered by at most K translates of A; generalizes the notion of a finite subgroup."
+    },
+    {
+      "id": "s_combinatorial_dimension",
+      "kind": "axiom",
+      "name": "Combinatorial dimension of a Bohr set",
+      "type_signature": "Bohr(G) → ℕ",
+      "description": "The cardinality |S| of the frequency set S in a Bohr set B(S,ε); controls the size and structure of the Bohr set via |B(S,ε)| ≈ εᵈ|G| for d = |S|."
+    },
+    {
+      "id": "s_progression_free_set",
+      "kind": "axiom",
+      "name": "Progression-free set (3-AP-free set)",
+      "type_signature": "",
+      "description": "A subset A of an abelian group containing no non-trivial 3-term arithmetic progression; the maximum size r₃(N) of such a set in {1,…,N} is the subject of Roth's theorem."
+    },
+    {
+      "id": "s_sumset_growth_function",
+      "kind": "axiom",
+      "name": "Sumset growth function",
+      "type_signature": "",
+      "description": "The function K ↦ f(K) bounding |kA−lA| in terms of |A| when |A+A| ≤ K|A|; the key quantitative object in Plünnecke–Ruzsa theory."
+    },
+    {
+      "id": "s_plunnecke_graph",
+      "kind": "axiom",
+      "name": "Plünnecke graph",
+      "type_signature": "",
+      "description": "A commutative layered bipartite graph (V₀,…,Vₕ) with a matching from Vᵢ to Vᵢ₊₁ modeling the map A → A+B; the combinatorial device underlying Plünnecke's inequality."
+    },
+    {
+      "id": "s_magnification_ratio",
+      "kind": "axiom",
+      "name": "Magnification ratio",
+      "type_signature": "",
+      "description": "For a Plünnecke graph, Dₕ = min_{∅≠X⊆V₀} |im_h(X)|/|X|, the minimal expansion ratio from V₀ to Vₕ; the quantity controlled in Plünnecke's inequality."
+    },
+    {
+      "id": "s_additive_energy_normalized",
+      "kind": "axiom",
+      "name": "Normalized additive energy",
+      "type_signature": "𝒫_fin(G) → [0,1]",
+      "description": "e(A) = E(A,A)/|A|³, the additive energy per unit cube; e(A) = 1 iff A is a coset, and e(A) ≥ 1/|A| always holds."
+    },
+    {
+      "id": "s_regularity_pair",
+      "kind": "axiom",
+      "name": "ε-regular pair (Szemerédi)",
+      "type_signature": "",
+      "description": "A pair (U,W) in a graph is ε-regular if for all X ⊂ U, Y ⊂ W with |X| ≥ ε|U|, |Y| ≥ ε|W|, |d(X,Y)−d(U,W)| ≤ ε; the quasirandom condition in the regularity lemma."
+    },
+    {
+      "id": "s_popular_difference",
+      "kind": "axiom",
+      "name": "Popular difference",
+      "type_signature": "",
+      "description": "An element d ∈ G is a popular difference for A if |{a ∈ A : a+d ∈ A}| ≥ δ|A| for some threshold δ; appears in density increment and Balog–Szemerédi arguments."
+    },
+    {
+      "id": "s_additive_quadruple",
+      "kind": "axiom",
+      "name": "Additive quadruple",
+      "type_signature": "",
+      "description": "A tuple (a₁,a₂,b₁,b₂) ∈ A²×B² with a₁+b₁ = a₂+b₂; the additive energy E(A,B) counts the number of such quadruples."
+    },
+    {
+      "id": "s_coset_progression",
+      "kind": "axiom",
+      "name": "Coset progression",
+      "type_signature": "",
+      "description": "A set of the form P + H where P is a GAP and H is a finite subgroup; the natural generalization of GAP needed for Freiman's theorem in arbitrary abelian groups."
+    },
+    {
+      "id": "s_convolution_counting_function",
+      "kind": "axiom",
+      "name": "Convolution (representation) function r_{A+B}",
+      "type_signature": "G → ℕ₀",
+      "description": "r_{A+B}(x) = |{(a,b) ∈ A×B : a+b = x}|, counting representations of x as a sum from A and B; satisfies ∑_x r_{A+B}(x) = |A||B|."
+    },
+    {
+      "id": "s_spectrum_of_set",
+      "kind": "axiom",
+      "name": "Spectrum (large Fourier coefficients) of a set",
+      "type_signature": "𝒫_fin(G) × ℝ₊ → 𝒫(Ĝ)",
+      "description": "Spec_δ(A) = {γ ∈ Ĝ : |Â(γ)| ≥ δ|A|}, the set of characters on which the Fourier transform of 1_A is large; controlled by Chang's theorem."
+    },
+    {
+      "id": "s_pseudorandom_measure",
+      "kind": "axiom",
+      "name": "Pseudorandom measure (Green–Tao)",
+      "type_signature": "",
+      "description": "A non-negative function ν: ℤ_N → ℝ≥0 with 𝔼ν = 1+o(1) satisfying a linear forms condition and a correlation condition; the majorant for W-tricked primes in the Green–Tao argument."
+    },
+    {
+      "id": "s_w_trick",
+      "kind": "axiom",
+      "name": "W-trick (Green–Tao)",
+      "type_signature": "",
+      "description": "Restricting to primes p ≡ b (mod W) for W = ∏_{p≤w} p to remove small-prime biases; converts the primes into a set with better pseudorandomness properties."
+    },
+    {
+      "id": "s_linear_forms_condition",
+      "kind": "axiom",
+      "name": "Linear forms condition",
+      "type_signature": "",
+      "description": "The condition 𝔼_{x∈ℤ_N^d} ∏ᵢ ν(ψᵢ(x)) = 1+o(1) for a pseudorandom measure ν and a finite system of affine-linear forms ψᵢ with finite complexity; key hypothesis in the Green–Tao transference principle."
+    },
+    {
+      "id": "s_correlation_condition",
+      "kind": "axiom",
+      "name": "Correlation condition (Green–Tao)",
+      "type_signature": "",
+      "description": "The condition 𝔼_x ∏_{j=1}^m ν(x+h_j) ≤ ∑_{1≤i<j≤m} τ(h_i−h_j) for a weight τ with controlled moments; ensures the pseudorandom measure is not too concentrated."
+    },
+    {
+      "id": "s_gowers_uniformity_norm",
+      "kind": "axiom",
+      "name": "Gowers uniformity norm U^k",
+      "type_signature": "(G → ℂ) → ℝ≥0",
+      "description": "‖f‖_{U^k}^{2^k} = 𝔼_{x,h₁,…,hₖ} ∏_{ω∈{0,1}^k} C^{|ω|} f(x+ω·h), where C is conjugation; measures k-step uniformity and controls counts of (k+1)-term APs."
+    },
+    {
+      "id": "s_gowers_anti_uniformity",
+      "kind": "state",
+      "name": "Gowers anti-uniform function",
+      "type_signature": "",
+      "description": "A dual function F with ‖F‖∞ ≤ 1 maximizing |⟨f,F⟩| subject to ‖F‖_{U^k} being small; used in the density/energy increment strategy for Szemerédi's theorem."
+    },
+    {
+      "id": "s_plunnecke_inequality",
+      "kind": "theorem",
+      "name": "Plünnecke's inequality",
+      "type_signature": "",
+      "description": "If |A+B| ≤ K|A| then |hB−lB| ≤ K^{h+l}|A| for all h,l ≥ 0; proved via magnification ratios in Plünnecke graphs, controlling iterated sumset growth from a single doubling bound."
+    },
+    {
+      "id": "s_ruzsa_triangle_inequality",
+      "kind": "theorem",
+      "name": "Ruzsa triangle inequality",
+      "type_signature": "",
+      "description": "|A−C| ≤ |A−B||B−C|/|B| for finite non-empty subsets A,B,C of an abelian group; the key tool making Ruzsa distance into a quasi-metric."
+    },
+    {
+      "id": "s_ruzsa_covering_lemma",
+      "kind": "theorem",
+      "name": "Ruzsa covering lemma",
+      "type_signature": "",
+      "description": "If |A+B| ≤ K|A| then B ⊆ A−A+T for some set T with |T| ≤ K; used to embed sets of small doubling into translates of a structured set."
+    },
+    {
+      "id": "s_ruzsa_sum_triangle_inequality",
+      "kind": "theorem",
+      "name": "Ruzsa sum-triangle inequality",
+      "type_signature": "",
+      "description": "|A+C| ≤ |A+B||B+C|/|B| for finite non-empty subsets of an abelian group; the sum-version complementing the difference-version of Ruzsa's triangle inequality."
+    },
+    {
+      "id": "s_ruzsa_distance_controls_energy",
+      "kind": "theorem",
+      "name": "Ruzsa distance–energy duality",
+      "type_signature": "",
+      "description": "E(A,B) ≥ |A|²|B|²/|A−B| by Cauchy–Schwarz, so small Ruzsa distance implies large additive energy; the bridge between metric and energy viewpoints."
+    },
+    {
+      "id": "s_freiman_ruzsa_f2n",
+      "kind": "theorem",
+      "name": "Freiman–Ruzsa theorem in 𝔽₂ⁿ",
+      "type_signature": "",
+      "description": "If A ⊆ 𝔽₂ⁿ satisfies |A+A| ≤ K|A|, then A is contained in a subspace of size at most 2^{O(K)}|A|; the model-case inverse sumset theorem with polynomial bounds."
+    },
+    {
+      "id": "s_balog_szemeredi_gowers",
+      "kind": "theorem",
+      "name": "Balog–Szemerédi–Gowers theorem",
+      "type_signature": "",
+      "description": "If E(A,A) ≥ |A|³/K then there exists A' ⊂ A with |A'| ≥ c|A|/K and |A'+A'| ≤ CK⁴|A'|; converts large additive energy into a dense subset with small doubling, with polynomial bounds due to Gowers."
+    },
+    {
+      "id": "s_erdos_heilbronn_conjecture",
+      "kind": "theorem",
+      "name": "Erdős–Heilbronn conjecture (Dias da Silva–Hamidoune)",
+      "type_signature": "",
+      "description": "|{a+b : a,b ∈ A, a ≠ b}| ≥ min(p, 2|A|−3) for A ⊆ ℤ/pℤ; the restricted-sumset analog of Cauchy–Davenport, proved via the Combinatorial Nullstellensatz."
+    },
+    {
+      "id": "s_sum_product_estimate_reals",
+      "kind": "theorem",
+      "name": "Elekes sum-product estimate",
+      "type_signature": "",
+      "description": "max(|A+A|, |A·A|) ≥ c|A|^{5/4} for finite A ⊂ ℝ; proved via the Szemerédi–Trotter theorem, confirming a weak form of the Erdős–Szemerédi conjecture."
+    },
+    {
+      "id": "s_erdos_szemeredi_conjecture",
+      "kind": "state",
+      "name": "Erdős–Szemerédi sum-product conjecture",
+      "type_signature": "",
+      "description": "For finite A ⊂ ℝ, max(|A+A|, |A·A|) ≥ c_ε|A|^{2−ε} for every ε > 0; asserts that a set cannot be simultaneously additively and multiplicatively structured."
+    },
+    {
+      "id": "s_bergelson_leibman",
+      "kind": "theorem",
+      "name": "Bergelson–Leibman theorem (polynomial Szemerédi)",
+      "type_signature": "",
+      "description": "For any polynomials p₁,…,pₖ ∈ ℤ[x] with pᵢ(0) = 0 and δ > 0, any sufficiently dense subset of {1,…,N} contains a configuration {a, a+p₁(d), …, a+pₖ(d)}; extends Szemerédi to polynomial progressions."
+    },
+    {
+      "id": "s_inverse_littlewood_offord",
+      "kind": "theorem",
+      "name": "Inverse Littlewood–Offord theorem (Tao–Vu)",
+      "type_signature": "",
+      "description": "If P(v₁ε₁+⋯+vₙεₙ = x) ≥ n^{−C} for random signs εᵢ and non-degenerate vᵢ, then most vᵢ lie in a proper GAP of small rank and size O(n^{1/2+o(1)}); the structural characterization complementing the Erdős–Littlewood–Offord problem."
+    },
+    {
+      "id": "s_littlewood_offord_problem",
+      "kind": "state",
+      "name": "Littlewood–Offord problem",
+      "type_signature": "",
+      "description": "Given non-zero v₁,…,vₙ ∈ ℝ, maximize P(|v₁ε₁+⋯+vₙεₙ| ≤ 1) over random signs εᵢ ∈ {±1}; the classical answer is C(n,⌊n/2⌋)/2ⁿ ∼ c/√n by the Erdős bound, with the inverse problem asking for structural conditions achieving near-maximal probability."
+    },
+    {
+      "id": "s_chang_theorem",
+      "kind": "theorem",
+      "name": "Chang's theorem (large Fourier spectrum)",
+      "type_signature": "",
+      "description": "If A ⊆ ℤ/Nℤ with |A| = αN, then Spec_δ(A) is contained in a subspace of dimension O(δ⁻² log(1/α)); sharp control on the structure of the large spectrum using dissociated sets."
+    },
+    {
+      "id": "s_bogolyubov_lemma",
+      "kind": "theorem",
+      "name": "Bogolyubov's lemma",
+      "type_signature": "",
+      "description": "If A ⊆ ℤ/Nℤ has density α, then 2A−2A contains a Bohr set B(S,1/4) with |S| ≤ O(1/α²); iterated sumsets of dense sets contain highly structured subsets."
+    },
+    {
+      "id": "s_sanders_quasi_polynomial_freiman_ruzsa",
+      "kind": "theorem",
+      "name": "Sanders' quasi-polynomial Freiman–Ruzsa theorem",
+      "type_signature": "",
+      "description": "If A ⊆ 𝔽₂ⁿ with |A+A| ≤ K|A|, then A is contained in a subspace of size at most 2^{O(K(log K)^C)}|A|; the quasi-polynomial improvement toward the polynomial Freiman–Ruzsa conjecture."
+    },
+    {
+      "id": "s_polynomial_freiman_ruzsa_conjecture",
+      "kind": "state",
+      "name": "Polynomial Freiman–Ruzsa conjecture",
+      "type_signature": "",
+      "description": "If A ⊆ 𝔽₂ⁿ with |A+A| ≤ K|A|, then A can be covered by poly(K) translates of a subspace of size ≤ |A|; equivalently, the covering number in Freiman's theorem should be polynomial in K."
+    },
+    {
+      "id": "s_gowers_inverse_u3",
+      "kind": "theorem",
+      "name": "Gowers inverse theorem for U³",
+      "type_signature": "",
+      "description": "If ‖f‖_{U³} ≥ δ with |f| ≤ 1, then |⟨f, e(qφ)⟩| ≥ c(δ) for some quadratic phase φ; the inverse theorem identifying U³-structured functions with quadratic phases, key to Gowers' proof of Szemerédi for k=4."
+    },
+    {
+      "id": "s_gowers_inverse_uk",
+      "kind": "theorem",
+      "name": "Gowers inverse conjecture for U^k (Green–Tao–Ziegler)",
+      "type_signature": "",
+      "description": "If ‖f‖_{U^{k+1}} ≥ δ then f correlates with a nilsequence of step ≤ k and complexity O_{δ,k}(1); proved by Green–Tao–Ziegler, completing the inverse program characterizing Gowers norms."
+    },
+    {
+      "id": "s_generalized_von_neumann",
+      "kind": "theorem",
+      "name": "Generalized von Neumann theorem",
+      "type_signature": "",
+      "description": "The count of k-APs 𝔼_{x,d} ∏ᵢ fᵢ(x+id) is controlled by min_i ‖fᵢ‖_{U^{k−1}}; the structure theorem reducing AP-counting to Gowers norm estimates."
+    },
+    {
+      "id": "s_solymosi_sum_product",
+      "kind": "theorem",
+      "name": "Solymosi's sum-product estimate",
+      "type_signature": "",
+      "description": "max(|A+A|, |A·A|) ≥ c|A|^{4/3}/log^{1/3}|A| for finite A ⊂ ℝ; an improvement over the Elekes 5/4 exponent using the multiplicative energy approach."
+    },
+    {
+      "id": "s_sum_product_finite_fields",
+      "kind": "theorem",
+      "name": "Sum-product estimate in finite fields (Bourgain–Katz–Tao)",
+      "type_signature": "",
+      "description": "For A ⊆ 𝔽_p with p^δ ≤ |A| ≤ p^{1−δ}: max(|A+A|, |A·A|) ≥ |A|^{1+ε} for some ε = ε(δ) > 0; the finite field sum-product phenomenon."
+    },
+    {
+      "id": "s_ruzsa_modeling_lemma",
+      "kind": "theorem",
+      "name": "Ruzsa modeling lemma",
+      "type_signature": "",
+      "description": "If A ⊆ ℤ/Nℤ has density α, then A is Freiman 2-isomorphic to a subset of ℤ/Mℤ of density ≥ α^{O(1)} for some M ≤ N; used to transfer Freiman-type results between ambient groups."
+    },
+    {
+      "id": "s_ruzsa_analog_freiman",
+      "kind": "theorem",
+      "name": "Ruzsa's proof of Freiman's theorem (via covering lemma)",
+      "type_signature": "",
+      "description": "Streamlined proof: if |A+A| ≤ K|A|, use the Ruzsa covering lemma to embed A in few translates of A−A, then the Plünnecke–Ruzsa inequality and a geometry-of-numbers argument to find a containing GAP."
+    },
+    {
+      "id": "s_gowers_bound_szemeredi",
+      "kind": "theorem",
+      "name": "Gowers quantitative bound for Szemerédi's theorem",
+      "type_signature": "",
+      "description": "r_k(N) ≤ N/(log log N)^{c_k} for the maximum size of a k-AP-free subset of {1,…,N}; the first effective bound for arbitrary k, via the Gowers uniformity norms and inverse theorems."
+    },
+    {
+      "id": "s_regularity_counting_lemma",
+      "kind": "theorem",
+      "name": "Regularity counting lemma (embedding lemma)",
+      "type_signature": "",
+      "description": "In an ε-regular partition with appropriately dense pairs, the count of copies of any fixed graph H is (1+o(1)) times the expected count for a random graph with the same densities."
+    },
+    {
+      "id": "s_koopman_von_neumann_structure",
+      "kind": "theorem",
+      "name": "Koopman–von Neumann structure theorem (in additive combinatorics)",
+      "type_signature": "",
+      "description": "Any bounded function f on ℤ_N decomposes as f = f_s + f_u + f_e where f_s is structured (low U^k norm correlation), f_u is uniform (small U^k norm), and f_e is small in L²; the structure–randomness dichotomy underlying energy increment arguments."
+    },
+    {
+      "id": "s_arithmetic_regularity_lemma",
+      "kind": "theorem",
+      "name": "Arithmetic regularity lemma (Green)",
+      "type_signature": "",
+      "description": "For any f: ℤ_N → [0,1] and ε > 0, there exists a Bohr set B such that f is ε-uniform on cosets of B in the Gowers U² norm; the Fourier-analytic analog of graph regularity for additive problems."
+    },
+    {
+      "id": "s_goldston_yildirim_majorant",
+      "kind": "state",
+      "name": "Goldston–Yıldırım pseudorandom majorant for primes",
+      "type_signature": "",
+      "description": "The function ν(n) = (φ(W)/W)(log R)⁻¹(∑_{d|n, d≤R} μ(d)log(R/d))² satisfying the linear forms and correlation conditions; provides the pseudorandom measure dominating the W-tricked primes in the Green–Tao argument."
+    },
+    {
+      "id": "s_hypergraph_regularity",
+      "kind": "theorem",
+      "name": "Hypergraph regularity lemma (Gowers, Nagle–Rödl–Schacht–Skokan)",
+      "type_signature": "",
+      "description": "Every k-uniform hypergraph admits a regular partition with respect to a (k−1)-complex of controlled complexity; the higher-order generalization enabling the regularity proof of Szemerédi's theorem for arbitrary k."
+    },
+    {
+      "id": "s_hypergraph_removal",
+      "kind": "theorem",
+      "name": "Hypergraph removal lemma",
+      "type_signature": "",
+      "description": "If a k-uniform hypergraph on n vertices contains o(nᵏ⁺¹) copies of a fixed k-uniform hypergraph H, then all copies can be removed by deleting o(nᵏ) edges; generalizes the triangle removal lemma to hypergraphs."
+    },
+    {
+      "id": "s_multidimensional_szemeredi",
+      "kind": "theorem",
+      "name": "Multidimensional Szemerédi theorem (Furstenberg–Katznelson)",
+      "type_signature": "",
+      "description": "For any finite S ⊂ ℤᵈ and δ > 0, any sufficiently large subset of {1,…,N}ᵈ of density ≥ δ contains a homothetic copy a+tS for some t > 0; the multi-dimensional density generalization of Szemerédi."
+    },
+    {
+      "id": "s_long_aps_in_sumsets",
+      "kind": "theorem",
+      "name": "Long arithmetic progressions in sumsets",
+      "type_signature": "",
+      "description": "If A, B ⊆ {1,…,N} with |A| = αN, |B| = βN, then A+B contains an AP of length at least exp(c(αβ log N)^{1/2}); combining probabilistic, Fourier, and combinatorial methods."
+    },
+    {
+      "id": "s_bourgain_3ap_bound",
+      "kind": "theorem",
+      "name": "Bourgain's bound for 3-AP-free sets",
+      "type_signature": "",
+      "description": "r₃(N) ≤ N(log log N)^{1/2}/(log N)^{1/2}; improved Roth's original log log N bound using iterated density increment with Bohr set techniques."
+    },
+    {
+      "id": "s_meshulam_roth_f3n",
+      "kind": "theorem",
+      "name": "Meshulam's theorem (Roth in 𝔽₃ⁿ)",
+      "type_signature": "",
+      "description": "The maximum size of a 3-AP-free subset of 𝔽₃ⁿ is O(3ⁿ/n); the clean model-case Roth theorem in the finite field setting."
+    },
+    {
+      "id": "s_bateman_katz_f3n",
+      "kind": "theorem",
+      "name": "Bateman–Katz bound for cap sets",
+      "type_signature": "",
+      "description": "A 3-AP-free subset of 𝔽₃ⁿ has size O(3ⁿ/n^{1+ε}) for some ε > 0; improved the Meshulam O(3ⁿ/n) bound in the cap set problem."
+    },
+    {
+      "id": "s_rankin_construction",
+      "kind": "state",
+      "name": "Rankin's construction (k-AP-free sets)",
+      "type_signature": "",
+      "description": "A k-AP-free subset of {1,…,N} of size N·exp(−c_k(log N)^{1/(⌈log₂ k⌉)}); the higher-k generalization of Behrend's sphere-based construction."
+    },
+    {
+      "id": "s_green_tao_linear_equations_primes",
+      "kind": "theorem",
+      "name": "Green–Tao linear equations in primes",
+      "type_signature": "",
+      "description": "Systems of linear equations of finite complexity have the expected number of prime solutions (up to local factors), asymptotically; generalizes the Green–Tao theorem on APs to general linear configurations."
+    },
+    {
+      "id": "t_plunnecke_graph_method",
+      "kind": "technique",
+      "name": "Plünnecke graph method",
+      "description": "Model iterated sumset growth via a commutative layered graph with matchings; derive magnification ratio bounds by Menger's theorem and the submodularity of image sets. Used in the original Plünnecke–Ruzsa inequality.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_ruzsa_calculus",
+      "kind": "technique",
+      "name": "Ruzsa calculus",
+      "description": "The systematic use of Ruzsa's triangle inequality, covering lemma, and distance to chain sumset estimates: derive |kA−lA| bounds from |A+A|/|A|, embed sets into GAPs, and transfer between groups. The core toolkit of sumset geometry.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_fourier_analysis_finite_abelian_groups",
+      "kind": "technique",
+      "name": "Fourier analysis on finite abelian groups",
+      "description": "Expand indicator functions 1_A as ∑_γ Â(γ)γ over the dual group; use Parseval, convolution identities, and large-value estimates to count additive configurations. Central to Roth's theorem and the Bohr set method.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_density_increment_argument",
+      "kind": "technique",
+      "name": "Density increment argument",
+      "description": "If A has no k-AP, find a long subprogression (or Bohr set) where A has higher density; iterate O(1/δ) times until the density exceeds 1, yielding a contradiction. The inductive engine of Roth's and Szemerédi's Fourier proofs.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_energy_increment_argument",
+      "kind": "technique",
+      "name": "Energy increment argument",
+      "description": "Iteratively refine a partition/decomposition so that the 'energy' (L² norm of the structured part) increases by a definite amount at each step; must terminate in O(1/ε²) steps. Used in regularity proofs and Gowers' approach to Szemerédi.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_regularity_method_arithmetic",
+      "kind": "technique",
+      "name": "Regularity method for arithmetic combinatorics",
+      "description": "Apply the Szemerédi regularity lemma to an auxiliary graph encoding the arithmetic structure (e.g., the graph on A with edges {(a,b): a+b ∈ A}), then use the counting/embedding lemma to find the desired configuration.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_graph_removal_technique",
+      "kind": "technique",
+      "name": "Graph removal technique",
+      "description": "Encode an arithmetic problem (e.g., 3-APs) as a subgraph counting problem in a tripartite graph; apply the removal lemma to deduce density results. The bridge from Szemerédi regularity to Roth's theorem and the corners theorem.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_probabilistic_method_additive_comb",
+      "kind": "technique",
+      "name": "Probabilistic method in additive combinatorics",
+      "description": "Use random sampling, random dilations, or random restrictions to show existence of sets/configurations with desired additive properties; includes random subsets of sumsets, probabilistic covering arguments, and the alteration method.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_polynomial_method_additive",
+      "kind": "technique",
+      "name": "Polynomial method (Combinatorial Nullstellensatz applications)",
+      "description": "Encode additive problems as polynomial nonvanishing: choose a polynomial whose nonzero coefficient certifies the configuration, then apply Alon's Nullstellensatz or Chevalley–Warning to guarantee solutions. Yields Cauchy–Davenport, Erdős–Heilbronn, and EGZ.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_sum_product_technique",
+      "kind": "technique",
+      "name": "Sum-product technique",
+      "description": "Exploit the tension between additive and multiplicative structure: if A has small sumset then A·A must be large, via incidence geometry (Szemerédi–Trotter) or energy estimates. Leads to expander results in finite fields.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_incidence_geometry_method",
+      "kind": "technique",
+      "name": "Incidence geometry method",
+      "description": "Bound the number of incidences between points and curves (lines, circles) using cell decomposition or crossing number inequalities; apply to sumset and sum-product problems by encoding sums/products as point-line incidences.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_tensor_product_trick",
+      "kind": "technique",
+      "name": "Tensor product trick (Ruzsa)",
+      "description": "Embed A ⊂ ℤ into A^d ⊂ ℤᵈ and exploit the multiplicativity of sumset growth under Cartesian products to amplify Freiman-type bounds; converts approximate bounds into exact structural results via a limiting argument.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_ergodic_theory_approach",
+      "kind": "technique",
+      "name": "Ergodic theory approach (Furstenberg)",
+      "description": "Via the Furstenberg correspondence, translate combinatorial density problems to ergodic recurrence; prove the recurrence using weak mixing/compact decomposition and the van der Corput trick in Hilbert space.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_hypergraph_regularity_method",
+      "kind": "technique",
+      "name": "Hypergraph regularity method",
+      "description": "Extend graph regularity to k-uniform hypergraphs via a hierarchy of regular approximations (simplicial complexes); combined with a hypergraph counting lemma, yields Szemerédi's theorem for arbitrary k and the Hales–Jewett theorem.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_cell_decomposition_technique",
+      "kind": "technique",
+      "name": "Cell decomposition (for incidence bounds)",
+      "description": "Partition ℝ² into O(r²) cells using r vertical lines and r polynomial curves so each cell has few points; aggregate local incidence bounds using the Szemerédi–Trotter framework.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_dyadic_pigeonholing",
+      "kind": "technique",
+      "name": "Dyadic pigeonholing",
+      "description": "Partition a range into O(log N) dyadic intervals [2ᵏ, 2ᵏ⁺¹) and select the interval contributing the most to a sum; loses only a logarithmic factor while reducing to a level-set estimate. Ubiquitous in sumset and energy arguments.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_compression_symmetrization",
+      "kind": "technique",
+      "name": "Compression/symmetrization",
+      "description": "Replace a set A by its successive compressions (projections onto coordinate hyperplanes followed by downsets) to reduce to the extremal case without increasing the sumset; used to prove sumset lower bounds and the Cauchy–Davenport theorem.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_additive_energy_amplification",
+      "kind": "technique",
+      "name": "Additive energy amplification",
+      "description": "Boost additive energy by passing to a popular-difference subset or applying iterated sumset operations; combined with Balog–Szemerédi–Gowers, converts partial structure into full small-doubling structure.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_bohr_set_method",
+      "kind": "technique",
+      "name": "Bohr set method",
+      "description": "Use Bohr sets as substitutes for subgroups in ℤ/Nℤ: perform density increments on Bohr sets, control their size via dimension, and exploit their near-invariance under addition. Central to improved Roth bounds and the Green–Tao argument.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_weyl_differencing",
+      "kind": "technique",
+      "name": "Weyl differencing",
+      "description": "Reduce the degree of a phase function by squaring an exponential sum and changing variables: |∑ e(f(n))|² = ∑_h ∑_n e(f(n+h)−f(n)); iterating reduces polynomial phases to linear ones. Fundamental in both analytic number theory and Gowers norm analysis.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_van_der_corput_trick",
+      "kind": "technique",
+      "name": "Van der Corput trick/inequality",
+      "description": "|𝔼_n f(n)|² ≤ (1/H) ∑_{|h|<H} (1−|h|/H) 𝔼_n f(n+h)f̄(n); converts a single average into a double average over differences, reducing equidistribution to correlation decay. Used in ergodic theory, exponential sum, and Gowers norm arguments.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_dependent_random_choice",
+      "kind": "technique",
+      "name": "Dependent random choice",
+      "description": "Choose a random subset by selecting common neighbors of a random tuple in a graph; the resulting set is small but has the property that any small sub-tuple has many common neighbors. Yields efficient proofs of Ramsey-type and Balog–Szemerédi–Gowers-type results.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_stepanov_method_addcomb",
+      "kind": "technique",
+      "name": "Stepanov method",
+      "description": "Construct an auxiliary polynomial vanishing to high order at the points of interest, then bound its degree against its vanishing order to get a point count; an elementary alternative to Weil's algebraic-geometry approach for character sum and curve-point bounds over finite fields.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_character_sum_method",
+      "kind": "technique",
+      "name": "Character sum method",
+      "description": "Express indicator functions of structured sets (squares, kth powers) via multiplicative characters and bound the resulting character sums using Weil-type estimates; used for Sárközy's theorem, sum-product in finite fields, and distribution of primes in APs.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_geometry_of_numbers_in_freiman",
+      "kind": "technique",
+      "name": "Geometry of numbers in Freiman's theorem",
+      "description": "Apply Minkowski's lattice point theorem or John's ellipsoid theorem to find a proper GAP containing A: given A−A ⊆ a coset progression from covering, find a GAP of controlled dimension and size via lattice basis reduction.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_structure_randomness_dichotomy",
+      "kind": "technique",
+      "name": "Structure–randomness dichotomy",
+      "description": "Decompose a function/set into a structured (low-complexity) component and a pseudorandom (uniform) component; the structured part determines the count of the desired configuration while the uniform part is negligible. The overarching philosophy of modern additive combinatorics.",
+      "function_signature": ""
+    },
+    {
+      "id": "t_epsilon_net_argument",
+      "kind": "technique",
+      "name": "ε-net/covering argument for Bohr sets",
+      "description": "Construct a maximal separated subset (ε-net) inside a Bohr set to control its metric entropy; used to estimate |B(S,ε)| and to find large structured subsets via pigeonhole on Bohr set coverings.",
+      "function_signature": ""
+    },
+    {
+      "id": "s_nilsequence",
+      "kind": "axiom",
+      "name": "Nilsequence",
+      "type_signature": "",
+      "description": "A sequence n ↦ F(g(n)Γ) where G/Γ is a nilmanifold, g: ℤ → G is a polynomial sequence, and F is Lipschitz; the higher-order structured objects arising in the inverse theory for Gowers norms U^k with k ≥ 3."
+    },
+    {
+      "id": "s_nilmanifold",
+      "kind": "axiom",
+      "name": "Nilmanifold G/Γ",
+      "type_signature": "",
+      "description": "A compact homogeneous space G/Γ where G is a connected nilpotent Lie group and Γ ≤ G is a cocompact discrete subgroup; the phase space for nilsequences in the Gowers inverse theory."
+    },
+    {
+      "id": "s_stabilizer_of_sumset",
+      "kind": "axiom",
+      "name": "Stabilizer (period) of a sumset",
+      "type_signature": "𝒫(G) → subgroup(G)",
+      "description": "H(A+B) = {g ∈ G : g+A+B = A+B}, the largest subgroup preserving A+B; the critical object in Kneser's theorem controlling how much |A+B| can fall below |A|+|B|."
+    },
+    {
+      "id": "s_davenport_constant",
+      "kind": "axiom",
+      "name": "Davenport constant D(G)",
+      "type_signature": "AbelianGroup → ℕ",
+      "description": "The smallest d such that any sequence of d elements in G contains a non-empty subsequence summing to 0; D(ℤ/nℤ) = n and the Erdős–Ginzburg–Ziv theorem states D(ℤ/nℤ) in the restricted sense is 2n−1."
+    },
+    {
+      "id": "s_sum_free_set",
+      "kind": "axiom",
+      "name": "Sum-free set",
+      "type_signature": "",
+      "description": "A set A ⊆ G such that (A+A) ∩ A = ∅; the maximum size of a sum-free subset of {1,…,n} is ⌈n/2⌉, and the study of sum-free sets connects to Schur's theorem and Ramsey theory."
+    },
+    {
+      "id": "s_covering_number_sumset",
+      "kind": "axiom",
+      "name": "Covering number (Ruzsa)",
+      "type_signature": "",
+      "description": "cov(B, A−A) = the minimum number of translates of A−A needed to cover B; the Ruzsa covering lemma bounds this by |A+B|/|A|."
+    },
+    {
+      "id": "s_szemeredi_regularity_graph_arithmetic",
+      "kind": "theorem",
+      "name": "Szemerédi's theorem via graph regularity",
+      "type_signature": "",
+      "description": "Proof of Szemerédi's theorem using the regularity lemma: encode k-APs as cliques in an auxiliary (k−1)-partite graph, apply regularity + counting lemma; the original approach for k ≥ 4."
+    },
+    {
+      "id": "s_roth_via_fourier",
+      "kind": "theorem",
+      "name": "Roth's theorem via Fourier analysis",
+      "type_signature": "",
+      "description": "Proof: the 3-AP count T₃(A) = ∑_r |Â(r)|²Â(−2r)·N⁻¹; if T₃(A) is small, a large Fourier coefficient gives a density increment on a subprogression. Iterate to contradiction."
+    },
+    {
+      "id": "s_roth_via_triangle_removal",
+      "kind": "theorem",
+      "name": "Roth's theorem via triangle removal",
+      "type_signature": "",
+      "description": "For A ⊆ ℤ/Nℤ, construct a tripartite graph where triangles encode 3-APs in A; the triangle removal lemma gives |{3-APs}| = o(N²) implies |A| = o(N). A clean graph-theoretic route to Roth."
+    },
+    {
+      "id": "s_green_tao_structure",
+      "kind": "state",
+      "name": "Structure of the Green–Tao proof",
+      "type_signature": "",
+      "description": "Step 1: W-trick to derandomize primes. Step 2: Construct Goldston–Yıldırım majorant ν. Step 3: Verify linear forms + correlation conditions. Step 4: Apply relative Szemerédi (transference). Step 5: Conclude APs in primes."
+    },
+    {
+      "id": "s_additive_combinatorics_in_fp",
+      "kind": "axiom",
+      "name": "Additive combinatorics in 𝔽_p (finite field model)",
+      "type_signature": "",
+      "description": "The study of sumsets, additive energy, and structure theorems in ℤ/pℤ or 𝔽_pⁿ, where the absence of torsion issues and availability of exact Fourier analysis make many arguments cleaner; the 'model case' for the integers."
+    },
+    {
+      "id": "s_inverse_sumset_problem",
+      "kind": "state",
+      "name": "Inverse sumset problem",
+      "type_signature": "",
+      "description": "Given that |A+A| ≤ K|A|, characterize the structure of A; the central question of additive combinatorics, answered (in various precisions) by Freiman's theorem, Balog–Szemerédi–Gowers, and the polynomial Freiman–Ruzsa conjecture."
+    },
+    {
+      "id": "s_cap_set_problem",
+      "kind": "state",
+      "name": "Cap set problem",
+      "type_signature": "",
+      "description": "Determine the maximum size of a 3-AP-free subset of 𝔽₃ⁿ; the Ellenberg–Gijswijt (2016) bound of O(2.756ⁿ) via the polynomial method was a breakthrough (outside this book's scope but the problem is central to Ch 10)."
+    },
+    {
+      "id": "s_gowers_norm_controls_ap_count",
+      "kind": "theorem",
+      "name": "Gowers norms control AP counts",
+      "type_signature": "",
+      "description": "|Λ_k(f) − Λ_k(1)| ≤ min_i ‖fᵢ − 1‖_{U^{k-1}} where Λ_k(f) = 𝔼_{x,d} ∏ f(x+id); the U^{k-1} norm is the correct notion of uniformity for k-APs, as small U^{k-1} norm implies the correct AP count."
+    },
+    {
+      "id": "t_balog_szemeredi_gowers_graph",
+      "kind": "technique",
+      "name": "Balog–Szemerédi–Gowers graph argument",
+      "description": "Build a bipartite graph on A×A with edges where the sumset representation is popular; use graph-theoretic path-counting (or dependent random choice) to find a dense subset A' with small sumset. The combinatorial core of the BSG theorem.",
+      "function_signature": ""
+    },
+    {
+      "id": "s_ap_count_formula_fourier",
+      "kind": "theorem",
+      "name": "AP count formula via Fourier analysis",
+      "type_signature": "",
+      "description": "The number of k-APs in A ⊆ ℤ/Nℤ equals N ∑_r |Â(r)|^k · (Fourier coefficient of the k-AP kernel); for k=3, this is N⁻¹ ∑_r Â(r)²Â(−2r), making the problem amenable to spectral analysis."
+    },
+    {
+      "id": "s_sumset_lower_bound_cauchy_davenport",
+      "kind": "state",
+      "name": "Sumset lower bound problem",
+      "type_signature": "",
+      "description": "The direct sumset problem: given |A|, |B| and the ambient group, determine the minimum possible |A+B|; answered by Cauchy–Davenport for ℤ/pℤ and Kneser for general abelian groups."
+    },
+    {
+      "id": "s_vosper_theorem",
+      "kind": "theorem",
+      "name": "Vosper's theorem",
+      "type_signature": "",
+      "description": "If A, B ⊆ ℤ/pℤ with |A|, |B| ≥ 2 and |A+B| = |A|+|B|−1 < p, then A and B are arithmetic progressions with the same common difference; the inverse theorem for equality in Cauchy–Davenport."
+    },
+    {
+      "id": "s_freiman_inverse_2_3k_4",
+      "kind": "theorem",
+      "name": "Freiman's 3k−4 theorem",
+      "type_signature": "",
+      "description": "If A ⊂ ℤ with |A+A| ≤ 3|A|−4, then A is contained in an arithmetic progression of length |A+A|−|A|+1 ≤ 2|A|−3; the tight inverse theorem for very small doubling."
+    },
+    {
+      "id": "s_erdos_littlewood_offord",
+      "kind": "theorem",
+      "name": "Erdős–Littlewood–Offord inequality",
+      "type_signature": "",
+      "description": "For non-zero v₁,…,vₙ and random signs εᵢ ∈ {±1}: P(|∑ εᵢvᵢ − x| ≤ 1) ≤ C(n,⌊n/2⌋)/2ⁿ ∼ c/√n for any x; the optimal anti-concentration bound, proved by Erdős via Sperner's theorem."
+    },
+    {
+      "id": "s_halasz_inequality",
+      "kind": "theorem",
+      "name": "Halász-type inequality (additive combinatorics)",
+      "type_signature": "",
+      "description": "P(∑ εᵢvᵢ ∈ a+S) ≤ C·sup_t |𝔼 e^{itS}| · ∏ cos(tvᵢ) bounds; anti-concentration via characteristic function methods, underlying the Littlewood–Offord inverse theory."
+    },
+    {
+      "id": "s_small_ball_probability",
+      "kind": "state",
+      "name": "Small ball probability (Lévy concentration function)",
+      "type_signature": "",
+      "description": "Q(X, ε) = sup_x P(|X−x| ≤ ε), the concentration function of a random variable; the Littlewood–Offord problem amounts to bounding Q(∑εᵢvᵢ, 1) and the inverse problem characterizes when Q is large."
+    },
+    {
+      "id": "s_probability_space",
+      "kind": "axiom",
+      "name": "Probability space",
+      "type_signature": "(Ω, F, P)",
+      "description": "A triple (Ω, F, P) where Ω is a sample space, F is a σ-algebra of events, and P is a probability measure with P(Ω) = 1.",
+      "aliases": [
+        "probability triple"
+      ]
+    },
+    {
+      "id": "s_probability_measure",
+      "kind": "axiom",
+      "name": "Probability measure",
+      "type_signature": "F → [0,1]",
+      "description": "A countably additive set function P: F → [0,1] on a σ-algebra F with P(Ω) = 1.",
+      "aliases": []
+    },
+    {
+      "id": "s_random_variable",
+      "kind": "axiom",
+      "name": "Random variable",
+      "type_signature": "(Ω, F) → (ℝ, B(ℝ))",
+      "description": "A measurable function X: (Ω, F) → (ℝ, B(ℝ)), i.e., {ω : X(ω) ≤ x} ∈ F for every x ∈ ℝ.",
+      "aliases": [
+        "measurable function to ℝ"
+      ]
+    },
+    {
+      "id": "s_law_of_random_variable",
+      "kind": "axiom",
+      "name": "Distribution (law) of a random variable",
+      "type_signature": "X → μ_X on (ℝ, B(ℝ))",
+      "description": "The probability measure μ_X(B) = P(X ∈ B) on (ℝ, B(ℝ)) induced by a random variable X, also written L(X) or P ∘ X⁻¹.",
+      "aliases": [
+        "law of X",
+        "push-forward measure"
+      ]
+    },
+    {
+      "id": "s_independence_of_events",
+      "kind": "axiom",
+      "name": "Independence of events",
+      "type_signature": "(A₁, …, Aₙ) → Prop",
+      "description": "Events A₁, …, Aₙ are independent if P(Aᵢ₁ ∩ ··· ∩ Aᵢₖ) = P(Aᵢ₁)···P(Aᵢₖ) for every subcollection of distinct indices.",
+      "aliases": [
+        "mutual independence of events"
+      ]
+    },
+    {
+      "id": "s_independence_of_random_variables",
+      "kind": "axiom",
+      "name": "Independence of random variables",
+      "type_signature": "(X₁, …, Xₙ) → Prop",
+      "description": "Random variables X₁, …, Xₙ are independent if the σ-algebras σ(X₁), …, σ(Xₙ) are independent, equivalently P(X₁ ∈ B₁, …, Xₙ ∈ Bₙ) = ∏ P(Xᵢ ∈ Bᵢ).",
+      "aliases": []
+    },
+    {
+      "id": "s_almost_sure_convergence",
+      "kind": "axiom",
+      "name": "Almost sure convergence",
+      "type_signature": "(Xₙ, X) → Prop",
+      "description": "Xₙ → X almost surely if P({ω : Xₙ(ω) → X(ω)}) = 1.",
+      "aliases": [
+        "convergence with probability one",
+        "a.s. convergence"
+      ]
+    },
+    {
+      "id": "s_convergence_in_probability",
+      "kind": "axiom",
+      "name": "Convergence in probability",
+      "type_signature": "(Xₙ, X) → Prop",
+      "description": "Xₙ → X in probability if P(|Xₙ − X| > ε) → 0 for every ε > 0.",
+      "aliases": []
+    },
+    {
+      "id": "s_convergence_in_distribution",
+      "kind": "axiom",
+      "name": "Convergence in distribution",
+      "type_signature": "(Xₙ, X) → Prop",
+      "description": "Xₙ →_d X if Fₙ(x) → F(x) at every continuity point x of F, where Fₙ, F are the respective distribution functions.",
+      "aliases": [
+        "weak convergence of random variables",
+        "convergence in law"
+      ]
+    },
+    {
+      "id": "s_characteristic_function",
+      "kind": "axiom",
+      "name": "Characteristic function",
+      "type_signature": "ℝ → ℂ",
+      "description": "The function φ_X(t) = E[e^{itX}] for t ∈ ℝ, the Fourier transform of the distribution of X, which uniquely determines the distribution.",
+      "aliases": [
+        "Fourier transform of a distribution"
+      ]
+    },
+    {
+      "id": "s_stable_distribution",
+      "kind": "axiom",
+      "name": "Stable distribution",
+      "type_signature": "α ∈ (0,2] → Prob(ℝ)",
+      "description": "A distribution with index α ∈ (0,2] such that the sum of n i.i.d. copies, suitably normalized, has the same distribution; the Gaussian (α=2) and Cauchy (α=1) are special cases.",
+      "aliases": [
+        "α-stable law",
+        "Lévy stable distribution"
+      ]
+    },
+    {
+      "id": "s_domain_of_attraction",
+      "kind": "axiom",
+      "name": "Domain of attraction",
+      "type_signature": "Prob(ℝ) → Stable law",
+      "description": "A distribution F belongs to the domain of attraction of a stable law G with index α if there exist aₙ > 0, bₙ such that (Sₙ − bₙ)/aₙ →_d G.",
+      "aliases": [
+        "domain of normal attraction"
+      ]
+    },
+    {
+      "id": "s_tightness_of_measures",
+      "kind": "axiom",
+      "name": "Tightness of a family of probability measures",
+      "type_signature": "{μ_α} → Prop",
+      "description": "A family {μ_α} of probability measures on a metric space is tight if for every ε > 0 there exists a compact K with μ_α(K) > 1 − ε for all α.",
+      "aliases": [
+        "uniform tightness"
+      ]
+    },
+    {
+      "id": "s_poisson_limit_theorem",
+      "kind": "theorem",
+      "name": "Poisson limit theorem",
+      "type_signature": "",
+      "description": "If Xₙ ~ Binomial(n, pₙ) with npₙ → λ, then Xₙ →_d Poisson(λ); the Poisson distribution arises as the limit of rare Bernoulli events.",
+      "aliases": [
+        "law of rare events",
+        "Poisson approximation theorem"
+      ]
+    },
+    {
+      "id": "s_local_central_limit_theorem",
+      "kind": "theorem",
+      "name": "Local central limit theorem",
+      "type_signature": "",
+      "description": "For i.i.d. integer-valued random variables with span 1, the probability P(Sₙ = k) is asymptotically (σ√(2πn))⁻¹ exp(−(k − nμ)²/(2nσ²)) uniformly in k.",
+      "aliases": [
+        "local CLT",
+        "local limit theorem"
+      ]
+    },
+    {
+      "id": "s_strong_markov_property_rw",
+      "kind": "theorem",
+      "name": "Strong Markov property for random walks",
+      "type_signature": "",
+      "description": "For a random walk Sₙ and a stopping time τ < ∞ a.s., the post-τ increments (S_{τ+k} − S_τ)_{k≥1} are independent of F_τ and have the same distribution as the original walk.",
+      "aliases": [
+        "strong Markov property (discrete)"
+      ]
+    },
+    {
+      "id": "s_arc_sine_law",
+      "kind": "theorem",
+      "name": "Arc sine law",
+      "type_signature": "",
+      "description": "For a symmetric random walk, the fraction of time spent positive up to step 2n converges in distribution to the arc sine distribution with density 1/(π√(x(1−x))) on (0,1).",
+      "aliases": [
+        "arc sine law for random walks",
+        "Lévy's arc sine law"
+      ]
+    },
+    {
+      "id": "s_gambler_ruin",
+      "kind": "theorem",
+      "name": "Gambler's ruin",
+      "type_signature": "",
+      "description": "For a simple random walk with absorbing barriers at 0 and N, the ruin probability starting from k is (q/p)^k − (q/p)^N)/(1 − (q/p)^N) when p ≠ q, and 1 − k/N when p = q = 1/2.",
+      "aliases": [
+        "gambler's ruin problem"
+      ]
+    },
+    {
+      "id": "s_ladder_variables",
+      "kind": "axiom",
+      "name": "Ladder variables",
+      "type_signature": "(Sₙ) → (T⁺, H⁺)",
+      "description": "For a random walk Sₙ, the ascending ladder time T⁺ = inf{n ≥ 1 : Sₙ > 0} and ladder height H⁺ = S_{T⁺}; iterating these defines the ascending ladder process.",
+      "aliases": [
+        "ladder heights",
+        "ladder epochs"
+      ]
+    },
+    {
+      "id": "s_convergence_of_random_series",
+      "kind": "state",
+      "name": "Convergence of random series",
+      "type_signature": "",
+      "description": "The series Σ Xₙ of independent random variables converges a.s. if and only if it converges in probability, which holds iff the three series of Kolmogorov's three-series theorem converge.",
+      "aliases": []
+    },
+    {
+      "id": "s_kronecker_lemma",
+      "kind": "theorem",
+      "name": "Kronecker's lemma",
+      "type_signature": "",
+      "description": "If bₙ ↑ ∞ and Σ aₙ/bₙ converges, then (1/bₙ) Σₖ₌₁ⁿ aₖ → 0; the key tool converting convergence of a series to convergence of Cesàro-type averages in SLLN proofs.",
+      "aliases": []
+    },
+    {
+      "id": "s_tower_property",
+      "kind": "theorem",
+      "name": "Tower property of conditional expectation",
+      "type_signature": "",
+      "description": "If H ⊂ G are sub-σ-algebras, then E[E[X | G] | H] = E[X | H] a.s.; the law of iterated expectations.",
+      "aliases": [
+        "law of total expectation",
+        "iterated expectations"
+      ]
+    },
+    {
+      "id": "s_ui_and_l1_convergence",
+      "kind": "theorem",
+      "name": "Uniform integrability and L¹ convergence",
+      "type_signature": "",
+      "description": "A uniformly integrable martingale (Xₙ, Fₙ) converges a.s. and in L¹ to X∞ = E[X∞ | Fₙ]; conversely, an L¹-bounded martingale converges in L¹ iff it is uniformly integrable.",
+      "aliases": [
+        "UI characterization of L¹ convergence"
+      ]
+    },
+    {
+      "id": "s_doob_decomposition",
+      "kind": "theorem",
+      "name": "Doob's decomposition theorem (discrete)",
+      "type_signature": "(Xₙ, Fₙ) → Mₙ + Aₙ",
+      "description": "Every adapted integrable process Xₙ admits a unique decomposition Xₙ = Mₙ + Aₙ where M is a martingale and A is a predictable process with A₀ = 0.",
+      "aliases": [
+        "Doob decomposition"
+      ]
+    },
+    {
+      "id": "s_backward_martingale_convergence",
+      "kind": "theorem",
+      "name": "Backward martingale convergence theorem",
+      "type_signature": "",
+      "description": "If (Xₙ)_{n≤0} is a backward martingale with respect to (Fₙ)_{n≤0}, then Xₙ → E[X₀ | F₋∞] a.s. and in L¹ as n → −∞.",
+      "aliases": [
+        "reversed martingale convergence"
+      ]
+    },
+    {
+      "id": "s_levy_zero_one_law",
+      "kind": "theorem",
+      "name": "Lévy's 0-1 law",
+      "type_signature": "",
+      "description": "If Fₙ ↑ F∞ and A ∈ F∞, then P(A | Fₙ) → 1_A a.s.; conditional probabilities of a tail event converge to its indicator.",
+      "aliases": []
+    },
+    {
+      "id": "s_branching_process",
+      "kind": "axiom",
+      "name": "Branching process (Galton-Watson)",
+      "type_signature": "(Z₀, offspring distribution) → (Zₙ)_{n≥0}",
+      "description": "A Markov chain Zₙ where Z₀ = 1 and each individual in generation n independently produces a random number of offspring with a fixed distribution, giving Zₙ₊₁ = Σᵢ₌₁^{Zₙ} ξᵢ.",
+      "aliases": [
+        "Galton-Watson process"
+      ]
+    },
+    {
+      "id": "s_branching_process_extinction",
+      "kind": "theorem",
+      "name": "Extinction criterion for branching processes",
+      "type_signature": "",
+      "description": "The extinction probability q = P(Zₙ → 0) equals 1 if the mean offspring μ ≤ 1, and equals the unique fixed point in [0,1) of the offspring generating function if μ > 1.",
+      "aliases": [
+        "Galton-Watson extinction theorem"
+      ]
+    },
+    {
+      "id": "s_martingale_clt",
+      "kind": "theorem",
+      "name": "Martingale central limit theorem",
+      "type_signature": "",
+      "description": "For a martingale difference array (Xₙᵢ) with conditional variances Σᵢ E[Xₙᵢ² | Fₙ,ᵢ₋₁] →_P 1 and a Lindeberg-type condition, the partial sums converge in distribution to N(0,1).",
+      "aliases": [
+        "CLT for martingale differences"
+      ]
+    },
+    {
+      "id": "s_exponential_martingale",
+      "kind": "state",
+      "name": "Exponential martingale",
+      "type_signature": "",
+      "description": "For i.i.d. Xᵢ with E[e^{θXᵢ}] = M(θ) < ∞, the process exp(θSₙ − n log M(θ)) is a martingale; a key tool for large deviation and stopping time computations.",
+      "aliases": [
+        "Wald's exponential martingale"
+      ]
+    },
+    {
+      "id": "s_markov_chain",
+      "kind": "axiom",
+      "name": "Markov chain",
+      "type_signature": "(S, P, μ₀) → (Xₙ)_{n≥0}",
+      "description": "A sequence of random variables (Xₙ) in a countable state space S with the Markov property: P(Xₙ₊₁ = j | X₀, …, Xₙ) = P(Xₙ₊₁ = j | Xₙ) = p(Xₙ, j).",
+      "aliases": [
+        "discrete-time Markov chain",
+        "DTMC"
+      ]
+    },
+    {
+      "id": "s_transition_matrix",
+      "kind": "axiom",
+      "name": "Transition matrix",
+      "type_signature": "S × S → [0,1]",
+      "description": "A matrix P = (p(i,j))_{i,j ∈ S} with nonneg entries and row sums equal to 1, encoding one-step transition probabilities of a Markov chain.",
+      "aliases": [
+        "stochastic matrix",
+        "transition probability matrix"
+      ]
+    },
+    {
+      "id": "s_chapman_kolmogorov_equations",
+      "kind": "theorem",
+      "name": "Chapman-Kolmogorov equations",
+      "type_signature": "",
+      "description": "The n-step transition probabilities satisfy p^{(m+n)}(i,j) = Σ_k p^{(m)}(i,k) p^{(n)}(k,j), equivalently P^{m+n} = P^m P^n.",
+      "aliases": []
+    },
+    {
+      "id": "s_markov_property",
+      "kind": "theorem",
+      "name": "Markov property",
+      "type_signature": "",
+      "description": "Conditional on Xₙ = i, the future process (Xₙ₊ₖ)_{k≥0} is independent of the past (X₀, …, Xₙ₋₁) and has the law of a chain started at i.",
+      "aliases": [
+        "memoryless property"
+      ]
+    },
+    {
+      "id": "s_strong_markov_property_mc",
+      "kind": "theorem",
+      "name": "Strong Markov property for Markov chains",
+      "type_signature": "",
+      "description": "For a Markov chain and stopping time τ with P(τ < ∞) > 0, conditional on τ < ∞ and X_τ = i, the post-τ process is independent of F_τ and has the law of a chain started at i.",
+      "aliases": []
+    },
+    {
+      "id": "s_communication_classes",
+      "kind": "axiom",
+      "name": "Communication classes",
+      "type_signature": "S → S/↔",
+      "description": "States i, j communicate (i ↔ j) if i → j and j → i, where i → j means p^{(n)}(i,j) > 0 for some n; communication is an equivalence relation partitioning the state space into classes.",
+      "aliases": []
+    },
+    {
+      "id": "s_irreducibility_mc",
+      "kind": "axiom",
+      "name": "Irreducibility of a Markov chain",
+      "type_signature": "MC → Prop",
+      "description": "A Markov chain is irreducible if every state communicates with every other state, i.e., the state space consists of a single communication class.",
+      "aliases": [
+        "irreducible chain"
+      ]
+    },
+    {
+      "id": "s_recurrence_mc",
+      "kind": "axiom",
+      "name": "Recurrence for Markov chains",
+      "type_signature": "State → Prop",
+      "description": "A state i is recurrent if P_i(Xₙ = i for some n ≥ 1) = 1, equivalently Σₙ p^{(n)}(i,i) = ∞.",
+      "aliases": [
+        "recurrent state"
+      ]
+    },
+    {
+      "id": "s_transience_mc",
+      "kind": "axiom",
+      "name": "Transience for Markov chains",
+      "type_signature": "State → Prop",
+      "description": "A state i is transient if P_i(Xₙ = i for some n ≥ 1) < 1, equivalently Σₙ p^{(n)}(i,i) < ∞.",
+      "aliases": [
+        "transient state"
+      ]
+    },
+    {
+      "id": "s_recurrence_is_class_property",
+      "kind": "theorem",
+      "name": "Recurrence is a class property",
+      "type_signature": "",
+      "description": "If i ↔ j and i is recurrent, then j is recurrent; thus recurrence and transience are properties of communication classes, not individual states.",
+      "aliases": []
+    },
+    {
+      "id": "s_positive_recurrence",
+      "kind": "axiom",
+      "name": "Positive recurrence",
+      "type_signature": "State → Prop",
+      "description": "A recurrent state i is positive recurrent if the expected return time E_i[T_i] < ∞, where T_i = inf{n ≥ 1 : Xₙ = i}.",
+      "aliases": [
+        "positive recurrent state",
+        "ergodic state"
+      ]
+    },
+    {
+      "id": "s_null_recurrence",
+      "kind": "axiom",
+      "name": "Null recurrence",
+      "type_signature": "State → Prop",
+      "description": "A recurrent state i is null recurrent if the expected return time E_i[T_i] = ∞; the state is visited infinitely often but the average return time is infinite.",
+      "aliases": [
+        "null recurrent state"
+      ]
+    },
+    {
+      "id": "s_period_of_state",
+      "kind": "axiom",
+      "name": "Period of a state",
+      "type_signature": "State → ℕ",
+      "description": "The period of state i is d(i) = gcd{n ≥ 1 : p^{(n)}(i,i) > 0}; a state with period 1 is called aperiodic.",
+      "aliases": [
+        "periodicity of a Markov chain state"
+      ]
+    },
+    {
+      "id": "s_existence_uniqueness_stationary",
+      "kind": "theorem",
+      "name": "Existence and uniqueness of stationary distribution",
+      "type_signature": "",
+      "description": "An irreducible positive recurrent Markov chain has a unique stationary distribution π with π(i) = 1/E_i[T_i]; an irreducible chain has a stationary distribution iff it is positive recurrent.",
+      "aliases": []
+    },
+    {
+      "id": "s_convergence_theorem_mc",
+      "kind": "theorem",
+      "name": "Convergence theorem for Markov chains",
+      "type_signature": "",
+      "description": "For an irreducible, aperiodic, positive recurrent Markov chain with stationary distribution π, p^{(n)}(i,j) → π(j) as n → ∞ for all i, j.",
+      "aliases": [
+        "basic limit theorem for Markov chains"
+      ]
+    },
+    {
+      "id": "s_detailed_balance",
+      "kind": "axiom",
+      "name": "Detailed balance",
+      "type_signature": "(π, P) → Prop",
+      "description": "A distribution π and transition matrix P satisfy detailed balance if π(i)p(i,j) = π(j)p(j,i) for all i, j; this implies π is stationary for P.",
+      "aliases": [
+        "reversibility condition",
+        "time-reversibility"
+      ]
+    },
+    {
+      "id": "s_ratio_limit_theorem",
+      "kind": "theorem",
+      "name": "Ratio limit theorem",
+      "type_signature": "",
+      "description": "For an irreducible recurrent Markov chain, Σₖ₌₀ⁿ p^{(k)}(i,j) / Σₖ₌₀ⁿ p^{(k)}(i,i) → π(j)/π(i) (or E_i[T_i]/E_j[T_j]) as n → ∞.",
+      "aliases": []
+    },
+    {
+      "id": "s_mean_return_time",
+      "kind": "state",
+      "name": "Mean return time",
+      "type_signature": "State → [0,∞]",
+      "description": "The expected first return time E_i[T_i] where T_i = inf{n ≥ 1 : Xₙ = i}; equals 1/π(i) for positive recurrent state i with stationary distribution π.",
+      "aliases": [
+        "expected return time"
+      ]
+    },
+    {
+      "id": "s_absorbing_state",
+      "kind": "axiom",
+      "name": "Absorbing state",
+      "type_signature": "State → Prop",
+      "description": "A state i is absorbing if p(i,i) = 1; once the chain enters state i it remains there forever.",
+      "aliases": [
+        "absorbing barrier"
+      ]
+    },
+    {
+      "id": "s_ergodicity_definition",
+      "kind": "axiom",
+      "name": "Ergodicity",
+      "type_signature": "Measure-preserving system → Prop",
+      "description": "A measure-preserving transformation T on (Ω, F, μ) is ergodic if every T-invariant set A (T⁻¹A = A) satisfies μ(A) = 0 or μ(A) = 1.",
+      "aliases": [
+        "metric transitivity",
+        "ergodic transformation"
+      ]
+    },
+    {
+      "id": "s_maximal_ergodic_lemma",
+      "kind": "theorem",
+      "name": "Maximal ergodic lemma",
+      "type_signature": "",
+      "description": "For f ∈ L¹ and T measure-preserving, ∫_{A} f dμ ≥ 0 where A = {ω : sup_{n≥1} (1/n)Σₖ₌₀ⁿ⁻¹ f(Tᵏω) > 0}; the key lemma in proving the pointwise ergodic theorem.",
+      "aliases": [
+        "Hopf maximal ergodic lemma"
+      ]
+    },
+    {
+      "id": "s_strong_mixing",
+      "kind": "axiom",
+      "name": "Strong mixing",
+      "type_signature": "Measure-preserving system → Prop",
+      "description": "A measure-preserving transformation T is strongly mixing if μ(A ∩ T⁻ⁿB) → μ(A)μ(B) for all measurable A, B as n → ∞.",
+      "aliases": [
+        "mixing"
+      ]
+    },
+    {
+      "id": "s_stationary_process",
+      "kind": "axiom",
+      "name": "Stationary process",
+      "type_signature": "(Xₙ)_{n∈ℤ} → Prop",
+      "description": "A stochastic process (Xₙ) whose joint distributions are shift-invariant: (X_{n₁+k}, …, X_{nₘ+k}) has the same distribution as (X_{n₁}, …, X_{nₘ}) for all k.",
+      "aliases": [
+        "strictly stationary process"
+      ]
+    },
+    {
+      "id": "s_shannon_mcmillan_breiman",
+      "kind": "theorem",
+      "name": "Shannon-McMillan-Breiman theorem",
+      "type_signature": "",
+      "description": "For an ergodic stationary process, −(1/n) log μ(partition cell containing (X₁,…,Xₙ)) → h a.s., where h is the entropy rate; typical sequences have probability ≈ e^{−nh}.",
+      "aliases": [
+        "asymptotic equipartition property",
+        "AEP"
+      ]
+    },
+    {
+      "id": "s_kac_lemma",
+      "kind": "theorem",
+      "name": "Kac's lemma",
+      "type_signature": "",
+      "description": "For an ergodic measure-preserving transformation T on a probability space and A with μ(A) > 0, the expected return time to A is E_A[τ_A] = 1/μ(A).",
+      "aliases": [
+        "Kac's recurrence theorem"
+      ]
+    },
+    {
+      "id": "s_kolmogorov_centsov_continuity",
+      "kind": "theorem",
+      "name": "Kolmogorov-Čentsov continuity theorem",
+      "type_signature": "",
+      "description": "If E[|X_t − X_s|^α] ≤ C|t − s|^{1+β} for some α, β > 0, then X has a continuous modification with locally Hölder continuous paths of any exponent γ < β/α.",
+      "aliases": [
+        "Kolmogorov continuity criterion"
+      ]
+    },
+    {
+      "id": "s_markov_property_bm",
+      "kind": "theorem",
+      "name": "Markov property of Brownian motion",
+      "type_signature": "",
+      "description": "For Brownian motion B_t and fixed time s, the process (B_{s+t} − B_s)_{t≥0} is a standard Brownian motion independent of F_s.",
+      "aliases": []
+    },
+    {
+      "id": "s_strong_markov_property_bm",
+      "kind": "theorem",
+      "name": "Strong Markov property of Brownian motion",
+      "type_signature": "",
+      "description": "For Brownian motion B_t and an a.s. finite stopping time τ, the process (B_{τ+t} − B_τ)_{t≥0} is a standard Brownian motion independent of F_τ.",
+      "aliases": []
+    },
+    {
+      "id": "s_blumenthal_zero_one_law",
+      "kind": "theorem",
+      "name": "Blumenthal's 0-1 law",
+      "type_signature": "",
+      "description": "Every event in the germ σ-algebra F_{0+} = ∩_{t>0} F_t of a Brownian motion has probability 0 or 1; the immediate future of BM is deterministic given the starting point.",
+      "aliases": []
+    },
+    {
+      "id": "s_reflection_principle_bm",
+      "kind": "theorem",
+      "name": "Reflection principle for Brownian motion",
+      "type_signature": "",
+      "description": "For Brownian motion and the hitting time τ_a = inf{t : B_t = a}, the reflected process B̃_t = B_t for t ≤ τ_a and B̃_t = 2a − B_t for t > τ_a is also a Brownian motion.",
+      "aliases": []
+    },
+    {
+      "id": "s_distribution_of_max_bm",
+      "kind": "theorem",
+      "name": "Distribution of the maximum of Brownian motion",
+      "type_signature": "",
+      "description": "P(max_{0≤s≤t} B_s ≥ a) = 2P(B_t ≥ a) = 2(1 − Φ(a/√t)) for a ≥ 0, derived from the reflection principle.",
+      "aliases": []
+    },
+    {
+      "id": "s_arc_sine_law_bm",
+      "kind": "theorem",
+      "name": "Arc sine law for Brownian motion",
+      "type_signature": "",
+      "description": "The last zero of BM before time 1, the time at which BM attains its maximum on [0,1], and the Lebesgue measure of {t ∈ [0,1] : B_t > 0} all follow the arc sine distribution on [0,1].",
+      "aliases": [
+        "Lévy's arc sine laws"
+      ]
+    },
+    {
+      "id": "s_nowhere_differentiability_bm",
+      "kind": "theorem",
+      "name": "Nowhere differentiability of Brownian motion",
+      "type_signature": "",
+      "description": "Almost surely, the paths of Brownian motion are nowhere differentiable: for a.e. ω, there is no t at which lim_{h→0} (B_{t+h}(ω) − B_t(ω))/h exists.",
+      "aliases": [
+        "Paley-Wiener-Zygmund theorem"
+      ]
+    },
+    {
+      "id": "s_quadratic_variation_bm",
+      "kind": "theorem",
+      "name": "Quadratic variation of Brownian motion",
+      "type_signature": "",
+      "description": "The quadratic variation of Brownian motion on [0,t] equals t: Σᵢ (B_{tᵢ} − B_{tᵢ₋₁})² → t in L² (and in probability) as the mesh of the partition goes to 0.",
+      "aliases": []
+    },
+    {
+      "id": "s_bm_harmonic_functions",
+      "kind": "theorem",
+      "name": "Brownian motion and harmonic functions",
+      "type_signature": "",
+      "description": "For a bounded domain D ⊂ ℝⁿ with regular boundary and continuous f on ∂D, the function u(x) = E_x[f(B_{τ_D})] solves the Dirichlet problem Δu = 0 in D with u = f on ∂D.",
+      "aliases": [
+        "Kakutani's theorem",
+        "probabilistic solution of Dirichlet problem"
+      ]
+    },
+    {
+      "id": "s_recurrence_transience_bm",
+      "kind": "theorem",
+      "name": "Recurrence and transience of Brownian motion",
+      "type_signature": "",
+      "description": "Brownian motion in ℝᵈ is recurrent (visits every open set infinitely often) for d ≤ 2 and transient (|B_t| → ∞ a.s.) for d ≥ 3.",
+      "aliases": []
+    },
+    {
+      "id": "s_bm_time_inversion",
+      "kind": "theorem",
+      "name": "Time inversion of Brownian motion",
+      "type_signature": "",
+      "description": "If B_t is a standard Brownian motion, then the process X_t = tB_{1/t} for t > 0 and X_0 = 0 is also a standard Brownian motion.",
+      "aliases": [
+        "BM inversion"
+      ]
+    },
+    {
+      "id": "s_bm_scaling_property",
+      "kind": "theorem",
+      "name": "Scaling property of Brownian motion",
+      "type_signature": "",
+      "description": "For any c > 0, the process (c⁻¹/² B_{ct})_{t≥0} is a standard Brownian motion; BM is self-similar with exponent 1/2.",
+      "aliases": [
+        "Brownian scaling",
+        "self-similarity of BM"
+      ]
+    },
+    {
+      "id": "s_bm_as_martingale",
+      "kind": "state",
+      "name": "Brownian motion as a martingale",
+      "type_signature": "",
+      "description": "Standard Brownian motion B_t is a continuous martingale w.r.t. its natural filtration; moreover B_t² − t is also a martingale.",
+      "aliases": []
+    },
+    {
+      "id": "s_construction_of_bm",
+      "kind": "state",
+      "name": "Construction of Brownian motion",
+      "type_signature": "",
+      "description": "Brownian motion can be constructed via Lévy's interpolation (dyadic), the Wiener series (random Fourier series on [0,1]), or the Kolmogorov extension theorem combined with the Kolmogorov-Čentsov continuity theorem.",
+      "aliases": [
+        "Lévy-Ciesielski construction",
+        "Wiener's construction"
+      ]
+    },
+    {
+      "id": "s_hitting_times_bm",
+      "kind": "state",
+      "name": "Hitting times of Brownian motion",
+      "type_signature": "",
+      "description": "The hitting time τ_a = inf{t ≥ 0 : B_t = a} is a.s. finite for all a ∈ ℝ (d=1), has the distribution of a²/N² where N ~ N(0,1) (related to inverse Gaussian), and E[τ_a] = ∞.",
+      "aliases": [
+        "first passage time for BM"
+      ]
+    },
+    {
+      "id": "t_subsequence_argument",
+      "kind": "technique",
+      "name": "Subsequence argument",
+      "function_signature": "(Convergence in probability) → (a.s. convergence along subsequence → full a.s. convergence)",
+      "description": "Extracts an a.s. convergent subsequence from a sequence converging in probability, then extends the conclusion to the full sequence by monotonicity or interpolation."
+    },
+    {
+      "id": "t_borel_cantelli_technique",
+      "kind": "technique",
+      "name": "Borel-Cantelli technique",
+      "function_signature": "(Tail probability estimates Σ P(Aₙ)) → (a.s. occurrence/non-occurrence of {Aₙ i.o.})",
+      "description": "Proves almost sure convergence or divergence by bounding the sum of probabilities of bad events and applying the first or second Borel-Cantelli lemma."
+    },
+    {
+      "id": "t_moment_method",
+      "kind": "technique",
+      "name": "Moment method (probabilistic)",
+      "function_signature": "(Moments E[Xₙᵏ]) → (Convergence in distribution)",
+      "description": "Establishes convergence in distribution by computing all moments of Xₙ, showing convergence to moments of the target, and verifying the target is moment-determined."
+    },
+    {
+      "id": "t_skorokhod_representation_technique",
+      "kind": "technique",
+      "name": "Skorokhod representation technique",
+      "function_signature": "(Convergence in distribution) → (a.s. convergence on a coupled space)",
+      "description": "Replaces convergence in distribution with almost sure convergence by constructing equivalent random variables on a common probability space via Skorokhod's representation theorem."
+    },
+    {
+      "id": "t_maximal_inequality_technique",
+      "kind": "technique",
+      "name": "Maximal inequality technique",
+      "function_signature": "(Tail bound on max_{k≤n} |Sₖ|) → (a.s. convergence or rate bounds)",
+      "description": "Controls the fluctuations of partial sums or martingales using Kolmogorov's, Doob's, or Lévy's maximal inequality to deduce almost sure convergence or moment bounds."
+    },
+    {
+      "id": "t_stopping_time_technique",
+      "kind": "technique",
+      "name": "Stopping time technique",
+      "function_signature": "(Process Xₙ, stopping time τ) → (Properties of X_τ via optional stopping/sampling)",
+      "description": "Analyzes a process at a random time by applying optional stopping theorems, the strong Markov property, or Wald's equations to extract information about hitting probabilities, expected values, or distributional properties."
+    },
+    {
+      "id": "t_diagonalization_technique",
+      "kind": "technique",
+      "name": "Diagonalization technique (probability)",
+      "function_signature": "(Countable family of subsequential limits) → (Single subsequence with all properties)",
+      "description": "Extracts a single subsequence satisfying countably many convergence requirements simultaneously by iterating subsequence extraction and taking the diagonal."
     }
   ],
   "edges": [
@@ -295192,6 +296748,2430 @@
       "role": "input",
       "parameter_binding": {},
       "used_in_theorem": "s_elias_bassalygo"
+    },
+    {
+      "id": "e_22043",
+      "from": "s_plunnecke_graph",
+      "to": "t_plunnecke_graph_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_plunnecke_inequality"
+    },
+    {
+      "id": "e_22044",
+      "from": "s_magnification_ratio",
+      "to": "t_plunnecke_graph_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_plunnecke_inequality"
+    },
+    {
+      "id": "e_22045",
+      "from": "s_sumset_growth_function",
+      "to": "t_plunnecke_graph_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_plunnecke_inequality"
+    },
+    {
+      "id": "e_22046",
+      "from": "t_plunnecke_graph_method",
+      "to": "s_plunnecke_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_plunnecke_inequality"
+    },
+    {
+      "id": "e_22047",
+      "from": "t_plunnecke_graph_method",
+      "to": "s_plunnecke_ruzsa_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_plunnecke_ruzsa_inequality"
+    },
+    {
+      "id": "e_22048",
+      "from": "s_ruzsa_distance",
+      "to": "t_ruzsa_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ruzsa_triangle_inequality"
+    },
+    {
+      "id": "e_22049",
+      "from": "s_ruzsa_triangle_inequality",
+      "to": "t_ruzsa_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22050",
+      "from": "s_ruzsa_covering_lemma",
+      "to": "t_ruzsa_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22051",
+      "from": "s_ruzsa_sum_triangle_inequality",
+      "to": "t_ruzsa_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22052",
+      "from": "s_covering_number_sumset",
+      "to": "t_ruzsa_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ruzsa_covering_lemma"
+    },
+    {
+      "id": "e_22053",
+      "from": "t_ruzsa_calculus",
+      "to": "s_ruzsa_distance_controls_energy",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ruzsa_distance_controls_energy"
+    },
+    {
+      "id": "e_22054",
+      "from": "t_ruzsa_calculus",
+      "to": "s_ruzsa_modeling_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ruzsa_modeling_lemma"
+    },
+    {
+      "id": "e_22055",
+      "from": "s_bohr_set",
+      "to": "t_fourier_analysis_finite_abelian_groups",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22056",
+      "from": "s_spectrum_of_set",
+      "to": "t_fourier_analysis_finite_abelian_groups",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chang_theorem"
+    },
+    {
+      "id": "e_22057",
+      "from": "s_convolution_counting_function",
+      "to": "t_fourier_analysis_finite_abelian_groups",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22058",
+      "from": "s_dissociated_set",
+      "to": "t_fourier_analysis_finite_abelian_groups",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chang_theorem"
+    },
+    {
+      "id": "e_22059",
+      "from": "t_fourier_analysis_finite_abelian_groups",
+      "to": "s_roth_via_fourier",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_roth_theorem_3AP"
+    },
+    {
+      "id": "e_22060",
+      "from": "t_fourier_analysis_finite_abelian_groups",
+      "to": "s_ap_count_formula_fourier",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ap_count_formula_fourier"
+    },
+    {
+      "id": "e_22061",
+      "from": "t_fourier_analysis_finite_abelian_groups",
+      "to": "s_chang_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chang_theorem"
+    },
+    {
+      "id": "e_22062",
+      "from": "t_fourier_analysis_finite_abelian_groups",
+      "to": "s_bogolyubov_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bogolyubov_lemma"
+    },
+    {
+      "id": "e_22063",
+      "from": "t_fourier_analysis_finite_abelian_groups",
+      "to": "s_meshulam_roth_f3n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_meshulam_roth_f3n"
+    },
+    {
+      "id": "e_22064",
+      "from": "s_progression_free_set",
+      "to": "t_density_increment_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_roth_theorem_3AP"
+    },
+    {
+      "id": "e_22065",
+      "from": "s_popular_difference",
+      "to": "t_density_increment_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_roth_theorem_3AP"
+    },
+    {
+      "id": "e_22066",
+      "from": "s_bohr_set",
+      "to": "t_density_increment_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bourgain_3ap_bound"
+    },
+    {
+      "id": "e_22067",
+      "from": "t_density_increment_argument",
+      "to": "s_roth_theorem_3AP",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_roth_theorem_3AP"
+    },
+    {
+      "id": "e_22068",
+      "from": "t_density_increment_argument",
+      "to": "s_bourgain_3ap_bound",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bourgain_3ap_bound"
+    },
+    {
+      "id": "e_22069",
+      "from": "t_density_increment_argument",
+      "to": "s_bateman_katz_f3n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bateman_katz_f3n"
+    },
+    {
+      "id": "e_22070",
+      "from": "s_additive_energy",
+      "to": "t_energy_increment_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_szemeredi_regularity_lemma"
+    },
+    {
+      "id": "e_22071",
+      "from": "s_additive_energy_normalized",
+      "to": "t_energy_increment_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22072",
+      "from": "s_gowers_anti_uniformity",
+      "to": "t_energy_increment_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_koopman_von_neumann_structure"
+    },
+    {
+      "id": "e_22073",
+      "from": "t_energy_increment_argument",
+      "to": "s_szemeredi_regularity_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_szemeredi_regularity_lemma"
+    },
+    {
+      "id": "e_22074",
+      "from": "t_energy_increment_argument",
+      "to": "s_koopman_von_neumann_structure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_koopman_von_neumann_structure"
+    },
+    {
+      "id": "e_22075",
+      "from": "t_energy_increment_argument",
+      "to": "s_arithmetic_regularity_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arithmetic_regularity_lemma"
+    },
+    {
+      "id": "e_22076",
+      "from": "s_szemeredi_regularity_lemma",
+      "to": "t_regularity_method_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22077",
+      "from": "s_regularity_pair",
+      "to": "t_regularity_method_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22078",
+      "from": "s_regularity_counting_lemma",
+      "to": "t_regularity_method_arithmetic",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22079",
+      "from": "t_regularity_method_arithmetic",
+      "to": "s_szemeredi_regularity_graph_arithmetic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_szemeredi_theorem"
+    },
+    {
+      "id": "e_22080",
+      "from": "t_regularity_method_arithmetic",
+      "to": "s_triangle_removal_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_triangle_removal_lemma"
+    },
+    {
+      "id": "e_22081",
+      "from": "s_triangle_removal_lemma",
+      "to": "t_graph_removal_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22082",
+      "from": "t_graph_removal_technique",
+      "to": "s_roth_via_triangle_removal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_roth_theorem_3AP"
+    },
+    {
+      "id": "e_22083",
+      "from": "t_graph_removal_technique",
+      "to": "s_corners_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_corners_theorem"
+    },
+    {
+      "id": "e_22084",
+      "from": "t_probabilistic_method_additive_comb",
+      "to": "s_long_aps_in_sumsets",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_long_aps_in_sumsets"
+    },
+    {
+      "id": "e_22085",
+      "from": "t_probabilistic_method_additive_comb",
+      "to": "s_sum_free_set",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22086",
+      "from": "s_combinatorial_nullstellensatz",
+      "to": "t_polynomial_method_additive",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22087",
+      "from": "s_chevalley_warning_theorem",
+      "to": "t_polynomial_method_additive",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22088",
+      "from": "t_polynomial_method_additive",
+      "to": "s_erdos_heilbronn_conjecture",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_erdos_heilbronn_conjecture"
+    },
+    {
+      "id": "e_22089",
+      "from": "t_polynomial_method_additive",
+      "to": "s_cauchy_davenport_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cauchy_davenport_theorem"
+    },
+    {
+      "id": "e_22090",
+      "from": "t_polynomial_method_additive",
+      "to": "s_erdos_ginzburg_ziv_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_erdos_ginzburg_ziv_theorem"
+    },
+    {
+      "id": "e_22091",
+      "from": "s_additive_energy",
+      "to": "t_sum_product_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22092",
+      "from": "s_erdos_szemeredi_conjecture",
+      "to": "t_sum_product_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22093",
+      "from": "t_sum_product_technique",
+      "to": "s_sum_product_estimate_reals",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sum_product_estimate_reals"
+    },
+    {
+      "id": "e_22094",
+      "from": "t_sum_product_technique",
+      "to": "s_solymosi_sum_product",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_solymosi_sum_product"
+    },
+    {
+      "id": "e_22095",
+      "from": "t_sum_product_technique",
+      "to": "s_sum_product_finite_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sum_product_finite_fields"
+    },
+    {
+      "id": "e_22096",
+      "from": "s_szemeredi_trotter_incidences",
+      "to": "t_incidence_geometry_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22097",
+      "from": "s_crossing_number_inequality",
+      "to": "t_incidence_geometry_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_szemeredi_trotter_incidences"
+    },
+    {
+      "id": "e_22098",
+      "from": "t_incidence_geometry_method",
+      "to": "s_sum_product_estimate_reals",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sum_product_estimate_reals"
+    },
+    {
+      "id": "e_22099",
+      "from": "s_generalized_arithmetic_progression",
+      "to": "t_tensor_product_trick",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22100",
+      "from": "t_tensor_product_trick",
+      "to": "s_freiman_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22101",
+      "from": "s_furstenberg_correspondence_principle",
+      "to": "t_ergodic_theory_approach",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22102",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_furstenberg_multiple_recurrence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_szemeredi_theorem"
+    },
+    {
+      "id": "e_22103",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_bergelson_leibman",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bergelson_leibman"
+    },
+    {
+      "id": "e_22104",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_multidimensional_szemeredi",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_multidimensional_szemeredi"
+    },
+    {
+      "id": "e_22105",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_sarkozy_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sarkozy_theorem"
+    },
+    {
+      "id": "e_22106",
+      "from": "s_hypergraph_regularity",
+      "to": "t_hypergraph_regularity_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22107",
+      "from": "t_hypergraph_regularity_method",
+      "to": "s_hypergraph_removal",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hypergraph_removal"
+    },
+    {
+      "id": "e_22108",
+      "from": "t_hypergraph_regularity_method",
+      "to": "s_szemeredi_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_szemeredi_theorem"
+    },
+    {
+      "id": "e_22109",
+      "from": "t_cell_decomposition_technique",
+      "to": "s_szemeredi_trotter_incidences",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_szemeredi_trotter_incidences"
+    },
+    {
+      "id": "e_22110",
+      "from": "s_bohr_set",
+      "to": "t_bohr_set_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22111",
+      "from": "s_combinatorial_dimension",
+      "to": "t_bohr_set_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22112",
+      "from": "t_bohr_set_method",
+      "to": "s_bourgain_3ap_bound",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bourgain_3ap_bound"
+    },
+    {
+      "id": "e_22113",
+      "from": "t_bohr_set_method",
+      "to": "s_arithmetic_regularity_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arithmetic_regularity_lemma"
+    },
+    {
+      "id": "e_22114",
+      "from": "t_bohr_set_method",
+      "to": "s_sanders_quasi_polynomial_freiman_ruzsa",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sanders_quasi_polynomial_freiman_ruzsa"
+    },
+    {
+      "id": "e_22115",
+      "from": "s_gowers_uniformity_norm",
+      "to": "t_weyl_differencing",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22116",
+      "from": "t_weyl_differencing",
+      "to": "s_gowers_uniformity_norm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22117",
+      "from": "t_van_der_corput_trick",
+      "to": "s_furstenberg_multiple_recurrence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_szemeredi_theorem"
+    },
+    {
+      "id": "e_22118",
+      "from": "t_dependent_random_choice",
+      "to": "s_balog_szemeredi_gowers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_balog_szemeredi_gowers"
+    },
+    {
+      "id": "e_22119",
+      "from": "s_pseudorandom_measure",
+      "to": "t_transference_bridge",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_green_tao"
+    },
+    {
+      "id": "e_22120",
+      "from": "s_linear_forms_condition",
+      "to": "t_transference_bridge",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_green_tao"
+    },
+    {
+      "id": "e_22121",
+      "from": "s_correlation_condition",
+      "to": "t_transference_bridge",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_green_tao"
+    },
+    {
+      "id": "e_22122",
+      "from": "s_w_trick",
+      "to": "t_transference_bridge",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_green_tao"
+    },
+    {
+      "id": "e_22123",
+      "from": "s_goldston_yildirim_majorant",
+      "to": "t_transference_bridge",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_green_tao"
+    },
+    {
+      "id": "e_22124",
+      "from": "t_transference_bridge",
+      "to": "s_relative_szemeredi_for_pseudorandom_majorants",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_green_tao"
+    },
+    {
+      "id": "e_22125",
+      "from": "t_transference_bridge",
+      "to": "s_green_tao",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_green_tao"
+    },
+    {
+      "id": "e_22126",
+      "from": "s_generalized_arithmetic_progression",
+      "to": "t_geometry_of_numbers_in_freiman",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22127",
+      "from": "s_proper_gap",
+      "to": "t_geometry_of_numbers_in_freiman",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22128",
+      "from": "t_geometry_of_numbers_in_freiman",
+      "to": "s_freiman_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22129",
+      "from": "t_structure_randomness_dichotomy",
+      "to": "s_koopman_von_neumann_structure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22130",
+      "from": "s_gowers_uniformity_norm",
+      "to": "t_structure_randomness_dichotomy",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22131",
+      "from": "t_compression_symmetrization",
+      "to": "s_cauchy_davenport_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cauchy_davenport_theorem"
+    },
+    {
+      "id": "e_22132",
+      "from": "s_additive_energy",
+      "to": "t_additive_energy_amplification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22133",
+      "from": "s_popular_difference",
+      "to": "t_additive_energy_amplification",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22134",
+      "from": "t_additive_energy_amplification",
+      "to": "s_balog_szemeredi_gowers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_balog_szemeredi_gowers"
+    },
+    {
+      "id": "e_22135",
+      "from": "s_additive_energy",
+      "to": "t_balog_szemeredi_gowers_graph",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_balog_szemeredi_gowers"
+    },
+    {
+      "id": "e_22136",
+      "from": "s_additive_quadruple",
+      "to": "t_balog_szemeredi_gowers_graph",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_balog_szemeredi_gowers"
+    },
+    {
+      "id": "e_22137",
+      "from": "t_balog_szemeredi_gowers_graph",
+      "to": "s_balog_szemeredi_gowers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_balog_szemeredi_gowers"
+    },
+    {
+      "id": "e_22138",
+      "from": "s_bohr_set",
+      "to": "t_epsilon_net_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22139",
+      "from": "t_epsilon_net_argument",
+      "to": "s_combinatorial_dimension",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22140",
+      "from": "t_stepanov_method_addcomb",
+      "to": "s_sum_product_finite_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sum_product_finite_fields"
+    },
+    {
+      "id": "e_22141",
+      "from": "t_character_sum_method",
+      "to": "s_sarkozy_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sarkozy_theorem"
+    },
+    {
+      "id": "e_22142",
+      "from": "t_character_sum_method",
+      "to": "s_sum_product_finite_fields",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_sum_product_finite_fields"
+    },
+    {
+      "id": "e_22143",
+      "from": "t_dyadic_pigeonholing",
+      "to": "s_additive_energy",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22144",
+      "from": "s_doubling_constant",
+      "to": "t_ruzsa_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22145",
+      "from": "s_doubling_constant",
+      "to": "t_plunnecke_graph_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22146",
+      "from": "s_freiman_homomorphism",
+      "to": "t_geometry_of_numbers_in_freiman",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22147",
+      "from": "s_freiman_isomorphism",
+      "to": "t_geometry_of_numbers_in_freiman",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22148",
+      "from": "s_additive_energy",
+      "to": "t_fourier_analysis_finite_abelian_groups",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22149",
+      "from": "s_stabilizer_of_sumset",
+      "to": "t_compression_symmetrization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kneser_addition_theorem"
+    },
+    {
+      "id": "e_22150",
+      "from": "t_compression_symmetrization",
+      "to": "s_kneser_addition_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kneser_addition_theorem"
+    },
+    {
+      "id": "e_22151",
+      "from": "s_coset_progression",
+      "to": "t_geometry_of_numbers_in_freiman",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22152",
+      "from": "s_generalized_arithmetic_progression",
+      "to": "t_ruzsa_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22153",
+      "from": "t_weyl_differencing",
+      "to": "s_gowers_inverse_u3",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gowers_inverse_u3"
+    },
+    {
+      "id": "e_22154",
+      "from": "t_weyl_differencing",
+      "to": "s_gowers_inverse_uk",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gowers_inverse_uk"
+    },
+    {
+      "id": "e_22155",
+      "from": "s_nilsequence",
+      "to": "t_ergodic_theory_approach",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gowers_inverse_uk"
+    },
+    {
+      "id": "e_22156",
+      "from": "s_nilmanifold",
+      "to": "t_ergodic_theory_approach",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gowers_inverse_uk"
+    },
+    {
+      "id": "e_22157",
+      "from": "t_structure_randomness_dichotomy",
+      "to": "s_gowers_norm_controls_ap_count",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gowers_norm_controls_ap_count"
+    },
+    {
+      "id": "e_22158",
+      "from": "t_structure_randomness_dichotomy",
+      "to": "s_generalized_von_neumann",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generalized_von_neumann"
+    },
+    {
+      "id": "e_22159",
+      "from": "s_littlewood_offord_problem",
+      "to": "t_fourier_analysis_finite_abelian_groups",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_inverse_littlewood_offord"
+    },
+    {
+      "id": "e_22160",
+      "from": "t_fourier_analysis_finite_abelian_groups",
+      "to": "s_inverse_littlewood_offord",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_inverse_littlewood_offord"
+    },
+    {
+      "id": "e_22161",
+      "from": "t_fourier_analysis_finite_abelian_groups",
+      "to": "s_erdos_littlewood_offord",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_erdos_littlewood_offord"
+    },
+    {
+      "id": "e_22162",
+      "from": "s_small_ball_probability",
+      "to": "t_fourier_analysis_finite_abelian_groups",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_inverse_littlewood_offord"
+    },
+    {
+      "id": "e_22163",
+      "from": "t_fourier_analysis_finite_abelian_groups",
+      "to": "s_halasz_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_halasz_inequality"
+    },
+    {
+      "id": "e_22164",
+      "from": "t_compression_symmetrization",
+      "to": "s_vosper_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_vosper_theorem"
+    },
+    {
+      "id": "e_22165",
+      "from": "t_ruzsa_calculus",
+      "to": "s_freiman_inverse_2_3k_4",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_inverse_2_3k_4"
+    },
+    {
+      "id": "e_22166",
+      "from": "t_transference_bridge",
+      "to": "s_green_tao_linear_equations_primes",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_green_tao_linear_equations_primes"
+    },
+    {
+      "id": "e_22167",
+      "from": "s_additive_combinatorics_in_fp",
+      "to": "t_fourier_analysis_finite_abelian_groups",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22168",
+      "from": "t_fourier_analysis_finite_abelian_groups",
+      "to": "s_freiman_ruzsa_f2n",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_ruzsa_f2n"
+    },
+    {
+      "id": "e_22169",
+      "from": "t_ruzsa_calculus",
+      "to": "s_ruzsa_analog_freiman",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22170",
+      "from": "t_structure_randomness_dichotomy",
+      "to": "s_gowers_bound_szemeredi",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gowers_bound_szemeredi"
+    },
+    {
+      "id": "e_22171",
+      "from": "s_sumset_lower_bound_cauchy_davenport",
+      "to": "t_compression_symmetrization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cauchy_davenport_theorem"
+    },
+    {
+      "id": "e_22172",
+      "from": "s_davenport_constant",
+      "to": "t_polynomial_method_additive",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_erdos_ginzburg_ziv_theorem"
+    },
+    {
+      "id": "e_22173",
+      "from": "s_cap_set_problem",
+      "to": "t_fourier_analysis_finite_abelian_groups",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22174",
+      "from": "s_inverse_sumset_problem",
+      "to": "t_ruzsa_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_freiman_theorem"
+    },
+    {
+      "id": "e_22175",
+      "from": "s_polynomial_freiman_ruzsa_conjecture",
+      "to": "t_bohr_set_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22176",
+      "from": "t_probabilistic_method_additive_comb",
+      "to": "s_rankin_construction",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22177",
+      "from": "s_convergence_in_probability",
+      "to": "t_subsequence_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22178",
+      "from": "s_almost_sure_convergence",
+      "to": "t_subsequence_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22179",
+      "from": "t_subsequence_argument",
+      "to": "s_almost_sure_convergence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22180",
+      "from": "t_subsequence_argument",
+      "to": "s_convergence_of_random_series",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22181",
+      "from": "t_subsequence_argument",
+      "to": "s_etemadi_slln",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_etemadi_slln"
+    },
+    {
+      "id": "e_22182",
+      "from": "s_borel_cantelli_first",
+      "to": "t_borel_cantelli_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22183",
+      "from": "s_borel_cantelli_second",
+      "to": "t_borel_cantelli_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22184",
+      "from": "s_independence_of_events",
+      "to": "t_borel_cantelli_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22185",
+      "from": "t_borel_cantelli_technique",
+      "to": "s_almost_sure_convergence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22186",
+      "from": "t_borel_cantelli_technique",
+      "to": "s_strong_law_large_numbers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strong_law_large_numbers"
+    },
+    {
+      "id": "e_22187",
+      "from": "t_borel_cantelli_technique",
+      "to": "s_kolmogorov_zero_one_law",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kolmogorov_zero_one_law"
+    },
+    {
+      "id": "e_22188",
+      "from": "t_borel_cantelli_technique",
+      "to": "s_convergence_of_random_series",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22189",
+      "from": "t_borel_cantelli_technique",
+      "to": "s_nowhere_differentiability_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_nowhere_differentiability_bm"
+    },
+    {
+      "id": "e_22190",
+      "from": "s_random_variable",
+      "to": "t_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22191",
+      "from": "s_characteristic_function",
+      "to": "t_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22192",
+      "from": "t_moment_method",
+      "to": "s_convergence_in_distribution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22193",
+      "from": "t_moment_method",
+      "to": "s_poisson_limit_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poisson_limit_theorem"
+    },
+    {
+      "id": "e_22194",
+      "from": "t_moment_method",
+      "to": "s_weak_law_large_numbers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_law_large_numbers"
+    },
+    {
+      "id": "e_22195",
+      "from": "s_convergence_in_distribution",
+      "to": "t_skorokhod_representation_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22196",
+      "from": "t_skorokhod_representation_technique",
+      "to": "s_almost_sure_convergence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22197",
+      "from": "t_skorokhod_representation_technique",
+      "to": "s_etemadi_slln",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_etemadi_slln"
+    },
+    {
+      "id": "e_22198",
+      "from": "s_kolmogorov_maximal_inequality",
+      "to": "t_maximal_inequality_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22199",
+      "from": "s_doob_maximal_inequality",
+      "to": "t_maximal_inequality_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22200",
+      "from": "s_doob_Lp_maximal_inequality",
+      "to": "t_maximal_inequality_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22201",
+      "from": "s_maximal_ergodic_lemma",
+      "to": "t_maximal_inequality_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22202",
+      "from": "t_maximal_inequality_technique",
+      "to": "s_strong_law_large_numbers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strong_law_large_numbers"
+    },
+    {
+      "id": "e_22203",
+      "from": "t_maximal_inequality_technique",
+      "to": "s_convergence_of_random_series",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22204",
+      "from": "t_maximal_inequality_technique",
+      "to": "s_kolmogorov_three_series_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kolmogorov_three_series_theorem"
+    },
+    {
+      "id": "e_22205",
+      "from": "t_maximal_inequality_technique",
+      "to": "s_doob_martingale_convergence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_doob_martingale_convergence"
+    },
+    {
+      "id": "e_22206",
+      "from": "t_maximal_inequality_technique",
+      "to": "s_birkhoff_ergodic_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_ergodic_theorem"
+    },
+    {
+      "id": "e_22207",
+      "from": "s_exponential_martingale",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22208",
+      "from": "s_ladder_variables",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22209",
+      "from": "s_bm_as_martingale",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22210",
+      "from": "s_doob_optional_stopping",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22211",
+      "from": "s_strong_markov_property_rw",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22212",
+      "from": "s_strong_markov_property_mc",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22213",
+      "from": "s_strong_markov_property_bm",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22214",
+      "from": "t_stopping_time_technique",
+      "to": "s_gambler_ruin",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gambler_ruin"
+    },
+    {
+      "id": "e_22215",
+      "from": "t_stopping_time_technique",
+      "to": "s_hitting_times_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22216",
+      "from": "t_stopping_time_technique",
+      "to": "s_wald_identity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_wald_identity"
+    },
+    {
+      "id": "e_22217",
+      "from": "t_stopping_time_technique",
+      "to": "s_wald_variance_identity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_wald_variance_identity"
+    },
+    {
+      "id": "e_22218",
+      "from": "t_stopping_time_technique",
+      "to": "s_reflection_principle_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_reflection_principle_bm"
+    },
+    {
+      "id": "e_22219",
+      "from": "t_stopping_time_technique",
+      "to": "s_distribution_of_max_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_distribution_of_max_bm"
+    },
+    {
+      "id": "e_22220",
+      "from": "t_stopping_time_technique",
+      "to": "s_arc_sine_law",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arc_sine_law"
+    },
+    {
+      "id": "e_22221",
+      "from": "s_tightness_of_measures",
+      "to": "t_diagonalization_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22222",
+      "from": "s_convergence_in_distribution",
+      "to": "t_diagonalization_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22223",
+      "from": "t_diagonalization_technique",
+      "to": "s_convergence_in_distribution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22224",
+      "from": "t_diagonalization_technique",
+      "to": "s_stable_distribution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22225",
+      "from": "t_diagonalization_technique",
+      "to": "s_domain_of_attraction",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22226",
+      "from": "s_probability_space",
+      "to": "t_conditional_expectations_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22227",
+      "from": "s_probability_space",
+      "to": "t_borel_cantelli_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22228",
+      "from": "s_probability_measure",
+      "to": "t_first_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22229",
+      "from": "s_probability_measure",
+      "to": "t_second_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22230",
+      "from": "s_random_variable",
+      "to": "t_truncation_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22231",
+      "from": "s_random_variable",
+      "to": "t_symmetrization_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22232",
+      "from": "s_random_variable",
+      "to": "t_linearity_of_expectation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22233",
+      "from": "s_law_of_random_variable",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22234",
+      "from": "s_law_of_random_variable",
+      "to": "t_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22235",
+      "from": "s_independence_of_events",
+      "to": "t_second_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22236",
+      "from": "s_independence_of_random_variables",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22237",
+      "from": "s_independence_of_random_variables",
+      "to": "t_truncation_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22238",
+      "from": "s_independence_of_random_variables",
+      "to": "t_borel_cantelli_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22239",
+      "from": "s_characteristic_function",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22240",
+      "from": "t_characteristic_function_method",
+      "to": "s_convergence_in_distribution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22241",
+      "from": "t_characteristic_function_method",
+      "to": "s_central_limit_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_central_limit_theorem"
+    },
+    {
+      "id": "e_22242",
+      "from": "t_characteristic_function_method",
+      "to": "s_poisson_limit_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poisson_limit_theorem"
+    },
+    {
+      "id": "e_22243",
+      "from": "t_characteristic_function_method",
+      "to": "s_local_central_limit_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_local_central_limit_theorem"
+    },
+    {
+      "id": "e_22244",
+      "from": "t_characteristic_function_method",
+      "to": "s_lindeberg_feller_clt",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lindeberg_feller_clt"
+    },
+    {
+      "id": "e_22245",
+      "from": "t_characteristic_function_method",
+      "to": "s_stable_distribution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22246",
+      "from": "t_truncation_technique",
+      "to": "s_strong_law_large_numbers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strong_law_large_numbers"
+    },
+    {
+      "id": "e_22247",
+      "from": "t_truncation_technique",
+      "to": "s_weak_law_large_numbers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_law_large_numbers"
+    },
+    {
+      "id": "e_22248",
+      "from": "t_truncation_technique",
+      "to": "s_kolmogorov_three_series_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kolmogorov_three_series_theorem"
+    },
+    {
+      "id": "e_22249",
+      "from": "t_truncation_technique",
+      "to": "s_convergence_of_random_series",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22250",
+      "from": "t_truncation_technique",
+      "to": "s_lindeberg_feller_clt",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_lindeberg_feller_clt"
+    },
+    {
+      "id": "e_22251",
+      "from": "t_symmetrization_technique",
+      "to": "s_convergence_of_random_series",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22252",
+      "from": "t_symmetrization_technique",
+      "to": "s_kolmogorov_two_series_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kolmogorov_two_series_theorem"
+    },
+    {
+      "id": "e_22253",
+      "from": "t_conditional_expectations_method",
+      "to": "s_tower_property",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tower_property"
+    },
+    {
+      "id": "e_22254",
+      "from": "s_almost_sure_convergence",
+      "to": "t_dominated_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22255",
+      "from": "s_convergence_in_probability",
+      "to": "t_skorokhod_representation_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22256",
+      "from": "s_kronecker_lemma",
+      "to": "t_maximal_inequality_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22257",
+      "from": "s_kronecker_lemma",
+      "to": "t_borel_cantelli_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22258",
+      "from": "s_convergence_of_random_series",
+      "to": "t_borel_cantelli_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22259",
+      "from": "s_stable_distribution",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22260",
+      "from": "s_domain_of_attraction",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22261",
+      "from": "t_stopping_time_technique",
+      "to": "s_strong_markov_property_rw",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22262",
+      "from": "s_ladder_variables",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22263",
+      "from": "s_tower_property",
+      "to": "t_conditional_expectations_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22264",
+      "from": "s_tower_property",
+      "to": "t_martingale_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22265",
+      "from": "s_L1_bounded_martingale",
+      "to": "t_martingale_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22266",
+      "from": "t_martingale_convergence_technique",
+      "to": "s_ui_and_l1_convergence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ui_and_l1_convergence"
+    },
+    {
+      "id": "e_22267",
+      "from": "t_martingale_convergence_technique",
+      "to": "s_doob_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_doob_decomposition"
+    },
+    {
+      "id": "e_22268",
+      "from": "s_doob_decomposition",
+      "to": "t_martingale_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22269",
+      "from": "t_martingale_convergence_technique",
+      "to": "s_backward_martingale_convergence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_backward_martingale_convergence"
+    },
+    {
+      "id": "e_22270",
+      "from": "t_martingale_convergence_technique",
+      "to": "s_levy_zero_one_law",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levy_zero_one_law"
+    },
+    {
+      "id": "e_22271",
+      "from": "s_branching_process",
+      "to": "t_martingale_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22272",
+      "from": "s_branching_process",
+      "to": "t_first_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22273",
+      "from": "t_martingale_convergence_technique",
+      "to": "s_branching_process_extinction",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_branching_process_extinction"
+    },
+    {
+      "id": "e_22274",
+      "from": "t_characteristic_function_method",
+      "to": "s_martingale_clt",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_martingale_clt"
+    },
+    {
+      "id": "e_22275",
+      "from": "s_Lp_bounded_martingale",
+      "to": "t_maximal_inequality_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22276",
+      "from": "t_martingale_convergence_technique",
+      "to": "s_exponential_martingale",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22277",
+      "from": "s_doob_upcrossing_inequality",
+      "to": "t_martingale_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22278",
+      "from": "t_maximal_inequality_technique",
+      "to": "s_doob_upcrossing_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_doob_upcrossing_inequality"
+    },
+    {
+      "id": "e_22279",
+      "from": "s_markov_chain",
+      "to": "t_coupling_of_markov_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22280",
+      "from": "s_transition_matrix",
+      "to": "t_coupling_of_markov_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22281",
+      "from": "s_markov_chain",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22282",
+      "from": "s_transition_matrix",
+      "to": "t_first_moment_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22283",
+      "from": "s_markov_property",
+      "to": "t_conditional_expectations_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22284",
+      "from": "s_markov_property",
+      "to": "t_coupling_of_markov_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22285",
+      "from": "s_communication_classes",
+      "to": "t_coupling_of_markov_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22286",
+      "from": "s_irreducibility_mc",
+      "to": "t_coupling_of_markov_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22287",
+      "from": "t_borel_cantelli_technique",
+      "to": "s_recurrence_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22288",
+      "from": "t_borel_cantelli_technique",
+      "to": "s_transience_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22289",
+      "from": "s_recurrence_mc",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22290",
+      "from": "t_coupling_of_markov_chains",
+      "to": "s_recurrence_is_class_property",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_is_class_property"
+    },
+    {
+      "id": "e_22291",
+      "from": "s_positive_recurrence",
+      "to": "t_coupling_of_markov_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22292",
+      "from": "s_positive_recurrence",
+      "to": "t_ergodic_theory_approach",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22293",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_null_recurrence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22294",
+      "from": "s_period_of_state",
+      "to": "t_coupling_of_markov_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22295",
+      "from": "t_coupling_of_markov_chains",
+      "to": "s_existence_uniqueness_stationary",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_uniqueness_stationary"
+    },
+    {
+      "id": "e_22296",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_existence_uniqueness_stationary",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_uniqueness_stationary"
+    },
+    {
+      "id": "e_22297",
+      "from": "t_coupling_of_markov_chains",
+      "to": "s_convergence_theorem_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_convergence_theorem_mc"
+    },
+    {
+      "id": "e_22298",
+      "from": "s_detailed_balance",
+      "to": "t_coupling_of_markov_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22299",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_ratio_limit_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ratio_limit_theorem"
+    },
+    {
+      "id": "e_22300",
+      "from": "t_stopping_time_technique",
+      "to": "s_mean_return_time",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22301",
+      "from": "s_mean_return_time",
+      "to": "t_ergodic_theory_approach",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22302",
+      "from": "s_absorbing_state",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22303",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_markov_chain_ergodic_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_markov_chain_ergodic_theorem"
+    },
+    {
+      "id": "e_22304",
+      "from": "t_coupling_of_markov_chains",
+      "to": "s_markov_chain_ergodic_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_markov_chain_ergodic_theorem"
+    },
+    {
+      "id": "e_22305",
+      "from": "s_ergodicity_definition",
+      "to": "t_ergodic_theory_approach",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22306",
+      "from": "s_ergodicity_definition",
+      "to": "t_ergodic_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22307",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_maximal_ergodic_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_ergodic_theorem"
+    },
+    {
+      "id": "e_22308",
+      "from": "s_strong_mixing",
+      "to": "t_ergodic_theory_approach",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22309",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_strong_mixing",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22310",
+      "from": "s_stationary_process",
+      "to": "t_ergodic_theory_approach",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22311",
+      "from": "s_stationary_process",
+      "to": "t_ergodic_correspondence",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22312",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_shannon_mcmillan_breiman",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_shannon_mcmillan_breiman"
+    },
+    {
+      "id": "e_22313",
+      "from": "t_martingale_convergence_technique",
+      "to": "s_shannon_mcmillan_breiman",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_shannon_mcmillan_breiman"
+    },
+    {
+      "id": "e_22314",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_kac_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kac_lemma"
+    },
+    {
+      "id": "e_22315",
+      "from": "s_ergodicity_definition",
+      "to": "t_maximal_inequality_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22316",
+      "from": "t_ergodic_theory_approach",
+      "to": "s_birkhoff_ergodic_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_ergodic_theorem"
+    },
+    {
+      "id": "e_22317",
+      "from": "t_moment_method",
+      "to": "s_kolmogorov_centsov_continuity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kolmogorov_centsov_continuity"
+    },
+    {
+      "id": "e_22318",
+      "from": "s_kolmogorov_centsov_continuity",
+      "to": "t_borel_cantelli_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22319",
+      "from": "s_markov_property_bm",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22320",
+      "from": "s_markov_property_bm",
+      "to": "t_conditional_expectations_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22321",
+      "from": "t_stopping_time_technique",
+      "to": "s_strong_markov_property_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22322",
+      "from": "t_martingale_convergence_technique",
+      "to": "s_blumenthal_zero_one_law",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_blumenthal_zero_one_law"
+    },
+    {
+      "id": "e_22323",
+      "from": "t_stopping_time_technique",
+      "to": "s_arc_sine_law_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_arc_sine_law_bm"
+    },
+    {
+      "id": "e_22324",
+      "from": "t_maximal_inequality_technique",
+      "to": "s_quadratic_variation_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_variation_bm"
+    },
+    {
+      "id": "e_22325",
+      "from": "s_quadratic_variation_bm",
+      "to": "t_martingale_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22326",
+      "from": "t_stopping_time_technique",
+      "to": "s_bm_harmonic_functions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bm_harmonic_functions"
+    },
+    {
+      "id": "e_22327",
+      "from": "s_bm_harmonic_functions",
+      "to": "t_martingale_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22328",
+      "from": "t_borel_cantelli_technique",
+      "to": "s_recurrence_transience_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_transience_bm"
+    },
+    {
+      "id": "e_22329",
+      "from": "t_stopping_time_technique",
+      "to": "s_recurrence_transience_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_transience_bm"
+    },
+    {
+      "id": "e_22330",
+      "from": "s_bm_time_inversion",
+      "to": "t_martingale_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22331",
+      "from": "s_bm_scaling_property",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22332",
+      "from": "s_bm_scaling_property",
+      "to": "t_maximal_inequality_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22333",
+      "from": "s_bm_as_martingale",
+      "to": "t_martingale_convergence_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22334",
+      "from": "t_borel_cantelli_technique",
+      "to": "s_construction_of_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22335",
+      "from": "t_moment_method",
+      "to": "s_construction_of_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22336",
+      "from": "t_martingale_convergence_technique",
+      "to": "s_strong_law_of_large_numbers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strong_law_of_large_numbers"
+    },
+    {
+      "id": "e_22337",
+      "from": "t_linearity_of_expectation",
+      "to": "s_weak_law_large_numbers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_law_large_numbers"
+    },
+    {
+      "id": "e_22338",
+      "from": "t_second_moment_method",
+      "to": "s_convergence_in_probability",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22339",
+      "from": "t_second_moment_method",
+      "to": "s_weak_law_large_numbers",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_law_large_numbers"
+    },
+    {
+      "id": "e_22340",
+      "from": "t_dominated_convergence_technique",
+      "to": "s_tower_property",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tower_property"
+    },
+    {
+      "id": "e_22341",
+      "from": "t_monotone_convergence_technique",
+      "to": "s_convergence_of_random_series",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22342",
+      "from": "t_ergodic_correspondence",
+      "to": "s_birkhoff_ergodic_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_birkhoff_ergodic_theorem"
+    },
+    {
+      "id": "e_22343",
+      "from": "t_ergodic_correspondence",
+      "to": "s_kac_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kac_lemma"
+    },
+    {
+      "id": "e_22344",
+      "from": "s_chapman_kolmogorov_equations",
+      "to": "t_coupling_of_markov_chains",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_22345",
+      "from": "t_conditional_expectations_method",
+      "to": "s_chapman_kolmogorov_equations",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chapman_kolmogorov_equations"
     }
   ],
   "subgraphs": [
