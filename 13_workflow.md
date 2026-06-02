@@ -585,13 +585,13 @@ Merging creates a new node whose state combines both branches' results, potentia
 
 | Metric | Count |
 |---|---|
-| Axiom nodes | 1,571 |
-| State nodes | 2,925 |
-| Theorem nodes | 1,667 |
-| Technique nodes | 62 |
-| Edges | 10,556 |
-| Average edges per technique | 170 |
-| Max edges (Auxiliary construction) | 2,483 |
+| Axiom nodes | 3,791 |
+| State nodes | 4,994 |
+| Theorem nodes | 4,262 |
+| Technique nodes | 873 |
+| Edges | 23,397 |
+| Average edges per technique | 27 |
+| Max edges (Auxiliary construction) | 2,580 |
 | Search tree branching factor | 3-5 (after heuristic selection) |
 | Typical proof depth | 3-6 |
 

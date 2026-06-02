@@ -2,17 +2,17 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
-[![Knowledge Graph Nodes](https://img.shields.io/badge/Nodes-9%2C466-brightgreen.svg)](#knowledge-graph)
-[![Knowledge Graph Edges](https://img.shields.io/badge/Edges-13%2C504-brightgreen.svg)](#knowledge-graph)
-[![Proof Techniques](https://img.shields.io/badge/Techniques-360-orange.svg)](#knowledge-graph)
-[![Theorems](https://img.shields.io/badge/Theorems-2%2C593-purple.svg)](#knowledge-graph)
+[![Knowledge Graph Nodes](https://img.shields.io/badge/Nodes-13%2C920-brightgreen.svg)](#knowledge-graph)
+[![Knowledge Graph Edges](https://img.shields.io/badge/Edges-23%2C397-brightgreen.svg)](#knowledge-graph)
+[![Proof Techniques](https://img.shields.io/badge/Techniques-873-orange.svg)](#knowledge-graph)
+[![Theorems](https://img.shields.io/badge/Theorems-4%2C262-purple.svg)](#knowledge-graph)
 [![GitHub stars](https://img.shields.io/github/stars/ansumandas441/mathematical-discovery-engine?style=social)](https://github.com/ansumandas441/mathematical-discovery-engine)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ansumandas441/mathematical-discovery-engine/pulls)
 
 <p align="center">
-  <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph — 9,466 mathematical nodes connected by 13,504 edges" width="720">
+  <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph — 13,920 mathematical nodes connected by 23,397 edges" width="720">
   <br>
-  <sub>9,466 nodes · 13,504 edges · 360 proof techniques · 2,593 theorems — explore the full graph in 3D</sub>
+  <sub>13,920 nodes · 23,397 edges · 873 proof techniques · 4,262 theorems — explore the full graph in 3D</sub>
 </p>
 
 ## What This Repository Does
@@ -25,17 +25,17 @@ This project does three things:
 
 1. **Collects the knowledge.** A detailed report covering ~100 of the most consequential theorems in mathematics — from Pythagoras through Perelman — with the discovery context, motivation, thought process, and proof ideas behind each. The report spans 13 chapters organized chronologically, drawing from primary sources (Euler's letters, Gauss's diaries, Ramanujan's notebooks, Wiles's interviews) where they survive.
 
-2. **Builds a knowledge graph.** The report is distilled into a structured directed graph: 9,466 nodes (2,501 axioms, 4,012 intermediate states, 2,593 theorems, 360 techniques) connected by 13,504 edges. Each technique has a formal signature — inputs, process, outputs, preconditions — organized into 12 clusters (algebraic manipulation, symmetry & invariants, cross-field transfer, topology & obstruction, etc.). The graph captures not just *what* is true, but *how* each truth was reached from earlier ones.
+2. **Builds a knowledge graph.** The report is distilled into a structured directed graph: 13,920 nodes (3,791 axioms, 4,994 intermediate states, 4,262 theorems, 873 techniques) connected by 23,397 edges. Each technique has a formal signature — inputs, process, outputs, preconditions — organized into 12 clusters (algebraic manipulation, symmetry & invariants, cross-field transfer, topology & obstruction, etc.). The graph captures not just *what* is true, but *how* each truth was reached from earlier ones.
 
 3. **Proposes and implements a discovery engine.** Mathematical proof is reframed as **path-finding through this finite graph**. An orchestrator LLM selects which techniques to try; worker LLMs attempt each technique application in parallel; a pruner eliminates impossible branches using known impossibility theorems (Abel-Ruffini, Gödel, Turing). The search tree grows until a path from the starting axioms to the goal theorem is found — or the frontier is exhausted.
 
-The key insight: instead of searching over all possible mathematical statements (infinite), the engine searches over **compositions of 360 known techniques applied to 9,466 known states** (finite, tractable). Each solved problem adds new edges back to the graph, creating a self-improving system.
+The key insight: instead of searching over all possible mathematical statements (infinite), the engine searches over **compositions of 873 known techniques applied to 13,920 known states** (finite, tractable). Each solved problem adds new edges back to the graph, creating a self-improving system.
 
 ---
 
 ## How It Works
 
-Mathematical proof is path-finding through a finite directed graph. Nodes are mathematical states (axioms, intermediate results, theorems). Edges are techniques (the 360 operations cataloged across 12 clusters). An orchestrator LLM directs the search; worker LLMs attempt each technique application; a pruner eliminates impossible branches.
+Mathematical proof is path-finding through a finite directed graph. Nodes are mathematical states (axioms, intermediate results, theorems). Edges are techniques (the 873 operations cataloged across 12 clusters). An orchestrator LLM directs the search; worker LLMs attempt each technique application; a pruner eliminates impossible branches.
 
 ```
                     ┌──────────────────────┐
@@ -77,7 +77,7 @@ Mathematical proof is path-finding through a finite directed graph. Nodes are ma
 ### The Search Loop
 
 1. **Parse problem** — identify start nodes in the knowledge graph and define the goal state
-2. **Select techniques** — score all 360 techniques using a weighted heuristic
+2. **Select techniques** — score all 873 techniques using a weighted heuristic
 3. **Dispatch workers in parallel** — each worker applies ONE technique to ONE state, returns a new state with confidence and proof sketch
 4. **Prune** — kill branches violating impossibility theorems (Abel-Ruffini, Gödel, Turing, etc.); demote low-confidence branches
 5. **Check goal** — does the new state match the target?
@@ -139,11 +139,11 @@ The graph ships as `knowledge_graph.json` (5 MB) in the repo root. No separate d
 
 | Metric | Count |
 |---|---|
-| Axiom nodes | 2,501 |
-| State nodes | 4,012 |
-| Theorem nodes | 2,593 |
-| Technique nodes | 360 |
-| Total edges | 13,504 |
+| Axiom nodes | 3,791 |
+| State nodes | 4,994 |
+| Theorem nodes | 4,262 |
+| Technique nodes | 873 |
+| Total edges | 23,397 |
 
 ---
 
@@ -278,7 +278,7 @@ python3 -m discovery_engine.discover --use-cli \
 
 ```
 Loading knowledge graph from knowledge_graph.json...
-Loaded in 0.8s — {'nodes': 9466, 'edges': 13504, 'techniques': 360}
+Loaded in 0.8s — {'nodes': 13920, 'edges': 23397, 'techniques': 873}
 Mode: LIVE (API)
   Orchestrator model: claude-sonnet-4-20250514
   Worker model:       claude-haiku-4-5-20251001
@@ -374,6 +374,15 @@ https://github.com/user-attachments/assets/e6afe79e-9c0c-41e5-a049-af1aba319a31
 
 ### Quick start
 
+The simplest way is the bundled launcher — it frees the port, starts a local server, and opens the 3D viewer automatically:
+
+```bash
+./run_graph.sh           # serves on port 8765 and opens the 3D viewer
+./run_graph.sh 9000      # use a custom port
+```
+
+Prefer the 2D viewer (lighter)? Use `./serve_viewer.sh` instead, or start a server by hand:
+
 ```bash
 python3 -m http.server 8765
 open http://localhost:8765/graph_viewer_3d.html    # 3D viewer (recommended)
@@ -424,7 +433,7 @@ The knowledge graph is built from a companion report tracing ~100 pivotal theore
 | 6 | [`06_modern_contemporary.md`](06_modern_contemporary.md) | 1950 – present | Wiles, Perelman, computer-assisted proofs |
 | 7 | [`07_brief_catalog.md`](07_brief_catalog.md) | all | Abbreviated reference for remaining theorems |
 | 8 | [`08_epilogue.md`](08_epilogue.md) | — | Patterns in mathematical discovery |
-| 9 | [`09_discovery_techniques.md`](09_discovery_techniques.md) | cross-cutting | 360 techniques across 12 clusters |
+| 9 | [`09_discovery_techniques.md`](09_discovery_techniques.md) | cross-cutting | 873 techniques across 12 clusters |
 | 10 | [`10_toolbox.md`](10_toolbox.md) | cross-cutting | Function-style technique dictionary with Mermaid diagrams |
 | 11 | [`11_knowledge_graph.md`](11_knowledge_graph.md) | cross-cutting | Knowledge graph documentation |
 | 12 | [`12_ai_solvable_discoveries.md`](12_ai_solvable_discoveries.md) | 2026 | Recently solved problems traced through the graph |
@@ -444,8 +453,8 @@ If you use this work in your research, please cite:
   title        = {Mathematical Discovery Engine: Automated Theorem Discovery via Knowledge Graphs},
   year         = {2026},
   url          = {https://github.com/ansumandas441/mathematical-discovery-engine},
-  note         = {ORCID: 0000-0001-9695-9408. Knowledge graph of 9,466
-                  mathematical nodes and 13,504 edges with an
+  note         = {ORCID: 0000-0001-9695-9408. Knowledge graph of 13,920
+                  mathematical nodes and 23,397 edges with an
                   LLM-orchestrated proof search engine}
 }
 ```
