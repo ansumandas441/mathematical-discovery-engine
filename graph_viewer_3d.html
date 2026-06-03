@@ -288,6 +288,7 @@
   let hoverNode = null;
   let selectedNode = null;
   let neighborhoodCenter = null;
+let searchMatchIds = new Set();
 
   // ── HELPERS ──
 
@@ -397,10 +398,18 @@
     const searchText = document.getElementById("search").value.trim().toLowerCase();
 
     const nodeSet = new Set();
+    searchMatchIds = new Set();
     for (const n of fullData.nodes) {
       if (searchText) {
-        const hay = (n.id + " " + (n.name || "") + " " + (n.description || "") + " " + (n.aliases || []).join(" ")).toLowerCase();
-        if (hay.includes(searchText)) nodeSet.add(n.id);
+        // Match only on name / id / aliases — NOT description prose — so results
+        // are the nodes whose name actually contains the keyword.
+        const name = (n.name || "").toLowerCase();
+        const id = n.id.toLowerCase();
+        const aliases = (n.aliases || []).join(" ").toLowerCase();
+        if (name.includes(searchText) || id.includes(searchText) || aliases.includes(searchText)) {
+          nodeSet.add(n.id);
+          searchMatchIds.add(n.id);
+        }
         continue;
       }
       if (!activeKinds.has(n.kind)) continue;
@@ -555,9 +564,13 @@
     neighborhoodCenter = null;
     const nodeSet = getFilteredNodeSet();
     const banner = document.getElementById("banner");
+    const isSearch = searchMatchIds.size > 0;
 
     if (nodeSet.size === 0) {
-      banner.textContent = "No nodes match current filters.";
+      const searchText = document.getElementById("search").value.trim();
+      banner.textContent = searchText
+        ? `No node matching "${searchText}".`
+        : "No nodes match current filters.";
       banner.classList.add("visible");
       return;
     }
@@ -588,7 +601,34 @@
     }
 
     const data = buildGraphData(finalSet);
+
+    if (isSearch) {
+      // Make matched nodes pop before render so the size accessor picks it up.
+      for (const n of data.nodes) {
+        if (searchMatchIds.has(n.id)) n._val = n._val * 4;
+      }
+    }
+
     renderGraph(data);
+
+    if (isSearch) {
+      // Highlight matches and fly the camera to them so the result is actually
+      // visible instead of lost as a stray dot in space.
+      const matched = data.nodes.filter(n => searchMatchIds.has(n.id));
+      highlightNodes.clear();
+      highlightLinks.clear();
+      for (const n of matched) highlightNodes.add(n);
+      banner.innerHTML = `<b>${matched.length}</b> node${matched.length === 1 ? "" : "s"} matching `
+        + `"${document.getElementById("search").value.trim()}".`;
+      banner.classList.add("visible");
+
+      setTimeout(() => {
+        if (typeof Graph.zoomToFit === "function") {
+          Graph.zoomToFit(1200, 80, n => searchMatchIds.has(n.id));
+        }
+        updateHighlight();
+      }, 600);
+    }
   }
 
   // ── NEIGHBORHOOD MODE ──
@@ -645,9 +685,13 @@
     for (const n of fullData.nodes) {
       const name = (n.name || "").toLowerCase();
       const id = n.id.toLowerCase();
-      if (id === searchText || name === searchText) { best = n.id; break; }
-      if (name.includes(searchText) || id.includes(searchText)) {
-        const score = n.kind === "technique" ? 10 : (n.kind === "theorem" ? 8 : 5);
+      const aliases = (n.aliases || []).map(a => a.toLowerCase());
+      if (id === searchText || name === searchText || aliases.includes(searchText)) { best = n.id; break; }
+      const matches = name.includes(searchText) || id.includes(searchText) || aliases.some(a => a.includes(searchText));
+      if (matches) {
+        // Prefer name/alias prefix matches, then node importance by kind.
+        const prefixBonus = (name.startsWith(searchText) || aliases.some(a => a.startsWith(searchText))) ? 20 : 0;
+        const score = prefixBonus + (n.kind === "technique" ? 10 : (n.kind === "theorem" ? 8 : 5));
         if (score > bestScore) { bestScore = score; best = n.id; }
       }
     }

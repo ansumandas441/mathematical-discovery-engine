@@ -1,5 +1,7 @@
 # Mathematical Discovery Engine (MDE)
 
+> **Treat mathematical proof as path-finding through a graph.** A knowledge graph of 13,920 mathematical states and 873 proof techniques — from Pythagoras to Perelman — that an LLM searches to discover new theorems.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Knowledge Graph Nodes](https://img.shields.io/badge/Nodes-13%2C920-brightgreen.svg)](#knowledge-graph)
@@ -17,7 +19,7 @@
 
 ## What This Repository Does
 
-This repository is an attempt to **encode the structure of mathematical knowledge and use it to discover new theorems automatically**.
+This repository **encodes the structure of mathematical knowledge as a graph and uses it to discover new theorems automatically**.
 
 It starts from a simple observation: every major theorem in mathematics was discovered by applying known techniques to known facts. Galois used symmetry reduction on polynomial roots. Cantor used diagonalization on real numbers. Wiles used a bridge between modular forms and elliptic curves. The techniques are reusable — the same method of proof appears across centuries and subdisciplines.
 
@@ -440,6 +442,31 @@ The knowledge graph is built from a companion report tracing ~100 pivotal theore
 | 13 | [`13_workflow.md`](13_workflow.md) | cross-cutting | Discovery engine architecture and worked examples |
 
 Read in order for the narrative arc, or jump by area using [`INDEX.md`](INDEX.md).
+
+---
+
+## Roadmap
+
+Where this is headed — see [`future_works.md`](future_works.md) for the full list:
+
+- Expand the graph beyond ~100 theorems toward full subdiscipline coverage
+- Formal-verification backend (Lean/Coq) to machine-check discovered proof paths
+- Richer impossibility-theorem pruner with more hard-prune rules
+- Feed each solved problem's path back as new edges (self-improving loop)
+- Benchmark suite of open problems with reproducible discovery runs
+
+---
+
+## Contributing
+
+Contributions are welcome — issues and PRs both. Good first contributions:
+
+- **Add nodes/edges** to the knowledge graph (new theorems, techniques, or connections)
+- **Report a discovery run** — open an issue with the problem, flags used, and the path found
+- **Improve the viewer** — interactions, performance, or visual encoding in `graph_viewer_3d.html`
+- **Fix or extend the report** — corrections and citations in the chapter files
+
+Please open an issue first for larger changes so we can align on direction. Use [GitHub Issues](https://github.com/ansumandas441/mathematical-discovery-engine/issues) for bugs and ideas, and [GitHub Discussions](https://github.com/ansumandas441/mathematical-discovery-engine/discussions) for open-ended questions.
 
 ---
 
