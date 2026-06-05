@@ -1,0 +1,41 @@
+[
+  {
+    "id": "s_transitive_set_def",
+    "kind": "state",
+    "name": "Transitive set",
+    "type_signature": "∀x (x∈X → x⊆X)",
+    "description": "A set X every element of which is also a subset of X, so that membership never escapes X.",
+    "aliases": ["transitive set"]
+  },
+  {
+    "id": "s_delta_0_formula",
+    "kind": "state",
+    "name": "Δ₀ (bounded) formula",
+    "type_signature": "first-order formula with only bounded quantifiers ∀x∈y, ∃x∈y",
+    "description": "A first-order set-theoretic formula all of whose quantifiers are bounded, hence absolute between any transitive model and the universe.",
+    "aliases": ["Σ₀ formula", "Π₀ formula", "bounded formula", "Delta-0 formula"]
+  },
+  {
+    "id": "t_relativization",
+    "kind": "technique",
+    "name": "Relativization φᴹ",
+    "function_signature": "(formula φ, transitive class/set M) → (formula φᴹ with all quantifiers restricted to M)",
+    "description": "The syntactic operation restricting every quantifier of a formula φ to range over a class or set M, expressing truth-in-M inside the ambient universe."
+  },
+  {
+    "id": "s_diamond_plus",
+    "kind": "axiom",
+    "name": "◊⁺ (diamond-plus)",
+    "type_signature": "⟨A_α : α<ω₁⟩ with A_α ⊆ P(α) countable, guessing every X⊆ω₁ with a club on a club",
+    "description": "A strengthening of ◊ assigning to each α<ω₁ a countable family A_α⊆P(α) such that for every X⊆ω₁ there is a club C with X∩α and C∩α both in A_α for all α∈C.",
+    "aliases": ["diamond-plus", "◊+"]
+  },
+  {
+    "id": "s_diamond_plus_kurepa",
+    "kind": "theorem",
+    "name": "◊⁺ implies a Kurepa tree (Jensen)",
+    "type_signature": "◊⁺ → ∃ Kurepa tree",
+    "description": "The principle ◊⁺ implies the existence of a Kurepa tree, a tree of height ω₁ with countable levels and at least ℵ₂ cofinal branches.",
+    "aliases": ["diamond-plus implies Kurepa tree"]
+  }
+]

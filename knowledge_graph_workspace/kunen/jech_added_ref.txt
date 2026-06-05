@@ -1,0 +1,171 @@
+s_transitive_closure | state | Transitive closure TC(x)
+s_burali_forti_paradox | theorem | Burali-Forti paradox
+s_ordinal_arithmetic | state | Ordinal arithmetic
+s_cantor_normal_form | theorem | Cantor normal form
+s_epsilon_numbers | state | Epsilon numbers (ε-numbers)
+s_order_type | state | Order type
+s_rank_function | state | Rank function
+t_epsilon_induction | technique | ∈-induction (Foundation induction)
+s_well_founded_relation | axiom | Well-founded relation
+t_well_founded_recursion | technique | Well-founded recursion
+s_hereditarily_small_sets_H_kappa | state | Hereditarily small sets H(κ)
+s_aleph_function | state | Aleph function ℵ_α
+s_initial_ordinal | state | Initial ordinal
+s_cardinal_arithmetic | state | Cardinal arithmetic
+s_hessenberg_kappa_squared | theorem | Hessenberg's theorem (κ²=κ)
+s_godel_pairing_function | state | Gödel pairing function
+s_cofinality | state | Cofinality cf(α)
+s_regular_cardinal | axiom | Regular cardinal
+s_singular_cardinal | axiom | Singular cardinal
+s_successor_cardinals_regular | theorem | Successor cardinals are regular
+s_continuum_function | state | Continuum function
+s_hausdorff_formula | theorem | Hausdorff formula
+s_gimel_function | state | Gimel function ℷ(κ)
+s_beth_function | state | Beth function ℶ_α
+s_generalized_continuum_hypothesis | state | Generalized Continuum Hypothesis (GCH)
+s_tukey_lemma | theorem | Tukey's lemma
+s_trichotomy_of_cardinals | theorem | Trichotomy of cardinals
+s_ideal_set_theory | axiom | Ideal (set-theoretic)
+s_kappa_complete_filter | axiom | κ-complete filter
+s_principal_filter | state | Principal vs non-principal ultrafilter
+s_boolean_prime_ideal_theorem | theorem | Boolean Prime Ideal Theorem
+s_complete_boolean_algebra | axiom | Complete Boolean algebra
+s_regular_open_algebra | state | Regular open algebra RO(P)
+s_club_set | state | Closed unbounded (club) set
+s_club_filter | state | Club filter
+s_normal_filter | state | Normal filter
+s_club_intersection_theorem | theorem | Intersection of clubs is club
+s_tree_set_theoretic | axiom | Tree (set-theoretic)
+s_tree_branch_level_height | state | Branch, level, and height of a tree
+s_aronszajn_tree | state | Aronszajn tree
+s_aronszajn_tree_existence | theorem | Existence of an Aronszajn tree
+s_suslin_tree | state | Suslin tree
+s_suslin_problem | state | Suslin's problem (Suslin Hypothesis)
+s_suslin_tree_line_equivalence | theorem | Equivalence of Suslin tree and Suslin line
+s_kurepa_tree | state | Kurepa tree / Kurepa's hypothesis
+s_special_aronszajn_tree | state | Special Aronszajn tree
+s_partition_calculus | state | Partition calculus (arrow notation)
+s_square_principle | axiom | Square principle □_κ (Jensen)
+s_club_principle | state | Club principle ♣
+s_diamond_implies_ch | theorem | ◊ implies CH
+s_singular_cardinal_hypothesis | state | Singular Cardinal Hypothesis (SCH)
+s_levy_hierarchy | state | Lévy hierarchy (Σ_n/Π_n)
+t_absoluteness | technique | Absoluteness
+t_elementary_submodel_method | technique | Elementary submodel method
+t_skolem_hull | technique | Skolem functions / Skolem hull
+t_godel_operations | technique | Gödel operations 𝒢₁–𝒢₁₀
+s_constructible_wellordering | state | Constructible well-ordering <_L
+s_ac_in_L | theorem | AC holds in L
+s_relative_constructibility_L_A | state | Relative constructibility L[A]
+s_L_of_A | state | Constructible closure L(A)
+s_diamond_holds_in_L | theorem | ◊ holds in L (Jensen)
+s_square_holds_in_L | theorem | □_κ holds in L (Jensen)
+s_kurepa_tree_in_L | theorem | Kurepa tree exists in L
+t_rudimentary_functions | technique | Rudimentary functions
+s_jensen_J_hierarchy | state | Jensen J-hierarchy J_α
+s_sigma_n_projectum | state | Σ_n-projectum ρ_n
+t_fine_structural_condensation | technique | Fine-structural condensation
+s_silver_indiscernibles | state | Silver indiscernibles
+s_zero_sharp_implies_V_not_L | theorem | 0# exists implies V≠L
+s_covering_implies_SCH | theorem | Covering lemma implies SCH
+s_notion_of_forcing | state | Notion of forcing
+s_dense_predense | state | Dense and predense sets
+s_compatible_conditions | state | Compatible and incompatible conditions
+s_rasiowa_sikorski_lemma | theorem | Rasiowa–Sikorski lemma
+t_p_names | technique | P-names
+t_canonical_names | technique | Canonical names (x̌, Ġ)
+s_forcing_relation | state | Forcing relation p⊩φ
+s_definability_lemma_forcing | theorem | Definability lemma (forcing)
+s_truth_lemma | theorem | Truth lemma
+s_forcing_theorem | theorem | Forcing theorem (fundamental)
+s_ground_model_definability | theorem | Ground model definability
+t_separative_quotient | technique | Separativity / separative quotient
+t_cohen_forcing | technique | Cohen forcing
+s_ccc_forcing | state | Countable chain condition (ccc)
+s_ccc_preserves_cardinals | theorem | ccc forcing preserves cardinals
+s_cohen_forcing_is_ccc | theorem | Cohen forcing is ccc
+t_nice_names | technique | Nice names
+s_con_zfc_not_ch_cohen | theorem | Con(ZFC)⟹Con(ZFC+¬CH) (Cohen)
+s_boolean_valued_universe | state | Boolean-valued universe V^B
+t_boolean_truth_value | technique | Boolean truth value ‖φ‖
+s_mixing_lemma_forcing | theorem | Mixing lemma
+s_maximum_principle_forcing | theorem | Maximum principle (forcing)
+t_levy_collapse | technique | Lévy collapse Coll(ω,κ)
+s_kappa_closed_forcing | state | <κ-closed forcing
+s_closed_forcing_adds_no_sequences | theorem | <κ-closed forcing adds no new <κ-sequences
+s_kappa_cc_knaster | state | κ-cc / κ-Knaster
+s_kappa_cc_preserves_cardinals | theorem | κ-cc forcing preserves cardinals ≥κ
+s_product_forcing_lemma | theorem | Product forcing lemma
+t_two_step_iteration | technique | Two-step iteration P∗Q̇
+s_martins_axiom_MA_kappa | axiom | Martin's Axiom MA_κ
+s_martins_axiom | axiom | Martin's Axiom (MA)
+s_MA_aleph0_theorem | theorem | MA_{ℵ₀} is a theorem of ZFC
+s_con_MA_not_CH | theorem | Con(MA+¬CH) (Solovay–Tennenbaum)
+t_finite_support_iteration | technique | Finite-support iteration
+s_fs_iteration_ccc | theorem | FS iteration of ccc is ccc
+s_MA_aleph1_negates_CH | theorem | MA_{ℵ₁} implies ¬CH
+s_con_SH | theorem | Con(SH) (Solovay–Tennenbaum)
+s_MA_measure_category | theorem | MA and additivity of measure/category
+t_countable_support_iteration | technique | Countable-support iteration
+s_properness_preserved_CS_iteration | theorem | Properness preserved under CS iteration
+s_mahlo_cardinal | state | Mahlo cardinal
+s_weakly_compact_cardinal | state | Weakly compact cardinal
+s_weakly_compact_tree_property | theorem | Tree property characterization of weak compactness
+s_normal_measure | state | Normal measure
+t_ultrapower_Ult_V_U | technique | Ultrapower Ult(V,U)
+s_measurable_embedding_characterization | theorem | Measurable cardinals and elementary embeddings
+t_iterated_ultrapowers | technique | Iterated ultrapowers
+s_ramsey_cardinal | state | Ramsey cardinal
+s_erdos_cardinal | state | Erdős cardinal κ→(α)^{<ω}
+t_ehrenfeucht_mostowski_models | technique | Ehrenfeucht–Mostowski models
+s_erdos_implies_zero_sharp | theorem | κ→(ω₁)^{<ω} implies 0# exists
+s_strongly_compact_cardinal | state | Strongly compact cardinal
+s_huge_cardinal | state | Huge cardinal
+t_extenders | technique | Extenders
+s_vopenka_principle | axiom | Vopěnka's principle
+s_proper_forcing | state | Proper forcing
+s_cantor_space | state | Cantor space 2^ω
+s_baire_space_irrationals | theorem | Baire space homeomorphic to the irrationals
+s_universality_of_baire_space | theorem | Universality of Baire space
+s_tree_on_a_set_body | state | Tree on a set and its body [T]
+s_well_founded_tree_rank | state | Well-founded tree and its rank
+s_borel_hierarchy | state | Borel hierarchy (Σ⁰_α,Π⁰_α,Δ⁰_α)
+t_borel_codes | technique | Borel codes
+s_property_of_baire | state | Property of Baire
+t_suslin_operation | technique | Suslin operation 𝒜
+s_coanalytic_set | state | Coanalytic set Π¹₁
+s_cantor_bendixson_rank | technique | Cantor–Bendixson derivative and rank
+s_perfect_set_property | state | Perfect set property (PSP)
+s_analytic_psp | theorem | Analytic sets have the perfect set property
+s_analytic_measurable | theorem | Analytic sets are Lebesgue measurable
+s_analytic_baire_property | theorem | Analytic sets have the Baire property
+s_universal_analytic_set | state | Universal analytic set
+t_pi11_norm | technique | Π¹₁ norm / rank
+s_boundedness_theorem | theorem | Σ¹₁-boundedness theorem
+s_projective_hierarchy | state | Projective hierarchy (Σ¹_n,Π¹_n,Δ¹_n)
+s_projective_hierarchy_proper | theorem | Projective hierarchy is proper
+s_uniformization | state | Uniformization
+s_sigma2_uniformization | theorem | Σ¹₂-uniformization (Novikov–Kondô–Addison)
+s_prewellordering_property | state | Prewellordering property
+s_scale_property | state | Scale property
+s_periodicity_theorems | theorem | Periodicity theorems (Moschovakis)
+t_shoenfield_tree | technique | Shoenfield tree
+s_sigma2_wellordering_in_L | theorem | Σ¹₂ well-ordering under V=L
+s_constructible_reals | state | Constructible reals ℝ∩L
+s_infinite_game | state | Infinite game G(A) and strategy
+s_determinacy_of_a_set | state | Determinacy of a set Det(A)
+s_gale_stewart_theorem | theorem | Gale–Stewart theorem
+t_unraveling | technique | Unraveling / covering technique
+s_AD_implies_measurable | theorem | AD implies all sets Lebesgue measurable
+s_AD_implies_baire_property | theorem | AD implies the Baire property for all sets
+s_AD_implies_PSP | theorem | AD implies perfect set property for all sets
+t_banach_mazur_game | technique | Banach–Mazur game
+s_analytic_determinacy | theorem | Analytic determinacy
+s_sharps_analytic_determinacy_equivalence | state | Sharps and analytic determinacy equivalence
+t_homogeneous_tree | technique | Homogeneously Suslin set / homogeneous tree
+s_martin_steel_pd | theorem | Martin–Steel theorem (projective determinacy)
+s_PD_implies_regularity | theorem | PD implies regularity for all projective sets
+s_AD_equiconsistent_woodins | theorem | AD equiconsistent with infinitely many Woodins
+s_wadge_reducibility | state | Wadge reducibility / Wadge hierarchy
+t_solovay_model_construction | technique | Solovay's model construction via Lévy collapse
+s_shelah_inaccessible_necessary | theorem | Inaccessible necessary for all sets Lebesgue measurable (Shelah)

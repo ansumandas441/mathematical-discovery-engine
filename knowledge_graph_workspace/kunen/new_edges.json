@@ -1,0 +1,10 @@
+[
+  {"id":"e_24311","from":"s_delta_0_formula","to":"t_relativization","role":"input","parameter_binding":{},"used_in_theorem":"s_mostowski_absoluteness"},
+  {"id":"e_24312","from":"s_transitive_set_def","to":"t_relativization","role":"input","parameter_binding":{},"used_in_theorem":"s_mostowski_absoluteness"},
+  {"id":"e_24313","from":"s_transitive_model_of_ZF","to":"t_relativization","role":"input","parameter_binding":{},"used_in_theorem":"s_mostowski_absoluteness"},
+  {"id":"e_24314","from":"t_relativization","to":"s_mostowski_absoluteness","role":"output","parameter_binding":{},"used_in_theorem":"s_mostowski_absoluteness"},
+  {"id":"e_24315","from":"s_delta_0_formula","to":"t_absoluteness","role":"input","parameter_binding":{},"used_in_theorem":"s_mostowski_absoluteness"},
+  {"id":"e_24316","from":"s_diamond_plus","to":"t_transfinite_induction","role":"input","parameter_binding":{},"used_in_theorem":"s_diamond_plus_kurepa"},
+  {"id":"e_24317","from":"t_transfinite_induction","to":"s_diamond_plus_kurepa","role":"output","parameter_binding":{},"used_in_theorem":"s_diamond_plus_kurepa"},
+  {"id":"e_24318","from":"t_transfinite_induction","to":"s_kurepa_tree","role":"output","parameter_binding":{},"used_in_theorem":"s_diamond_plus_kurepa"}
+]

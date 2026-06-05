@@ -1,0 +1,1224 @@
+a_doob_martingale_combinatorial | axiom | Doob martingale (combinatorial)
+a_erdos_renyi_gnm | axiom | Erdos-Renyi G(n,m) model
+a_property_b_hypergraph | axiom | Property B of a hypergraph
+s_2_kappa_bounded_in_quotient | state | 2 kappa bounded in quotient
+s_AD_equiconsistent_woodins | theorem | AD equiconsistent with infinitely many Woodins
+s_AD_implies_PSP | theorem | AD implies perfect set property for all sets
+s_AD_implies_baire_property | theorem | AD implies the Baire property for all sets
+s_AD_implies_measurable | theorem | AD implies all sets Lebesgue measurable
+s_AD_in_L_R | theorem | AD in L(ℝ) from large cardinals (Woodin)
+s_CZ_lemma_dyadic | theorem | Calderón–Zygmund lemma (dyadic version)
+s_GCH_in_L | theorem | V=L implies GCH in L
+s_G_acts_on_tree_with_finite_edge_stabilizers | state | G acts on tree with finite edge stabilizers
+s_HOD_R_ordinals_inner_model | state | HOD R ordinals inner model
+s_H_action_on_bass_serre_tree | state | H action on bass serre tree
+s_L1_L_inf_endpoint | state | L1 L inf endpoint
+s_L1_bounded_martingale | axiom | L1 bounded martingale
+s_L_as_kG_module | state | L as kG module
+s_L_hierarchy_L_alpha | state | L hierarchy L alpha
+s_L_models_ZF | state | L models ZF
+s_L_of_A | state | Constructible closure L(A)
+s_Lp_bounded_martingale | axiom | Lp bounded martingale
+s_MA_aleph0_theorem | theorem | MA_{ℵ₀} is a theorem of ZFC
+s_MA_aleph1_negates_CH | theorem | MA_{ℵ₁} implies ¬CH
+s_MA_implies_SH | theorem | Martin's axiom and Suslin's hypothesis
+s_MA_measure_category | theorem | MA and additivity of measure/category
+s_M_bar_equals_L_beta | state | M bar equals L beta
+s_OS_axioms_reflection_positivity | axiom | OS axioms reflection positivity
+s_PA_proof_theoretic_ordinal_epsilon_0 | theorem | Specker–Ackermann ordinal of PA / Gentzen analysis
+s_PFA_consequences | theorem | Proper Forcing Axiom consequences (Todorčević)
+s_TV_distance_to_stationary_renewal_zero | state | TV distance to stationary renewal zero
+s_T_as_ccc_poset | state | T as ccc poset
+s_a_e_convergent_bounded_L_p_sequence | axiom | a e convergent bounded L p sequence
+s_a_s_convergence_via_levy_equivalence | state | a s convergence via levy equivalence
+s_abelian_l_equals_hecke | theorem | Abelian Artin L-function equals Hecke L-function
+s_abscissa_of_absolute_convergence | axiom | Abscissa of absolute convergence
+s_abscissa_relation | theorem | Abscissa of convergence vs absolute convergence relation
+s_absolute_coequalizer | axiom | Absolute coequalizer
+s_absolute_convergence | state | Absolute convergence
+s_absolute_convergence_fourier_smoothness | theorem | Absolute convergence of Fourier series under smoothness
+s_absolute_convergence_implies_convergence | theorem | Absolute convergence implies convergence
+s_absolute_convergence_of_improper_integrals | theorem | Absolute convergence of improper integrals
+s_absolute_galois_group | state | Absolute Galois group Gal(K^sep/K)
+s_absolute_value_on_R | state | Absolute value (on R)
+s_absolute_value_on_a_field | axiom | Absolute value on a field
+s_absolute_value_product_formula | axiom | absolute_value_product_formula
+s_absolutely_continuous_function | axiom | Absolutely continuous function
+s_absolutely_continuous_function_g | axiom | absolutely continuous function g
+s_absolutely_continuous_measure | axiom | Absolutely continuous measure
+s_absolutely_normal_number | axiom | Absolutely normal number
+s_absoluteness_to_L | state | absoluteness to L
+s_absorption_infinite_cardinals | theorem | Absorption law for infinite cardinals
+s_ac_function_measure_correspondence | theorem | AC functions and absolute continuity of measures
+s_ac_maps_null_to_null | theorem | Absolutely continuous functions map null sets to null sets
+s_adian_rabin_theorem | theorem | Adian–Rabin theorem on Markov properties
+s_adjoint_operator_L_star | state | adjoint operator L star
+s_aep | theorem | Asymptotic Equipartition Property (AEP)
+s_aleph_function | state | Aleph function ℵ_α
+s_aleph_numbers | state | aleph numbers ℵ_α
+s_alladi_erdos_largest_prime_factor_average | theorem | Alladi–Erdős result on average of log P⁺(n)
+s_amenable_property_T_clash | state | amenable property T clash
+s_analytic_baire_property | theorem | Analytic sets have the Baire property
+s_analytic_continuation_L_function_s_gt_0 | theorem | Analytic continuation of L(s,χ) to Re(s) > 0
+s_analytic_continuation_l_all_c | theorem | Analytic continuation of L(s,χ) to all of ℂ
+s_analytic_continuation_l_re_gt_0 | theorem | Analytic continuation of L(s,χ) to Re(s) > 0
+s_analytic_determinacy | theorem | Analytic determinacy
+s_analytic_measurable | theorem | Analytic sets are Lebesgue measurable
+s_analytic_psp | theorem | Analytic sets have the perfect set property
+s_antichain_in_boolean_lattice | axiom | antichain in boolean lattice
+s_aps_in_pseudorandom_dense_subset | state | APs in pseudorandom dense subset
+s_archimedean_property | theorem | Archimedean property
+s_aronszajn_tree | state | Aronszajn tree
+s_aronszajn_tree_existence | theorem | Existence of an Aronszajn tree
+s_artin_l_function | axiom | artin l function
+s_artinian_ring_finitely_many_maximal_ideals | theorem | Artinian ring has finitely many maximal ideals
+s_artins_lemma_on_fixed_fields | theorem | Artin's lemma on fixed fields
+s_asymptotic_expansion_of_the_gamma_function | state | Asymptotic expansion of the gamma function
+s_atomic_partition_construction | state | atomic partition construction
+s_attached_primes | axiom | Attached primes
+s_attained_extrema_on_closed_interval | state | attained extrema on closed interval
+s_augmentation_ideal | axiom | Augmentation ideal I_G
+s_average_order_of_sigma_n | theorem | Average order of σ(n)
+s_axiom_of_choice | axiom | Axiom of choice
+s_axiom_of_choice_function_phi | state | axiom of choice function phi
+s_axiom_of_determinacy_for_borel_games | axiom | axiom of determinacy for borel games
+s_azuma_hoeffding | theorem | Azuma–Hoeffding Inequality
+s_backward_martingale | axiom | Backward (reversed) martingale
+s_backward_martingale_convergence | theorem | Backward martingale convergence theorem
+s_baire_sigma_algebra | axiom | Baire σ-algebra
+s_bakergillsolovay_relativization_barrier | theorem | Baker-Gill-Solovay relativization barrier
+s_basic_properties_fourier_transform | theorem | Basic properties of the Fourier transform on ℝ
+s_basic_set_partition | state | basic set partition
+s_bass_serre_tree_for_free_product | state | bass serre tree for free product
+s_beatty_partition_count_match | state | beatty partition count match
+s_behrend_3_ap_free_set | theorem | Behrend's construction of dense 3-AP-free set
+s_bernstein_theorem_monotonic | theorem | Bernstein's theorem on absolutely monotonic functions
+s_beth_definability | theorem | Beth's definability theorem
+s_beth_function | state | Beth function ℶ_α
+s_bethe_ansatz_xxx_theorem | theorem | Bethe ansatz solution of the Heisenberg XXX chain
+s_bethe_equations | state | bethe equations
+s_block_cut_tree | state | Block-cut tree
+s_bm_as_martingale | state | Brownian motion as a martingale
+s_bm_path_properties | state | Path properties of Brownian motion
+s_bm_scaling_property | theorem | Scaling property of Brownian motion
+s_bochner_martinelli_kernel | state | Bochner–Martinelli kernel
+s_boolean_algebra_B | state | boolean algebra B
+s_boolean_circuit | axiom | Boolean circuit
+s_boolean_function_def | axiom | Boolean function
+s_boolean_lattice | axiom | Boolean lattice B_n
+s_boolean_prime_ideal_theorem | theorem | Boolean Prime Ideal Theorem
+s_boolean_satisfiability | state | boolean_satisfiability
+s_boolean_valued_models | state | boolean_valued_models
+s_boolean_valued_universe | state | Boolean-valued universe V^B
+s_booleanvalued_model | state | Boolean-valued model
+s_borel_measurable_function | state | Borel measurable function
+s_borel_sigma_algebra_on_R | axiom | borel sigma algebra on R
+s_borel_sigma_algebra_on_Rn | axiom | Borel σ-algebra on ℝⁿ
+s_bott_iteration_formula | theorem | Bott's iteration formula
+s_bounded_differences_for_martingale | state | bounded differences for martingale
+s_bowen_partition_function_Z_n | state | bowen partition function Z n
+s_bowen_specification_unique_equilibrium | theorem | Bowen's specification property implies unique equilibrium
+s_bubble_tree_at_singular_points | state | bubble tree at singular points
+s_cameron_martin_space_H1 | axiom | cameron martin space H1
+s_cameron_martin_theorem | theorem | Cameron–Martin Theorem
+s_candidate_closure_properties | state | candidate closure properties
+s_candidate_generating_partition | state | candidate generating partition
+s_canfield_erdos_pomerance_theorem | theorem | Canfield–Erdős–Pomerance theorem
+s_canonical_ramsey_theorem | theorem | Canonical Ramsey theorem (Erdős–Rado)
+s_canonical_reflection | state | canonical reflection
+s_caratheodory_measurability | axiom | Carathéodory measurability (μ*-measurable set)
+s_cardinal_arithmetic | state | Cardinal arithmetic
+s_cardinal_number | axiom | Cardinal number
+s_cartesian_closed_category | axiom | Cartesian closed category
+s_cauchy_filter | axiom | Cauchy filter
+s_cauchy_lemma_polygonal | theorem | Cauchy’s lemma (polygonal numbers)
+s_cayley_tree_of_F | state | cayley tree of F
+s_cc_dense_in_lp | theorem | Density of Cc in Lp for Radon measures
+s_ccc_forcing | state | Countable chain condition (ccc)
+s_ccc_partial_order | axiom | ccc partial order
+s_ccc_preserves_cardinals | theorem | ccc forcing preserves cardinals
+s_centered_random_walk_martingale | state | centered random walk martingale
+s_central_force_problem | axiom | central force problem
+s_cesaro_average_iterates_in_K | state | cesaro average iterates in K
+s_cf_parse_tree_pumping_step | state | cf parse tree pumping step
+s_cft_modular_invariance_theorem | theorem | Modular invariance of CFT partition function (S, T action)
+s_ch_independent_of_zfc | theorem | CH independent of ZFC
+s_chain_meets_antichain_at_most_once | state | chain meets antichain at most once
+s_character_of_verma_module | state | Character of a Verma module
+s_chevalley_constructibility | theorem | Chevalley constructibility theorem
+s_chevalley_theorem_constructible_sets | theorem | Chevalley's theorem on constructible sets
+s_chvatal_erdos_target | state | chvatal erdos target
+s_chvatal_erdos_theorem | theorem | Chvátal–Erdős theorem
+s_chvatal_erdos_theorem_diestel | theorem | Chvátal–Erdős theorem
+s_circle_orbit_partition | state | circle orbit partition
+s_class_D_submartingale | axiom | class D submartingale
+s_classifying_space_B_sigma_infty | state | classifying space B sigma infty
+s_cleaned_reduced_graph_H_free_or_dense | state | cleaned reduced graph H free or dense
+s_closed_forcing_adds_no_sequences | theorem | <κ-closed forcing adds no new <κ-sequences
+s_closed_ideal_in_Wiener_algebra | state | closed ideal in Wiener algebra
+s_closure_measurable_functions_under_limits | theorem | Closure of measurable functions under limits
+s_club_filter | state | Club filter
+s_club_intersection_theorem | theorem | Intersection of clubs is club
+s_club_principle | state | Club principle ♣
+s_club_set | state | Closed unbounded (club) set
+s_cluster_point_of_filter | state | Cluster point of a filter
+s_cm_equidimensional | theorem | Cohen-Macaulay local rings are equidimensional
+s_cm_implies_catenary | theorem | Cohen-Macaulay rings are universally catenary
+s_cm_polynomial_ring | theorem | Polynomial rings over Cohen-Macaulay rings are Cohen-Macaulay
+s_codimension_of_an_ideal | state | Codimension (height) of an ideal
+s_cofinality | state | Cofinality cf(α)
+s_coheight_of_a_prime_ideal | axiom | Coheight of a prime ideal
+s_cohen_forcing | theorem | Cohen's forcing theorems
+s_cohen_forcing_is_ccc | theorem | Cohen forcing is ccc
+s_cohen_independence_of_ch | theorem | cohen_independence_of_ch
+s_cohen_macaulay_ring | axiom | Cohen–Macaulay ring
+s_cohen_structure_theorem | theorem | Cohen structure theorem
+s_cohen_structure_theorem_mixed_char | theorem | Cohen structure theorem (mixed characteristic)
+s_cohenmacaulay_module | axiom | Cohen-Macaulay module
+s_cohens_independence_of_ch | theorem | Cohen's independence of CH
+s_collapse_function_pi | state | collapse function pi
+s_collapse_map_to_thom_space | state | collapse map to thom space
+s_collapse_to_MO_k_thom_space | state | collapse to MO k thom space
+s_collapsed_substructure_is_L_alpha | state | collapsed substructure is L alpha
+s_comma_categories_contractible | axiom | comma categories contractible
+s_comma_category | axiom | Comma category
+s_compact_3_manifold_with_simply_connected_sphere_property | axiom | compact 3 manifold with simply connected sphere property
+s_compact_hyperbolic_surface_Gamma_minus_H2 | axiom | compact hyperbolic surface Gamma minus H2
+s_compact_operators_closed_ideal | theorem | Compact operators form a closed ideal
+s_compact_smooth_moduli_under_generic_metric | state | compact smooth moduli under generic metric
+s_compactness_principle_ramsey | theorem | Compactness principle for Ramsey theory
+s_compatible_conditions | state | Compatible and incompatible conditions
+s_compensated_martingale | state | compensated martingale
+s_complete_BA_for_random_forcing | state | complete BA for random forcing
+s_complete_boolean_algebra | axiom | Complete Boolean algebra
+s_completed_l_function | axiom | Completed L-function
+s_completeness_of_R | axiom | Completeness of R (least upper bound property)
+s_complexity_class_l_logspace | state | complexity class L (logspace)
+s_con_MA_not_CH | theorem | Con(MA+¬CH) (Solovay–Tennenbaum)
+s_con_SH | theorem | Con(SH) (Solovay–Tennenbaum)
+s_con_zfc_gch | theorem | Con(ZFC) ⇒ Con(ZFC+GCH) (Gödel)
+s_con_zfc_not_ch_cohen | theorem | Con(ZFC)⟹Con(ZFC+¬CH) (Cohen)
+s_conductor_ideal | state | Conductor ideal
+s_conductor_l_function | axiom | Conductor of an L-function
+s_congruence_subgroup_gamma0 | axiom | Congruence subgroup Γ₀(N)
+s_congruence_subgroup_gamma1 | axiom | Congruence subgroup Γ₁(N)
+s_conjugate_partition | state | Conjugate (transpose) partition
+s_construct_tree_killing_each_predicted_antichain | state | construct tree killing each predicted antichain
+s_constructible_closure_L_R | axiom | constructible closure L R
+s_constructible_reals | state | Constructible reals ℝ∩L
+s_constructible_universe_L | theorem | Constructible universe L (Gödel)
+s_constructible_wellordering | state | Constructible well-ordering <_L
+s_continuity_via_filters | theorem | Continuity via filters
+s_continuous_functions_are_measurable | theorem | Continuous functions are Borel measurable
+s_continuous_local_martingale_M_t | axiom | continuous local martingale M t
+s_continuous_spectrum_gamma_h | axiom | Continuous spectrum of Γ\H
+s_continuum_hypothesis_or_GCH | axiom | continuum hypothesis or GCH
+s_contraction_property_of_resolvent | state | contraction property of resolvent
+s_convergence_l_nonprincipal_s_gt_0 | theorem | Convergence of L(s,χ) for nonprincipal χ at s > 0
+s_convergence_of_filter | axiom | Convergence of a filter
+s_convergent_quadratic_iteration | state | convergent quadratic iteration
+s_converse_mean_value_property | theorem | Converse of the mean value property
+s_convexity_bound_l_functions | theorem | Convexity bound for L-functions
+s_coprime_ideals | axiom | Coprime ideals
+s_cops_and_robber | state | Cops and robbers characterization of tree-width
+s_correspondence_between_forms_and_ideals | theorem | Correspondence between forms and ideals
+s_coset_partition_of_G | state | coset partition of G
+s_coulomb_phase_shift | state | Coulomb Phase Shift sigma_l(eta)
+s_countable_closed_partition_hypothesis | state | countable closed partition hypothesis
+s_countable_dense_sequence_in_unit_ball | state | countable dense sequence in unit ball
+s_countable_dense_subset_of_X | state | countable dense subset of X
+s_countable_markov_partition | state | countable markov partition
+s_countable_proper_forcing_class | axiom | countable proper forcing class
+s_counting_ideals_of_bounded_norm | theorem | Counting ideals of bounded norm
+s_counting_lemma_dense_H_implication | state | counting lemma dense H implication
+s_curve_l_function_eigenvalues | state | curve l function eigenvalues
+s_curve_recovered_from_kappa_tau | state | curve recovered from kappa tau
+s_cycle_lemma_count | state | cycle lemma count
+s_davenport_erdos_density_multiples | theorem | Davenport–Erdős theorem on multiples
+s_decay_of_dual_iterates | state | decay of dual iterates
+s_decision_tree_complexity | axiom | Decision tree complexity
+s_definability_in_L_alpha | axiom | definability in L alpha
+s_definability_lemma_forcing | theorem | Definability lemma (forcing)
+s_defocusing_property_on_arcs | state | defocusing property on arcs
+s_degeneration_at_E2 | state | Degeneration at E_2
+s_degree_l_function | axiom | Degree of an L-function
+s_deletion_property | theorem | Deletion property
+s_dense_domain_with_skew_adjoint_generator | state | dense domain with skew adjoint generator
+s_dense_family_of_analytic_test_functions | state | dense family of analytic test functions
+s_dense_functor | axiom | Dense functor
+s_dense_predense | state | Dense and predense sets
+s_dense_ring_of_linear_transformations | state | Dense ring of linear transformations
+s_dense_set | axiom | Dense set
+s_dense_set_of_explicit_stochastic_integrals | state | dense set of explicit stochastic integrals
+s_dense_subspaces_of_lp | theorem | Dense subspaces of Lp
+s_densely_defined_closed_linear_operator | axiom | densely defined closed linear operator
+s_densely_defined_closed_operator_A | axiom | densely defined closed operator A
+s_densely_defined_closed_operator_T | axiom | densely defined closed operator T
+s_densely_defined_dissipative_operator_A | axiom | densely defined dissipative operator A
+s_density_increment_iteration | state | density increment iteration
+s_density_of_zeros_near_sigma_1 | state | Density of zeros near σ = 1
+s_derandomized_ramsey_bound | theorem | Derandomized Ramsey lower bound
+s_descent_on_ideal_chain | state | descent on ideal chain
+s_determinacy_ad | state | determinacy (AD)
+s_determinacy_of_a_set | state | Determinacy of a set Det(A)
+s_determinantal_ideal | axiom | Determinantal ideal
+s_diagonal_intersection_club | state | diagonal intersection club
+s_diagonal_ramsey_bounds | state | Diagonal Ramsey number bounds
+s_diamond_anticipates_antichains | state | diamond anticipates antichains
+s_diamond_holds_in_L | theorem | ◊ holds in L (Jensen)
+s_diamond_implies_ch | theorem | ◊ implies CH
+s_diamond_implies_suslin_tree | theorem | Suslin's hypothesis / ◊ implies a Suslin tree (Jensen)
+s_diamond_iso_map | state | diamond iso map
+s_diamond_principle_on_omega_1 | axiom | diamond principle on omega 1
+s_different_ideal_definition | state | different ideal definition
+s_diffusion_generator_L_with_carre_du_champ | axiom | diffusion generator L with carre du champ
+s_digamma_function | state | Digamma function
+s_dilation_property_lebesgue | theorem | Dilation property of Lebesgue measure
+s_dimension_reduction_via_suslin | state | dimension reduction via suslin
+s_dimension_via_m_primary_ideals | theorem | Dimension via 𝔪-primary ideals
+s_direct_limit_filtered_colimit | axiom | Direct limit (filtered colimit)
+s_dirichlet_l_function | axiom | dirichlet l function
+s_dirichlet_l_nonvanishing_at_1 | theorem | dirichlet_l_nonvanishing_at_1
+s_discrete_spectrum_gamma_h | axiom | Discrete spectrum of Γ\H
+s_dispersive_L_infty_to_L_1_estimate | state | dispersive L infty to L 1 estimate
+s_distance_decreasing_property | state | distance decreasing property
+s_distance_to_dense_coords | state | distance to dense coords
+s_divergence_form_elliptic_with_L_infty_coefficients | axiom | divergence form elliptic with L infty coefficients
+s_divergence_form_parabolic_with_L_infty_coeff | axiom | divergence form parabolic with L infty coeff
+s_divisor_function_sigma_alpha | axiom | Generalized divisor function σ_α
+s_doob_Lp_convergence | theorem | Doob L^p Martingale Convergence
+s_doob_filtration_martingale | state | doob filtration martingale
+s_doob_martingale_convergence | theorem | Doob's martingale convergence theorem
+s_doob_martingale_convergence_as | theorem | Doob's Martingale Convergence (a.s.)
+s_duality_maximal_cm_modules | theorem | Duality for maximal Cohen-Macaulay modules
+s_dynkin_martingale | state | dynkin martingale
+s_each_fibre_nonstationary | state | each fibre nonstationary
+s_easton_admissible_F | state | easton admissible F
+s_easton_class_forcing | state | easton class forcing
+s_easton_theorem | theorem | Easton's theorem on continuum function
+s_edge_coloring | axiom | Proper edge coloring
+s_eigenmeasure_for_L_phi | state | eigenmeasure for L phi
+s_elementary_embedding_j_V_to_V | axiom | elementary embedding j V to V
+s_elementary_substructure_of_L_alpha | state | elementary substructure of L alpha
+s_elementary_substructure_property | axiom | elementary substructure property
+s_elimination_ideal | state | elimination ideal
+s_ellipsoid_volume_shrinkage_iteration | state | ellipsoid volume shrinkage iteration
+s_elliptic_operator_L_constant_coeff | axiom | elliptic operator L constant coeff
+s_elliptic_operator_L_self_adjoint | axiom | elliptic operator L self adjoint
+s_elliptic_operator_L_with_C_alpha_coefficients | axiom | elliptic operator L with C alpha coefficients
+s_empirical_measure_L_n | axiom | empirical measure L n
+s_equilibrium_renewal_distribution | state | Equilibrium (stationary) renewal distribution
+s_equivalence_class_partition_theorem | theorem | Equivalence class partition theorem
+s_equivalence_of_absolute_values | axiom | equivalence of absolute values
+s_equivalence_of_nets_and_filters | theorem | Equivalence of nets and filters
+s_erdos_cardinal | state | Erdős cardinal κ→(α)^{<ω}
+s_erdos_essential_components_theorem | theorem | Erdős’s theorem on essential components
+s_erdos_fuchs_theorem | theorem | Erdős–Fuchs theorem
+s_erdos_gallai_theorem | theorem | Erdős–Gallai theorem (graphic sequence)
+s_erdos_ginzburg_ziv_theorem | theorem | Erdős–Ginzburg–Ziv theorem
+s_erdos_girth_chromatic | theorem | Erdős theorem on girth and chromatic number
+s_erdos_heilbronn_conjecture | theorem | Erdős–Heilbronn conjecture (Dias da Silva–Hamidoune)
+s_erdos_implies_zero_sharp | theorem | κ→(ω₁)^{<ω} implies 0# exists
+s_erdos_kac_theorem | theorem | Erdős–Kac theorem
+s_erdos_ko_rado | theorem | Erdős–Ko–Rado theorem
+s_erdos_ko_rado_theorem | theorem | Erdős–Ko–Rado theorem
+s_erdos_littlewood_offord | theorem | Erdős–Littlewood–Offord inequality
+s_erdos_posa_dual_target | state | erdos posa dual target
+s_erdos_posa_theorem | theorem | Erdős–Pósa theorem
+s_erdos_rado_theorem | theorem | Erdős–Rado theorem
+s_erdos_ramsey_lower | theorem | Erdős probabilistic lower bound for Ramsey numbers
+s_erdos_ramsey_lower_bound | theorem | Erdős probabilistic lower bound on R(k,k)
+s_erdos_renyi_connectedness_threshold | theorem | Erdős–Rényi Connectedness Threshold
+s_erdos_renyi_connectivity_threshold | theorem | Erdős–Rényi threshold for connectivity
+s_erdos_renyi_giant_component | theorem | Erdős–Rényi Giant Component Threshold
+s_erdos_renyi_graph_G_n_p | axiom | erdos renyi graph G n p
+s_erdos_renyi_model | axiom | Erdős–Rényi random graph model G(n, p)
+s_erdos_stone_target | state | erdos stone target
+s_erdos_stone_theorem | theorem | Erdős–Stone theorem
+s_erdos_szekeres_ramsey_bound | theorem | Erdős–Szekeres bound on Ramsey numbers
+s_erdos_szekeres_theorem | theorem | Erdős–Szekeres monotone subsequence theorem
+s_erdos_szemeredi_conjecture | state | Erdős–Szemerédi sum-product conjecture
+s_erdos_szemeredi_sum_product | theorem | Erdős–Szemerédi sum–product
+s_erdos_tarski_theorem | theorem | Erdős–Tarski theorem on weakly compact cardinals
+s_erdos_turan_inequality | theorem | Erdős-Turán inequality
+s_erdos_wintner_theorem | theorem | Erdős–Wintner theorem
+s_erdos_woods_conjecture_consequence | theorem | erdos_woods_conjecture_consequence
+s_euler_four_square_identity | axiom | Euler four-square identity
+s_euler_partition_identity | theorem | Euler's partition identity
+s_euler_product_for_l_function | theorem | Euler product for L(s,χ)
+s_euler_reflection_formula | theorem | Euler's Reflection Formula
+s_eventuality_filter | state | Eventuality filter (filter generated by a net)
+s_every_ideal_is_finite_intersection_of_irreducibles | theorem | Every ideal is a finite intersection of irreducible ideals
+s_every_maximal_ideal_is_prime | theorem | Every maximal ideal is prime
+s_every_measurable_limit_of_simple | theorem | Every measurable function is a limit of simple functions
+s_evolution_equation_with_lax_pair_L_M | axiom | evolution equation with lax pair L M
+s_exchange_property | theorem | Exchange property
+s_exchangeable_sigma_algebra | axiom | exchangeable sigma algebra
+s_existence_of_ultrafilters | theorem | Existence of ultrafilters (ultrafilter lemma)
+s_existence_uniqueness_stationary | theorem | Existence and uniqueness of stationary distribution
+s_exp_lambda_M_n_is_supermartingale | state | exp lambda M n is supermartingale
+s_expected_codimension_determinantal | theorem | Expected codimension of determinantal ideals
+s_exponential_local_martingale_e_ixiM | state | exponential local martingale e ixiM
+s_exponential_martingale | state | Exponential martingale
+s_extension_and_contraction_of_ideals | axiom | Extension and contraction of ideals
+s_extension_of_absolute_values | theorem | Extension of absolute values
+s_f_sigma_set | axiom | F_σ set
+s_faddeev_popov_partition_function_theorem | theorem | Faddeev–Popov gauge-fixing procedure
+s_family_indexed_by_dense_subset_D | state | family indexed by dense subset D
+s_farey_mediant_theorem | theorem | Farey mediant property
+s_farey_neighbor_theorem | theorem | Farey neighbor property
+s_feller_property_markov_chain | axiom | Feller property (Markov chain on topological space)
+s_fermat_right_triangle_no_rational_square_area | theorem | Fermat's right-triangle theorem
+s_fermat_two_square_theorem | theorem | Fermat's two-square theorem
+s_ferromagnetic_ising_partition_function | axiom | ferromagnetic ising partition function
+s_field_extension_L_over_K | axiom | Field extension L/K
+s_filter | axiom | Filter
+s_filter_base | axiom | Filter base (basis of a filter)
+s_filter_characterization_compactness | theorem | Filter characterization of compactness
+s_filter_generated_by_base | state | Filter generated by a base
+s_filtered_category | axiom | Filtered category
+s_filtered_colimit_algebraic | theorem | Filtered colimits in algebraic categories
+s_filtered_colimits_commute_finite_limits | theorem | Filtered colimits commute with finite limits in Set
+s_filtered_complex | axiom | Filtered complex
+s_filtered_module | axiom | Filtered module
+s_filtered_probability_space | axiom | filtered probability space
+s_filtered_ring | axiom | Filtered ring
+s_final_functor | axiom | Final functor (cofinal)
+s_finitary_TREE_function_statement | state | finitary TREE function statement
+s_finite_generating_set_of_ideal | state | Finite generating set of ideal
+s_finite_intersection_property | theorem | Finite intersection property characterization of compactness
+s_finite_labelled_trees | axiom | finite labelled trees
+s_finite_normal_separable_extension_L_over_K | state | Finite normal separable extension L/K
+s_finite_product_of_finitely_branching_trees | axiom | finite product of finitely branching trees
+s_finite_proper_time_to_focal_point | state | finite proper time to focal point
+s_finite_ramsey_conjecture | state | finite ramsey conjecture
+s_finite_rooted_tree | axiom | finite rooted tree
+s_finite_signed_measure_nu_absolutely_continuous | state | finite signed measure nu absolutely continuous
+s_finite_witness_property | state | finite witness property
+s_first_order_graph_property_phi | axiom | first order graph property phi
+s_fitting_ideal | state | Fitting ideal
+s_fitting_ideals_and_annihilator | theorem | Fitting ideals and annihilator
+s_flat_degeneration_to_initial_ideal | theorem | Flat degeneration to initial ideal
+s_flatness_ideal_criterion | theorem | Ideal-theoretic characterization of flatness
+s_flatness_is_a_local_property | theorem | Flatness is a local property
+s_floating_lp_iteration | state | floating lp iteration
+s_fodor_constancy_on_stationary_subset | state | fodor constancy on stationary subset
+s_fodor_lemma | theorem | Fodor's pressing-down lemma
+s_forcing | state | forcing
+s_forcing_extension_mg | state | forcing extension M[G]
+s_forcing_relation | state | Forcing relation p⊩φ
+s_forcing_theorem | theorem | Forcing theorem (fundamental)
+s_formal_adjoint_operator_L_star | state | formal adjoint operator L star
+s_fractional_ideal | axiom | fractional_ideal
+s_fractional_ideals_of_dedekind_domains_are_invertible | theorem | Fractional ideals of Dedekind domains are invertible
+s_fredholm_property_elliptic_bvp | theorem | Fredholm property for elliptic BVPs
+s_fredholm_property_elliptic_compact_manifold | theorem | Fredholm property of elliptic operators on compact manifolds
+s_fs_iteration_ccc | theorem | FS iteration of ccc is ccc
+s_full_modularity_theorem_BCDT | theorem | Modularity Theorem — full, Breuil–Conrad–Diamond–Taylor 2001
+s_function_with_absolutely_convergent_fourier_series_nonvanishing | axiom | function with absolutely convergent fourier series nonvanishing
+s_functional_equation_l_primitive | theorem | Functional equation of L(s,χ) for primitive characters
+s_fundamental_lemma_ngo | theorem | Fundamental lemma (Ngô)
+s_fundamental_lemma_of_sieve | theorem | Brun–Hooley sieve / linear sieve fundamental lemma
+s_fundamental_theorem_of_p_partitions | theorem | Fundamental theorem of P-partitions (Stanley)
+s_gale_stewart_theorem | theorem | Gale–Stewart theorem
+s_galois_extension_L_over_K | axiom | galois extension L over K
+s_galois_extension_l_over_k | axiom | galois extension l over k
+s_galvin_prikry_game | state | galvin prikry game
+s_galvin_prikry_theorem | theorem | Galvin–Prikry theorem
+s_gamma_2_operator | state | gamma 2 operator
+s_gamma_analytic_continuation | theorem | Analytic continuation of Γ to meromorphic function on ℂ
+s_gamma_analyticity | theorem | Gamma function is analytic on the right half-plane
+s_gamma_convergence | state | Γ-convergence
+s_gamma_distribution | axiom | Gamma distribution
+s_gamma_factors_functional_equation | axiom | Gamma factors in functional equations
+s_gamma_function | state | Gamma function
+s_gamma_recurrence | theorem | Gamma function recurrence relation
+s_gamma_recurrence_relation | theorem | Gamma Function Recurrence Relation
+s_gauss_constructible_regular_polygons | theorem | Gauss's theorem on constructible regular polygons
+s_gauss_lemma_legendre | theorem | Gauss's lemma for the Legendre symbol
+s_gauss_lemma_polynomials | theorem | Gauss's lemma (polynomials)
+s_gauss_lemma_riemannian | theorem | Gauss lemma (Riemannian geometry)
+s_gausss_lemma_content_of_polynomials | theorem | Gauss's lemma (content of polynomials)
+s_gausss_lemma_quadratic_residues | theorem | Gauss's lemma (quadratic residues)
+s_gelfand_spectrum | state | Gelfand spectrum (maximal ideal space)
+s_general_l_function_ik | axiom | General L-function (Iwaniec–Kowalski framework)
+s_generalized_continuum_hypothesis | state | Generalized Continuum Hypothesis (GCH)
+s_generic_H_meets_X_transversely | state | generic H meets X transversely
+s_generic_extension_V_G | state | generic extension V G
+s_generic_extension_with_F | state | generic extension with F
+s_generic_filter | state | generic filter
+s_generic_filter_2 | state | generic_filter
+s_generic_flatness_theorem | theorem | Generic flatness theorem
+s_generic_freeness_lemma | theorem | Generic freeness lemma (Grothendieck)
+s_generic_parameter_makes_f_transverse | state | generic parameter makes f transverse
+s_generic_point_of_a_scheme | state | generic point of a scheme
+s_generic_projection_remains_immersion | state | generic projection remains immersion
+s_generic_random_real | state | generic random real
+s_generic_section_connected | state | generic section connected
+s_generic_smoothness | theorem | Generic smoothness
+s_generic_specialization_remains_irreducible | state | generic specialization remains irreducible
+s_generic_ultrapower | state | generic ultrapower
+s_gessels_formula_p_partitions | theorem | Gessel's formula for P-partitions
+s_gimel_function | state | Gimel function ℷ(κ)
+s_glued_proper_overscheme_X_bar | state | glued proper overscheme X bar
+s_godel_L_model | state | Gödel L model (alias)
+s_goedel_constructibility | theorem | goedel_constructibility
+s_going_up_theorem | theorem | Going-up theorem (Cohen–Seidenberg)
+s_grade_of_an_ideal | state | Grade of an ideal
+s_graph_property_testability | theorem | Testability of hereditary graph properties
+s_graph_ramsey_number | axiom | Graph Ramsey number R(G, H)
+s_graph_ramsey_theory | state | graph Ramsey theory
+s_graph_removal_lemma_diestel | theorem | Graph removal lemma
+s_group_type_fp | axiom | Group of type FP
+s_growth_rate_stationary_market | theorem | Asymptotic optimality of log-optimal investment (AEP for investment)
+s_hardy_ramanujan_partition_asymptotic | theorem | Hardy–Ramanujan partition asymptotic
+s_harmonic_mvp_characterization | theorem | Mean value property characterizes harmonic functions
+s_hawking_temperature_kappa_over_2pi | state | hawking temperature kappa over 2pi
+s_hecke_l_function_grossencharakter | axiom | Hecke L-function
+s_height_of_a_prime_ideal | axiom | Height of a prime ideal
+s_hensels_lemma_2 | theorem | hensels_lemma
+s_hereditarily_small_sets_H_kappa | state | Hereditarily small sets H(κ)
+s_hessenberg_kappa_squared | theorem | Hessenberg's theorem (κ²=κ)
+s_hilbert_symbol_properties | theorem | Bilinearity and non-degeneracy of the Hilbert symbol
+s_hochster_big_cm_modules | theorem | Hochster's theorem on big Cohen-Macaulay modules
+s_hodge_diamond | state | Hodge diamond
+s_homogeneous_ideal | axiom | homogeneous ideal
+s_homogeneous_tree_for_T | state | homogeneous tree for T
+s_homotopy_extension_property | axiom | Homotopy extension property
+s_homotopy_grid_partition | state | homotopy grid partition
+s_homotopy_lifting_property | theorem | Homotopy lifting property
+s_hrushovski_generic_structure | state | hrushovski generic structure
+s_huge_cardinal | state | Huge cardinal
+s_hydra_ordinal_invariant | state | hydra ordinal invariant
+s_hypergraph_ramsey_number | state | Hypergraph Ramsey number
+s_hypothetical_suslin_tree | state | hypothetical suslin tree
+s_ideal_I | state | Ideal I
+s_ideal_a_b_in_R | state | ideal a b in R
+s_ideal_as_maximal_minors | state | ideal as maximal minors
+s_ideal_class_group | state | Ideal class group
+s_ideal_class_group_2 | axiom | ideal_class_group
+s_ideal_in_R_x | state | Ideal in R[x]
+s_ideal_lattice | state | Ideal lattice
+s_ideal_of_a_ring | axiom | Ideal (of a ring)
+s_ideal_of_an_algebraic_set | state | ideal of an algebraic set
+s_ideal_of_lie_algebra | axiom | Ideal of a Lie algebra
+s_ideal_principal_d | state | ideal principal d
+s_ideal_product | axiom | Product of ideals
+s_ideal_quotient | axiom | Ideal quotient (colon ideal)
+s_ideal_set_theory | axiom | Ideal (set-theoretic)
+s_ideal_sheaf | state | Ideal sheaf
+s_ideal_sum | axiom | Sum of ideals
+s_ideal_theory_group_algebra | state | Ideal theory of L¹(G)
+s_ideal_waring_conjecture | state | Ideal Waring conjecture
+s_ideal_with_n_generators | axiom | ideal with n generators
+s_ideals_quotient_banach_algebra | axiom | Ideals and quotient algebras in Banach algebras
+s_improper_integral | axiom | Improper integral (convergent integral on unbounded interval)
+s_inaccessible_cardinal_axiom | axiom | inaccessible cardinal axiom
+s_incidence_matrix_factorisation_L_eq_B_B_T | state | incidence matrix factorisation L eq B B T
+s_independence_of_sigma_algebras | axiom | Independence of σ-algebras
+s_index_equals_L_genus_pairing | state | index equals L genus pairing
+s_index_homomorphism | theorem | Homomorphism properties of the index function
+s_indiscernibility_of_uncountable_cardinals | state | indiscernibility of uncountable cardinals
+s_induced_character_l_series_factorization | theorem | Induced character and L-series factorization
+s_infinitely_many_woodin_cardinals | axiom | infinitely many woodin cardinals
+s_initial_ideal | state | Initial ideal
+s_initial_ordinal | state | Initial ordinal
+s_integer_partitions | axiom | integer partitions
+s_integral_nonneg_measurable_function | axiom | Integral of a nonnegative measurable function
+s_integration_by_parts_ac | theorem | Integration by parts for absolutely continuous functions
+s_intermediate_value_nonatomic | theorem | Intermediate value property for non-atomic measures
+s_intersecting_family_property | axiom | intersecting family property
+s_invariant_partition_C_D | state | invariant partition C D
+s_invariant_sigma_algebra | state | Invariant σ-algebra of a measure-preserving transformation
+s_invertible_ideal | state | Invertible ideal
+s_irreducible_ideal | axiom | Irreducible ideal
+s_irreducible_ideals_are_primary_in_noetherian_rings | theorem | Irreducible ideals are primary in Noetherian rings
+s_isolated_types_dense_iff_omega_categorical | state | isolated types dense iff omega categorical
+s_isolation_lemma_mvv | theorem | Isolation lemma (Mulmuley–Vazirani–Vazirani)
+s_isolation_lemma_witness | state | isolation lemma witness
+s_iterated_critical_points | state | iterated critical points
+s_iterated_function_system | axiom | Iterated function system (IFS) as Markov chain
+s_iterated_generating_functions_branching | theorem | Iterated generating functions for branching processes
+s_iterated_hj_combinatorial_subspace | state | iterated hj combinatorial subspace
+s_iterated_holder_on_indicator | state | iterated holder on indicator
+s_iterated_neighborhood_of_homoclinic | state | iterated neighborhood of homoclinic
+s_iterated_root_adjunction | state | iterated root adjunction
+s_iterated_sumset | axiom | Iterated sumset kA
+s_iteration_trees_on_V | state | iteration trees on V
+s_iterative_orthogonal_eigenbasis | state | iterative orthogonal eigenbasis
+s_ito_representation_theorem | theorem | Itô Representation Theorem (martingale representation)
+s_jack_polynomial | state | Jack Polynomial P_kappa^{(alpha)}
+s_jacobi_four_square_formula | theorem | Jacobi's four-square theorem
+s_kappa_categoricity | axiom | kappa categoricity
+s_kappa_cc_knaster | state | κ-cc / κ-Knaster
+s_kappa_cc_preserves_cardinals | theorem | κ-cc forcing preserves cardinals ≥κ
+s_kappa_closed_forcing | state | <κ-closed forcing
+s_kappa_complete_filter | axiom | κ-complete filter
+s_kappa_prime_sign_change_contradiction | state | kappa prime sign change contradiction
+s_kato_smoothness_absolute_continuity | theorem | Kato smoothness implies absolute continuity
+s_keisler_shelah_theorem | theorem | Keisler–Shelah ultrapower characterization of elementary equivalence
+s_kirchhoff_matrix_tree | theorem | Kirchhoff's matrix tree theorem
+s_konig_cardinal_theorem | theorem | König's theorem (cardinal)
+s_kostant_partition_function | state | Kostant partition function
+s_krull_hauptidealsatz | theorem | Krull's principal ideal theorem (Hauptidealsatz)
+s_krull_pit_theorem | theorem | Krull's principal ideal theorem (Hauptidealsatz)
+s_kruskal_tree_theorem | theorem | Kruskal's tree theorem
+s_kummer_cyclotomic_factorization | theorem | Kummer's theorem on cyclotomic ideal factorization
+s_kunen_inconsistency | theorem | Kunen inconsistency theorem
+s_kunen_inconsistency_in_L | state | kunen inconsistency in L
+s_kurepa_tree | state | Kurepa tree / Kurepa's hypothesis
+s_kurepa_tree_in_L | theorem | Kurepa tree exists in L
+s_l_adic_cohomology | state | l_adic_cohomology
+s_l_adic_galois_representation_of_E | state | l adic galois representation of E
+s_l_adic_tate_module | axiom | l adic tate module
+s_l_chi0_pole_at_1 | theorem | Pole of L(s,χ₀) at s = 1
+s_l_chi0_relation_to_zeta | state | L(s,χ₀) relation to Riemann zeta
+s_l_class | state | Hirzebruch L-class
+s_l_extension | state | ℓ-extension
+s_l_function_central_value | axiom | l function central value
+s_l_function_euler_product_local | theorem | Decomposition of L-functions into local zeta integrals
+s_l_function_nonvanishing_s1 | theorem | L-function non-vanishing at s = 1
+s_l_function_of_modular_form | axiom | L-function of a modular form
+s_l_function_of_motive | state | l_function_of_motive
+s_l_function_via_hurwitz_zeta | theorem | L(s,χ) as linear combination of Hurwitz zeta functions
+s_l_group_functoriality_setup | state | l group functoriality setup
+s_l_infinity_not_separable | theorem | L∞ is not separable
+s_l_infinity_space | axiom | L-infinity space
+s_lagrange_four_square_theorem | theorem | Lagrange's four-square theorem
+s_lambda_lemma_extension | state | lambda lemma extension
+s_landau_prime_ideal_theorem | theorem | landau_prime_ideal_theorem
+s_langlands_l_function | state | Langlands L-function
+s_large_cardinal | state | large cardinal
+s_large_cardinal_axioms | state | large_cardinal_axioms
+s_large_cardinal_consistency_hierarchy | theorem | large cardinal consistency hierarchy
+s_lebesgue_measurable_function | state | Lebesgue measurable function
+s_lebesgue_measurable_set_in_Rn | axiom | lebesgue measurable set in Rn
+s_lebesgue_space_L_p | axiom | lebesgue space L p
+s_lebesgue_spaces_L_p_L_q | axiom | lebesgue spaces L p L q
+s_lefschetz_number_L_f | state | lefschetz number L f
+s_legendre_three_square_theorem | theorem | Legendre's three-square theorem
+s_levy_characterization_bm | theorem | Lévy's Characterization of Brownian Motion
+s_levy_collapse_model | state | levy collapse model
+s_levy_concentration_function | axiom | levy concentration function
+s_levy_concentration_function_witness | state | levy concentration function witness
+s_levy_continuity_theorem | theorem | Lévy's Continuity Theorem
+s_levy_downward_theorem | theorem | Lévy's downward theorem
+s_levy_equivalence_theorem | theorem | Lévy's Equivalence Theorem
+s_levy_hierarchy | state | Lévy hierarchy (Σ_n/Π_n)
+s_levy_inequality | theorem | Lévy's inequality
+s_levy_inversion_formula | theorem | Lévy inversion formula
+s_levy_ito_decomposition | theorem | Lévy–Itô decomposition
+s_levy_khintchine_formula | theorem | Lévy–Khintchine formula
+s_levy_khintchine_representation | theorem | Lévy–Khintchine Representation
+s_levy_khintchine_triplet | state | Lévy–Khintchine triplet
+s_levy_measure_integral_existence | state | levy measure integral existence
+s_levy_modulus_continuity | theorem | Lévy Modulus of Continuity for BM
+s_levy_process | axiom | Lévy process
+s_levy_process_X_t | axiom | levy process X t
+s_levy_reflection | theorem | Levy reflection principle
+s_levy_reflection_in_L | state | levy reflection in L
+s_levy_solovay_theorem | theorem | Lévy–Solovay theorem on indestructibility of large cardinals under small forcing
+s_levy_upward_theorem | theorem | Lévy's upward theorem
+s_levy_zero_one_law | theorem | Lévy's 0-1 law
+s_levys_lemma_on_the_sphere | state | Lévy's lemma on the sphere
+s_lil_harris_chain | theorem | Law of the iterated logarithm for Harris chains
+s_lil_hartman_wintner | theorem | Law of Iterated Logarithm (Hartman–Wintner)
+s_limit_ordinal | state | limit ordinal
+s_line_bundle_L_lambda | state | line bundle L lambda
+s_linear_form_l_i | axiom | linear form l i
+s_liouville_property_recurrent_mc | theorem | Liouville property for recurrent Markov chains
+s_littlewood_paley_square_function_theorem | theorem | Littlewood–Paley decomposition
+s_lll_algorithm_properties | theorem | lll_algorithm_properties
+s_local_boundedness_L_infty | state | local boundedness L infty
+s_local_martingale_M_t | axiom | local martingale M t
+s_local_property | axiom | Local property of modules
+s_local_time | state | Local time of a continuous semimartingale
+s_localization_universal_property | theorem | Universal property of localization
+s_log_l_series | state | Logarithm of L(s,χ) series
+s_log_zeta_bound_near_sigma_1 | state | log ζ(s) bound near σ = 1
+s_lovasz_local_lemma_symmetric | theorem | Lovasz Local Lemma (symmetric form)
+s_lovasz_theta_ramsey_bound | theorem | Ramsey bound via Lovasz theta function
+s_lp_norm_equivalence_with_square_function | state | lp norm equivalence with square function
+s_lr_martingale_under_null | state | lr martingale under null
+s_macmahon_plane_partition_gf | theorem | MacMahon's plane partition generating function
+s_mader_theorem_average_degree | theorem | Mader's theorem (average degree forces topological minors)
+s_mahlo_cardinal | state | Mahlo cardinal
+s_mansfield_solovay | theorem | Mansfield–Solovay theorem
+s_mapping_lemma_spectral_sequences | theorem | Mapping lemma for spectral sequences
+s_markov_kernel | axiom | Markov kernel (transition kernel on measurable space)
+s_markov_partition_of_attractor | state | markov partition of attractor
+s_markov_property | theorem | Markov property
+s_markov_property_bm | theorem | Markov property of Brownian motion
+s_markov_property_of_groups | axiom | markov property of groups
+s_martin_analytic_determinacy | theorem | Martin's theorem: Σ¹₁-determinacy from measurable
+s_martin_borel_determinacy | theorem | Martin's Borel determinacy theorem
+s_martin_boundary | state | Martin boundary
+s_martin_representation_theorem | theorem | Martin representation theorem
+s_martin_steel_pd | theorem | Martin–Steel theorem (projective determinacy)
+s_martingale | state | Martingale
+s_martingale_Lp_convergence | theorem | Martingale Lᵖ convergence theorem
+s_martingale_clt | theorem | Martingale central limit theorem
+s_martingale_in_initial_time | state | martingale in initial time
+s_martingale_problem | axiom | Martingale problem (Stroock–Varadhan)
+s_martingale_transform | axiom | Martingale transform
+s_martingale_with_bounded_differences | axiom | martingale with bounded differences
+s_martins_axiom | axiom | Martin's Axiom (MA)
+s_martins_axiom_MA_kappa | axiom | Martin's Axiom MA_κ
+s_martins_axiom_MA_omega_1 | axiom | martins axiom MA omega 1
+s_matrix_tree | theorem | Matrix-tree theorem
+s_matrix_tree_theorem | theorem | Kirchhoff's matrix-tree theorem
+s_maximal_cohen_macaulay_module | axiom | Maximal Cohen-Macaulay module
+s_maximal_gamma_set_on_M | state | maximal gamma set on M
+s_maximal_ideal | axiom | Maximal Ideal
+s_maximal_ideal_m_in_k_x_1_x_n | state | Maximal ideal m ⊂ k[x₁,…,xₙ]
+s_maximal_ideal_space | state | Maximal ideal space (spectrum) of a Banach algebra
+s_maximal_ideals_are_points | state | maximal_ideals_are_points
+s_maximum_principle_forcing | theorem | Maximum principle (forcing)
+s_mean_square_convergence_fourier | theorem | Mean-square convergence of Fourier series
+s_mean_square_density_index_q | state | mean square density index q
+s_mean_value_property_for_f | state | mean value property for f
+s_mean_value_property_harmonic | theorem | Mean value property for harmonic functions
+s_mean_value_property_heat | theorem | Mean value property for the heat equation
+s_mean_value_property_on_balls | axiom | mean value property on balls
+s_measurable_cardinal_axiom | axiom | measurable cardinal axiom
+s_measurable_coefficient_uniform_ellipticity | axiom | measurable coefficient uniform ellipticity
+s_measurable_embedding_characterization | theorem | Measurable cardinals and elementary embeddings
+s_measurable_function | state | Measurable function
+s_measurable_functions_form_algebra | theorem | Measurable functions form an algebra
+s_measurable_hilbert_field | state | measurable hilbert field
+s_measurable_set | axiom | Measurable Set
+s_measurable_set_of_positive_measure | state | measurable set of positive measure
+s_measurable_space | axiom | measurable space
+s_measurable_subset_of_Rn | axiom | measurable subset of Rn
+s_measure_density_lemma_nondivergence | state | measure density lemma nondivergence
+s_memoryless_property | theorem | Memoryless property
+s_mertens_and_sigma_translations | state | mertens and sigma translations
+s_middle_layer_bound_for_antichain | state | middle layer bound for antichain
+s_midpoint_preserved_under_reflection | state | midpoint preserved under reflection
+s_miller_rabin_correctness | theorem | miller_rabin_correctness
+s_miller_rabin_witness | state | miller_rabin_witness
+s_minimal_cauchy_filter | state | Minimal Cauchy filter
+s_minimizing_property_of_geodesics | theorem | Minimizing property of geodesics
+s_mixing_lemma_forcing | theorem | Mixing lemma
+s_model_L_of_ZFC_plus_GCH | state | Model L (constructible universe)
+s_model_of_ZFC_plus_not_CH | state | Model of ZFC + ¬CH
+s_modified_newton_iteration | state | modified newton iteration
+s_modified_struve_function_l_nu | state | Modified Struve Function L_nu(z)
+s_modularity_theorem | theorem | Modularity theorem (Taylor–Wiles–Breuil–Conrad–Diamond)
+s_modularity_theorem_full | theorem | Modularity theorem (full, Breuil–Conrad–Diamond–Taylor)
+s_moments_l_functions_conjectural | axiom | Moments of L-functions (conjectural asymptotics)
+s_monotone_boolean_function | axiom | Monotone Boolean function
+s_monotonicity_lemma_j_holo | theorem | Monotonicity lemma for J-holomorphic curves
+s_morley_tree_analysis | state | morley tree analysis
+s_moser_isotopy_lemma_relative | theorem | Moser isotopy lemma (relative version)
+s_mostowski_absoluteness | theorem | Mostowski absoluteness
+s_mostowski_collapse | theorem | Mostowski collapse lemma
+s_mostowski_rank_function | theorem | Mostowski rank theorem
+s_mu_measurable_function_bourbaki | axiom | Measurable function (Bourbaki, mu-measurable)
+s_multivariate_gamma_function | axiom | Multivariate Gamma Function Gamma_m(a)
+s_murnaghan_nakayama_rule | theorem | Murnaghan--Nakayama rule
+s_n_measurable_bodies_in_Rn | axiom | n measurable bodies in Rn
+s_nakayama_lemma | theorem | Nakayama's lemma
+s_nakayama_tate_duality | theorem | Nakayama–Tate duality theorem
+s_negative_part_V_minus_in_L_n_2 | axiom | negative part V minus in L n 2
+s_negative_schwarzian_preserved_under_iteration | state | negative schwarzian preserved under iteration
+s_neighborhood_filter | state | Neighborhood filter
+s_newton_iteration_of_conjugacies | state | newton iteration of conjugacies
+s_newtonian_inverse_square_force | axiom | Newtonian inverse-square force law
+s_nil_ideal | axiom | Nil ideal
+s_nilpotent_ideal | axiom | Nilpotent ideal
+s_nine_lemma_33_lemma | theorem | Nine lemma (3×3 lemma)
+s_non_archimedean_absolute_value | axiom | Non-archimedean absolute value
+s_nondivergence_elliptic_with_L_infty_coeff | axiom | nondivergence elliptic with L infty coeff
+s_nonneg_measurable_function_on_Rn | axiom | nonneg measurable function on Rn
+s_nonnegative_submartingale | axiom | nonnegative submartingale
+s_nonvanishing_l_functions_at_center | theorem | Nonvanishing results for central L-values
+s_norm_of_ideal | axiom | Norm of an ideal N(𝔞)
+s_normal_filter | state | Normal filter
+s_normal_measure | state | Normal measure
+s_normalized_matching_property | state | Normalized matching property
+s_normalized_population_martingale_W_n | state | normalized population martingale W n
+s_normed_space_with_proper_closed_subspace_Y | axiom | normed space with proper closed subspace Y
+s_notion_of_forcing | state | Notion of forcing
+s_nowhere_dense_set | axiom | Nowhere dense set
+s_object_over_L_with_descent_data | axiom | object over L with descent data
+s_off_diagonal_ramsey_bounds | state | Off-diagonal Ramsey bounds
+s_omega_1_branch_kills_suslin | state | omega 1 branch kills suslin
+s_one_derivative_L_n_over_n_minus_1_bound | state | one derivative L n over n minus 1 bound
+s_only_inverse_square_and_harmonic_close_at_first_order | state | only inverse square and harmonic close at first order
+s_optional_sigma_algebra | axiom | Optional σ-algebra
+s_orbit_dense_in_full_space | state | orbit dense in full space
+s_order_property_dichotomy | state | order property dichotomy
+s_ordinal_arithmetic | state | Ordinal arithmetic
+s_ordinal_arithmetic_below_epsilon_0 | axiom | ordinal arithmetic below epsilon 0
+s_ordinal_majorant_sequence_below_epsilon_0 | state | ordinal majorant sequence below epsilon 0
+s_ordinal_number | axiom | Ordinal number
+s_ordinal_sequence_must_hit_zero | state | ordinal sequence must hit zero
+s_p_adic_absolute_value | axiom | p_adic_absolute_value
+s_p_adic_l_function | state | p adic l function
+s_p_partition_generating_function | state | P-partition generating function
+s_padic_absolute_value | axiom | p-adic absolute value
+s_painleve_classification_theorem | theorem | Painlevé property and isomonodromy
+s_painleve_property | axiom | Painleve Property
+s_painleve_property_definition | state | painleve property definition
+s_pair_of_sigma_finite_measures_mu_nu | axiom | pair of sigma finite measures mu nu
+s_paley_graph_properties | state | Paley graph properties
+s_paracompact_partition_unity | theorem | Paracompactness and partitions of unity
+s_parameter_ideal | state | Parameter ideal
+s_parameter_word_partition_setup | state | parameter word partition setup
+s_partial_coloring_lemma_entropy_bucket | state | partial coloring lemma entropy bucket
+s_partial_fraction_l_prime_over_l | state | Partial fraction for −L′/L
+s_partial_order_for_forcing | state | partial_order_for_forcing
+s_partition_calculus | state | Partition calculus (arrow notation)
+s_partition_entropy_function | state | partition entropy function
+s_partition_function_Z_tau | axiom | partition function Z tau
+s_partition_function_depends_only_on_modulus | state | partition function depends only on modulus
+s_partition_function_duality_relation | state | partition function duality relation
+s_partition_function_graph | state | Partition function of a graph (statistical mechanics)
+s_partition_function_polynomial_P_z | state | partition function polynomial P z
+s_partition_function_stat_mech | state | Partition Function (Statistical Mechanics) Z
+s_partition_generating_function_q_pochhammer | axiom | partition generating function q pochhammer
+s_partition_generating_modular | state | partition generating modular
+s_partition_lambda | axiom | partition lambda
+s_partition_lattice_pi_n | state | Partition lattice Pi_n
+s_partition_of_a_set | state | Partition of a set
+s_partition_of_an_integer | axiom | partition of an integer
+s_partition_of_interval | axiom | Partition of an interval
+s_partition_of_unity | state | Partition of unity
+s_partition_of_unity_chart_decomposition | state | partition of unity chart decomposition
+s_partition_of_unity_presheaf_acyclicity | theorem | Partition of unity argument for presheaves of forms
+s_partition_of_unity_smooth | state | Smooth partition of unity
+s_partition_regularity | axiom | Partition regularity
+s_partition_relation_kappa_to_kappa_2_2 | axiom | partition relation kappa to kappa 2 2
+s_partition_size_upper_bound | state | partition size upper bound
+s_partition_subordinate_to_expanding | state | partition subordinate to expanding
+s_path_lifting_property | theorem | Path lifting property
+s_perfect_ideal | axiom | Perfect ideal
+s_perfect_ideal_of_height_2 | axiom | perfect ideal of height 2
+s_perfect_ideals_unmixed | theorem | Perfect ideals are unmixed
+s_perfect_set_property | state | Perfect set property (PSP)
+s_perfect_subtree_case | state | perfect subtree case
+s_pettis_measurability | theorem | Pettis theorem (weakly measurable = strongly measurable for separable values)
+s_phi_reflection_schema_in_L | state | phi reflection schema in L
+s_plane_partition | axiom | Plane Partition
+s_plus_construction_B_sigma_infty_plus | state | plus construction B sigma infty plus
+s_poincare_lemma_compact_support | theorem | Poincaré lemma for compactly supported cohomology
+s_poincare_lemma_covector_fields | theorem | Poincare lemma for covector fields
+s_poincare_lemma_local_resolution | state | poincare lemma local resolution
+s_pointwise_limit_measurable | theorem | Pointwise limit of measurable functions is measurable
+s_pointwise_limit_on_dense_set | state | pointwise limit on dense set
+s_polygamma_functions | state | Polygamma Functions
+s_polygamma_recurrence_relation | theorem | Polygamma Recurrence Relation
+s_polygamma_reflection_formula | theorem | Polygamma Reflection Formula
+s_positive_square_root | theorem | Positive square root of a positive operator
+s_ppartition | state | P-partition
+s_predictable_sigma_algebra | axiom | Predictable σ-algebra
+s_prewellordering_property | state | Prewellordering property
+s_primary_ideal | axiom | Primary ideal
+s_prime_ideal | axiom | prime_ideal
+s_prime_ideal_chain | axiom | prime ideal chain
+s_principal_filter | state | Principal vs non-principal ultrafilter
+s_principal_ideal | axiom | principal ideal
+s_principal_ideal_domain | axiom | principal ideal domain
+s_principal_ideal_theorem_cft | theorem | Principal ideal theorem (Hauptidealsatz, class field theory)
+s_product_forcing_lemma | theorem | Product forcing lemma
+s_product_sigma_algebra | state | Product σ-algebra
+s_projection_iteration_map_T | state | projection iteration map T
+s_projective_determinacy | state | projective determinacy
+s_projective_hierarchy_proper | theorem | Projective hierarchy is proper
+s_proof_ordinal_assignment | state | proof ordinal assignment
+s_proof_tree | axiom | proof tree
+s_proper_X_with_coherent_sheaf | state | proper X with coherent sheaf
+s_proper_action | axiom | Proper action
+s_proper_birational_to_normal | state | proper birational to normal
+s_proper_cone | axiom | Proper cone
+s_proper_equivalence_of_binary_quadratic_forms | axiom | Proper equivalence of binary quadratic forms
+s_proper_forcing | state | Proper forcing
+s_proper_forcing_axiom | axiom | proper forcing axiom
+s_proper_gap | axiom | Proper generalized arithmetic progression
+s_proper_holomorphic_mapping_theorem | theorem | Proper holomorphic mapping theorem
+s_proper_map | axiom | Proper map
+s_proper_morphism | axiom | Proper morphism
+s_proper_morphism_finite_type | state | proper morphism finite type
+s_proper_smooth_submersion_f_M_to_N | axiom | proper smooth submersion f M to N
+s_proper_vertex_coloring | axiom | Proper vertex coloring
+s_properness_preserved_CS_iteration | theorem | Properness preserved under CS iteration
+s_properties_of_characteristic_functions | state | Properties of characteristic functions
+s_properties_of_conditional_expectation | state | Properties of conditional expectation
+s_property_b_existence_uniform | theorem | Property B existence for uniform hypergraphs
+s_property_of_baire | state | Property of Baire
+s_pumping_lemma_regular | theorem | Pumping lemma for regular languages
+s_pushout_square_in_spaces | axiom | pushout square in spaces
+s_q_gamma_function | state | q-Gamma Function
+s_quadratically_convergent_iteration | state | quadratically convergent iteration
+s_quillen_suslin_theorem | theorem | Quillen–Suslin theorem (Serre's conjecture)
+s_quintic_polynomial | state | Generic quintic polynomial
+s_quotient_by_maximal_is_field | theorem | Quotient by Maximal Ideal is Field
+s_quotient_by_prime_is_domain | theorem | Quotient by Prime Ideal is Integral Domain
+s_rademacher_exact_formula_partition | theorem | Rademacher exact formula for p(n)
+s_radical_equals_intersection_of_primes_containing_ideal | theorem | Radical equals intersection of primes containing ideal
+s_radical_ideal | state | radical_ideal
+s_radical_of_an_ideal | state | Radical of an Ideal
+s_rado_partition_regularity | theorem | Rado's theorem (partition regularity)
+s_radon_partition_giving_common_intersection | state | radon partition giving common intersection
+s_radon_partition_step | state | radon partition step
+s_rainbow_partition_problem | state | rainbow partition problem
+s_ramanujan_partition_congruences | theorem | Ramanujan's congruences
+s_ramsey_cardinal | state | Ramsey cardinal
+s_ramsey_lower_bound_alteration | theorem | Ramsey lower bound via alteration
+s_ramsey_multiplicity | state | Ramsey multiplicity
+s_ramsey_number | axiom | Ramsey number R(r, s)
+s_ramsey_number_recurrence_R_r_s | state | ramsey number recurrence R r s
+s_ramsey_theorem_diestel | theorem | Ramsey's theorem (finite, graph version)
+s_ramsey_theorem_finite | theorem | Ramsey's theorem (finite version)
+s_ramsey_theorem_hypergraph | theorem | Ramsey's theorem (hypergraph version)
+s_ramsey_theorem_infinite | theorem | Infinite Ramsey theorem
+s_ramsey_theorem_infinite_diestel | theorem | Infinite Ramsey theorem
+s_ramsey_theorem_multicolor | theorem | Ramsey's theorem (multicolor version)
+s_ramsey_upper_bound_lll | state | Off-diagonal Ramsey bound via LLL
+s_random_maximal_chain_on_boolean_lattice | state | random maximal chain on boolean lattice
+s_random_real_extension_over_measurable | state | random real extension over measurable
+s_random_real_forcing | theorem | Solovay random real forcing
+s_random_variable | axiom | Random variable
+s_rankin_selberg_l_function | axiom | Rankin–Selberg L-function
+s_rate_measure_lambda_on_sigma_finite_space | axiom | rate measure lambda on sigma finite space
+s_ratio_limit_theorem_chung_erdos_orey | theorem | Ratio limit theorem (Chung-Erdős-Orey form)
+s_rayleigh_quotient_with_extremal_property | state | rayleigh quotient with extremal property
+s_re_index_set_property | state | re index set property
+s_real_subalgebra_dense | state | real subalgebra dense
+s_real_valued_measurable_cardinal | axiom | real valued measurable cardinal
+s_reciprocal_gamma_entire | state | Reciprocal Gamma as Entire Function
+s_recurrence_is_class_property | theorem | Recurrence is a class property
+s_recursion_tree_decomposition | state | recursion tree decomposition
+s_recursive_binary_tree_T | state | recursive binary tree T
+s_recursive_ordinal | axiom | recursive ordinal
+s_reduced_suspension_sigma_X | axiom | reduced suspension sigma X
+s_reduction_of_an_ideal | state | Reduction of an ideal
+s_reduction_to_identity_after_n_reflections | state | reduction to identity after n reflections
+s_reference_sigma_finite_measure | axiom | reference sigma finite measure
+s_reflection_extension_in_each_chart | state | reflection extension in each chart
+s_reflection_generators | state | reflection generators
+s_reflection_in_L | theorem | Reflection theorem in L
+s_reflection_of_limits | axiom | Reflection of limits
+s_reflection_principle | theorem | Reflection principle
+s_reflection_principle_bm | theorem | Reflection principle for Brownian motion
+s_reflection_s_alpha | state | Reflection s_α in a root system
+s_reflection_schema_for_finite_subtheory | state | reflection schema for finite subtheory
+s_regressive_finite_ramsey_statement | state | regressive finite ramsey statement
+s_regressive_function_on_stationary_set | axiom | regressive function on stationary set
+s_regular_cardinal | axiom | Regular cardinal
+s_regular_cardinal_arithmetic | axiom | regular cardinal arithmetic
+s_regular_uncountable_cardinal_kappa | axiom | regular uncountable cardinal kappa
+s_regularity_partition | state | regularity partition
+s_relations_collapse_to_14 | state | relations collapse to 14
+s_relative_constructibility_L_A | state | Relative constructibility L[A]
+s_relatively_large_ramsey_statement | state | relatively large ramsey statement
+s_remmert_proper_mapping_theorem | theorem | Remmert proper mapping theorem
+s_replete_ideal | axiom | Replete ideal (Arakelov ideal)
+s_rescaled_iteration_on_cone | state | rescaled iteration on cone
+s_right_continuous_martingale | axiom | Right-continuous martingale
+s_root_decomposition_properties | theorem | Properties of the root space decomposition
+s_running_maxima_M_n | state | running maxima M n
+s_sa_part_dense_via_functional_calculus | state | sa part dense via functional calculus
+s_sacks_density_theorem | theorem | Sacks density theorem
+s_sacks_jump_inversion | theorem | Sacks jump inversion theorem
+s_sacks_splitting_theorem | theorem | Sacks splitting theorem
+s_sat_boolean_satisfiability | state | SAT (Boolean satisfiability)
+s_saturated_ultrapowers | state | saturated ultrapowers
+s_scale_property | state | Scale property
+s_schrodinger_operator_L_with_potential_u | axiom | schrodinger operator L with potential u
+s_schur_property_l1 | theorem | Schur property of ℓ¹
+s_schur_ramsey | theorem | Schur's theorem (Ramsey)
+s_schurs_lemma_2 | theorem | schurs_lemma
+s_schwarz_reflection_principle | theorem | Schwarz reflection principle
+s_scott_theorem_V_not_L | theorem | Scott's theorem (no measurable cardinal in L)
+s_second_difference_subsolution_property | state | second difference subsolution property
+s_second_isomorphism_theorem | theorem | Second isomorphism theorem (diamond)
+s_second_moment_l_functions_characters | theorem | Second moment of L-functions over characters
+s_second_order_martingale | state | second order martingale
+s_selberg_erdos_elementary_pnt | theorem | Selberg–Erdős elementary proof of PNT
+s_semimartingale | axiom | Semimartingale
+s_semisimple_decomposition_into_simples | theorem | Decomposition of semisimple Lie algebras into simple ideals
+s_semisimple_direct_sum_of_simples | theorem | Semisimple Lie algebra is a direct sum of simple ideals
+s_sensitivity_boolean | axiom | Sensitivity of a Boolean function
+s_separation_properties_tvs | theorem | Separation properties of topological vector spaces
+s_sequence_of_connections_with_L_2_bounded_curvature | axiom | sequence of connections with L 2 bounded curvature
+s_sequence_of_measurable_events | axiom | sequence of measurable events
+s_sequence_of_uniformly_absolutely_continuous_measures | axiom | sequence of uniformly absolutely continuous measures
+s_shannon_entropy_of_partition | state | Shannon entropy of a partition
+s_shannon_mcmillan_breiman | theorem | Shannon-McMillan-Breiman theorem
+s_sharps_analytic_determinacy_equivalence | state | Sharps and analytic determinacy equivalence
+s_sheaf_cohomology_of_L_lambda | state | sheaf cohomology of L lambda
+s_sheaf_property_distributions | theorem | Sheaf property of distributions
+s_shelah_inaccessible_necessary | theorem | Inaccessible necessary for all sets Lebesgue measurable (Shelah)
+s_shoenfield_absoluteness | theorem | Shoenfield absoluteness theorem
+s_shoenfield_tree_with_absolute_wellfoundedness | state | shoenfield tree with absolute wellfoundedness
+s_siegel_lemma_l_function_products | theorem | Siegel's lemma on L-function products
+s_siegel_theorem_l_functions | theorem | Siegel's theorem on L(1,χ)
+s_sigma_1_1_as_wellfoundedness | state | sigma 1 1 as wellfoundedness
+s_sigma_1_2_as_tree_projection | state | sigma 1 2 as tree projection
+s_sigma_1_2_formula | state | sigma 1 2 formula
+s_sigma_1_2_normal_form | state | sigma 1 2 normal form
+s_sigma_1_2_set_of_reals | axiom | sigma 1 2 set of reals
+s_sigma_algebra | axiom | σ-algebra
+s_sigma_algebra_generated | axiom | sigma algebra generated
+s_sigma_algebra_generated_by_rv | state | σ-algebra generated by a random variable
+s_sigma_algebra_of_measurable_sets | state | sigma algebra of measurable sets
+s_sigma_compact_space | axiom | Sigma-compact space
+s_sigma_discrete_basis_present | state | sigma discrete basis present
+s_sigma_finite_measure_space | axiom | sigma finite measure space
+s_sigma_finite_signed_measure | axiom | sigma finite signed measure
+s_sigma_infty_CP_infty_bott_inverted | state | sigma infty CP infty bott inverted
+s_sigma_locally_finite_basis | axiom | sigma locally finite basis
+s_sigma_locally_finite_basis_present | state | sigma locally finite basis present
+s_sigma_multiplicative | state | sigma multiplicative
+s_sigma_n_projectum | state | Σ_n-projectum ρ_n
+s_signed_measure_on_measurable_space | axiom | signed measure on measurable space
+s_silver_indiscernibles | state | Silver indiscernibles
+s_silver_indiscernibles_in_L | state | silver indiscernibles in L
+s_silver_indiscernibles_theorem | theorem | Silver indiscernibles theorem
+s_silver_singular_cardinals_theorem | theorem | Silver's theorem on singular cardinals
+s_silver_theorem | theorem | Silver's theorem
+s_simple_reflections_generate_weyl_group | theorem | Simple reflections generate the Weyl group
+s_simply_connected_proper_domain_in_C | axiom | Simply connected proper domain in ℂ
+s_singular_cardinal | axiom | Singular cardinal
+s_singular_cardinal_hypothesis | state | Singular Cardinal Hypothesis (SCH)
+s_singular_cardinal_kappa_of_uncountable_cofinality | axiom | singular cardinal kappa of uncountable cofinality
+s_singular_plus_absolutely_continuous_split | state | singular plus absolutely continuous split
+s_sle_kappa_driver | state | sle kappa driver
+s_small_forcing_P_below_kappa | axiom | small forcing P below kappa
+s_smooth_functions_dense_in_W1p | state | smooth functions dense in W1p
+s_smoothing_property_heat | theorem | Smoothing property of the heat equation
+s_snake_lemma_applied_to_homology | state | snake lemma applied to homology
+s_solovay_RVM_theorem | theorem | Solovay's theorem on real-valued measurable cardinals
+s_solovay_model | theorem | Solovay's model (every set Lebesgue-measurable)
+s_solovay_stationary_splitting | theorem | Solovay's stationary splitting theorem
+s_solvable_action_on_proper | state | solvable action on proper
+s_some_iterates_must_overlap_in_measure | state | some iterates must overlap in measure
+s_space_time_L_q_t_L_r_x_bound | state | space time L q t L r x bound
+s_spanning_tree | axiom | Spanning tree
+s_sparse_ramsey_theorem | theorem | Rodl-Rucinski sparse Ramsey theorem
+s_special_aronszajn_tree | state | Special Aronszajn tree
+s_spectral_decomposition_l2_gamma_h | theorem | Spectral decomposition of L²(Γ\H)
+s_spectral_sequence_collapse | state | Collapsing of a spectral sequence
+s_spectral_sequence_filtered_complex | state | Spectral sequence of a filtered complex
+s_spencer_six_sigma_theorem | theorem | Spencer's six standard deviations
+s_splitting_lemma_modules | theorem | Splitting Lemma for Modules
+s_square_function_S_f | state | square function S f
+s_square_holds_in_L | theorem | □_κ holds in L (Jensen)
+s_square_matrix_over_ring | axiom | square matrix over ring
+s_square_matrix_with_char_poly | state | square matrix with char poly
+s_square_principle | axiom | Square principle □_κ (Jensen)
+s_square_step_set | axiom | square step set
+s_stanley_hook_content_formula_plane_partitions | theorem | Stanley's hook content formula for column-strict plane partitions
+s_state_space_collapse_petite | theorem | Compact sets are petite for T-chains
+s_stationary_GCH_carrier | state | stationary GCH carrier
+s_stationary_distribution | state | stationary distribution
+s_stationary_increments_process | axiom | Stationary increments
+s_stationary_phase_method | theorem | stationary phase method
+s_stationary_phase_point | state | stationary phase point
+s_stationary_process | axiom | Stationary process
+s_stationary_renewal_coupling | state | stationary renewal coupling
+s_stationary_subset_of_kappa | axiom | stationary subset of kappa
+s_stein_lemma_gaussian | theorem | Stein's Lemma (Gaussian integration by parts)
+s_stern_brocot_tree | axiom | Stern–Brocot tree
+s_stone_cech_universal_property | theorem | Universal property of Stone-Čech compactification
+s_stopped_sigma_algebra | state | Stopped σ-algebra
+s_stopped_submartingale_at_tau | state | stopped submartingale at tau
+s_strassen_functional_lil | theorem | Functional Law of the Iterated Logarithm (Strassen)
+s_strong_exchange_property | theorem | Strong exchange property
+s_strong_feller_property | axiom | Strong Feller property
+s_strong_markov_property_bm | theorem | Strong Markov property of Brownian motion
+s_strong_markov_property_mc | theorem | Strong Markov property for Markov chains
+s_strong_markov_property_rw | theorem | Strong Markov property for random walks
+s_strong_ramsey_independence | theorem | Ramsey-type Paris–Harrington-style independence (general PA-unprovable)
+s_strong_subtree_template | state | strong subtree template
+s_strong_unique_continuation_property | theorem | Strong unique continuation property
+s_strongly_compact_cardinal | state | Strongly compact cardinal
+s_strongly_measurable_function | axiom | Strongly measurable function
+s_structural_property_loss | state | structural property loss
+s_submartingale | axiom | Submartingale
+s_submartingale_X_n | axiom | submartingale X n
+s_successor_cardinals_regular | theorem | Successor cardinals are regular
+s_successor_ordinal | state | successor ordinal
+s_sunflower_lemma_erdsko | theorem | Sunflower lemma (Erdős-Ko)
+s_supercompact_cardinal | state | supercompact cardinal
+s_supermartingale | state | supermartingale
+s_supermartingale_convergence_for_V_n | state | supermartingale convergence for V n
+s_suslin_problem | state | Suslin's problem (Suslin Hypothesis)
+s_suslin_space | axiom | Suslin space (analytic space)
+s_suslin_tree | state | Suslin tree
+s_suslin_tree_line_equivalence | theorem | Equivalence of Suslin tree and Suslin line
+s_symbolic_power_of_a_prime | axiom | Symbolic power of a prime ideal
+s_symmetric_groups_Sigma_n | axiom | symmetric groups Sigma n
+s_symmetric_power_l_functions | state | symmetric power l functions
+s_symmetric_square_l_function | axiom | Symmetric square L-function L(sym²f, s)
+s_t_intersecting_family_property | axiom | t intersecting family property
+s_tail_sigma_algebra | axiom | Tail σ-algebra
+s_taniyama_shimura_conjecture | state | taniyama_shimura_conjecture
+s_teichmuller_pullback_map_sigma_f | state | teichmuller pullback map sigma f
+s_ten_martini_theorem | theorem | Avila–Damanik almost Mathieu spectrum (Ten Martini Problem)
+s_tensor_product_universal_property | theorem | Tensor product universal property
+s_theorema_egregium | theorem | Theorema Egregium
+s_three_nonneg_measurable_functions_with_log_concave_constraint | axiom | three nonneg measurable functions with log concave constraint
+s_three_property_axiom_definition | state | three property axiom definition
+s_three_term_AP_free_property | axiom | three term AP free property
+s_threshold_phenomenon | theorem | Threshold phenomenon for monotone properties
+s_tournament_domination_bound | theorem | Tournament dominating set bound
+s_tower_property | theorem | Tower property of conditional expectation
+s_trace_on_smooth_dense_subset | state | trace on smooth dense subset
+s_tracial_ultrapower_target | state | tracial ultrapower target
+s_trajectory_partition_of_A | state | trajectory partition of A
+s_tree_branch_level_height | state | Branch, level, and height of a tree
+s_tree_decomposition | axiom | Tree-decomposition
+s_tree_graph | axiom | Tree (graph theory)
+s_tree_of_height_omega_1 | axiom | tree of height omega 1
+s_tree_of_models_decomposition | state | tree of models decomposition
+s_tree_on_a_set_body | state | Tree on a set and its body [T]
+s_tree_property_for_kappa | state | tree property for kappa
+s_tree_representation_of_analytic_set | state | tree representation of analytic set
+s_tree_set_theoretic | axiom | Tree (set-theoretic)
+s_tree_structured_lz_parsing | state | LZ78 phrase / dictionary tree
+s_tree_width | axiom | Tree-width
+s_tree_width_decomposition | state | Tree-width decomposition
+s_tree_width_duality | theorem | Tree-width duality theorem (Seymour–Thomas)
+s_triangle_free_graph_property | axiom | triangle free graph property
+s_trichotomy_of_cardinals | theorem | Trichotomy of cardinals
+s_twisted_l_function | axiom | Twisted L-function L(f⊗χ, s)
+s_two_cardinal_model_M | state | two cardinal model M
+s_two_kappa_sized_models_distinct | state | two kappa sized models distinct
+s_two_nonempty_measurable_subsets_of_Rn | axiom | two nonempty measurable subsets of Rn
+s_two_point_interpolation_property | state | two point interpolation property
+s_two_real_series_one_absolutely_convergent | axiom | two real series one absolutely convergent
+s_two_square_theorem_via_theta | theorem | Two-square theorem via theta functions
+s_type_class_partition | state | type class partition
+s_type_of_cm_ring | state | Type of a Cohen-Macaulay ring
+s_typical_set_properties | theorem | Properties of the typical set
+s_ultrafilter | state | ultrafilter
+s_ultrafilter_limit_in_product | state | Ultrafilter limit in ∏Xᵢ
+s_ultrafilter_on_index_set | axiom | ultrafilter on index set
+s_ultrafilter_on_variable_words | state | ultrafilter on variable words
+s_ultrafilter_spectrum_Spec_B | state | ultrafilter spectrum Spec B
+s_ultrapower_embedding_j | state | ultrapower embedding j
+s_ultrapower_of_hyperfinite_R_omega | axiom | ultrapower of hyperfinite R omega
+s_ultrapowers_M_U_N_U | state | ultrapowers M U N U
+s_uncountable_partition_target | state | uncountable partition target
+s_uniform_integrability_of_Lp_martingale | state | uniform integrability of Lp martingale
+s_uniformly_integrable_martingale | axiom | uniformly integrable martingale
+s_unique_factorization_ideals_dedekind | theorem | Unique factorization of ideals in Dedekind domains
+s_unique_irreducible_quotient_L_lambda | state | unique irreducible quotient L lambda
+s_universal_property_completion | theorem | Universal property of completion
+s_universal_property_enveloping_algebra | theorem | Universal property of the enveloping algebra
+s_universal_property_of_free_groups | theorem | Universal property of free groups
+s_universal_property_of_the_exterior_algebra | theorem | Universal property of the exterior algebra
+s_universal_property_of_the_symmetric_algebra | theorem | Universal property of the symmetric algebra
+s_universal_property_of_the_tensor_algebra | theorem | Universal property of the tensor algebra
+s_universal_property_product_topology | theorem | Universal property of product topology
+s_universal_property_quotient_topology | theorem | Universal property of quotient topology
+s_universal_property_via_hom | state | universal property via hom
+s_v_l_axiom_of_constructibility | state | V = L (axiom of constructibility)
+s_valuation_ring_of_an_absolute_value | state | Valuation ring of an absolute value
+s_valuative_criterion_properness | theorem | Valuative criterion of properness
+s_vanishing_ideal | state | vanishing_ideal
+s_vaught_two_cardinal | theorem | Vaught's two-cardinal theorem
+s_verma_module_M_lambda | state | verma module M lambda
+s_vertex_coloring_proper | axiom | Proper vertex coloring
+s_vitali_nonmeasurable_set | state | Non-Lebesgue-measurable set (Vitali set)
+s_wadge_hierarchy_theorem | theorem | Wadge hierarchy / antichain structure
+s_weakly_compact_cardinal | state | Weakly compact cardinal
+s_weakly_compact_tree_property | theorem | Tree property characterization of weak compactness
+s_weierstrass_product_for_completed_l_function | state | Weierstrass product for completed L-function
+s_weierstrass_sigma_function | axiom | Weierstrass Sigma Function sigma(z)
+s_weil_differential_repartition | axiom | Weil differential (repartition)
+s_well_founded_tree_rank | state | Well-founded tree and its rank
+s_wellfounded_tree_T_x | state | wellfounded tree T x
+s_wellfoundedness_absolute_for_transitive_models | state | wellfoundedness absolute for transitive models
+s_whittaker_function_m_kappa_mu | state | Whittaker Function M_{kappa,mu}(z)
+s_whittaker_function_w_kappa_mu | state | Whittaker Function W_{kappa,mu}(z)
+s_wiener_inversion_theorem | theorem | Wiener's theorem on Fourier series (absolute convergence)
+s_wiener_lemma_katznelson | theorem | Wiener's lemma (absolutely convergent Fourier series)
+s_woodin_cardinal | state | Woodin cardinal
+s_z_l_extension | state | ℤ_ℓ-extension
+s_zero_free_region_l_functions | theorem | Classical zero-free region for L-functions
+s_zeta_product_sigma_series | state | ζ(s)ζ(s−1) = ∑ σ(n)/nˢ
+s_zfc_axioms | axiom | ZFC axioms
+s_zfc_axioms_2 | axiom | zfc_axioms
+s_zonal_polynomials | axiom | Zonal Polynomials Z_kappa(T)
+s_zorns_lemma_implies_maximal_ideals_exist | theorem | Zorn's lemma implies maximal ideals exist
+s_zygmund_L_log_L_theorem | theorem | Zygmund's L log L theorem for conjugate function
+t_absoluteness | technique | Absoluteness
+t_arnoldi_iteration | technique | Arnoldi Iteration
+t_azuma_hoeffding_technique | technique | Azuma-Hoeffding technique
+t_boolean_truth_value | technique | Boolean truth value ‖φ‖
+t_canonical_names | technique | Canonical names (x̌, Ġ)
+t_cauchy_filter_completion_construction | technique | Cauchy filter completion construction
+t_chain_partition | technique | Chain partition technique
+t_cofinal_subnet_extraction | technique | Cofinal subnet extraction
+t_cohen_forcing | technique | Cohen forcing
+t_cohen_macaulay_approximation | technique | Cohen-Macaulay approximation
+t_comma_category_construction | technique | Comma category construction technique
+t_contraction_iteration_technique | technique | Contraction iteration technique
+t_countable_support_iteration | technique | Countable-support iteration
+t_duality_lemma_random_walk | technique | Duality lemma for random walks
+t_durfee_square_decomposition | technique | Durfee square decomposition
+t_edge_exposure_martingale | technique | Edge exposure martingale
+t_ehrenfeucht_mostowski_models | technique | Ehrenfeucht–Mostowski models
+t_exhaustion_sigma_finite | technique | Exhaustion technique (σ-finite decomposition)
+t_fatou_lemma_technique | technique | Fatou's lemma technique
+t_filter_argument_compactness | technique | Filter argument for compactness
+t_finite_support_iteration | technique | Finite-support iteration
+t_force_independence | technique | Force independence
+t_forcing_technique | technique | forcing technique
+t_fourier_analysis_boolean | technique | Fourier analysis on the Boolean cube
+t_gamma_function_technique | technique | Gamma function technique
+t_generic_chaining | technique | generic chaining
+t_generic_point_argument | technique | Generic point argument
+t_gluing_via_partition_of_unity | technique | Smooth maps into Euclidean space (gluing lemma)
+t_graph_property_testing | technique | Graph property testing
+t_help_lemma | technique | HELP lemma (homotopy extension and lifting property)
+t_homogeneous_tree | technique | Homogeneously Suslin set / homogeneous tree
+t_horseshoe_lemma_application_dimension_shifting | technique | Horseshoe lemma application in dimension shifting
+t_horseshoe_lemma_construction | technique | Horseshoe lemma construction
+t_hua_iterative_squaring | technique | Hua’s lemma proof by iterative squaring
+t_ideal_arithmetic | technique | ideal_arithmetic
+t_ideal_norm_reduction | technique | Ideal norm reduction
+t_inverse_iteration | technique | Inverse Iteration
+t_iterated_forcing | technique | iterated forcing
+t_iterated_ultrapowers | technique | Iterated ultrapowers
+t_kalman_filter | technique | Kalman filter
+t_lanczos_iteration | technique | Lanczos Iteration
+t_levy_collapse | technique | Lévy collapse Coll(ω,κ)
+t_lovasz_local_lemma_technique | technique | Lovasz Local Lemma technique
+t_major_arc_approximation_via_l_functions | technique | Major arc approximation via L-functions
+t_martingale_convergence_technique | technique | Martingale technique for proving convergence
+t_martingale_method_cinlar | technique | Martingale method
+t_miller_rabin_test | technique | miller_rabin_test
+t_moser_iteration | technique | Moser iteration technique
+t_nakayamas_lemma_argument | technique | Nakayama's lemma argument
+t_nice_names | technique | Nice names
+t_p_names | technique | P-names
+t_partition_of_unity_technique | technique | Partition of unity technique
+t_picard_iteration | technique | picard_iteration
+t_polyhedral_geometry_of_partitions | technique | Polyhedral geometry of partitions
+t_power_iteration | technique | Power Iteration
+t_product_all_l_functions_mod_m | technique | Product of all L-functions mod m
+t_rayleigh_quotient_iteration | technique | Rayleigh Quotient Iteration
+t_reflection_method | technique | Reflection method for Sobolev extension
+t_reflection_principle_andre | technique | Reflection principle (André)
+t_shoenfield_tree | technique | Shoenfield tree
+t_simultaneous_iteration | technique | Simultaneous Iteration (Subspace Iteration)
+t_smooth_partition_of_unity | technique | Smooth partition of unity
+t_solovay_model_construction | technique | Solovay's model construction via Lévy collapse
+t_square_sieve | technique | Square sieve (Heath-Brown)
+t_stationary_phase | technique | Stationary phase method
+t_stationary_phase_method | technique | Method of Stationary Phase
+t_stationary_scattering_theory | technique | Stationary scattering theory
+t_stepping_up_ramsey | technique | Stepping-up technique
+t_suslin_operation | technique | Suslin operation 𝒜
+t_tree_decomposition_technique | technique | Tree-decomposition dynamic programming
+t_tube_lemma_argument | technique | Tube lemma argument
+t_two_step_iteration | technique | Two-step iteration P∗Q̇
+t_ultrapower_Ult_V_U | technique | Ultrapower Ult(V,U)
+t_universal_property_argument | technique | Universal property argument
+t_verma_module_induction | technique | Verma module construction by parabolic induction
+t_vertex_exposure_martingale | technique | Vertex exposure martingale

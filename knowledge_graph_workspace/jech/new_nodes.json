@@ -1,0 +1,1546 @@
+[
+ {
+  "id": "s_transitive_closure",
+  "kind": "state",
+  "name": "Transitive closure TC(x)",
+  "type_signature": "Set → Set",
+  "description": "The smallest transitive set containing x as a subset, obtained by iterating union over ω.",
+  "aliases": [
+   "TC(x)"
+  ]
+ },
+ {
+  "id": "s_burali_forti_paradox",
+  "kind": "theorem",
+  "name": "Burali-Forti paradox",
+  "type_signature": "",
+  "description": "The class Ord of all ordinals is not a set; assuming it were yields an ordinal strictly greater than every ordinal.",
+  "aliases": [
+   "Burali-Forti"
+  ]
+ },
+ {
+  "id": "s_ordinal_arithmetic",
+  "kind": "state",
+  "name": "Ordinal arithmetic",
+  "type_signature": "Ord×Ord → Ord",
+  "description": "Addition, multiplication, and exponentiation of ordinals defined by transfinite recursion; associative but non-commutative.",
+  "aliases": [
+   "ordinal addition",
+   "ordinal multiplication"
+  ]
+ },
+ {
+  "id": "s_cantor_normal_form",
+  "kind": "theorem",
+  "name": "Cantor normal form",
+  "type_signature": "",
+  "description": "Every ordinal α has a unique representation α=ω^{β₁}k₁+···+ω^{βₙ}kₙ with β₁>···>βₙ and positive integers kᵢ.",
+  "aliases": [
+   "CNF"
+  ]
+ },
+ {
+  "id": "s_epsilon_numbers",
+  "kind": "state",
+  "name": "Epsilon numbers (ε-numbers)",
+  "type_signature": "",
+  "description": "Fixed points of ordinal exponentiation, i.e. ordinals ε satisfying ω^ε=ε, with ε₀ the least such ordinal.",
+  "aliases": [
+   "ε-numbers",
+   "ε₀"
+  ]
+ },
+ {
+  "id": "s_order_type",
+  "kind": "state",
+  "name": "Order type",
+  "type_signature": "WellOrder → Ord",
+  "description": "The unique ordinal order-isomorphic to a given well-ordered set, given by the Mostowski collapse of its ∈-relation.",
+  "aliases": [
+   "otp"
+  ]
+ },
+ {
+  "id": "s_rank_function",
+  "kind": "state",
+  "name": "Rank function",
+  "type_signature": "Set → Ord",
+  "description": "The function assigning to each set x the least ordinal α with x∈V_{α+1}, measuring its position in the cumulative hierarchy.",
+  "aliases": [
+   "set-theoretic rank"
+  ]
+ },
+ {
+  "id": "t_epsilon_induction",
+  "kind": "technique",
+  "name": "∈-induction (Foundation induction)",
+  "function_signature": "(∀x((∀y∈x)φ(y)→φ(x))) → (∀x φ(x))",
+  "description": "Proving a property holds of all sets by showing it holds of x whenever it holds of all elements of x, justified by Foundation."
+ },
+ {
+  "id": "s_well_founded_relation",
+  "kind": "axiom",
+  "name": "Well-founded relation",
+  "type_signature": "Relation",
+  "description": "A binary relation R on a class such that every nonempty subset has an R-minimal element, equivalently admits no infinite R-descending chain.",
+  "aliases": [
+   "well-founded"
+  ]
+ },
+ {
+  "id": "t_well_founded_recursion",
+  "kind": "technique",
+  "name": "Well-founded recursion",
+  "function_signature": "(WellFoundedRelation, G) → Function",
+  "description": "Defining a function uniquely along a set-like well-founded relation by specifying its value at x in terms of its values at R-predecessors of x."
+ },
+ {
+  "id": "s_hereditarily_small_sets_H_kappa",
+  "kind": "state",
+  "name": "Hereditarily small sets H(κ)",
+  "type_signature": "Cardinal → Set",
+  "description": "The set of all sets whose transitive closure has cardinality strictly less than κ; H(κ) models ZFC minus Power Set for regular κ.",
+  "aliases": [
+   "H(κ)",
+   "H_κ"
+  ]
+ },
+ {
+  "id": "s_aleph_function",
+  "kind": "state",
+  "name": "Aleph function ℵ_α",
+  "type_signature": "Ord → Cardinal",
+  "description": "The order-isomorphism enumerating the infinite cardinals (initial ordinals) in increasing order, with ℵ₀ the least.",
+  "aliases": [
+   "ℵ_α"
+  ]
+ },
+ {
+  "id": "s_initial_ordinal",
+  "kind": "state",
+  "name": "Initial ordinal",
+  "type_signature": "",
+  "description": "An ordinal not equinumerous with any smaller ordinal; the initial ordinals are exactly the cardinal numbers.",
+  "aliases": []
+ },
+ {
+  "id": "s_cardinal_arithmetic",
+  "kind": "state",
+  "name": "Cardinal arithmetic",
+  "type_signature": "Cardinal×Cardinal → Cardinal",
+  "description": "Sum, product, and exponentiation of cardinals defined via cardinality of disjoint union, Cartesian product, and function space.",
+  "aliases": [
+   "κ+λ",
+   "κ·λ",
+   "κ^λ"
+  ]
+ },
+ {
+  "id": "s_hessenberg_kappa_squared",
+  "kind": "theorem",
+  "name": "Hessenberg's theorem (κ²=κ)",
+  "type_signature": "",
+  "description": "Every infinite cardinal κ satisfies κ·κ=κ, proved via the Gödel pairing well-ordering of κ×κ.",
+  "aliases": [
+   "κ²=κ"
+  ]
+ },
+ {
+  "id": "s_godel_pairing_function",
+  "kind": "state",
+  "name": "Gödel pairing function",
+  "type_signature": "Ord×Ord → Ord",
+  "description": "A definable well-ordering of Ord×Ord whose restriction to κ×κ is a bijection onto κ for every infinite cardinal κ.",
+  "aliases": [
+   "canonical well-ordering of pairs"
+  ]
+ },
+ {
+  "id": "s_cofinality",
+  "kind": "state",
+  "name": "Cofinality cf(α)",
+  "type_signature": "Ord → Cardinal",
+  "description": "The least order type (equivalently least cardinality) of an unbounded subset of a limit ordinal α.",
+  "aliases": [
+   "cf(α)"
+  ]
+ },
+ {
+  "id": "s_regular_cardinal",
+  "kind": "axiom",
+  "name": "Regular cardinal",
+  "type_signature": "",
+  "description": "A cardinal κ with cf(κ)=κ, i.e. not the union of fewer than κ sets each of size less than κ.",
+  "aliases": [
+   "regular"
+  ]
+ },
+ {
+  "id": "s_singular_cardinal",
+  "kind": "axiom",
+  "name": "Singular cardinal",
+  "type_signature": "",
+  "description": "A cardinal κ with cf(κ)<κ, i.e. expressible as a union of fewer than κ smaller sets.",
+  "aliases": [
+   "singular"
+  ]
+ },
+ {
+  "id": "s_successor_cardinals_regular",
+  "kind": "theorem",
+  "name": "Successor cardinals are regular",
+  "type_signature": "",
+  "description": "Under AC, every successor cardinal ℵ_{α+1} is regular.",
+  "aliases": []
+ },
+ {
+  "id": "s_continuum_function",
+  "kind": "state",
+  "name": "Continuum function",
+  "type_signature": "Cardinal → Cardinal",
+  "description": "The cardinal exponential κ↦2^κ giving the size of the power set; 2^{ℵ₀}=𝔠 is the continuum.",
+  "aliases": [
+   "2^κ"
+  ]
+ },
+ {
+  "id": "s_hausdorff_formula",
+  "kind": "theorem",
+  "name": "Hausdorff formula",
+  "type_signature": "",
+  "description": "For all α,β: ℵ_{α+1}^{ℵ_β}=ℵ_α^{ℵ_β}·ℵ_{α+1}, reducing successor-cardinal exponentiation.",
+  "aliases": []
+ },
+ {
+  "id": "s_gimel_function",
+  "kind": "state",
+  "name": "Gimel function ℷ(κ)",
+  "type_signature": "Cardinal → Cardinal",
+  "description": "The function ℷ(κ)=κ^{cf(κ)}; all cardinal exponentiation reduces to gimel values and the continuum function.",
+  "aliases": [
+   "ℷ",
+   "gimel"
+  ]
+ },
+ {
+  "id": "s_beth_function",
+  "kind": "state",
+  "name": "Beth function ℶ_α",
+  "type_signature": "Ord → Cardinal",
+  "description": "The hierarchy ℶ₀=ℵ₀, ℶ_{α+1}=2^{ℶ_α}, ℶ_λ=sup_{α<λ}ℶ_α of iterated power-set cardinals.",
+  "aliases": [
+   "ℶ_α",
+   "beth numbers"
+  ]
+ },
+ {
+  "id": "s_generalized_continuum_hypothesis",
+  "kind": "state",
+  "name": "Generalized Continuum Hypothesis (GCH)",
+  "type_signature": "",
+  "description": "The assertion 2^{ℵ_α}=ℵ_{α+1} for every ordinal α, equivalently ℶ_α=ℵ_α for all α.",
+  "aliases": [
+   "GCH"
+  ]
+ },
+ {
+  "id": "s_tukey_lemma",
+  "kind": "theorem",
+  "name": "Tukey's lemma",
+  "type_signature": "",
+  "description": "Every nonempty family of finite character has a maximal element under inclusion; equivalent to the Axiom of Choice.",
+  "aliases": []
+ },
+ {
+  "id": "s_trichotomy_of_cardinals",
+  "kind": "theorem",
+  "name": "Trichotomy of cardinals",
+  "type_signature": "",
+  "description": "For any sets X,Y either |X|≤|Y| or |Y|≤|X|; this comparability of all cardinals is equivalent to AC.",
+  "aliases": [
+   "cardinal comparability"
+  ]
+ },
+ {
+  "id": "s_ideal_set_theory",
+  "kind": "axiom",
+  "name": "Ideal (set-theoretic)",
+  "type_signature": "",
+  "description": "A family of subsets closed downward and under finite unions and not containing the whole set; the dual notion to a filter.",
+  "aliases": [
+   "dual ideal"
+  ]
+ },
+ {
+  "id": "s_kappa_complete_filter",
+  "kind": "axiom",
+  "name": "κ-complete filter",
+  "type_signature": "",
+  "description": "A filter closed under intersections of fewer than κ of its members.",
+  "aliases": [
+   "κ-complete"
+  ]
+ },
+ {
+  "id": "s_principal_filter",
+  "kind": "state",
+  "name": "Principal vs non-principal ultrafilter",
+  "type_signature": "",
+  "description": "A principal ultrafilter is the set of all supersets of a fixed point; a non-principal one contains the cofinite filter (Fréchet filter).",
+  "aliases": [
+   "principal ultrafilter",
+   "free ultrafilter"
+  ]
+ },
+ {
+  "id": "s_boolean_prime_ideal_theorem",
+  "kind": "theorem",
+  "name": "Boolean Prime Ideal Theorem",
+  "type_signature": "",
+  "description": "Every proper filter on a set (or Boolean algebra) extends to an ultrafilter; weaker than full AC.",
+  "aliases": [
+   "BPIT",
+   "ultrafilter theorem"
+  ]
+ },
+ {
+  "id": "s_complete_boolean_algebra",
+  "kind": "axiom",
+  "name": "Complete Boolean algebra",
+  "type_signature": "",
+  "description": "A Boolean algebra in which every subset has a least upper bound (and dually a greatest lower bound).",
+  "aliases": [
+   "cBa"
+  ]
+ },
+ {
+  "id": "s_regular_open_algebra",
+  "kind": "state",
+  "name": "Regular open algebra RO(P)",
+  "type_signature": "Poset → CompleteBooleanAlgebra",
+  "description": "The complete Boolean algebra of regular open subsets of a topological space (or separative poset), serving as its canonical Boolean completion.",
+  "aliases": [
+   "RO(P)"
+  ]
+ },
+ {
+  "id": "s_club_set",
+  "kind": "state",
+  "name": "Closed unbounded (club) set",
+  "type_signature": "",
+  "description": "A subset of a regular uncountable cardinal κ that is unbounded and closed under suprema of its bounded subsets.",
+  "aliases": [
+   "club",
+   "closed unbounded set"
+  ]
+ },
+ {
+  "id": "s_club_filter",
+  "kind": "state",
+  "name": "Club filter",
+  "type_signature": "",
+  "description": "The κ-complete normal filter on a regular uncountable κ generated by the closed unbounded subsets of κ.",
+  "aliases": []
+ },
+ {
+  "id": "s_normal_filter",
+  "kind": "state",
+  "name": "Normal filter",
+  "type_signature": "",
+  "description": "A filter on a cardinal closed under diagonal intersection △_{α<κ}C_α; for the club filter this is equivalent to closure under regressive-function fibers.",
+  "aliases": [
+   "normal"
+  ]
+ },
+ {
+  "id": "s_club_intersection_theorem",
+  "kind": "theorem",
+  "name": "Intersection of clubs is club",
+  "type_signature": "",
+  "description": "The intersection of fewer than κ club subsets of a regular uncountable κ is again club, so the club sets generate a κ-complete filter.",
+  "aliases": []
+ },
+ {
+  "id": "s_tree_set_theoretic",
+  "kind": "axiom",
+  "name": "Tree (set-theoretic)",
+  "type_signature": "",
+  "description": "A partially ordered set (T,<) in which the predecessors of every node are well-ordered by <.",
+  "aliases": [
+   "set-theoretic tree"
+  ]
+ },
+ {
+  "id": "s_tree_branch_level_height",
+  "kind": "state",
+  "name": "Branch, level, and height of a tree",
+  "type_signature": "",
+  "description": "A branch is a maximal chain, the α-th level is the set of nodes whose predecessors have order type α, and the height is the supremum of the levels.",
+  "aliases": [
+   "branch",
+   "level",
+   "height"
+  ]
+ },
+ {
+  "id": "s_aronszajn_tree",
+  "kind": "state",
+  "name": "Aronszajn tree",
+  "type_signature": "",
+  "description": "A κ-tree of height κ all of whose levels have size <κ and which has no branch of length κ.",
+  "aliases": [
+   "κ-Aronszajn tree"
+  ]
+ },
+ {
+  "id": "s_aronszajn_tree_existence",
+  "kind": "theorem",
+  "name": "Existence of an Aronszajn tree",
+  "type_signature": "",
+  "description": "An ℵ₁-Aronszajn tree exists in ZFC.",
+  "aliases": []
+ },
+ {
+  "id": "s_suslin_tree",
+  "kind": "state",
+  "name": "Suslin tree",
+  "type_signature": "",
+  "description": "An ℵ₁-tree with no uncountable chain and no uncountable antichain, equivalently a ccc Aronszajn tree.",
+  "aliases": []
+ },
+ {
+  "id": "s_suslin_problem",
+  "kind": "state",
+  "name": "Suslin's problem (Suslin Hypothesis)",
+  "type_signature": "",
+  "description": "The question whether every ccc dense complete linear order without endpoints is isomorphic to ℝ; SH asserts that it is.",
+  "aliases": [
+   "Suslin's Hypothesis",
+   "SH",
+   "Suslin line"
+  ]
+ },
+ {
+  "id": "s_suslin_tree_line_equivalence",
+  "kind": "theorem",
+  "name": "Equivalence of Suslin tree and Suslin line",
+  "type_signature": "",
+  "description": "A Suslin line exists if and only if a Suslin tree exists.",
+  "aliases": []
+ },
+ {
+  "id": "s_kurepa_tree",
+  "kind": "state",
+  "name": "Kurepa tree / Kurepa's hypothesis",
+  "type_signature": "",
+  "description": "An ℵ₁-tree with countable levels and at least ℵ₂ uncountable branches; Kurepa's Hypothesis asserts one exists.",
+  "aliases": [
+   "Kurepa's hypothesis",
+   "KH"
+  ]
+ },
+ {
+  "id": "s_special_aronszajn_tree",
+  "kind": "state",
+  "name": "Special Aronszajn tree",
+  "type_signature": "",
+  "description": "An Aronszajn tree that is the union of countably many antichains, equivalently admitting an order-preserving map into ℚ.",
+  "aliases": []
+ },
+ {
+  "id": "s_partition_calculus",
+  "kind": "state",
+  "name": "Partition calculus (arrow notation)",
+  "type_signature": "",
+  "description": "The notation κ→(λ)^n_m meaning every m-coloring of the n-element subsets of κ has a homogeneous subset of order type λ.",
+  "aliases": [
+   "arrow notation",
+   "κ→(λ)^n_m"
+  ]
+ },
+ {
+  "id": "s_square_principle",
+  "kind": "axiom",
+  "name": "Square principle □_κ (Jensen)",
+  "type_signature": "",
+  "description": "The existence of a coherent sequence ⟨C_α:α<κ⁺⟩ of clubs C_α⊆α with otp(C_α)≤κ and coherence under limit points, holding in L.",
+  "aliases": [
+   "□_κ",
+   "Jensen square"
+  ]
+ },
+ {
+  "id": "s_club_principle",
+  "kind": "state",
+  "name": "Club principle ♣",
+  "type_signature": "",
+  "description": "A guessing principle giving a sequence ⟨A_α⟩ of cofinal subsets A_α⊆α such that every uncountable X⊆ω₁ contains some A_α; a weakening of ◊.",
+  "aliases": [
+   "♣",
+   "clubsuit"
+  ]
+ },
+ {
+  "id": "s_diamond_implies_ch",
+  "kind": "theorem",
+  "name": "◊ implies CH",
+  "type_signature": "",
+  "description": "The diamond principle ◊ on ω₁ implies the Continuum Hypothesis.",
+  "aliases": []
+ },
+ {
+  "id": "s_singular_cardinal_hypothesis",
+  "kind": "state",
+  "name": "Singular Cardinal Hypothesis (SCH)",
+  "type_signature": "",
+  "description": "The assertion that for every singular κ with 2^{cf(κ)}<κ one has κ^{cf(κ)}=κ⁺.",
+  "aliases": [
+   "SCH"
+  ]
+ },
+ {
+  "id": "s_levy_hierarchy",
+  "kind": "state",
+  "name": "Lévy hierarchy (Σ_n/Π_n)",
+  "type_signature": "",
+  "description": "The classification of set-theoretic formulas by the number of alternations of bounded-then-unbounded quantifiers into Σ_n, Π_n, Δ_n classes.",
+  "aliases": [
+   "Σ_n",
+   "Π_n"
+  ]
+ },
+ {
+  "id": "t_absoluteness",
+  "kind": "technique",
+  "name": "Absoluteness",
+  "function_signature": "(Formula, TransitiveModels) → PreservedTruthValue",
+  "description": "The method of showing a formula's truth is preserved between transitive models; Δ₀ formulas are absolute and Σ₁ formulas are upward absolute."
+ },
+ {
+  "id": "t_elementary_submodel_method",
+  "kind": "technique",
+  "name": "Elementary submodel method",
+  "function_signature": "H(θ) → CountableElementarySubmodel",
+  "description": "Taking a countable elementary submodel M≺H(θ) and applying its Mostowski collapse as a core tool for combinatorial set theory."
+ },
+ {
+  "id": "t_skolem_hull",
+  "kind": "technique",
+  "name": "Skolem functions / Skolem hull",
+  "function_signature": "(Structure, Set) → ElementarySubstructure",
+  "description": "Closing a set of parameters under definable Skolem witnessing functions to obtain an elementary substructure."
+ },
+ {
+  "id": "t_godel_operations",
+  "kind": "technique",
+  "name": "Gödel operations 𝒢₁–𝒢₁₀",
+  "function_signature": "Sets → Set",
+  "description": "A finite list of ten basic finitary set operations whose closure yields exactly the Σ₀-definable (rudimentary) functions used to build L."
+ },
+ {
+  "id": "s_constructible_wellordering",
+  "kind": "state",
+  "name": "Constructible well-ordering <_L",
+  "type_signature": "",
+  "description": "The canonical Σ₁-definable well-ordering of the constructible universe L obtained from the stagewise construction of the L_α.",
+  "aliases": [
+   "<_L"
+  ]
+ },
+ {
+  "id": "s_ac_in_L",
+  "kind": "theorem",
+  "name": "AC holds in L",
+  "type_signature": "",
+  "description": "The constructible universe L satisfies the Axiom of Choice via the definable global well-ordering <_L.",
+  "aliases": []
+ },
+ {
+  "id": "s_relative_constructibility_L_A",
+  "kind": "state",
+  "name": "Relative constructibility L[A]",
+  "type_signature": "Class → InnerModel",
+  "description": "The smallest inner model of ZF closed under the definable-power-set operation relativized to a predicate A.",
+  "aliases": [
+   "L[A]"
+  ]
+ },
+ {
+  "id": "s_L_of_A",
+  "kind": "state",
+  "name": "Constructible closure L(A)",
+  "type_signature": "Set → InnerModel",
+  "description": "The smallest inner model of ZF containing the set A (and its transitive closure) as an element.",
+  "aliases": [
+   "L(A)"
+  ]
+ },
+ {
+  "id": "s_diamond_holds_in_L",
+  "kind": "theorem",
+  "name": "◊ holds in L (Jensen)",
+  "type_signature": "",
+  "description": "V=L implies the diamond principle ◊_κ on every regular uncountable κ, proved via condensation.",
+  "aliases": []
+ },
+ {
+  "id": "s_square_holds_in_L",
+  "kind": "theorem",
+  "name": "□_κ holds in L (Jensen)",
+  "type_signature": "",
+  "description": "V=L implies Jensen's square principle □_κ for every uncountable cardinal κ, proved by fine-structure methods.",
+  "aliases": []
+ },
+ {
+  "id": "s_kurepa_tree_in_L",
+  "kind": "theorem",
+  "name": "Kurepa tree exists in L",
+  "type_signature": "",
+  "description": "V=L (via ◊⁺) implies the existence of a Kurepa tree.",
+  "aliases": []
+ },
+ {
+  "id": "t_rudimentary_functions",
+  "kind": "technique",
+  "name": "Rudimentary functions",
+  "function_signature": "Sets → Set",
+  "description": "The class of functions generated by the Gödel operations and closed under composition and bounded quantification, used to define the J-hierarchy."
+ },
+ {
+  "id": "s_jensen_J_hierarchy",
+  "kind": "state",
+  "name": "Jensen J-hierarchy J_α",
+  "type_signature": "Ord → Set",
+  "description": "A refinement of the constructible hierarchy built by rudimentary closure, satisfying smooth condensation at every level.",
+  "aliases": [
+   "J_α",
+   "J-hierarchy"
+  ]
+ },
+ {
+  "id": "s_sigma_n_projectum",
+  "kind": "state",
+  "name": "Σ_n-projectum ρ_n",
+  "type_signature": "",
+  "description": "For a fine-structural level, the least ordinal ρ such that some Σ_n-definable (with parameters) subset of ρ is not a member of the level.",
+  "aliases": [
+   "ρ_n",
+   "projectum"
+  ]
+ },
+ {
+  "id": "t_fine_structural_condensation",
+  "kind": "technique",
+  "name": "Fine-structural condensation",
+  "function_signature": "Σ_n-Submodel → J-level",
+  "description": "The principle that Σ_n-elementary submodels of J-levels collapse to J-levels, refining Gödel's condensation lemma."
+ },
+ {
+  "id": "s_silver_indiscernibles",
+  "kind": "state",
+  "name": "Silver indiscernibles",
+  "type_signature": "",
+  "description": "A closed unbounded class of ordinal order-indiscernibles for L that generate L via Skolem functions; they exist iff 0# exists.",
+  "aliases": []
+ },
+ {
+  "id": "s_zero_sharp_implies_V_not_L",
+  "kind": "theorem",
+  "name": "0# exists implies V≠L",
+  "type_signature": "",
+  "description": "If 0# exists then every uncountable cardinal is inaccessible (indeed indiscernible) in L, so V≠L.",
+  "aliases": []
+ },
+ {
+  "id": "s_covering_implies_SCH",
+  "kind": "theorem",
+  "name": "Covering lemma implies SCH",
+  "type_signature": "",
+  "description": "If 0# does not exist, Jensen's covering lemma holds and implies the Singular Cardinal Hypothesis.",
+  "aliases": []
+ },
+ {
+  "id": "s_notion_of_forcing",
+  "kind": "state",
+  "name": "Notion of forcing",
+  "type_signature": "",
+  "description": "A separative partial order (P,≤,𝟙) of conditions used to extend a ground model by a generic filter.",
+  "aliases": [
+   "forcing poset",
+   "forcing notion"
+  ]
+ },
+ {
+  "id": "s_dense_predense",
+  "kind": "state",
+  "name": "Dense and predense sets",
+  "type_signature": "",
+  "description": "A subset D of a forcing poset is dense if every condition has an extension in D, and predense if every condition is compatible with a member of D.",
+  "aliases": [
+   "dense set",
+   "predense"
+  ]
+ },
+ {
+  "id": "s_compatible_conditions",
+  "kind": "state",
+  "name": "Compatible and incompatible conditions",
+  "type_signature": "",
+  "description": "Two conditions are compatible if they have a common extension and incompatible otherwise; an antichain is a set of pairwise incompatible conditions.",
+  "aliases": [
+   "compatibility",
+   "forcing antichain"
+  ]
+ },
+ {
+  "id": "s_rasiowa_sikorski_lemma",
+  "kind": "theorem",
+  "name": "Rasiowa–Sikorski lemma",
+  "type_signature": "",
+  "description": "For any countable family of dense subsets of a poset there is a filter meeting every member of the family.",
+  "aliases": []
+ },
+ {
+  "id": "t_p_names",
+  "kind": "technique",
+  "name": "P-names",
+  "function_signature": "(Poset) → Name",
+  "description": "Hereditarily P-labeled sets that name potential elements of a forcing extension and are interpreted via a generic filter G."
+ },
+ {
+  "id": "t_canonical_names",
+  "kind": "technique",
+  "name": "Canonical names (x̌, Ġ)",
+  "function_signature": "(GroundSet) → Name",
+  "description": "The check-name x̌ denoting a ground-model set x and the name Ġ denoting the generic filter in the forcing extension."
+ },
+ {
+  "id": "s_forcing_relation",
+  "kind": "state",
+  "name": "Forcing relation p⊩φ",
+  "type_signature": "",
+  "description": "The relation holding when p∈P forces φ, i.e. φ is true in M[G] for every generic G containing p.",
+  "aliases": [
+   "p⊩φ"
+  ]
+ },
+ {
+  "id": "s_definability_lemma_forcing",
+  "kind": "theorem",
+  "name": "Definability lemma (forcing)",
+  "type_signature": "",
+  "description": "For each formula φ the forcing relation p⊩φ is definable in the ground model.",
+  "aliases": []
+ },
+ {
+  "id": "s_truth_lemma",
+  "kind": "theorem",
+  "name": "Truth lemma",
+  "type_signature": "",
+  "description": "For a generic G, M[G]⊨φ if and only if some condition p∈G forces φ.",
+  "aliases": []
+ },
+ {
+  "id": "s_forcing_theorem",
+  "kind": "theorem",
+  "name": "Forcing theorem (fundamental)",
+  "type_signature": "",
+  "description": "The Definability and Truth lemmas together reduce truth in M[G] to a ground-model-definable forcing relation.",
+  "aliases": []
+ },
+ {
+  "id": "s_ground_model_definability",
+  "kind": "theorem",
+  "name": "Ground model definability",
+  "type_signature": "",
+  "description": "The ground model M is definable, with a parameter, inside any of its set-generic extensions (Laver–Woodin).",
+  "aliases": []
+ },
+ {
+  "id": "t_separative_quotient",
+  "kind": "technique",
+  "name": "Separativity / separative quotient",
+  "function_signature": "Poset → SeparativePoset",
+  "description": "Replacing a forcing poset by its separative quotient, densely embeddable into the regular open completion / a complete Boolean algebra."
+ },
+ {
+  "id": "t_cohen_forcing",
+  "kind": "technique",
+  "name": "Cohen forcing",
+  "function_signature": "Fn(I,2) → CohenReal",
+  "description": "Forcing with finite partial functions Fn(I,2) to adjoin a new real (or I-many mutually generic Cohen reals)."
+ },
+ {
+  "id": "s_ccc_forcing",
+  "kind": "state",
+  "name": "Countable chain condition (ccc)",
+  "type_signature": "",
+  "description": "A forcing poset has the ccc if every antichain in it is countable.",
+  "aliases": [
+   "ccc"
+  ]
+ },
+ {
+  "id": "s_ccc_preserves_cardinals",
+  "kind": "theorem",
+  "name": "ccc forcing preserves cardinals",
+  "type_signature": "",
+  "description": "A ccc forcing notion preserves all cardinals and cofinalities of the ground model.",
+  "aliases": []
+ },
+ {
+  "id": "s_cohen_forcing_is_ccc",
+  "kind": "theorem",
+  "name": "Cohen forcing is ccc",
+  "type_signature": "",
+  "description": "The poset Fn(I,2) satisfies the countable chain condition, proved via the Δ-system lemma.",
+  "aliases": []
+ },
+ {
+  "id": "t_nice_names",
+  "kind": "technique",
+  "name": "Nice names",
+  "function_signature": "(ccc poset, GroundSet) → Name",
+  "description": "Antichain-indexed names for subsets of a ground-model set, used to count the subsets appearing in a ccc extension."
+ },
+ {
+  "id": "s_con_zfc_not_ch_cohen",
+  "kind": "theorem",
+  "name": "Con(ZFC)⟹Con(ZFC+¬CH) (Cohen)",
+  "type_signature": "",
+  "description": "Forcing with Fn(ω₂×ω,2) over a model of ZFC yields a ccc extension in which 2^{ℵ₀}=ℵ₂, so ¬CH is consistent.",
+  "aliases": []
+ },
+ {
+  "id": "s_boolean_valued_universe",
+  "kind": "state",
+  "name": "Boolean-valued universe V^B",
+  "type_signature": "CompleteBooleanAlgebra → Class",
+  "description": "The hierarchy of B-valued names with each formula assigned a truth value ‖φ‖∈B, an alternative formulation of forcing.",
+  "aliases": [
+   "V^B"
+  ]
+ },
+ {
+  "id": "t_boolean_truth_value",
+  "kind": "technique",
+  "name": "Boolean truth value ‖φ‖",
+  "function_signature": "Formula → CompleteBooleanAlgebra",
+  "description": "The recursively defined element of a complete Boolean algebra B giving the degree of truth of a formula in V^B."
+ },
+ {
+  "id": "s_mixing_lemma_forcing",
+  "kind": "theorem",
+  "name": "Mixing lemma",
+  "type_signature": "",
+  "description": "Given a maximal antichain {b_i} and names {ẋ_i}, there is a single name ẋ with b_i≤‖ẋ=ẋ_i‖ for all i.",
+  "aliases": []
+ },
+ {
+  "id": "s_maximum_principle_forcing",
+  "kind": "theorem",
+  "name": "Maximum principle (forcing)",
+  "type_signature": "",
+  "description": "If ‖∃x φ(x)‖=b in V^B then there is a name ẋ with ‖φ(ẋ)‖=b.",
+  "aliases": []
+ },
+ {
+  "id": "t_levy_collapse",
+  "kind": "technique",
+  "name": "Lévy collapse Coll(ω,κ)",
+  "function_signature": "Cardinal → CollapsingForcing",
+  "description": "Forcing with finite (or appropriate) conditions that collapses a cardinal κ, or all cardinals below λ, to ω."
+ },
+ {
+  "id": "s_kappa_closed_forcing",
+  "kind": "state",
+  "name": "<κ-closed forcing",
+  "type_signature": "",
+  "description": "A forcing notion in which every descending sequence of length <κ has a lower bound.",
+  "aliases": [
+   "κ-closed",
+   "<κ-closed"
+  ]
+ },
+ {
+  "id": "s_closed_forcing_adds_no_sequences",
+  "kind": "theorem",
+  "name": "<κ-closed forcing adds no new <κ-sequences",
+  "type_signature": "",
+  "description": "A <κ-closed forcing adds no new sequences of length <κ, hence preserves H_κ and all cardinals up to κ.",
+  "aliases": []
+ },
+ {
+  "id": "s_kappa_cc_knaster",
+  "kind": "state",
+  "name": "κ-cc / κ-Knaster",
+  "type_signature": "",
+  "description": "A poset is κ-cc if all its antichains have size <κ, and κ-Knaster if every κ-sized subset has a κ-sized pairwise-compatible subset.",
+  "aliases": [
+   "κ-cc",
+   "Knaster"
+  ]
+ },
+ {
+  "id": "s_kappa_cc_preserves_cardinals",
+  "kind": "theorem",
+  "name": "κ-cc forcing preserves cardinals ≥κ",
+  "type_signature": "",
+  "description": "A κ-cc forcing notion preserves all cardinals and cofinalities greater than or equal to κ.",
+  "aliases": []
+ },
+ {
+  "id": "s_product_forcing_lemma",
+  "kind": "theorem",
+  "name": "Product forcing lemma",
+  "type_signature": "",
+  "description": "G×H is P×Q-generic over M iff G is P-generic over M and H is Q-generic over M[G], and then M[G×H]=M[G][H].",
+  "aliases": []
+ },
+ {
+  "id": "t_two_step_iteration",
+  "kind": "technique",
+  "name": "Two-step iteration P∗Q̇",
+  "function_signature": "(P, P-name Q̇) → Poset",
+  "description": "The forcing that first forces with P and then with a P-name Q̇ for a poset, realized by ordered pairs of conditions."
+ },
+ {
+  "id": "s_martins_axiom_MA_kappa",
+  "kind": "axiom",
+  "name": "Martin's Axiom MA_κ",
+  "type_signature": "",
+  "description": "For every ccc poset and every family of at most κ dense sets there is a filter meeting all of them.",
+  "aliases": [
+   "MA_κ"
+  ]
+ },
+ {
+  "id": "s_martins_axiom",
+  "kind": "axiom",
+  "name": "Martin's Axiom (MA)",
+  "type_signature": "",
+  "description": "The assertion that MA_κ holds for every κ<2^{ℵ₀}.",
+  "aliases": [
+   "MA"
+  ]
+ },
+ {
+  "id": "s_MA_aleph0_theorem",
+  "kind": "theorem",
+  "name": "MA_{ℵ₀} is a theorem of ZFC",
+  "type_signature": "",
+  "description": "Martin's Axiom for countably many dense sets is provable in ZFC, being exactly the Rasiowa–Sikorski lemma.",
+  "aliases": []
+ },
+ {
+  "id": "s_con_MA_not_CH",
+  "kind": "theorem",
+  "name": "Con(MA+¬CH) (Solovay–Tennenbaum)",
+  "type_signature": "",
+  "description": "A finite-support ccc iteration of length ω₂ forces MA together with 2^{ℵ₀}=ℵ₂.",
+  "aliases": []
+ },
+ {
+  "id": "t_finite_support_iteration",
+  "kind": "technique",
+  "name": "Finite-support iteration",
+  "function_signature": "⟨P_α,Q̇_α⟩ → IterationLimit",
+  "description": "An iterated forcing construction in which conditions have finite support, used to obtain ccc-preserving limits."
+ },
+ {
+  "id": "s_fs_iteration_ccc",
+  "kind": "theorem",
+  "name": "FS iteration of ccc is ccc",
+  "type_signature": "",
+  "description": "A finite-support iteration of ccc forcing notions is itself ccc, proved via the Δ-system lemma.",
+  "aliases": []
+ },
+ {
+  "id": "s_MA_aleph1_negates_CH",
+  "kind": "theorem",
+  "name": "MA_{ℵ₁} implies ¬CH",
+  "type_signature": "",
+  "description": "Martin's Axiom for ℵ₁ dense sets implies 2^{ℵ₀}>ℵ₁, refuting the Continuum Hypothesis.",
+  "aliases": []
+ },
+ {
+  "id": "s_con_SH",
+  "kind": "theorem",
+  "name": "Con(SH) (Solovay–Tennenbaum)",
+  "type_signature": "",
+  "description": "Suslin's Hypothesis is consistent with ZFC, obtained from a model of MA+¬CH which kills all Suslin trees.",
+  "aliases": []
+ },
+ {
+  "id": "s_MA_measure_category",
+  "kind": "theorem",
+  "name": "MA and additivity of measure/category",
+  "type_signature": "",
+  "description": "Under MA_κ the union of at most κ Lebesgue-null (resp. meager) sets of reals is null (resp. meager).",
+  "aliases": []
+ },
+ {
+  "id": "t_countable_support_iteration",
+  "kind": "technique",
+  "name": "Countable-support iteration",
+  "function_signature": "⟨P_α,Q̇_α⟩ → ProperIterationLimit",
+  "description": "An iterated forcing construction with countable support, the standard framework for iterating proper forcings."
+ },
+ {
+  "id": "s_properness_preserved_CS_iteration",
+  "kind": "theorem",
+  "name": "Properness preserved under CS iteration",
+  "type_signature": "",
+  "description": "Countable-support iterations of proper forcing notions are proper (Shelah).",
+  "aliases": []
+ },
+ {
+  "id": "s_mahlo_cardinal",
+  "kind": "state",
+  "name": "Mahlo cardinal",
+  "type_signature": "",
+  "description": "A regular cardinal κ for which the set of inaccessible cardinals below κ is stationary in κ.",
+  "aliases": [
+   "Mahlo"
+  ]
+ },
+ {
+  "id": "s_weakly_compact_cardinal",
+  "kind": "state",
+  "name": "Weakly compact cardinal",
+  "type_signature": "",
+  "description": "An inaccessible cardinal κ with the tree property, equivalently satisfying κ→(κ)²₂ or Π¹₁-indescribability.",
+  "aliases": [
+   "weakly compact"
+  ]
+ },
+ {
+  "id": "s_weakly_compact_tree_property",
+  "kind": "theorem",
+  "name": "Tree property characterization of weak compactness",
+  "type_signature": "",
+  "description": "For an inaccessible κ, weak compactness is equivalent to the tree property and to the partition relation κ→(κ)²₂.",
+  "aliases": []
+ },
+ {
+  "id": "s_normal_measure",
+  "kind": "state",
+  "name": "Normal measure",
+  "type_signature": "",
+  "description": "A κ-complete nonprincipal ultrafilter on a measurable cardinal κ closed under diagonal intersections; equivalently the constant function is least nontrivial in the ultrapower.",
+  "aliases": [
+   "normal ultrafilter"
+  ]
+ },
+ {
+  "id": "t_ultrapower_Ult_V_U",
+  "kind": "technique",
+  "name": "Ultrapower Ult(V,U)",
+  "function_signature": "(Class, κ-complete U) → (TransitiveModel, j)",
+  "description": "Forming V^κ/U and collapsing the well-founded structure to a transitive inner model M with elementary embedding j:V→M."
+ },
+ {
+  "id": "s_measurable_embedding_characterization",
+  "kind": "theorem",
+  "name": "Measurable cardinals and elementary embeddings",
+  "type_signature": "",
+  "description": "κ is measurable iff there is a nontrivial elementary embedding j:V→M into a transitive class with critical point κ.",
+  "aliases": [
+   "critical point characterization"
+  ]
+ },
+ {
+  "id": "t_iterated_ultrapowers",
+  "kind": "technique",
+  "name": "Iterated ultrapowers",
+  "function_signature": "(Model, Measure) → CommutativeSystemOfEmbeddings",
+  "description": "Repeatedly taking ultrapowers by images of a measure to produce a directed system of elementary embeddings and iterates."
+ },
+ {
+  "id": "s_ramsey_cardinal",
+  "kind": "state",
+  "name": "Ramsey cardinal",
+  "type_signature": "",
+  "description": "A cardinal κ satisfying the partition relation κ→(κ)^{<ω}_2.",
+  "aliases": [
+   "Ramsey"
+  ]
+ },
+ {
+  "id": "s_erdos_cardinal",
+  "kind": "state",
+  "name": "Erdős cardinal κ→(α)^{<ω}",
+  "type_signature": "",
+  "description": "For an ordinal α, the least cardinal κ(α) satisfying the partition relation κ→(α)^{<ω}_2.",
+  "aliases": [
+   "Erdős cardinal",
+   "κ(α)"
+  ]
+ },
+ {
+  "id": "t_ehrenfeucht_mostowski_models",
+  "kind": "technique",
+  "name": "Ehrenfeucht–Mostowski models",
+  "function_signature": "(OrderIndiscernibles) → ElementarySubmodel",
+  "description": "Building elementary submodels generated over a set of order-indiscernibles via Skolem functions, the engine producing sharps."
+ },
+ {
+  "id": "s_erdos_implies_zero_sharp",
+  "kind": "theorem",
+  "name": "κ→(ω₁)^{<ω} implies 0# exists",
+  "type_signature": "",
+  "description": "The existence of an Erdős/Ramsey-type cardinal with κ→(ω₁)^{<ω} yields uncountably many indiscernibles for L, hence 0#.",
+  "aliases": []
+ },
+ {
+  "id": "s_strongly_compact_cardinal",
+  "kind": "state",
+  "name": "Strongly compact cardinal",
+  "type_signature": "",
+  "description": "A cardinal κ such that every κ-complete filter on any set extends to a κ-complete ultrafilter.",
+  "aliases": [
+   "strongly compact"
+  ]
+ },
+ {
+  "id": "s_huge_cardinal",
+  "kind": "state",
+  "name": "Huge cardinal",
+  "type_signature": "",
+  "description": "A cardinal κ admitting an elementary embedding j:V→M with critical point κ and ^{j(κ)}M⊆M.",
+  "aliases": [
+   "huge"
+  ]
+ },
+ {
+  "id": "t_extenders",
+  "kind": "technique",
+  "name": "Extenders",
+  "function_signature": "(Embedding) → SystemOfUltrafilters",
+  "description": "Coherent systems of ultrafilters coding a (possibly strong) elementary embedding, generalizing normal measures."
+ },
+ {
+  "id": "s_vopenka_principle",
+  "kind": "axiom",
+  "name": "Vopěnka's principle",
+  "type_signature": "",
+  "description": "Every proper class of first-order structures of the same type contains two members one of which elementarily embeds into the other.",
+  "aliases": [
+   "Vopěnka"
+  ]
+ },
+ {
+  "id": "s_proper_forcing",
+  "kind": "state",
+  "name": "Proper forcing",
+  "type_signature": "",
+  "description": "A forcing notion preserving stationary subsets of [λ]^ω for all λ; equivalently generic conditions exist over countable elementary submodels.",
+  "aliases": [
+   "proper"
+  ]
+ },
+ {
+  "id": "s_cantor_space",
+  "kind": "state",
+  "name": "Cantor space 2^ω",
+  "type_signature": "",
+  "description": "The space of infinite binary sequences with the product topology, a compact perfect totally disconnected Polish space.",
+  "aliases": [
+   "2^ω"
+  ]
+ },
+ {
+  "id": "s_baire_space_irrationals",
+  "kind": "theorem",
+  "name": "Baire space homeomorphic to the irrationals",
+  "type_signature": "",
+  "description": "The Baire space ω^ω is homeomorphic to the space of irrational reals, via continued fractions.",
+  "aliases": []
+ },
+ {
+  "id": "s_universality_of_baire_space",
+  "kind": "theorem",
+  "name": "Universality of Baire space",
+  "type_signature": "",
+  "description": "Every nonempty Polish space is a continuous image of the Baire space ω^ω.",
+  "aliases": []
+ },
+ {
+  "id": "s_tree_on_a_set_body",
+  "kind": "state",
+  "name": "Tree on a set and its body [T]",
+  "type_signature": "",
+  "description": "A set of finite sequences closed under initial segments; its body [T] of infinite branches is the corresponding closed subset of the product space.",
+  "aliases": [
+   "[T]",
+   "tree on ω"
+  ]
+ },
+ {
+  "id": "s_well_founded_tree_rank",
+  "kind": "state",
+  "name": "Well-founded tree and its rank",
+  "type_signature": "",
+  "description": "A tree with no infinite branch, to which well-founded recursion assigns an ordinal rank.",
+  "aliases": [
+   "tree rank"
+  ]
+ },
+ {
+  "id": "s_borel_hierarchy",
+  "kind": "state",
+  "name": "Borel hierarchy (Σ⁰_α,Π⁰_α,Δ⁰_α)",
+  "type_signature": "",
+  "description": "The transfinite stratification of the Borel sets of a Polish space by iterated countable unions and complements.",
+  "aliases": [
+   "Σ⁰_α",
+   "Π⁰_α"
+  ]
+ },
+ {
+  "id": "t_borel_codes",
+  "kind": "technique",
+  "name": "Borel codes",
+  "function_signature": "BorelSet → Real",
+  "description": "Real-number codes for Borel sets making Borel relations definable and absolute between transitive models."
+ },
+ {
+  "id": "s_property_of_baire",
+  "kind": "state",
+  "name": "Property of Baire",
+  "type_signature": "",
+  "description": "A set has the Baire property if it differs from an open set by a meager set; the BP sets form a σ-algebra closed under the Suslin operation.",
+  "aliases": [
+   "Baire property",
+   "BP"
+  ]
+ },
+ {
+  "id": "t_suslin_operation",
+  "kind": "technique",
+  "name": "Suslin operation 𝒜",
+  "function_signature": "(Sequences of sets) → AnalyticSet",
+  "description": "The operation 𝒜_s A_s=⋃_f⋂_n A_{f↾n} on a Suslin scheme that generates the analytic sets from closed sets."
+ },
+ {
+  "id": "s_coanalytic_set",
+  "kind": "state",
+  "name": "Coanalytic set Π¹₁",
+  "type_signature": "",
+  "description": "The complement of an analytic set; the first level of the projective hierarchy dual to Σ¹₁.",
+  "aliases": [
+   "Π¹₁"
+  ]
+ },
+ {
+  "id": "s_cantor_bendixson_rank",
+  "kind": "technique",
+  "name": "Cantor–Bendixson derivative and rank",
+  "function_signature": "ClosedSet → (PerfectKernel, Ordinal)",
+  "description": "The iterated removal of isolated points from a closed set, stabilizing at a countable ordinal rank and leaving the perfect kernel.",
+  "aliases": [
+   "CB derivative",
+   "CB rank"
+  ]
+ },
+ {
+  "id": "s_perfect_set_property",
+  "kind": "state",
+  "name": "Perfect set property (PSP)",
+  "type_signature": "",
+  "description": "A set of reals has the PSP if it is either countable or contains a nonempty perfect subset.",
+  "aliases": [
+   "PSP"
+  ]
+ },
+ {
+  "id": "s_analytic_psp",
+  "kind": "theorem",
+  "name": "Analytic sets have the perfect set property",
+  "type_signature": "",
+  "description": "Every uncountable analytic set contains a nonempty perfect subset.",
+  "aliases": []
+ },
+ {
+  "id": "s_analytic_measurable",
+  "kind": "theorem",
+  "name": "Analytic sets are Lebesgue measurable",
+  "type_signature": "",
+  "description": "Every Σ¹₁ set is Lebesgue measurable.",
+  "aliases": []
+ },
+ {
+  "id": "s_analytic_baire_property",
+  "kind": "theorem",
+  "name": "Analytic sets have the Baire property",
+  "type_signature": "",
+  "description": "Every Σ¹₁ set has the property of Baire.",
+  "aliases": []
+ },
+ {
+  "id": "s_universal_analytic_set",
+  "kind": "state",
+  "name": "Universal analytic set",
+  "type_signature": "",
+  "description": "A single Σ¹₁ subset of (ω^ω)² that is universal for all Σ¹₁ subsets of ω^ω, witnessing Σ¹₁≠Π¹₁.",
+  "aliases": []
+ },
+ {
+  "id": "t_pi11_norm",
+  "kind": "technique",
+  "name": "Π¹₁ norm / rank",
+  "function_signature": "Π¹₁ set → (Element → Ordinal<ω₁)",
+  "description": "A regular Π¹₁-norm assigning each member the ordinal rank of an associated well-founded tree, all below ω₁."
+ },
+ {
+  "id": "s_boundedness_theorem",
+  "kind": "theorem",
+  "name": "Σ¹₁-boundedness theorem",
+  "type_signature": "",
+  "description": "A Σ¹₁ subset of the well-founded trees has ranks bounded below ω₁.",
+  "aliases": [
+   "Σ¹₁-bounding"
+  ]
+ },
+ {
+  "id": "s_projective_hierarchy",
+  "kind": "state",
+  "name": "Projective hierarchy (Σ¹_n,Π¹_n,Δ¹_n)",
+  "type_signature": "",
+  "description": "The hierarchy of pointclasses with Σ¹₁ the analytic sets, Π¹_n the complements, and Σ¹_{n+1} the projections of Π¹_n sets.",
+  "aliases": [
+   "Σ¹_n",
+   "Π¹_n",
+   "projective sets"
+  ]
+ },
+ {
+  "id": "s_projective_hierarchy_proper",
+  "kind": "theorem",
+  "name": "Projective hierarchy is proper",
+  "type_signature": "",
+  "description": "For each n there is a universal Σ¹_n set, and the projective hierarchy is strictly increasing.",
+  "aliases": []
+ },
+ {
+  "id": "s_uniformization",
+  "kind": "state",
+  "name": "Uniformization",
+  "type_signature": "",
+  "description": "Selecting for a relation R⊆X×Y a function with graph in R, with the graph required to lie in a given pointclass.",
+  "aliases": []
+ },
+ {
+  "id": "s_sigma2_uniformization",
+  "kind": "theorem",
+  "name": "Σ¹₂-uniformization (Novikov–Kondô–Addison)",
+  "type_signature": "",
+  "description": "Every Σ¹₂ relation can be uniformized by a Σ¹₂ function.",
+  "aliases": []
+ },
+ {
+  "id": "s_prewellordering_property",
+  "kind": "state",
+  "name": "Prewellordering property",
+  "type_signature": "",
+  "description": "A pointclass Γ has the prewellordering property if every Γ set admits a Γ-norm; Π¹₁ and Σ¹₂ have it.",
+  "aliases": [
+   "PWO"
+  ]
+ },
+ {
+  "id": "s_scale_property",
+  "kind": "state",
+  "name": "Scale property",
+  "type_signature": "",
+  "description": "A set has a scale if there is a sequence of norms with a convergence/lower-semicontinuity property enabling uniformization.",
+  "aliases": [
+   "scale"
+  ]
+ },
+ {
+  "id": "s_periodicity_theorems",
+  "kind": "theorem",
+  "name": "Periodicity theorems (Moschovakis)",
+  "type_signature": "",
+  "description": "Under determinacy the prewellordering and scale properties propagate up the projective hierarchy in a periodic pattern.",
+  "aliases": [
+   "First and Second Periodicity"
+  ]
+ },
+ {
+  "id": "t_shoenfield_tree",
+  "kind": "technique",
+  "name": "Shoenfield tree",
+  "function_signature": "Σ¹₂ set → Tree on ω×ω₁",
+  "description": "A tree on ω×ω₁ whose projection is a given Σ¹₂ set, reducing membership to well-foundedness and giving Shoenfield absoluteness."
+ },
+ {
+  "id": "s_sigma2_wellordering_in_L",
+  "kind": "theorem",
+  "name": "Σ¹₂ well-ordering under V=L",
+  "type_signature": "",
+  "description": "If V=L there is a Σ¹₂ well-ordering of the reals, yielding a Δ¹₂ non-Lebesgue-measurable set.",
+  "aliases": []
+ },
+ {
+  "id": "s_constructible_reals",
+  "kind": "state",
+  "name": "Constructible reals ℝ∩L",
+  "type_signature": "",
+  "description": "The reals belonging to L, a Σ¹₂ set which under V=L equals all reals.",
+  "aliases": [
+   "ℝ∩L"
+  ]
+ },
+ {
+  "id": "s_infinite_game",
+  "kind": "state",
+  "name": "Infinite game G(A) and strategy",
+  "type_signature": "",
+  "description": "A two-player perfect-information game on ω where players alternately play naturals, I winning iff the resulting real lies in A; a strategy is a function dictating moves.",
+  "aliases": [
+   "G(A)",
+   "winning strategy"
+  ]
+ },
+ {
+  "id": "s_determinacy_of_a_set",
+  "kind": "state",
+  "name": "Determinacy of a set Det(A)",
+  "type_signature": "",
+  "description": "The property that one of the two players has a winning strategy in the game G(A).",
+  "aliases": [
+   "Det(A)"
+  ]
+ },
+ {
+  "id": "s_gale_stewart_theorem",
+  "kind": "theorem",
+  "name": "Gale–Stewart theorem",
+  "type_signature": "",
+  "description": "Every open game and every closed game (on a tree) is determined.",
+  "aliases": [
+   "open determinacy",
+   "closed determinacy"
+  ]
+ },
+ {
+  "id": "t_unraveling",
+  "kind": "technique",
+  "name": "Unraveling / covering technique",
+  "function_signature": "(Game, Tree) → ClopenGameOnLargerTree",
+  "description": "Lifting a game to an auxiliary tree on which the payoff set becomes clopen, the key device in Martin's proof of Borel determinacy."
+ },
+ {
+  "id": "s_AD_implies_measurable",
+  "kind": "theorem",
+  "name": "AD implies all sets Lebesgue measurable",
+  "type_signature": "",
+  "description": "Under the Axiom of Determinacy every set of reals is Lebesgue measurable.",
+  "aliases": []
+ },
+ {
+  "id": "s_AD_implies_baire_property",
+  "kind": "theorem",
+  "name": "AD implies the Baire property for all sets",
+  "type_signature": "",
+  "description": "Under the Axiom of Determinacy every set of reals has the property of Baire, via the Banach–Mazur game.",
+  "aliases": []
+ },
+ {
+  "id": "s_AD_implies_PSP",
+  "kind": "theorem",
+  "name": "AD implies perfect set property for all sets",
+  "type_signature": "",
+  "description": "Under the Axiom of Determinacy every uncountable set of reals contains a perfect subset.",
+  "aliases": []
+ },
+ {
+  "id": "t_banach_mazur_game",
+  "kind": "technique",
+  "name": "Banach–Mazur game",
+  "function_signature": "(Set A) → comeagerness criterion",
+  "description": "An infinite game in which players choose decreasing basic open sets, characterizing comeagerness and the Baire property of A."
+ },
+ {
+  "id": "s_analytic_determinacy",
+  "kind": "theorem",
+  "name": "Analytic determinacy",
+  "type_signature": "",
+  "description": "Every analytic (Σ¹₁) game is determined; this is equivalent to the existence of sharps for all reals and follows from a measurable cardinal (Martin, Harrington).",
+  "aliases": [
+   "Σ¹₁-determinacy"
+  ]
+ },
+ {
+  "id": "s_sharps_analytic_determinacy_equivalence",
+  "kind": "state",
+  "name": "Sharps and analytic determinacy equivalence",
+  "type_signature": "",
+  "description": "The existence of x# for every real x is equivalent to the determinacy of all analytic games (Harrington–Martin).",
+  "aliases": [
+   "x#"
+  ]
+ },
+ {
+  "id": "t_homogeneous_tree",
+  "kind": "technique",
+  "name": "Homogeneously Suslin set / homogeneous tree",
+  "function_signature": "(Tree, system of measures) → DeterminedSet",
+  "description": "A tree carrying a coherent commuting system of countably complete measures whose projection is a homogeneously Suslin (hence determined) set."
+ },
+ {
+  "id": "s_martin_steel_pd",
+  "kind": "theorem",
+  "name": "Martin–Steel theorem (projective determinacy)",
+  "type_signature": "",
+  "description": "n Woodin cardinals with a measurable above imply Π¹_{n+1}-determinacy; infinitely many Woodins imply full projective determinacy.",
+  "aliases": [
+   "Martin–Steel"
+  ]
+ },
+ {
+  "id": "s_PD_implies_regularity",
+  "kind": "theorem",
+  "name": "PD implies regularity for all projective sets",
+  "type_signature": "",
+  "description": "Projective Determinacy implies every projective set is Lebesgue measurable, has the Baire property and the perfect set property, and projective relations can be uniformized.",
+  "aliases": []
+ },
+ {
+  "id": "s_AD_equiconsistent_woodins",
+  "kind": "theorem",
+  "name": "AD equiconsistent with infinitely many Woodins",
+  "type_signature": "",
+  "description": "Con(ZF+AD) is equivalent to Con(ZFC+there are infinitely many Woodin cardinals) (Woodin).",
+  "aliases": []
+ },
+ {
+  "id": "s_wadge_reducibility",
+  "kind": "state",
+  "name": "Wadge reducibility / Wadge hierarchy",
+  "type_signature": "",
+  "description": "A≤_W B iff A=f^{-1}(B) for a continuous f; under determinacy the induced degrees form a nearly well-ordered hierarchy.",
+  "aliases": [
+   "≤_W",
+   "Wadge degrees"
+  ]
+ },
+ {
+  "id": "t_solovay_model_construction",
+  "kind": "technique",
+  "name": "Solovay's model construction via Lévy collapse",
+  "function_signature": "(Inaccessible κ) → ModelOfZF+DC",
+  "description": "Lévy-collapsing an inaccessible cardinal to ω₁ and passing to the L(ℝ) of the extension to obtain a ZF+DC model in which all sets are Lebesgue measurable, Baire, and have the PSP."
+ },
+ {
+  "id": "s_shelah_inaccessible_necessary",
+  "kind": "theorem",
+  "name": "Inaccessible necessary for all sets Lebesgue measurable (Shelah)",
+  "type_signature": "",
+  "description": "If every set of reals is Lebesgue measurable (with DC) then ω₁ is inaccessible in L, so an inaccessible cardinal is needed for Solovay's model.",
+  "aliases": []
+ }
+]

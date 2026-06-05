@@ -1,0 +1,1058 @@
+[
+ {
+  "id": "e_24543",
+  "from": "s_partial_computable_function",
+  "to": "t_dovetailing",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_ce_equals_sigma01"
+ },
+ {
+  "id": "e_24544",
+  "from": "s_godel_index",
+  "to": "t_dovetailing",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24545",
+  "from": "t_dovetailing",
+  "to": "s_computably_enumerable_set",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24546",
+  "from": "t_dovetailing",
+  "to": "s_ce_equals_sigma01",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_ce_equals_sigma01"
+ },
+ {
+  "id": "e_24547",
+  "from": "s_primitive_recursive_function",
+  "to": "t_pairing_function",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24548",
+  "from": "t_pairing_function",
+  "to": "s_diagonal_halting_set_K0",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24549",
+  "from": "t_pairing_function",
+  "to": "s_join_of_degrees",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24550",
+  "from": "s_stage_approximation_Phi",
+  "to": "t_construction_by_stages_markers",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24551",
+  "from": "s_e_state",
+  "to": "t_construction_by_stages_markers",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_maximal_set"
+ },
+ {
+  "id": "e_24552",
+  "from": "t_construction_by_stages_markers",
+  "to": "s_maximal_set",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24553",
+  "from": "t_construction_by_stages_markers",
+  "to": "s_simple_set",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24554",
+  "from": "s_ce_degrees_R",
+  "to": "t_permitting",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24555",
+  "from": "s_stage_approximation_Phi",
+  "to": "t_permitting",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24556",
+  "from": "t_permitting",
+  "to": "s_incomparable_ce_degrees",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_incomparable_ce_degrees"
+ },
+ {
+  "id": "e_24557",
+  "from": "t_permitting",
+  "to": "s_hypersimple_set",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24558",
+  "from": "s_halting_set_K",
+  "to": "t_reduction_to_K",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24559",
+  "from": "s_many_one_reducibility",
+  "to": "t_reduction_to_K",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_m_completeness_of_K"
+ },
+ {
+  "id": "e_24560",
+  "from": "t_reduction_to_K",
+  "to": "s_rices_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24561",
+  "from": "t_reduction_to_K",
+  "to": "s_m_completeness_of_K",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_m_completeness_of_K"
+ },
+ {
+  "id": "e_24562",
+  "from": "s_stage_approximation_Phi",
+  "to": "t_computable_approximation_delta02",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_limit_lemma"
+ },
+ {
+  "id": "e_24563",
+  "from": "s_arithmetical_hierarchy",
+  "to": "t_computable_approximation_delta02",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_limit_lemma"
+ },
+ {
+  "id": "e_24564",
+  "from": "t_computable_approximation_delta02",
+  "to": "s_limit_lemma",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_limit_lemma"
+ },
+ {
+  "id": "e_24565",
+  "from": "t_computable_approximation_delta02",
+  "to": "s_modulus_lemma",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_modulus_lemma"
+ },
+ {
+  "id": "e_24566",
+  "from": "s_priority_method",
+  "to": "t_finite_injury_priority_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_incomparable_ce_degrees"
+ },
+ {
+  "id": "e_24567",
+  "from": "s_ce_degrees_R",
+  "to": "t_finite_injury_priority_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_incomparable_ce_degrees"
+ },
+ {
+  "id": "e_24568",
+  "from": "s_stage_approximation_Phi",
+  "to": "t_finite_injury_priority_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24569",
+  "from": "t_finite_injury_priority_method",
+  "to": "s_friedberg_muchnik_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_incomparable_ce_degrees"
+ },
+ {
+  "id": "e_24570",
+  "from": "t_finite_injury_priority_method",
+  "to": "s_incomparable_ce_degrees",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_incomparable_ce_degrees"
+ },
+ {
+  "id": "e_24571",
+  "from": "s_priority_method",
+  "to": "t_priority_requirements_and_injury",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_incomparable_ce_degrees"
+ },
+ {
+  "id": "e_24572",
+  "from": "s_stage_approximation_Phi",
+  "to": "t_priority_requirements_and_injury",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24573",
+  "from": "t_priority_requirements_and_injury",
+  "to": "s_friedberg_muchnik_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24574",
+  "from": "t_priority_requirements_and_injury",
+  "to": "s_posts_problem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24575",
+  "from": "s_turing_jump_A_prime",
+  "to": "t_kleene_post_finite_extension",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_kleene_post_theorem"
+ },
+ {
+  "id": "e_24576",
+  "from": "s_degree_0_prime",
+  "to": "t_kleene_post_finite_extension",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_kleene_post_theorem"
+ },
+ {
+  "id": "e_24577",
+  "from": "t_kleene_post_finite_extension",
+  "to": "s_kleene_post_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_kleene_post_theorem"
+ },
+ {
+  "id": "e_24578",
+  "from": "t_kleene_post_finite_extension",
+  "to": "s_exact_pair_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_exact_pair_theorem"
+ },
+ {
+  "id": "e_24579",
+  "from": "s_stage_approximation_Phi",
+  "to": "t_length_of_agreement_function",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24580",
+  "from": "s_turing_reducibility",
+  "to": "t_length_of_agreement_function",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_minimal_pair_theorem"
+ },
+ {
+  "id": "e_24581",
+  "from": "t_length_of_agreement_function",
+  "to": "s_sacks_splitting_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24582",
+  "from": "t_length_of_agreement_function",
+  "to": "s_minimal_pair_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_minimal_pair_theorem"
+ },
+ {
+  "id": "e_24583",
+  "from": "s_use_function",
+  "to": "t_restraint_function",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24584",
+  "from": "s_priority_method",
+  "to": "t_restraint_function",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24585",
+  "from": "t_restraint_function",
+  "to": "s_friedberg_muchnik_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24586",
+  "from": "t_restraint_function",
+  "to": "s_low_set",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24587",
+  "from": "s_true_path",
+  "to": "t_hat_trick",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24588",
+  "from": "s_stage_approximation_Phi",
+  "to": "t_hat_trick",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24589",
+  "from": "t_hat_trick",
+  "to": "s_high_set",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24590",
+  "from": "t_hat_trick",
+  "to": "s_high_low_hierarchy",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24591",
+  "from": "s_true_path",
+  "to": "t_infinite_injury_priority_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_sacks_density_theorem"
+ },
+ {
+  "id": "e_24592",
+  "from": "s_priority_method",
+  "to": "t_infinite_injury_priority_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24593",
+  "from": "s_turing_jump_A_prime",
+  "to": "t_infinite_injury_priority_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24594",
+  "from": "t_infinite_injury_priority_method",
+  "to": "s_sacks_density_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_sacks_density_theorem"
+ },
+ {
+  "id": "e_24595",
+  "from": "t_infinite_injury_priority_method",
+  "to": "s_high_set",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24596",
+  "from": "s_priority_method",
+  "to": "t_tree_of_strategies",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24597",
+  "from": "s_true_path",
+  "to": "t_tree_of_strategies",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24598",
+  "from": "t_tree_of_strategies",
+  "to": "s_sacks_density_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24599",
+  "from": "t_tree_of_strategies",
+  "to": "s_nondistributivity_of_ce_degrees",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_nondistributivity_of_ce_degrees"
+ },
+ {
+  "id": "e_24600",
+  "from": "s_ce_degrees_R",
+  "to": "t_thickness_lemma",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_high_set"
+ },
+ {
+  "id": "e_24601",
+  "from": "s_true_path",
+  "to": "t_thickness_lemma",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24602",
+  "from": "t_thickness_lemma",
+  "to": "s_high_set",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24603",
+  "from": "t_thickness_lemma",
+  "to": "s_high_low_hierarchy",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24604",
+  "from": "s_priority_method",
+  "to": "t_pinball_machine",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_sacks_density_theorem"
+ },
+ {
+  "id": "e_24605",
+  "from": "s_ce_degrees_R",
+  "to": "t_pinball_machine",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24606",
+  "from": "t_pinball_machine",
+  "to": "s_sacks_density_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_sacks_density_theorem"
+ },
+ {
+  "id": "e_24607",
+  "from": "s_true_path",
+  "to": "t_0_triple_prime_priority_argument",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_nondistributivity_of_ce_degrees"
+ },
+ {
+  "id": "e_24608",
+  "from": "s_priority_method",
+  "to": "t_0_triple_prime_priority_argument",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24609",
+  "from": "t_0_triple_prime_priority_argument",
+  "to": "s_nondistributivity_of_ce_degrees",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_nondistributivity_of_ce_degrees"
+ },
+ {
+  "id": "e_24610",
+  "from": "t_0_triple_prime_priority_argument",
+  "to": "s_nondiamond_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_nondiamond_theorem"
+ },
+ {
+  "id": "e_24611",
+  "from": "s_ce_degrees_R",
+  "to": "t_minimal_pair_construction",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_minimal_pair_theorem"
+ },
+ {
+  "id": "e_24612",
+  "from": "s_turing_reducibility",
+  "to": "t_minimal_pair_construction",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_minimal_pair_theorem"
+ },
+ {
+  "id": "e_24613",
+  "from": "t_minimal_pair_construction",
+  "to": "s_minimal_pair_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_minimal_pair_theorem"
+ },
+ {
+  "id": "e_24614",
+  "from": "s_minimal_degree",
+  "to": "t_spector_tree_forcing",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_spector_minimal_degree"
+ },
+ {
+  "id": "e_24615",
+  "from": "s_turing_jump_A_prime",
+  "to": "t_spector_tree_forcing",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24616",
+  "from": "t_spector_tree_forcing",
+  "to": "s_spector_minimal_degree",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_spector_minimal_degree"
+ },
+ {
+  "id": "e_24617",
+  "from": "t_spector_tree_forcing",
+  "to": "s_minimal_degree",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_spector_minimal_degree"
+ },
+ {
+  "id": "e_24618",
+  "from": "s_arithmetical_hierarchy",
+  "to": "t_cohen_forcing_in_arithmetic",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_low_basis_theorem"
+ },
+ {
+  "id": "e_24619",
+  "from": "s_1_generic_set",
+  "to": "t_cohen_forcing_in_arithmetic",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24620",
+  "from": "t_cohen_forcing_in_arithmetic",
+  "to": "s_1_generic_set",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24621",
+  "from": "t_cohen_forcing_in_arithmetic",
+  "to": "s_n_generic_degree",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24622",
+  "from": "t_godel_numbering",
+  "to": "s_enumeration_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_enumeration_theorem"
+ },
+ {
+  "id": "e_24623",
+  "from": "s_godel_index",
+  "to": "t_godel_numbering",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_enumeration_theorem"
+ },
+ {
+  "id": "e_24624",
+  "from": "s_partial_computable_function",
+  "to": "t_godel_numbering",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_enumeration_theorem"
+ },
+ {
+  "id": "e_24625",
+  "from": "t_godel_numbering",
+  "to": "s_kleene_normal_form_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_kleene_normal_form_theorem"
+ },
+ {
+  "id": "e_24626",
+  "from": "s_mu_operator_minimization",
+  "to": "t_godel_numbering",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_kleene_normal_form_theorem"
+ },
+ {
+  "id": "e_24627",
+  "from": "s_primitive_recursion_schema",
+  "to": "t_godel_numbering",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_kleene_normal_form_theorem"
+ },
+ {
+  "id": "e_24628",
+  "from": "s_arithmetical_hierarchy",
+  "to": "t_dovetailing",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_ce_equals_sigma01"
+ },
+ {
+  "id": "e_24629",
+  "from": "t_dovetailing",
+  "to": "s_post_complementation_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_post_complementation_theorem"
+ },
+ {
+  "id": "e_24630",
+  "from": "s_computably_enumerable_set",
+  "to": "t_dovetailing",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_post_complementation_theorem"
+ },
+ {
+  "id": "e_24631",
+  "from": "s_decidable_set",
+  "to": "t_dovetailing",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_post_complementation_theorem"
+ },
+ {
+  "id": "e_24632",
+  "from": "t_diagonalize",
+  "to": "s_recursion_theorem_with_parameters",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_recursion_theorem_with_parameters"
+ },
+ {
+  "id": "e_24633",
+  "from": "s_kleene_recursion_theorem",
+  "to": "t_diagonalize",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_recursion_theorem_with_parameters"
+ },
+ {
+  "id": "e_24634",
+  "from": "s_smn_theorem",
+  "to": "t_diagonalize",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_recursion_theorem_with_parameters"
+ },
+ {
+  "id": "e_24635",
+  "from": "t_construction_by_stages_markers",
+  "to": "s_myhill_isomorphism_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_myhill_isomorphism_theorem"
+ },
+ {
+  "id": "e_24636",
+  "from": "s_one_one_reducibility",
+  "to": "t_construction_by_stages_markers",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_myhill_isomorphism_theorem"
+ },
+ {
+  "id": "e_24637",
+  "from": "t_reduction_to_K",
+  "to": "s_myhill_creative_characterization",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_myhill_creative_characterization"
+ },
+ {
+  "id": "e_24638",
+  "from": "s_creative_set",
+  "to": "t_reduction_to_K",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_myhill_creative_characterization"
+ },
+ {
+  "id": "e_24639",
+  "from": "s_productive_set",
+  "to": "t_reduction_to_K",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_myhill_creative_characterization"
+ },
+ {
+  "id": "e_24640",
+  "from": "s_diagonal_halting_set_K0",
+  "to": "t_reduction_to_K",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_m_completeness_of_K"
+ },
+ {
+  "id": "e_24641",
+  "from": "t_relativization",
+  "to": "s_jump_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_jump_theorem"
+ },
+ {
+  "id": "e_24642",
+  "from": "s_turing_jump_A_prime",
+  "to": "t_relativization",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_jump_theorem"
+ },
+ {
+  "id": "e_24643",
+  "from": "s_oracle_turing_machine",
+  "to": "t_relativization",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_jump_theorem"
+ },
+ {
+  "id": "e_24644",
+  "from": "t_relativization",
+  "to": "s_posts_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_posts_theorem"
+ },
+ {
+  "id": "e_24645",
+  "from": "s_arithmetical_hierarchy",
+  "to": "t_relativization",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_posts_theorem"
+ },
+ {
+  "id": "e_24646",
+  "from": "s_jump_hierarchy",
+  "to": "t_relativization",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_posts_theorem"
+ },
+ {
+  "id": "e_24647",
+  "from": "t_diagonalize",
+  "to": "s_arithmetical_hierarchy_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_arithmetical_hierarchy_theorem"
+ },
+ {
+  "id": "e_24648",
+  "from": "s_arithmetical_hierarchy",
+  "to": "t_diagonalize",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_arithmetical_hierarchy_theorem"
+ },
+ {
+  "id": "e_24649",
+  "from": "s_jump_hierarchy",
+  "to": "t_diagonalize",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_arithmetical_hierarchy_theorem"
+ },
+ {
+  "id": "e_24650",
+  "from": "s_turing_jump_A_prime",
+  "to": "t_computable_approximation_delta02",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_limit_lemma"
+ },
+ {
+  "id": "e_24651",
+  "from": "s_computably_enumerable_set",
+  "to": "t_computable_approximation_delta02",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_modulus_lemma"
+ },
+ {
+  "id": "e_24652",
+  "from": "t_construction_by_stages_markers",
+  "to": "s_post_simple_set_existence",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_post_simple_set_existence"
+ },
+ {
+  "id": "e_24653",
+  "from": "s_simple_set",
+  "to": "t_construction_by_stages_markers",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_post_simple_set_existence"
+ },
+ {
+  "id": "e_24654",
+  "from": "s_immune_set",
+  "to": "t_construction_by_stages_markers",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_post_simple_set_existence"
+ },
+ {
+  "id": "e_24655",
+  "from": "t_diagonalize",
+  "to": "s_productive_not_ce",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_productive_not_ce"
+ },
+ {
+  "id": "e_24656",
+  "from": "s_productive_set",
+  "to": "t_diagonalize",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_productive_not_ce"
+ },
+ {
+  "id": "e_24657",
+  "from": "t_relativization",
+  "to": "s_relativization_principle",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_relativization_principle"
+ },
+ {
+  "id": "e_24658",
+  "from": "s_turing_reducibility",
+  "to": "t_kleene_post_finite_extension",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_kleene_post_theorem"
+ },
+ {
+  "id": "e_24659",
+  "from": "t_priority_requirements_and_injury",
+  "to": "s_incomparable_ce_degrees",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_incomparable_ce_degrees"
+ },
+ {
+  "id": "e_24660",
+  "from": "t_cohen_forcing_in_arithmetic",
+  "to": "s_low_basis_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_low_basis_theorem"
+ },
+ {
+  "id": "e_24661",
+  "from": "s_low_set",
+  "to": "t_cohen_forcing_in_arithmetic",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_low_basis_theorem"
+ },
+ {
+  "id": "e_24662",
+  "from": "t_spector_tree_forcing",
+  "to": "s_hyperimmune_free_basis_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_hyperimmune_free_basis_theorem"
+ },
+ {
+  "id": "e_24663",
+  "from": "s_hyperimmune_free_degree",
+  "to": "t_spector_tree_forcing",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_hyperimmune_free_basis_theorem"
+ },
+ {
+  "id": "e_24664",
+  "from": "s_join_of_degrees",
+  "to": "t_kleene_post_finite_extension",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_exact_pair_theorem"
+ },
+ {
+  "id": "e_24665",
+  "from": "t_finite_injury_priority_method",
+  "to": "s_lattice_embedding_into_ce_degrees",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_lattice_embedding_into_ce_degrees"
+ },
+ {
+  "id": "e_24666",
+  "from": "t_infinite_injury_priority_method",
+  "to": "s_robinson_low_splitting",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_robinson_low_splitting"
+ },
+ {
+  "id": "e_24667",
+  "from": "s_low_set",
+  "to": "t_infinite_injury_priority_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_robinson_low_splitting"
+ },
+ {
+  "id": "e_24668",
+  "from": "s_sacks_splitting_theorem",
+  "to": "t_infinite_injury_priority_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_robinson_low_splitting"
+ },
+ {
+  "id": "e_24669",
+  "from": "t_kleene_post_finite_extension",
+  "to": "s_friedberg_jump_inversion",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_friedberg_jump_inversion"
+ },
+ {
+  "id": "e_24670",
+  "from": "s_use_function",
+  "to": "t_length_of_agreement_function",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24671",
+  "from": "s_simple_set",
+  "to": "t_permitting",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24672",
+  "from": "s_hyperimmune_set",
+  "to": "t_construction_by_stages_markers",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24673",
+  "from": "s_n_ce_set",
+  "to": "t_computable_approximation_delta02",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_24674",
+  "from": "s_dce_set",
+  "to": "t_computable_approximation_delta02",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ }
+]
