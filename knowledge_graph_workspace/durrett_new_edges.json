@@ -1,0 +1,22 @@
+[
+  {"id":"e_23966","from":"s_lindeberg_condition","to":"t_lindeberg_replacement","role":"input","parameter_binding":{},"used_in_theorem":"s_lindeberg_feller_clt"},
+  {"id":"e_23967","from":"s_characteristic_function_of_sum","to":"t_lindeberg_replacement","role":"input","parameter_binding":{},"used_in_theorem":"s_central_limit_theorem"},
+  {"id":"e_23968","from":"t_lindeberg_replacement","to":"s_central_limit_theorem","role":"output","parameter_binding":{},"used_in_theorem":"s_central_limit_theorem"},
+  {"id":"e_23969","from":"t_lindeberg_replacement","to":"s_lindeberg_feller_clt","role":"output","parameter_binding":{},"used_in_theorem":"s_lindeberg_feller_clt"},
+  {"id":"e_23970","from":"t_lindeberg_replacement","to":"s_feller_clt_converse","role":"output","parameter_binding":{},"used_in_theorem":"s_feller_clt_converse"},
+  {"id":"e_23971","from":"s_simple_function","to":"t_standard_machine","role":"input","parameter_binding":{},"used_in_theorem":"s_fubini_theorem"},
+  {"id":"e_23972","from":"s_monotone_convergence_theorem","to":"t_standard_machine","role":"input","parameter_binding":{},"used_in_theorem":"s_fubini_theorem"},
+  {"id":"e_23973","from":"s_stieltjes_measure_function","to":"t_standard_machine","role":"input","parameter_binding":{},"used_in_theorem":"s_change_of_variables_in_integrals"},
+  {"id":"e_23974","from":"t_standard_machine","to":"s_fubini_theorem","role":"output","parameter_binding":{},"used_in_theorem":"s_fubini_theorem"},
+  {"id":"e_23975","from":"t_standard_machine","to":"s_change_of_variables_in_integrals","role":"output","parameter_binding":{},"used_in_theorem":"s_change_of_variables_in_integrals"},
+  {"id":"e_23976","from":"t_standard_machine","to":"s_layer_cake_decomposition","role":"output","parameter_binding":{},"used_in_theorem":"s_layer_cake_decomposition"},
+  {"id":"e_23977","from":"t_characteristic_function_method","to":"s_feller_clt_converse","role":"output","parameter_binding":{},"used_in_theorem":"s_feller_clt_converse"},
+  {"id":"e_23978","from":"t_characteristic_function_method","to":"s_esseen_smoothing_inequality","role":"output","parameter_binding":{},"used_in_theorem":"s_esseen_smoothing_inequality"},
+  {"id":"e_23979","from":"s_esseen_smoothing_inequality","to":"t_characteristic_function_method","role":"input","parameter_binding":{},"used_in_theorem":"s_berry_esseen"},
+  {"id":"e_23980","from":"s_invariant_sigma_algebra","to":"t_ergodic_correspondence","role":"input","parameter_binding":{},"used_in_theorem":"s_birkhoff_ergodic_theorem"},
+  {"id":"e_23981","from":"s_invariant_sigma_algebra","to":"t_ergodic_theory_approach","role":"input","parameter_binding":{},"used_in_theorem":"s_birkhoff_ergodic_theorem"},
+  {"id":"e_23982","from":"s_strong_mixing","to":"t_ergodic_correspondence","role":"input","parameter_binding":{},"used_in_theorem":"s_mixing_implies_ergodicity"},
+  {"id":"e_23983","from":"s_weak_mixing","to":"t_ergodic_correspondence","role":"input","parameter_binding":{},"used_in_theorem":"s_mixing_implies_ergodicity"},
+  {"id":"e_23984","from":"s_ergodicity_definition","to":"t_ergodic_correspondence","role":"input","parameter_binding":{},"used_in_theorem":"s_mixing_implies_ergodicity"},
+  {"id":"e_23985","from":"t_ergodic_correspondence","to":"s_mixing_implies_ergodicity","role":"output","parameter_binding":{},"used_in_theorem":"s_mixing_implies_ergodicity"}
+]

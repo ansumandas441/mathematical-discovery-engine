@@ -1,0 +1,1762 @@
+[
+  {
+    "id": "e_23746",
+    "from": "s_prefix_code",
+    "to": "t_huffman_code",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_huffman_optimality"
+  },
+  {
+    "id": "e_23747",
+    "from": "s_kraft_inequality",
+    "to": "t_huffman_code",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_huffman_optimality"
+  },
+  {
+    "id": "e_23748",
+    "from": "s_entropy_bound_codeword_length",
+    "to": "t_huffman_code",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_huffman_optimality"
+  },
+  {
+    "id": "e_23749",
+    "from": "t_huffman_code",
+    "to": "s_huffman_optimality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_huffman_optimality"
+  },
+  {
+    "id": "e_23750",
+    "from": "s_prefix_code",
+    "to": "t_shannon_fano_elias_code",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shannon_code"
+  },
+  {
+    "id": "e_23751",
+    "from": "t_shannon_fano_elias_code",
+    "to": "s_shannon_code",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shannon_code"
+  },
+  {
+    "id": "e_23752",
+    "from": "t_shannon_fano_elias_code",
+    "to": "s_competitive_optimality_shannon",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_competitive_optimality_shannon"
+  },
+  {
+    "id": "e_23753",
+    "from": "s_prefix_code",
+    "to": "t_arithmetic_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shannon_code_optimality_bound"
+  },
+  {
+    "id": "e_23754",
+    "from": "s_shannon_code",
+    "to": "t_arithmetic_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shannon_code_optimality_bound"
+  },
+  {
+    "id": "e_23755",
+    "from": "t_arithmetic_coding",
+    "to": "s_shannon_code_optimality_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_shannon_code_optimality_bound"
+  },
+  {
+    "id": "e_23756",
+    "from": "s_channel_capacity",
+    "to": "t_random_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_theorem"
+  },
+  {
+    "id": "e_23757",
+    "from": "s_joint_aep",
+    "to": "t_random_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_theorem"
+  },
+  {
+    "id": "e_23758",
+    "from": "s_jointly_typical_set",
+    "to": "t_random_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_theorem"
+  },
+  {
+    "id": "e_23759",
+    "from": "t_random_coding",
+    "to": "s_channel_coding_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_theorem"
+  },
+  {
+    "id": "e_23760",
+    "from": "s_jointly_typical_set",
+    "to": "t_jointly_typical_decoding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_theorem"
+  },
+  {
+    "id": "e_23761",
+    "from": "s_joint_aep",
+    "to": "t_jointly_typical_decoding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_theorem"
+  },
+  {
+    "id": "e_23762",
+    "from": "t_jointly_typical_decoding",
+    "to": "s_channel_coding_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_theorem"
+  },
+  {
+    "id": "e_23763",
+    "from": "s_gaussian_channel",
+    "to": "t_sphere_packing_gaussian",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_channel_capacity"
+  },
+  {
+    "id": "e_23764",
+    "from": "t_sphere_packing_gaussian",
+    "to": "s_gaussian_channel_capacity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_channel_capacity"
+  },
+  {
+    "id": "e_23765",
+    "from": "s_parallel_gaussian_channels",
+    "to": "t_water_filling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_colored_gaussian_noise"
+  },
+  {
+    "id": "e_23766",
+    "from": "t_water_filling",
+    "to": "s_colored_gaussian_noise",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_colored_gaussian_noise"
+  },
+  {
+    "id": "e_23767",
+    "from": "t_water_filling",
+    "to": "s_parallel_gaussian_rate_distortion",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_parallel_gaussian_rate_distortion"
+  },
+  {
+    "id": "e_23768",
+    "from": "s_channel_capacity",
+    "to": "t_blahut_arimoto",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_capacity_double_minimization"
+  },
+  {
+    "id": "e_23769",
+    "from": "s_rate_distortion_function",
+    "to": "t_blahut_arimoto",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_capacity_double_minimization"
+  },
+  {
+    "id": "e_23770",
+    "from": "t_blahut_arimoto",
+    "to": "s_channel_capacity_double_minimization",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_capacity_double_minimization"
+  },
+  {
+    "id": "e_23771",
+    "from": "s_type_of_sequence",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_number_of_types_bound"
+  },
+  {
+    "id": "e_23772",
+    "from": "s_relative_entropy_functional",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_number_of_types_bound"
+  },
+  {
+    "id": "e_23773",
+    "from": "t_method_of_types",
+    "to": "s_number_of_types_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_number_of_types_bound"
+  },
+  {
+    "id": "e_23774",
+    "from": "t_method_of_types",
+    "to": "s_probability_of_sequence_by_type",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_probability_of_sequence_by_type"
+  },
+  {
+    "id": "e_23775",
+    "from": "t_method_of_types",
+    "to": "s_type_class_size_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_type_class_size_bound"
+  },
+  {
+    "id": "e_23776",
+    "from": "t_method_of_types",
+    "to": "s_type_class_probability_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_type_class_probability_bound"
+  },
+  {
+    "id": "e_23777",
+    "from": "t_method_of_types",
+    "to": "s_universal_source_code_via_types",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_universal_source_code_via_types"
+  },
+  {
+    "id": "e_23778",
+    "from": "t_method_of_types",
+    "to": "s_multivariate_aep_general",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_multivariate_aep_general"
+  },
+  {
+    "id": "e_23779",
+    "from": "s_relative_entropy_functional",
+    "to": "t_large_deviation_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conditional_limit_theorem"
+  },
+  {
+    "id": "e_23780",
+    "from": "s_type_class_probability_bound",
+    "to": "t_large_deviation_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conditional_limit_theorem"
+  },
+  {
+    "id": "e_23781",
+    "from": "t_large_deviation_theory",
+    "to": "s_conditional_limit_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conditional_limit_theorem"
+  },
+  {
+    "id": "e_23782",
+    "from": "t_large_deviation_theory",
+    "to": "s_pythagorean_relative_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_pythagorean_relative_entropy"
+  },
+  {
+    "id": "e_23783",
+    "from": "t_large_deviation_theory",
+    "to": "s_chernoff_stein_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chernoff_stein_lemma"
+  },
+  {
+    "id": "e_23784",
+    "from": "t_large_deviation_theory",
+    "to": "s_bayesian_error_exponent",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bayesian_error_exponent"
+  },
+  {
+    "id": "e_23785",
+    "from": "t_large_deviation_theory",
+    "to": "s_i_projection",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_i_projection"
+  },
+  {
+    "id": "e_23786",
+    "from": "s_entropy_rate",
+    "to": "t_lz78_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimality_of_lz78"
+  },
+  {
+    "id": "e_23787",
+    "from": "s_tree_structured_lz_parsing",
+    "to": "t_lz78_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimality_of_lz78"
+  },
+  {
+    "id": "e_23788",
+    "from": "s_ziv_lempel_distinct_phrases_bound",
+    "to": "t_lz78_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimality_of_lz78"
+  },
+  {
+    "id": "e_23789",
+    "from": "t_lz78_coding",
+    "to": "s_optimality_of_lz78",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimality_of_lz78"
+  },
+  {
+    "id": "e_23790",
+    "from": "s_entropy_rate",
+    "to": "t_lz77_sliding_window",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimality_of_lz77"
+  },
+  {
+    "id": "e_23791",
+    "from": "t_lz77_sliding_window",
+    "to": "s_optimality_of_lz77",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimality_of_lz77"
+  },
+  {
+    "id": "e_23792",
+    "from": "s_horse_race",
+    "to": "t_universal_gambling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_occams_razor"
+  },
+  {
+    "id": "e_23793",
+    "from": "s_universal_probability",
+    "to": "t_universal_gambling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_occams_razor"
+  },
+  {
+    "id": "e_23794",
+    "from": "s_kolmogorov_complexity",
+    "to": "t_universal_gambling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_occams_razor"
+  },
+  {
+    "id": "e_23795",
+    "from": "t_universal_gambling",
+    "to": "s_occams_razor",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_occams_razor"
+  },
+  {
+    "id": "e_23796",
+    "from": "s_multiple_access_channel",
+    "to": "t_successive_cancellation_decoding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mac_capacity_region"
+  },
+  {
+    "id": "e_23797",
+    "from": "s_joint_aep",
+    "to": "t_successive_cancellation_decoding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mac_capacity_region"
+  },
+  {
+    "id": "e_23798",
+    "from": "t_successive_cancellation_decoding",
+    "to": "s_mac_capacity_region",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mac_capacity_region"
+  },
+  {
+    "id": "e_23799",
+    "from": "t_successive_cancellation_decoding",
+    "to": "s_gaussian_mac_capacity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_mac_capacity"
+  },
+  {
+    "id": "e_23800",
+    "from": "s_degraded_broadcast_channel",
+    "to": "t_superposition_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_degraded_broadcast_capacity_region"
+  },
+  {
+    "id": "e_23801",
+    "from": "s_joint_aep",
+    "to": "t_superposition_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_degraded_broadcast_capacity_region"
+  },
+  {
+    "id": "e_23802",
+    "from": "t_superposition_coding",
+    "to": "s_degraded_broadcast_capacity_region",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_degraded_broadcast_capacity_region"
+  },
+  {
+    "id": "e_23803",
+    "from": "t_superposition_coding",
+    "to": "s_gaussian_broadcast_channel",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_broadcast_channel"
+  },
+  {
+    "id": "e_23804",
+    "from": "s_random_binning_scheme",
+    "to": "t_binning_for_side_information",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gelfand_pinsker_channel"
+  },
+  {
+    "id": "e_23805",
+    "from": "s_joint_aep",
+    "to": "t_binning_for_side_information",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gelfand_pinsker_channel"
+  },
+  {
+    "id": "e_23806",
+    "from": "t_binning_for_side_information",
+    "to": "s_gelfand_pinsker_channel",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gelfand_pinsker_channel"
+  },
+  {
+    "id": "e_23807",
+    "from": "t_binning_for_side_information",
+    "to": "s_writing_on_dirty_paper",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_writing_on_dirty_paper"
+  },
+  {
+    "id": "e_23808",
+    "from": "s_stock_market_model",
+    "to": "t_universal_portfolio",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_universal_portfolio_optimality"
+  },
+  {
+    "id": "e_23809",
+    "from": "s_constant_rebalanced_portfolio",
+    "to": "t_universal_portfolio",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_universal_portfolio_optimality"
+  },
+  {
+    "id": "e_23810",
+    "from": "s_log_optimal_portfolio",
+    "to": "t_universal_portfolio",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_universal_portfolio_optimality"
+  },
+  {
+    "id": "e_23811",
+    "from": "t_universal_portfolio",
+    "to": "s_universal_portfolio_optimality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_universal_portfolio_optimality"
+  },
+  {
+    "id": "e_23812",
+    "from": "s_relative_entropy_functional",
+    "to": "t_change_of_measure_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_information_inequality"
+  },
+  {
+    "id": "e_23813",
+    "from": "t_change_of_measure_technique",
+    "to": "s_information_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_information_inequality"
+  },
+  {
+    "id": "e_23814",
+    "from": "s_information_inequality",
+    "to": "t_change_of_measure_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_nonnegativity_mutual_information"
+  },
+  {
+    "id": "e_23815",
+    "from": "s_mutual_information",
+    "to": "t_change_of_measure_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_nonnegativity_mutual_information"
+  },
+  {
+    "id": "e_23816",
+    "from": "t_change_of_measure_technique",
+    "to": "s_nonnegativity_mutual_information",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_nonnegativity_mutual_information"
+  },
+  {
+    "id": "e_23817",
+    "from": "t_change_of_measure_technique",
+    "to": "s_uniform_maximizes_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniform_maximizes_entropy"
+  },
+  {
+    "id": "e_23818",
+    "from": "t_change_of_measure_technique",
+    "to": "s_wrong_code_penalty",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_wrong_code_penalty"
+  },
+  {
+    "id": "e_23819",
+    "from": "s_chain_rule_mutual_information",
+    "to": "t_change_of_measure_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_data_processing_inequality"
+  },
+  {
+    "id": "e_23820",
+    "from": "s_nonnegativity_mutual_information",
+    "to": "t_change_of_measure_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_data_processing_inequality"
+  },
+  {
+    "id": "e_23821",
+    "from": "t_change_of_measure_technique",
+    "to": "s_data_processing_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_data_processing_inequality"
+  },
+  {
+    "id": "e_23822",
+    "from": "t_change_of_measure_technique",
+    "to": "s_le_cam_l1_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_le_cam_l1_entropy"
+  },
+  {
+    "id": "e_23823",
+    "from": "t_change_of_measure_technique",
+    "to": "s_second_law_thermodynamics_markov",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_second_law_thermodynamics_markov"
+  },
+  {
+    "id": "e_23824",
+    "from": "t_change_of_measure_technique",
+    "to": "s_entropy_bound_codeword_length",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_bound_codeword_length"
+  },
+  {
+    "id": "e_23825",
+    "from": "t_convex_optimization",
+    "to": "s_log_sum_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_log_sum_inequality"
+  },
+  {
+    "id": "e_23826",
+    "from": "s_log_sum_inequality",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_convexity_relative_entropy"
+  },
+  {
+    "id": "e_23827",
+    "from": "t_convex_optimization",
+    "to": "s_convexity_relative_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_convexity_relative_entropy"
+  },
+  {
+    "id": "e_23828",
+    "from": "t_convex_optimization",
+    "to": "s_concavity_of_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_concavity_of_entropy"
+  },
+  {
+    "id": "e_23829",
+    "from": "s_concavity_of_entropy",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mi_concave_convex"
+  },
+  {
+    "id": "e_23830",
+    "from": "t_convex_optimization",
+    "to": "s_mi_concave_convex",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mi_concave_convex"
+  },
+  {
+    "id": "e_23831",
+    "from": "s_rate_distortion_function",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rate_distortion_convexity"
+  },
+  {
+    "id": "e_23832",
+    "from": "t_convex_optimization",
+    "to": "s_rate_distortion_convexity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rate_distortion_convexity"
+  },
+  {
+    "id": "e_23833",
+    "from": "s_log_optimal_portfolio",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kuhn_tucker_log_optimal"
+  },
+  {
+    "id": "e_23834",
+    "from": "s_kkt_conditions",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kuhn_tucker_log_optimal"
+  },
+  {
+    "id": "e_23835",
+    "from": "t_convex_optimization",
+    "to": "s_kuhn_tucker_log_optimal",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kuhn_tucker_log_optimal"
+  },
+  {
+    "id": "e_23836",
+    "from": "s_maximum_entropy_principle",
+    "to": "t_lagrange_multipliers",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximum_entropy_distribution"
+  },
+  {
+    "id": "e_23837",
+    "from": "s_differential_entropy",
+    "to": "t_lagrange_multipliers",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximum_entropy_distribution"
+  },
+  {
+    "id": "e_23838",
+    "from": "t_lagrange_multipliers",
+    "to": "s_maximum_entropy_distribution",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximum_entropy_distribution"
+  },
+  {
+    "id": "e_23839",
+    "from": "t_lagrange_multipliers",
+    "to": "s_max_entropy_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_max_entropy_theorem"
+  },
+  {
+    "id": "e_23840",
+    "from": "s_gaussian_channel_capacity",
+    "to": "t_lagrange_multipliers",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_parallel_gaussian_channels"
+  },
+  {
+    "id": "e_23841",
+    "from": "t_lagrange_multipliers",
+    "to": "s_parallel_gaussian_channels",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_parallel_gaussian_channels"
+  },
+  {
+    "id": "e_23842",
+    "from": "t_lagrange_multipliers",
+    "to": "s_anomalous_max_entropy_no_solution",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anomalous_max_entropy_no_solution"
+  },
+  {
+    "id": "e_23843",
+    "from": "s_max_entropy_theorem",
+    "to": "t_lagrange_multipliers",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_burg_maximum_entropy_theorem"
+  },
+  {
+    "id": "e_23844",
+    "from": "t_lagrange_multipliers",
+    "to": "s_burg_maximum_entropy_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_burg_maximum_entropy_theorem"
+  },
+  {
+    "id": "e_23845",
+    "from": "s_likelihood_ratio_test",
+    "to": "t_chernoff_bound_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chernoff_information"
+  },
+  {
+    "id": "e_23846",
+    "from": "s_relative_entropy_functional",
+    "to": "t_chernoff_bound_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chernoff_information"
+  },
+  {
+    "id": "e_23847",
+    "from": "t_chernoff_bound_technique",
+    "to": "s_chernoff_information",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chernoff_information"
+  },
+  {
+    "id": "e_23848",
+    "from": "s_independence_bound_entropy",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_han_inequality"
+  },
+  {
+    "id": "e_23849",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_han_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_han_inequality"
+  },
+  {
+    "id": "e_23850",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_han_inequality_relative_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_han_inequality_relative_entropy"
+  },
+  {
+    "id": "e_23851",
+    "from": "s_relative_entropy_functional",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_han_inequality_relative_entropy"
+  },
+  {
+    "id": "e_23852",
+    "from": "s_conditional_entropy",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chain_rule_entropy"
+  },
+  {
+    "id": "e_23853",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_chain_rule_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chain_rule_entropy"
+  },
+  {
+    "id": "e_23854",
+    "from": "s_conditional_mutual_information",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chain_rule_mutual_information"
+  },
+  {
+    "id": "e_23855",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_chain_rule_mutual_information",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chain_rule_mutual_information"
+  },
+  {
+    "id": "e_23856",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_chain_rule_relative_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_chain_rule_relative_entropy"
+  },
+  {
+    "id": "e_23857",
+    "from": "s_mutual_information",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mi_entropy_relations"
+  },
+  {
+    "id": "e_23858",
+    "from": "s_entropy",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mi_entropy_relations"
+  },
+  {
+    "id": "e_23859",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_mi_entropy_relations",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mi_entropy_relations"
+  },
+  {
+    "id": "e_23860",
+    "from": "s_nonnegativity_mutual_information",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conditioning_reduces_entropy"
+  },
+  {
+    "id": "e_23861",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_conditioning_reduces_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conditioning_reduces_entropy"
+  },
+  {
+    "id": "e_23862",
+    "from": "s_chain_rule_entropy",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_independence_bound_entropy"
+  },
+  {
+    "id": "e_23863",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_independence_bound_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_independence_bound_entropy"
+  },
+  {
+    "id": "e_23864",
+    "from": "s_binary_entropy_function",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fanos_inequality"
+  },
+  {
+    "id": "e_23865",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_fanos_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fanos_inequality"
+  },
+  {
+    "id": "e_23866",
+    "from": "s_joint_entropy",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_rate_conditional_form"
+  },
+  {
+    "id": "e_23867",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_entropy_rate_conditional_form",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_rate_conditional_form"
+  },
+  {
+    "id": "e_23868",
+    "from": "s_entropy_rate",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_entropy_rate"
+  },
+  {
+    "id": "e_23869",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_markov_entropy_rate",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_entropy_rate"
+  },
+  {
+    "id": "e_23870",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_hidden_markov_entropy_rate",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hidden_markov_entropy_rate"
+  },
+  {
+    "id": "e_23871",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_subset_inequalities_determinant",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_subset_inequalities_determinant"
+  },
+  {
+    "id": "e_23872",
+    "from": "s_han_inequality",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_subset_inequalities_determinant"
+  },
+  {
+    "id": "e_23873",
+    "from": "s_weak_law_large_numbers",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aep"
+  },
+  {
+    "id": "e_23874",
+    "from": "t_method_of_types",
+    "to": "s_aep",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aep"
+  },
+  {
+    "id": "e_23875",
+    "from": "s_typical_set",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_typical_set_properties"
+  },
+  {
+    "id": "e_23876",
+    "from": "t_method_of_types",
+    "to": "s_typical_set_properties",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_typical_set_properties"
+  },
+  {
+    "id": "e_23877",
+    "from": "s_typical_set_properties",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aep_source_coding"
+  },
+  {
+    "id": "e_23878",
+    "from": "t_method_of_types",
+    "to": "s_aep_source_coding",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aep_source_coding"
+  },
+  {
+    "id": "e_23879",
+    "from": "s_jointly_typical_set",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_joint_aep"
+  },
+  {
+    "id": "e_23880",
+    "from": "t_method_of_types",
+    "to": "s_joint_aep",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_joint_aep"
+  },
+  {
+    "id": "e_23881",
+    "from": "s_differential_entropy",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aep_differential"
+  },
+  {
+    "id": "e_23882",
+    "from": "t_method_of_types",
+    "to": "s_aep_differential",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aep_differential"
+  },
+  {
+    "id": "e_23883",
+    "from": "s_fanos_inequality",
+    "to": "t_change_of_measure_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_converse"
+  },
+  {
+    "id": "e_23884",
+    "from": "s_data_processing_inequality",
+    "to": "t_change_of_measure_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_converse"
+  },
+  {
+    "id": "e_23885",
+    "from": "s_channel_capacity",
+    "to": "t_change_of_measure_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_converse"
+  },
+  {
+    "id": "e_23886",
+    "from": "t_change_of_measure_technique",
+    "to": "s_channel_coding_converse",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_channel_coding_converse"
+  },
+  {
+    "id": "e_23887",
+    "from": "s_channel_coding_converse",
+    "to": "t_change_of_measure_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_feedback_capacity"
+  },
+  {
+    "id": "e_23888",
+    "from": "t_change_of_measure_technique",
+    "to": "s_feedback_capacity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_feedback_capacity"
+  },
+  {
+    "id": "e_23889",
+    "from": "s_channel_coding_theorem",
+    "to": "t_random_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_source_channel_separation"
+  },
+  {
+    "id": "e_23890",
+    "from": "t_random_coding",
+    "to": "s_source_channel_separation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_source_channel_separation"
+  },
+  {
+    "id": "e_23891",
+    "from": "s_rate_distortion_function",
+    "to": "t_random_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rate_distortion_theorem"
+  },
+  {
+    "id": "e_23892",
+    "from": "t_random_coding",
+    "to": "s_rate_distortion_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rate_distortion_theorem"
+  },
+  {
+    "id": "e_23893",
+    "from": "s_rate_distortion_theorem",
+    "to": "t_blahut_arimoto",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bernoulli_rate_distortion"
+  },
+  {
+    "id": "e_23894",
+    "from": "t_blahut_arimoto",
+    "to": "s_bernoulli_rate_distortion",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bernoulli_rate_distortion"
+  },
+  {
+    "id": "e_23895",
+    "from": "t_lagrange_multipliers",
+    "to": "s_gaussian_maximizes_differential_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_maximizes_differential_entropy"
+  },
+  {
+    "id": "e_23896",
+    "from": "t_lagrange_multipliers",
+    "to": "s_multivariate_gaussian_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_multivariate_gaussian_entropy"
+  },
+  {
+    "id": "e_23897",
+    "from": "s_multivariate_gaussian_entropy",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hadamard_information_inequality"
+  },
+  {
+    "id": "e_23898",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_hadamard_information_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hadamard_information_inequality"
+  },
+  {
+    "id": "e_23899",
+    "from": "s_gaussian_channel_capacity",
+    "to": "t_sphere_packing_gaussian",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bandlimited_channel_capacity"
+  },
+  {
+    "id": "e_23900",
+    "from": "t_sphere_packing_gaussian",
+    "to": "s_bandlimited_channel_capacity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bandlimited_channel_capacity"
+  },
+  {
+    "id": "e_23901",
+    "from": "t_lagrange_multipliers",
+    "to": "s_gaussian_feedback_capacity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_feedback_capacity"
+  },
+  {
+    "id": "e_23902",
+    "from": "s_rate_distortion_function",
+    "to": "t_lagrange_multipliers",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_rate_distortion"
+  },
+  {
+    "id": "e_23903",
+    "from": "t_lagrange_multipliers",
+    "to": "s_gaussian_rate_distortion",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_rate_distortion"
+  },
+  {
+    "id": "e_23904",
+    "from": "s_maximum_entropy_distribution",
+    "to": "t_lagrange_multipliers",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximum_entropy_spectral_estimation"
+  },
+  {
+    "id": "e_23905",
+    "from": "t_lagrange_multipliers",
+    "to": "s_maximum_entropy_spectral_estimation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximum_entropy_spectral_estimation"
+  },
+  {
+    "id": "e_23906",
+    "from": "s_universal_source_code_via_types",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_minimax_redundancy"
+  },
+  {
+    "id": "e_23907",
+    "from": "t_method_of_types",
+    "to": "s_minimax_redundancy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_minimax_redundancy"
+  },
+  {
+    "id": "e_23908",
+    "from": "t_method_of_types",
+    "to": "s_redundancy_of_code",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_redundancy_of_code"
+  },
+  {
+    "id": "e_23909",
+    "from": "t_universal_gambling",
+    "to": "s_universality_kolmogorov_complexity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_universality_kolmogorov_complexity"
+  },
+  {
+    "id": "e_23910",
+    "from": "t_universal_gambling",
+    "to": "s_kolmogorov_complexity_bounds",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kolmogorov_complexity_bounds"
+  },
+  {
+    "id": "e_23911",
+    "from": "t_universal_gambling",
+    "to": "s_kolmogorov_complexity_and_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kolmogorov_complexity_and_entropy"
+  },
+  {
+    "id": "e_23912",
+    "from": "t_universal_gambling",
+    "to": "s_universal_probability_complexity_relation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_universal_probability_complexity_relation"
+  },
+  {
+    "id": "e_23913",
+    "from": "t_universal_gambling",
+    "to": "s_undecidability_of_kolmogorov_complexity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_undecidability_of_kolmogorov_complexity"
+  },
+  {
+    "id": "e_23914",
+    "from": "s_slepian_wolf_rate_region",
+    "to": "t_random_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_correlated_sources_over_mac"
+  },
+  {
+    "id": "e_23915",
+    "from": "s_random_binning_scheme",
+    "to": "t_random_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_correlated_sources_over_mac"
+  },
+  {
+    "id": "e_23916",
+    "from": "t_random_coding",
+    "to": "s_correlated_sources_over_mac",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_correlated_sources_over_mac"
+  },
+  {
+    "id": "e_23917",
+    "from": "t_random_coding",
+    "to": "s_slepian_wolf_rate_region",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_slepian_wolf_rate_region"
+  },
+  {
+    "id": "e_23918",
+    "from": "s_relay_channel",
+    "to": "t_superposition_coding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_relay_channel_capacity_degraded"
+  },
+  {
+    "id": "e_23919",
+    "from": "t_superposition_coding",
+    "to": "s_relay_channel_capacity_degraded",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_relay_channel_capacity_degraded"
+  },
+  {
+    "id": "e_23920",
+    "from": "s_interference_channel",
+    "to": "t_jointly_typical_decoding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_interference_strong"
+  },
+  {
+    "id": "e_23921",
+    "from": "t_jointly_typical_decoding",
+    "to": "s_gaussian_interference_strong",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_interference_strong"
+  },
+  {
+    "id": "e_23922",
+    "from": "s_gelfand_pinsker_channel",
+    "to": "t_binning_for_side_information",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_source_channel_separation_networks"
+  },
+  {
+    "id": "e_23923",
+    "from": "t_binning_for_side_information",
+    "to": "s_source_channel_separation_networks",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_source_channel_separation_networks"
+  },
+  {
+    "id": "e_23924",
+    "from": "s_horse_race",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kelly_proportional_betting"
+  },
+  {
+    "id": "e_23925",
+    "from": "s_doubling_rate",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kelly_proportional_betting"
+  },
+  {
+    "id": "e_23926",
+    "from": "t_convex_optimization",
+    "to": "s_kelly_proportional_betting",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kelly_proportional_betting"
+  },
+  {
+    "id": "e_23927",
+    "from": "s_kelly_proportional_betting",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conservation_theorem_gambling"
+  },
+  {
+    "id": "e_23928",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_conservation_theorem_gambling",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conservation_theorem_gambling"
+  },
+  {
+    "id": "e_23929",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_gambling_side_information",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gambling_side_information"
+  },
+  {
+    "id": "e_23930",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_dependent_horse_races",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_dependent_horse_races"
+  },
+  {
+    "id": "e_23931",
+    "from": "t_universal_gambling",
+    "to": "s_entropy_of_english",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_of_english"
+  },
+  {
+    "id": "e_23932",
+    "from": "s_entropy_rate",
+    "to": "t_universal_gambling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_of_english"
+  },
+  {
+    "id": "e_23933",
+    "from": "t_convex_optimization",
+    "to": "s_competitive_optimality_log_optimal",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_competitive_optimality_log_optimal"
+  },
+  {
+    "id": "e_23934",
+    "from": "t_convex_optimization",
+    "to": "s_expected_ratio_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_expected_ratio_bound"
+  },
+  {
+    "id": "e_23935",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_side_information_growth_rate",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_side_information_growth_rate"
+  },
+  {
+    "id": "e_23936",
+    "from": "s_log_optimal_portfolio",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_growth_rate_stationary_market"
+  },
+  {
+    "id": "e_23937",
+    "from": "t_method_of_types",
+    "to": "s_growth_rate_stationary_market",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_growth_rate_stationary_market"
+  },
+  {
+    "id": "e_23938",
+    "from": "s_de_bruijn_identity",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_power_inequality"
+  },
+  {
+    "id": "e_23939",
+    "from": "s_fisher_information_inequality",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_power_inequality"
+  },
+  {
+    "id": "e_23940",
+    "from": "t_convex_optimization",
+    "to": "s_entropy_power_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_power_inequality"
+  },
+  {
+    "id": "e_23941",
+    "from": "s_fisher_information",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fisher_information_inequality"
+  },
+  {
+    "id": "e_23942",
+    "from": "t_convex_optimization",
+    "to": "s_fisher_information_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fisher_information_inequality"
+  },
+  {
+    "id": "e_23943",
+    "from": "s_fisher_information",
+    "to": "t_lagrange_multipliers",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cramer_rao_fisher_form"
+  },
+  {
+    "id": "e_23944",
+    "from": "s_cramer_rao_inequality",
+    "to": "t_lagrange_multipliers",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cramer_rao_fisher_form"
+  },
+  {
+    "id": "e_23945",
+    "from": "t_lagrange_multipliers",
+    "to": "s_cramer_rao_fisher_form",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cramer_rao_fisher_form"
+  },
+  {
+    "id": "e_23946",
+    "from": "t_lagrange_multipliers",
+    "to": "s_de_bruijn_identity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_de_bruijn_identity"
+  },
+  {
+    "id": "e_23947",
+    "from": "s_relative_entropy_functional",
+    "to": "t_lagrange_multipliers",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_relative_entropy_fisher_information"
+  },
+  {
+    "id": "e_23948",
+    "from": "t_lagrange_multipliers",
+    "to": "s_relative_entropy_fisher_information",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_relative_entropy_fisher_information"
+  },
+  {
+    "id": "e_23949",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_minkowski_determinant_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_minkowski_determinant_inequality"
+  },
+  {
+    "id": "e_23950",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_szasz_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_szasz_inequality"
+  },
+  {
+    "id": "e_23951",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_cauchy_schwarz_inequality_it",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cauchy_schwarz_inequality_it"
+  },
+  {
+    "id": "e_23952",
+    "from": "t_universal_gambling",
+    "to": "s_kolmogorov_sufficient_statistic",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kolmogorov_sufficient_statistic"
+  },
+  {
+    "id": "e_23953",
+    "from": "t_method_of_types",
+    "to": "s_relation_discrete_differential",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_relation_discrete_differential"
+  },
+  {
+    "id": "e_23954",
+    "from": "s_channel_capacity",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bsc"
+  },
+  {
+    "id": "e_23955",
+    "from": "t_convex_optimization",
+    "to": "s_bsc",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bsc"
+  },
+  {
+    "id": "e_23956",
+    "from": "t_convex_optimization",
+    "to": "s_bec",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bec"
+  },
+  {
+    "id": "e_23957",
+    "from": "t_convex_optimization",
+    "to": "s_symmetric_channel",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_symmetric_channel"
+  },
+  {
+    "id": "e_23958",
+    "from": "t_method_of_types",
+    "to": "s_high_probability_set",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_high_probability_set"
+  },
+  {
+    "id": "e_23959",
+    "from": "s_differential_entropy",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_power"
+  },
+  {
+    "id": "e_23960",
+    "from": "t_convex_optimization",
+    "to": "s_entropy_power",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropy_power"
+  },
+  {
+    "id": "e_23961",
+    "from": "t_convex_optimization",
+    "to": "s_fisher_information_matrix_vector",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fisher_information_matrix_vector"
+  },
+  {
+    "id": "e_23962",
+    "from": "s_stock_market_model",
+    "to": "t_convex_optimization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_doubling_rate_portfolio"
+  },
+  {
+    "id": "e_23963",
+    "from": "t_convex_optimization",
+    "to": "s_doubling_rate_portfolio",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_doubling_rate_portfolio"
+  },
+  {
+    "id": "e_23964",
+    "from": "s_tree_structured_lz_parsing",
+    "to": "t_method_of_types",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ziv_lempel_distinct_phrases_bound"
+  },
+  {
+    "id": "e_23965",
+    "from": "t_method_of_types",
+    "to": "s_ziv_lempel_distinct_phrases_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ziv_lempel_distinct_phrases_bound"
+  }
+]

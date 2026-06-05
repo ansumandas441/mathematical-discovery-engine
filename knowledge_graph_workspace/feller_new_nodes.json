@@ -1,0 +1,135 @@
+[
+  {
+    "id": "t_multiplication_counting_principle",
+    "kind": "technique",
+    "name": "Multiplication (fundamental counting) principle",
+    "function_signature": "(stages s_1,...,s_k with n_1,...,n_k choices each) → (total number of outcomes n_1·n_2·…·n_k)",
+    "description": "The number of ways to perform a sequence of independent choices equals the product of the number of options available at each stage."
+  },
+  {
+    "id": "s_ordered_samples_with_replacement",
+    "kind": "state",
+    "name": "Ordered samples with replacement",
+    "type_signature": "Count",
+    "description": "The set of ordered r-tuples drawn with repetition allowed from n distinct objects, of which there are exactly n^r."
+  },
+  {
+    "id": "s_ordered_samples_without_replacement",
+    "kind": "state",
+    "name": "Ordered samples without replacement (permutations of r from n)",
+    "type_signature": "Count",
+    "description": "The set of ordered r-tuples of distinct elements chosen from n objects, of which there are exactly the falling factorial (n)_r = n!/(n−r)!."
+  },
+  {
+    "id": "t_combinations_with_repetition",
+    "kind": "technique",
+    "name": "Combinations with repetition (stars and bars)",
+    "function_signature": "(n cell types, r indistinguishable items) → (number of unordered selections C(n+r−1, r))",
+    "description": "A bijective counting technique placing r identical items into n categories by arranging r stars and n−1 bars, giving C(n+r−1, r) multisets."
+  },
+  {
+    "id": "s_occupancy_model",
+    "kind": "axiom",
+    "name": "Occupancy (balls in cells) model",
+    "type_signature": "RandomPlacement(Balls, Cells)",
+    "description": "The combinatorial probability model in which r balls are distributed among n cells, parametrizing classical distinguishability and exclusion assumptions."
+  },
+  {
+    "id": "s_maxwell_boltzmann_statistics",
+    "kind": "state",
+    "name": "Maxwell–Boltzmann statistics",
+    "type_signature": "OccupancyScheme",
+    "description": "The occupancy scheme in which r distinguishable balls are placed independently and uniformly into n cells, yielding n^r equally likely arrangements."
+  },
+  {
+    "id": "s_boole_inequality",
+    "kind": "theorem",
+    "name": "Boole's inequality (subadditivity)",
+    "type_signature": "Inequality",
+    "description": "The probability of a finite or countable union of events is at most the sum of their individual probabilities."
+  },
+  {
+    "id": "s_multinomial_theorem",
+    "kind": "theorem",
+    "name": "Multinomial theorem",
+    "type_signature": "AlgebraicIdentity",
+    "description": "The expansion of (x_1+…+x_m)^n as a sum over compositions of n of multinomial-coefficient-weighted monomials."
+  },
+  {
+    "id": "s_probability_exactly_m_events",
+    "kind": "theorem",
+    "name": "Probability of realizing exactly m of N events",
+    "type_signature": "Formula",
+    "description": "The inclusion-exclusion-type formula expressing P(exactly m of N events occur) as an alternating sum of the binomial-weighted symmetric sums S_m, S_{m+1}, …."
+  },
+  {
+    "id": "s_returns_to_origin_random_walk",
+    "kind": "state",
+    "name": "Returns to the origin (u_{2n})",
+    "type_signature": "Probability",
+    "description": "The probability u_{2n} that a simple symmetric random walk is back at the origin after 2n steps, equal to C(2n,n)2^{-2n}."
+  },
+  {
+    "id": "s_iterated_generating_functions_branching",
+    "kind": "theorem",
+    "name": "Iterated generating functions for branching processes",
+    "type_signature": "FunctionalIteration",
+    "description": "The generating function of the n-th generation size in a Galton–Watson process is the n-fold functional composition of the offspring generating function."
+  },
+  {
+    "id": "s_sparre_andersen_fluctuation",
+    "kind": "theorem",
+    "name": "Sparre Andersen fluctuation theorem",
+    "type_signature": "CombinatorialIdentity",
+    "description": "A distribution-free combinatorial identity stating that for exchangeable increments the law of the number of positive partial sums equals the law of the index of the first maximum, underpinning random-walk fluctuation theory."
+  },
+  {
+    "id": "s_independent_increments_process",
+    "kind": "axiom",
+    "name": "Independent increments process",
+    "type_signature": "Property(StochasticProcess)",
+    "description": "A stochastic process whose increments over disjoint time intervals are mutually independent random variables."
+  },
+  {
+    "id": "s_stationary_increments_process",
+    "kind": "axiom",
+    "name": "Stationary increments",
+    "type_signature": "Property(StochasticProcess)",
+    "description": "A stochastic process for which the distribution of an increment X_{t+h}−X_t depends only on the length h and not on the time t."
+  },
+  {
+    "id": "s_bessel_function_density",
+    "kind": "state",
+    "name": "Bessel function densities",
+    "type_signature": "ProbabilityDensity",
+    "description": "Probability densities expressed through modified Bessel functions, arising e.g. as first-passage densities of random walks and as laws of sums of independent exponential or noncentral chi-square variables."
+  },
+  {
+    "id": "s_kolmogorov_canonical_representation",
+    "kind": "theorem",
+    "name": "Kolmogorov canonical representation",
+    "type_signature": "CharacteristicFunctionFormula",
+    "description": "The canonical representation of the characteristic function of an infinitely divisible law with finite variance via a drift and a finite spectral measure K(dx), the finite-second-moment specialization of the Lévy–Khinchine formula."
+  },
+  {
+    "id": "s_index_of_stability",
+    "kind": "axiom",
+    "name": "Index of stability α",
+    "type_signature": "Parameter ∈ (0,2]",
+    "description": "The exponent α ∈ (0,2] characterizing a stable distribution through the scaling relation of sums of i.i.d. copies and governing its tail behavior."
+  },
+  {
+    "id": "s_types_of_distributions",
+    "kind": "axiom",
+    "name": "Types of distributions (affine equivalence)",
+    "type_signature": "Classification",
+    "description": "The equivalence classes of distribution functions under affine transformations X ↦ aX+b (a>0), within which location and scale vary but shape is fixed."
+  },
+  {
+    "id": "t_duality_lemma_random_walk",
+    "kind": "technique",
+    "name": "Duality lemma for random walks",
+    "function_signature": "(partial sums S_1,...,S_n of i.i.d. increments) → (equality in law with the reversed-order partial sums)",
+    "description": "The time-reversal identity that the partial sums (S_1,…,S_n) have the same joint law as the reversed walk, relating first-passage and ladder events to maxima."
+  }
+]
