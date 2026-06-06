@@ -1,0 +1,690 @@
+[
+ {
+  "id": "e_25016",
+  "from": "s_chiral_dirac_operator",
+  "to": "t_fujikawa_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25017",
+  "from": "t_fujikawa_method",
+  "to": "s_chiral_abelian_anomaly",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_chiral_anomaly_from_index_theorem"
+ },
+ {
+  "id": "e_25018",
+  "from": "s_local_field_strength",
+  "to": "t_fujikawa_method",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25019",
+  "from": "t_fujikawa_method",
+  "to": "s_chiral_anomaly_from_index_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_chiral_anomaly_from_index_theorem"
+ },
+ {
+  "id": "e_25020",
+  "from": "s_anomaly_polynomial",
+  "to": "t_descent_equations_stora_zumino",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_wess_zumino_descent_theorem"
+ },
+ {
+  "id": "e_25021",
+  "from": "t_descent_equations_stora_zumino",
+  "to": "s_non_abelian_gauge_anomaly",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_wess_zumino_descent_theorem"
+ },
+ {
+  "id": "e_25022",
+  "from": "t_descent_equations_stora_zumino",
+  "to": "s_consistent_vs_covariant_anomaly",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25023",
+  "from": "s_chern_simons_functional",
+  "to": "t_descent_equations_stora_zumino",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25024",
+  "from": "t_descent_equations_stora_zumino",
+  "to": "s_anomaly_class_in_local_BRST_cohomology",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_wess_zumino_descent_theorem"
+ },
+ {
+  "id": "e_25025",
+  "from": "s_gravitational_anomaly",
+  "to": "t_descent_equations_stora_zumino",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25026",
+  "from": "s_mckean_singer_formula",
+  "to": "t_susy_proof_index_theorem",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25027",
+  "from": "t_susy_proof_index_theorem",
+  "to": "s_dirac_operator_index_A_hat",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25028",
+  "from": "t_susy_proof_index_theorem",
+  "to": "s_a_hat_genus",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25029",
+  "from": "s_spin_structure",
+  "to": "t_susy_proof_index_theorem",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25030",
+  "from": "t_susy_proof_index_theorem",
+  "to": "s_analytical_index",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25031",
+  "from": "s_witten_index_theorem",
+  "to": "t_susy_proof_index_theorem",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25032",
+  "from": "s_faddeev_popov_ghosts",
+  "to": "t_brst_quantization_string",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25033",
+  "from": "s_conformal_gauge",
+  "to": "t_brst_quantization_string",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25034",
+  "from": "t_brst_quantization_string",
+  "to": "s_string_mass_spectrum_tachyon",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25035",
+  "from": "t_brst_quantization_string",
+  "to": "s_critical_dimension",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25036",
+  "from": "s_polyakov_action",
+  "to": "t_brst_quantization_string",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25037",
+  "from": "t_brst_quantization_string",
+  "to": "s_brst_cohomology",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25038",
+  "from": "s_local_field_strength",
+  "to": "t_chern_weil_construction",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_chern_weil_theorem"
+ },
+ {
+  "id": "e_25039",
+  "from": "t_chern_weil_construction",
+  "to": "s_topological_instanton_charge",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_chern_weil_theorem"
+ },
+ {
+  "id": "e_25040",
+  "from": "s_local_connection_form_gauge_potential",
+  "to": "t_chern_weil_construction",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_chern_weil_theorem"
+ },
+ {
+  "id": "e_25041",
+  "from": "s_local_connection_form_gauge_potential",
+  "to": "t_gauge_holonomy_transport",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25042",
+  "from": "s_local_field_strength",
+  "to": "t_gauge_holonomy_transport",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25043",
+  "from": "t_gauge_holonomy_transport",
+  "to": "s_holonomy_group",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25044",
+  "from": "t_chern_weil_construction",
+  "to": "s_chern_number",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_chern_weil_theorem"
+ },
+ {
+  "id": "e_25045",
+  "from": "s_maurer_cartan_form",
+  "to": "t_gauge_holonomy_transport",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25046",
+  "from": "t_gauge_holonomy_transport",
+  "to": "s_local_connection_form_gauge_potential",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25047",
+  "from": "s_maurer_cartan_form",
+  "to": "t_chern_weil_construction",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25048",
+  "from": "s_ehresmann_connection",
+  "to": "t_gauge_holonomy_transport",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25049",
+  "from": "s_fundamental_vector_field",
+  "to": "t_gauge_holonomy_transport",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25050",
+  "from": "s_vertical_subspace_bundle",
+  "to": "t_gauge_holonomy_transport",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25051",
+  "from": "t_gauge_holonomy_transport",
+  "to": "s_local_field_strength",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25052",
+  "from": "s_structure_group_reduction",
+  "to": "t_clifford_construction_of_spin_reps",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25053",
+  "from": "t_clifford_construction_of_spin_reps",
+  "to": "s_spin_structure",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25054",
+  "from": "s_spin_structure",
+  "to": "t_clifford_construction_of_spin_reps",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25055",
+  "from": "t_clifford_construction_of_spin_reps",
+  "to": "s_spinor",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25056",
+  "from": "s_universal_bundle",
+  "to": "t_pullback_technique",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25057",
+  "from": "t_pullback_technique",
+  "to": "s_characteristic_class",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_chern_weil_theorem"
+ },
+ {
+  "id": "e_25058",
+  "from": "s_universal_bundle",
+  "to": "t_chern_weil_construction",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25059",
+  "from": "s_codifferential_operator",
+  "to": "t_hodge_theoretic_methods",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_hodge_decomposition_theorem"
+ },
+ {
+  "id": "e_25060",
+  "from": "t_hodge_theoretic_methods",
+  "to": "s_hodge_laplacian",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_hodge_decomposition_theorem"
+ },
+ {
+  "id": "e_25061",
+  "from": "s_codifferential_operator",
+  "to": "t_homotopy_operator",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25062",
+  "from": "t_hodge_theoretic_methods",
+  "to": "s_harmonic_forms_kernel_of_Laplacian",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_hodge_decomposition_theorem"
+ },
+ {
+  "id": "e_25063",
+  "from": "s_dolbeault_operators",
+  "to": "t_dolbeault_cohomology_computation",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25064",
+  "from": "t_dolbeault_cohomology_computation",
+  "to": "s_dolbeault_cohomology",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25065",
+  "from": "s_dolbeault_operators",
+  "to": "t_hodge_theoretic_methods",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25066",
+  "from": "s_chern_connection",
+  "to": "t_chern_weil_construction",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_chern_weil_theorem"
+ },
+ {
+  "id": "e_25067",
+  "from": "t_chern_weil_construction",
+  "to": "s_first_chern_class",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_chern_weil_theorem"
+ },
+ {
+  "id": "e_25068",
+  "from": "s_chern_connection",
+  "to": "t_dolbeault_cohomology_computation",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25069",
+  "from": "s_berry_connection_curvature",
+  "to": "t_gauge_holonomy_transport",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25070",
+  "from": "t_gauge_holonomy_transport",
+  "to": "s_berry_phase",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25071",
+  "from": "s_berry_phase",
+  "to": "t_chern_weil_construction",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25072",
+  "from": "t_chern_weil_construction",
+  "to": "s_berry_connection_curvature",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25073",
+  "from": "s_analytical_index",
+  "to": "t_atiyah_singer_index_machinery",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25074",
+  "from": "t_atiyah_singer_index_machinery",
+  "to": "s_topological_index",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25075",
+  "from": "s_topological_index",
+  "to": "t_chern_weil_construction",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25076",
+  "from": "s_spin_structure",
+  "to": "t_atiyah_singer_index_machinery",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25077",
+  "from": "t_atiyah_singer_index_machinery",
+  "to": "s_analytical_index",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25078",
+  "from": "s_mckean_singer_formula",
+  "to": "t_heat_kernel_supertrace",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25079",
+  "from": "s_chiral_dirac_operator",
+  "to": "t_heat_kernel_supertrace",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25080",
+  "from": "t_heat_kernel_supertrace",
+  "to": "s_analytical_index",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25081",
+  "from": "t_heat_kernel_supertrace",
+  "to": "s_a_hat_genus",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_atiyah_singer_index_theorem"
+ },
+ {
+  "id": "e_25082",
+  "from": "s_spin_structure",
+  "to": "t_heat_kernel_supertrace",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25083",
+  "from": "s_betti_numbers",
+  "to": "t_simplicial_euler_computation",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_euler_poincare_theorem"
+ },
+ {
+  "id": "e_25084",
+  "from": "t_simplicial_euler_computation",
+  "to": "s_euler_characteristic",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_euler_poincare_theorem"
+ },
+ {
+  "id": "e_25085",
+  "from": "s_torsion_coefficients_homology",
+  "to": "t_simplicial_euler_computation",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_euler_poincare_theorem"
+ },
+ {
+  "id": "e_25086",
+  "from": "t_simplicial_euler_computation",
+  "to": "s_euler_poincare_theorem",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_euler_poincare_theorem"
+ },
+ {
+  "id": "e_25087",
+  "from": "s_torsion_coefficients_homology",
+  "to": "t_homotopy_operator",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25088",
+  "from": "s_structure_group_reduction",
+  "to": "t_homotopy_classification_order_parameter",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": "s_topological_defect_classification"
+ },
+ {
+  "id": "e_25089",
+  "from": "t_homotopy_classification_order_parameter",
+  "to": "s_topological_defect_classification",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_topological_defect_classification"
+ },
+ {
+  "id": "e_25090",
+  "from": "s_topological_instanton_charge",
+  "to": "t_homotopy_classification_order_parameter",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25091",
+  "from": "t_susy_proof_index_theorem",
+  "to": "s_mckean_singer_formula",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": "s_mckean_singer_formula"
+ },
+ {
+  "id": "e_25092",
+  "from": "s_nambu_goto_action",
+  "to": "t_pullback_technique",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25093",
+  "from": "s_worldsheet_diff_weyl_invariance",
+  "to": "t_virasoro_central_charge_computation",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25094",
+  "from": "s_conformal_gauge",
+  "to": "t_virasoro_central_charge_computation",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25095",
+  "from": "s_faddeev_popov_ghosts",
+  "to": "t_virasoro_central_charge_computation",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25096",
+  "from": "t_virasoro_central_charge_computation",
+  "to": "s_conformal_anomaly_central_charge",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25097",
+  "from": "t_virasoro_central_charge_computation",
+  "to": "s_critical_dimension",
+  "role": "output",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25098",
+  "from": "s_conformal_anomaly_central_charge",
+  "to": "t_descent_equations_stora_zumino",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25099",
+  "from": "s_polyakov_action",
+  "to": "t_virasoro_central_charge_computation",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25100",
+  "from": "s_moduli_space_riemann_surfaces",
+  "to": "t_dolbeault_cohomology_computation",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ },
+ {
+  "id": "e_25101",
+  "from": "s_moduli_space_riemann_surfaces",
+  "to": "t_pullback_technique",
+  "role": "input",
+  "parameter_binding": {},
+  "used_in_theorem": ""
+ }
+]

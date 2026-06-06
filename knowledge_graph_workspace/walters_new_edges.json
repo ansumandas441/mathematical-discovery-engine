@@ -1,0 +1,663 @@
+[
+  {
+    "id": "e_90001",
+    "from": "s_lebesgue_space_mod_zero",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {"space": "Lebesgue probability space"},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_90002",
+    "from": "s_lebesgue_space_mod_zero",
+    "to": "t_conditional_measures_disintegration",
+    "role": "input",
+    "parameter_binding": {"requires": "Lebesgue space for disintegration"},
+    "used_in_theorem": ""
+  },
+
+  {
+    "id": "e_90003",
+    "from": "s_first_return_time_function",
+    "to": "t_kakutani_tower_construction",
+    "role": "input",
+    "parameter_binding": {"height": "first return time n_A"},
+    "used_in_theorem": "s_induced_transformation"
+  },
+  {
+    "id": "e_90004",
+    "from": "t_kakutani_tower_construction",
+    "to": "s_induced_transformation",
+    "role": "output",
+    "parameter_binding": {"base": "A", "base_map": "T_A"},
+    "used_in_theorem": "s_induced_transformation"
+  },
+  {
+    "id": "e_90005",
+    "from": "s_induced_transformation",
+    "to": "t_kakutani_tower_construction",
+    "role": "input",
+    "parameter_binding": {"role": "base map of the tower"},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_90006",
+    "from": "s_first_return_time_function",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"return_time": "n_A finite a.e. by Poincare recurrence"},
+    "used_in_theorem": "s_induced_transformation"
+  },
+
+  {
+    "id": "e_90007",
+    "from": "t_kakutani_tower_construction",
+    "to": "s_bernoulli_shift_object",
+    "role": "output",
+    "parameter_binding": {"note": "shifts realized as towers over base sets"},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_90008",
+    "from": "s_bernoulli_shift_object",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"operator": "U_sigma on L2(product measure)"},
+    "used_in_theorem": "s_ergodicity_mixing_of_shifts"
+  },
+  {
+    "id": "e_90009",
+    "from": "s_bernoulli_shift_object",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {"entropy": "H(p) of the base partition"},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_90010",
+    "from": "s_markov_shift_object",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"operator": "U_sigma on L2(mu_{p,P})"},
+    "used_in_theorem": "s_ergodicity_mixing_of_shifts"
+  },
+  {
+    "id": "e_90011",
+    "from": "s_shift_map_sigma",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"map": "coordinate shift sigma"},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_90012",
+    "from": "s_shift_map_sigma",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {"role": "shift on itinerary space"},
+    "used_in_theorem": ""
+  },
+
+  {
+    "id": "e_90013",
+    "from": "s_compact_group_endomorphism_mpt",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"operator": "U_T on L2(Haar)"},
+    "used_in_theorem": "s_ergodicity_of_group_rotations"
+  },
+  {
+    "id": "e_90014",
+    "from": "s_compact_group_endomorphism_mpt",
+    "to": "t_character_decomposition_count",
+    "role": "input",
+    "parameter_binding": {"basis": "characters of G as eigenbasis"},
+    "used_in_theorem": "s_ergodicity_of_group_rotations"
+  },
+  {
+    "id": "e_90015",
+    "from": "s_toral_automorphism_mpt",
+    "to": "t_character_decomposition_count",
+    "role": "input",
+    "parameter_binding": {"action": "A^T permutes characters e^{2pi i <n,x>}"},
+    "used_in_theorem": "s_ergodicity_of_toral_automorphisms"
+  },
+  {
+    "id": "e_90016",
+    "from": "s_toral_automorphism_mpt",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"operator": "U_T on L2(Lebesgue on torus)"},
+    "used_in_theorem": "s_ergodicity_of_toral_automorphisms"
+  },
+
+  {
+    "id": "e_90017",
+    "from": "s_compact_group_endomorphism_mpt",
+    "to": "t_orthogonality_of_characters",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ergodicity_of_group_rotations"
+  },
+  {
+    "id": "e_90018",
+    "from": "t_character_decomposition_count",
+    "to": "s_ergodicity_of_group_rotations",
+    "role": "output",
+    "parameter_binding": {"criterion": "{a^n} dense in G"},
+    "used_in_theorem": "s_ergodicity_of_group_rotations"
+  },
+  {
+    "id": "e_90019",
+    "from": "t_character_decomposition_count",
+    "to": "s_ergodicity_of_toral_automorphisms",
+    "role": "output",
+    "parameter_binding": {"criterion": "no eigenvalue of A a root of unity"},
+    "used_in_theorem": "s_ergodicity_of_toral_automorphisms"
+  },
+
+  {
+    "id": "e_90020",
+    "from": "s_isomorphism_mod_zero",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"equivalence": "isomorphism mod 0"},
+    "used_in_theorem": "s_conjugacy_implies_spectral_isomorphism"
+  },
+  {
+    "id": "e_90021",
+    "from": "s_measure_algebra_isomorphism",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"equivalence": "measure-algebra conjugacy"},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_90022",
+    "from": "s_isomorphism_mod_zero",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"induces": "unitary intertwiner W f = f o phi"},
+    "used_in_theorem": "s_conjugacy_implies_spectral_isomorphism"
+  },
+  {
+    "id": "e_90023",
+    "from": "s_spectral_isomorphism_mpt",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"condition": "W U_{T1} = U_{T2} W"},
+    "used_in_theorem": "s_conjugacy_implies_spectral_isomorphism"
+  },
+  {
+    "id": "e_90024",
+    "from": "t_koopman_operator",
+    "to": "s_conjugacy_implies_spectral_isomorphism",
+    "role": "output",
+    "parameter_binding": {"yields": "U_{T1} unitarily equivalent U_{T2}"},
+    "used_in_theorem": "s_conjugacy_implies_spectral_isomorphism"
+  },
+  {
+    "id": "e_90025",
+    "from": "t_koopman_operator",
+    "to": "s_spectral_isomorphism_mpt",
+    "role": "output",
+    "parameter_binding": {"object": "unitary equivalence of Koopman operators"},
+    "used_in_theorem": ""
+  },
+
+  {
+    "id": "e_90026",
+    "from": "s_point_spectrum_eigenvalues_UT",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"object": "eigenfunctions f o T = lambda f"},
+    "used_in_theorem": "s_eigenvalues_modulus_one_constant_modulus"
+  },
+  {
+    "id": "e_90027",
+    "from": "t_koopman_operator",
+    "to": "s_eigenvalues_modulus_one_constant_modulus",
+    "role": "output",
+    "parameter_binding": {"yields": "|lambda|=1, |f| const, eigenvalue subgroup"},
+    "used_in_theorem": "s_eigenvalues_modulus_one_constant_modulus"
+  },
+  {
+    "id": "e_90028",
+    "from": "t_koopman_operator",
+    "to": "s_weak_mixing_continuous_spectrum",
+    "role": "output",
+    "parameter_binding": {"yields": "continuous spectrum on constants^perp"},
+    "used_in_theorem": "s_weak_mixing_continuous_spectrum"
+  },
+  {
+    "id": "e_90029",
+    "from": "s_weak_mixing_continuous_spectrum",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"object": "only eigenfunctions are constants"},
+    "used_in_theorem": "s_weak_mixing_continuous_spectrum"
+  },
+  {
+    "id": "e_90030",
+    "from": "s_weak_mixing_product_characterization",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"object": "U_{TxT} spectral analysis"},
+    "used_in_theorem": "s_weak_mixing_product_characterization"
+  },
+  {
+    "id": "e_90031",
+    "from": "s_weak_mixing_product_characterization",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"equivalence": "TxT ergodic"},
+    "used_in_theorem": "s_weak_mixing_product_characterization"
+  },
+  {
+    "id": "e_90032",
+    "from": "s_weak_mixing_all_powers_ergodic",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"equivalence": "T^n ergodic for all n"},
+    "used_in_theorem": "s_weak_mixing_all_powers_ergodic"
+  },
+
+  {
+    "id": "e_90033",
+    "from": "s_koopman_von_neumann_lemma",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"role": "Cesaro/density-1 convergence of matrix coefficients"},
+    "used_in_theorem": "s_weak_mixing_continuous_spectrum"
+  },
+  {
+    "id": "e_90034",
+    "from": "t_koopman_operator",
+    "to": "s_koopman_von_neumann_lemma",
+    "role": "output",
+    "parameter_binding": {"application": "spectral measures have no atoms"},
+    "used_in_theorem": "s_weak_mixing_continuous_spectrum"
+  },
+
+  {
+    "id": "e_90035",
+    "from": "s_ergodicity_mixing_of_shifts",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"criterion": "irreducibility / strong mixing of shifts"},
+    "used_in_theorem": "s_ergodicity_mixing_of_shifts"
+  },
+  {
+    "id": "e_90036",
+    "from": "t_koopman_operator",
+    "to": "s_ergodicity_mixing_of_shifts",
+    "role": "output",
+    "parameter_binding": {"yields": "Bernoulli strong-mixing; Markov ergodic iff irreducible"},
+    "used_in_theorem": "s_ergodicity_mixing_of_shifts"
+  },
+
+  {
+    "id": "e_90037",
+    "from": "s_fekete_subadditive_lemma",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {"role": "subadditivity gives existence of lim a_n/n"},
+    "used_in_theorem": "s_entropy_of_transformation_wrt_partition"
+  },
+  {
+    "id": "e_90038",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_fekete_subadditive_lemma",
+    "role": "output",
+    "parameter_binding": {"yields": "lim a_n/n = inf a_n/n"},
+    "used_in_theorem": ""
+  },
+
+  {
+    "id": "e_90039",
+    "from": "s_join_of_partitions",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {"operation": "common refinement xi v eta"},
+    "used_in_theorem": "s_entropy_of_transformation_wrt_partition"
+  },
+  {
+    "id": "e_90040",
+    "from": "s_join_of_partitions",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {"role": "joins inside H(v T^{-i} xi)"},
+    "used_in_theorem": "s_entropy_of_transformation_wrt_partition"
+  },
+  {
+    "id": "e_90041",
+    "from": "s_join_of_partitions",
+    "to": "t_conditional_measures_disintegration",
+    "role": "input",
+    "parameter_binding": {"role": "conditional entropy H(xi|eta)"},
+    "used_in_theorem": "s_basic_entropy_inequalities"
+  },
+
+  {
+    "id": "e_90042",
+    "from": "s_basic_entropy_inequalities",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {"identities": "chain rule, subadditivity, concavity"},
+    "used_in_theorem": "s_basic_entropy_inequalities"
+  },
+  {
+    "id": "e_90043",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_basic_entropy_inequalities",
+    "role": "output",
+    "parameter_binding": {"yields": "H(xi v eta)=H(eta)+H(xi|eta) etc."},
+    "used_in_theorem": "s_basic_entropy_inequalities"
+  },
+  {
+    "id": "e_90044",
+    "from": "s_basic_entropy_inequalities",
+    "to": "t_conditional_measures_disintegration",
+    "role": "input",
+    "parameter_binding": {"role": "conditional entropy via disintegration"},
+    "used_in_theorem": "s_basic_entropy_inequalities"
+  },
+
+  {
+    "id": "e_90045",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_entropy_of_transformation_wrt_partition",
+    "role": "output",
+    "parameter_binding": {"yields": "h(T,xi)=lim (1/n)H(v T^{-i}xi)"},
+    "used_in_theorem": "s_entropy_of_transformation_wrt_partition"
+  },
+  {
+    "id": "e_90046",
+    "from": "s_entropy_of_transformation_wrt_partition",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {"role": "sup over partitions to form h(T)"},
+    "used_in_theorem": "s_entropy_of_transformation_hT"
+  },
+  {
+    "id": "e_90047",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_entropy_of_transformation_hT",
+    "role": "output",
+    "parameter_binding": {"yields": "h(T)=sup_xi h(T,xi)"},
+    "used_in_theorem": "s_entropy_of_transformation_hT"
+  },
+  {
+    "id": "e_90048",
+    "from": "s_entropy_of_transformation_hT",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"role": "isomorphism invariant"},
+    "used_in_theorem": "s_entropy_powers_inverse_properties"
+  },
+  {
+    "id": "e_90049",
+    "from": "s_entropy_of_transformation_hT",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {"role": "power/inverse behaviour"},
+    "used_in_theorem": "s_entropy_powers_inverse_properties"
+  },
+  {
+    "id": "e_90050",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_entropy_powers_inverse_properties",
+    "role": "output",
+    "parameter_binding": {"yields": "h(T^k)=k h(T), h(T^{-1})=h(T)"},
+    "used_in_theorem": "s_entropy_powers_inverse_properties"
+  },
+
+  {
+    "id": "e_90051",
+    "from": "s_generator_partition",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {"condition": "v T^{-i} xi = B mod 0"},
+    "used_in_theorem": "s_entropy_of_transformation_hT"
+  },
+  {
+    "id": "e_90052",
+    "from": "s_generator_partition",
+    "to": "t_entropy_method_combinatorics",
+    "role": "input",
+    "parameter_binding": {"role": "Kolmogorov-Sinai: h(T)=h(T,generator)"},
+    "used_in_theorem": "s_entropy_of_transformation_hT"
+  },
+
+  {
+    "id": "e_90053",
+    "from": "s_pinsker_sigma_algebra",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {"object": "largest zero-entropy invariant sub-sigma-algebra"},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_90054",
+    "from": "t_entropy_method_combinatorics",
+    "to": "s_pinsker_sigma_algebra",
+    "role": "output",
+    "parameter_binding": {"yields": "Pinsker algebra Pi(T)"},
+    "used_in_theorem": ""
+  },
+
+  {
+    "id": "e_90055",
+    "from": "s_space_M_X_probability_measures",
+    "to": "t_weak_compactness_argument",
+    "role": "input",
+    "parameter_binding": {"topology": "weak* compactness of M(X)"},
+    "used_in_theorem": "s_space_M_X_T_invariant_measures"
+  },
+  {
+    "id": "e_90056",
+    "from": "s_space_M_X_probability_measures",
+    "to": "t_compactness_argument",
+    "role": "input",
+    "parameter_binding": {"object": "weak* compact metrizable convex set"},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_90057",
+    "from": "s_space_M_X_T_invariant_measures",
+    "to": "t_averaging_projection",
+    "role": "input",
+    "parameter_binding": {"construction": "Cesaro averages of pushforwards give invariant measure"},
+    "used_in_theorem": "s_space_M_X_T_invariant_measures"
+  },
+  {
+    "id": "e_90058",
+    "from": "t_averaging_projection",
+    "to": "s_space_M_X_T_invariant_measures",
+    "role": "output",
+    "parameter_binding": {"yields": "nonempty M(X,T) (Krylov-Bogolyubov)"},
+    "used_in_theorem": "s_space_M_X_T_invariant_measures"
+  },
+  {
+    "id": "e_90059",
+    "from": "t_weak_compactness_argument",
+    "to": "s_space_M_X_T_invariant_measures",
+    "role": "output",
+    "parameter_binding": {"yields": "compact convex M(X,T)"},
+    "used_in_theorem": "s_space_M_X_T_invariant_measures"
+  },
+  {
+    "id": "e_90060",
+    "from": "s_space_M_X_T_invariant_measures",
+    "to": "t_thermodynamic_formalism",
+    "role": "input",
+    "parameter_binding": {"domain": "variational principle over M(X,T)"},
+    "used_in_theorem": "s_upper_semicontinuity_entropy_map"
+  },
+
+  {
+    "id": "e_90061",
+    "from": "s_ergodic_measures_extreme_points",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"characterization": "ergodic = extreme point"},
+    "used_in_theorem": "s_ergodic_measures_extreme_points"
+  },
+  {
+    "id": "e_90062",
+    "from": "s_space_M_X_T_invariant_measures",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"role": "Choquet simplex of invariant measures"},
+    "used_in_theorem": "s_ergodic_measures_extreme_points"
+  },
+  {
+    "id": "e_90063",
+    "from": "t_ergodic_correspondence",
+    "to": "s_ergodic_measures_extreme_points",
+    "role": "output",
+    "parameter_binding": {"yields": "ext M(X,T) = ergodic measures"},
+    "used_in_theorem": "s_ergodic_measures_extreme_points"
+  },
+
+  {
+    "id": "e_90064",
+    "from": "s_bowen_metric_dn",
+    "to": "t_thermodynamic_formalism",
+    "role": "input",
+    "parameter_binding": {"role": "(n,eps)-separated/spanning sets for pressure & topological entropy"},
+    "used_in_theorem": "s_upper_semicontinuity_entropy_map"
+  },
+  {
+    "id": "e_90065",
+    "from": "s_upper_semicontinuity_entropy_map",
+    "to": "t_thermodynamic_formalism",
+    "role": "input",
+    "parameter_binding": {"hypothesis": "mu -> h_mu(T) upper semicontinuous"},
+    "used_in_theorem": "s_upper_semicontinuity_entropy_map"
+  },
+  {
+    "id": "e_90066",
+    "from": "t_thermodynamic_formalism",
+    "to": "s_upper_semicontinuity_entropy_map",
+    "role": "output",
+    "parameter_binding": {"yields": "equilibrium states exist"},
+    "used_in_theorem": "s_upper_semicontinuity_entropy_map"
+  },
+
+  {
+    "id": "e_90067",
+    "from": "s_Lp_mean_ergodic_theorem",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"object": "averages of U_T converge to projection"},
+    "used_in_theorem": "s_Lp_mean_ergodic_theorem"
+  },
+  {
+    "id": "e_90068",
+    "from": "s_Lp_mean_ergodic_theorem",
+    "to": "t_averaging_projection",
+    "role": "input",
+    "parameter_binding": {"projection": "conditional expectation onto invariant sigma-algebra"},
+    "used_in_theorem": "s_Lp_mean_ergodic_theorem"
+  },
+  {
+    "id": "e_90069",
+    "from": "t_averaging_projection",
+    "to": "s_Lp_mean_ergodic_theorem",
+    "role": "output",
+    "parameter_binding": {"yields": "A_n f -> f* in L^p"},
+    "used_in_theorem": "s_Lp_mean_ergodic_theorem"
+  },
+  {
+    "id": "e_90070",
+    "from": "s_Lp_mean_ergodic_theorem",
+    "to": "t_martingale_convergence_technique",
+    "role": "input",
+    "parameter_binding": {"limit": "conditional expectation onto invariant sigma-algebra"},
+    "used_in_theorem": "s_Lp_mean_ergodic_theorem"
+  },
+
+  {
+    "id": "e_90071",
+    "from": "s_gauss_measure",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"system": "Gauss map invariant measure, ergodic"},
+    "used_in_theorem": "s_levy_khinchin_continued_fraction_constants"
+  },
+  {
+    "id": "e_90072",
+    "from": "s_gauss_measure",
+    "to": "t_averaging_projection",
+    "role": "input",
+    "parameter_binding": {"role": "Birkhoff averages w.r.t. Gauss measure"},
+    "used_in_theorem": "s_levy_khinchin_continued_fraction_constants"
+  },
+  {
+    "id": "e_90073",
+    "from": "s_levy_khinchin_continued_fraction_constants",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {"applies": "Birkhoff to ergodic Gauss map"},
+    "used_in_theorem": "s_levy_khinchin_continued_fraction_constants"
+  },
+  {
+    "id": "e_90074",
+    "from": "t_ergodic_correspondence",
+    "to": "s_levy_khinchin_continued_fraction_constants",
+    "role": "output",
+    "parameter_binding": {"yields": "Khinchin constant K, Levy constant L a.e."},
+    "used_in_theorem": "s_levy_khinchin_continued_fraction_constants"
+  },
+
+  {
+    "id": "e_90075",
+    "from": "s_eigenvalue_group_complete_invariant",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {"object": "eigenvalue subgroup of discrete-spectrum system"},
+    "used_in_theorem": "s_eigenvalue_group_complete_invariant"
+  },
+  {
+    "id": "e_90076",
+    "from": "s_eigenvalue_group_complete_invariant",
+    "to": "t_character_decomposition_count",
+    "role": "input",
+    "parameter_binding": {"model": "rotation on dual of eigenvalue group"},
+    "used_in_theorem": "s_eigenvalue_group_complete_invariant"
+  },
+  {
+    "id": "e_90077",
+    "from": "t_koopman_operator",
+    "to": "s_eigenvalue_group_complete_invariant",
+    "role": "output",
+    "parameter_binding": {"yields": "Halmos-von Neumann: eigenvalue group complete invariant"},
+    "used_in_theorem": "s_eigenvalue_group_complete_invariant"
+  },
+
+  {
+    "id": "e_90078",
+    "from": "s_point_spectrum_eigenvalues_UT",
+    "to": "t_character_decomposition_count",
+    "role": "input",
+    "parameter_binding": {"role": "eigenvalues form subgroup of circle"},
+    "used_in_theorem": "s_eigenvalues_modulus_one_constant_modulus"
+  },
+  {
+    "id": "e_90079",
+    "from": "t_koopman_operator",
+    "to": "s_weak_mixing_product_characterization",
+    "role": "output",
+    "parameter_binding": {"yields": "T weak-mixing iff TxT ergodic"},
+    "used_in_theorem": "s_weak_mixing_product_characterization"
+  },
+  {
+    "id": "e_90080",
+    "from": "t_koopman_operator",
+    "to": "s_weak_mixing_all_powers_ergodic",
+    "role": "output",
+    "parameter_binding": {"yields": "T weak-mixing iff T^n ergodic for all n"},
+    "used_in_theorem": "s_weak_mixing_all_powers_ergodic"
+  }
+]

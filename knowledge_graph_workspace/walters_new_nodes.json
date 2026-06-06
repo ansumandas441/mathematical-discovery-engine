@@ -1,0 +1,275 @@
+[
+  {
+    "id": "s_lebesgue_space_mod_zero",
+    "kind": "axiom",
+    "name": "Lebesgue space (Lebesgue probability space mod 0)",
+    "type_signature": "(X, B, m)",
+    "description": "A probability space isomorphic mod null sets to an interval carrying Lebesgue measure together with at most countably many atoms."
+  },
+  {
+    "id": "s_gauss_measure",
+    "kind": "axiom",
+    "name": "Gauss measure",
+    "type_signature": "measure on [0,1)",
+    "description": "The probability measure dμ = (1/ln 2)·dx/(1+x) on [0,1) that is invariant under the Gauss (continued-fraction) map."
+  },
+  {
+    "id": "s_induced_transformation",
+    "kind": "state",
+    "name": "Induced (first-return) transformation T_A",
+    "type_signature": "(A, B|_A, m_A) → (A, B|_A, m_A)",
+    "description": "For a measure-preserving T and a positive-measure set A, the map T_A(x)=T^{n_A(x)}(x) sending x to its first return to A, which preserves the normalized restriction of m to A."
+  },
+  {
+    "id": "s_first_return_time_function",
+    "kind": "state",
+    "name": "First return-time function n_A",
+    "type_signature": "A → ℕ",
+    "description": "The function assigning to x∈A the least integer n≥1 with T^n x ∈ A, finite a.e. by Poincaré recurrence."
+  },
+  {
+    "id": "t_kakutani_tower_construction",
+    "kind": "technique",
+    "name": "Kakutani–Rokhlin tower (skyscraper) construction",
+    "function_signature": "(base map S on A, height/return function n) → (measure-preserving transformation T on the tower over A)",
+    "description": "A method that builds a measure-preserving transformation by stacking iterates of a base map according to a return/height function over a base set."
+  },
+  {
+    "id": "s_bernoulli_shift_object",
+    "kind": "state",
+    "name": "Bernoulli shift",
+    "type_signature": "(Π Y, B, Πp) → (Π Y, B, Πp)",
+    "description": "The coordinate shift on a one- or two-sided product probability space equipped with the product measure of a fixed probability vector (p_0,…,p_{k-1})."
+  },
+  {
+    "id": "s_markov_shift_object",
+    "kind": "state",
+    "name": "Markov shift",
+    "type_signature": "(Σ, B, μ_{p,P}) → (Σ, B, μ_{p,P})",
+    "description": "The coordinate shift on a sequence space whose measure is determined by a stochastic matrix P and a stationary probability vector p with pP=p."
+  },
+  {
+    "id": "s_shift_map_sigma",
+    "kind": "axiom",
+    "name": "Two-sided shift map σ",
+    "type_signature": "Y^ℤ → Y^ℤ",
+    "description": "The coordinate-shift homeomorphism (σx)_n = x_{n+1} on a bi-infinite sequence space, preserving any shift-invariant measure."
+  },
+  {
+    "id": "s_compact_group_endomorphism_mpt",
+    "kind": "state",
+    "name": "Endomorphism/automorphism of a compact group (as m.p.t.)",
+    "type_signature": "(G, Haar) → (G, Haar)",
+    "description": "A continuous surjective group homomorphism of a compact group, which preserves the normalized Haar measure."
+  },
+  {
+    "id": "s_toral_automorphism_mpt",
+    "kind": "state",
+    "name": "Automorphism/endomorphism of the torus (matrix m.p.t.)",
+    "type_signature": "(𝕋^n, Leb) → (𝕋^n, Leb)",
+    "description": "The map T(x)=Ax mod 1 on the n-torus induced by an integer matrix A, preserving Lebesgue measure (an automorphism when det A = ±1)."
+  },
+  {
+    "id": "s_isomorphism_mod_zero",
+    "kind": "axiom",
+    "name": "Isomorphism mod 0 (measure-theoretic isomorphism)",
+    "type_signature": "(X_1,T_1) ≅ (X_2,T_2)",
+    "description": "An invertible measure-preserving map between full-measure invariant subsets that conjugates two systems, the basic equivalence relation of ergodic theory."
+  },
+  {
+    "id": "s_measure_algebra_isomorphism",
+    "kind": "axiom",
+    "name": "Measure-algebra isomorphism (conjugacy of measure algebras)",
+    "type_signature": "Boolean σ-isomorphism preserving m",
+    "description": "A measure-preserving Boolean σ-algebra isomorphism between the measure algebras of two systems that intertwines the induced maps."
+  },
+  {
+    "id": "s_spectral_isomorphism_mpt",
+    "kind": "axiom",
+    "name": "Spectral isomorphism (unitary equivalence of Koopman operators)",
+    "type_signature": "W U_{T_1} = U_{T_2} W, W unitary",
+    "description": "Existence of a unitary operator intertwining the Koopman operators of two systems, an equivalence strictly weaker than isomorphism mod 0."
+  },
+  {
+    "id": "s_conjugacy_implies_spectral_isomorphism",
+    "kind": "theorem",
+    "name": "Conjugacy implies spectral isomorphism",
+    "type_signature": "(X_1,T_1)≅(X_2,T_2) ⟹ U_{T_1} ≅ U_{T_2}",
+    "description": "Measure-theoretically isomorphic systems have unitarily equivalent Koopman operators, while the converse fails."
+  },
+  {
+    "id": "s_point_spectrum_eigenvalues_UT",
+    "kind": "state",
+    "name": "Point spectrum (eigenvalues and eigenfunctions of U_T)",
+    "type_signature": "{λ : f∘T = λf, f≠0}",
+    "description": "The set of λ for which the Koopman operator has a nonzero eigenfunction f with f∘T = λf a.e."
+  },
+  {
+    "id": "s_eigenvalues_modulus_one_constant_modulus",
+    "kind": "theorem",
+    "name": "Eigenvalues of modulus one with constant-modulus eigenfunctions",
+    "type_signature": "ergodic T ⟹ |λ|=1, |f| const",
+    "description": "For an ergodic transformation every eigenvalue has modulus one, eigenfunctions have constant modulus a.e., and the eigenvalues form a subgroup of the circle with eigenfunctions of distinct eigenvalues orthogonal."
+  },
+  {
+    "id": "s_weak_mixing_product_characterization",
+    "kind": "theorem",
+    "name": "Weak-mixing product characterization (T×T ergodic)",
+    "type_signature": "T weak-mixing ⟺ T×T ergodic ⟺ T×T weak-mixing",
+    "description": "A transformation is weak-mixing if and only if its Cartesian square is ergodic, equivalently the square is itself weak-mixing."
+  },
+  {
+    "id": "s_weak_mixing_continuous_spectrum",
+    "kind": "theorem",
+    "name": "Weak-mixing ⇔ continuous spectrum (no nonconstant eigenfunctions)",
+    "type_signature": "T weak-mixing ⟺ 1 is the only (simple) eigenvalue of U_T",
+    "description": "A transformation is weak-mixing if and only if the constants are the only eigenfunctions of its Koopman operator, i.e. U_T has continuous spectrum on the orthocomplement of constants."
+  },
+  {
+    "id": "s_weak_mixing_all_powers_ergodic",
+    "kind": "theorem",
+    "name": "Weak-mixing equivalent to all powers ergodic",
+    "type_signature": "T weak-mixing ⟺ Tⁿ ergodic ∀n",
+    "description": "A transformation is weak-mixing if and only if every power Tⁿ is ergodic, and then every power is itself weak-mixing."
+  },
+  {
+    "id": "s_koopman_von_neumann_lemma",
+    "kind": "theorem",
+    "name": "Koopman–von Neumann lemma",
+    "type_signature": "(1/n)Σ|a_i| → 0 ⟺ a_i → 0 along density-1 set",
+    "description": "A bounded nonnegative sequence has Cesàro averages tending to zero if and only if it converges to zero along a subsequence of density one."
+  },
+  {
+    "id": "s_ergodicity_of_group_rotations",
+    "kind": "theorem",
+    "name": "Ergodicity criterion for group rotations",
+    "type_signature": "rotation by a on G ergodic ⟺ {aⁿ} dense",
+    "description": "Rotation by an element a of a compact group G is ergodic with respect to Haar measure if and only if the cyclic subgroup generated by a is dense in G."
+  },
+  {
+    "id": "s_ergodicity_of_toral_automorphisms",
+    "kind": "theorem",
+    "name": "Ergodicity criterion for toral automorphisms",
+    "type_signature": "A ergodic ⟺ no eigenvalue of A is a root of unity",
+    "description": "A toral endomorphism given by integer matrix A is ergodic with respect to Lebesgue measure if and only if no eigenvalue of A is a root of unity."
+  },
+  {
+    "id": "s_ergodicity_mixing_of_shifts",
+    "kind": "theorem",
+    "name": "Ergodicity and mixing of Bernoulli and Markov shifts",
+    "type_signature": "Bernoulli ⟹ strong-mixing; Markov ergodic ⟺ irreducible",
+    "description": "Bernoulli shifts are strong-mixing, and a Markov shift is ergodic if and only if its stochastic matrix is irreducible (mixing if aperiodic)."
+  },
+  {
+    "id": "s_fekete_subadditive_lemma",
+    "kind": "theorem",
+    "name": "Fekete subadditive sequence lemma",
+    "type_signature": "a_{m+n} ≤ a_m + a_n ⟹ lim a_n/n = inf a_n/n",
+    "description": "For a subadditive real sequence the limit of a_n/n exists and equals the infimum of a_n/n."
+  },
+  {
+    "id": "s_entropy_of_transformation_wrt_partition",
+    "kind": "state",
+    "name": "Entropy of a transformation with respect to a partition h(T,ξ)",
+    "type_signature": "lim_n (1/n) H(⋁_{i=0}^{n-1} T^{-i}ξ)",
+    "description": "The asymptotic per-step entropy of the iterated joins of a partition under T, whose limit exists by subadditivity."
+  },
+  {
+    "id": "s_entropy_of_transformation_hT",
+    "kind": "state",
+    "name": "Measure-theoretic entropy of a transformation h(T)",
+    "type_signature": "sup_ξ h(T,ξ)",
+    "description": "The supremum of h(T,ξ) over all finite measurable partitions, an isomorphism invariant of the system."
+  },
+  {
+    "id": "s_entropy_powers_inverse_properties",
+    "kind": "theorem",
+    "name": "Entropy behaviour under powers and inverses",
+    "type_signature": "h(T^k)=k·h(T), h(T^{-1})=h(T)",
+    "description": "Measure-theoretic entropy scales linearly under iteration and is invariant under inversion of an invertible transformation."
+  },
+  {
+    "id": "s_generator_partition",
+    "kind": "axiom",
+    "name": "Generator (one-sided/two-sided)",
+    "type_signature": "⋁_i T^{-i}ξ = B mod 0",
+    "description": "A finite measurable partition whose iterated T-preimages (one-sided, or two-sided for invertible T) generate the full σ-algebra mod 0."
+  },
+  {
+    "id": "s_join_of_partitions",
+    "kind": "state",
+    "name": "Join (refinement) of partitions ξ∨η",
+    "type_signature": "ξ∨η = {A∩B : A∈ξ, B∈η}",
+    "description": "The common refinement of two partitions whose atoms are the nonempty intersections of an atom of each."
+  },
+  {
+    "id": "s_basic_entropy_inequalities",
+    "kind": "theorem",
+    "name": "Basic entropy (in)equalities for partitions",
+    "type_signature": "H(ξ∨η)=H(η)+H(ξ|η) ≤ H(ξ)+H(η)",
+    "description": "Entropy of partitions satisfies the chain rule H(ξ∨η)=H(η)+H(ξ|η), subadditivity, monotonicity, and concavity in the partition."
+  },
+  {
+    "id": "s_pinsker_sigma_algebra",
+    "kind": "state",
+    "name": "Pinsker σ-algebra",
+    "type_signature": "Π(T) ⊆ B",
+    "description": "The largest T-invariant sub-σ-algebra on which the transformation has zero entropy."
+  },
+  {
+    "id": "s_space_M_X_probability_measures",
+    "kind": "state",
+    "name": "Space M(X) of Borel probability measures",
+    "type_signature": "M(X)",
+    "description": "The convex set of Borel probability measures on a compact metric space, compact and metrizable in the weak* topology."
+  },
+  {
+    "id": "s_space_M_X_T_invariant_measures",
+    "kind": "state",
+    "name": "Space M(X,T) of T-invariant probability measures",
+    "type_signature": "M(X,T) ⊆ M(X)",
+    "description": "The nonempty compact convex subset of M(X) consisting of the T-invariant Borel probability measures of a continuous system."
+  },
+  {
+    "id": "s_ergodic_measures_extreme_points",
+    "kind": "theorem",
+    "name": "Ergodic measures are the extreme points of M(X,T)",
+    "type_signature": "ext M(X,T) = {ergodic μ}",
+    "description": "The ergodic invariant measures are exactly the extreme points of M(X,T), which is a Choquet simplex."
+  },
+  {
+    "id": "s_bowen_metric_dn",
+    "kind": "state",
+    "name": "Bowen (dynamical) metric d_n",
+    "type_signature": "d_n(x,y)=max_{0≤i<n} d(T^i x, T^i y)",
+    "description": "The metric measuring the maximal separation of two orbit segments over n iterates, used to define (n,ε)-separated and spanning sets."
+  },
+  {
+    "id": "s_Lp_mean_ergodic_theorem",
+    "kind": "theorem",
+    "name": "L^p mean ergodic theorem",
+    "type_signature": "f∈L^p ⟹ A_n f → f* in L^p",
+    "description": "For 1≤p<∞ and f∈L^p, the Birkhoff averages converge in L^p norm to the conditional expectation onto the invariant σ-algebra."
+  },
+  {
+    "id": "s_upper_semicontinuity_entropy_map",
+    "kind": "theorem",
+    "name": "Upper semicontinuity of the entropy map and existence of equilibrium states",
+    "type_signature": "μ ↦ h_μ(T) u.s.c. ⟹ equilibrium states exist",
+    "description": "When the map μ↦h_μ(T) is upper semicontinuous on M(X,T) (e.g. for expansive systems) the supremum in the variational principle is attained, so equilibrium states exist for every continuous potential."
+  },
+  {
+    "id": "s_levy_khinchin_continued_fraction_constants",
+    "kind": "theorem",
+    "name": "Khinchin and Lévy constants for continued fractions",
+    "type_signature": "a.e. x: (∏ a_i)^{1/n} → K, (1/n)log q_n → L",
+    "description": "For Lebesgue-almost every x the geometric mean of the continued-fraction partial quotients converges to Khinchin's constant and the denominators grow at the Lévy constant rate, via Birkhoff applied to the ergodic Gauss map."
+  },
+  {
+    "id": "s_eigenvalue_group_complete_invariant",
+    "kind": "theorem",
+    "name": "Eigenvalue group as complete invariant for discrete spectrum",
+    "type_signature": "ergodic discrete-spectrum T_1 ≅ T_2 ⟺ equal eigenvalue groups",
+    "description": "For ergodic transformations with discrete spectrum the subgroup of the circle formed by the eigenvalues is a complete invariant up to isomorphism."
+  }
+]

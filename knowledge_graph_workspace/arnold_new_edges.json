@@ -1,0 +1,43 @@
+[
+  { "id": "e_24984", "from": "s_conservation_of_angular_momentum", "to": "t_reduction_central_field_angular_momentum", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_effective_potential" },
+  { "id": "e_24985", "from": "s_central_force_problem", "to": "t_reduction_central_field_angular_momentum", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_effective_potential" },
+  { "id": "e_24986", "from": "t_reduction_central_field_angular_momentum", "to": "s_effective_potential", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_effective_potential" },
+  { "id": "e_24987", "from": "t_reduction_central_field_angular_momentum", "to": "s_central_orbit_quadrature", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_central_orbit_quadrature" },
+
+  { "id": "e_24988", "from": "s_effective_potential", "to": "t_fall_to_center", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_kepler_problem" },
+  { "id": "e_24989", "from": "s_kepler_problem", "to": "t_fall_to_center", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_kepler_problem" },
+  { "id": "e_24990", "from": "t_fall_to_center", "to": "s_central_orbit_quadrature", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_central_orbit_quadrature" },
+
+  { "id": "e_24991", "from": "s_lagrangian_mechanics_on_manifolds", "to": "t_legendre_transformation_mechanics", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_hamilton_canonical_equations" },
+  { "id": "e_24992", "from": "s_canonical_momentum", "to": "t_legendre_transformation_mechanics", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_hamilton_canonical_equations" },
+  { "id": "e_24993", "from": "t_legendre_transformation_mechanics", "to": "s_hamilton_canonical_equations", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_hamilton_canonical_equations" },
+  { "id": "e_24994", "from": "t_legendre_transformation_mechanics", "to": "s_hamiltonian_vector_field", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_hamiltonian_vector_field" },
+
+  { "id": "e_24995", "from": "s_lagrangian_mechanics_on_manifolds", "to": "t_small_oscillations_linearization", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_normal_modes" },
+  { "id": "e_24996", "from": "t_small_oscillations_linearization", "to": "s_normal_modes", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_normal_modes" },
+  { "id": "e_24997", "from": "t_small_oscillations_linearization", "to": "s_parametric_resonance", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_parametric_resonance" },
+
+  { "id": "e_24998", "from": "s_inertia_tensor", "to": "t_simultaneous_diagonalization_quadratic_forms", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_principal_axes_of_inertia" },
+  { "id": "e_24999", "from": "s_normal_modes", "to": "t_simultaneous_diagonalization_quadratic_forms", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_normal_modes" },
+  { "id": "e_25000", "from": "t_simultaneous_diagonalization_quadratic_forms", "to": "s_normal_modes", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_normal_modes" },
+  { "id": "e_25001", "from": "t_simultaneous_diagonalization_quadratic_forms", "to": "s_principal_axes_of_inertia", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_principal_axes_of_inertia" },
+
+  { "id": "e_25002", "from": "s_hamilton_jacobi_equation", "to": "t_separation_of_variables_hamilton_jacobi", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_arnold_liouville_theorem" },
+  { "id": "e_25003", "from": "t_separation_of_variables_hamilton_jacobi", "to": "s_action_angle_coordinates_exist", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_action_angle_coordinates_exist" },
+  { "id": "e_25004", "from": "t_separation_of_variables_hamilton_jacobi", "to": "s_arnold_liouville_theorem", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_arnold_liouville_theorem" },
+
+  { "id": "e_25005", "from": "s_action_angle_coordinates_exist", "to": "t_adiabatic_invariant", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_period_1d_motion_integral" },
+  { "id": "e_25006", "from": "s_period_1d_motion_integral", "to": "t_adiabatic_invariant", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_period_1d_motion_integral" },
+
+  { "id": "e_25007", "from": "s_action_angle_coordinates_exist", "to": "t_canonical_perturbation_theory", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_kam_theorem" },
+  { "id": "e_25008", "from": "s_small_denominators_problem", "to": "t_canonical_perturbation_theory", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_kam_theorem" },
+  { "id": "e_25009", "from": "t_canonical_perturbation_theory", "to": "s_kam_theorem", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_kam_theorem" },
+
+  { "id": "e_25010", "from": "s_caustic", "to": "t_wkb_maslov_asymptotics", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_caustic" },
+  { "id": "e_25011", "from": "s_lagrangian_subspace", "to": "t_wkb_maslov_asymptotics", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_caustic" },
+  { "id": "e_25012", "from": "s_maslov_index", "to": "t_wkb_maslov_asymptotics", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_caustic" },
+
+  { "id": "e_25013", "from": "s_small_denominators_problem", "to": "t_averaging_method", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_kam_theorem" },
+  { "id": "e_25014", "from": "t_averaging_method", "to": "s_kam_theorem", "role": "output", "parameter_binding": {}, "used_in_theorem": "s_kam_theorem" },
+  { "id": "e_25015", "from": "s_small_denominators_problem", "to": "t_birkhoff_normal_form", "role": "input", "parameter_binding": {}, "used_in_theorem": "s_small_denominators_problem" }
+]

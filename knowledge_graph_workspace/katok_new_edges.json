@@ -1,0 +1,930 @@
+[
+  {
+    "id": "e_24788",
+    "from": "s_hyperbolic_linear_map",
+    "to": "t_cone_criterion_hyperbolicity",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hyperbolic_set"
+  },
+  {
+    "id": "e_24789",
+    "from": "s_unstable_subspace_Eu",
+    "to": "t_cone_criterion_hyperbolicity",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hyperbolic_set"
+  },
+  {
+    "id": "e_24790",
+    "from": "s_local_product_structure",
+    "to": "t_cone_criterion_hyperbolicity",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hyperbolic_set"
+  },
+  {
+    "id": "e_24791",
+    "from": "t_cone_criterion_hyperbolicity",
+    "to": "s_hyperbolic_set",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hyperbolic_set"
+  },
+  {
+    "id": "e_24792",
+    "from": "t_cone_criterion_hyperbolicity",
+    "to": "s_linear_toral_automorphism_cat_map",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hyperbolic_set"
+  },
+  {
+    "id": "e_24793",
+    "from": "t_cone_criterion_hyperbolicity",
+    "to": "s_smale_horseshoe",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_smale_horseshoe"
+  },
+  {
+    "id": "e_24794",
+    "from": "s_hyperbolic_linear_map",
+    "to": "t_adapted_lyapunov_norm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_holder_continuity_hyperbolic_splitting"
+  },
+  {
+    "id": "e_24795",
+    "from": "s_unstable_subspace_Eu",
+    "to": "t_adapted_lyapunov_norm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_holder_continuity_hyperbolic_splitting"
+  },
+  {
+    "id": "e_24796",
+    "from": "t_adapted_lyapunov_norm",
+    "to": "s_hyperbolic_set",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_holder_continuity_hyperbolic_splitting"
+  },
+  {
+    "id": "e_24797",
+    "from": "t_adapted_lyapunov_norm",
+    "to": "s_holder_continuity_hyperbolic_splitting",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_holder_continuity_hyperbolic_splitting"
+  },
+  {
+    "id": "e_24798",
+    "from": "t_adapted_lyapunov_norm",
+    "to": "s_local_product_structure",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_holder_continuity_hyperbolic_splitting"
+  },
+  {
+    "id": "e_24799",
+    "from": "s_hyperbolic_linear_map",
+    "to": "t_graph_transform_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_stable_manifold_theorem"
+  },
+  {
+    "id": "e_24800",
+    "from": "s_unstable_subspace_Eu",
+    "to": "t_graph_transform_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_stable_manifold_theorem"
+  },
+  {
+    "id": "e_24801",
+    "from": "s_local_product_structure",
+    "to": "t_graph_transform_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_stable_manifold_theorem"
+  },
+  {
+    "id": "e_24802",
+    "from": "s_hyperbolic_fixed_point_of_diffeomorphism",
+    "to": "t_graph_transform_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_stable_manifold_theorem"
+  },
+  {
+    "id": "e_24803",
+    "from": "t_graph_transform_method",
+    "to": "s_stable_manifold_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_stable_manifold_theorem"
+  },
+  {
+    "id": "e_24804",
+    "from": "t_graph_transform_method",
+    "to": "s_hadamard_perron_stable_manifold",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hadamard_perron_stable_manifold"
+  },
+  {
+    "id": "e_24805",
+    "from": "t_graph_transform_method",
+    "to": "s_inclination_lemma",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_inclination_lemma"
+  },
+  {
+    "id": "e_24806",
+    "from": "t_graph_transform_method",
+    "to": "s_local_product_structure",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_stable_manifold_theorem"
+  },
+  {
+    "id": "e_24807",
+    "from": "s_nonwandering_set",
+    "to": "t_filtration_dynamics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_omega_stability_theorem"
+  },
+  {
+    "id": "e_24808",
+    "from": "s_chain_recurrent_set",
+    "to": "t_filtration_dynamics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_omega_stability_theorem"
+  },
+  {
+    "id": "e_24809",
+    "from": "s_no_cycle_condition",
+    "to": "t_filtration_dynamics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_omega_stability_theorem"
+  },
+  {
+    "id": "e_24810",
+    "from": "s_axiom_A_diffeomorphism",
+    "to": "t_filtration_dynamics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_omega_stability_theorem"
+  },
+  {
+    "id": "e_24811",
+    "from": "t_filtration_dynamics",
+    "to": "s_omega_stability_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_omega_stability_theorem"
+  },
+  {
+    "id": "e_24812",
+    "from": "t_filtration_dynamics",
+    "to": "s_morse_smale_system",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_omega_stability_theorem"
+  },
+  {
+    "id": "e_24813",
+    "from": "s_hyperbolic_set",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_partition_existence_sinai_bowen"
+  },
+  {
+    "id": "e_24814",
+    "from": "s_local_product_structure",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_partition_existence_sinai_bowen"
+  },
+  {
+    "id": "e_24815",
+    "from": "s_expansiveness",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_partition_existence_sinai_bowen"
+  },
+  {
+    "id": "e_24816",
+    "from": "s_anosov_diffeomorphism",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_partition_existence_sinai_bowen"
+  },
+  {
+    "id": "e_24817",
+    "from": "s_axiom_A_basic_set",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_partition_existence_sinai_bowen"
+  },
+  {
+    "id": "e_24818",
+    "from": "t_markov_partition_hyperbolic",
+    "to": "s_markov_partition_existence_sinai_bowen",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_partition_existence_sinai_bowen"
+  },
+  {
+    "id": "e_24819",
+    "from": "t_markov_partition_hyperbolic",
+    "to": "s_topological_markov_chain",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_partition_existence_sinai_bowen"
+  },
+  {
+    "id": "e_24820",
+    "from": "t_markov_partition_hyperbolic",
+    "to": "s_zeta_rationality_axiom_a",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_zeta_rationality_axiom_a"
+  },
+  {
+    "id": "e_24821",
+    "from": "t_markov_partition_hyperbolic",
+    "to": "s_measure_of_maximal_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_markov_partition_existence_sinai_bowen"
+  },
+  {
+    "id": "e_24822",
+    "from": "s_absolute_continuity_of_foliations",
+    "to": "t_hopf_argument",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_volume_preserving_anosov_ergodic"
+  },
+  {
+    "id": "e_24823",
+    "from": "s_anosov_diffeomorphism",
+    "to": "t_hopf_argument",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_volume_preserving_anosov_ergodic"
+  },
+  {
+    "id": "e_24824",
+    "from": "s_birkhoff_ergodic_theorem",
+    "to": "t_hopf_argument",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_volume_preserving_anosov_ergodic"
+  },
+  {
+    "id": "e_24825",
+    "from": "s_local_product_structure",
+    "to": "t_hopf_argument",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_volume_preserving_anosov_ergodic"
+  },
+  {
+    "id": "e_24826",
+    "from": "t_hopf_argument",
+    "to": "s_volume_preserving_anosov_ergodic",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_volume_preserving_anosov_ergodic"
+  },
+  {
+    "id": "e_24827",
+    "from": "t_hopf_argument",
+    "to": "s_hopf_geodesic_flow_ergodicity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hopf_geodesic_flow_ergodicity"
+  },
+  {
+    "id": "e_24828",
+    "from": "s_axiom_A_diffeomorphism",
+    "to": "t_smale_program_synthesis",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structural_stability_theorem_RRM"
+  },
+  {
+    "id": "e_24829",
+    "from": "s_strong_transversality_condition",
+    "to": "t_smale_program_synthesis",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structural_stability_theorem_RRM"
+  },
+  {
+    "id": "e_24830",
+    "from": "s_no_cycle_condition",
+    "to": "t_smale_program_synthesis",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_omega_stability_theorem"
+  },
+  {
+    "id": "e_24831",
+    "from": "s_hyperbolic_set",
+    "to": "t_smale_program_synthesis",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anosov_structural_stability"
+  },
+  {
+    "id": "e_24832",
+    "from": "s_smale_horseshoe",
+    "to": "t_smale_program_synthesis",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anosov_structural_stability"
+  },
+  {
+    "id": "e_24833",
+    "from": "t_smale_program_synthesis",
+    "to": "s_anosov_structural_stability",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anosov_structural_stability"
+  },
+  {
+    "id": "e_24834",
+    "from": "t_smale_program_synthesis",
+    "to": "s_omega_stability_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_omega_stability_theorem"
+  },
+  {
+    "id": "e_24835",
+    "from": "t_smale_program_synthesis",
+    "to": "s_structural_stability_theorem_RRM",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structural_stability_theorem_RRM"
+  },
+  {
+    "id": "e_24836",
+    "from": "t_smale_program_synthesis",
+    "to": "s_spectral_decomposition_topological_markov_chain",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_decomposition_topological_markov_chain"
+  },
+  {
+    "id": "e_24837",
+    "from": "s_discrete_spectrum_system",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_halmos_von_neumann_theorem"
+  },
+  {
+    "id": "e_24838",
+    "from": "s_unique_ergodicity",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unique_ergodicity_criterion"
+  },
+  {
+    "id": "e_24839",
+    "from": "t_koopman_operator",
+    "to": "s_spectral_characterization_mixing",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_characterization_mixing"
+  },
+  {
+    "id": "e_24840",
+    "from": "t_koopman_operator",
+    "to": "s_halmos_von_neumann_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_halmos_von_neumann_theorem"
+  },
+  {
+    "id": "e_24841",
+    "from": "t_koopman_operator",
+    "to": "s_unique_ergodicity_criterion",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unique_ergodicity_criterion"
+  },
+  {
+    "id": "e_24842",
+    "from": "t_koopman_operator",
+    "to": "s_rigid_transformation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_characterization_mixing"
+  },
+  {
+    "id": "e_24843",
+    "from": "t_koopman_operator",
+    "to": "s_discrete_spectrum_system",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_halmos_von_neumann_theorem"
+  },
+  {
+    "id": "e_24844",
+    "from": "s_entropy_of_partition",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sinai_generator_theorem"
+  },
+  {
+    "id": "e_24845",
+    "from": "s_conditional_entropy_partitions",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sinai_generator_theorem"
+  },
+  {
+    "id": "e_24846",
+    "from": "s_kolmogorov_sinai_entropy",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sinai_generator_theorem"
+  },
+  {
+    "id": "e_24847",
+    "from": "t_measurable_partition_rokhlin",
+    "to": "s_sinai_generator_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sinai_generator_theorem"
+  },
+  {
+    "id": "e_24848",
+    "from": "t_measurable_partition_rokhlin",
+    "to": "s_kolmogorov_sinai_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sinai_generator_theorem"
+  },
+  {
+    "id": "e_24849",
+    "from": "s_kolmogorov_sinai_entropy",
+    "to": "t_conditional_measures_disintegration",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_disintegration_of_measures"
+  },
+  {
+    "id": "e_24850",
+    "from": "s_measure_of_maximal_entropy",
+    "to": "t_conditional_measures_disintegration",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_disintegration_of_measures"
+  },
+  {
+    "id": "e_24851",
+    "from": "s_equilibrium_state",
+    "to": "t_conditional_measures_disintegration",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_disintegration_of_measures"
+  },
+  {
+    "id": "e_24852",
+    "from": "t_conditional_measures_disintegration",
+    "to": "s_disintegration_of_measures",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_disintegration_of_measures"
+  },
+  {
+    "id": "e_24853",
+    "from": "t_conditional_measures_disintegration",
+    "to": "s_conditional_entropy_partitions",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_disintegration_of_measures"
+  },
+  {
+    "id": "e_24854",
+    "from": "t_conditional_measures_disintegration",
+    "to": "s_ergodic_components_disintegration",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_disintegration_of_measures"
+  },
+  {
+    "id": "e_24855",
+    "from": "s_gibbs_measure_dynamics",
+    "to": "t_thermodynamic_formalism",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_variational_principle_pressure"
+  },
+  {
+    "id": "e_24856",
+    "from": "s_equilibrium_state",
+    "to": "t_thermodynamic_formalism",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_variational_principle_pressure"
+  },
+  {
+    "id": "e_24857",
+    "from": "s_topological_entropy_spanning_separated",
+    "to": "t_thermodynamic_formalism",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_variational_principle_pressure"
+  },
+  {
+    "id": "e_24858",
+    "from": "t_thermodynamic_formalism",
+    "to": "s_variational_principle_pressure",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_variational_principle_pressure"
+  },
+  {
+    "id": "e_24859",
+    "from": "t_thermodynamic_formalism",
+    "to": "s_measure_of_maximal_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_variational_principle_pressure"
+  },
+  {
+    "id": "e_24860",
+    "from": "t_thermodynamic_formalism",
+    "to": "s_gibbs_measure_dynamics",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_variational_principle_pressure"
+  },
+  {
+    "id": "e_24861",
+    "from": "t_contraction_fixed_point",
+    "to": "s_poincare_classification_circle",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_poincare_classification_circle"
+  },
+  {
+    "id": "e_24862",
+    "from": "s_circle_rotation_R_alpha",
+    "to": "t_contraction_fixed_point",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_poincare_classification_circle"
+  },
+  {
+    "id": "e_24863",
+    "from": "t_contraction_fixed_point",
+    "to": "s_zeta_rationality_sft",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_zeta_rationality_sft"
+  },
+  {
+    "id": "e_24864",
+    "from": "s_full_shift_sigma_N",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_characterization_mixing"
+  },
+  {
+    "id": "e_24865",
+    "from": "s_bernoulli_automorphism",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_characterization_mixing"
+  },
+  {
+    "id": "e_24866",
+    "from": "t_ergodic_correspondence",
+    "to": "s_kolmogorov_automorphism_k_system",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_characterization_mixing"
+  },
+  {
+    "id": "e_24867",
+    "from": "s_full_shift_sigma_N",
+    "to": "t_horseshoe_lemma_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_li_yorke_theorem"
+  },
+  {
+    "id": "e_24868",
+    "from": "s_topological_markov_chain",
+    "to": "t_horseshoe_lemma_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_li_yorke_theorem"
+  },
+  {
+    "id": "e_24869",
+    "from": "t_horseshoe_lemma_construction",
+    "to": "s_li_yorke_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_li_yorke_theorem"
+  },
+  {
+    "id": "e_24870",
+    "from": "s_topological_dynamical_system",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_birkhoff_recurrence_theorem"
+  },
+  {
+    "id": "e_24871",
+    "from": "s_minimality_topological",
+    "to": "t_ergodic_correspondence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_birkhoff_recurrence_theorem"
+  },
+  {
+    "id": "e_24872",
+    "from": "t_ergodic_correspondence",
+    "to": "s_birkhoff_recurrence_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_birkhoff_recurrence_theorem"
+  },
+  {
+    "id": "e_24873",
+    "from": "s_topological_markov_chain",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_zeta_rationality_sft"
+  },
+  {
+    "id": "e_24874",
+    "from": "s_artin_mazur_zeta_function",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_zeta_rationality_sft"
+  },
+  {
+    "id": "e_24875",
+    "from": "t_markov_partition_hyperbolic",
+    "to": "s_zeta_rationality_sft",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_zeta_rationality_sft"
+  },
+  {
+    "id": "e_24876",
+    "from": "s_C2_circle_diffeomorphism_with_irrational_rotation_number",
+    "to": "t_contraction_fixed_point",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_denjoy_inequality"
+  },
+  {
+    "id": "e_24877",
+    "from": "t_contraction_fixed_point",
+    "to": "s_denjoy_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_denjoy_inequality"
+  },
+  {
+    "id": "e_24878",
+    "from": "s_denjoy_inequality",
+    "to": "t_contraction_fixed_point",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_poincare_classification_circle"
+  },
+  {
+    "id": "e_24879",
+    "from": "s_circle_rotation_R_alpha",
+    "to": "t_contraction_fixed_point",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rotation_number_rational_iff_periodic"
+  },
+  {
+    "id": "e_24880",
+    "from": "t_contraction_fixed_point",
+    "to": "s_rotation_number_rational_iff_periodic",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rotation_number_rational_iff_periodic"
+  },
+  {
+    "id": "e_24881",
+    "from": "s_topological_markov_chain",
+    "to": "t_smale_program_synthesis",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_spectral_decomposition_topological_markov_chain"
+  },
+  {
+    "id": "e_24882",
+    "from": "s_expanding_map_of_circle_Em",
+    "to": "t_graph_transform_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_expanding_map_structural_stability_shub"
+  },
+  {
+    "id": "e_24883",
+    "from": "t_graph_transform_method",
+    "to": "s_expanding_map_structural_stability_shub",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_expanding_map_structural_stability_shub"
+  },
+  {
+    "id": "e_24884",
+    "from": "s_doubling_map_dynamics",
+    "to": "t_graph_transform_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_expanding_map_structural_stability_shub"
+  },
+  {
+    "id": "e_24885",
+    "from": "s_anosov_diffeomorphism",
+    "to": "t_graph_transform_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anosov_structural_stability"
+  },
+  {
+    "id": "e_24886",
+    "from": "t_graph_transform_method",
+    "to": "s_anosov_structural_stability",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anosov_structural_stability"
+  },
+  {
+    "id": "e_24887",
+    "from": "s_anosov_flow",
+    "to": "t_cone_criterion_hyperbolicity",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_geodesic_flow_anosov_negative_curvature"
+  },
+  {
+    "id": "e_24888",
+    "from": "t_cone_criterion_hyperbolicity",
+    "to": "s_geodesic_flow_anosov_negative_curvature",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_geodesic_flow_anosov_negative_curvature"
+  },
+  {
+    "id": "e_24889",
+    "from": "s_cohomological_equation_coboundary",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_livsic_theorem"
+  },
+  {
+    "id": "e_24890",
+    "from": "s_anosov_diffeomorphism",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_livsic_theorem"
+  },
+  {
+    "id": "e_24891",
+    "from": "t_markov_partition_hyperbolic",
+    "to": "s_livsic_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_livsic_theorem"
+  },
+  {
+    "id": "e_24892",
+    "from": "s_livsic_theorem",
+    "to": "t_thermodynamic_formalism",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_variational_principle_pressure"
+  },
+  {
+    "id": "e_24893",
+    "from": "s_suspension_flow",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_abramov_formula"
+  },
+  {
+    "id": "e_24894",
+    "from": "s_kolmogorov_sinai_entropy",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_abramov_formula"
+  },
+  {
+    "id": "e_24895",
+    "from": "t_measurable_partition_rokhlin",
+    "to": "s_abramov_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_abramov_formula"
+  },
+  {
+    "id": "e_24896",
+    "from": "s_holder_continuity_hyperbolic_splitting",
+    "to": "t_graph_transform_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_absolute_continuity_of_foliations"
+  },
+  {
+    "id": "e_24897",
+    "from": "t_graph_transform_method",
+    "to": "s_absolute_continuity_of_foliations",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_absolute_continuity_of_foliations"
+  },
+  {
+    "id": "e_24898",
+    "from": "s_hyperbolic_fixed_point_of_diffeomorphism",
+    "to": "t_graph_transform_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_inclination_lemma"
+  },
+  {
+    "id": "e_24899",
+    "from": "s_artin_mazur_zeta_function",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_zeta_rationality_axiom_a"
+  },
+  {
+    "id": "e_24900",
+    "from": "s_axiom_A_diffeomorphism",
+    "to": "t_markov_partition_hyperbolic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_zeta_rationality_axiom_a"
+  },
+  {
+    "id": "e_24901",
+    "from": "s_circle_rotation_R_alpha",
+    "to": "t_koopman_operator",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unique_ergodicity_criterion"
+  },
+  {
+    "id": "e_24902",
+    "from": "s_kolmogorov_automorphism_k_system",
+    "to": "t_measurable_partition_rokhlin",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sinai_generator_theorem"
+  },
+  {
+    "id": "e_24903",
+    "from": "s_rotation_number_rational_iff_periodic",
+    "to": "t_contraction_fixed_point",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_poincare_classification_circle"
+  }
+]

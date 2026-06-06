@@ -1,0 +1,548 @@
+[
+  {
+    "id": "s_topological_dynamical_system",
+    "kind": "axiom",
+    "name": "Topological dynamical system (cascade)",
+    "type_signature": "(X: CompactMetricSpace, f: X→X continuous)",
+    "description": "A pair consisting of a compact metric space together with a continuous self-map (discrete time, a cascade) or continuous flow, generating orbits under iteration."
+  },
+  {
+    "id": "s_topological_transitivity",
+    "kind": "axiom",
+    "name": "Topological transitivity",
+    "type_signature": "Property(f: X→X)",
+    "description": "A system is topologically transitive if for every pair of nonempty open sets U,V there exists n with fⁿ(U)∩V≠∅, equivalently it has a dense orbit on a complete separable space."
+  },
+  {
+    "id": "s_topological_mixing",
+    "kind": "axiom",
+    "name": "Topological mixing",
+    "type_signature": "Property(f: X→X)",
+    "description": "A system is topologically mixing if for every pair of nonempty open sets U,V there exists N such that fⁿ(U)∩V≠∅ for all n≥N."
+  },
+  {
+    "id": "s_minimality_topological",
+    "kind": "axiom",
+    "name": "Minimality (topological)",
+    "type_signature": "Property(f: X→X)",
+    "description": "A topological system is minimal if every orbit is dense, equivalently the only closed invariant subsets are ∅ and X."
+  },
+  {
+    "id": "s_nonwandering_set",
+    "kind": "state",
+    "name": "Nonwandering set Ω(f)",
+    "type_signature": "Ω(f) ⊆ X",
+    "description": "The set of points x such that every neighborhood U of x satisfies fⁿ(U)∩U≠∅ for some n>0, a closed invariant set containing all recurrent behavior."
+  },
+  {
+    "id": "s_chain_recurrent_set",
+    "kind": "state",
+    "name": "Chain recurrent set / ε-chains",
+    "type_signature": "R(f) ⊆ X",
+    "description": "The set of points x admitting, for every ε>0, a periodic ε-pseudo-orbit (ε-chain) from x to itself, where each successive jump is within ε of the true image."
+  },
+  {
+    "id": "s_birkhoff_recurrence_theorem",
+    "kind": "theorem",
+    "name": "Birkhoff recurrence theorem",
+    "type_signature": "∀(X,f) compact ⇒ ∃ minimal set",
+    "description": "Every topological dynamical system on a nonempty compact metric space contains a nonempty minimal closed invariant subset, hence a recurrent (almost periodic) point."
+  },
+  {
+    "id": "s_topological_entropy_spanning_separated",
+    "kind": "axiom",
+    "name": "Topological entropy via spanning/separated sets (Bowen–Dinaburg)",
+    "type_signature": "h_top(f) = lim_{ε→0} limsup_n (1/n) log r(n,ε)",
+    "description": "The exponential growth rate of the minimal cardinality of (n,ε)-spanning sets (equivalently maximal (n,ε)-separated sets) measuring orbit complexity at finite resolution."
+  },
+  {
+    "id": "s_topological_entropy_open_covers",
+    "kind": "axiom",
+    "name": "Topological entropy via open covers (Adler–Konheim–McAndrew)",
+    "type_signature": "h_top(f) = sup_U lim_n (1/n) log N(⋁_{i<n} f^{-i}U)",
+    "description": "The supremum over open covers U of the exponential growth rate of the minimal cardinality of subcovers of the joined cover ⋁ f^{-i}U, the original definition of topological entropy."
+  },
+  {
+    "id": "s_periodic_orbit_growth_pn",
+    "kind": "state",
+    "name": "Periodic orbit growth rate p_n(f)",
+    "type_signature": "p_n(f) = #Fix(fⁿ)",
+    "description": "The sequence counting the number of fixed points of fⁿ (periodic points of period dividing n), whose exponential growth rate bounds topological entropy from below."
+  },
+  {
+    "id": "s_artin_mazur_zeta_function",
+    "kind": "state",
+    "name": "Artin–Mazur zeta function",
+    "type_signature": "ζ_f(z) = exp(Σ_{n≥1} (p_n(f)/n) zⁿ)",
+    "description": "The formal power series generating function exponentiating the periodic-point counts p_n(f), encoding the dynamical periodic structure of f."
+  },
+  {
+    "id": "s_zeta_rationality_sft",
+    "kind": "theorem",
+    "name": "Rationality of the zeta function for subshifts of finite type",
+    "type_signature": "ζ_σ(z) = 1/det(I − zA)",
+    "description": "For a topological Markov chain with transition matrix A, the Artin–Mazur zeta function equals the reciprocal of det(I−zA), hence is rational."
+  },
+  {
+    "id": "s_li_yorke_theorem",
+    "kind": "theorem",
+    "name": "Li–Yorke theorem (period three implies chaos)",
+    "type_signature": "(f∈C⁰(I,I), ∃ orbit of period 3) ⇒ chaos",
+    "description": "A continuous interval map possessing a periodic point of period three has periodic points of every period and an uncountable scrambled set exhibiting Li–Yorke chaos."
+  },
+  {
+    "id": "s_denjoy_inequality",
+    "kind": "theorem",
+    "name": "Denjoy inequality",
+    "type_signature": "Var(log Df) bound ⇒ |log (fⁿ)'| ≤ V",
+    "description": "For a C² (or bounded-variation-derivative) circle diffeomorphism with irrational rotation number, the total variation of log of the derivative of fⁿ over a fundamental domain is uniformly bounded by V(log Df')."
+  },
+  {
+    "id": "s_denjoy_counterexample",
+    "kind": "state",
+    "name": "Denjoy counterexample",
+    "type_signature": "(C¹ circle diffeo, irrational ρ, not minimal)",
+    "description": "A C¹ (but not C²) circle diffeomorphism with irrational rotation number that is not topologically conjugate to a rotation, possessing a wandering interval and a Cantor minimal set."
+  },
+  {
+    "id": "s_poincare_classification_circle",
+    "kind": "theorem",
+    "name": "Poincaré classification theorem for circle homeomorphisms",
+    "type_signature": "ρ(f)∈ℚ ⟺ ∃ periodic orbit; ρ irrational, minimal ⇒ conjugate to R_ρ",
+    "description": "An orientation-preserving circle homeomorphism has a periodic orbit iff its rotation number is rational, and if the rotation number is irrational and the map is minimal it is topologically conjugate to the rigid rotation by that number."
+  },
+  {
+    "id": "s_rotation_number_rational_iff_periodic",
+    "kind": "theorem",
+    "name": "Rationality of rotation number iff periodic orbit",
+    "type_signature": "ρ(f)=p/q ⟺ Fix(f^q)≠∅",
+    "description": "An orientation-preserving circle homeomorphism has rotation number p/q in lowest terms iff it has a periodic orbit of period q."
+  },
+  {
+    "id": "s_morse_smale_system",
+    "kind": "state",
+    "name": "Morse–Smale system",
+    "type_signature": "(f: M→M, Ω(f) finite hyperbolic, transverse W^s,W^u)",
+    "description": "A diffeomorphism (or flow) whose nonwandering set consists of finitely many hyperbolic periodic orbits whose stable and unstable manifolds intersect transversally, the simplest structurally stable systems."
+  },
+  {
+    "id": "s_expanding_map_of_circle_Em",
+    "kind": "state",
+    "name": "Expanding map of the circle E_m",
+    "type_signature": "E_m: S¹→S¹, x↦mx (mod 1), |m|≥2",
+    "description": "The degree-m self-cover of the circle multiplying the angle by an integer m of absolute value at least 2, the canonical uniformly expanding example with topological entropy log|m|."
+  },
+  {
+    "id": "s_doubling_map_dynamics",
+    "kind": "state",
+    "name": "Doubling map",
+    "type_signature": "E_2: S¹→S¹, x↦2x (mod 1)",
+    "description": "The angle-doubling self-map of the circle, a degree-two expanding map measure-preserving for Lebesgue and conjugate to the one-sided full 2-shift."
+  },
+  {
+    "id": "s_linear_toral_automorphism_cat_map",
+    "kind": "state",
+    "name": "Linear toral automorphism (cat map)",
+    "type_signature": "F_A: 𝕋ⁿ→𝕋ⁿ, x↦Ax (mod ℤⁿ), A∈GL_n(ℤ)",
+    "description": "The automorphism of the torus induced by an integer matrix A of determinant ±1, hyperbolic (Anosov) when A has no eigenvalue on the unit circle, the Arnold cat map being the SL(2,ℤ) case [[2,1],[1,1]]."
+  },
+  {
+    "id": "s_circle_rotation_R_alpha",
+    "kind": "state",
+    "name": "Circle rotation R_α",
+    "type_signature": "R_α: S¹→S¹, x↦x+α (mod 1)",
+    "description": "Rigid rotation of the circle by angle α, which is minimal and uniquely ergodic iff α is irrational and periodic iff α is rational."
+  },
+  {
+    "id": "s_full_shift_sigma_N",
+    "kind": "state",
+    "name": "Full shift σ on Σ_N",
+    "type_signature": "σ: {1,…,N}^ℤ→{1,…,N}^ℤ, (σx)_i=x_{i+1}",
+    "description": "The left-shift on the space of bi-infinite (or one-sided) sequences over an N-symbol alphabet, the universal model of symbolic dynamics with topological entropy log N."
+  },
+  {
+    "id": "s_topological_markov_chain",
+    "kind": "state",
+    "name": "Topological Markov chain / subshift of finite type Σ_A",
+    "type_signature": "Σ_A = {x : A_{x_i x_{i+1}}=1 ∀i}, σ",
+    "description": "The shift restricted to the closed invariant set of sequences whose successive symbol transitions are permitted by a 0–1 transition matrix A, the basic building block of hyperbolic symbolic dynamics."
+  },
+  {
+    "id": "s_spectral_decomposition_topological_markov_chain",
+    "kind": "theorem",
+    "name": "Spectral decomposition for topological Markov chains",
+    "type_signature": "Σ_A irreducible ⇒ disjoint cyclically permuted topologically mixing components",
+    "description": "An irreducible topological Markov chain decomposes into finitely many disjoint closed sets cyclically permuted by σ on each of which a power of σ is topologically mixing."
+  },
+  {
+    "id": "s_cylinder_set_symbolic",
+    "kind": "state",
+    "name": "Cylinder set (symbolic dynamics)",
+    "type_signature": "[a_0…a_{k}] = {x : x_i=a_i, 0≤i≤k}",
+    "description": "The set of sequences agreeing with a prescribed finite word on a fixed block of coordinates, the basic clopen sets generating the topology and Borel structure of a shift space."
+  },
+  {
+    "id": "s_inclination_lemma",
+    "kind": "theorem",
+    "name": "Inclination lemma (λ-lemma)",
+    "type_signature": "(p hyperbolic, D ⋔ W^s(p)) ⇒ fⁿ(D) → W^u(p) in C¹",
+    "description": "If a disk D transversally intersects the stable manifold of a hyperbolic fixed point, its forward iterates accumulate in the C¹ topology on the unstable manifold of that point."
+  },
+  {
+    "id": "s_anosov_flow",
+    "kind": "state",
+    "name": "Anosov flow",
+    "type_signature": "(φ_t: M→M, TM = E^s⊕E^0⊕E^u uniformly hyperbolic)",
+    "description": "A smooth flow whose tangent bundle splits continuously and invariantly into uniformly contracting stable, flow-direction, and uniformly expanding unstable subbundles."
+  },
+  {
+    "id": "s_hyperbolic_linear_map",
+    "kind": "state",
+    "name": "Hyperbolic linear map",
+    "type_signature": "A∈GL(ℝⁿ), spec(A)∩S¹=∅",
+    "description": "An invertible linear operator with no eigenvalue of modulus one, so that ℝⁿ splits into complementary contracting and expanding invariant subspaces."
+  },
+  {
+    "id": "s_unstable_subspace_Eu",
+    "kind": "state",
+    "name": "Unstable subspace E^u",
+    "type_signature": "E^u = {v : ‖A^{-n}v‖→0}",
+    "description": "The maximal invariant subspace on which a hyperbolic linear map (or the differential of a hyperbolic system) is uniformly expanding, spanned by generalized eigenspaces for eigenvalues of modulus greater than one."
+  },
+  {
+    "id": "s_local_product_structure",
+    "kind": "state",
+    "name": "Local product structure",
+    "type_signature": "[x,y] = W^s_loc(x)∩W^u_loc(y)",
+    "description": "The property of a locally maximal hyperbolic set that nearby points x,y have a unique intersection of the local stable manifold of x with the local unstable manifold of y lying in the set, giving it a local product of stable and unstable coordinates."
+  },
+  {
+    "id": "s_expansiveness",
+    "kind": "axiom",
+    "name": "Expansiveness",
+    "type_signature": "∃c>0: d(fⁿx,fⁿy)≤c ∀n ⇒ x=y",
+    "description": "A homeomorphism is expansive if there is a constant c such that any two distinct points are eventually separated by more than c under forward or backward iteration."
+  },
+  {
+    "id": "t_cone_criterion_hyperbolicity",
+    "kind": "technique",
+    "name": "Cone criterion (cone field) for hyperbolicity",
+    "function_signature": "(invariant stable/unstable cone fields with expansion/contraction) → (uniform hyperbolicity of Λ)",
+    "description": "A method establishing hyperbolicity of an invariant set by exhibiting continuous fields of stable and unstable cones that are mapped strictly inside themselves by Df⁻¹ and Df respectively with uniform expansion."
+  },
+  {
+    "id": "t_adapted_lyapunov_norm",
+    "kind": "technique",
+    "name": "Adapted (Lyapunov) norm",
+    "function_signature": "(hyperbolic splitting, ε>0) → (norm making contraction/expansion strict at first step)",
+    "description": "A reparametrized Riemannian metric, equivalent to the original, in which the contraction on E^s and expansion on E^u of a hyperbolic system become immediate (one-step), eliminating the bounding constant C."
+  },
+  {
+    "id": "t_graph_transform_method",
+    "kind": "technique",
+    "name": "Graph transform method",
+    "function_signature": "(Lipschitz section graph near hyperbolic set) → (contracted iterate converging to invariant manifold)",
+    "description": "The Hadamard contraction-mapping argument that constructs stable and unstable manifolds as fixed points of the operator sending the graph of a Lipschitz function to the graph of its image under f."
+  },
+  {
+    "id": "s_expanding_map_structural_stability_shub",
+    "kind": "theorem",
+    "name": "Structural stability of expanding maps (Shub)",
+    "type_signature": "(f expanding on M, g C¹-close) ⇒ g topologically conjugate to f",
+    "description": "Every C¹ expanding endomorphism of a compact manifold is structurally stable and topologically conjugate to a fixed expanding linear model on an infranilmanifold (Shub's theorem)."
+  },
+  {
+    "id": "s_anosov_structural_stability",
+    "kind": "theorem",
+    "name": "Anosov structural stability theorem",
+    "type_signature": "(f Anosov, g C¹-close) ⇒ ∃ homeomorphism h: h∘g=f∘h",
+    "description": "Every Anosov diffeomorphism is structurally stable: any C¹-small perturbation is topologically conjugate to it via a homeomorphism close to the identity."
+  },
+  {
+    "id": "s_holder_continuity_hyperbolic_splitting",
+    "kind": "theorem",
+    "name": "Hölder continuity of the hyperbolic splitting",
+    "type_signature": "x ↦ (E^s_x, E^u_x) is Hölder",
+    "description": "For a hyperbolic set of a C¹⁺ᵅ diffeomorphism the stable and unstable subbundles depend Hölder-continuously on the base point, even when they fail to be C¹."
+  },
+  {
+    "id": "s_no_cycle_condition",
+    "kind": "axiom",
+    "name": "No-cycle condition",
+    "type_signature": "no chain Ω_i → Ω_j → … → Ω_i among basic sets",
+    "description": "The requirement that the basic sets in Smale's spectral decomposition admit no cyclic chain of heteroclinic connections, equivalently they can be totally ordered by the relation of stable/unstable intersection."
+  },
+  {
+    "id": "s_omega_stability_theorem",
+    "kind": "theorem",
+    "name": "Ω-stability theorem",
+    "type_signature": "(Axiom A + no-cycle) ⇒ Ω-stable",
+    "description": "An Axiom A diffeomorphism satisfying the no-cycle condition is Ω-stable: any C¹-nearby diffeomorphism is topologically conjugate to it on its nonwandering set."
+  },
+  {
+    "id": "s_strong_transversality_condition",
+    "kind": "axiom",
+    "name": "Strong transversality condition",
+    "type_signature": "∀x,y: W^u(x) ⋔ W^s(y)",
+    "description": "The condition that all stable and unstable manifolds of an Axiom A system intersect transversally, characterizing (with Axiom A) C¹ structural stability via the Robbin–Robinson–Mañé theorem."
+  },
+  {
+    "id": "s_structural_stability_theorem_RRM",
+    "kind": "theorem",
+    "name": "C¹ structural stability theorem (Robbin–Robinson–Mañé)",
+    "type_signature": "C¹ structurally stable ⟺ Axiom A + strong transversality",
+    "description": "A C¹ diffeomorphism is C¹ structurally stable if and only if it satisfies Axiom A together with the strong transversality condition."
+  },
+  {
+    "id": "t_filtration_dynamics",
+    "kind": "technique",
+    "name": "Filtration (dynamical)",
+    "function_signature": "(f: M→M) → (nested family M_1⊂…⊂M_k of f-trapping submanifolds isolating basic sets)",
+    "description": "A nested sequence of compact submanifolds with boundary, each mapped into its own interior, used to isolate the chain components/basic sets of a system and order them."
+  },
+  {
+    "id": "t_markov_partition_hyperbolic",
+    "kind": "technique",
+    "name": "Markov partition for hyperbolic sets",
+    "function_signature": "(locally maximal hyperbolic set Λ) → (finite cover by rectangles with Markov boundary property)",
+    "description": "A finite cover of a hyperbolic set by proper rectangles (products of stable and unstable pieces) whose boundaries map compatibly so that itineraries give a semiconjugacy to a subshift of finite type."
+  },
+  {
+    "id": "s_markov_partition_existence_sinai_bowen",
+    "kind": "theorem",
+    "name": "Existence of Markov partitions (Sinai–Bowen)",
+    "type_signature": "(Λ locally maximal hyperbolic) ⇒ ∃ Markov partitions of arbitrarily small diameter",
+    "description": "Every locally maximal hyperbolic set admits finite Markov partitions of arbitrarily small diameter, yielding a finite-to-one symbolic coding by a subshift of finite type (Sinai for Anosov, Bowen for Axiom A)."
+  },
+  {
+    "id": "s_smale_solenoid",
+    "kind": "state",
+    "name": "Smale solenoid attractor",
+    "type_signature": "Λ = ⋂_{n≥0} fⁿ(D²×S¹)",
+    "description": "The hyperbolic attractor obtained as the nested intersection of images of a solid torus under an embedding wrapping it twice (or k times) around longitudinally, locally a product of a Cantor set and an arc."
+  },
+  {
+    "id": "s_da_attractor",
+    "kind": "state",
+    "name": "DA (derived from Anosov) attractor",
+    "type_signature": "modify cat map at fixed point ⇒ hyperbolic attractor",
+    "description": "A hyperbolic attractor produced by altering a toral Anosov automorphism near a fixed point so the fixed point becomes a repeller, yielding a non-invertible-on-its-basin attracting basic set."
+  },
+  {
+    "id": "s_plykin_attractor",
+    "kind": "state",
+    "name": "Plykin attractor",
+    "type_signature": "hyperbolic attractor in the plane/sphere with 1-dim unstable",
+    "description": "A planar (or 2-sphere) hyperbolic attractor with one-dimensional unstable foliation locally homeomorphic to the product of a Cantor set and an interval, the lowest-dimensional orientable example."
+  },
+  {
+    "id": "s_absolute_continuity_of_foliations",
+    "kind": "theorem",
+    "name": "Absolute continuity of stable/unstable foliations",
+    "type_signature": "holonomy of W^s, W^u maps null sets to null sets",
+    "description": "For a C¹⁺ᵅ (partially) hyperbolic system the stable and unstable foliations are absolutely continuous, i.e. their holonomy maps preserve sets of measure zero, the key analytic input to the Hopf ergodicity argument."
+  },
+  {
+    "id": "t_hopf_argument",
+    "kind": "technique",
+    "name": "Hopf argument",
+    "function_signature": "(absolutely continuous stable/unstable foliations + Birkhoff averages constant along leaves) → (ergodicity)",
+    "description": "The method proving ergodicity of a volume-preserving hyperbolic system by showing Birkhoff averages are constant along stable and unstable leaves and using absolute continuity of these foliations to conclude they are a.e. constant."
+  },
+  {
+    "id": "s_geodesic_flow_anosov_negative_curvature",
+    "kind": "theorem",
+    "name": "Geodesic flow on negatively curved manifold is Anosov",
+    "type_signature": "(M compact, sec(M)<0) ⇒ geodesic flow on T¹M is Anosov",
+    "description": "The geodesic flow on the unit tangent bundle of a compact Riemannian manifold of negative sectional curvature is an Anosov flow, with stable/unstable bundles tangent to the horosphere foliations (Anosov's theorem)."
+  },
+  {
+    "id": "s_volume_preserving_anosov_ergodic",
+    "kind": "theorem",
+    "name": "Ergodicity of volume-preserving Anosov systems",
+    "type_signature": "(f Anosov, preserves smooth volume) ⇒ ergodic (Bernoulli)",
+    "description": "A C¹⁺ᵅ Anosov diffeomorphism or flow preserving a smooth volume is ergodic, mixing, and in fact Bernoulli with respect to that volume."
+  },
+  {
+    "id": "s_livsic_theorem",
+    "kind": "theorem",
+    "name": "Livšic theorem",
+    "type_signature": "(f transitive Anosov, φ Hölder, Σ_{periodic} φ = 0) ⇒ φ = u∘f − u, u Hölder",
+    "description": "For a transitive hyperbolic system, a Hölder cocycle that sums to zero over every periodic orbit is a Hölder coboundary, i.e. cohomologous to zero."
+  },
+  {
+    "id": "s_cohomological_equation_coboundary",
+    "kind": "state",
+    "name": "Cohomological equation / coboundary (dynamics)",
+    "type_signature": "φ = u∘f − u",
+    "description": "The equation expressing an observable φ as the coboundary of a transfer (transformation) u under the dynamics f, central to questions of cohomology and equivalence of cocycles."
+  },
+  {
+    "id": "s_zeta_rationality_axiom_a",
+    "kind": "theorem",
+    "name": "Rationality/meromorphy of the zeta function for Axiom A systems",
+    "type_signature": "ζ_f(z) = ∏ det(I−z A_i)^{±1} rational",
+    "description": "For an Axiom A diffeomorphism the Artin–Mazur zeta function is rational (via Markov partitions), and the associated Ruelle dynamical zeta function for flows is meromorphic."
+  },
+  {
+    "id": "t_smale_program_synthesis",
+    "kind": "technique",
+    "name": "Smale's differentiable dynamics program",
+    "function_signature": "(generic smooth system) → (hyperbolic theory: Axiom A, spectral decomposition, stability)",
+    "description": "The overarching synthesis organizing hyperbolic dynamics around horseshoes, Axiom A, the spectral decomposition, structural and Ω-stability, and symbolic coding via Markov partitions."
+  },
+  {
+    "id": "s_unique_ergodicity",
+    "kind": "state",
+    "name": "Unique ergodicity",
+    "type_signature": "Property(X,f): |M_f(X)| = 1",
+    "description": "The property that a topological system admits exactly one invariant Borel probability measure, which is then automatically ergodic."
+  },
+  {
+    "id": "s_unique_ergodicity_criterion",
+    "kind": "theorem",
+    "name": "Unique ergodicity criterion",
+    "type_signature": "(uniform convergence of (1/n)Σ φ∘fⁱ to a constant ∀φ∈C(X)) ⟺ unique ergodicity",
+    "description": "A continuous system is uniquely ergodic if and only if for every continuous function the Birkhoff averages converge uniformly to a constant (equivalently to the integral against the unique invariant measure)."
+  },
+  {
+    "id": "t_koopman_operator",
+    "kind": "technique",
+    "name": "Koopman operator",
+    "function_signature": "(measure-preserving f) → (unitary U_f φ = φ∘f on L²(μ))",
+    "description": "The composition operator U_f φ = φ∘f induced on L²(μ) by a measure-preserving transformation, an isometry (unitary if invertible) translating dynamical properties into spectral properties."
+  },
+  {
+    "id": "s_spectral_characterization_mixing",
+    "kind": "theorem",
+    "name": "Spectral characterization of weak and strong mixing",
+    "type_signature": "weak mixing ⟺ Koopman operator has no nonconstant eigenfunctions; mixing ⟺ correlations →0",
+    "description": "A measure-preserving system is weakly mixing iff its Koopman operator has continuous spectrum on the orthocomplement of constants (no nonconstant L² eigenfunctions), and strongly mixing iff all correlation coefficients tend to zero."
+  },
+  {
+    "id": "s_discrete_spectrum_system",
+    "kind": "state",
+    "name": "Discrete (pure point) spectrum",
+    "type_signature": "L²(μ) = closed span of eigenfunctions of U_f",
+    "description": "The property of a measure-preserving system that the eigenfunctions of its Koopman operator span L²(μ), characterizing systems measurably isomorphic to rotations on compact groups."
+  },
+  {
+    "id": "s_halmos_von_neumann_theorem",
+    "kind": "theorem",
+    "name": "Halmos–von Neumann theorem",
+    "type_signature": "discrete spectrum ⟺ conjugate to compact group rotation; isomorphism ⟺ same eigenvalue group",
+    "description": "An ergodic system has discrete spectrum iff it is measurably isomorphic to an ergodic rotation on a compact abelian group, and two such systems are isomorphic iff their groups of eigenvalues coincide."
+  },
+  {
+    "id": "s_rank_one_system",
+    "kind": "state",
+    "name": "Rank-one system",
+    "type_signature": "approximable by single Rokhlin towers",
+    "description": "A measure-preserving transformation built by a cutting-and-stacking construction from a single Rokhlin tower at each stage, the simplest class of ergodic systems and a rich source of generic examples."
+  },
+  {
+    "id": "s_rigid_transformation",
+    "kind": "state",
+    "name": "Rigidity (measurable)",
+    "type_signature": "∃ n_k→∞: U_f^{n_k} → Id strongly",
+    "description": "The property of a measure-preserving system that some sequence of iterates of its Koopman operator converges strongly to the identity, the opposite extreme from mixing."
+  },
+  {
+    "id": "s_entropy_of_partition",
+    "kind": "state",
+    "name": "Entropy of a partition H(ξ)",
+    "type_signature": "H(ξ) = −Σ_i μ(C_i) log μ(C_i)",
+    "description": "The Shannon entropy of a finite or countable measurable partition ξ, the average information gained by learning which atom of ξ a point lies in."
+  },
+  {
+    "id": "s_conditional_entropy_partitions",
+    "kind": "state",
+    "name": "Conditional entropy of partitions H(ξ|η)",
+    "type_signature": "H(ξ|η) = −Σ μ(C_i∩D_j) log(μ(C_i∩D_j)/μ(D_j))",
+    "description": "The average residual information in partition ξ given knowledge of partition η, the basic quantity from which Kolmogorov–Sinai entropy is built."
+  },
+  {
+    "id": "s_kolmogorov_sinai_entropy",
+    "kind": "state",
+    "name": "Metric (Kolmogorov–Sinai) entropy h_μ(f)",
+    "type_signature": "h_μ(f) = sup_ξ lim_n (1/n) H(⋁_{i<n} f^{-i}ξ)",
+    "description": "The supremum over finite partitions of the asymptotic per-step entropy of refinements under f, an isomorphism invariant measuring the exponential rate of information production of a measure-preserving system."
+  },
+  {
+    "id": "s_sinai_generator_theorem",
+    "kind": "theorem",
+    "name": "Kolmogorov–Sinai (Sinai) generator theorem",
+    "type_signature": "ξ generating ⇒ h_μ(f) = h_μ(f,ξ)",
+    "description": "If a finite-entropy partition ξ generates the σ-algebra under f (its iterated refinements separate points mod 0), then the entropy of the system equals the entropy relative to that single partition."
+  },
+  {
+    "id": "s_abramov_formula",
+    "kind": "theorem",
+    "name": "Abramov formula",
+    "type_signature": "h(special flow) = h(base map)/∫ roof dμ",
+    "description": "The entropy of a suspension (special) flow equals the entropy of its base transformation divided by the integral of the roof (return-time) function, and analogously for induced maps."
+  },
+  {
+    "id": "s_suspension_flow",
+    "kind": "state",
+    "name": "Suspension (special) flow",
+    "type_signature": "(base map T, roof r) ↦ flow on {(x,s): 0≤s≤r(x)}/(x,r(x))∼(Tx,0)",
+    "description": "The flow obtained from a base transformation T and a positive roof function r by flowing upward at unit speed in the mapping torus and identifying the top of each fiber with the base point of its T-image."
+  },
+  {
+    "id": "s_kolmogorov_automorphism_k_system",
+    "kind": "state",
+    "name": "K-system (Kolmogorov automorphism)",
+    "type_signature": "∃ σ-algebra 𝒜: f𝒜⊃𝒜, ⋁fⁿ𝒜=full, ⋂f^{-n}𝒜=trivial",
+    "description": "A measure-preserving transformation admitting an exhaustive and trivial-tail generating sub-σ-algebra, equivalently having completely positive entropy; K-systems are mixing of all orders."
+  },
+  {
+    "id": "s_bernoulli_automorphism",
+    "kind": "state",
+    "name": "Bernoulli automorphism",
+    "type_signature": "(p-shift) ≅ (Π ℤ, product measure, shift)",
+    "description": "A measure-preserving system isomorphic to a two-sided Bernoulli shift on an independent identically distributed product space, the most random class of dynamical systems."
+  },
+  {
+    "id": "s_measure_of_maximal_entropy",
+    "kind": "state",
+    "name": "Measure of maximal entropy",
+    "type_signature": "μ* with h_{μ*}(f) = h_top(f)",
+    "description": "An invariant probability measure whose metric entropy attains the topological entropy, the equilibrium state for the zero potential and unique for many hyperbolic and expansive systems."
+  },
+  {
+    "id": "s_variational_principle_pressure",
+    "kind": "theorem",
+    "name": "Variational principle for topological pressure",
+    "type_signature": "P(φ) = sup_μ ( h_μ(f) + ∫ φ dμ )",
+    "description": "The topological pressure of a continuous potential φ equals the supremum over invariant measures of metric entropy plus the integral of φ, generalizing the variational principle for entropy (φ=0)."
+  },
+  {
+    "id": "s_equilibrium_state",
+    "kind": "state",
+    "name": "Equilibrium state",
+    "type_signature": "μ_φ attains sup_μ ( h_μ(f) + ∫φ dμ )",
+    "description": "An invariant measure realizing the supremum in the variational principle for the pressure of a potential φ, the dynamical analogue of a Gibbs state in statistical mechanics."
+  },
+  {
+    "id": "s_gibbs_measure_dynamics",
+    "kind": "state",
+    "name": "Gibbs measure (for a Hölder potential)",
+    "type_signature": "C⁻¹ ≤ μ([x_0…x_{n-1}]) / exp(−nP + Σφ∘fⁱ) ≤ C",
+    "description": "An invariant measure whose cylinder masses are comparable, up to a uniform constant, to exp(S_nφ − nP(φ)), the unique equilibrium state of a Hölder potential on a mixing hyperbolic system."
+  },
+  {
+    "id": "t_measurable_partition_rokhlin",
+    "kind": "technique",
+    "name": "Measurable partition (Rokhlin theory)",
+    "function_signature": "(Lebesgue space, measurable partition ξ) → (factor space, family of conditional measures on atoms)",
+    "description": "Rokhlin's framework treating a partition into possibly uncountably many atoms as a measurable object dual to a sub-σ-algebra, equipped with a canonical system of conditional (disintegrated) measures on its atoms."
+  },
+  {
+    "id": "t_conditional_measures_disintegration",
+    "kind": "technique",
+    "name": "Conditional measures (disintegration)",
+    "function_signature": "(measure μ, measurable partition ξ) → (family {μ_C} of measures on atoms with μ = ∫ μ_C dμ̄)",
+    "description": "The canonical decomposition of a measure on a Lebesgue space into conditional probability measures supported on the atoms of a measurable partition, integrating back to the original measure."
+  }
+]

@@ -1,0 +1,32 @@
+[
+ {
+  "id": "t_heat_kernel_supertrace",
+  "kind": "technique",
+  "function_signature": "(Dirac-type operator D, time t) → (Str e^{-tD²} = index density)",
+  "description": "Computes the index of a Dirac-type operator by evaluating the t-independent supertrace of the heat kernel and taking its short-time asymptotic expansion to extract the local characteristic-class index density (McKean–Singer)."
+ },
+ {
+  "id": "t_gauge_holonomy_transport",
+  "kind": "technique",
+  "function_signature": "(connection one-form, loop γ) → (holonomy / gauge-transformed potential)",
+  "description": "Parallel-transports along loops and applies gauge transformations to a connection, producing holonomy phases and the inhomogeneous transformation law of the local gauge potential."
+ },
+ {
+  "id": "t_simplicial_euler_computation",
+  "kind": "technique",
+  "function_signature": "(simplicial complex K) → (Euler characteristic χ = Σ(-1)^n c_n)",
+  "description": "Computes the Euler characteristic of a complex as the alternating sum of simplex counts and equates it, via homology, to the alternating sum of Betti numbers."
+ },
+ {
+  "id": "t_homotopy_classification_order_parameter",
+  "kind": "technique",
+  "function_signature": "(order-parameter space G/H, dimension n) → (π_n(G/H) defect classes)",
+  "description": "Classifies stable topological defects of an ordered medium by computing the homotopy groups of the order-parameter coset space G/H."
+ },
+ {
+  "id": "t_virasoro_central_charge_computation",
+  "kind": "technique",
+  "function_signature": "(gauge-fixed worldsheet CFT, ghosts) → (central charge c, critical dimension)",
+  "description": "Computes the total Virasoro central charge from matter and Faddeev–Popov ghost sectors and imposes its cancellation to fix the critical spacetime dimension and remove the conformal anomaly."
+ }
+]
