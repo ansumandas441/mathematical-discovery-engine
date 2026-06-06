@@ -1,0 +1,1093 @@
+[
+  {
+    "id": "s_quintic_calabi_yau_threefold",
+    "kind": "axiom",
+    "name": "Quintic Calabi-Yau threefold",
+    "type_signature": "",
+    "description": "A smooth degree-5 hypersurface in complex projective 4-space, the canonical example of a compact Calabi-Yau threefold with trivial canonical bundle.",
+    "aliases": ["quintic threefold"]
+  },
+  {
+    "id": "s_virtual_fundamental_class",
+    "kind": "axiom",
+    "name": "Virtual fundamental class",
+    "type_signature": "",
+    "description": "A homology class of expected (virtual) dimension associated to a moduli space carrying a perfect obstruction theory, enabling enumerative integrals even when the moduli space is singular or of excess dimension.",
+    "aliases": ["virtual class"]
+  },
+  {
+    "id": "s_moduli_space_stable_maps",
+    "kind": "axiom",
+    "name": "Moduli space of stable maps",
+    "type_signature": "",
+    "description": "The compact moduli stack parametrizing maps from nodal genus-g curves with marked points into a target satisfying Kontsevich's stability condition of finitely many automorphisms.",
+    "aliases": ["Kontsevich moduli space", "moduli of stable maps"]
+  },
+  {
+    "id": "s_bcov_holomorphic_anomaly_equation",
+    "kind": "axiom",
+    "name": "BCOV holomorphic anomaly equation",
+    "type_signature": "",
+    "description": "A recursion of Bershadsky-Cecotti-Ooguri-Vafa governing the dependence of higher-genus topological string free energies on the anti-holomorphic moduli, predicting the structure of Gromov-Witten potentials of Calabi-Yau threefolds.",
+    "aliases": ["holomorphic anomaly equation", "BCOV equation"]
+  },
+  {
+    "id": "s_yamaguchi_yau_finiteness_conjecture",
+    "kind": "state",
+    "name": "Yamaguchi-Yau finiteness conjecture",
+    "type_signature": "",
+    "description": "The conjecture that the genus-g Gromov-Witten potential of the quintic threefold is a polynomial of bounded degree in a finite set of generators built from special geometry data.",
+    "aliases": ["Yamaguchi-Yau polynomial structure conjecture"]
+  },
+  {
+    "id": "s_structure_theorem_higher_genus_gw_quintic",
+    "kind": "theorem",
+    "name": "Structure theorem for higher-genus GW invariants of the quintic",
+    "type_signature": "",
+    "description": "The theorem establishing the BCOV holomorphic anomaly equations and the Yamaguchi-Yau polynomial finiteness for the all-genus Gromov-Witten potentials of the quintic threefold, proved via Mixed-Spin-P fields / Guo-Janda-Ruan techniques."
+  },
+  {
+    "id": "t_mixed_spin_p_field",
+    "kind": "technique",
+    "name": "Mixed-Spin-P (MSP) field",
+    "function_signature": "(GW theory of quintic, FJRW theory) -> (master space with torus action recursion)",
+    "description": "A moduli-theoretic construction interpolating between the Gromov-Witten theory of the quintic and Fan-Jarvis-Ruan-Witten theory via a master space carrying a torus action, enabling localization-based recursions for higher-genus invariants.",
+    "aliases": ["MSP field"]
+  },
+  {
+    "id": "t_virtual_localization",
+    "kind": "technique",
+    "name": "Virtual (Graber-Pandharipande) localization",
+    "function_signature": "(virtual class on moduli with torus action) -> (sum over fixed loci weighted by virtual normal bundles)",
+    "description": "An equivariant localization formula expressing virtual integrals over a moduli space with torus action as a sum of contributions from the fixed loci weighted by inverse equivariant Euler classes of virtual normal bundles.",
+    "aliases": ["Graber-Pandharipande localization", "virtual localization formula"]
+  },
+  {
+    "id": "s_yau_conjecture_infinitely_many_minimal_hypersurfaces",
+    "kind": "state",
+    "name": "Yau conjecture on infinitely many minimal hypersurfaces",
+    "type_signature": "",
+    "description": "Yau's conjecture that every closed Riemannian manifold of dimension between 3 and 7 contains infinitely many smooth closed embedded minimal hypersurfaces."
+  },
+  {
+    "id": "s_marques_neves_infinitely_many_minimal_hypersurfaces",
+    "kind": "theorem",
+    "name": "Marques-Neves theorem (infinitely many minimal hypersurfaces)",
+    "type_signature": "",
+    "description": "The theorem of Marques and Neves that any closed Riemannian manifold of dimension 3 to 7 with positive Ricci curvature contains infinitely many smooth embedded closed minimal hypersurfaces, resolving Yau's conjecture in that setting."
+  },
+  {
+    "id": "s_weyl_law_volume_spectrum",
+    "kind": "theorem",
+    "name": "Weyl law for the volume spectrum (Liokumovich-Marques-Neves)",
+    "type_signature": "",
+    "description": "An asymptotic law showing the p-th min-max width (volume spectrum) of a closed n-manifold grows like a universal constant times p^{1/n} times the manifold volume to the power (n-1)/n.",
+    "aliases": ["Liokumovich-Marques-Neves Weyl law"]
+  },
+  {
+    "id": "s_volume_spectrum_p_widths",
+    "kind": "state",
+    "name": "Volume spectrum (p-widths)",
+    "type_signature": "",
+    "description": "The non-decreasing sequence of min-max critical values of the area functional obtained from p-parameter sweepouts, a nonlinear analogue of Laplacian eigenvalues.",
+    "aliases": ["p-widths", "min-max widths"]
+  },
+  {
+    "id": "s_equidistribution_minimal_hypersurfaces_mns",
+    "kind": "theorem",
+    "name": "Equidistribution of minimal hypersurfaces (Marques-Neves-Song)",
+    "type_signature": "",
+    "description": "The result that for a generic metric on a closed manifold there exists a sequence of closed minimal hypersurfaces that becomes equidistributed, with area-weighted limits proportional to the volume measure."
+  },
+  {
+    "id": "s_generic_density_minimal_hypersurfaces_imn",
+    "kind": "theorem",
+    "name": "Generic density of minimal hypersurfaces (Irie-Marques-Neves)",
+    "type_signature": "",
+    "description": "The theorem that for a C-infinity generic Riemannian metric on a closed manifold of dimension 3 to 7, the union of all closed minimal hypersurfaces is dense."
+  },
+  {
+    "id": "s_probabilistically_checkable_proof",
+    "kind": "axiom",
+    "name": "Probabilistically checkable proof (PCP)",
+    "type_signature": "",
+    "description": "A proof system in which a randomized verifier, given oracle access to a proof string, decides membership using bounded randomness and a bounded number of queries with prescribed completeness and soundness.",
+    "aliases": ["PCP"]
+  },
+  {
+    "id": "s_unique_games_conjecture",
+    "kind": "state",
+    "name": "Unique Games Conjecture",
+    "type_signature": "",
+    "description": "Khot's conjecture that for every epsilon there is an alphabet size such that distinguishing unique-constraint label-cover instances that are (1-epsilon)-satisfiable from those at most epsilon-satisfiable is NP-hard.",
+    "aliases": ["UGC"]
+  },
+  {
+    "id": "s_two_to_two_games_theorem",
+    "kind": "theorem",
+    "name": "2-to-2 Games Theorem",
+    "type_signature": "",
+    "description": "The theorem of Khot-Minzer-Safra establishing NP-hardness of 2-to-2 games with imperfect completeness, implying the Unique Games Conjecture holds with completeness 1/2 (half of the UGC).",
+    "aliases": ["2-to-2 games conjecture (theorem)", "two-to-two games theorem"]
+  },
+  {
+    "id": "s_grassmann_graph",
+    "kind": "axiom",
+    "name": "Grassmann graph",
+    "type_signature": "",
+    "description": "The graph whose vertices are the k-dimensional subspaces of an n-dimensional vector space over a finite field, with edges joining subspaces whose intersection has dimension k-1."
+  },
+  {
+    "id": "s_grassmann_graph_expansion_theorem",
+    "kind": "theorem",
+    "name": "Grassmann graph expansion theorem (characterization of non-expanding sets)",
+    "type_signature": "",
+    "description": "The theorem of Khot-Minzer-Safra (with Dinur-Khot-Kindler-Minzer-Safra) that every non-expanding set of vertices in the Grassmann graph is structured, correlated with a sub-Grassmannian defined by containing or being contained in a fixed subspace."
+  },
+  {
+    "id": "t_dictatorship_test",
+    "kind": "technique",
+    "name": "Dictatorship test",
+    "function_signature": "(Boolean function oracle) -> (accept/reject distinguishing dictators from far-from-dictator functions)",
+    "description": "A probabilistic gadget distinguishing Boolean functions depending on a single coordinate (dictators) from functions with no influential coordinate, used to convert algebraic gap instances into hardness-of-approximation reductions."
+  },
+  {
+    "id": "s_arithmetic_spectral_transition_amo",
+    "kind": "theorem",
+    "name": "Arithmetic spectral (localization) transition for the almost Mathieu operator",
+    "type_signature": "",
+    "description": "The sharp result (Avila-You-Zhou, Jitomirskaya et al.) that in the localization regime the spectral type of the almost Mathieu operator is determined by an arithmetic competition between the Lyapunov exponent ln(lambda) and the exponential rate beta(alpha) of frequency resonances, with Anderson localization holding precisely when ln(lambda) exceeds beta.",
+    "aliases": ["arithmetic phase transition", "Jitomirskaya arithmetic localization transition"]
+  },
+  {
+    "id": "s_universality_critical_almost_mathieu",
+    "kind": "theorem",
+    "name": "Universality of the critical almost Mathieu operator",
+    "type_signature": "",
+    "description": "Results showing that at critical coupling lambda = 1 the almost Mathieu operator exhibits a hidden singularity with universal continuity of spectral gaps and sharp Hausdorff dimension 1/2 of the spectrum in suitable arithmetic regimes.",
+    "aliases": ["critical almost Mathieu universality", "hidden singularity"]
+  },
+  {
+    "id": "s_parity_sheaf",
+    "kind": "axiom",
+    "name": "Parity sheaf",
+    "type_signature": "",
+    "description": "An indecomposable complex of sheaves with positive-characteristic coefficients on a stratified variety satisfying parity vanishing on stalks and costalks, providing modular replacements for intersection cohomology complexes."
+  },
+  {
+    "id": "s_soergel_bimodule",
+    "kind": "axiom",
+    "name": "Soergel bimodule",
+    "type_signature": "",
+    "description": "A graded bimodule over a polynomial ring built as a direct summand of tensor products of elementary bimodules associated to simple reflections, categorifying the Hecke algebra of a Coxeter group."
+  },
+  {
+    "id": "s_lusztig_modular_representation_conjecture",
+    "kind": "state",
+    "name": "Lusztig modular representation conjecture",
+    "type_signature": "",
+    "description": "Lusztig's conjecture expressing the characters of simple modules for a reductive algebraic group in characteristic p (above the Coxeter number) via affine Kazhdan-Lusztig polynomials.",
+    "aliases": ["Lusztig character formula conjecture"]
+  },
+  {
+    "id": "s_williamson_counterexamples_modular_bounds",
+    "kind": "theorem",
+    "name": "Williamson counterexamples to expected bounds in modular representation theory",
+    "type_signature": "",
+    "description": "Williamson's construction of families showing that Lusztig's character formula and the James conjecture fail, with the bound on the prime p growing super-exponentially in the rank.",
+    "aliases": ["Williamson torsion examples"]
+  },
+  {
+    "id": "s_p_canonical_basis",
+    "kind": "state",
+    "name": "p-canonical basis",
+    "type_signature": "",
+    "description": "The basis of the Hecke algebra recording graded ranks of indecomposable Soergel bimodules / parity sheaves in characteristic p, controlling modular decomposition numbers and reducing to the Kazhdan-Lusztig basis for large p."
+  },
+  {
+    "id": "s_symmetry_protected_topological_phase",
+    "kind": "axiom",
+    "name": "Symmetry protected topological (SPT) phase",
+    "type_signature": "",
+    "description": "A gapped phase of a quantum many-body system with unique ground state that is trivial without symmetry but cannot be connected to a product state through symmetric gapped local paths, becoming nontrivial only in the presence of an on-site symmetry group.",
+    "aliases": ["SPT phase"]
+  },
+  {
+    "id": "s_gapped_ground_state_phase_equivalence",
+    "kind": "axiom",
+    "name": "Gapped ground state phase equivalence",
+    "type_signature": "",
+    "description": "The equivalence relation on interactions defined by existence of a smooth path of uniformly gapped local Hamiltonians (automorphic equivalence via quasi-local automorphisms) connecting them."
+  },
+  {
+    "id": "s_matrix_product_state",
+    "kind": "axiom",
+    "name": "Matrix product state",
+    "type_signature": "",
+    "description": "A translation-invariant pure state of a spin chain represented by contracting a fixed tensor at each site, generating all frustration-free gapped ground states and serving as the variational class for one-dimensional gapped phases.",
+    "aliases": ["MPS"]
+  },
+  {
+    "id": "s_group_cohomology_invariant_spt",
+    "kind": "state",
+    "name": "Group cohomology invariant of SPT phases",
+    "type_signature": "",
+    "description": "The assignment to each symmetric gapped phase of an element of the second group cohomology H^2(G,U(1)) of the symmetry group, extracted from the projective representation in the boundary/edge structure."
+  },
+  {
+    "id": "s_ogata_classification_spt_phases",
+    "kind": "theorem",
+    "name": "Ogata classification of SPT phases by H^2(G,U(1))",
+    "type_signature": "",
+    "description": "Ogata's operator-algebraic theorem proving the H^2(G,U(1)) index is a well-defined invariant of symmetric gapped phases of quantum spin chains, giving a rigorous classification of SPT phases protected by a finite (or compact) on-site symmetry group."
+  },
+  {
+    "id": "s_split_property_spin_chains",
+    "kind": "state",
+    "name": "Split property of quantum spin chains",
+    "type_signature": "",
+    "description": "The structural property of a pure gapped ground state that the observable algebras of complementary half-infinite chains are related by a type-I factor, enabling definition of edge representations and SPT indices."
+  },
+  {
+    "id": "s_black_hole_stability_problem",
+    "kind": "state",
+    "name": "Black hole stability problem",
+    "type_signature": "",
+    "description": "The conjecture that the Kerr family of rotating black hole spacetimes is a nonlinearly asymptotically stable solution of the vacuum Einstein equations under small perturbations of initial data.",
+    "aliases": ["Kerr stability conjecture"]
+  },
+  {
+    "id": "s_kerr_de_sitter_spacetime",
+    "kind": "axiom",
+    "name": "Kerr (Kerr-de Sitter) spacetime",
+    "type_signature": "",
+    "description": "The two-parameter family of stationary axisymmetric asymptotically flat (or de Sitter) vacuum Einstein solutions describing a rotating black hole of given mass and angular momentum.",
+    "aliases": ["Kerr-de Sitter black hole", "Kerr metric"]
+  },
+  {
+    "id": "s_hintz_vasy_kerr_de_sitter_stability",
+    "kind": "theorem",
+    "name": "Hintz-Vasy global stability of Kerr-de Sitter",
+    "type_signature": "",
+    "description": "The theorem of Hintz and Vasy establishing global nonlinear asymptotic stability of slowly rotating Kerr-de Sitter black holes as solutions of the Einstein vacuum equations with positive cosmological constant."
+  },
+  {
+    "id": "t_microlocal_stationary_wave_operators",
+    "kind": "technique",
+    "name": "Microlocal analysis of stationary wave operators (b-calculus / scattering calculus)",
+    "function_signature": "(wave operator on black hole background) -> (Fredholm theory and resolvent estimates)",
+    "description": "A framework using pseudodifferential operators adapted to the geometry near the event horizon and infinity (b- and scattering calculus, radial point estimates) to obtain Fredholm theory and resolvent estimates for wave equations on black hole backgrounds."
+  },
+  {
+    "id": "s_quasinormal_modes_black_holes",
+    "kind": "state",
+    "name": "Quasinormal modes / resonances of black holes",
+    "type_signature": "",
+    "description": "The complex frequencies, identified with poles of the meromorphically continued resolvent of the wave operator, that govern the exponentially damped ringdown of perturbations of a black hole spacetime.",
+    "aliases": ["ringdown frequencies", "black hole resonances"]
+  },
+  {
+    "id": "t_redshift_effect_dafermos_rodnianski",
+    "kind": "technique",
+    "name": "Red-shift effect (Dafermos-Rodnianski)",
+    "function_signature": "(wave solution crossing event horizon) -> (coercive energy decay estimate)",
+    "description": "A geometric vector-field multiplier estimate exploiting positive surface gravity at a nondegenerate event horizon to gain a coercive energy estimate (decay) for solutions of wave equations crossing the horizon."
+  },
+  {
+    "id": "s_painleve_conjecture_noncollision_singularities",
+    "kind": "state",
+    "name": "Painleve conjecture (noncollision singularities)",
+    "type_signature": "",
+    "description": "Painleve's conjecture that for N greater than 3 the Newtonian N-body problem admits noncollision singularities, i.e. solutions reaching infinity in finite time without any two bodies colliding.",
+    "aliases": ["noncollision singularity conjecture"]
+  },
+  {
+    "id": "s_von_zeipel_theorem_singularities",
+    "kind": "theorem",
+    "name": "Von Zeipel theorem on singularities",
+    "type_signature": "",
+    "description": "The theorem that a singularity of the N-body problem is a noncollision singularity if and only if the maximal mutual distance among the bodies becomes unbounded as time approaches the singularity time."
+  },
+  {
+    "id": "s_xia_noncollision_singularities_5body",
+    "kind": "theorem",
+    "name": "Xia's example of noncollision singularities (5-body)",
+    "type_signature": "",
+    "description": "Zhihong Xia's construction of a spatial 5-body configuration exhibiting a noncollision singularity, where two binaries oscillate and drive a fifth body to infinity in finite time, the first rigorous instance of the Painleve scenario."
+  },
+  {
+    "id": "s_xue_painleve_4body",
+    "kind": "theorem",
+    "name": "Xue's solution of the Painleve conjecture for the 4-body problem",
+    "type_signature": "",
+    "description": "Jinxin Xue's theorem constructing noncollision singularities in the planar Newtonian 4-body problem, settling the Painleve conjecture in its lowest open dimension."
+  },
+  {
+    "id": "t_near_collision_hyperbolic_dynamics",
+    "kind": "technique",
+    "name": "Near-collision (regularization) analysis via hyperbolic dynamics",
+    "function_signature": "(N-body near-collision encounters) -> (hyperbolic invariant set with shadowing orbits to infinity)",
+    "description": "A method combining McGehee/Levi-Civita regularization of close encounters with hyperbolic invariant sets and shadowing/symbolic dynamics to assemble infinitely many near-collisions accelerating a body to infinity in finite time."
+  },
+  {
+    "id": "s_phi4_4_euclidean_field_theory",
+    "kind": "axiom",
+    "name": "Phi^4_4 Euclidean field theory",
+    "type_signature": "",
+    "description": "The four-dimensional Euclidean scalar field theory with quartic self-interaction, constructed as a continuum scaling limit of lattice models with a single-site weight, central to constructive quantum field theory.",
+    "aliases": ["phi^4 in four dimensions", "Phi^4_4 model"]
+  },
+  {
+    "id": "t_random_current_representation",
+    "kind": "technique",
+    "name": "Random current representation",
+    "function_signature": "(Ising correlation functions) -> (sums over integer currents enabling switching-lemma identities)",
+    "description": "A graphical/probabilistic reformulation of the Ising model expressing correlation functions as sums over integer-valued currents on the lattice, enabling switching-lemma identities and correlation inequalities."
+  },
+  {
+    "id": "s_triviality_scaling_limit_d_ge_4",
+    "kind": "theorem",
+    "name": "Triviality of the scaling limit in dimension d >= 4",
+    "type_signature": "",
+    "description": "The result of Aizenman and Frohlich that the continuum scaling limit of the critical Ising and Phi^4 models in dimensions strictly greater than 4 is a free (Gaussian) field with vanishing renormalized coupling."
+  },
+  {
+    "id": "s_aizenman_duminil_copin_marginal_triviality_4d",
+    "kind": "theorem",
+    "name": "Aizenman-Duminil-Copin marginal triviality theorem in 4D",
+    "type_signature": "",
+    "description": "The theorem of Aizenman and Duminil-Copin that the scaling limits of the critical nearest-neighbor Ising and Phi^4 models in the marginal dimension 4 are Gaussian, with the renormalized four-point coupling vanishing logarithmically."
+  },
+  {
+    "id": "s_aizenman_frohlich_tree_graph_inequality",
+    "kind": "theorem",
+    "name": "Aizenman-Frohlich (tree-graph) inequality",
+    "type_signature": "",
+    "description": "An upper bound on the truncated four-point Ursell function of the Ising / Phi^4 model by a tree-graph sum of two-point functions, the key correlation inequality forcing triviality of the scaling limit at and above four dimensions.",
+    "aliases": ["tree-graph inequality"]
+  },
+  {
+    "id": "s_reductive_p_adic_group",
+    "kind": "axiom",
+    "name": "Reductive p-adic group",
+    "type_signature": "",
+    "description": "A connected reductive linear algebraic group G over a non-archimedean local field F, together with its group of F-points regarded as a locally profinite topological group.",
+    "aliases": ["p-adic reductive group"]
+  },
+  {
+    "id": "s_smooth_representation_p_adic_group",
+    "kind": "axiom",
+    "name": "Smooth representation of a p-adic group",
+    "type_signature": "",
+    "description": "A representation of G(F) on a complex vector space in which every vector has open stabilizer, equivalently the union of fixed spaces of compact open subgroups is the whole space."
+  },
+  {
+    "id": "s_admissible_representation_p_adic",
+    "kind": "axiom",
+    "name": "Admissible representation (p-adic group)",
+    "type_signature": "",
+    "description": "A smooth representation of G(F) in which the fixed subspace under every compact open subgroup is finite-dimensional."
+  },
+  {
+    "id": "s_supercuspidal_representation",
+    "kind": "axiom",
+    "name": "Supercuspidal representation",
+    "type_signature": "",
+    "description": "An irreducible smooth representation of G(F) all of whose matrix coefficients are compactly supported modulo the center, equivalently one not appearing in any parabolic induction from a proper Levi subgroup.",
+    "aliases": ["supercuspidal", "cuspidal representation of a p-adic group"]
+  },
+  {
+    "id": "t_parabolic_induction_p_adic",
+    "kind": "technique",
+    "name": "Parabolic induction (p-adic group)",
+    "function_signature": "(smooth representation of a Levi subgroup) -> (smooth representation of G(F) via normalized induction)",
+    "description": "The functor producing a smooth representation of a p-adic group from a smooth representation of a Levi subgroup by normalized induction along a parabolic subgroup."
+  },
+  {
+    "id": "s_parahoric_subgroup_bruhat_tits_building",
+    "kind": "axiom",
+    "name": "Parahoric subgroup and Bruhat-Tits building",
+    "type_signature": "",
+    "description": "The Bruhat-Tits building is a contractible polysimplicial complex on which G(F) acts strongly transitively; parahoric subgroups are the connected stabilizers of its facets, encoding the compact open subgroup structure.",
+    "aliases": ["Bruhat-Tits building", "parahoric subgroup", "Iwahori subgroup"]
+  },
+  {
+    "id": "s_moy_prasad_filtration",
+    "kind": "axiom",
+    "name": "Moy-Prasad filtration",
+    "type_signature": "",
+    "description": "A decreasing filtration of a parahoric subgroup by normal compact open subgroups indexed by non-negative real numbers, defined via the Bruhat-Tits building and used to assign a depth to representations."
+  },
+  {
+    "id": "s_depth_of_a_representation",
+    "kind": "state",
+    "name": "Depth of a representation",
+    "type_signature": "",
+    "description": "The smallest non-negative real number r such that the representation has nonzero vectors fixed by the (r+)-step of the Moy-Prasad filtration of some point, a numerical invariant of an irreducible smooth representation."
+  },
+  {
+    "id": "s_type_bushnell_kutzko",
+    "kind": "axiom",
+    "name": "Type (Bushnell-Kutzko theory)",
+    "type_signature": "",
+    "description": "A pair (K, rho) of a compact open subgroup K and an irreducible representation rho of K such that the irreducible representations containing rho exactly fill out a fixed block of the category of smooth representations.",
+    "aliases": ["Bushnell-Kutzko type"]
+  },
+  {
+    "id": "s_tame_elliptic_regular_pair",
+    "kind": "axiom",
+    "name": "Tame elliptic regular pair / generic cuspidal datum",
+    "type_signature": "",
+    "description": "The input data for Yu's construction: a tame twisted Levi sequence together with generic characters and a depth-zero supercuspidal datum satisfying a genericity condition.",
+    "aliases": ["generic cuspidal datum", "Yu datum"]
+  },
+  {
+    "id": "s_twisted_levi_sequence",
+    "kind": "axiom",
+    "name": "Twisted Levi sequence",
+    "type_signature": "",
+    "description": "A chain of reductive subgroups of a p-adic group, each a Levi subgroup over a tame extension, used as the structural backbone of Yu's supercuspidal construction."
+  },
+  {
+    "id": "t_yu_construction_supercuspidals",
+    "kind": "technique",
+    "name": "Yu's construction of supercuspidal representations",
+    "function_signature": "(tame elliptic regular pair / generic cuspidal datum) -> (irreducible supercuspidal representation of G(F))",
+    "description": "A construction producing irreducible smooth representations of G(F) by compact induction from a chain of subgroups built using a tame twisted Levi sequence, Heisenberg-Weil representations and generic characters."
+  },
+  {
+    "id": "s_supercuspidality_yu_representations_fintzen",
+    "kind": "theorem",
+    "name": "Supercuspidality of Yu-constructed representations (Fintzen)",
+    "type_signature": "",
+    "description": "Fintzen's theorem that the representations output by Yu's construction are irreducible and supercuspidal, with a self-contained proof valid in all residual characteristics including p = 2."
+  },
+  {
+    "id": "s_fintzen_exhaustion_tame_supercuspidals",
+    "kind": "theorem",
+    "name": "Exhaustion theorem for tame supercuspidals (Fintzen)",
+    "type_signature": "",
+    "description": "If p does not divide the order of the absolute Weyl group of G, then every supercuspidal representation of G(F) arises from Yu's construction, sharpening the prior Kim exhaustion result.",
+    "aliases": ["Fintzen exhaustion theorem"]
+  },
+  {
+    "id": "s_fintzen_kaletha_spice_quadratic_twist",
+    "kind": "state",
+    "name": "Fintzen-Kaletha-Spice quadratic twist",
+    "type_signature": "",
+    "description": "A correction by an explicit sign character of an appropriate compact open subgroup, twisting Yu's construction so the resulting representations match expected character formulas and stability properties."
+  },
+  {
+    "id": "s_adler_spice_character_formula",
+    "kind": "theorem",
+    "name": "Adler-Spice / DeBacker-Spice character formula",
+    "type_signature": "",
+    "description": "An explicit formula for the Harish-Chandra character of a tame supercuspidal representation on regular semisimple elements, expressed via Gauss sums and the geometry of the Bruhat-Tits building."
+  },
+  {
+    "id": "s_depth_zero_supercuspidal_representation",
+    "kind": "state",
+    "name": "Depth-zero supercuspidal representation",
+    "type_signature": "",
+    "description": "A supercuspidal representation of depth zero, obtained by compact induction of an inflation of a cuspidal representation of the reductive quotient of a parahoric subgroup."
+  },
+  {
+    "id": "s_local_langlands_p_adic_groups",
+    "kind": "state",
+    "name": "Local Langlands correspondence for p-adic groups",
+    "type_signature": "",
+    "description": "The conjectural bijection between L-packets of irreducible smooth representations of a p-adic group and Langlands parameters into its Langlands dual group.",
+    "aliases": ["local Langlands conjecture for general reductive p-adic groups"]
+  },
+  {
+    "id": "s_mixed_quantum_state_density_matrix",
+    "kind": "axiom",
+    "name": "Mixed quantum state (density matrix)",
+    "type_signature": "",
+    "description": "A d-by-d positive semidefinite Hermitian matrix of trace one representing the state of a quantum system of dimension d.",
+    "aliases": ["density matrix", "density operator", "mixed state"]
+  },
+  {
+    "id": "s_quantum_state_tomography_problem",
+    "kind": "state",
+    "name": "Quantum state tomography problem",
+    "type_signature": "",
+    "description": "The task of producing, from independent copies of an unknown d-dimensional mixed state, an estimate close to it in trace distance with high probability, using as few copies as possible.",
+    "aliases": ["quantum state tomography"]
+  },
+  {
+    "id": "s_quantum_spectrum_estimation_problem",
+    "kind": "state",
+    "name": "Quantum spectrum estimation / testing problem",
+    "type_signature": "",
+    "description": "The task of estimating or testing properties of the unordered spectrum (eigenvalue multiset) of an unknown mixed state from independent copies, without estimating the eigenvectors."
+  },
+  {
+    "id": "t_weak_schur_sampling",
+    "kind": "technique",
+    "name": "Weak Schur sampling",
+    "function_signature": "(n copies of a mixed state rho) -> (random Young diagram lambda)",
+    "description": "The measurement of rho-tensor-n by the projectors onto the GL(d) x S_n isotypic subspaces indexed by partitions, whose outcome is a random Young diagram.",
+    "aliases": ["Keyl-Werner spectrum estimation", "Schur sampling"]
+  },
+  {
+    "id": "s_schur_weyl_distribution",
+    "kind": "state",
+    "name": "Schur-Weyl distribution",
+    "type_signature": "",
+    "description": "The probability distribution on partitions of n arising as the outcome of weak Schur sampling on rho-tensor-n, with probabilities given by the Schur polynomial of the spectrum of rho times the dimension of the Specht module."
+  },
+  {
+    "id": "s_rsk_realization_schur_weyl_distribution",
+    "kind": "theorem",
+    "name": "RSK realization of the Schur-Weyl distribution",
+    "type_signature": "",
+    "description": "The shape of the RSK tableau produced from a word of n i.i.d. letters drawn from the eigenvalue distribution of rho is distributed exactly as the Schur-Weyl distribution of rho.",
+    "aliases": ["RSK-Schur-Weyl connection"]
+  },
+  {
+    "id": "t_empirical_young_diagram_algorithm",
+    "kind": "technique",
+    "name": "Empirical Young Diagram (EYD) algorithm",
+    "function_signature": "(n copies of a mixed state rho) -> (normalized sorted Young diagram as spectrum estimate)",
+    "description": "The spectrum-estimation procedure that performs weak Schur sampling on rho-tensor-n and outputs the normalized sorted Young diagram as an estimate of the spectrum of rho.",
+    "aliases": ["EYD algorithm"]
+  },
+  {
+    "id": "s_optimal_sample_complexity_state_tomography",
+    "kind": "theorem",
+    "name": "Optimal sample complexity of state tomography",
+    "type_signature": "",
+    "description": "The theorem that Theta(d r / epsilon^2) copies are necessary and sufficient to estimate an unknown rank-r d-dimensional state to trace distance epsilon, with the upper bound achieved by an entangled representation-theoretic measurement.",
+    "aliases": ["O'Donnell-Wright / Haah et al. tomography bound"]
+  },
+  {
+    "id": "s_pure_state_tomography_sample_complexity",
+    "kind": "theorem",
+    "name": "Pure-state tomography sample complexity",
+    "type_signature": "",
+    "description": "The result that Theta(d/epsilon^2) copies suffice and are required to learn an unknown pure state in dimension d to fidelity error epsilon."
+  },
+  {
+    "id": "s_max_schur_weyl_row_top_eigenvalue",
+    "kind": "theorem",
+    "name": "Convergence of the maximal Schur-Weyl row to the top eigenvalue",
+    "type_signature": "",
+    "description": "The normalized longest row of a Schur-Weyl-distributed diagram concentrates around the largest eigenvalue of rho, generalizing the Vershik-Kerov / Logan-Shepp limit for the longest increasing subsequence."
+  },
+  {
+    "id": "s_quantum_identity_testing_bounds",
+    "kind": "theorem",
+    "name": "Quantum identity / maximal-mixedness testing bounds",
+    "type_signature": "",
+    "description": "Property-testing results, proved via the Schur-Weyl distribution, giving the optimal number of copies needed to distinguish whether an unknown state equals the maximally mixed state versus being epsilon-far from it.",
+    "aliases": ["quantum state certification"]
+  },
+  {
+    "id": "s_p_adic_galois_representation",
+    "kind": "axiom",
+    "name": "p-adic Galois representation",
+    "type_signature": "",
+    "description": "A continuous representation of the absolute Galois group of a number field on a finite-dimensional vector space over a p-adic field."
+  },
+  {
+    "id": "s_de_rham_potentially_semistable_representation",
+    "kind": "axiom",
+    "name": "de Rham / potentially semistable representation",
+    "type_signature": "",
+    "description": "A p-adic representation of a local Galois group that is de Rham (equivalently potentially semistable) in Fontaine's p-adic Hodge theory, the local condition expected of representations coming from geometry.",
+    "aliases": ["de Rham Galois representation", "potentially semistable representation", "Hodge-Tate representation"]
+  },
+  {
+    "id": "s_algebraic_galois_representation",
+    "kind": "axiom",
+    "name": "Algebraic Galois representation",
+    "type_signature": "",
+    "description": "A continuous semisimple p-adic representation of the absolute Galois group of a number field, unramified outside finitely many primes and de Rham at all places above p, conjecturally matching automorphic representations."
+  },
+  {
+    "id": "s_fontaine_mazur_conjecture",
+    "kind": "state",
+    "name": "Fontaine-Mazur conjecture",
+    "type_signature": "",
+    "description": "The conjecture that an irreducible p-adic Galois representation of a number field unramified outside finitely many primes and de Rham at p arises, up to twist, from the etale cohomology of an algebraic variety."
+  },
+  {
+    "id": "s_regular_algebraic_cuspidal_automorphic_representation",
+    "kind": "axiom",
+    "name": "Regular algebraic cuspidal automorphic representation",
+    "type_signature": "",
+    "description": "A cuspidal automorphic representation of GL_n over a number field whose archimedean component has the same infinitesimal character as a finite-dimensional algebraic representation, the class conjecturally carrying associated Galois representations.",
+    "aliases": ["RACAR", "regular algebraic cuspidal form"]
+  },
+  {
+    "id": "s_symmetric_power_lifting_sym_m",
+    "kind": "state",
+    "name": "Symmetric power lifting Sym^m",
+    "type_signature": "",
+    "description": "The functorial lift along the m-th symmetric power map Sym^m: GL_2 -> GL_{m+1}, sending an automorphic representation of GL_2 to a conjectural automorphic representation of GL_{m+1}.",
+    "aliases": ["symmetric power functoriality lift", "Sym^m lift"]
+  },
+  {
+    "id": "s_thorne_reciprocity_conjecture",
+    "kind": "state",
+    "name": "Reciprocity conjecture (Langlands global reciprocity, Thorne)",
+    "type_signature": "",
+    "description": "The conjecture that every algebraic p-adic Galois representation of a number field corresponds to a regular algebraic automorphic representation of GL_n with matching L-functions, and conversely.",
+    "aliases": ["global Langlands reciprocity conjecture"]
+  },
+  {
+    "id": "s_sato_tate_conjecture",
+    "kind": "theorem",
+    "name": "Sato-Tate conjecture",
+    "type_signature": "",
+    "description": "The theorem that for a non-CM elliptic curve or holomorphic newform over Q the normalized Frobenius traces are equidistributed with respect to the Sato-Tate (semicircle) measure, deduced from analyticity of symmetric power L-functions.",
+    "aliases": ["Sato-Tate equidistribution"]
+  },
+  {
+    "id": "s_newton_thorne_symmetric_power_functoriality",
+    "kind": "theorem",
+    "name": "Newton-Thorne symmetric power functoriality theorem",
+    "type_signature": "",
+    "description": "For every regular algebraic cuspidal automorphic representation of GL_2 over Q without CM and every m >= 1, the symmetric power lift Sym^m exists as a cuspidal automorphic representation of GL_{m+1}.",
+    "aliases": ["symmetric power functoriality for holomorphic newforms"]
+  },
+  {
+    "id": "s_automorphy_lifting_theorem",
+    "kind": "theorem",
+    "name": "Automorphy lifting theorem",
+    "type_signature": "",
+    "description": "A theorem asserting that a p-adic Galois representation with suitable local conditions whose mod-p reduction is automorphic is itself automorphic, identifying a deformation ring with a Hecke algebra (R = T).",
+    "aliases": ["modularity lifting theorem"]
+  },
+  {
+    "id": "t_taylor_wiles_kisin_patching",
+    "kind": "technique",
+    "name": "Taylor-Wiles-Kisin patching",
+    "function_signature": "(Galois deformation ring, Hecke module) -> (R = T isomorphism via patched module over a power-series ring)",
+    "description": "A patching technique proving R = T by adjoining auxiliary Taylor-Wiles primes to enlarge the level and taking an inverse limit to produce a big module over a power-series ring whose support forces the deformation ring to equal the Hecke algebra.",
+    "aliases": ["Taylor-Wiles method", "Taylor-Wiles-Kisin method"]
+  },
+  {
+    "id": "t_brauer_induction_l_functions",
+    "kind": "technique",
+    "name": "Brauer induction reduction of L-functions",
+    "function_signature": "(symmetric power L-function) -> (ratio of automorphic L-functions via virtual characters)",
+    "description": "Expressing the L-function of a symmetric power representation as a ratio of automorphic L-functions using Brauer's induction theorem on virtual characters, so potential automorphy yields the desired analytic properties."
+  },
+  {
+    "id": "s_coleman_mazur_eigencurve",
+    "kind": "state",
+    "name": "Coleman-Mazur eigencurve",
+    "type_signature": "",
+    "description": "A rigid analytic curve p-adically interpolating finite-slope overconvergent Hecke eigenforms of fixed tame level, parametrizing systems of Hecke eigenvalues with their weights.",
+    "aliases": ["eigencurve", "eigenvariety"]
+  },
+  {
+    "id": "s_overconvergent_finite_slope_eigenform",
+    "kind": "axiom",
+    "name": "Overconvergent finite-slope Hecke eigenform",
+    "type_signature": "",
+    "description": "A p-adic modular form that is overconvergent and an eigenform for the U_p operator with nonzero (finite slope) eigenvalue, the points of the eigencurve."
+  },
+  {
+    "id": "t_analytic_continuation_functoriality_eigencurve",
+    "kind": "technique",
+    "name": "Analytic continuation of functoriality along the eigencurve",
+    "function_signature": "(functoriality at one eigencurve point) -> (functoriality at all classical points)",
+    "description": "Newton-Thorne's strategy of proving symmetric power functoriality at one accessible point of the eigencurve and propagating it p-adically across the connected eigenvariety to all classical points."
+  },
+  {
+    "id": "s_pseudo_representation_pseudocharacter",
+    "kind": "axiom",
+    "name": "Pseudo-representation (pseudocharacter)",
+    "type_signature": "",
+    "description": "A trace-like function on a group satisfying the formal identities of the trace of an n-dimensional representation, used to construct and interpolate Galois representations in families even where they may be reducible.",
+    "aliases": ["pseudocharacter", "determinant law"]
+  },
+  {
+    "id": "s_future_null_infinity",
+    "kind": "axiom",
+    "name": "Future null infinity (scri-plus)",
+    "type_signature": "",
+    "description": "The idealized boundary at which outgoing light rays of an asymptotically flat spacetime terminate, foliated by retarded-time cuts on which radiated quantities are measured.",
+    "aliases": ["scri-plus", "null infinity", "I-plus"]
+  },
+  {
+    "id": "s_bondi_metzner_sachs_group",
+    "kind": "axiom",
+    "name": "Bondi-Metzner-Sachs (BMS) group",
+    "type_signature": "",
+    "description": "The asymptotic symmetry group of future null infinity, an infinite-dimensional semidirect product of the Lorentz group with the abelian group of supertranslations.",
+    "aliases": ["BMS group"]
+  },
+  {
+    "id": "s_supertranslation",
+    "kind": "axiom",
+    "name": "Supertranslation",
+    "type_signature": "",
+    "description": "An angle-dependent shift of the retarded time coordinate by an arbitrary smooth function on the celestial sphere, generalizing rigid time translation and generating the abelian normal subgroup of the BMS group."
+  },
+  {
+    "id": "s_bondi_sachs_energy_momentum",
+    "kind": "state",
+    "name": "Bondi-Sachs energy-momentum",
+    "type_signature": "",
+    "description": "The four-vector of conserved energy and linear momentum at a cut of null infinity, obtained by integrating the mass aspect against the lowest spherical harmonics.",
+    "aliases": ["Bondi energy-momentum", "Bondi four-momentum"]
+  },
+  {
+    "id": "s_news_tensor",
+    "kind": "state",
+    "name": "News tensor",
+    "type_signature": "",
+    "description": "The retarded-time derivative of the shear tensor of null infinity, encoding outgoing gravitational radiation and having a simple transformation under supertranslations."
+  },
+  {
+    "id": "s_bondi_mass_loss_formula",
+    "kind": "theorem",
+    "name": "Bondi mass loss formula",
+    "type_signature": "",
+    "description": "The identity that the retarded-time derivative of the Bondi energy equals minus the integral of the squared news tensor over the sphere, so radiated gravitational waves strictly decrease the Bondi mass."
+  },
+  {
+    "id": "s_supertranslation_ambiguity_angular_momentum",
+    "kind": "state",
+    "name": "Supertranslation ambiguity of angular momentum",
+    "type_signature": "",
+    "description": "The phenomenon that classical definitions of angular momentum at null infinity change under BMS supertranslations, so different distant observers may measure different values."
+  },
+  {
+    "id": "s_wang_yau_quasilocal_mass",
+    "kind": "state",
+    "name": "Wang-Yau quasi-local mass",
+    "type_signature": "",
+    "description": "A quasi-local energy assigned to a spacelike 2-surface defined by comparing its geometry to an optimal isometric embedding into Minkowski space, characterized by intrinsic and extrinsic data.",
+    "aliases": ["Wang-Yau quasilocal mass", "Wang-Yau quasi-local energy"]
+  },
+  {
+    "id": "s_optimal_isometric_embedding",
+    "kind": "state",
+    "name": "Optimal isometric embedding",
+    "type_signature": "",
+    "description": "An isometric embedding of a spacelike 2-surface into Minkowski spacetime that is critical for the Wang-Yau quasi-local energy, equivalently making the embedded surface's momentum density divergence-free."
+  },
+  {
+    "id": "s_chen_wang_yau_angular_momentum",
+    "kind": "state",
+    "name": "Chen-Wang-Yau angular momentum",
+    "type_signature": "",
+    "description": "A definition of angular momentum at null infinity obtained as the large-radius limit of quasi-local angular momentum, pairing the optimal isometric embedding with rotation Killing fields of Minkowski space.",
+    "aliases": ["Chen-Wang-Yau quasilocal angular momentum"]
+  },
+  {
+    "id": "s_angular_momentum_at_null_infinity",
+    "kind": "state",
+    "name": "Angular momentum at null infinity",
+    "type_signature": "",
+    "description": "A definition of the total angular momentum of an isolated gravitating system extracted from the asymptotic geometry of the spacetime at future null infinity."
+  },
+  {
+    "id": "s_supertranslation_invariance_cwy_angular_momentum",
+    "kind": "theorem",
+    "name": "Supertranslation invariance of Chen-Wang-Yau angular momentum",
+    "type_signature": "",
+    "description": "Chen-Wang-Yau's theorem that their quasi-local-limit definition of total angular momentum at null infinity is invariant under BMS supertranslations, resolving the historical ambiguity."
+  },
+  {
+    "id": "s_supertranslation_invariant_center_of_mass",
+    "kind": "state",
+    "name": "Supertranslation-invariant center of mass at null infinity",
+    "type_signature": "",
+    "description": "A definition of the center-of-mass integral at null infinity shown to be supertranslation invariant, forming with the Bondi energy-momentum a complete set of conserved quantities."
+  },
+  {
+    "id": "s_basis_generating_polynomial_matroid",
+    "kind": "state",
+    "name": "Basis generating polynomial of a matroid",
+    "type_signature": "",
+    "description": "The multivariate polynomial summing monomials over the bases of a matroid, encoding its combinatorial structure as a homogeneous multiaffine polynomial.",
+    "aliases": ["bases generating polynomial"]
+  },
+  {
+    "id": "s_completely_log_concave_polynomial",
+    "kind": "axiom",
+    "name": "Completely log-concave polynomial",
+    "type_signature": "",
+    "description": "A homogeneous polynomial with non-negative coefficients whose every iterated directional derivative is a log-concave function on the positive orthant.",
+    "aliases": ["completely log-concave", "strongly log-concave polynomial"]
+  },
+  {
+    "id": "s_lorentzian_polynomial",
+    "kind": "axiom",
+    "name": "Lorentzian polynomial",
+    "type_signature": "",
+    "description": "A homogeneous polynomial of degree at least two with non-negative coefficients whose Hessian has at most one positive eigenvalue on the positive orthant, the class closed under operations preserving log-concavity.",
+    "aliases": ["Lorentzian polynomials (Branden-Huh)"]
+  },
+  {
+    "id": "s_anari_liu_oveisgharan_vinzant_log_concavity",
+    "kind": "theorem",
+    "name": "Anari-Liu-Oveis Gharan-Vinzant log-concavity theorem",
+    "type_signature": "",
+    "description": "The theorem that the basis generating polynomial of every matroid is completely log-concave, equivalently Lorentzian."
+  },
+  {
+    "id": "s_matroid_expansion_conjecture_mihail_sudan",
+    "kind": "theorem",
+    "name": "Mihail-Sudan / matroid expansion theorem",
+    "type_signature": "",
+    "description": "The result that the basis exchange graph of any matroid has spectral expansion, equivalently the bases-exchange walk is a one-sided spectral expander.",
+    "aliases": ["Mihail-Vazirani matroid expansion conjecture"]
+  },
+  {
+    "id": "s_local_spectral_expander",
+    "kind": "axiom",
+    "name": "Local spectral expander",
+    "type_signature": "",
+    "description": "A simplicial complex whose vertex links are all spectral expanders, a condition propagating up to fast mixing of the top-dimensional random walk.",
+    "aliases": ["high-dimensional expander", "local-spectral expander"]
+  },
+  {
+    "id": "t_spectral_independence",
+    "kind": "technique",
+    "name": "Spectral independence",
+    "function_signature": "(Markov chain with bounded influence matrices) -> (rapid mixing time bound)",
+    "description": "A method bounding mixing times of Markov chains by controlling the spectral norm of pairwise influence matrices, derived from local-to-global spectral expansion."
+  },
+  {
+    "id": "s_mihail_vazirani_matroid_sampling",
+    "kind": "theorem",
+    "name": "Mihail-Vazirani matroid sampling consequence",
+    "type_signature": "",
+    "description": "The result that the bases-exchange random walk on any matroid mixes in polynomial time, yielding an efficient algorithm to sample a uniformly random basis."
+  },
+  {
+    "id": "s_random_lozenge_tiling",
+    "kind": "axiom",
+    "name": "Random lozenge tiling",
+    "type_signature": "",
+    "description": "A uniformly random tiling of a planar region by lozenges, equivalently a uniformly random dimer configuration on the hexagonal lattice or a stepped surface.",
+    "aliases": ["random rhombus tiling"]
+  },
+  {
+    "id": "s_dimer_model",
+    "kind": "axiom",
+    "name": "Dimer model",
+    "type_signature": "",
+    "description": "A statistical-mechanical model of perfect matchings on a planar bipartite graph, weighted by edge weights and analyzed through the Kasteleyn matrix.",
+    "aliases": ["perfect matching model"]
+  },
+  {
+    "id": "s_limit_shape_variational_principle_tilings",
+    "kind": "theorem",
+    "name": "Limit shape (variational principle for tilings)",
+    "type_signature": "",
+    "description": "The law of large numbers asserting that the normalized height function of a random tiling converges to a deterministic surface minimizing a surface-tension functional with given boundary data.",
+    "aliases": ["Cohn-Kenyon-Propp variational principle"]
+  },
+  {
+    "id": "s_arctic_circle_frozen_boundary",
+    "kind": "state",
+    "name": "Arctic circle / frozen boundary",
+    "type_signature": "",
+    "description": "The deterministic curve separating the frozen (deterministic) region from the disordered (liquid) region in the limit shape of a random tiling of a region.",
+    "aliases": ["arctic curve", "frozen boundary"]
+  },
+  {
+    "id": "s_gaussian_free_field_fluctuations_tilings",
+    "kind": "theorem",
+    "name": "Gaussian free field fluctuations of tilings",
+    "type_signature": "",
+    "description": "The statement that height-function fluctuations of a random tiling in the liquid region converge, after a complex-structure change of variables, to the two-dimensional Gaussian free field."
+  },
+  {
+    "id": "s_airy_line_ensemble_edge_universality",
+    "kind": "theorem",
+    "name": "Airy line ensemble edge universality",
+    "type_signature": "",
+    "description": "The result that local statistics of a random tiling near a smooth point of the arctic boundary converge to the Airy line ensemble independently of the model details.",
+    "aliases": ["Airy process edge universality"]
+  },
+  {
+    "id": "s_sine_kernel_bulk_universality_tilings",
+    "kind": "theorem",
+    "name": "Sine kernel bulk universality for tilings",
+    "type_signature": "",
+    "description": "The result that local correlations of a random tiling in the liquid region converge to the discrete sine-kernel determinantal process determined only by the local slope."
+  },
+  {
+    "id": "s_prismatic_cohomology",
+    "kind": "axiom",
+    "name": "Prismatic cohomology",
+    "type_signature": "",
+    "description": "A cohomology theory for p-adic formal schemes defined via the prismatic site of bounded prisms, specializing to and unifying crystalline, de Rham, and etale p-adic cohomologies.",
+    "aliases": ["prismatic site cohomology"]
+  },
+  {
+    "id": "s_prism",
+    "kind": "axiom",
+    "name": "Prism",
+    "type_signature": "",
+    "description": "A delta-ring equipped with an ideal that is a Cartier divisor and over which the Frobenius lift satisfies a compatibility condition with p, the base object of prismatic cohomology.",
+    "aliases": ["bounded prism"]
+  },
+  {
+    "id": "s_delta_ring",
+    "kind": "axiom",
+    "name": "Delta-ring",
+    "type_signature": "",
+    "description": "A commutative ring equipped with a delta-operation whose induced map is a lift of the Frobenius endomorphism modulo p.",
+    "aliases": ["delta-ring", "lambda-ring of p-typical type"]
+  },
+  {
+    "id": "s_prismatic_f_crystal",
+    "kind": "axiom",
+    "name": "Prismatic F-crystal",
+    "type_signature": "",
+    "description": "A crystal of finite locally free modules on the prismatic site equipped with a Frobenius structure, conjecturally classifying p-adic motivic data over a base."
+  },
+  {
+    "id": "s_bhatt_scholze_crystals_equals_lattices",
+    "kind": "theorem",
+    "name": "Bhatt-Scholze crystals equals lattices theorem",
+    "type_signature": "",
+    "description": "The theorem that over a p-adic ring of integers the category of prismatic F-crystals is equivalent to the category of Galois-stable lattices in crystalline p-adic representations."
+  },
+  {
+    "id": "s_crystalline_cohomology",
+    "kind": "axiom",
+    "name": "Crystalline cohomology",
+    "type_signature": "",
+    "description": "A p-adic Weil cohomology theory for smooth proper schemes over a perfect field of characteristic p, computed via divided-power thickenings and recovered as a special fiber of prismatic cohomology."
+  },
+  {
+    "id": "s_p_adic_hodge_comparison",
+    "kind": "theorem",
+    "name": "p-adic Hodge theory comparison",
+    "type_signature": "",
+    "description": "The collection of comparison isomorphisms relating etale, de Rham, and crystalline cohomologies of p-adic varieties, unified and refined through the prismatic formalism.",
+    "aliases": ["p-adic comparison isomorphisms"]
+  },
+  {
+    "id": "s_p_adic_motive",
+    "kind": "state",
+    "name": "p-adic motive",
+    "type_signature": "",
+    "description": "A conjectural universal object capturing the p-adic cohomological invariants of a variety, realized concretely via prismatic F-crystals and their associated Galois representations."
+  },
+  {
+    "id": "s_circular_unitary_ensemble_characteristic_polynomial",
+    "kind": "axiom",
+    "name": "Circular Unitary Ensemble / CUE characteristic polynomial",
+    "type_signature": "",
+    "description": "The characteristic polynomial of a Haar-distributed unitary matrix, used as a model for the value distribution of the Riemann zeta function on the critical line.",
+    "aliases": ["CUE", "CUE characteristic polynomial"]
+  },
+  {
+    "id": "s_log_correlated_gaussian_field",
+    "kind": "axiom",
+    "name": "Log-correlated Gaussian field",
+    "type_signature": "",
+    "description": "A random field whose covariance decays like the logarithm of the inverse distance, exhibiting branching-random-walk extreme-value behavior.",
+    "aliases": ["log-correlated field"]
+  },
+  {
+    "id": "s_branching_random_walk_maximum",
+    "kind": "theorem",
+    "name": "Branching random walk maximum (BRW)",
+    "type_signature": "",
+    "description": "The theorem giving leading-order and logarithmic-correction asymptotics for the maximum of a branching random walk, the universal template for maxima of log-correlated fields.",
+    "aliases": ["BRW maximum asymptotics"]
+  },
+  {
+    "id": "s_maximum_cue_characteristic_polynomial",
+    "kind": "theorem",
+    "name": "Maximum of CUE characteristic polynomial",
+    "type_signature": "",
+    "description": "The result establishing leading-order and subleading logarithmic asymptotics of the maximum of the logarithm of the CUE characteristic polynomial on the unit circle."
+  },
+  {
+    "id": "t_arithmetic_algebraization",
+    "kind": "technique",
+    "name": "Arithmetic algebraization",
+    "function_signature": "(formal power series with integrality and analytic/holonomy constraints) -> (proof of algebraicity or rationality)",
+    "description": "A method proving that a formal power series with arithmetic integrality and analytic growth/holonomy constraints is algebraic or rational, generalizing the Borel-Dwork criterion.",
+    "aliases": ["arithmetic holonomy method"]
+  },
+  {
+    "id": "s_borel_dwork_rationality_criterion",
+    "kind": "theorem",
+    "name": "Borel-Dwork rationality criterion",
+    "type_signature": "",
+    "description": "A power series with integer coefficients that converges p-adically and archimedeanly on domains whose product of radii exceeds one is the expansion of a rational function.",
+    "aliases": ["Borel-Dwork criterion"]
+  },
+  {
+    "id": "s_schur_siegel_smyth_trace_problem",
+    "kind": "theorem",
+    "name": "Schur-Siegel-Smyth trace problem result",
+    "type_signature": "",
+    "description": "Dimitrov's resolution, via arithmetic holonomy bounds, of conjectures on the minimal limit of the absolute trace of totally positive algebraic integers.",
+    "aliases": ["Schur-Siegel-Smyth trace problem"]
+  },
+  {
+    "id": "s_kronecker_coefficient",
+    "kind": "state",
+    "name": "Kronecker coefficient",
+    "type_signature": "",
+    "description": "The multiplicity of an irreducible representation of the symmetric group in the tensor product of two others, a quantity lacking a known combinatorial positive formula."
+  },
+  {
+    "id": "s_complexity_class_sharp_p",
+    "kind": "axiom",
+    "name": "Complexity class #P",
+    "type_signature": "",
+    "description": "The class of counting problems expressible as the number of accepting paths of a nondeterministic polynomial-time Turing machine.",
+    "aliases": ["#P", "sharp-P"]
+  },
+  {
+    "id": "s_combinatorial_interpretation_in_sharp_p",
+    "kind": "state",
+    "name": "Combinatorial interpretation as membership in #P",
+    "type_signature": "",
+    "description": "The formalization that a structure constant has a combinatorial interpretation precisely when its computation lies in the complexity class #P, framing the central question for Kronecker and plethysm coefficients."
+  },
+  {
+    "id": "t_geometric_complexity_theory",
+    "kind": "technique",
+    "name": "Geometric Complexity Theory",
+    "function_signature": "(permanent vs determinant / P vs NP) -> (representation-theoretic orbit-closure obstructions)",
+    "description": "The program of Mulmuley and Sohoni attacking P versus NP and the permanent versus determinant problem through representation theory and the geometry of orbit closures.",
+    "aliases": ["GCT"]
+  },
+  {
+    "id": "s_plethysm_coefficient",
+    "kind": "state",
+    "name": "Plethysm coefficient",
+    "type_signature": "",
+    "description": "The multiplicity arising in the decomposition of the composition of two symmetric functions or Schur functors, central to representation-theoretic complexity questions."
+  },
+  {
+    "id": "s_gct_obstruction_vanishing_rectangular_kronecker",
+    "kind": "theorem",
+    "name": "Vanishing of rectangular Kronecker coefficients / GCT obstruction",
+    "type_signature": "",
+    "description": "The Burgisser-Ikenmeyer-Panova result that the conjectured occurrence obstructions of geometric complexity theory cannot separate permanent from determinant, refuting the original program in that form."
+  },
+  {
+    "id": "s_saturation_theorem_littlewood_richardson",
+    "kind": "theorem",
+    "name": "Saturation theorem for Littlewood-Richardson coefficients",
+    "type_signature": "",
+    "description": "Knutson and Tao's theorem that a Littlewood-Richardson coefficient is nonzero whenever a dilation of its indices is, proven via the honeycomb model.",
+    "aliases": ["Knutson-Tao saturation theorem"]
+  },
+  {
+    "id": "s_positivity_kronecker_coefficients_np_hard",
+    "kind": "theorem",
+    "name": "Positivity of Kronecker coefficients is NP-hard",
+    "type_signature": "",
+    "description": "The complexity-theoretic result that deciding whether a Kronecker coefficient is positive is NP-hard, contrasting with polynomial-time decidability of Littlewood-Richardson positivity."
+  }
+]

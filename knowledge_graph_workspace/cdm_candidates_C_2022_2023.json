@@ -1,0 +1,625 @@
+[
+  {
+    "candidate_name": "p-adic reductive group",
+    "kind": "axiom",
+    "description": "A connected reductive algebraic group defined over a non-archimedean local field with residue characteristic p, whose group of rational points is a locally profinite topological group.",
+    "dependencies": ["non-archimedean local field", "reductive algebraic group", "locally profinite group"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Smooth representation of a p-adic group",
+    "kind": "axiom",
+    "description": "A complex representation of a p-adic reductive group in which every vector is fixed by some open compact subgroup, equivalently a representation that is locally constant.",
+    "dependencies": ["p-adic reductive group", "open compact subgroup", "complex vector space"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Admissible representation",
+    "kind": "axiom",
+    "description": "A smooth representation in which the space of vectors fixed by any given open compact subgroup is finite-dimensional.",
+    "dependencies": ["Smooth representation of a p-adic group", "open compact subgroup"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Supercuspidal representation",
+    "kind": "axiom",
+    "description": "An irreducible smooth representation of a p-adic group whose matrix coefficients are compactly supported modulo the center, equivalently one not appearing in any parabolic induction from a proper parabolic subgroup.",
+    "dependencies": ["Smooth representation of a p-adic group", "parabolic induction", "matrix coefficient"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Parabolic induction",
+    "kind": "technique",
+    "description": "The functor producing a smooth representation of a p-adic group from a smooth representation of a Levi subgroup by normalized induction along a parabolic subgroup.",
+    "dependencies": ["parabolic subgroup", "Levi subgroup", "Smooth representation of a p-adic group"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Bruhat-Tits building",
+    "kind": "axiom",
+    "description": "A contractible polysimplicial complex with a strongly transitive action of a p-adic reductive group, encoding its parahoric subgroups as stabilizers of facets.",
+    "dependencies": ["p-adic reductive group", "parahoric subgroup", "polysimplicial complex"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Moy-Prasad filtration",
+    "kind": "axiom",
+    "description": "A descending filtration of the parahoric subgroups associated to a point of the Bruhat-Tits building indexed by non-negative real numbers, providing the depth invariant of a representation.",
+    "dependencies": ["Bruhat-Tits building", "parahoric subgroup", "depth of a representation"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Depth of a representation",
+    "kind": "state",
+    "description": "The minimal non-negative real number at which a representation has nonzero vectors fixed by the corresponding Moy-Prasad subgroup, measuring its ramification.",
+    "dependencies": ["Moy-Prasad filtration", "Smooth representation of a p-adic group"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Yu's construction of supercuspidal representations",
+    "kind": "technique",
+    "description": "A construction producing supercuspidal representations by compact induction from data consisting of a tamely ramified twisted Levi sequence, a generic character sequence, and a depth-zero cuspidal representation.",
+    "dependencies": ["Supercuspidal representation", "twisted Levi sequence", "generic character", "compact induction"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Fintzen exhaustion theorem for supercuspidals",
+    "kind": "theorem",
+    "description": "When p does not divide the order of the Weyl group, all supercuspidal representations of a p-adic reductive group arise from Yu's construction.",
+    "dependencies": ["Yu's construction of supercuspidal representations", "Supercuspidal representation", "Weyl group"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Twisted Levi sequence",
+    "kind": "axiom",
+    "description": "A chain of reductive subgroups of a p-adic group, each a Levi subgroup over a tame extension, used as the structural backbone of Yu's supercuspidal construction.",
+    "dependencies": ["p-adic reductive group", "Levi subgroup", "tamely ramified extension"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Local Langlands correspondence for p-adic groups",
+    "kind": "state",
+    "description": "The conjectural bijection between L-packets of irreducible smooth representations of a p-adic group and Langlands parameters into its Langlands dual group.",
+    "dependencies": ["Smooth representation of a p-adic group", "Langlands parameter", "Langlands dual group", "L-packet"],
+    "source_article": "CDM 2021-22, Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Angular momentum at null infinity",
+    "kind": "state",
+    "description": "A definition of the total angular momentum of an isolated gravitating system extracted from the asymptotic geometry of the spacetime at null infinity.",
+    "dependencies": ["null infinity", "asymptotically flat spacetime", "Bondi-Metzner-Sachs group"],
+    "source_article": "CDM 2021-22, Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Bondi-Metzner-Sachs group",
+    "kind": "axiom",
+    "description": "The asymptotic symmetry group of asymptotically flat spacetimes at null infinity, an infinite-dimensional extension of the Poincare group by supertranslations.",
+    "dependencies": ["asymptotically flat spacetime", "null infinity", "supertranslation", "Poincare group"],
+    "source_article": "CDM 2021-22, Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Supertranslation",
+    "kind": "axiom",
+    "description": "An angle-dependent translation of retarded time on null infinity, generating the abelian normal subgroup of the BMS group beyond ordinary spacetime translations.",
+    "dependencies": ["null infinity", "Bondi-Metzner-Sachs group"],
+    "source_article": "CDM 2021-22, Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Supertranslation ambiguity of angular momentum",
+    "kind": "state",
+    "description": "The phenomenon whereby classical definitions of angular momentum at null infinity change under BMS supertranslations, obstructing a frame-independent notion.",
+    "dependencies": ["Angular momentum at null infinity", "Supertranslation", "Bondi-Metzner-Sachs group"],
+    "source_article": "CDM 2021-22, Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Chen-Wang-Yau quasilocal angular momentum",
+    "kind": "state",
+    "description": "A definition of angular momentum associated to a spacelike two-surface, derived from the optimal isometric embedding into Minkowski space and free of supertranslation ambiguity in its limit.",
+    "dependencies": ["quasilocal mass", "optimal isometric embedding", "Supertranslation ambiguity of angular momentum"],
+    "source_article": "CDM 2021-22, Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Wang-Yau quasilocal mass",
+    "kind": "state",
+    "description": "A quasilocal energy assigned to a spacelike two-surface defined by minimizing a canonical Hamiltonian functional over admissible isometric embeddings into Minkowski space.",
+    "dependencies": ["isometric embedding", "mean curvature", "Hamiltonian functional"],
+    "source_article": "CDM 2021-22, Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Optimal isometric embedding",
+    "kind": "state",
+    "description": "An isometric embedding of a spacelike two-surface into Minkowski space that solves the Euler-Lagrange equation arising as critical point of the Wang-Yau quasilocal energy.",
+    "dependencies": ["isometric embedding", "Wang-Yau quasilocal mass", "Minkowski space"],
+    "source_article": "CDM 2021-22, Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Bondi mass loss formula",
+    "kind": "theorem",
+    "description": "The statement that the Bondi mass of an asymptotically flat spacetime is monotonically non-increasing in retarded time, with the loss governed by the flux of gravitational radiation.",
+    "dependencies": ["asymptotically flat spacetime", "null infinity", "gravitational radiation"],
+    "source_article": "CDM 2021-22, Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "L-function of an automorphic representation",
+    "kind": "axiom",
+    "description": "A Dirichlet series with Euler product attached to an automorphic representation and a representation of the dual group, conjecturally entire and satisfying a functional equation.",
+    "dependencies": ["automorphic representation", "Langlands dual group", "Euler product", "functional equation"],
+    "source_article": "CDM 2021-22, Thorne, L-functions and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Symmetric power functoriality",
+    "kind": "state",
+    "description": "The Langlands functorial transfer attaching to a GL(2) automorphic representation its n-th symmetric power as an automorphic representation of GL(n+1).",
+    "dependencies": ["L-function of an automorphic representation", "Langlands functoriality", "symmetric power representation"],
+    "source_article": "CDM 2021-22, Thorne, L-functions and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Newton-Thorne symmetric power functoriality theorem",
+    "kind": "theorem",
+    "description": "For every holomorphic cuspidal modular eigenform without complex multiplication, the symmetric power lifts of all orders n exist as cuspidal automorphic representations of GL(n+1).",
+    "dependencies": ["Symmetric power functoriality", "cuspidal modular form", "automorphic representation"],
+    "source_article": "CDM 2021-22, Thorne, L-functions and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Automorphy lifting theorem",
+    "kind": "theorem",
+    "description": "A result asserting that a Galois representation residually attached to an automorphic form, and satisfying suitable local and ordinarity hypotheses, is itself automorphic.",
+    "dependencies": ["Galois representation", "automorphic representation", "deformation ring", "Taylor-Wiles method"],
+    "source_article": "CDM 2021-22, Thorne, L-functions and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Taylor-Wiles-Kisin patching",
+    "kind": "technique",
+    "description": "A method proving R=T isomorphisms between Galois deformation rings and Hecke algebras by patching cohomology over auxiliary level structures with Taylor-Wiles primes.",
+    "dependencies": ["deformation ring", "Hecke algebra", "Taylor-Wiles prime", "Galois representation"],
+    "source_article": "CDM 2021-22, Thorne, L-functions and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Langlands functoriality",
+    "kind": "state",
+    "description": "The conjectural principle that a homomorphism of L-groups induces a transfer of automorphic representations compatible with L-functions.",
+    "dependencies": ["automorphic representation", "Langlands dual group", "L-function of an automorphic representation"],
+    "source_article": "CDM 2021-22, Thorne, L-functions and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Sato-Tate conjecture",
+    "kind": "theorem",
+    "description": "The statement that the normalized Frobenius angles of a non-CM elliptic curve or modular form are equidistributed with respect to the Sato-Tate measure, deduced from symmetric power L-function analyticity.",
+    "dependencies": ["Symmetric power functoriality", "L-function of an automorphic representation", "equidistribution"],
+    "source_article": "CDM 2021-22, Thorne, L-functions and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Quantum state tomography",
+    "kind": "state",
+    "description": "The task of reconstructing an unknown density matrix on d dimensions from measurements of many independent copies of the state.",
+    "dependencies": ["density matrix", "quantum measurement", "sample complexity"],
+    "source_article": "CDM 2021-22, O'Donnell, Learning and Testing Quantum States"
+  },
+  {
+    "candidate_name": "Density matrix",
+    "kind": "axiom",
+    "description": "A positive semidefinite Hermitian operator of unit trace describing the state of a quantum system, generalizing classical probability distributions.",
+    "dependencies": ["Hermitian operator", "trace", "Hilbert space"],
+    "source_article": "CDM 2021-22, O'Donnell, Learning and Testing Quantum States"
+  },
+  {
+    "candidate_name": "Optimal sample complexity of state tomography",
+    "kind": "theorem",
+    "description": "Full tomography of a rank-r density matrix on dimension d to trace-distance accuracy epsilon requires Theta(d r / epsilon^2) copies, achieved using entangled measurements.",
+    "dependencies": ["Quantum state tomography", "density matrix", "entangled measurement"],
+    "source_article": "CDM 2021-22, O'Donnell, Learning and Testing Quantum States"
+  },
+  {
+    "candidate_name": "Schur-Weyl duality",
+    "kind": "theorem",
+    "description": "The decomposition of the tensor power of a vector space into irreducibles under the commuting actions of the general linear group and the symmetric group, indexed by partitions.",
+    "dependencies": ["general linear group", "symmetric group", "Young diagram", "irreducible representation"],
+    "source_article": "CDM 2021-22, O'Donnell, Learning and Testing Quantum States"
+  },
+  {
+    "candidate_name": "Keyl-Werner spectrum estimation",
+    "kind": "technique",
+    "description": "An algorithm estimating the eigenvalue spectrum of an unknown density matrix by measuring the Young-diagram label arising from the Schur-Weyl decomposition of tensor copies.",
+    "dependencies": ["Schur-Weyl duality", "density matrix", "Young diagram"],
+    "source_article": "CDM 2021-22, O'Donnell, Learning and Testing Quantum States"
+  },
+  {
+    "candidate_name": "RSK correspondence and longest increasing subsequence connection",
+    "kind": "theorem",
+    "description": "The link, via the Robinson-Schensted correspondence, between the shape of the Young diagram measured in Schur sampling and the distribution of longest increasing subsequences of random words.",
+    "dependencies": ["Schur-Weyl duality", "Robinson-Schensted-Knuth correspondence", "Young diagram"],
+    "source_article": "CDM 2021-22, O'Donnell, Learning and Testing Quantum States"
+  },
+  {
+    "candidate_name": "Quantum state certification",
+    "kind": "state",
+    "description": "The property-testing task of deciding whether an unknown quantum state equals a fixed target state or is epsilon-far from it in trace distance, using as few copies as possible.",
+    "dependencies": ["density matrix", "Quantum state tomography", "trace distance"],
+    "source_article": "CDM 2021-22, O'Donnell, Learning and Testing Quantum States"
+  },
+  {
+    "candidate_name": "Matroid",
+    "kind": "axiom",
+    "description": "A combinatorial structure abstracting linear independence, given by a ground set together with a rank function or independent sets satisfying the exchange axiom.",
+    "dependencies": ["ground set", "rank function", "exchange axiom"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Basis generating polynomial of a matroid",
+    "kind": "state",
+    "description": "The multivariate polynomial summing monomials over the bases of a matroid, encoding its combinatorial structure as a homogeneous multiaffine polynomial.",
+    "dependencies": ["Matroid", "multiaffine polynomial", "basis of a matroid"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Completely log-concave polynomial",
+    "kind": "axiom",
+    "description": "A homogeneous polynomial with non-negative coefficients whose every iterated directional derivative is a log-concave function on the positive orthant.",
+    "dependencies": ["log-concave function", "homogeneous polynomial", "Hessian"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Lorentzian polynomial",
+    "kind": "axiom",
+    "description": "A homogeneous polynomial of degree at least two whose Hessian has at most one positive eigenvalue on the positive orthant, characterizing a class closed under the operations preserving log-concavity.",
+    "dependencies": ["Hessian", "homogeneous polynomial", "Completely log-concave polynomial"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Anari-Liu-Oveis Gharan-Vinzant log-concavity theorem",
+    "kind": "theorem",
+    "description": "The basis generating polynomial of every matroid is completely log-concave, equivalently Lorentzian.",
+    "dependencies": ["Basis generating polynomial of a matroid", "Completely log-concave polynomial", "Lorentzian polynomial"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Mihail-Sudan / matroid expansion conjecture",
+    "kind": "theorem",
+    "description": "The basis exchange graph of any matroid has spectral expansion, equivalently the bases-exchange walk is a one-sided spectral expander.",
+    "dependencies": ["Matroid", "basis exchange graph", "spectral expander"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Local spectral expander",
+    "kind": "axiom",
+    "description": "A simplicial complex whose vertex links are all spectral expanders, a condition propagating up to fast mixing of the top-dimensional random walk.",
+    "dependencies": ["simplicial complex", "spectral expander", "link of a face"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Spectral independence",
+    "kind": "technique",
+    "description": "A method bounding mixing times of Markov chains by controlling the spectral norm of pairwise influence matrices, derived from local-to-global spectral expansion.",
+    "dependencies": ["Local spectral expander", "Markov chain mixing time", "influence matrix"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Mihail-Vazirani matroid sampling consequence",
+    "kind": "theorem",
+    "description": "The bases-exchange random walk on any matroid mixes in polynomial time, yielding an efficient algorithm to sample a uniformly random basis.",
+    "dependencies": ["Mihail-Sudan / matroid expansion conjecture", "Local spectral expander", "Anari-Liu-Oveis Gharan-Vinzant log-concavity theorem"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Heron-Rota-Welsh conjecture",
+    "kind": "theorem",
+    "description": "The coefficients of the reduced characteristic polynomial of any matroid form a log-concave sequence, established via Lorentzian polynomials and Hodge theory of matroids.",
+    "dependencies": ["Matroid", "characteristic polynomial of a matroid", "log-concave function", "Lorentzian polynomial"],
+    "source_article": "CDM 2021-22, Vinzant, Log-concavity in matroids and expanders"
+  },
+  {
+    "candidate_name": "Random lozenge tiling",
+    "kind": "axiom",
+    "description": "A uniformly random tiling of a planar region by lozenges, equivalently a uniformly random dimer configuration on the hexagonal lattice or a stepped surface.",
+    "dependencies": ["dimer model", "hexagonal lattice", "stepped surface"],
+    "source_article": "CDM 2023, Aggarwal, Universality results in random tiling models"
+  },
+  {
+    "candidate_name": "Dimer model",
+    "kind": "axiom",
+    "description": "A statistical-mechanical model of perfect matchings on a planar bipartite graph, weighted by edge weights and analyzed through the Kasteleyn matrix.",
+    "dependencies": ["perfect matching", "bipartite graph", "Kasteleyn matrix"],
+    "source_article": "CDM 2023, Aggarwal, Universality results in random tiling models"
+  },
+  {
+    "candidate_name": "Limit shape (variational principle for tilings)",
+    "kind": "theorem",
+    "description": "The law of large numbers asserting that the normalized height function of a random tiling converges to a deterministic surface minimizing a surface-tension functional with given boundary data.",
+    "dependencies": ["Random lozenge tiling", "height function", "surface tension functional"],
+    "source_article": "CDM 2023, Aggarwal, Universality results in random tiling models"
+  },
+  {
+    "candidate_name": "Arctic circle / frozen boundary",
+    "kind": "state",
+    "description": "The deterministic curve separating the frozen (deterministic) region from the disordered (liquid) region in the limit shape of a random tiling of a region.",
+    "dependencies": ["Limit shape (variational principle for tilings)", "Random lozenge tiling", "height function"],
+    "source_article": "CDM 2023, Aggarwal, Universality results in random tiling models"
+  },
+  {
+    "candidate_name": "Gaussian free field fluctuations of tilings",
+    "kind": "theorem",
+    "description": "The statement that height-function fluctuations of a random tiling in the liquid region converge, after a complex-structure change of variables, to the two-dimensional Gaussian free field.",
+    "dependencies": ["Random lozenge tiling", "height function", "Gaussian free field"],
+    "source_article": "CDM 2023, Aggarwal, Universality results in random tiling models"
+  },
+  {
+    "candidate_name": "Airy line ensemble edge universality",
+    "kind": "theorem",
+    "description": "The result that the local statistics of a random tiling near a smooth point of the arctic boundary converge to the Airy line ensemble independently of the model details.",
+    "dependencies": ["Arctic circle / frozen boundary", "Airy process", "Random lozenge tiling"],
+    "source_article": "CDM 2023, Aggarwal, Universality results in random tiling models"
+  },
+  {
+    "candidate_name": "Sine kernel bulk universality for tilings",
+    "kind": "theorem",
+    "description": "The result that local correlations of a random tiling in the liquid region converge to the discrete sine-kernel determinantal process determined only by the local slope.",
+    "dependencies": ["Random lozenge tiling", "determinantal point process", "sine kernel"],
+    "source_article": "CDM 2023, Aggarwal, Universality results in random tiling models"
+  },
+  {
+    "candidate_name": "Determinantal point process",
+    "kind": "axiom",
+    "description": "A point process whose correlation functions are given by determinants of a correlation kernel, the framework underlying exact analysis of dimers and random matrices.",
+    "dependencies": ["correlation kernel", "point process"],
+    "source_article": "CDM 2023, Aggarwal, Universality results in random tiling models"
+  },
+  {
+    "candidate_name": "Prismatic cohomology",
+    "kind": "axiom",
+    "description": "A cohomology theory for p-adic formal schemes, defined via the prismatic site of bounded prisms, that specializes to and unifies crystalline, de Rham, and etale p-adic cohomologies.",
+    "dependencies": ["prism", "p-adic formal scheme", "crystalline cohomology", "delta-ring"],
+    "source_article": "CDM 2023, Bhatt, p-adic motives"
+  },
+  {
+    "candidate_name": "Prism",
+    "kind": "axiom",
+    "description": "A delta-ring equipped with an ideal that is a Cartier divisor and over which the Frobenius lift satisfies a compatibility condition with p, serving as the base object of prismatic cohomology.",
+    "dependencies": ["delta-ring", "Frobenius lift", "Cartier divisor"],
+    "source_article": "CDM 2023, Bhatt, p-adic motives"
+  },
+  {
+    "candidate_name": "Delta-ring",
+    "kind": "axiom",
+    "description": "A commutative ring equipped with a delta-operation whose induced map is a lift of the Frobenius endomorphism modulo p.",
+    "dependencies": ["commutative ring", "Frobenius endomorphism"],
+    "source_article": "CDM 2023, Bhatt, p-adic motives"
+  },
+  {
+    "candidate_name": "Prismatic F-crystal",
+    "kind": "axiom",
+    "description": "A crystal of finite locally free modules on the prismatic site equipped with a Frobenius structure, conjecturally classifying p-adic motivic data over a base.",
+    "dependencies": ["Prismatic cohomology", "F-isocrystal", "Frobenius lift"],
+    "source_article": "CDM 2023, Bhatt, p-adic motives"
+  },
+  {
+    "candidate_name": "Bhatt-Scholze crystals equals lattices theorem",
+    "kind": "theorem",
+    "description": "Over a p-adic ring of integers, the category of prismatic F-crystals is equivalent to the category of Galois-stable lattices in crystalline p-adic representations.",
+    "dependencies": ["Prismatic F-crystal", "crystalline Galois representation", "Galois lattice"],
+    "source_article": "CDM 2023, Bhatt, p-adic motives"
+  },
+  {
+    "candidate_name": "Crystalline cohomology",
+    "kind": "axiom",
+    "description": "A p-adic Weil cohomology theory for smooth proper schemes over a perfect field of characteristic p, computed via divided-power thickenings and recovered as a special fiber of prismatic cohomology.",
+    "dependencies": ["divided power structure", "p-adic formal scheme", "Frobenius endomorphism"],
+    "source_article": "CDM 2023, Bhatt, p-adic motives"
+  },
+  {
+    "candidate_name": "p-adic Hodge theory comparison",
+    "kind": "theorem",
+    "description": "The collection of comparison isomorphisms relating etale, de Rham, and crystalline cohomologies of p-adic varieties, unified and refined through the prismatic formalism.",
+    "dependencies": ["Prismatic cohomology", "Crystalline cohomology", "etale cohomology", "de Rham cohomology"],
+    "source_article": "CDM 2023, Bhatt, p-adic motives"
+  },
+  {
+    "candidate_name": "p-adic motive",
+    "kind": "state",
+    "description": "A conjectural universal object capturing the p-adic cohomological invariants of a variety, realized concretely via prismatic F-crystals and their associated Galois representations.",
+    "dependencies": ["Prismatic F-crystal", "motive", "crystalline Galois representation"],
+    "source_article": "CDM 2023, Bhatt, p-adic motives"
+  },
+  {
+    "candidate_name": "Hartshorne-Speiser-Lyubeznik / perfectoid techniques in commutative algebra",
+    "kind": "technique",
+    "description": "Methods using perfectoid rings and prismatic theory to resolve homological conjectures in mixed-characteristic commutative algebra, such as the existence of big Cohen-Macaulay algebras.",
+    "dependencies": ["perfectoid ring", "Prismatic cohomology", "big Cohen-Macaulay algebra"],
+    "source_article": "CDM 2023, Bhatt, p-adic motives"
+  },
+  {
+    "candidate_name": "Riemann zeta function",
+    "kind": "axiom",
+    "description": "The analytic continuation of the Dirichlet series summing n to the minus s, with Euler product over primes, functional equation, and conjecturally all nontrivial zeros on the critical line.",
+    "dependencies": ["Dirichlet series", "Euler product", "analytic continuation", "functional equation"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Montgomery pair correlation conjecture",
+    "kind": "state",
+    "description": "The conjecture that the normalized spacings between nontrivial zeros of the Riemann zeta function have the same pair correlation as eigenvalues of large random Hermitian matrices.",
+    "dependencies": ["Riemann zeta function", "Gaussian Unitary Ensemble", "pair correlation function"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Gaussian Unitary Ensemble",
+    "kind": "axiom",
+    "description": "The ensemble of random Hermitian matrices with independent complex Gaussian entries invariant under unitary conjugation, the canonical model of random matrix universality.",
+    "dependencies": ["Hermitian matrix", "Gaussian distribution", "unitary invariance"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Circular Unitary Ensemble / CUE characteristic polynomial",
+    "kind": "axiom",
+    "description": "The characteristic polynomial of a Haar-distributed unitary matrix, used as a model for the value distribution of the Riemann zeta function on the critical line.",
+    "dependencies": ["Haar measure", "unitary group", "characteristic polynomial"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Fyodorov-Hiary-Keating conjecture",
+    "kind": "state",
+    "description": "A precise prediction for the maximum of the Riemann zeta function over short intervals of the critical line, modeled on the extreme-value statistics of log-correlated random fields.",
+    "dependencies": ["Riemann zeta function", "log-correlated field", "Circular Unitary Ensemble / CUE characteristic polynomial"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Log-correlated Gaussian field",
+    "kind": "axiom",
+    "description": "A random field whose covariance decays like the logarithm of the inverse distance, exhibiting branching-random-walk extreme value behavior.",
+    "dependencies": ["Gaussian field", "covariance function", "branching random walk"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Branching random walk maximum (BRW)",
+    "kind": "theorem",
+    "description": "The theorem giving the leading and logarithmic-correction asymptotics for the maximum of a branching random walk, the universal template for maxima of log-correlated fields.",
+    "dependencies": ["branching random walk", "Log-correlated Gaussian field", "extreme value theory"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Maximum of CUE characteristic polynomial",
+    "kind": "theorem",
+    "description": "The result establishing the leading-order and subleading logarithmic asymptotics of the maximum of the logarithm of the CUE characteristic polynomial on the unit circle.",
+    "dependencies": ["Circular Unitary Ensemble / CUE characteristic polynomial", "Branching random walk maximum (BRW)", "Log-correlated Gaussian field"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Bulk universality of random matrices",
+    "kind": "theorem",
+    "description": "The theorem that local eigenvalue statistics in the bulk of a Wigner matrix coincide with those of the Gaussian ensembles, independently of the entry distribution.",
+    "dependencies": ["Gaussian Unitary Ensemble", "Wigner matrix", "sine kernel"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Moments of the Riemann zeta function conjecture",
+    "kind": "state",
+    "description": "The conjecture, modeled on random matrix moments, predicting the asymptotic value of the 2k-th moment of the zeta function on the critical line with leading constant from the CUE.",
+    "dependencies": ["Riemann zeta function", "Circular Unitary Ensemble / CUE characteristic polynomial", "Keating-Snaith conjecture"],
+    "source_article": "CDM 2023, Bourgade, Random matrices, the Riemann zeta function and branching processes"
+  },
+  {
+    "candidate_name": "Modular form",
+    "kind": "axiom",
+    "description": "A holomorphic function on the upper half-plane transforming with a prescribed automorphy factor under a congruence subgroup and bounded at the cusps.",
+    "dependencies": ["upper half-plane", "congruence subgroup", "automorphy factor", "q-expansion"],
+    "source_article": "CDM 2023, Dimitrov, Modular forms and arithmetic algebraization methods"
+  },
+  {
+    "candidate_name": "Arithmetic algebraization",
+    "kind": "technique",
+    "description": "A method proving that a formal power series with arithmetic integrality and analytic growth/holonomy constraints is in fact algebraic or rational, generalizing the Borel-Dwork criterion.",
+    "dependencies": ["Borel-Dwork rationality criterion", "holonomic function", "capacity theory"],
+    "source_article": "CDM 2023, Dimitrov, Modular forms and arithmetic algebraization methods"
+  },
+  {
+    "candidate_name": "Borel-Dwork rationality criterion",
+    "kind": "theorem",
+    "description": "A power series with integer coefficients that converges p-adically and archimedeanly on domains whose product of radii exceeds one is the expansion of a rational function.",
+    "dependencies": ["p-adic radius of convergence", "rational function", "formal power series"],
+    "source_article": "CDM 2023, Dimitrov, Modular forms and arithmetic algebraization methods"
+  },
+  {
+    "candidate_name": "Unbounded denominators conjecture",
+    "kind": "theorem",
+    "description": "The theorem of Calegari-Dimitrov-Tang that a modular form for a finite-index subgroup of SL(2,Z) with bounded denominators in its q-expansion is necessarily a modular form for a congruence subgroup.",
+    "dependencies": ["Modular form", "congruence subgroup", "Arithmetic algebraization", "q-expansion"],
+    "source_article": "CDM 2023, Dimitrov, Modular forms and arithmetic algebraization methods"
+  },
+  {
+    "candidate_name": "Schur-Siegel-Smyth trace problem result",
+    "kind": "theorem",
+    "description": "Dimitrov's resolution, via arithmetic holonomy bounds, of conjectures on the minimal limit of the absolute trace of totally positive algebraic integers.",
+    "dependencies": ["Arithmetic algebraization", "totally positive algebraic integer", "capacity theory"],
+    "source_article": "CDM 2023, Dimitrov, Modular forms and arithmetic algebraization methods"
+  },
+  {
+    "candidate_name": "Arithmetic holonomicity bound",
+    "kind": "technique",
+    "description": "A quantitative criterion bounding the dimension of the space spanned by a holonomic vector of power series with prescribed integrality and convergence, the engine behind recent algebraization theorems.",
+    "dependencies": ["Arithmetic algebraization", "holonomic function", "Borel-Dwork rationality criterion"],
+    "source_article": "CDM 2023, Dimitrov, Modular forms and arithmetic algebraization methods"
+  },
+  {
+    "candidate_name": "Hecke operator",
+    "kind": "axiom",
+    "description": "A linear operator on a space of modular forms defined by averaging over sublattices, whose simultaneous eigenforms carry arithmetic significance via their eigenvalues.",
+    "dependencies": ["Modular form", "lattice", "eigenform"],
+    "source_article": "CDM 2023, Dimitrov, Modular forms and arithmetic algebraization methods"
+  },
+  {
+    "candidate_name": "Schur polynomial",
+    "kind": "axiom",
+    "description": "The symmetric polynomial indexed by a partition equal to a ratio of determinants, forming a basis of symmetric functions and the character of an irreducible GL representation.",
+    "dependencies": ["symmetric function", "partition", "Young diagram"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Littlewood-Richardson coefficient",
+    "kind": "state",
+    "description": "The non-negative integer giving the multiplicity of a Schur function in a product of two Schur functions, equivalently a tensor product multiplicity for GL(n).",
+    "dependencies": ["Schur polynomial", "Young diagram", "tensor product multiplicity"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Kronecker coefficient",
+    "kind": "state",
+    "description": "The multiplicity of an irreducible representation of the symmetric group in the tensor product of two others, a quantity lacking a known combinatorial positive formula.",
+    "dependencies": ["symmetric group", "irreducible representation", "tensor product multiplicity"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Complexity class #P",
+    "kind": "axiom",
+    "description": "The class of counting problems expressible as the number of accepting paths of a nondeterministic polynomial-time Turing machine.",
+    "dependencies": ["nondeterministic Turing machine", "counting problem", "polynomial time"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Combinatorial interpretation as membership in #P",
+    "kind": "state",
+    "description": "The formalization that a structure constant has a combinatorial interpretation precisely when its computation lies in the complexity class #P, the framing of the central question for Kronecker and plethysm coefficients.",
+    "dependencies": ["Complexity class #P", "Kronecker coefficient", "Littlewood-Richardson coefficient"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Geometric Complexity Theory",
+    "kind": "technique",
+    "description": "The program of Mulmuley and Sohoni attacking P versus NP and the permanent versus determinant problem through representation theory and the geometry of orbit closures.",
+    "dependencies": ["permanent versus determinant problem", "Kronecker coefficient", "orbit closure", "plethysm coefficient"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Plethysm coefficient",
+    "kind": "state",
+    "description": "The multiplicity arising in the decomposition of the composition of two symmetric functions or Schur functors, central to representation-theoretic complexity questions.",
+    "dependencies": ["Schur polynomial", "symmetric function", "Schur functor"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Vanishing of rectangular Kronecker coefficients / GCT obstruction",
+    "kind": "theorem",
+    "description": "The Burgisser-Ikenmeyer-Panova result that the conjectured occurrence obstructions of geometric complexity theory cannot separate permanent from determinant, refuting the original program in that form.",
+    "dependencies": ["Geometric Complexity Theory", "Kronecker coefficient", "permanent versus determinant problem"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Hook length formula",
+    "kind": "theorem",
+    "description": "The formula expressing the number of standard Young tableaux of a given shape, equivalently the dimension of a symmetric group irreducible, as n factorial divided by the product of hook lengths.",
+    "dependencies": ["Young diagram", "standard Young tableau", "hook length"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Saturation theorem for Littlewood-Richardson coefficients",
+    "kind": "theorem",
+    "description": "Knutson and Tao's theorem that a Littlewood-Richardson coefficient is nonzero whenever a dilation of its indices is, proven via the honeycomb model.",
+    "dependencies": ["Littlewood-Richardson coefficient", "honeycomb model", "Young diagram"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  },
+  {
+    "candidate_name": "Positivity of Kronecker coefficients is NP-hard",
+    "kind": "theorem",
+    "description": "The complexity-theoretic result that deciding whether a Kronecker coefficient is positive is NP-hard, contrasting with the polynomial-time decidability of Littlewood-Richardson positivity.",
+    "dependencies": ["Kronecker coefficient", "Saturation theorem for Littlewood-Richardson coefficients", "Complexity class #P"],
+    "source_article": "CDM 2023, Panova, Computational complexity in algebraic combinatorics"
+  }
+]

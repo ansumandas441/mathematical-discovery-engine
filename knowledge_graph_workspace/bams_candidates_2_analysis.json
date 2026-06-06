@@ -1,0 +1,422 @@
+[
+  {
+    "name": "Space-time white noise",
+    "kind": "axiom",
+    "description": "A Gaussian generalized random field on R+ x R^d whose values over disjoint space-time regions are independent with covariance equal to the Lebesgue measure of their overlap.",
+    "dependencies": ["Gaussian random field", "distributions", "Central Limit Theorem"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "Linear stochastic heat equation with additive noise",
+    "kind": "axiom",
+    "description": "The SPDE d_t u = d_x^2 u + xi driven by space-time white noise, whose solution is almost surely Holder C^alpha for alpha < (2-d)/2 and hence distribution-valued for d >= 2.",
+    "dependencies": ["space-time white noise", "heat equation", "Holder regularity"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "Dynamical Phi^4 equation",
+    "kind": "axiom",
+    "description": "The renormalized stochastic reaction-diffusion equation d_t Phi = Delta Phi - (Phi^3 - infinity*Phi) + xi, the Langevin dynamics of the Phi^4 Euclidean quantum field theory, which is singular for spatial dimension d = 2,3.",
+    "dependencies": ["space-time white noise", "renormalization", "quantum field theory"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "KPZ equation",
+    "kind": "axiom",
+    "description": "The Kardar-Parisi-Zhang stochastic PDE d_t H = d_x^2 H + (d_x H)^2 + xi modeling random interface growth, singular because (d_x H)^2 multiplies distribution-valued objects.",
+    "dependencies": ["space-time white noise", "renormalization", "Hopf-Cole transform"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "Parabolic Anderson Model",
+    "kind": "axiom",
+    "description": "The linear singular SPDE d_t u = Delta u + u*(zeta - infinity) with spatial white noise potential zeta, requiring renormalization in dimension d >= 2.",
+    "dependencies": ["spatial white noise", "renormalization", "linear parabolic PDE"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "Renormalization (counter-term subtraction) for singular SPDEs",
+    "kind": "technique",
+    "description": "The procedure of mollifying the noise, subtracting divergent counter-terms C_epsilon (chosen via explicit Gaussian moment/Wick-power computations) from the nonlinearity, and passing to the limit to obtain a nontrivial solution.",
+    "dependencies": ["space-time white noise", "Wick powers", "mollification", "Kolmogorov continuity theorem"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "Da Prato-Debussche trick",
+    "kind": "technique",
+    "description": "A solution method that splits the solution Phi = u + v into the stochastic linear (Gaussian) part u and a remainder v of higher regularity satisfying a classically well-posed fixed-point equation, valid for 'not too singular' equations such as 2D Phi^4.",
+    "dependencies": ["renormalization (counter-term subtraction) for singular SPDEs", "Young's multiplication theorem", "Schauder estimates", "Picard iteration"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "Theory of regularity structures",
+    "kind": "theorem",
+    "description": "Hairer's framework that builds a local algebraic-analytic expansion of solutions in terms of a hierarchy of explicit stochastic objects (a model and modelled distributions), yielding well-posedness for the most singular subcritical SPDEs such as 3D Phi^4 and KPZ.",
+    "dependencies": ["renormalization (counter-term subtraction) for singular SPDEs", "Da Prato-Debussche trick", "rough paths", "BPHZ renormalization"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "Paracontrolled distributions",
+    "kind": "technique",
+    "description": "The Gubinelli-Imkeller-Perkowski method that controls the solution by expressing it as a paraproduct against a fixed reference distribution, providing an alternative to regularity structures for singular SPDEs.",
+    "dependencies": ["paraproducts", "Littlewood-Paley theory", "renormalization (counter-term subtraction) for singular SPDEs"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "KPZ universality",
+    "kind": "state",
+    "description": "The conjectured/established principle that the KPZ equation and Tracy-Widom-type fluctuations arise as universal scaling limits of a wide class of microscopic growth and interacting particle systems (e.g. ASEP, six-vertex model, solid-on-solid model).",
+    "dependencies": ["KPZ equation", "Tracy-Widom distribution functions", "scaling limits"],
+    "source_article": "Some recent progress in singular stochastic PDEs, Ivan Corwin and Hao Shen, 2020 (BAMS 57:409-454)"
+  },
+  {
+    "name": "Primary uncertainty principle",
+    "kind": "theorem",
+    "description": "For linear operators A, B with ||A||_{1->inf} <= 1, ||B||_{1->inf} <= 1 and ||BAv||_inf >= k||v||_inf, one has ||v||_1 ||Av||_1 >= k ||v||_inf ||Av||_inf, a one-line inequality from which classical Fourier uncertainty principles follow.",
+    "dependencies": ["operator norms", "L^1-L^infinity boundedness", "unitarity"],
+    "source_article": "The uncertainty principle: variations on a theme, Avi Wigderson and Yuval Wigderson, 2021 (BAMS 58:225-261)"
+  },
+  {
+    "name": "k-Hadamard matrix",
+    "kind": "axiom",
+    "description": "A matrix A all of whose entries are bounded by 1 in absolute value and satisfying ||A*Av||_inf >= k||v||_inf, equivalently A*A invertible with ||(A*A)^{-1}||_{inf->inf} <= 1/k; precisely the matrices to which the primary uncertainty principle applies.",
+    "dependencies": ["primary uncertainty principle", "Hadamard matrices", "operator norms"],
+    "source_article": "The uncertainty principle: variations on a theme, Avi Wigderson and Yuval Wigderson, 2021 (BAMS 58:225-261)"
+  },
+  {
+    "name": "Heisenberg uncertainty principle",
+    "kind": "theorem",
+    "description": "The variance of a function and the variance of its Fourier transform cannot both be small, i.e. integral |x|^2|f|^2 times integral |xi|^2|fhat|^2 >= ||f||_2^4/4, with equality for Gaussians.",
+    "dependencies": ["Fourier transform", "L^2 isometry", "primary uncertainty principle"],
+    "source_article": "The uncertainty principle: variations on a theme, Avi Wigderson and Yuval Wigderson, 2021 (BAMS 58:225-261)"
+  },
+  {
+    "name": "Donoho-Stark support-size uncertainty principle",
+    "kind": "theorem",
+    "description": "For a nonzero function f on a finite abelian group G with Fourier transform fhat, the supports satisfy |supp(f)|*|supp(fhat)| >= |G|.",
+    "dependencies": ["Fourier transform on finite abelian groups", "k-Hadamard matrix", "primary uncertainty principle"],
+    "source_article": "The uncertainty principle: variations on a theme, Avi Wigderson and Yuval Wigderson, 2021 (BAMS 58:225-261)"
+  },
+  {
+    "name": "Meshulam's non-abelian uncertainty principle",
+    "kind": "theorem",
+    "description": "An extension of the Donoho-Stark support-size inequality to functions on arbitrary (non-abelian) finite groups via rank and min-support notions of support for the Fourier transform.",
+    "dependencies": ["Donoho-Stark support-size uncertainty principle", "representation theory of finite groups"],
+    "source_article": "The uncertainty principle: variations on a theme, Avi Wigderson and Yuval Wigderson, 2021 (BAMS 58:225-261)"
+  },
+  {
+    "name": "Hardy's uncertainty principle",
+    "kind": "theorem",
+    "description": "If |f(x)| <= C e^{-a|x|^2} and |fhat(xi)| <= C e^{-b|xi|^2} with ab > 1/4 then f = 0, and with ab = 1/4 then f is a constant multiple of the Gaussian e^{-a|x|^2}.",
+    "dependencies": ["Fourier transform", "Phragmen-Lindelof theorem", "entire functions"],
+    "source_article": "Dynamical versions of Hardy's uncertainty principle: A survey, Aingeru Fernandez-Bertolin and Eugenia Malinnikova, 2021 (BAMS 58:357-375)"
+  },
+  {
+    "name": "Dynamical (Schrodinger) reformulation of Hardy's uncertainty principle",
+    "kind": "state",
+    "description": "The reinterpretation of Hardy's theorem as a unique-continuation/rigidity statement for solutions of the free Schrodinger equation: a solution Gaussian-bounded at two distinct times must vanish, equating Fourier decay with two-time evolution decay.",
+    "dependencies": ["Hardy's uncertainty principle", "Schrodinger equation", "unique continuation"],
+    "source_article": "Dynamical versions of Hardy's uncertainty principle: A survey, Aingeru Fernandez-Bertolin and Eugenia Malinnikova, 2021 (BAMS 58:357-375)"
+  },
+  {
+    "name": "Liouville-theorem proof of Hardy's uncertainty principle",
+    "kind": "technique",
+    "description": "A proof (reviving Hardy's forgotten second argument) deriving the uncertainty principle from the Schrodinger connection together with Liouville's theorem for bounded entire functions rather than Phragmen-Lindelof.",
+    "dependencies": ["dynamical (Schrodinger) reformulation of Hardy's uncertainty principle", "Liouville theorem", "complex analysis"],
+    "source_article": "Dynamical versions of Hardy's uncertainty principle: A survey, Aingeru Fernandez-Bertolin and Eugenia Malinnikova, 2021 (BAMS 58:357-375)"
+  },
+  {
+    "name": "Sine-kernel Fredholm determinant",
+    "kind": "axiom",
+    "description": "The determinant P_x = det(1 - K_sine) of the trace-class operator on L^2(J) with kernel sin(x(z-z'))/(pi(z-z')), giving the probability of no GUE eigenvalues in a union of intervals in the bulk scaling limit.",
+    "dependencies": ["Fredholm determinant", "Gaussian Unitary Ensemble", "bulk scaling limit"],
+    "source_article": "Harold Widom's work in random matrix theory, Ivan Corwin, Percy Deift and Alexander Its, 2022 (BAMS 59:155-173)"
+  },
+  {
+    "name": "Widom's large-gap asymptotics for the sine-kernel determinant",
+    "kind": "theorem",
+    "description": "Widom's rigorous proof that ln P_x = -(x^2/2)(1 + o(1)) (and d/dx ln P_x = -x + O(1)) as x -> infinity, the first rigorous large-gap asymptotics for the sine determinant.",
+    "dependencies": ["sine-kernel Fredholm determinant", "Toeplitz determinant asymptotics", "Krein functions"],
+    "source_article": "Harold Widom's work in random matrix theory, Ivan Corwin, Percy Deift and Alexander Its, 2022 (BAMS 59:155-173)"
+  },
+  {
+    "name": "Tracy-Widom distribution functions",
+    "kind": "state",
+    "description": "The limiting distributions F_beta(t) (beta = 1,2,4) of the largest eigenvalue of large GOE/GUE/GSE matrices after edge rescaling, with F_2(t) = det(1 - K_Airy) given by the Airy-kernel Fredholm determinant.",
+    "dependencies": ["Airy kernel", "Fredholm determinant", "Gaussian ensembles GOE/GUE/GSE", "edge scaling limit"],
+    "source_article": "Harold Widom's work in random matrix theory, Ivan Corwin, Percy Deift and Alexander Its, 2022 (BAMS 59:155-173)"
+  },
+  {
+    "name": "Tracy-Widom Painleve representation",
+    "kind": "theorem",
+    "description": "The identity F_2(t) = exp(-integral_t^infty (s-t)u(s)^2 ds) where u is the Hastings-McLeod solution of the second Painleve equation u_tt = t u + 2u^3, with F_1 and F_4 expressed through u as well.",
+    "dependencies": ["Tracy-Widom distribution functions", "second Painleve equation", "Hastings-McLeod solution", "integrable Fredholm operators"],
+    "source_article": "Harold Widom's work in random matrix theory, Ivan Corwin, Percy Deift and Alexander Its, 2022 (BAMS 59:155-173)"
+  },
+  {
+    "name": "Integrable Fredholm operator",
+    "kind": "axiom",
+    "description": "An integral operator on L^2(J) whose kernel has the form (phi(z)psi(z')-psi(z)phi(z'))/(z-z') (sum of f_j(z)h_j(z')), a structure whose determinant satisfies nonlinear integrable PDEs and admits a Riemann-Hilbert representation.",
+    "dependencies": ["Fredholm determinant", "Riemann-Hilbert problem", "Lax pair"],
+    "source_article": "Harold Widom's work in random matrix theory, Ivan Corwin, Percy Deift and Alexander Its, 2022 (BAMS 59:155-173)"
+  },
+  {
+    "name": "Riemann-Hilbert / nonlinear steepest descent method",
+    "kind": "technique",
+    "description": "The representation of Painleve and integrable-determinant functions as solutions of matrix Riemann-Hilbert problems, whose asymptotics (including connection formulae) are computed via the Deift-Zhou nonlinear steepest descent deformation of contours.",
+    "dependencies": ["integrable Fredholm operator", "Riemann-Hilbert problem", "Lax pair"],
+    "source_article": "Harold Widom's work in random matrix theory, Ivan Corwin, Percy Deift and Alexander Its, 2022 (BAMS 59:155-173)"
+  },
+  {
+    "name": "Arnold's geodesic formulation of ideal hydrodynamics",
+    "kind": "axiom",
+    "description": "The principle that the incompressible Euler equations are the geodesic equations of the right-invariant L^2 (kinetic-energy) metric on the group of volume-preserving diffeomorphisms of the fluid domain.",
+    "dependencies": ["diffeomorphism groups", "right-invariant Riemannian metric", "incompressible Euler equations"],
+    "source_article": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Boris Khesin, Gerard Misiolek and Klas Modin, 2021 (BAMS 58:377-442)"
+  },
+  {
+    "name": "Newton's equations on diffeomorphism groups and density spaces",
+    "kind": "state",
+    "description": "The generalization grad_dot(q) dot(q) = -grad U(q) of the geodesic flow to infinite dimensions, with a potential U on Diff(M) or Dens(M), unifying compressible/incompressible fluids, MHD, shallow-water and relativistic fluid equations.",
+    "dependencies": ["Arnold's geodesic formulation of ideal hydrodynamics", "potential energy", "spaces of probability densities"],
+    "source_article": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Boris Khesin, Gerard Misiolek and Klas Modin, 2021 (BAMS 58:377-442)"
+  },
+  {
+    "name": "Wasserstein-Otto metric on densities",
+    "kind": "axiom",
+    "description": "The optimal-transport (L^2 Wasserstein) Riemannian metric on the space of probability densities, realized as a Riemannian submersion image of the L^2 metric on the full diffeomorphism group.",
+    "dependencies": ["optimal transport", "Riemannian submersion", "spaces of probability densities"],
+    "source_article": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Boris Khesin, Gerard Misiolek and Klas Modin, 2021 (BAMS 58:377-442)"
+  },
+  {
+    "name": "Fisher-Rao information metric (infinite-dimensional)",
+    "kind": "axiom",
+    "description": "The information-geometric Riemannian metric on probability densities invariant under diffeomorphisms, used as the base geometry whose Newton equations yield the mu-Camassa-Holm and Klein-Gordon type equations.",
+    "dependencies": ["information geometry", "spaces of probability densities", "Riemannian submersion"],
+    "source_article": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Boris Khesin, Gerard Misiolek and Klas Modin, 2021 (BAMS 58:377-442)"
+  },
+  {
+    "name": "Madelung transform as a symplectomorphism",
+    "kind": "theorem",
+    "description": "The map sending a wave function to its density-and-phase (hydrodynamic) variables is a symplectomorphism (and Kahler morphism) intertwining the Schrodinger equation with Newton's equations of compressible fluids on the space of densities.",
+    "dependencies": ["Wasserstein-Otto metric on densities", "Schrodinger equation", "symplectic geometry", "Hopf-Cole transform"],
+    "source_article": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Boris Khesin, Gerard Misiolek and Klas Modin, 2021 (BAMS 58:377-442)"
+  },
+  {
+    "name": "Symplectic and Poisson reduction for hydrodynamics",
+    "kind": "technique",
+    "description": "The reduction of Hamiltonian systems with symmetry (semidirect-product groups) used to derive the Hamiltonian/Poisson structures, Casimir invariants, and equations of motion for ideal, barotropic and magneto-hydrodynamic fluids.",
+    "dependencies": ["Newton's equations on diffeomorphism groups and density spaces", "momentum map", "semidirect product groups"],
+    "source_article": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Boris Khesin, Gerard Misiolek and Klas Modin, 2021 (BAMS 58:377-442)"
+  },
+  {
+    "name": "Hadamard well-posedness",
+    "kind": "axiom",
+    "description": "The standard requiring, for an evolution problem in a Sobolev scale H^s, existence of a solution in C([0,T];H^s), uniqueness in that class, and continuous dependence of the solution on the initial data.",
+    "dependencies": ["Sobolev spaces", "Cauchy problem"],
+    "source_article": "Local well-posedness for quasilinear problems: a primer, Mihaela Ifrim and Daniel Tataru, 2023 (BAMS 60:167-194)"
+  },
+  {
+    "name": "Frequency envelopes",
+    "kind": "technique",
+    "description": "A device assigning a slowly varying admissible sequence dominating the Littlewood-Paley pieces of the data, used to track and propagate the dyadic distribution of energy and thereby prove continuous dependence and rough-data well-posedness.",
+    "dependencies": ["Littlewood-Paley theory", "Sobolev spaces", "energy estimates"],
+    "source_article": "Local well-posedness for quasilinear problems: a primer, Mihaela Ifrim and Daniel Tataru, 2023 (BAMS 60:167-194)"
+  },
+  {
+    "name": "Rough solutions as limits of smooth solutions",
+    "kind": "technique",
+    "description": "The roadmap that constructs low-regularity solutions of quasilinear evolutions by regularizing the data, solving smoothly, and passing to the limit using uniform energy and frequency-envelope bounds, yielding existence, uniqueness and continuous dependence in one scheme.",
+    "dependencies": ["frequency envelopes", "energy estimates", "Hadamard well-posedness"],
+    "source_article": "Local well-posedness for quasilinear problems: a primer, Mihaela Ifrim and Daniel Tataru, 2023 (BAMS 60:167-194)"
+  },
+  {
+    "name": "Quasilinear energy estimates",
+    "kind": "technique",
+    "description": "Coercive a priori bounds for symmetric (or symmetrizable) hyperbolic systems d_t u = A_j(u)d_j u obtained by differentiating, symmetrizing and integrating by parts, controlling the H^s norm in terms of a lower (Lipschitz) norm of the solution.",
+    "dependencies": ["symmetric hyperbolic systems", "Sobolev spaces", "Gronwall inequality"],
+    "source_article": "Local well-posedness for quasilinear problems: a primer, Mihaela Ifrim and Daniel Tataru, 2023 (BAMS 60:167-194)"
+  },
+  {
+    "name": "Convex integration in hydrodynamics",
+    "kind": "technique",
+    "description": "An iterative construction adding high-frequency oscillatory perturbations (e.g. Mikado/intermittent flows) to approximate solutions of the fluid equations so as to cancel a Reynolds stress error in the limit, producing wild weak solutions.",
+    "dependencies": ["Nash-Kuiper iteration", "Mikado flows", "intermittency", "weak solutions"],
+    "source_article": "Convex integration constructions in hydrodynamics, Tristan Buckmaster and Vlad Vicol, 2021 (BAMS 58:1-44)"
+  },
+  {
+    "name": "Onsager's conjecture",
+    "kind": "state",
+    "description": "The conjecture that weak solutions of the incompressible Euler equations conserve kinetic energy if their Holder regularity exponent exceeds 1/3 and may dissipate it below 1/3.",
+    "dependencies": ["incompressible Euler equations", "weak solutions", "Holder regularity"],
+    "source_article": "Convex integration constructions in hydrodynamics, Tristan Buckmaster and Vlad Vicol, 2021 (BAMS 58:1-44)"
+  },
+  {
+    "name": "Resolution of the flexible side of Onsager's conjecture",
+    "kind": "theorem",
+    "description": "The construction (Isett; Buckmaster-De Lellis-Szekelyhidi-Vicol) via convex integration of C^{1/3-} weak solutions of the Euler equations that dissipate energy, proving the sharp threshold predicted by Onsager.",
+    "dependencies": ["convex integration in hydrodynamics", "Onsager's conjecture", "Nash-Kuiper iteration"],
+    "source_article": "Convex integration constructions in hydrodynamics, Tristan Buckmaster and Vlad Vicol, 2021 (BAMS 58:1-44)"
+  },
+  {
+    "name": "Nonuniqueness of weak solutions of Navier-Stokes",
+    "kind": "theorem",
+    "description": "Buckmaster-Vicol's theorem that the 3D incompressible Navier-Stokes equations admit nonunique weak solutions with bounded kinetic energy, obtained by intermittent convex integration.",
+    "dependencies": ["convex integration in hydrodynamics", "intermittency", "Navier-Stokes equations", "weak solutions"],
+    "source_article": "Convex integration constructions in hydrodynamics, Tristan Buckmaster and Vlad Vicol, 2021 (BAMS 58:1-44)"
+  },
+  {
+    "name": "Intermittency in convex integration",
+    "kind": "state",
+    "description": "The use of spatially concentrated (high L^infinity, low L^p for p<2) building-block flows that mimic turbulent energy concentration and supply the extra integrability needed to dissipate viscosity in Navier-Stokes constructions.",
+    "dependencies": ["convex integration in hydrodynamics", "Mikado flows", "turbulence"],
+    "source_article": "Convex integration constructions in hydrodynamics, Tristan Buckmaster and Vlad Vicol, 2021 (BAMS 58:1-44)"
+  },
+  {
+    "name": "Polya-Fourier transform with Gaussian factor",
+    "kind": "axiom",
+    "description": "The entire function H_{rho,lambda}(z) = integral e^{izt} e^{lambda t^2} drho(t) extending the Riemann xi-function, whose real-zeros property as lambda varies encodes the Riemann Hypothesis.",
+    "dependencies": ["Fourier transform", "entire functions", "Riemann Hypothesis"],
+    "source_article": "Constants of de Bruijn-Newman type in analytic number theory and statistical physics, Charles Newman and Wei Wu, 2019 (BAMS 57:595-614)"
+  },
+  {
+    "name": "de Bruijn-Newman constant",
+    "kind": "state",
+    "description": "The finite constant Lambda_DN in (-infinity, 1/2] such that H_{Phi,lambda} has only real zeros iff lambda >= Lambda_DN, so that the Riemann Hypothesis is equivalent to Lambda_DN <= 0.",
+    "dependencies": ["Polya-Fourier transform with Gaussian factor", "Riemann Hypothesis"],
+    "source_article": "Constants of de Bruijn-Newman type in analytic number theory and statistical physics, Charles Newman and Wei Wu, 2019 (BAMS 57:595-614)"
+  },
+  {
+    "name": "Polya monotonicity / De Bruijn upper bound / Newman lower bound",
+    "kind": "theorem",
+    "description": "The three facts that the real-zeros set P_Phi is an upper half-line (Polya), contains 1/2 (De Bruijn), and is bounded below (Newman), which together define Lambda_DN.",
+    "dependencies": ["Polya-Fourier transform with Gaussian factor", "de Bruijn-Newman constant", "backward heat flow of zeros"],
+    "source_article": "Constants of de Bruijn-Newman type in analytic number theory and statistical physics, Charles Newman and Wei Wu, 2019 (BAMS 57:595-614)"
+  },
+  {
+    "name": "Rodgers-Tao theorem (Lambda_DN >= 0)",
+    "kind": "theorem",
+    "description": "The 2018 proof by Rodgers and Tao of Newman's 1976 conjecture that the de Bruijn-Newman constant is nonnegative, formalizing that the Riemann Hypothesis, if true, is only barely so.",
+    "dependencies": ["de Bruijn-Newman constant", "heat-flow dynamics of zeros"],
+    "source_article": "Constants of de Bruijn-Newman type in analytic number theory and statistical physics, Charles Newman and Wei Wu, 2019 (BAMS 57:595-614)"
+  },
+  {
+    "name": "Newman-Wu weak-convergence theorem for real-zero distributions",
+    "kind": "theorem",
+    "description": "A theorem that the purely-real-zeros property of Fourier transforms of a sequence of probability measures controls their tail behavior uniformly, used to classify the joint behavior of (T_rho, P_rho).",
+    "dependencies": ["Polya-Fourier transform with Gaussian factor", "weak convergence of measures", "Laguerre-Polya class"],
+    "source_article": "Constants of de Bruijn-Newman type in analytic number theory and statistical physics, Charles Newman and Wei Wu, 2019 (BAMS 57:595-614)"
+  },
+  {
+    "name": "Euler alignment (hydrodynamic alignment) equations",
+    "kind": "axiom",
+    "description": "The pressure-augmented continuity-momentum system d_t rho + div(rho u) = 0, d_t(rho u) + div(rho u tensor u + P) = A(rho,u) with nonlocal alignment forcing A weighted by a symmetric communication kernel phi.",
+    "dependencies": ["Cucker-Smale model", "communication kernel", "pressure tensor"],
+    "source_article": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023 (BAMS 60:285-325)"
+  },
+  {
+    "name": "p-alignment hydrodynamics",
+    "kind": "axiom",
+    "description": "The class of alignment models based on (fractional) weighted 2p-graph Laplacians, generalizing Cucker-Smale alignment to nonlinear p-Laplacian-type interaction operators.",
+    "dependencies": ["Euler alignment (hydrodynamic alignment) equations", "fractional 2p-Laplacian"],
+    "source_article": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023 (BAMS 60:285-325)"
+  },
+  {
+    "name": "Entropic pressure tensor",
+    "kind": "state",
+    "description": "A pressure law required only to form an energy-dissipative process (no thermodynamic closure assumption), introduced to study long-time alignment dynamics with general pressure.",
+    "dependencies": ["Euler alignment (hydrodynamic alignment) equations", "energy dissipation"],
+    "source_article": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023 (BAMS 60:285-325)"
+  },
+  {
+    "name": "Flocking of p-alignment with entropic pressure",
+    "kind": "theorem",
+    "description": "Tadmor's result that p-alignment hydrodynamics driven by singular (heavy-tailed) communication kernels flock unconditionally even with general entropic pressure tensors and no closure assumption.",
+    "dependencies": ["p-alignment hydrodynamics", "entropic pressure tensor", "decay of energy fluctuations"],
+    "source_article": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023 (BAMS 60:285-325)"
+  },
+  {
+    "name": "Energy-fluctuation decay method for flocking",
+    "kind": "technique",
+    "description": "The strategy of quantifying flocking by controlling the decay of velocity-energy fluctuations, with enstrophy bounds upgraded to Holder regularity and uniform dispersion bounds, to prove emergence under heavy-tailed kernels.",
+    "dependencies": ["flocking of p-alignment with entropic pressure", "enstrophy bounds", "communication kernel"],
+    "source_article": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023 (BAMS 60:285-325)"
+  },
+  {
+    "name": "Non-Euclidean (incompatible) elasticity",
+    "kind": "axiom",
+    "description": "The variational model in which a growing thin body carries a prescribed target metric g that is generally not realizable by an isometric immersion, and the observed shape minimizes an elastic energy measuring deviation of the realized metric from g.",
+    "dependencies": ["Riemannian metric", "isometric immersion", "elastic energy functional"],
+    "source_article": "Geometry, analysis, and morphogenesis: Problems and prospects, Marta Lewicka and L. Mahadevan, 2022 (BAMS 59:331-369)"
+  },
+  {
+    "name": "Metric frustration as the origin of biological shape",
+    "kind": "state",
+    "description": "The principle that morphogenesis of thin tissues results from differential growth inducing an incompatible (e.g. hyperbolic) metric whose frustrated embedding into R^3 selects a shape by elastic energy minimization.",
+    "dependencies": ["non-Euclidean (incompatible) elasticity", "Nash embedding problem", "differential growth"],
+    "source_article": "Geometry, analysis, and morphogenesis: Problems and prospects, Marta Lewicka and L. Mahadevan, 2022 (BAMS 59:331-369)"
+  },
+  {
+    "name": "Gamma-convergence hierarchy of thin elastic plate/shell theories",
+    "kind": "theorem",
+    "description": "The derivation, as the (scaled) thickness tends to zero, of a hierarchy of reduced 2D energies (membrane, von Karman, bending/Kirchhoff) as Gamma-limits of 3D non-Euclidean elastic energies, indexed by the scaling exponent of the energy.",
+    "dependencies": ["non-Euclidean (incompatible) elasticity", "Gamma-convergence", "geometric rigidity estimate"],
+    "source_article": "Geometry, analysis, and morphogenesis: Problems and prospects, Marta Lewicka and L. Mahadevan, 2022 (BAMS 59:331-369)"
+  },
+  {
+    "name": "Convex-integration construction of low-regularity isometric immersions of prestrained films",
+    "kind": "technique",
+    "description": "The use of Nash-Kuiper-type convex integration to construct C^{1,alpha} very-weak (non-Euclidean) isometric immersions realizing prescribed growth metrics, with energy-scaling estimates for the resulting frustrated shapes.",
+    "dependencies": ["Nash embedding problem", "metric frustration as the origin of biological shape", "convex integration in hydrodynamics"],
+    "source_article": "Geometry, analysis, and morphogenesis: Problems and prospects, Marta Lewicka and L. Mahadevan, 2022 (BAMS 59:331-369)"
+  },
+  {
+    "name": "Monge-Ampere constrained energy for weak prestrains",
+    "kind": "state",
+    "description": "The reduced energy governing weakly prestrained thin films whose admissible out-of-plane deflections are constrained by a Monge-Ampere (Gauss-curvature) equation det(D^2 v) = f.",
+    "dependencies": ["Gamma-convergence hierarchy of thin elastic plate/shell theories", "Monge-Ampere equation"],
+    "source_article": "Geometry, analysis, and morphogenesis: Problems and prospects, Marta Lewicka and L. Mahadevan, 2022 (BAMS 59:331-369)"
+  },
+  {
+    "name": "Boolean / Gaussian noise stability",
+    "kind": "axiom",
+    "description": "The probability that two rho-correlated random inputs (on the discrete cube or, in the Gaussian limit, on R^n) yield the same output of a function, the central quantity governing probabilistic social-choice results.",
+    "dependencies": ["Boolean functions", "correlated Gaussian vectors", "Fourier analysis on the cube"],
+    "source_article": "Probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022 (BAMS 59:297-330)"
+  },
+  {
+    "name": "Majority is Stablest theorem",
+    "kind": "theorem",
+    "description": "Among balanced Boolean functions with vanishingly small individual influences, the majority function maximizes noise stability, with the optimal value given by a Gaussian (arccos) formula.",
+    "dependencies": ["Boolean / Gaussian noise stability", "influences", "invariance principle", "Borell's Gaussian isoperimetric inequality"],
+    "source_article": "Probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022 (BAMS 59:297-330)"
+  },
+  {
+    "name": "Gaussian (quantitative) Arrow theorem",
+    "kind": "theorem",
+    "description": "A quantitative version of Arrow's impossibility theorem stating that any near-rational social welfare aggregation rule with small influences must be close to a dictatorship, with the probability of a non-rational (paradoxical) outcome bounded below.",
+    "dependencies": ["Boolean / Gaussian noise stability", "Arrow impossibility theorem", "Gaussian geometry", "reverse hypercontractivity"],
+    "source_article": "Probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022 (BAMS 59:297-330)"
+  },
+  {
+    "name": "Quantitative Gibbard-Satterthwaite theorem",
+    "kind": "theorem",
+    "description": "A robust version of the Gibbard-Satterthwaite theorem: any social choice function far from dictatorship has a non-negligible probability of being manipulable by a random voter, proved via isoperimetric arguments on the rankings graph.",
+    "dependencies": ["Boolean / Gaussian noise stability", "isoperimetric inequalities", "influences"],
+    "source_article": "Probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022 (BAMS 59:297-330)"
+  },
+  {
+    "name": "Invariance principle for low-influence functions",
+    "kind": "technique",
+    "description": "A nonlinear Lindeberg-type theorem showing that low-degree, low-influence multilinear polynomials have nearly the same distribution under Bernoulli and Gaussian inputs, the key device reducing discrete voting problems to Gaussian geometry.",
+    "dependencies": ["Boolean / Gaussian noise stability", "hypercontractivity", "influences"],
+    "source_article": "Probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022 (BAMS 59:297-330)"
+  },
+  {
+    "name": "KKL (Kahn-Kalai-Linial) influence theorem",
+    "kind": "theorem",
+    "description": "Every balanced Boolean function on n variables has a coordinate with influence at least Omega(log n / n), establishing that some voter must be relatively influential.",
+    "dependencies": ["influences", "hypercontractivity", "Fourier analysis on the cube"],
+    "source_article": "Probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022 (BAMS 59:297-330)"
+  }
+]

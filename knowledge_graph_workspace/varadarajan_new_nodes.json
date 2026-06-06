@@ -1,0 +1,51 @@
+[
+  {
+    "id": "s_analytic_manifold",
+    "kind": "axiom",
+    "name": "Analytic manifold",
+    "type_signature": "Manifold",
+    "description": "A manifold equipped with an atlas whose transition maps are real-analytic (C^omega), so local coordinate changes are given by convergent power series; this is the natural category for Lie groups, whose multiplication and inversion are analytic."
+  },
+  {
+    "id": "s_lie_third_theorem_existence",
+    "kind": "theorem",
+    "name": "Lie's third theorem (existence)",
+    "type_signature": "LieAlgebra -> LieGroup",
+    "description": "Every finite-dimensional real Lie algebra is the Lie algebra of some Lie group, and there is a unique simply connected Lie group realizing it, so the Lie functor is essentially surjective onto finite-dimensional Lie algebras."
+  },
+  {
+    "id": "s_ad_exp_naturality",
+    "kind": "theorem",
+    "name": "Naturality of exp: Ad(exp X) = exp(ad X)",
+    "type_signature": "g -> GL(g)",
+    "description": "For a Lie group G with Lie algebra g, the adjoint representation satisfies Ad(exp X) = exp(ad X) for all X in g, expressing that exp intertwines ad on g with Ad on G."
+  },
+  {
+    "id": "s_canonical_coordinates",
+    "kind": "state",
+    "name": "Canonical coordinates of the first and second kind",
+    "type_signature": "Chart(G, e)",
+    "description": "Local coordinate systems near the identity of a Lie group: first kind sends (x_1,...,x_n) to exp(sum x_i X_i) for a basis {X_i} of g, and second kind to the ordered product exp(x_1 X_1)...exp(x_n X_n), both analytic charts since d(exp)_0 = id."
+  },
+  {
+    "id": "t_taylor_expansion_product_map",
+    "kind": "technique",
+    "name": "Taylor expansion of the product map",
+    "function_signature": "(GroupMultiplication near e) -> (LieBracket on g)",
+    "description": "Recovers the Lie bracket and higher structure of a Lie group from the Taylor expansion of the multiplication map mu(x,y) = x + y + (1/2)[x,y] + ... in canonical coordinates, whose quadratic antisymmetric term is the bracket and whose iteration yields the BCH series."
+  },
+  {
+    "id": "s_symmetrization_map_pbw",
+    "kind": "state",
+    "name": "Symmetrization map S(g) -> U(g)",
+    "type_signature": "S(g) -> U(g)",
+    "description": "The canonical g-module linear isomorphism of the symmetric algebra S(g) onto the universal enveloping algebra U(g) sending X_1...X_n to (1/n!) sum over Sn of X_{sigma(1)}...X_{sigma(n)}, splitting the PBW filtration."
+  },
+  {
+    "id": "s_infinitesimal_character",
+    "kind": "state",
+    "name": "Infinitesimal (central) character",
+    "type_signature": "Z(U(g)) -> C",
+    "description": "The algebra homomorphism chi: Z(U(g)) -> C by which the center of the universal enveloping algebra acts as scalars on an irreducible or highest-weight g-module, given for highest weight lambda via the Harish-Chandra isomorphism by evaluation at lambda + rho."
+  }
+]

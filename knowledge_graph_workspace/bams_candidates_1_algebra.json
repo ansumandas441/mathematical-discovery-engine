@@ -1,0 +1,401 @@
+[
+  {
+    "name": "Mordell Conjecture (Faltings's Theorem)",
+    "kind": "theorem",
+    "description": "A smooth projective geometrically connected curve of genus greater than 1 over a number field has only finitely many rational points.",
+    "dependencies": ["algebraic curve", "genus", "rational points", "number field", "Jacobian variety"],
+    "source_article": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "name": "Chabauty's Method",
+    "kind": "technique",
+    "description": "A p-adic technique that, when the Mordell-Weil rank of the Jacobian is less than the genus, cuts out the rational points of a curve as the common zeros of certain p-adic abelian integrals on the p-adic points lying in the closure of the Mordell-Weil group.",
+    "dependencies": ["Jacobian variety", "Mordell-Weil rank", "p-adic integration", "p-adic points of a curve"],
+    "source_article": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "name": "Coleman's Effective Chabauty Bound",
+    "kind": "theorem",
+    "description": "Under the Chabauty rank hypothesis, the number of rational points of a curve of genus g with good reduction at a prime p greater than 2g is at most the number of points modulo p plus 2g minus 2.",
+    "dependencies": ["Chabauty's Method", "Coleman integration", "good reduction", "genus"],
+    "source_article": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "name": "Kim's Nonabelian Chabauty Method",
+    "kind": "technique",
+    "description": "A generalization of Chabauty's method replacing the Jacobian by the unipotent (de Rham/etale) fundamental group, locating rational points inside a Selmer-type p-adic locus cut out by iterated Coleman integrals.",
+    "dependencies": ["Chabauty's Method", "unipotent fundamental group", "Selmer scheme", "p-adic Hodge theory"],
+    "source_article": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "name": "Quadratic Chabauty",
+    "kind": "technique",
+    "description": "The depth-two explicit instance of Kim's method (Balakrishnan-Dogra) that uses p-adic height pairings to produce an explicit finite locus containing the rational points when the rank equals the genus.",
+    "dependencies": ["Kim's Nonabelian Chabauty Method", "p-adic height pairing", "Nekovar height", "Coleman integration"],
+    "source_article": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "name": "Lawrence-Venkatesh Method",
+    "kind": "technique",
+    "description": "A proof of the Mordell conjecture using a Kodaira-Parshin family of covers and p-adic Hodge theory to show that the p-adic Galois representations attached to fibers vary so much that only finitely many fibers can sit over rational points.",
+    "dependencies": ["p-adic Hodge theory", "Galois representations", "Kodaira-Parshin family", "period mapping", "Mordell Conjecture (Faltings's Theorem)"],
+    "source_article": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "name": "Skolem's Method",
+    "kind": "technique",
+    "description": "A p-adic method for integral points that expresses solutions as zeros of p-adic analytic functions whose finiteness follows from the Strassmann/Weierstrass preparation property of convergent p-adic power series.",
+    "dependencies": ["p-adic analytic functions", "Strassmann's theorem", "integral points"],
+    "source_article": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "name": "Cap Set Problem",
+    "kind": "state",
+    "description": "The problem of bounding the maximal size of a subset of the affine space F_3^n containing no three collinear points (no nontrivial three-term arithmetic progression).",
+    "dependencies": ["finite field", "arithmetic progression", "affine space"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Croot-Lev-Pach-Ellenberg-Gijswijt Theorem",
+    "kind": "theorem",
+    "description": "Every cap set in F_3^n has size at most a constant times 2.756^n, an exponential improvement over the trivial 3^n obtained via the polynomial method.",
+    "dependencies": ["Cap Set Problem", "Polynomial Method (combinatorics)", "Slice Rank Method"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Polynomial Method (combinatorics)",
+    "kind": "technique",
+    "description": "A proof strategy in which a low-degree polynomial vanishing on a combinatorial configuration is constructed and its algebraic properties (degree, zero set, rank) are used to bound the size of the configuration.",
+    "dependencies": ["polynomial ring", "finite field", "dimension counting"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Slice Rank Method",
+    "kind": "technique",
+    "description": "Tao's reformulation of the cap set argument via the slice rank of a tensor, defined as the minimal number of summands each factoring through a single variable, which is submultiplicative and bounds the diagonal of a tensor.",
+    "dependencies": ["Polynomial Method (combinatorics)", "tensor rank", "Cap Set Problem"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Analytic L-function (axiomatic)",
+    "kind": "axiom",
+    "description": "A Dirichlet series with Euler product, meromorphic continuation, and a functional equation relating s to 1-s, packaged with prescribed analytic data such as conductor, gamma factors, and central character.",
+    "dependencies": ["Dirichlet series", "Euler product", "functional equation", "gamma factor", "analytic continuation"],
+    "source_article": "Analytic L-functions: definitions, theorems, and connections, Farmer, Pitale, Ryan, and Schmidt, 2019"
+  },
+  {
+    "name": "Selberg Class",
+    "kind": "axiom",
+    "description": "The class of Dirichlet series satisfying Selberg's axioms (Ramanujan bound, analytic continuation, functional equation, and Euler product), conjecturally coinciding with automorphic L-functions.",
+    "dependencies": ["Analytic L-function (axiomatic)", "Ramanujan conjecture", "Euler product"],
+    "source_article": "Analytic L-functions: definitions, theorems, and connections, Farmer, Pitale, Ryan, and Schmidt, 2019"
+  },
+  {
+    "name": "Analytic Conductor",
+    "kind": "state",
+    "description": "A real-valued invariant of an L-function combining its arithmetic conductor with the spectral parameters of its gamma factors, governing the density of zeros and the analytic complexity of the function.",
+    "dependencies": ["Analytic L-function (axiomatic)", "gamma factor", "conductor"],
+    "source_article": "Analytic L-functions: definitions, theorems, and connections, Farmer, Pitale, Ryan, and Schmidt, 2019"
+  },
+  {
+    "name": "Algebraic Hypersurface",
+    "kind": "axiom",
+    "description": "The zero locus in projective space of a single homogeneous polynomial, regarded as a degree-d divisor whose geometry depends sharply on d relative to the ambient dimension.",
+    "dependencies": ["projective space", "homogeneous polynomial", "divisor"],
+    "source_article": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "name": "Rational Variety",
+    "kind": "axiom",
+    "description": "A variety that is birationally equivalent to projective space, i.e. admits a parametrization by independent rational functions invertible on a dense open set.",
+    "dependencies": ["birational equivalence", "projective space", "function field"],
+    "source_article": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "name": "Unirational Variety",
+    "kind": "axiom",
+    "description": "A variety that admits a dominant rational map from projective space, i.e. can be rationally parametrized but not necessarily birationally.",
+    "dependencies": ["Rational Variety", "dominant rational map", "projective space"],
+    "source_article": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "name": "Stably Rational Variety",
+    "kind": "axiom",
+    "description": "A variety X such that X times some projective space is rational, an intermediate notion strictly between rational and unirational.",
+    "dependencies": ["Rational Variety", "projective space", "birational equivalence"],
+    "source_article": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "name": "Luroth Problem",
+    "kind": "state",
+    "description": "The question of whether every unirational variety is rational, answered affirmatively for curves and surfaces but negatively in dimension three and higher.",
+    "dependencies": ["Rational Variety", "Unirational Variety"],
+    "source_article": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "name": "Decomposition of the Diagonal Method",
+    "kind": "technique",
+    "description": "An obstruction to (stable) rationality showing that a stably rational variety admits a Chow-theoretic decomposition of its diagonal, whose failure under specialization (Voisin, Colliot-Thelene-Pirutka) certifies non-stable-rationality.",
+    "dependencies": ["Stably Rational Variety", "Chow group", "specialization of cycles", "unramified cohomology"],
+    "source_article": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "name": "Non-Stable-Rationality of Very General Hypersurfaces",
+    "kind": "theorem",
+    "description": "A very general hypersurface of sufficiently high degree in projective space (degree at least roughly two-thirds the dimension, after Totaro and Schreieder) is not stably rational.",
+    "dependencies": ["Stably Rational Variety", "Decomposition of the Diagonal Method", "Algebraic Hypersurface", "very general point"],
+    "source_article": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "name": "Stable Rationality of Cubic Hypersurfaces (low degree)",
+    "kind": "theorem",
+    "description": "Smooth cubic and other low-degree hypersurfaces are unirational, and rationality holds in classical small cases, illustrating the boundary between rational and irrational hypersurfaces.",
+    "dependencies": ["Unirational Variety", "Algebraic Hypersurface", "Rational Variety"],
+    "source_article": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "name": "Big Polynomial Ring / Uniformity (Erman-Sam-Snowden)",
+    "kind": "state",
+    "description": "The phenomenon, formalized via the inverse-limit polynomial ring in infinitely many variables and GL-equivariant commutative algebra, that bounds on invariants of cubic (and higher-degree) forms become independent of the number of variables.",
+    "dependencies": ["polynomial ring", "GL-equivariant module", "Noetherianity up to symmetry", "Stillman's conjecture"],
+    "source_article": "Cubics in 10 variables vs. cubics in 1000 variables: uniformity phenomena, Erman, Sam, and Snowden, 2019"
+  },
+  {
+    "name": "Stillman's Conjecture (Theorem)",
+    "kind": "theorem",
+    "description": "The projective dimension of an ideal generated by a fixed number of homogeneous polynomials of fixed degrees is bounded independently of the number of variables of the ambient polynomial ring.",
+    "dependencies": ["projective dimension", "free resolution", "Big Polynomial Ring / Uniformity (Erman-Sam-Snowden)"],
+    "source_article": "Cubics in 10 variables vs. cubics in 1000 variables: uniformity phenomena, Erman, Sam, and Snowden, 2019"
+  },
+  {
+    "name": "Strength of a Polynomial",
+    "kind": "axiom",
+    "description": "The least number r such that a homogeneous form is a sum of r products of lower-degree forms, a measure of degeneracy that controls uniform algebraic behavior of higher-degree forms.",
+    "dependencies": ["homogeneous polynomial", "Big Polynomial Ring / Uniformity (Erman-Sam-Snowden)"],
+    "source_article": "Cubics in 10 variables vs. cubics in 1000 variables: uniformity phenomena, Erman, Sam, and Snowden, 2019"
+  },
+  {
+    "name": "Tangent Developable Surface",
+    "kind": "axiom",
+    "description": "The surface swept out by the tangent lines to a space curve, a ruled surface naturally attached to the curve whose singular structure encodes the curve's projective geometry.",
+    "dependencies": ["algebraic curve", "tangent line", "ruled surface"],
+    "source_article": "Tangent developable surfaces and the equations defining algebraic curves, Ein and Lazarsfeld, 2020"
+  },
+  {
+    "name": "Green's Conjecture",
+    "kind": "theorem",
+    "description": "The Clifford index of a smooth projective curve equals the index of the first nonzero linear syzygy in the minimal free resolution of its canonical embedding, proved generically by Voisin and in general using degenerations to tangent developable surfaces.",
+    "dependencies": ["canonical embedding", "Clifford index", "syzygies", "minimal free resolution", "Tangent Developable Surface"],
+    "source_article": "Tangent developable surfaces and the equations defining algebraic curves, Ein and Lazarsfeld, 2020"
+  },
+  {
+    "name": "Koszul Cohomology / Property N_p",
+    "kind": "axiom",
+    "description": "The graded groups computing the syzygies of an embedded variety, with property N_p meaning the resolution is linear up to homological degree p, governing how a curve is cut out by quadrics and higher relations.",
+    "dependencies": ["syzygies", "minimal free resolution", "canonical embedding"],
+    "source_article": "Tangent developable surfaces and the equations defining algebraic curves, Ein and Lazarsfeld, 2020"
+  },
+  {
+    "name": "Degeneration to Tangent Developable Surfaces (technique)",
+    "kind": "technique",
+    "description": "A proof method computing syzygies of canonical curves by specializing to the tangent developable of a rational normal curve and using its explicit, computable resolution.",
+    "dependencies": ["Tangent Developable Surface", "Green's Conjecture", "specialization", "Koszul Cohomology / Property N_p"],
+    "source_article": "Tangent developable surfaces and the equations defining algebraic curves, Ein and Lazarsfeld, 2020"
+  },
+  {
+    "name": "Moduli Space (axiomatic)",
+    "kind": "axiom",
+    "description": "A space whose points parametrize isomorphism classes of geometric objects (curves, abelian varieties, sheaves) with a universal family encoding their variation.",
+    "dependencies": ["algebraic variety", "isomorphism class", "universal family", "functor of points"],
+    "source_article": "Compactifying moduli spaces, Lucia Caporaso, 2020"
+  },
+  {
+    "name": "Deligne-Mumford Compactification of M_g",
+    "kind": "state",
+    "description": "The compactification of the moduli space of smooth genus-g curves by adjoining stable nodal curves, yielding a projective Deligne-Mumford stack.",
+    "dependencies": ["Moduli Space (axiomatic)", "stable curve", "nodal curve", "Deligne-Mumford stack"],
+    "source_article": "Compactifying moduli spaces, Lucia Caporaso, 2020"
+  },
+  {
+    "name": "Stable Curve",
+    "kind": "axiom",
+    "description": "A connected nodal projective curve of arithmetic genus g whose only singularities are nodes and whose automorphism group is finite (equivalently, every rational component meets the rest in at least three points).",
+    "dependencies": ["nodal curve", "arithmetic genus", "dualizing sheaf"],
+    "source_article": "Compactifying moduli spaces, Lucia Caporaso, 2020"
+  },
+  {
+    "name": "Compactified Jacobian / Universal Picard Variety",
+    "kind": "state",
+    "description": "A compactification of the moduli of line bundles over a family of curves, including degenerate nodal fibers, parametrizing rank-one torsion-free sheaves with a stability condition.",
+    "dependencies": ["Jacobian variety", "torsion-free sheaf", "stability condition", "Stable Curve"],
+    "source_article": "Compactifying moduli spaces, Lucia Caporaso, 2020"
+  },
+  {
+    "name": "Tropical / Dual-Graph Combinatorics of the Boundary",
+    "kind": "technique",
+    "description": "The encoding of the boundary strata of compactified moduli spaces by the dual graphs of stable curves, linking the geometry to tropical moduli and combinatorial polyhedral data.",
+    "dependencies": ["Deligne-Mumford Compactification of M_g", "dual graph", "tropical curve", "Stable Curve"],
+    "source_article": "Compactifying moduli spaces, Lucia Caporaso, 2020"
+  },
+  {
+    "name": "Space of Diagonal Harmonics",
+    "kind": "axiom",
+    "description": "The bigraded vector space DH_n of polynomials in two sets of n variables killed by all symmetric-group-invariant differential operators with positive degree, carrying a diagonal S_n-action.",
+    "dependencies": ["symmetric group action", "polynomial ring", "harmonic polynomials", "bigrading"],
+    "source_article": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "name": "Nabla Operator",
+    "kind": "axiom",
+    "description": "The Garsia-Bergeron linear operator on symmetric functions that is diagonal in the modified Macdonald polynomial basis with explicit eigenvalues, whose value on the elementary symmetric function e_n equals the bigraded Frobenius characteristic of diagonal harmonics.",
+    "dependencies": ["symmetric functions", "modified Macdonald polynomials", "Frobenius characteristic", "Space of Diagonal Harmonics"],
+    "source_article": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "name": "Parking Function (combinatorics)",
+    "kind": "axiom",
+    "description": "A Dyck path of order n together with a column-increasing labeling of its north steps by 1,...,n, equipped with the statistics area and dinv (diagonal inversions).",
+    "dependencies": ["Dyck path", "area statistic", "dinv statistic"],
+    "source_article": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "name": "Shuffle Conjecture (Theorem)",
+    "kind": "theorem",
+    "description": "The symmetric function nabla(e_n) equals the weighted generating function over parking functions of order n with weight q to the dinv, t to the area, times the quasisymmetric function of the function's descent set.",
+    "dependencies": ["Nabla Operator", "Parking Function (combinatorics)", "Space of Diagonal Harmonics", "quasisymmetric functions"],
+    "source_article": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "name": "Compositional Shuffle Conjecture (Theorem)",
+    "kind": "theorem",
+    "description": "A refinement of the shuffle conjecture indexed by compositions, controlling the touch points of the Dyck path, whose proof by Carlsson and Mellit (via the Dyck path / double affine Hecke algebra) implies the shuffle conjecture.",
+    "dependencies": ["Shuffle Conjecture (Theorem)", "Parking Function (combinatorics)", "composition (combinatorics)", "double affine Hecke algebra"],
+    "source_article": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "name": "Overconvergent Modular Form",
+    "kind": "axiom",
+    "description": "A p-adic modular form that converges on a strict neighborhood of the ordinary locus of the modular curve, organized into Coleman's finite-slope eigenvariety theory.",
+    "dependencies": ["p-adic modular form", "modular curve", "ordinary locus", "rigid analytic geometry"],
+    "source_article": "Overconvergent modular forms and their explicit arithmetic, Jan Vonk, 2021"
+  },
+  {
+    "name": "U_p Operator and Slope Decomposition",
+    "kind": "axiom",
+    "description": "The completely continuous Atkin-Lehner operator on spaces of overconvergent forms whose generalized eigenspaces of finite slope (p-adic valuation of eigenvalue) give the finite-slope classical and overconvergent forms.",
+    "dependencies": ["Overconvergent Modular Form", "Hecke operator", "compact operator", "slope (p-adic valuation)"],
+    "source_article": "Overconvergent modular forms and their explicit arithmetic, Jan Vonk, 2021"
+  },
+  {
+    "name": "Coleman Classicality Theorem",
+    "kind": "theorem",
+    "description": "An overconvergent eigenform of weight k and slope strictly less than k minus 1 is a classical modular form.",
+    "dependencies": ["Overconvergent Modular Form", "U_p Operator and Slope Decomposition", "classical modular form"],
+    "source_article": "Overconvergent modular forms and their explicit arithmetic, Jan Vonk, 2021"
+  },
+  {
+    "name": "Rigid Meromorphic Cocycles / p-adic Singular Moduli",
+    "kind": "state",
+    "description": "The Darmon-Vonk p-adic analogues of singular moduli, constructed from overconvergent forms and real quadratic geodesics, conjecturally algebraic and refining the theory of complex multiplication to real quadratic fields.",
+    "dependencies": ["Overconvergent Modular Form", "complex multiplication", "real quadratic field", "rigid analytic geometry"],
+    "source_article": "Overconvergent modular forms and their explicit arithmetic, Jan Vonk, 2021"
+  },
+  {
+    "name": "Classical Siegel-Weil Formula",
+    "kind": "theorem",
+    "description": "An identity expressing a special value of a Siegel Eisenstein series as the average over a genus of theta series of quadratic forms, equating an Eisenstein series with an integral of theta functions.",
+    "dependencies": ["theta series", "Eisenstein series", "quadratic form", "genus of a quadratic form"],
+    "source_article": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "name": "Special Cycles on Shimura Varieties",
+    "kind": "axiom",
+    "description": "Algebraic cycles on orthogonal or unitary Shimura varieties indexed by positive-definite quadratic/Hermitian data, generalizing Heegner points to higher codimension.",
+    "dependencies": ["Shimura variety", "algebraic cycle", "Heegner points", "quadratic form"],
+    "source_article": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "name": "Kudla's Modularity Conjecture (Theorem)",
+    "kind": "theorem",
+    "description": "The generating series whose coefficients are the classes of special cycles of a fixed codimension in the Chow group of a Shimura variety is a (vector-valued) modular form.",
+    "dependencies": ["Special Cycles on Shimura Varieties", "Chow group", "modular form", "generating series"],
+    "source_article": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "name": "Geometric Siegel-Weil Formula",
+    "kind": "theorem",
+    "description": "An identity expressing the special value of a Siegel Eisenstein series as a generating series of degrees/volumes of special cycles on a Shimura variety, lifting the classical formula to geometry.",
+    "dependencies": ["Classical Siegel-Weil Formula", "Special Cycles on Shimura Varieties", "Eisenstein series"],
+    "source_article": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "name": "Arithmetic Siegel-Weil Formula",
+    "kind": "theorem",
+    "description": "An identity relating arithmetic intersection numbers of special cycles on integral models of Shimura varieties to derivatives of Siegel Eisenstein series at the near-central point.",
+    "dependencies": ["Geometric Siegel-Weil Formula", "arithmetic intersection theory", "Eisenstein series", "integral model"],
+    "source_article": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "name": "Kudla-Rapoport Conjecture (Theorem)",
+    "kind": "theorem",
+    "description": "A local identity equating the arithmetic intersection number of special cycles on a Rapoport-Zink space with the derivative of a local representation/Whittaker density, proved by Li and Zhang.",
+    "dependencies": ["Special Cycles on Shimura Varieties", "Rapoport-Zink space", "arithmetic intersection theory", "Whittaker function"],
+    "source_article": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "name": "Rapoport-Zink Space",
+    "kind": "axiom",
+    "description": "A formal/rigid moduli space of p-divisible groups with additional structure (polarization, level), serving as the local p-adic uniformization of Shimura varieties.",
+    "dependencies": ["p-divisible group", "formal scheme", "Shimura variety", "polarization"],
+    "source_article": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "name": "Arithmetic Inner Product Formula",
+    "kind": "theorem",
+    "description": "An identity relating the Beilinson-Bloch height of an arithmetic theta lift cycle to the central derivative of an L-function, generalizing the Gross-Zagier formula to higher dimension.",
+    "dependencies": ["Arithmetic Siegel-Weil Formula", "Beilinson-Bloch height", "central derivative of L-function", "Gross-Zagier formula"],
+    "source_article": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "name": "Beilinson-Bloch Conjecture",
+    "kind": "state",
+    "description": "The conjecture that the rank of the Chow group of homologically trivial cycles on a smooth projective variety equals the order of vanishing of the associated L-function at the central point.",
+    "dependencies": ["Chow group", "L-function", "algebraic cycle", "height pairing"],
+    "source_article": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "name": "Gorenstein Ring",
+    "kind": "axiom",
+    "description": "A Noetherian local ring of finite injective dimension over itself, equivalently a Cohen-Macaulay ring whose canonical module is free of rank one, with a symmetric free resolution.",
+    "dependencies": ["Cohen-Macaulay ring", "canonical module", "injective dimension", "free resolution"],
+    "source_article": "F. S. Macaulay: from plane curves to Gorenstein rings, Eisenbud and Gray, 2023"
+  },
+  {
+    "name": "Macaulay Inverse System",
+    "kind": "technique",
+    "description": "A duality, due to Macaulay, between Artinian quotients of a polynomial ring and finitely generated submodules of the dual divided-power (or polynomial) module under contraction, parametrizing such quotients by inverse systems.",
+    "dependencies": ["Gorenstein Ring", "Artinian ring", "Matlis duality", "polynomial ring"],
+    "source_article": "F. S. Macaulay: from plane curves to Gorenstein rings, Eisenbud and Gray, 2023"
+  },
+  {
+    "name": "Unmixedness / Macaulay's Theorem on Complete Intersections",
+    "kind": "theorem",
+    "description": "An ideal generated by n elements in a polynomial ring whose codimension equals n is unmixed (all associated primes have the same codimension), an early structural result foreshadowing Cohen-Macaulay theory.",
+    "dependencies": ["complete intersection", "codimension", "associated primes", "Cohen-Macaulay ring"],
+    "source_article": "F. S. Macaulay: from plane curves to Gorenstein rings, Eisenbud and Gray, 2023"
+  },
+  {
+    "name": "Embedding Q into a Finitely Presented Group (Theorem)",
+    "kind": "theorem",
+    "description": "The additive group of rational numbers embeds into a finitely presented group, realized via Belk-Hyde-Matucci using twisted Brin-Thompson groups acting on Cantor space.",
+    "dependencies": ["finitely presented group", "rational numbers", "Brin-Thompson group", "Higman embedding theorem"],
+    "source_article": "Embedding Q into a finitely presented group, Belk, Hyde, and Matucci, 2022"
+  },
+  {
+    "name": "Twisted Brin-Thompson Group",
+    "kind": "axiom",
+    "description": "A group of homeomorphisms of a Cantor space built from a base group acting on an alphabet together with prefix-replacement (Thompson-type) moves, simple and finitely presented under mild hypotheses.",
+    "dependencies": ["Thompson's group V", "Cantor space", "group action", "finitely presented group"],
+    "source_article": "Embedding Q into a finitely presented group, Belk, Hyde, and Matucci, 2022"
+  }
+]

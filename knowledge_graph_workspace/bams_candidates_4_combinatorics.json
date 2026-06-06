@@ -1,0 +1,401 @@
+[
+  {
+    "name": "Helly's theorem",
+    "kind": "theorem",
+    "description": "If a finite family of at least d+1 convex sets in R^d has the property that every d+1 of them have a common point, then the whole family has a common point.",
+    "dependencies": ["convex set", "intersection of sets", "Euclidean space R^d"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Radon's theorem",
+    "kind": "theorem",
+    "description": "Any set of d+2 points in R^d can be partitioned into two disjoint subsets whose convex hulls have a common point (a Radon partition).",
+    "dependencies": ["convex hull", "affine dependence", "Euclidean space R^d"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Caratheodory's theorem",
+    "kind": "theorem",
+    "description": "If a point x lies in the convex hull of a set S in R^d, then x lies in the convex hull of some subset of S of at most d+1 points.",
+    "dependencies": ["convex hull", "Euclidean space R^d"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Tverberg's theorem",
+    "kind": "theorem",
+    "description": "Any set of (r-1)(d+1)+1 points in R^d can be partitioned into r parts whose convex hulls have a common point (a Tverberg partition).",
+    "dependencies": ["convex hull", "Radon's theorem", "Euclidean space R^d"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Colorful Caratheodory theorem",
+    "kind": "theorem",
+    "description": "Given d+1 sets (color classes) in R^d each whose convex hull contains a point x, there is a rainbow selection of one point from each class whose convex hull contains x (Barany 1982).",
+    "dependencies": ["Caratheodory's theorem", "convex hull", "rainbow / transversal selection"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Colorful Helly theorem",
+    "kind": "theorem",
+    "description": "Given d+1 finite color classes of convex sets in R^d such that every rainbow transversal (one set per class) has a common point, then some single color class has a common point (Lovasz, via Barany 1982).",
+    "dependencies": ["Helly's theorem", "transversal selection"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Fractional Helly theorem",
+    "kind": "theorem",
+    "description": "For convex sets in R^d, if an alpha-fraction of the (d+1)-tuples have a common point, then some beta(alpha,d)n of the sets have a common point, with the sharp bound beta = 1-(1-alpha)^{1/(d+1)} (Katchalski-Liu 1979; sharp form Kalai 1984, Eckhoff).",
+    "dependencies": ["Helly's theorem", "nerve complex", "d-collapsibility"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "(p,q)-theorem (Hadwiger-Debrunner / Alon-Kleitman)",
+    "kind": "theorem",
+    "description": "For p >= q > d, any finite family of convex sets in R^d with the (p,q)-property (among every p sets some q have a common point) can be pierced by a bounded number f(p,q,d) of points.",
+    "dependencies": ["fractional Helly theorem", "weak epsilon-net", "LP duality / fractional Helly"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Topological Helly theorem",
+    "kind": "theorem",
+    "description": "For a good cover (a family of open sets in R^d all of whose nonempty intersections are contractible), if every d+1 sets intersect then all sets have a common point.",
+    "dependencies": ["good cover", "nerve complex", "contractibility / acyclicity"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Upper bound theorem for convex sets",
+    "kind": "theorem",
+    "description": "Bounds the number of k-fold intersection points of n convex sets in R^d in which no d+r+1 sets have a common point, in terms of the number of empty intersections (Kalai 1984, Eckhoff 1985).",
+    "dependencies": ["nerve complex", "algebraic shifting", "exterior face rings"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Topological Tverberg conjecture",
+    "kind": "state",
+    "description": "Conjecture that for any continuous map from the (d+1)(r-1)-simplex to R^d there exist r pairwise vertex-disjoint faces whose images have a common point; true for r a prime power and disproved by Frick for general r.",
+    "dependencies": ["Tverberg's theorem", "equivariant topology", "Borsuk-Ulam theorem"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Sierksma's conjecture",
+    "kind": "state",
+    "description": "Conjecture that the number of Tverberg r-partitions of any (r-1)(d+1)+1 points in general position in R^d is at least ((r-1)!)^d.",
+    "dependencies": ["Tverberg's theorem"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Cascade conjecture",
+    "kind": "state",
+    "description": "Kalai's conjecture that if the sum over i of (1+dim T_i(A)) for i=1..r-1 is less than |A| then the r-fold Tverberg set T_r(A) is nonempty, interpolating between Radon and Tverberg.",
+    "dependencies": ["Tverberg's theorem", "Radon's theorem", "Tverberg depth"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Nerve complex method",
+    "kind": "technique",
+    "description": "Encoding the intersection pattern of a family of sets as a simplicial complex (the nerve) whose combinatorial-topological properties such as d-collapsibility or being d-Leray drive Helly-type bounds.",
+    "dependencies": ["simplicial complex", "d-collapsibility", "Leray number"],
+    "source_article": "Helly-type problems, Imre Barany and Gil Kalai, 2022"
+  },
+  {
+    "name": "Nisan-Wigderson pseudorandom generator",
+    "kind": "state",
+    "description": "An explicit construction of a pseudorandom generator from a function hard for small circuits, using a combinatorial design of nearly disjoint index sets to fool bounded-size circuits.",
+    "dependencies": ["pseudorandom generator", "circuit complexity", "combinatorial design", "average-case hardness"],
+    "source_article": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "name": "Impagliazzo-Wigderson theorem (hardness vs randomness)",
+    "kind": "theorem",
+    "description": "If some problem in E (deterministic exponential time) requires Boolean circuits of size 2^{Omega(n)}, then P = BPP, i.e. randomized polynomial time can be fully derandomized.",
+    "dependencies": ["Nisan-Wigderson pseudorandom generator", "hardness amplification", "BPP", "circuit lower bounds"],
+    "source_article": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "name": "Hardness amplification (Yao XOR lemma / direct product)",
+    "kind": "technique",
+    "description": "Method that converts a function mildly hard on average into one extremely hard on average by taking XORs or direct products of independent instances.",
+    "dependencies": ["average-case hardness", "Boolean function"],
+    "source_article": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "name": "Zig-zag product of graphs",
+    "kind": "state",
+    "description": "A graph product (Reingold-Vadhan-Wigderson) combining a large graph with a small one to produce expanders of controlled degree, yielding an iterative combinatorial construction of expander families.",
+    "dependencies": ["expander graph", "spectral gap", "graph product"],
+    "source_article": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "name": "SL = L theorem (Reingold)",
+    "kind": "theorem",
+    "description": "Undirected s-t connectivity can be decided in deterministic logarithmic space, equivalently symmetric logspace equals logspace, proved via the zig-zag product.",
+    "dependencies": ["zig-zag product of graphs", "expander graph", "logspace computation"],
+    "source_article": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "name": "Operator scaling / noncommutative optimization",
+    "kind": "technique",
+    "description": "A geodesically-convex alternating-minimization algorithm over symmetric (group-orbit) spaces that scales tuples of matrices toward doubly balanced form, solving null-cone and noncommutative singularity problems and instances of polynomial identity testing.",
+    "dependencies": ["invariant theory", "geodesic convexity", "polynomial identity testing", "null-cone problem"],
+    "source_article": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "name": "Efficiency gap",
+    "kind": "state",
+    "description": "A scalar measure of partisan advantage in a districting plan equal to the normalized difference between the two parties' total wasted votes (votes for losers plus surplus votes for winners).",
+    "dependencies": ["wasted votes", "districting plan", "seats-votes relation"],
+    "source_article": "Geometry, Inference, Complexity, and Democracy, Jordan S. Ellenberg, 2021"
+  },
+  {
+    "name": "Partisan symmetry",
+    "kind": "axiom",
+    "description": "The criterion that a districting plan's seats-votes curve be invariant under swapping the two parties' roles, i.e. symmetric under (x,y) -> (1-x,1-y).",
+    "dependencies": ["seats-votes relation", "districting plan"],
+    "source_article": "Geometry, Inference, Complexity, and Democracy, Jordan S. Ellenberg, 2021"
+  },
+  {
+    "name": "Ensemble (outlier) analysis of districting plans",
+    "kind": "technique",
+    "description": "Detecting partisan gerrymanders by generating a large random sample of legally valid districting plans and testing whether an enacted plan is a statistical outlier relative to that ensemble.",
+    "dependencies": ["Markov chain Monte Carlo", "districting plan", "outlier / hypothesis testing"],
+    "source_article": "Geometry, Inference, Complexity, and Democracy, Jordan S. Ellenberg, 2021"
+  },
+  {
+    "name": "Recombination (ReCom) Markov chain",
+    "kind": "state",
+    "description": "A Markov chain on balanced graph partitions that merges two adjacent districts, samples a uniform spanning tree of the union, and splits it along an edge into two balanced connected parts, mixing far faster than single-unit flip walks.",
+    "dependencies": ["Markov chain Monte Carlo", "spanning tree", "graph partition", "districting plan"],
+    "source_article": "Geometry, Inference, Complexity, and Democracy, Jordan S. Ellenberg, 2021"
+  },
+  {
+    "name": "Chikina-Frieze-Pegden local outlier test",
+    "kind": "theorem",
+    "description": "For a reversible Markov chain, a rigorous statistical significance bound on a plan being an outlier can be obtained from short random walks without knowing the mixing time, with false-positive probability at most 2 sqrt(epsilon).",
+    "dependencies": ["reversible Markov chain", "ensemble analysis of districting plans"],
+    "source_article": "Geometry, Inference, Complexity, and Democracy, Jordan S. Ellenberg, 2021"
+  },
+  {
+    "name": "NP-hardness of balanced connected graph partition",
+    "kind": "theorem",
+    "description": "Sampling or counting balanced partitions of a weighted planar graph into connected pieces of equal weight is NP-hard, even into two parts, formalizing the computational difficulty of districting.",
+    "dependencies": ["graph partition", "NP-hardness", "planar graph"],
+    "source_article": "Geometry, Inference, Complexity, and Democracy, Jordan S. Ellenberg, 2021"
+  },
+  {
+    "name": "Sunflower (Delta-system)",
+    "kind": "axiom",
+    "description": "A collection of r sets in which all pairwise intersections equal one common core (kernel), so that the parts outside the core (petals) are pairwise disjoint.",
+    "dependencies": ["set system", "intersection of sets"],
+    "source_article": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "name": "Erdos-Rado sunflower lemma",
+    "kind": "theorem",
+    "description": "Any family of more than w!(r-1)^w sets each of size at most w contains an r-sunflower.",
+    "dependencies": ["sunflower (Delta-system)", "set system", "pigeonhole principle"],
+    "source_article": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "name": "Sunflower conjecture",
+    "kind": "state",
+    "description": "Conjecture of Erdos and Rado that for each r there is a constant c(r) such that any family of more than c(r)^w sets of size at most w contains an r-sunflower.",
+    "dependencies": ["sunflower (Delta-system)", "Erdos-Rado sunflower lemma"],
+    "source_article": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "name": "Alweiss-Lovett-Wu-Zhang sunflower bound",
+    "kind": "theorem",
+    "description": "Any family of more than (C r log w log log w)^w sets of size at most w contains an r-sunflower, an almost-quasipolynomial-per-element improvement toward the sunflower conjecture.",
+    "dependencies": ["sunflower conjecture", "robust sunflower / spread family", "random restriction"],
+    "source_article": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "name": "Spread (robust sunflower) family",
+    "kind": "axiom",
+    "description": "A weighted set family is r-spread if for every set T the total weight of members containing T is at most r^{-|T|} of the whole, a pseudorandomness condition forcing the family to look uniformly spread out.",
+    "dependencies": ["set system", "uniform distribution / measure"],
+    "source_article": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "name": "Kahn-Kalai expectation-threshold conjecture (Park-Pham theorem)",
+    "kind": "theorem",
+    "description": "For any monotone property, the threshold probability is at most a logarithmic factor times the expectation threshold (the fractional/expectation lower bound), proved by Park and Pham via spread families.",
+    "dependencies": ["spread (robust sunflower) family", "monotone property", "threshold function"],
+    "source_article": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "name": "Random restriction with spreadness",
+    "kind": "technique",
+    "description": "Proof technique that repeatedly applies random restrictions to a spread set family, shrinking set sizes while preserving approximate spreadness until a sunflower is forced, with Janson-type inequalities at the base case.",
+    "dependencies": ["spread (robust sunflower) family", "random restriction", "Janson's inequality"],
+    "source_article": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "name": "Boolean social choice function",
+    "kind": "axiom",
+    "description": "A function assigning a societal outcome to a profile of voter preferences (e.g. a Boolean function aggregating n voters' binary opinions), the basic object of probabilistic social choice theory.",
+    "dependencies": ["Boolean function", "voter profile"],
+    "source_article": "A probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022"
+  },
+  {
+    "name": "Arrow's impossibility theorem",
+    "kind": "theorem",
+    "description": "Any social welfare function on three or more alternatives that is unanimous and satisfies independence of irrelevant alternatives must be a dictatorship.",
+    "dependencies": ["Boolean social choice function", "independence of irrelevant alternatives", "transitivity / rationality"],
+    "source_article": "A probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022"
+  },
+  {
+    "name": "Quantitative Arrow theorem",
+    "kind": "theorem",
+    "description": "A robust version of Arrow's theorem stating that any aggregation rule that is epsilon-far from every dictatorship produces an irrational (non-transitive) outcome with probability bounded below polynomially in epsilon.",
+    "dependencies": ["Arrow's impossibility theorem", "Fourier analysis of Boolean functions", "noise stability"],
+    "source_article": "A probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022"
+  },
+  {
+    "name": "Gibbard-Satterthwaite theorem",
+    "kind": "theorem",
+    "description": "Any surjective, non-dictatorial voting rule on three or more alternatives is manipulable: some voter can misreport preferences to obtain a better outcome.",
+    "dependencies": ["Boolean social choice function", "strategyproofness / manipulation"],
+    "source_article": "A probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022"
+  },
+  {
+    "name": "Quantitative Gibbard-Satterthwaite theorem",
+    "kind": "theorem",
+    "description": "Any voting rule on three or more alternatives that is epsilon-far from the family of nonmanipulable functions is manipulable for a random profile with probability at least inverse-polynomial in n, the number of alternatives, and 1/epsilon.",
+    "dependencies": ["Gibbard-Satterthwaite theorem", "noise stability", "isoperimetry / reverse hypercontractivity"],
+    "source_article": "A probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022"
+  },
+  {
+    "name": "Majority is Stablest theorem",
+    "kind": "theorem",
+    "description": "Among low-influence Boolean functions, weighted majority maximizes noise stability, with the optimal value given by Borell's Gaussian noise-stability bound (Mossel, O'Donnell, Oleszkiewicz).",
+    "dependencies": ["noise stability", "influence of variables", "invariance principle", "Borell Gaussian noise stability"],
+    "source_article": "A probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022"
+  },
+  {
+    "name": "Invariance principle for low-influence functions",
+    "kind": "technique",
+    "description": "A nonlinear central-limit-type theorem showing that a low-degree multilinear polynomial in independent low-influence variables has nearly the same distribution whether the inputs are Boolean or Gaussian, the key tool reducing discrete social choice problems to Gaussian geometry.",
+    "dependencies": ["Fourier analysis of Boolean functions", "hypercontractivity", "central limit theorem"],
+    "source_article": "A probabilistic view of voting, paradoxes, and manipulation, Elchanan Mossel, 2022"
+  },
+  {
+    "name": "Cap set",
+    "kind": "axiom",
+    "description": "A subset of (Z/3Z)^n containing no three distinct points in arithmetic progression (equivalently no affine line), the extremal object of the cap set problem.",
+    "dependencies": ["finite vector space (Z/3Z)^n", "arithmetic progression"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Slice rank of a tensor",
+    "kind": "axiom",
+    "description": "The minimum number of terms needed to write a tensor (function of several variables) as a sum of products each of which depends in one factor on a single variable group and in the other on the rest (Tao's symmetric generalization of matrix rank).",
+    "dependencies": ["tensor", "matrix rank", "polynomial method"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Croot-Lev-Pach lemma",
+    "kind": "theorem",
+    "description": "A low-degree multilinear polynomial that vanishes off the diagonal of a finite-field cube has a number of nonzero diagonal entries bounded by twice the dimension of the relevant low-degree polynomial space.",
+    "dependencies": ["polynomial method", "finite vector space (Z/3Z)^n", "low-degree polynomials"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Ellenberg-Gijswijt cap set theorem",
+    "kind": "theorem",
+    "description": "Every cap set in (Z/3Z)^n has size at most c^n with c approximately 2.756, i.e. exponentially smaller than 3^n, resolving the cap set problem.",
+    "dependencies": ["cap set", "Croot-Lev-Pach lemma", "slice rank of a tensor"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Slice rank polynomial method",
+    "kind": "technique",
+    "description": "Proof technique that bounds the size of combinatorial configurations by encoding them as a tensor supported on a diagonal, bounding its slice rank from below by the support size and from above via low-degree polynomials.",
+    "dependencies": ["slice rank of a tensor", "Croot-Lev-Pach lemma", "polynomial method"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Sunflower-free / tri-colored sum-free bounds via slice rank",
+    "kind": "theorem",
+    "description": "Application of the slice rank method giving exponential upper bounds on sunflower-free set systems and on tri-colored sum-free sets in abelian groups (Naslund-Sawin, Blasiak et al.).",
+    "dependencies": ["slice rank polynomial method", "sunflower (Delta-system)", "sum-free set"],
+    "source_article": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "name": "Matroid",
+    "kind": "axiom",
+    "description": "A finite set together with a rank function (or family of independent sets) abstracting the combinatorics of linear independence, satisfying hereditary and exchange axioms.",
+    "dependencies": ["independence axioms", "rank function", "lattice of flats"],
+    "source_article": "Essence of independence: Hodge theory of matroids since June Huh, Christopher Eur, 2023"
+  },
+  {
+    "name": "Chow ring of a matroid",
+    "kind": "axiom",
+    "description": "A graded commutative ring built from the flats of a matroid (via the Bergman fan / order complex) that plays the role of the cohomology of a smooth projective variety even for nonrealizable matroids.",
+    "dependencies": ["matroid", "Bergman fan", "lattice of flats", "wonderful compactification"],
+    "source_article": "Essence of independence: Hodge theory of matroids since June Huh, Christopher Eur, 2023"
+  },
+  {
+    "name": "Kahler package for matroids",
+    "kind": "theorem",
+    "description": "The Chow ring of any matroid satisfies Poincare duality, the hard Lefschetz theorem, and the Hodge-Riemann relations, despite the absence of an underlying variety (Adiprasito-Huh-Katz).",
+    "dependencies": ["Chow ring of a matroid", "hard Lefschetz theorem", "Hodge-Riemann relations", "Poincare duality"],
+    "source_article": "Essence of independence: Hodge theory of matroids since June Huh, Christopher Eur, 2023"
+  },
+  {
+    "name": "Heron-Rota-Welsh conjecture (theorem)",
+    "kind": "theorem",
+    "description": "The coefficients of the reduced characteristic polynomial of any matroid form a log-concave sequence, proved via the Hodge-Riemann relations on the Chow ring.",
+    "dependencies": ["Chow ring of a matroid", "Kahler package for matroids", "characteristic polynomial", "log-concavity"],
+    "source_article": "Essence of independence: Hodge theory of matroids since June Huh, Christopher Eur, 2023"
+  },
+  {
+    "name": "Dowling-Wilson top-heavy theorem",
+    "kind": "theorem",
+    "description": "For any matroid the number of flats of rank k is at most the number of flats of corank k for k below half the rank, i.e. the Whitney numbers of the second kind are top-heavy (Braden-Huh-Matherne-Proudfoot-Wang).",
+    "dependencies": ["matroid", "lattice of flats", "Whitney numbers", "intersection cohomology / Kahler package"],
+    "source_article": "Essence of independence: Hodge theory of matroids since June Huh, Christopher Eur, 2023"
+  },
+  {
+    "name": "Mason's log-concavity conjecture (theorem)",
+    "kind": "theorem",
+    "description": "The numbers of independent sets of each size in a matroid form an (ultra) log-concave sequence, established via the Hodge-theoretic / Lorentzian polynomial framework (Adiprasito-Huh-Katz, Anari et al., Brandén-Huh).",
+    "dependencies": ["matroid", "log-concavity", "Lorentzian polynomials", "Kahler package for matroids"],
+    "source_article": "Essence of independence: Hodge theory of matroids since June Huh, Christopher Eur, 2023"
+  },
+  {
+    "name": "Hodge-Riemann relations (combinatorial use)",
+    "kind": "technique",
+    "description": "Establishing inequalities (log-concavity, top-heaviness) by proving that a bilinear form on a degree-graded ring is nondegenerate with prescribed signature, transferring algebraic positivity to combinatorial sequences.",
+    "dependencies": ["Chow ring of a matroid", "hard Lefschetz theorem", "signature of bilinear forms"],
+    "source_article": "Essence of independence: Hodge theory of matroids since June Huh, Christopher Eur, 2023"
+  },
+  {
+    "name": "Classical verification of quantum computation",
+    "kind": "axiom",
+    "description": "A protocol in which a polynomial-time classical verifier interacts with a single untrusted quantum prover and accepts only if the prover correctly performs a claimed quantum computation (the BQP verification problem).",
+    "dependencies": ["BQP", "interactive proof system", "quantum computation"],
+    "source_article": "Verifying quantum computations at scale: a cryptographic leash on quantum devices, Thomas Vidick, 2020"
+  },
+  {
+    "name": "Trapdoor claw-free function family",
+    "kind": "axiom",
+    "description": "A family of two-to-one functions for which finding a colliding pair (a claw) is computationally hard, while a secret trapdoor allows inversion, instantiated from the learning-with-errors assumption.",
+    "dependencies": ["learning with errors", "one-way function", "trapdoor / cryptographic hardness"],
+    "source_article": "Verifying quantum computations at scale: a cryptographic leash on quantum devices, Thomas Vidick, 2020"
+  },
+  {
+    "name": "Mahadev's classical verification theorem",
+    "kind": "theorem",
+    "description": "Assuming the quantum hardness of learning with errors, there is an interactive protocol by which a classical verifier can verify the output of an arbitrary polynomial-time quantum computation performed by a single quantum prover.",
+    "dependencies": ["classical verification of quantum computation", "trapdoor claw-free function family", "learning with errors"],
+    "source_article": "Verifying quantum computations at scale: a cryptographic leash on quantum devices, Thomas Vidick, 2020"
+  },
+  {
+    "name": "Cryptographic measurement protocol (qubit commitment)",
+    "kind": "technique",
+    "description": "A cryptographic primitive that forces a quantum prover to commit to a qubit and later reveal a measurement in a basis chosen by the verifier, so the prover cannot cheat across bases, built from trapdoor claw-free functions.",
+    "dependencies": ["trapdoor claw-free function family", "commitment scheme", "quantum measurement"],
+    "source_article": "Verifying quantum computations at scale: a cryptographic leash on quantum devices, Thomas Vidick, 2020"
+  }
+]

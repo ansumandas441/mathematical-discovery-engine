@@ -1,0 +1,252 @@
+[
+  {"from":"s_arakelov_geometry","to":"t_bost_slope_formalism","role":"input","parameter_binding":{},"used_in_theorem":"s_reverse_minkowski_transference"},
+  {"from":"s_theta_function_of_quadratic_form","to":"t_bost_slope_formalism","role":"input","parameter_binding":{},"used_in_theorem":"s_reverse_minkowski_transference"},
+  {"from":"s_poisson_summation_formula","to":"t_bost_slope_formalism","role":"input","parameter_binding":{},"used_in_theorem":"s_reverse_minkowski_transference"},
+  {"from":"t_bost_slope_formalism","to":"s_reverse_minkowski_transference","role":"output","parameter_binding":{},"used_in_theorem":"s_reverse_minkowski_transference"},
+
+  {"from":"s_pluripotential_theory","to":"t_large_deviation_theory","role":"input","parameter_binding":{},"used_in_theorem":"s_fekete_points_equidistribution"},
+  {"from":"s_equilibrium_measure","to":"t_large_deviation_theory","role":"input","parameter_binding":{},"used_in_theorem":"s_fekete_points_equidistribution"},
+  {"from":"s_coulomb_gas_pluripotential","to":"t_large_deviation_theory","role":"input","parameter_binding":{},"used_in_theorem":"s_fekete_points_equidistribution"},
+  {"from":"t_large_deviation_theory","to":"s_fekete_points_equidistribution","role":"output","parameter_binding":{},"used_in_theorem":"s_fekete_points_equidistribution"},
+
+  {"from":"s_expander_graph","to":"t_factor_of_iid_regular_tree","role":"input","parameter_binding":{},"used_in_theorem":"s_eigenvector_normality_random_regular"},
+  {"from":"s_kolmogorov_sinai_entropy","to":"t_factor_of_iid_regular_tree","role":"input","parameter_binding":{},"used_in_theorem":"s_eigenvector_normality_random_regular"},
+  {"from":"t_factor_of_iid_regular_tree","to":"s_eigenvector_normality_random_regular","role":"output","parameter_binding":{},"used_in_theorem":"s_eigenvector_normality_random_regular"},
+
+  {"from":"s_property_a_coarse_amenability","to":"t_expander_mixing_technique","role":"input","parameter_binding":{},"used_in_theorem":"s_coarse_embeddability_nonexact_groups"},
+  {"from":"s_exact_c_star_algebra","to":"t_expander_mixing_technique","role":"input","parameter_binding":{},"used_in_theorem":"s_coarse_embeddability_nonexact_groups"},
+  {"from":"s_hilbert_space","to":"t_expander_mixing_technique","role":"input","parameter_binding":{},"used_in_theorem":"s_coarse_embeddability_nonexact_groups"},
+  {"from":"t_expander_mixing_technique","to":"s_coarse_embeddability_nonexact_groups","role":"output","parameter_binding":{},"used_in_theorem":"s_coarse_embeddability_nonexact_groups"},
+
+  {"from":"s_etale_cohomology","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_crystalline_companions_theorem"},
+  {"from":"s_lafforgue_global_langlands_function_field","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_crystalline_companions_theorem"},
+  {"from":"s_frobenius_endomorphism","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_crystalline_companions_theorem"},
+  {"from":"t_grothendieck_cohomology_methods","to":"s_crystalline_companions_theorem","role":"output","parameter_binding":{},"used_in_theorem":"s_crystalline_companions_theorem"},
+  {"from":"s_lafforgue_global_langlands_function_field","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_abe_padic_langlands_function_fields"},
+  {"from":"t_grothendieck_cohomology_methods","to":"s_abe_padic_langlands_function_fields","role":"output","parameter_binding":{},"used_in_theorem":"s_abe_padic_langlands_function_fields"},
+
+  {"from":"s_group_c_star_algebra","to":"t_furstenberg_correspondence_principle","role":"input","parameter_binding":{},"used_in_theorem":"s_furstenberg_boundary_cstar_simplicity"},
+  {"from":"s_amenable_group","to":"t_furstenberg_correspondence_principle","role":"input","parameter_binding":{},"used_in_theorem":"s_furstenberg_boundary_cstar_simplicity"},
+  {"from":"s_cstar_simplicity","to":"t_furstenberg_correspondence_principle","role":"input","parameter_binding":{},"used_in_theorem":"s_furstenberg_boundary_cstar_simplicity"},
+  {"from":"t_furstenberg_correspondence_principle","to":"s_furstenberg_boundary_cstar_simplicity","role":"output","parameter_binding":{},"used_in_theorem":"s_furstenberg_boundary_cstar_simplicity"},
+
+  {"from":"s_fano_variety","to":"t_theory_of_complements","role":"input","parameter_binding":{},"used_in_theorem":"s_bab_boundedness_fano"},
+  {"from":"s_kawamata_viehweg_vanishing","to":"t_theory_of_complements","role":"input","parameter_binding":{},"used_in_theorem":"s_bab_boundedness_fano"},
+  {"from":"t_theory_of_complements","to":"s_bab_boundedness_fano","role":"output","parameter_binding":{},"used_in_theorem":"s_bab_boundedness_fano"},
+
+  {"from":"s_fano_variety","to":"t_birational_geometry_program","role":"input","parameter_binding":{},"used_in_theorem":"s_ksba_moduli_stable_varieties"},
+  {"from":"s_delignemumford_compactification_m_g","to":"t_birational_geometry_program","role":"input","parameter_binding":{},"used_in_theorem":"s_ksba_moduli_stable_varieties"},
+  {"from":"t_birational_geometry_program","to":"s_ksba_moduli_stable_varieties","role":"output","parameter_binding":{},"used_in_theorem":"s_ksba_moduli_stable_varieties"},
+
+  {"from":"s_anosov_representation","to":"t_period_mapping_torelli_arguments","role":"input","parameter_binding":{},"used_in_theorem":"s_higher_teichmuller_theory"},
+  {"from":"s_flag_variety_G_over_B","to":"t_period_mapping_torelli_arguments","role":"input","parameter_binding":{},"used_in_theorem":"s_higher_teichmuller_theory"},
+  {"from":"s_teichmuller_space_t_g","to":"t_period_mapping_torelli_arguments","role":"input","parameter_binding":{},"used_in_theorem":"s_higher_teichmuller_theory"},
+  {"from":"t_period_mapping_torelli_arguments","to":"s_higher_teichmuller_theory","role":"output","parameter_binding":{},"used_in_theorem":"s_higher_teichmuller_theory"},
+
+  {"from":"s_oblomkov_shende_conjecture","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_homfly_from_hilbert_schemes"},
+  {"from":"s_homflypt_polynomial","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_homfly_from_hilbert_schemes"},
+  {"from":"s_jacobian_of_curve","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_homfly_from_hilbert_schemes"},
+  {"from":"t_grothendieck_cohomology_methods","to":"s_homfly_from_hilbert_schemes","role":"output","parameter_binding":{},"used_in_theorem":"s_homfly_from_hilbert_schemes"},
+
+  {"from":"s_riemann_zeta_function","to":"t_log_correlated_field_zeta","role":"input","parameter_binding":{},"used_in_theorem":"s_max_zeta_short_intervals"},
+  {"from":"s_random_matrix_theory","to":"t_log_correlated_field_zeta","role":"input","parameter_binding":{},"used_in_theorem":"s_max_zeta_short_intervals"},
+  {"from":"t_log_correlated_field_zeta","to":"s_max_zeta_short_intervals","role":"output","parameter_binding":{},"used_in_theorem":"s_max_zeta_short_intervals"},
+
+  {"from":"s_percolation_model","to":"t_osss_sharp_thresholds","role":"input","parameter_binding":{},"used_in_theorem":"s_sharpness_phase_transition"},
+  {"from":"s_monotone_boolean_function","to":"t_osss_sharp_thresholds","role":"input","parameter_binding":{},"used_in_theorem":"s_sharpness_phase_transition"},
+  {"from":"s_ising_model","to":"t_osss_sharp_thresholds","role":"input","parameter_binding":{},"used_in_theorem":"s_sharpness_phase_transition"},
+  {"from":"t_osss_sharp_thresholds","to":"s_sharpness_phase_transition","role":"output","parameter_binding":{},"used_in_theorem":"s_sharpness_phase_transition"},
+
+  {"from":"s_seiberg_witten_equations","to":"t_pin2_sw_floer_homology","role":"input","parameter_binding":{},"used_in_theorem":"s_disproof_triangulation_conjecture"},
+  {"from":"s_rokhlin_theorem","to":"t_pin2_sw_floer_homology","role":"input","parameter_binding":{},"used_in_theorem":"s_disproof_triangulation_conjecture"},
+  {"from":"t_pin2_sw_floer_homology","to":"s_disproof_triangulation_conjecture","role":"output","parameter_binding":{},"used_in_theorem":"s_disproof_triangulation_conjecture"},
+
+  {"from":"s_abstract_simplicial_complex","to":"t_homological_stability_scanning","role":"input","parameter_binding":{},"used_in_theorem":"s_homological_stability_hurwitz"},
+  {"from":"s_mapping_class_group","to":"t_homological_stability_scanning","role":"input","parameter_binding":{},"used_in_theorem":"s_homological_stability_hurwitz"},
+  {"from":"t_homological_stability_scanning","to":"s_homological_stability_hurwitz","role":"output","parameter_binding":{},"used_in_theorem":"s_homological_stability_hurwitz"},
+
+  {"from":"s_integral_varifold_with_bounded_mean_curvature","to":"t_almgren_pitts_min_max","role":"input","parameter_binding":{},"used_in_theorem":"s_infinitely_many_minimal_hypersurfaces"},
+  {"from":"s_minimal_surface_equation","to":"t_almgren_pitts_min_max","role":"input","parameter_binding":{},"used_in_theorem":"s_infinitely_many_minimal_hypersurfaces"},
+  {"from":"s_min_max_critical_values","to":"t_almgren_pitts_min_max","role":"input","parameter_binding":{},"used_in_theorem":"s_infinitely_many_minimal_hypersurfaces"},
+  {"from":"t_almgren_pitts_min_max","to":"s_infinitely_many_minimal_hypersurfaces","role":"output","parameter_binding":{},"used_in_theorem":"s_infinitely_many_minimal_hypersurfaces"},
+
+  {"from":"s_herman_positive_metric_entropy","to":"t_minimax_methods_critical_points","role":"input","parameter_binding":{},"used_in_theorem":"s_berger_turaev_theorem"},
+  {"from":"s_kam_theorem","to":"t_minimax_methods_critical_points","role":"input","parameter_binding":{},"used_in_theorem":"s_berger_turaev_theorem"},
+  {"from":"s_newhouse_phenomenon","to":"t_minimax_methods_critical_points","role":"input","parameter_binding":{},"used_in_theorem":"s_berger_turaev_theorem"},
+  {"from":"t_minimax_methods_critical_points","to":"s_berger_turaev_theorem","role":"output","parameter_binding":{},"used_in_theorem":"s_berger_turaev_theorem"},
+
+  {"from":"s_navier_stokes_equations","to":"t_pseudospectral_enhanced_dissipation","role":"input","parameter_binding":{},"used_in_theorem":"s_stability_lamb_oseen_vortex"},
+  {"from":"s_vorticity_omega","to":"t_pseudospectral_enhanced_dissipation","role":"input","parameter_binding":{},"used_in_theorem":"s_stability_lamb_oseen_vortex"},
+  {"from":"s_resolvent_of_an_operator","to":"t_pseudospectral_enhanced_dissipation","role":"input","parameter_binding":{},"used_in_theorem":"s_stability_lamb_oseen_vortex"},
+  {"from":"t_pseudospectral_enhanced_dissipation","to":"s_stability_lamb_oseen_vortex","role":"output","parameter_binding":{},"used_in_theorem":"s_stability_lamb_oseen_vortex"},
+
+  {"from":"s_reeb_vector_field","to":"t_ech_spectral_invariants_weyl","role":"input","parameter_binding":{},"used_in_theorem":"s_c_infinity_closing_lemma"},
+  {"from":"s_hamiltonian_diffeomorphism_phi_H","to":"t_ech_spectral_invariants_weyl","role":"input","parameter_binding":{},"used_in_theorem":"s_c_infinity_closing_lemma"},
+  {"from":"s_existence_of_closed_reeb_orbit","to":"t_ech_spectral_invariants_weyl","role":"input","parameter_binding":{},"used_in_theorem":"s_c_infinity_closing_lemma"},
+  {"from":"t_ech_spectral_invariants_weyl","to":"s_c_infinity_closing_lemma","role":"output","parameter_binding":{},"used_in_theorem":"s_c_infinity_closing_lemma"},
+
+  {"from":"s_wavefront_set_definition","to":"t_semiclassical_approximation","role":"input","parameter_binding":{},"used_in_theorem":"s_resolvent_estimates_non_self_adjoint"},
+  {"from":"s_hormander_symbol_class","to":"t_semiclassical_approximation","role":"input","parameter_binding":{},"used_in_theorem":"s_resolvent_estimates_non_self_adjoint"},
+  {"from":"t_semiclassical_approximation","to":"s_resolvent_estimates_non_self_adjoint","role":"output","parameter_binding":{},"used_in_theorem":"s_resolvent_estimates_non_self_adjoint"},
+
+  {"from":"s_variation_of_hodge_structure","to":"t_definable_chow_ominimal_gaga","role":"input","parameter_binding":{},"used_in_theorem":"s_definability_of_period_maps"},
+  {"from":"s_ominimal_structure","to":"t_definable_chow_ominimal_gaga","role":"input","parameter_binding":{},"used_in_theorem":"s_definability_of_period_maps"},
+  {"from":"s_period_mapping","to":"t_definable_chow_ominimal_gaga","role":"input","parameter_binding":{},"used_in_theorem":"s_definability_of_period_maps"},
+  {"from":"t_definable_chow_ominimal_gaga","to":"s_definability_of_period_maps","role":"output","parameter_binding":{},"used_in_theorem":"s_definability_of_period_maps"},
+  {"from":"s_definability_of_period_maps","to":"t_definable_chow_ominimal_gaga","role":"input","parameter_binding":{},"used_in_theorem":"s_algebraicity_of_hodge_loci"},
+  {"from":"t_definable_chow_ominimal_gaga","to":"s_algebraicity_of_hodge_loci","role":"output","parameter_binding":{},"used_in_theorem":"s_algebraicity_of_hodge_loci"},
+
+  {"from":"s_maximal_isotopy_transverse_foliation","to":"t_le_calvez_tal_forcing","role":"input","parameter_binding":{},"used_in_theorem":"s_maximal_isotopy_transverse_foliation"},
+  {"from":"s_brouwer_fpt","to":"t_le_calvez_tal_forcing","role":"input","parameter_binding":{},"used_in_theorem":"s_maximal_isotopy_transverse_foliation"},
+  {"from":"s_topological_entropy_h_top","to":"t_le_calvez_tal_forcing","role":"input","parameter_binding":{},"used_in_theorem":"s_maximal_isotopy_transverse_foliation"},
+
+  {"from":"s_harmonic_function_on_R_n","to":"t_doubling_index_frequency_function","role":"input","parameter_binding":{},"used_in_theorem":"s_nodal_set_volume_estimates"},
+  {"from":"s_eigenfunction_eigenvalue_decomposition","to":"t_doubling_index_frequency_function","role":"input","parameter_binding":{},"used_in_theorem":"s_nodal_set_volume_estimates"},
+  {"from":"t_doubling_index_frequency_function","to":"s_nodal_set_volume_estimates","role":"output","parameter_binding":{},"used_in_theorem":"s_nodal_set_volume_estimates"},
+
+  {"from":"s_ratner_orbit_closure","to":"t_ergodic_theory_approach","role":"input","parameter_binding":{},"used_in_theorem":"s_ratner_infinite_volume"},
+  {"from":"s_unipotent_one_parameter_subgroup_u_t","to":"t_ergodic_theory_approach","role":"input","parameter_binding":{},"used_in_theorem":"s_ratner_infinite_volume"},
+  {"from":"s_ratner_equidistribution","to":"t_ergodic_theory_approach","role":"input","parameter_binding":{},"used_in_theorem":"s_ratner_infinite_volume"},
+  {"from":"t_ergodic_theory_approach","to":"s_ratner_infinite_volume","role":"output","parameter_binding":{},"used_in_theorem":"s_ratner_infinite_volume"},
+
+  {"from":"s_gowers_uniformity_norm","to":"t_higher_order_fourier_analysis","role":"input","parameter_binding":{},"used_in_theorem":"s_quantitative_inverse_gowers"},
+  {"from":"s_nilsequence","to":"t_higher_order_fourier_analysis","role":"input","parameter_binding":{},"used_in_theorem":"s_quantitative_inverse_gowers"},
+  {"from":"s_nilmanifold","to":"t_higher_order_fourier_analysis","role":"input","parameter_binding":{},"used_in_theorem":"s_quantitative_inverse_gowers"},
+  {"from":"t_higher_order_fourier_analysis","to":"s_quantitative_inverse_gowers","role":"output","parameter_binding":{},"used_in_theorem":"s_quantitative_inverse_gowers"},
+
+  {"from":"s_zariski_topology","to":"t_birational_geometry_program","role":"input","parameter_binding":{},"used_in_theorem":"s_reconstruction_from_zariski_topology"},
+  {"from":"s_intersection_theory","to":"t_birational_geometry_program","role":"input","parameter_binding":{},"used_in_theorem":"s_reconstruction_from_zariski_topology"},
+  {"from":"t_birational_geometry_program","to":"s_reconstruction_from_zariski_topology","role":"output","parameter_binding":{},"used_in_theorem":"s_reconstruction_from_zariski_topology"},
+
+  {"from":"s_zagier_polylogarithm_conjecture","to":"t_motivic_correlators_cluster_polylog","role":"input","parameter_binding":{},"used_in_theorem":"s_goncharov_rudenko_zeta_f4"},
+  {"from":"s_goncharov_motivic_polylog_complexes","to":"t_motivic_correlators_cluster_polylog","role":"input","parameter_binding":{},"used_in_theorem":"s_goncharov_rudenko_zeta_f4"},
+  {"from":"s_polylogarithm","to":"t_motivic_correlators_cluster_polylog","role":"input","parameter_binding":{},"used_in_theorem":"s_goncharov_rudenko_zeta_f4"},
+  {"from":"s_dedekind_zeta_function","to":"t_motivic_correlators_cluster_polylog","role":"input","parameter_binding":{},"used_in_theorem":"s_goncharov_rudenko_zeta_f4"},
+  {"from":"t_motivic_correlators_cluster_polylog","to":"s_goncharov_rudenko_zeta_f4","role":"output","parameter_binding":{},"used_in_theorem":"s_goncharov_rudenko_zeta_f4"},
+
+  {"from":"s_fractal_uncertainty_principle","to":"t_microlocal_analysis","role":"input","parameter_binding":{},"used_in_theorem":"s_essential_spectral_gap_fractal"},
+  {"from":"s_compact_hyperbolic_surface_Gamma_minus_H2","to":"t_microlocal_analysis","role":"input","parameter_binding":{},"used_in_theorem":"s_essential_spectral_gap_fractal"},
+  {"from":"t_microlocal_analysis","to":"s_essential_spectral_gap_fractal","role":"output","parameter_binding":{},"used_in_theorem":"s_essential_spectral_gap_fractal"},
+
+  {"from":"s_stratum_of_translation_surfaces_with_SL2R_action","to":"t_ergodic_theory_approach","role":"input","parameter_binding":{},"used_in_theorem":"s_finiteness_totally_geodesic_subvarieties"},
+  {"from":"s_affine_invariant_submanifold_closure","to":"t_ergodic_theory_approach","role":"input","parameter_binding":{},"used_in_theorem":"s_finiteness_totally_geodesic_subvarieties"},
+  {"from":"t_ergodic_theory_approach","to":"s_finiteness_totally_geodesic_subvarieties","role":"output","parameter_binding":{},"used_in_theorem":"s_finiteness_totally_geodesic_subvarieties"},
+
+  {"from":"s_minimal_surface_equation","to":"t_equidistribution_minimal_surfaces_frame_flow","role":"input","parameter_binding":{},"used_in_theorem":"s_asymptotic_counting_minimal_surfaces"},
+  {"from":"s_grassmannian_grkn","to":"t_equidistribution_minimal_surfaces_frame_flow","role":"input","parameter_binding":{},"used_in_theorem":"s_asymptotic_counting_minimal_surfaces"},
+  {"from":"s_howe_moore_mixing","to":"t_equidistribution_minimal_surfaces_frame_flow","role":"input","parameter_binding":{},"used_in_theorem":"s_asymptotic_counting_minimal_surfaces"},
+  {"from":"t_equidistribution_minimal_surfaces_frame_flow","to":"s_asymptotic_counting_minimal_surfaces","role":"output","parameter_binding":{},"used_in_theorem":"s_asymptotic_counting_minimal_surfaces"},
+
+  {"from":"s_roelcke_precompact_polish_group","to":"t_furstenberg_correspondence_principle","role":"input","parameter_binding":{},"used_in_theorem":"s_property_t_roelcke_precompact"},
+  {"from":"s_irreducible_unitary_representation","to":"t_furstenberg_correspondence_principle","role":"input","parameter_binding":{},"used_in_theorem":"s_property_t_roelcke_precompact"},
+  {"from":"t_furstenberg_correspondence_principle","to":"s_property_t_roelcke_precompact","role":"output","parameter_binding":{},"used_in_theorem":"s_property_t_roelcke_precompact"},
+
+  {"from":"s_nip_dependent_theory","to":"t_dp_rank_valued_fields","role":"input","parameter_binding":{},"used_in_theorem":"s_classification_nip_fields_johnson"},
+  {"from":"s_henselian_valued_field","to":"t_dp_rank_valued_fields","role":"input","parameter_binding":{},"used_in_theorem":"s_classification_nip_fields_johnson"},
+  {"from":"s_vc_dimension_definition","to":"t_dp_rank_valued_fields","role":"input","parameter_binding":{},"used_in_theorem":"s_classification_nip_fields_johnson"},
+  {"from":"t_dp_rank_valued_fields","to":"s_classification_nip_fields_johnson","role":"output","parameter_binding":{},"used_in_theorem":"s_classification_nip_fields_johnson"},
+
+  {"from":"s_abstract_simplicial_complex","to":"t_local_spectral_coboundary_expansion","role":"input","parameter_binding":{},"used_in_theorem":"s_high_dimensional_expanders"},
+  {"from":"s_cheeger_inequality","to":"t_local_spectral_coboundary_expansion","role":"input","parameter_binding":{},"used_in_theorem":"s_high_dimensional_expanders"},
+  {"from":"t_local_spectral_coboundary_expansion","to":"s_high_dimensional_expanders","role":"output","parameter_binding":{},"used_in_theorem":"s_high_dimensional_expanders"},
+
+  {"from":"s_nonlinear_spectral_gap","to":"t_fourier_proof_isoperimetric","role":"input","parameter_binding":{},"used_in_theorem":"s_metric_john_theorem"},
+  {"from":"s_metric_space","to":"t_fourier_proof_isoperimetric","role":"input","parameter_binding":{},"used_in_theorem":"s_metric_john_theorem"},
+  {"from":"t_fourier_proof_isoperimetric","to":"s_metric_john_theorem","role":"output","parameter_binding":{},"used_in_theorem":"s_metric_john_theorem"},
+
+  {"from":"s_anosov_flow","to":"t_microlocal_geodesic_xray_transform","role":"input","parameter_binding":{},"used_in_theorem":"s_local_marked_length_spectrum_rigidity"},
+  {"from":"s_compact_negatively_curved_riemannian_manifold","to":"t_microlocal_geodesic_xray_transform","role":"input","parameter_binding":{},"used_in_theorem":"s_local_marked_length_spectrum_rigidity"},
+  {"from":"s_pseudodifferential_operator_definition","to":"t_microlocal_geodesic_xray_transform","role":"input","parameter_binding":{},"used_in_theorem":"s_local_marked_length_spectrum_rigidity"},
+  {"from":"t_microlocal_geodesic_xray_transform","to":"s_local_marked_length_spectrum_rigidity","role":"output","parameter_binding":{},"used_in_theorem":"s_local_marked_length_spectrum_rigidity"},
+
+  {"from":"s_incompressible_euler_equations","to":"t_self_similar_imploding_profile","role":"input","parameter_binding":{},"used_in_theorem":"s_finite_time_implosion"},
+  {"from":"s_schrodinger_equation","to":"t_self_similar_imploding_profile","role":"input","parameter_binding":{},"used_in_theorem":"s_finite_time_implosion"},
+  {"from":"t_self_similar_imploding_profile","to":"s_finite_time_implosion","role":"output","parameter_binding":{},"used_in_theorem":"s_finite_time_implosion"},
+
+  {"from":"s_kls_conjecture","to":"t_stochastic_localization_eldan","role":"input","parameter_binding":{},"used_in_theorem":"s_kls_conjecture"},
+  {"from":"s_cheeger_inequality","to":"t_stochastic_localization_eldan","role":"input","parameter_binding":{},"used_in_theorem":"s_kls_conjecture"},
+  {"from":"s_uniformly_integrable_martingale","to":"t_stochastic_localization_eldan","role":"input","parameter_binding":{},"used_in_theorem":"s_kls_conjecture"},
+  {"from":"t_stochastic_localization_eldan","to":"s_kls_conjecture","role":"output","parameter_binding":{},"used_in_theorem":"s_kls_conjecture"},
+
+  {"from":"s_etale_cohomology","to":"t_sheaf_theoretic_counting_function_fields","role":"input","parameter_binding":{},"used_in_theorem":"s_binary_additive_problems_function_fields"},
+  {"from":"s_function_field_over_fq","to":"t_sheaf_theoretic_counting_function_fields","role":"input","parameter_binding":{},"used_in_theorem":"s_binary_additive_problems_function_fields"},
+  {"from":"s_weil_conjectures_complete","to":"t_sheaf_theoretic_counting_function_fields","role":"input","parameter_binding":{},"used_in_theorem":"s_binary_additive_problems_function_fields"},
+  {"from":"t_sheaf_theoretic_counting_function_fields","to":"s_binary_additive_problems_function_fields","role":"output","parameter_binding":{},"used_in_theorem":"s_binary_additive_problems_function_fields"},
+
+  {"from":"s_tempered_distribution","to":"t_poisson_summation_for_theta","role":"input","parameter_binding":{},"used_in_theorem":"s_crystalline_measure"},
+  {"from":"s_poisson_summation_formula","to":"t_poisson_summation_for_theta","role":"input","parameter_binding":{},"used_in_theorem":"s_crystalline_measure"},
+  {"from":"s_fourier_transform_tempered_distributions","to":"t_poisson_summation_for_theta","role":"input","parameter_binding":{},"used_in_theorem":"s_crystalline_measure"},
+  {"from":"t_poisson_summation_for_theta","to":"s_crystalline_measure","role":"output","parameter_binding":{},"used_in_theorem":"s_crystalline_measure"},
+
+  {"from":"s_coxeter_group","to":"t_dual_braid_garside_method","role":"input","parameter_binding":{},"used_in_theorem":"s_kpi1_affine_artin_groups"},
+  {"from":"s_classifying_space","to":"t_dual_braid_garside_method","role":"input","parameter_binding":{},"used_in_theorem":"s_kpi1_affine_artin_groups"},
+  {"from":"t_dual_braid_garside_method","to":"s_kpi1_affine_artin_groups","role":"output","parameter_binding":{},"used_in_theorem":"s_kpi1_affine_artin_groups"},
+
+  {"from":"s_finite_field_Fq","to":"t_slice_rank_polynomial_method","role":"input","parameter_binding":{},"used_in_theorem":"s_improved_bounds_three_term_aps"},
+  {"from":"s_roth_theorem_3AP","to":"t_slice_rank_polynomial_method","role":"input","parameter_binding":{},"used_in_theorem":"s_improved_bounds_three_term_aps"},
+  {"from":"t_slice_rank_polynomial_method","to":"s_improved_bounds_three_term_aps","role":"output","parameter_binding":{},"used_in_theorem":"s_improved_bounds_three_term_aps"},
+
+  {"from":"s_q_expansion_modular_form","to":"t_arithmetic_holonomicity_bound","role":"input","parameter_binding":{},"used_in_theorem":"s_unbounded_denominators_conjecture"},
+  {"from":"s_d_finite_generating_function","to":"t_arithmetic_holonomicity_bound","role":"input","parameter_binding":{},"used_in_theorem":"s_unbounded_denominators_conjecture"},
+  {"from":"s_nevanlinna_class","to":"t_arithmetic_holonomicity_bound","role":"input","parameter_binding":{},"used_in_theorem":"s_unbounded_denominators_conjecture"},
+  {"from":"t_arithmetic_holonomicity_bound","to":"s_unbounded_denominators_conjecture","role":"output","parameter_binding":{},"used_in_theorem":"s_unbounded_denominators_conjecture"},
+
+  {"from":"s_bbgky_hierarchy","to":"t_bbgky_cumulant_expansion","role":"input","parameter_binding":{},"used_in_theorem":"s_fluctuation_theory_boltzmann_grad"},
+  {"from":"s_boltzmann_grad_scaling_limit","to":"t_bbgky_cumulant_expansion","role":"input","parameter_binding":{},"used_in_theorem":"s_fluctuation_theory_boltzmann_grad"},
+  {"from":"s_cumulant_generating_function","to":"t_bbgky_cumulant_expansion","role":"input","parameter_binding":{},"used_in_theorem":"s_fluctuation_theory_boltzmann_grad"},
+  {"from":"t_bbgky_cumulant_expansion","to":"s_fluctuation_theory_boltzmann_grad","role":"output","parameter_binding":{},"used_in_theorem":"s_fluctuation_theory_boltzmann_grad"},
+
+  {"from":"s_weyl_polynomial_equidistribution","to":"t_time_frequency_analysis","role":"input","parameter_binding":{},"used_in_theorem":"s_pointwise_ergodic_polynomial_sequences"},
+  {"from":"s_ks_entropy_invariance","to":"t_time_frequency_analysis","role":"input","parameter_binding":{},"used_in_theorem":"s_pointwise_ergodic_polynomial_sequences"},
+  {"from":"t_time_frequency_analysis","to":"s_pointwise_ergodic_polynomial_sequences","role":"output","parameter_binding":{},"used_in_theorem":"s_pointwise_ergodic_polynomial_sequences"},
+
+  {"from":"s_noetherian_ring_R","to":"t_perfectoid_almost_mathematics","role":"input","parameter_binding":{},"used_in_theorem":"s_direct_summand_conjecture"},
+  {"from":"s_regular_rings_finite_global_dimension","to":"t_perfectoid_almost_mathematics","role":"input","parameter_binding":{},"used_in_theorem":"s_direct_summand_conjecture"},
+  {"from":"t_perfectoid_almost_mathematics","to":"s_direct_summand_conjecture","role":"output","parameter_binding":{},"used_in_theorem":"s_direct_summand_conjecture"},
+
+  {"from":"s_random_matrix_theory","to":"t_strong_freeness_non_backtracking","role":"input","parameter_binding":{},"used_in_theorem":"s_strong_convergence_random_permutation_matrices"},
+  {"from":"s_free_probability_space","to":"t_strong_freeness_non_backtracking","role":"input","parameter_binding":{},"used_in_theorem":"s_strong_convergence_random_permutation_matrices"},
+  {"from":"s_spectral_radius_formula","to":"t_strong_freeness_non_backtracking","role":"input","parameter_binding":{},"used_in_theorem":"s_strong_convergence_random_permutation_matrices"},
+  {"from":"t_strong_freeness_non_backtracking","to":"s_strong_convergence_random_permutation_matrices","role":"output","parameter_binding":{},"used_in_theorem":"s_strong_convergence_random_permutation_matrices"},
+
+  {"from":"s_undecidability_of_halting","to":"t_reduction_to_K","role":"input","parameter_binding":{},"used_in_theorem":"s_mip_star_equals_re"},
+  {"from":"s_connes_embedding_statement","to":"t_reduction_to_K","role":"input","parameter_binding":{},"used_in_theorem":"s_mip_star_equals_re"},
+  {"from":"t_reduction_to_K","to":"s_mip_star_equals_re","role":"output","parameter_binding":{},"used_in_theorem":"s_mip_star_equals_re"},
+  {"from":"t_reduction_to_K","to":"s_refutation_connes_embedding","role":"output","parameter_binding":{},"used_in_theorem":"s_mip_star_equals_re"},
+
+  {"from":"s_periodic_floer_homology_spectral_invariants","to":"t_minimax_methods_critical_points","role":"input","parameter_binding":{},"used_in_theorem":"s_non_simplicity_area_preserving_homeo_s2"},
+  {"from":"s_symplectic_manifold","to":"t_minimax_methods_critical_points","role":"input","parameter_binding":{},"used_in_theorem":"s_non_simplicity_area_preserving_homeo_s2"},
+  {"from":"t_minimax_methods_critical_points","to":"s_non_simplicity_area_preserving_homeo_s2","role":"output","parameter_binding":{},"used_in_theorem":"s_non_simplicity_area_preserving_homeo_s2"},
+
+  {"from":"s_schrodinger_equation","to":"t_polynomial_partitioning_schrodinger_maximal","role":"input","parameter_binding":{},"used_in_theorem":"s_pointwise_convergence_schrodinger_carleson"},
+  {"from":"s_strichartz_estimates_schrodinger","to":"t_polynomial_partitioning_schrodinger_maximal","role":"input","parameter_binding":{},"used_in_theorem":"s_pointwise_convergence_schrodinger_carleson"},
+  {"from":"t_polynomial_partitioning_schrodinger_maximal","to":"s_pointwise_convergence_schrodinger_carleson","role":"output","parameter_binding":{},"used_in_theorem":"s_pointwise_convergence_schrodinger_carleson"},
+
+  {"from":"s_free_group","to":"t_word_construction_interpretation","role":"input","parameter_binding":{},"used_in_theorem":"s_well_ordering_growth_rates_hyperbolic"},
+  {"from":"s_well_ordered_set","to":"t_word_construction_interpretation","role":"input","parameter_binding":{},"used_in_theorem":"s_well_ordering_growth_rates_hyperbolic"},
+  {"from":"t_word_construction_interpretation","to":"s_well_ordering_growth_rates_hyperbolic","role":"output","parameter_binding":{},"used_in_theorem":"s_well_ordering_growth_rates_hyperbolic"},
+
+  {"from":"s_infinitely_many_woodin_cardinals","to":"t_pmax_stationary_tower_forcing","role":"input","parameter_binding":{},"used_in_theorem":"s_aspero_schindler_mm_implies_star"},
+  {"from":"s_cohen_forcing","to":"t_pmax_stationary_tower_forcing","role":"input","parameter_binding":{},"used_in_theorem":"s_aspero_schindler_mm_implies_star"},
+  {"from":"s_solovay_stationary_splitting","to":"t_pmax_stationary_tower_forcing","role":"input","parameter_binding":{},"used_in_theorem":"s_aspero_schindler_mm_implies_star"},
+  {"from":"t_pmax_stationary_tower_forcing","to":"s_aspero_schindler_mm_implies_star","role":"output","parameter_binding":{},"used_in_theorem":"s_aspero_schindler_mm_implies_star"},
+
+  {"from":"s_symmetric_monoidal_category","to":"t_modular_representation_theory","role":"input","parameter_binding":{},"used_in_theorem":"s_classification_symmetric_tensor_categories_char_p"},
+  {"from":"s_verlinde_category_ver_p","to":"t_modular_representation_theory","role":"input","parameter_binding":{},"used_in_theorem":"s_classification_symmetric_tensor_categories_char_p"},
+  {"from":"s_frobenius_endomorphism","to":"t_modular_representation_theory","role":"input","parameter_binding":{},"used_in_theorem":"s_classification_symmetric_tensor_categories_char_p"},
+  {"from":"t_modular_representation_theory","to":"s_classification_symmetric_tensor_categories_char_p","role":"output","parameter_binding":{},"used_in_theorem":"s_classification_symmetric_tensor_categories_char_p"},
+
+  {"from":"s_navier_stokes_equations","to":"t_unstable_self_similar_profile_method","role":"input","parameter_binding":{},"used_in_theorem":"s_non_uniqueness_leray_hopf_forced_ns"},
+  {"from":"s_leray_hopf_weak_solutions","to":"t_unstable_self_similar_profile_method","role":"input","parameter_binding":{},"used_in_theorem":"s_non_uniqueness_leray_hopf_forced_ns"},
+  {"from":"t_unstable_self_similar_profile_method","to":"s_non_uniqueness_leray_hopf_forced_ns","role":"output","parameter_binding":{},"used_in_theorem":"s_non_uniqueness_leray_hopf_forced_ns"},
+
+  {"from":"s_etale_cohomology","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_twisted_lang_weil_estimate"},
+  {"from":"s_definable_set","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_twisted_lang_weil_estimate"},
+  {"from":"s_hasse_weil_bound","to":"t_grothendieck_cohomology_methods","role":"input","parameter_binding":{},"used_in_theorem":"s_twisted_lang_weil_estimate"},
+  {"from":"t_grothendieck_cohomology_methods","to":"s_twisted_lang_weil_estimate","role":"output","parameter_binding":{},"used_in_theorem":"s_twisted_lang_weil_estimate"},
+
+  {"from":"s_percolation_model","to":"t_rsw_star_triangle_method","role":"input","parameter_binding":{},"used_in_theorem":"s_rotational_invariance_critical_percolation"},
+  {"from":"s_yang_baxter_equation","to":"t_rsw_star_triangle_method","role":"input","parameter_binding":{},"used_in_theorem":"s_rotational_invariance_critical_percolation"},
+  {"from":"s_smirnov_percolation_theorem","to":"t_rsw_star_triangle_method","role":"input","parameter_binding":{},"used_in_theorem":"s_rotational_invariance_critical_percolation"},
+  {"from":"t_rsw_star_triangle_method","to":"s_rotational_invariance_critical_percolation","role":"output","parameter_binding":{},"used_in_theorem":"s_rotational_invariance_critical_percolation"}
+]

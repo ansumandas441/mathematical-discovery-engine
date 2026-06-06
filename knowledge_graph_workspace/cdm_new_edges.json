@@ -1,0 +1,1738 @@
+[
+  {
+    "id": "e_25718",
+    "from": "s_moduli_space_stable_maps",
+    "to": "t_mixed_spin_p_field",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25719",
+    "from": "s_virtual_fundamental_class",
+    "to": "t_mixed_spin_p_field",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25720",
+    "from": "s_quintic_calabi_yau_threefold",
+    "to": "t_mixed_spin_p_field",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25721",
+    "from": "s_bcov_holomorphic_anomaly_equation",
+    "to": "t_mixed_spin_p_field",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25722",
+    "from": "t_mixed_spin_p_field",
+    "to": "s_bcov_holomorphic_anomaly_equation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25723",
+    "from": "t_mixed_spin_p_field",
+    "to": "s_yamaguchi_yau_finiteness_conjecture",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25724",
+    "from": "t_mixed_spin_p_field",
+    "to": "s_structure_theorem_higher_genus_gw_quintic",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25725",
+    "from": "s_virtual_fundamental_class",
+    "to": "t_virtual_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25726",
+    "from": "s_moduli_space_stable_maps",
+    "to": "t_virtual_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25727",
+    "from": "t_virtual_localization",
+    "to": "s_bcov_holomorphic_anomaly_equation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25728",
+    "from": "s_yamaguchi_yau_finiteness_conjecture",
+    "to": "t_mixed_spin_p_field",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25729",
+    "from": "s_virtual_fundamental_class",
+    "to": "t_localization_on_moduli_spaces",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25730",
+    "from": "t_localization_on_moduli_spaces",
+    "to": "s_structure_theorem_higher_genus_gw_quintic",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_structure_theorem_higher_genus_gw_quintic"
+  },
+  {
+    "id": "e_25731",
+    "from": "s_yau_conjecture_infinitely_many_minimal_hypersurfaces",
+    "to": "t_almgren_pitts_min_max",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_marques_neves_infinitely_many_minimal_hypersurfaces"
+  },
+  {
+    "id": "e_25732",
+    "from": "s_volume_spectrum_p_widths",
+    "to": "t_almgren_pitts_min_max",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_marques_neves_infinitely_many_minimal_hypersurfaces"
+  },
+  {
+    "id": "e_25733",
+    "from": "t_almgren_pitts_min_max",
+    "to": "s_marques_neves_infinitely_many_minimal_hypersurfaces",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_marques_neves_infinitely_many_minimal_hypersurfaces"
+  },
+  {
+    "id": "e_25734",
+    "from": "s_volume_spectrum_p_widths",
+    "to": "t_almgren_pitts_min_max",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_law_volume_spectrum"
+  },
+  {
+    "id": "e_25735",
+    "from": "t_almgren_pitts_min_max",
+    "to": "s_weyl_law_volume_spectrum",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_law_volume_spectrum"
+  },
+  {
+    "id": "e_25736",
+    "from": "s_weyl_law_volume_spectrum",
+    "to": "t_almgren_pitts_min_max",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_equidistribution_minimal_hypersurfaces_mns"
+  },
+  {
+    "id": "e_25737",
+    "from": "s_volume_spectrum_p_widths",
+    "to": "t_almgren_pitts_min_max",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_equidistribution_minimal_hypersurfaces_mns"
+  },
+  {
+    "id": "e_25738",
+    "from": "t_almgren_pitts_min_max",
+    "to": "s_equidistribution_minimal_hypersurfaces_mns",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_equidistribution_minimal_hypersurfaces_mns"
+  },
+  {
+    "id": "e_25739",
+    "from": "s_weyl_law_volume_spectrum",
+    "to": "t_almgren_pitts_min_max",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_generic_density_minimal_hypersurfaces_imn"
+  },
+  {
+    "id": "e_25740",
+    "from": "t_almgren_pitts_min_max",
+    "to": "s_generic_density_minimal_hypersurfaces_imn",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_generic_density_minimal_hypersurfaces_imn"
+  },
+  {
+    "id": "e_25741",
+    "from": "t_almgren_pitts_min_max",
+    "to": "s_volume_spectrum_p_widths",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25742",
+    "from": "s_probabilistically_checkable_proof",
+    "to": "t_dictatorship_test",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25743",
+    "from": "s_unique_games_conjecture",
+    "to": "t_dictatorship_test",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25744",
+    "from": "t_dictatorship_test",
+    "to": "s_two_to_two_games_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_two_to_two_games_theorem"
+  },
+  {
+    "id": "e_25745",
+    "from": "s_grassmann_graph_expansion_theorem",
+    "to": "t_dictatorship_test",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_two_to_two_games_theorem"
+  },
+  {
+    "id": "e_25746",
+    "from": "s_grassmann_graph",
+    "to": "t_dictatorship_test",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_two_to_two_games_theorem"
+  },
+  {
+    "id": "e_25747",
+    "from": "s_grassmann_graph",
+    "to": "t_expander_mixing_technique",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_grassmann_graph_expansion_theorem"
+  },
+  {
+    "id": "e_25748",
+    "from": "t_expander_mixing_technique",
+    "to": "s_grassmann_graph_expansion_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_grassmann_graph_expansion_theorem"
+  },
+  {
+    "id": "e_25749",
+    "from": "t_dictatorship_test",
+    "to": "s_unique_games_conjecture",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25750",
+    "from": "s_probabilistically_checkable_proof",
+    "to": "t_dictatorship_test",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_grassmann_graph_expansion_theorem"
+  },
+  {
+    "id": "e_25752",
+    "from": "s_arithmetic_spectral_transition_amo",
+    "to": "t_svd_and_spectral_decomposition",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25753",
+    "from": "t_svd_and_spectral_decomposition",
+    "to": "s_universality_critical_almost_mathieu",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_universality_critical_almost_mathieu"
+  },
+  {
+    "id": "e_25754",
+    "from": "s_soergel_bimodule",
+    "to": "t_hodge_riemann_relations_combinatorial",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25755",
+    "from": "s_parity_sheaf",
+    "to": "t_hodge_riemann_relations_combinatorial",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25756",
+    "from": "t_hodge_riemann_relations_combinatorial",
+    "to": "s_p_canonical_basis",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25757",
+    "from": "s_p_canonical_basis",
+    "to": "t_hodge_riemann_relations_combinatorial",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_williamson_counterexamples_modular_bounds"
+  },
+  {
+    "id": "e_25758",
+    "from": "s_lusztig_modular_representation_conjecture",
+    "to": "t_hodge_riemann_relations_combinatorial",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_williamson_counterexamples_modular_bounds"
+  },
+  {
+    "id": "e_25759",
+    "from": "t_hodge_riemann_relations_combinatorial",
+    "to": "s_williamson_counterexamples_modular_bounds",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_williamson_counterexamples_modular_bounds"
+  },
+  {
+    "id": "e_25760",
+    "from": "s_parity_sheaf",
+    "to": "t_hodge_riemann_relations_combinatorial",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_williamson_counterexamples_modular_bounds"
+  },
+  {
+    "id": "e_25761",
+    "from": "s_symmetry_protected_topological_phase",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ogata_classification_spt_phases"
+  },
+  {
+    "id": "e_25762",
+    "from": "s_gapped_ground_state_phase_equivalence",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ogata_classification_spt_phases"
+  },
+  {
+    "id": "e_25763",
+    "from": "s_split_property_spin_chains",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ogata_classification_spt_phases"
+  },
+  {
+    "id": "e_25764",
+    "from": "s_matrix_product_state",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ogata_classification_spt_phases"
+  },
+  {
+    "id": "e_25765",
+    "from": "t_gns_construction_method",
+    "to": "s_group_cohomology_invariant_spt",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ogata_classification_spt_phases"
+  },
+  {
+    "id": "e_25766",
+    "from": "t_gns_construction_method",
+    "to": "s_ogata_classification_spt_phases",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ogata_classification_spt_phases"
+  },
+  {
+    "id": "e_25767",
+    "from": "s_lieb_robinson_bound",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ogata_classification_spt_phases"
+  },
+  {
+    "id": "e_25768",
+    "from": "s_group_cohomology_invariant_spt",
+    "to": "t_gns_construction_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ogata_classification_spt_phases"
+  },
+  {
+    "id": "e_25769",
+    "from": "s_kerr_de_sitter_spacetime",
+    "to": "t_microlocal_stationary_wave_operators",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hintz_vasy_kerr_de_sitter_stability"
+  },
+  {
+    "id": "e_25770",
+    "from": "s_black_hole_stability_problem",
+    "to": "t_microlocal_stationary_wave_operators",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hintz_vasy_kerr_de_sitter_stability"
+  },
+  {
+    "id": "e_25771",
+    "from": "s_quasinormal_modes_black_holes",
+    "to": "t_microlocal_stationary_wave_operators",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hintz_vasy_kerr_de_sitter_stability"
+  },
+  {
+    "id": "e_25772",
+    "from": "t_microlocal_stationary_wave_operators",
+    "to": "s_quasinormal_modes_black_holes",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25773",
+    "from": "t_microlocal_stationary_wave_operators",
+    "to": "s_hintz_vasy_kerr_de_sitter_stability",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hintz_vasy_kerr_de_sitter_stability"
+  },
+  {
+    "id": "e_25774",
+    "from": "s_kerr_de_sitter_spacetime",
+    "to": "t_redshift_effect_dafermos_rodnianski",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hintz_vasy_kerr_de_sitter_stability"
+  },
+  {
+    "id": "e_25775",
+    "from": "t_redshift_effect_dafermos_rodnianski",
+    "to": "s_hintz_vasy_kerr_de_sitter_stability",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hintz_vasy_kerr_de_sitter_stability"
+  },
+  {
+    "id": "e_25776",
+    "from": "s_kerr_de_sitter_spacetime",
+    "to": "t_microlocal_analysis",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hintz_vasy_kerr_de_sitter_stability"
+  },
+  {
+    "id": "e_25777",
+    "from": "s_black_hole_stability_problem",
+    "to": "t_quasilinear_energy_estimates",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hintz_vasy_kerr_de_sitter_stability"
+  },
+  {
+    "id": "e_25778",
+    "from": "t_quasilinear_energy_estimates",
+    "to": "s_hintz_vasy_kerr_de_sitter_stability",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_hintz_vasy_kerr_de_sitter_stability"
+  },
+  {
+    "id": "e_25779",
+    "from": "s_painleve_conjecture_noncollision_singularities",
+    "to": "t_near_collision_hyperbolic_dynamics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_xue_painleve_4body"
+  },
+  {
+    "id": "e_25780",
+    "from": "s_von_zeipel_theorem_singularities",
+    "to": "t_near_collision_hyperbolic_dynamics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_xue_painleve_4body"
+  },
+  {
+    "id": "e_25781",
+    "from": "t_near_collision_hyperbolic_dynamics",
+    "to": "s_xue_painleve_4body",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_xue_painleve_4body"
+  },
+  {
+    "id": "e_25782",
+    "from": "t_near_collision_hyperbolic_dynamics",
+    "to": "s_xia_noncollision_singularities_5body",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_xia_noncollision_singularities_5body"
+  },
+  {
+    "id": "e_25783",
+    "from": "s_painleve_conjecture_noncollision_singularities",
+    "to": "t_near_collision_hyperbolic_dynamics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_xia_noncollision_singularities_5body"
+  },
+  {
+    "id": "e_25784",
+    "from": "s_von_zeipel_theorem_singularities",
+    "to": "t_near_collision_hyperbolic_dynamics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_xia_noncollision_singularities_5body"
+  },
+  {
+    "id": "e_25785",
+    "from": "s_phi4_4_euclidean_field_theory",
+    "to": "t_random_current_representation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aizenman_frohlich_tree_graph_inequality"
+  },
+  {
+    "id": "e_25786",
+    "from": "t_random_current_representation",
+    "to": "s_aizenman_frohlich_tree_graph_inequality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aizenman_frohlich_tree_graph_inequality"
+  },
+  {
+    "id": "e_25787",
+    "from": "s_aizenman_frohlich_tree_graph_inequality",
+    "to": "t_random_current_representation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_triviality_scaling_limit_d_ge_4"
+  },
+  {
+    "id": "e_25788",
+    "from": "t_random_current_representation",
+    "to": "s_triviality_scaling_limit_d_ge_4",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_triviality_scaling_limit_d_ge_4"
+  },
+  {
+    "id": "e_25789",
+    "from": "s_aizenman_frohlich_tree_graph_inequality",
+    "to": "t_random_current_representation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aizenman_duminil_copin_marginal_triviality_4d"
+  },
+  {
+    "id": "e_25790",
+    "from": "s_phi4_4_euclidean_field_theory",
+    "to": "t_random_current_representation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aizenman_duminil_copin_marginal_triviality_4d"
+  },
+  {
+    "id": "e_25791",
+    "from": "t_random_current_representation",
+    "to": "s_aizenman_duminil_copin_marginal_triviality_4d",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_aizenman_duminil_copin_marginal_triviality_4d"
+  },
+  {
+    "id": "e_25792",
+    "from": "s_tame_elliptic_regular_pair",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supercuspidality_yu_representations_fintzen"
+  },
+  {
+    "id": "e_25793",
+    "from": "s_twisted_levi_sequence",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supercuspidality_yu_representations_fintzen"
+  },
+  {
+    "id": "e_25794",
+    "from": "s_moy_prasad_filtration",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supercuspidality_yu_representations_fintzen"
+  },
+  {
+    "id": "e_25795",
+    "from": "s_parahoric_subgroup_bruhat_tits_building",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supercuspidality_yu_representations_fintzen"
+  },
+  {
+    "id": "e_25796",
+    "from": "s_depth_zero_supercuspidal_representation",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supercuspidality_yu_representations_fintzen"
+  },
+  {
+    "id": "e_25797",
+    "from": "t_yu_construction_supercuspidals",
+    "to": "s_supercuspidal_representation",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25798",
+    "from": "t_yu_construction_supercuspidals",
+    "to": "s_supercuspidality_yu_representations_fintzen",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supercuspidality_yu_representations_fintzen"
+  },
+  {
+    "id": "e_25799",
+    "from": "t_yu_construction_supercuspidals",
+    "to": "s_fintzen_exhaustion_tame_supercuspidals",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fintzen_exhaustion_tame_supercuspidals"
+  },
+  {
+    "id": "e_25800",
+    "from": "s_supercuspidal_representation",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fintzen_exhaustion_tame_supercuspidals"
+  },
+  {
+    "id": "e_25801",
+    "from": "s_admissible_representation_p_adic",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fintzen_exhaustion_tame_supercuspidals"
+  },
+  {
+    "id": "e_25802",
+    "from": "s_smooth_representation_p_adic_group",
+    "to": "t_parabolic_induction_p_adic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25803",
+    "from": "s_reductive_p_adic_group",
+    "to": "t_parabolic_induction_p_adic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25804",
+    "from": "t_parabolic_induction_p_adic",
+    "to": "s_admissible_representation_p_adic",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25805",
+    "from": "s_supercuspidal_representation",
+    "to": "t_parabolic_induction_p_adic",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25806",
+    "from": "s_moy_prasad_filtration",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25807",
+    "from": "s_depth_of_a_representation",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25808",
+    "from": "s_type_bushnell_kutzko",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25809",
+    "from": "s_fintzen_kaletha_spice_quadratic_twist",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_adler_spice_character_formula"
+  },
+  {
+    "id": "e_25810",
+    "from": "t_yu_construction_supercuspidals",
+    "to": "s_adler_spice_character_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_adler_spice_character_formula"
+  },
+  {
+    "id": "e_25811",
+    "from": "s_tame_elliptic_regular_pair",
+    "to": "t_harish_chandra_projection_rho_shift",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_adler_spice_character_formula"
+  },
+  {
+    "id": "e_25812",
+    "from": "t_harish_chandra_projection_rho_shift",
+    "to": "s_adler_spice_character_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_adler_spice_character_formula"
+  },
+  {
+    "id": "e_25813",
+    "from": "s_supercuspidal_representation",
+    "to": "t_yu_construction_supercuspidals",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_local_langlands_p_adic_groups"
+  },
+  {
+    "id": "e_25814",
+    "from": "t_yu_construction_supercuspidals",
+    "to": "s_local_langlands_p_adic_groups",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25815",
+    "from": "t_parabolic_induction_p_adic",
+    "to": "s_local_langlands_p_adic_groups",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25816",
+    "from": "s_mixed_quantum_state_density_matrix",
+    "to": "t_weak_schur_sampling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25817",
+    "from": "s_quantum_spectrum_estimation_problem",
+    "to": "t_weak_schur_sampling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25818",
+    "from": "t_weak_schur_sampling",
+    "to": "s_schur_weyl_distribution",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25819",
+    "from": "s_schur_weyl_duality",
+    "to": "t_weak_schur_sampling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25820",
+    "from": "s_mixed_quantum_state_density_matrix",
+    "to": "t_empirical_young_diagram_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimal_sample_complexity_state_tomography"
+  },
+  {
+    "id": "e_25821",
+    "from": "s_schur_weyl_distribution",
+    "to": "t_empirical_young_diagram_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimal_sample_complexity_state_tomography"
+  },
+  {
+    "id": "e_25822",
+    "from": "s_quantum_state_tomography_problem",
+    "to": "t_empirical_young_diagram_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimal_sample_complexity_state_tomography"
+  },
+  {
+    "id": "e_25823",
+    "from": "t_empirical_young_diagram_algorithm",
+    "to": "s_optimal_sample_complexity_state_tomography",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimal_sample_complexity_state_tomography"
+  },
+  {
+    "id": "e_25824",
+    "from": "t_empirical_young_diagram_algorithm",
+    "to": "s_pure_state_tomography_sample_complexity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_pure_state_tomography_sample_complexity"
+  },
+  {
+    "id": "e_25825",
+    "from": "t_empirical_young_diagram_algorithm",
+    "to": "s_quantum_spectrum_estimation_problem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25826",
+    "from": "s_schur_weyl_distribution",
+    "to": "t_weak_schur_sampling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rsk_realization_schur_weyl_distribution"
+  },
+  {
+    "id": "e_25827",
+    "from": "t_weak_schur_sampling",
+    "to": "s_rsk_realization_schur_weyl_distribution",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rsk_realization_schur_weyl_distribution"
+  },
+  {
+    "id": "e_25828",
+    "from": "s_schur_weyl_distribution",
+    "to": "t_weak_schur_sampling",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_max_schur_weyl_row_top_eigenvalue"
+  },
+  {
+    "id": "e_25829",
+    "from": "t_weak_schur_sampling",
+    "to": "s_max_schur_weyl_row_top_eigenvalue",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_max_schur_weyl_row_top_eigenvalue"
+  },
+  {
+    "id": "e_25830",
+    "from": "s_schur_weyl_distribution",
+    "to": "t_empirical_young_diagram_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_quantum_identity_testing_bounds"
+  },
+  {
+    "id": "e_25831",
+    "from": "t_empirical_young_diagram_algorithm",
+    "to": "s_quantum_identity_testing_bounds",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_quantum_identity_testing_bounds"
+  },
+  {
+    "id": "e_25832",
+    "from": "s_young_diagram",
+    "to": "t_empirical_young_diagram_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_optimal_sample_complexity_state_tomography"
+  },
+  {
+    "id": "e_25833",
+    "from": "s_p_adic_galois_representation",
+    "to": "t_taylor_wiles_kisin_patching",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_automorphy_lifting_theorem"
+  },
+  {
+    "id": "e_25834",
+    "from": "s_regular_algebraic_cuspidal_automorphic_representation",
+    "to": "t_taylor_wiles_kisin_patching",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_automorphy_lifting_theorem"
+  },
+  {
+    "id": "e_25835",
+    "from": "s_deformation_ring_R_to_T_map",
+    "to": "t_taylor_wiles_kisin_patching",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_automorphy_lifting_theorem"
+  },
+  {
+    "id": "e_25836",
+    "from": "t_taylor_wiles_kisin_patching",
+    "to": "s_automorphy_lifting_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_automorphy_lifting_theorem"
+  },
+  {
+    "id": "e_25837",
+    "from": "s_automorphy_lifting_theorem",
+    "to": "t_taylor_wiles_kisin_patching",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_newton_thorne_symmetric_power_functoriality"
+  },
+  {
+    "id": "e_25838",
+    "from": "s_symmetric_power_lifting_sym_m",
+    "to": "t_taylor_wiles_kisin_patching",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_newton_thorne_symmetric_power_functoriality"
+  },
+  {
+    "id": "e_25839",
+    "from": "t_taylor_wiles_kisin_patching",
+    "to": "s_newton_thorne_symmetric_power_functoriality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_newton_thorne_symmetric_power_functoriality"
+  },
+  {
+    "id": "e_25840",
+    "from": "s_coleman_mazur_eigencurve",
+    "to": "t_analytic_continuation_functoriality_eigencurve",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_newton_thorne_symmetric_power_functoriality"
+  },
+  {
+    "id": "e_25841",
+    "from": "s_overconvergent_finite_slope_eigenform",
+    "to": "t_analytic_continuation_functoriality_eigencurve",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_newton_thorne_symmetric_power_functoriality"
+  },
+  {
+    "id": "e_25842",
+    "from": "s_pseudo_representation_pseudocharacter",
+    "to": "t_analytic_continuation_functoriality_eigencurve",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_newton_thorne_symmetric_power_functoriality"
+  },
+  {
+    "id": "e_25843",
+    "from": "t_analytic_continuation_functoriality_eigencurve",
+    "to": "s_newton_thorne_symmetric_power_functoriality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_newton_thorne_symmetric_power_functoriality"
+  },
+  {
+    "id": "e_25844",
+    "from": "s_symmetric_power_lifting_sym_m",
+    "to": "t_brauer_induction_l_functions",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sato_tate_conjecture"
+  },
+  {
+    "id": "e_25845",
+    "from": "s_symmetric_power_l_functions",
+    "to": "t_brauer_induction_l_functions",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sato_tate_conjecture"
+  },
+  {
+    "id": "e_25846",
+    "from": "t_brauer_induction_l_functions",
+    "to": "s_sato_tate_conjecture",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sato_tate_conjecture"
+  },
+  {
+    "id": "e_25847",
+    "from": "s_newton_thorne_symmetric_power_functoriality",
+    "to": "t_brauer_induction_l_functions",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sato_tate_conjecture"
+  },
+  {
+    "id": "e_25848",
+    "from": "s_symmetric_power_l_functions",
+    "to": "t_brauer_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sato_tate_conjecture"
+  },
+  {
+    "id": "e_25849",
+    "from": "t_brauer_induction",
+    "to": "s_sato_tate_conjecture",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sato_tate_conjecture"
+  },
+  {
+    "id": "e_25850",
+    "from": "s_de_rham_potentially_semistable_representation",
+    "to": "t_taylor_wiles_kisin_patching",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fontaine_mazur_conjecture"
+  },
+  {
+    "id": "e_25851",
+    "from": "s_algebraic_galois_representation",
+    "to": "t_taylor_wiles_kisin_patching",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_thorne_reciprocity_conjecture"
+  },
+  {
+    "id": "e_25852",
+    "from": "t_taylor_wiles_kisin_patching",
+    "to": "s_fontaine_mazur_conjecture",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25853",
+    "from": "t_taylor_wiles_kisin_patching",
+    "to": "s_thorne_reciprocity_conjecture",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25854",
+    "from": "t_analytic_continuation_functoriality_eigencurve",
+    "to": "s_coleman_mazur_eigencurve",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25855",
+    "from": "t_taylor_wiles_kisin_patching",
+    "to": "s_symmetric_power_lifting_sym_m",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25856",
+    "from": "s_news_tensor",
+    "to": "t_quasilinear_energy_estimates",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bondi_mass_loss_formula"
+  },
+  {
+    "id": "e_25857",
+    "from": "s_bondi_sachs_energy_momentum",
+    "to": "t_quasilinear_energy_estimates",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bondi_mass_loss_formula"
+  },
+  {
+    "id": "e_25858",
+    "from": "t_quasilinear_energy_estimates",
+    "to": "s_bondi_mass_loss_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bondi_mass_loss_formula"
+  },
+  {
+    "id": "e_25859",
+    "from": "s_optimal_isometric_embedding",
+    "to": "t_minimax_methods_critical_points",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supertranslation_invariance_cwy_angular_momentum"
+  },
+  {
+    "id": "e_25860",
+    "from": "s_wang_yau_quasilocal_mass",
+    "to": "t_minimax_methods_critical_points",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supertranslation_invariance_cwy_angular_momentum"
+  },
+  {
+    "id": "e_25861",
+    "from": "s_chen_wang_yau_angular_momentum",
+    "to": "t_minimax_methods_critical_points",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supertranslation_invariance_cwy_angular_momentum"
+  },
+  {
+    "id": "e_25862",
+    "from": "s_supertranslation_ambiguity_angular_momentum",
+    "to": "t_minimax_methods_critical_points",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supertranslation_invariance_cwy_angular_momentum"
+  },
+  {
+    "id": "e_25863",
+    "from": "t_minimax_methods_critical_points",
+    "to": "s_supertranslation_invariance_cwy_angular_momentum",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supertranslation_invariance_cwy_angular_momentum"
+  },
+  {
+    "id": "e_25864",
+    "from": "t_minimax_methods_critical_points",
+    "to": "s_optimal_isometric_embedding",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25865",
+    "from": "t_minimax_methods_critical_points",
+    "to": "s_wang_yau_quasilocal_mass",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25866",
+    "from": "t_minimax_methods_critical_points",
+    "to": "s_chen_wang_yau_angular_momentum",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25867",
+    "from": "s_optimal_isometric_embedding",
+    "to": "t_minimax_methods_critical_points",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25868",
+    "from": "t_minimax_methods_critical_points",
+    "to": "s_supertranslation_invariant_center_of_mass",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25869",
+    "from": "t_minimax_methods_critical_points",
+    "to": "s_angular_momentum_at_null_infinity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25870",
+    "from": "s_future_null_infinity",
+    "to": "t_minimax_methods_critical_points",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supertranslation_invariance_cwy_angular_momentum"
+  },
+  {
+    "id": "e_25871",
+    "from": "s_bondi_metzner_sachs_group",
+    "to": "t_minimax_methods_critical_points",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supertranslation_invariance_cwy_angular_momentum"
+  },
+  {
+    "id": "e_25872",
+    "from": "s_supertranslation",
+    "to": "t_minimax_methods_critical_points",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_supertranslation_invariance_cwy_angular_momentum"
+  },
+  {
+    "id": "e_25873",
+    "from": "s_future_null_infinity",
+    "to": "t_quasilinear_energy_estimates",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bondi_mass_loss_formula"
+  },
+  {
+    "id": "e_25874",
+    "from": "s_supertranslation",
+    "to": "t_quasilinear_energy_estimates",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bondi_mass_loss_formula"
+  },
+  {
+    "id": "e_25875",
+    "from": "s_basis_generating_polynomial_matroid",
+    "to": "t_hodge_riemann_relations_combinatorial",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anari_liu_oveisgharan_vinzant_log_concavity"
+  },
+  {
+    "id": "e_25876",
+    "from": "s_lorentzian_polynomial",
+    "to": "t_hodge_riemann_relations_combinatorial",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anari_liu_oveisgharan_vinzant_log_concavity"
+  },
+  {
+    "id": "e_25877",
+    "from": "t_hodge_riemann_relations_combinatorial",
+    "to": "s_completely_log_concave_polynomial",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anari_liu_oveisgharan_vinzant_log_concavity"
+  },
+  {
+    "id": "e_25878",
+    "from": "t_hodge_riemann_relations_combinatorial",
+    "to": "s_anari_liu_oveisgharan_vinzant_log_concavity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_anari_liu_oveisgharan_vinzant_log_concavity"
+  },
+  {
+    "id": "e_25879",
+    "from": "s_completely_log_concave_polynomial",
+    "to": "t_local_spectral_coboundary_expansion",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_matroid_expansion_conjecture_mihail_sudan"
+  },
+  {
+    "id": "e_25880",
+    "from": "s_local_spectral_expander",
+    "to": "t_local_spectral_coboundary_expansion",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_matroid_expansion_conjecture_mihail_sudan"
+  },
+  {
+    "id": "e_25881",
+    "from": "t_local_spectral_coboundary_expansion",
+    "to": "s_matroid_expansion_conjecture_mihail_sudan",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_matroid_expansion_conjecture_mihail_sudan"
+  },
+  {
+    "id": "e_25882",
+    "from": "t_local_spectral_coboundary_expansion",
+    "to": "s_local_spectral_expander",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25883",
+    "from": "s_local_spectral_expander",
+    "to": "t_spectral_independence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mihail_vazirani_matroid_sampling"
+  },
+  {
+    "id": "e_25884",
+    "from": "s_matroid_expansion_conjecture_mihail_sudan",
+    "to": "t_spectral_independence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mihail_vazirani_matroid_sampling"
+  },
+  {
+    "id": "e_25885",
+    "from": "t_spectral_independence",
+    "to": "s_mihail_vazirani_matroid_sampling",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mihail_vazirani_matroid_sampling"
+  },
+  {
+    "id": "e_25886",
+    "from": "s_completely_log_concave_polynomial",
+    "to": "t_spectral_independence",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_mihail_vazirani_matroid_sampling"
+  },
+  {
+    "id": "e_25887",
+    "from": "s_basis_generating_polynomial_matroid",
+    "to": "t_local_spectral_coboundary_expansion",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_matroid_expansion_conjecture_mihail_sudan"
+  },
+  {
+    "id": "e_25888",
+    "from": "s_dimer_model",
+    "to": "t_transfer_matrix_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_limit_shape_variational_principle_tilings"
+  },
+  {
+    "id": "e_25889",
+    "from": "s_random_lozenge_tiling",
+    "to": "t_transfer_matrix_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_limit_shape_variational_principle_tilings"
+  },
+  {
+    "id": "e_25890",
+    "from": "t_transfer_matrix_method",
+    "to": "s_limit_shape_variational_principle_tilings",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_limit_shape_variational_principle_tilings"
+  },
+  {
+    "id": "e_25891",
+    "from": "t_transfer_matrix_method",
+    "to": "s_arctic_circle_frozen_boundary",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25892",
+    "from": "s_random_lozenge_tiling",
+    "to": "t_transfer_matrix_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_free_field_fluctuations_tilings"
+  },
+  {
+    "id": "e_25893",
+    "from": "s_limit_shape_variational_principle_tilings",
+    "to": "t_transfer_matrix_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_free_field_fluctuations_tilings"
+  },
+  {
+    "id": "e_25894",
+    "from": "t_transfer_matrix_method",
+    "to": "s_gaussian_free_field_fluctuations_tilings",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gaussian_free_field_fluctuations_tilings"
+  },
+  {
+    "id": "e_25895",
+    "from": "s_dimer_model",
+    "to": "t_nonlinear_steepest_descent_rh",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_airy_line_ensemble_edge_universality"
+  },
+  {
+    "id": "e_25896",
+    "from": "s_arctic_circle_frozen_boundary",
+    "to": "t_nonlinear_steepest_descent_rh",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_airy_line_ensemble_edge_universality"
+  },
+  {
+    "id": "e_25897",
+    "from": "t_nonlinear_steepest_descent_rh",
+    "to": "s_airy_line_ensemble_edge_universality",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_airy_line_ensemble_edge_universality"
+  },
+  {
+    "id": "e_25898",
+    "from": "s_dimer_model",
+    "to": "t_nonlinear_steepest_descent_rh",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sine_kernel_bulk_universality_tilings"
+  },
+  {
+    "id": "e_25899",
+    "from": "s_random_lozenge_tiling",
+    "to": "t_nonlinear_steepest_descent_rh",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sine_kernel_bulk_universality_tilings"
+  },
+  {
+    "id": "e_25900",
+    "from": "t_nonlinear_steepest_descent_rh",
+    "to": "s_sine_kernel_bulk_universality_tilings",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sine_kernel_bulk_universality_tilings"
+  },
+  {
+    "id": "e_25901",
+    "from": "s_prism",
+    "to": "t_derived_category_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25902",
+    "from": "s_delta_ring",
+    "to": "t_derived_category_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25903",
+    "from": "t_derived_category_localization",
+    "to": "s_prismatic_cohomology",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25904",
+    "from": "s_prismatic_cohomology",
+    "to": "t_derived_category_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_p_adic_hodge_comparison"
+  },
+  {
+    "id": "e_25905",
+    "from": "s_crystalline_cohomology",
+    "to": "t_derived_category_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_p_adic_hodge_comparison"
+  },
+  {
+    "id": "e_25906",
+    "from": "t_derived_category_localization",
+    "to": "s_p_adic_hodge_comparison",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_p_adic_hodge_comparison"
+  },
+  {
+    "id": "e_25907",
+    "from": "s_prismatic_f_crystal",
+    "to": "t_derived_category_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bhatt_scholze_crystals_equals_lattices"
+  },
+  {
+    "id": "e_25908",
+    "from": "s_prismatic_cohomology",
+    "to": "t_derived_category_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bhatt_scholze_crystals_equals_lattices"
+  },
+  {
+    "id": "e_25909",
+    "from": "s_de_rham_potentially_semistable_representation",
+    "to": "t_derived_category_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bhatt_scholze_crystals_equals_lattices"
+  },
+  {
+    "id": "e_25910",
+    "from": "t_derived_category_localization",
+    "to": "s_bhatt_scholze_crystals_equals_lattices",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bhatt_scholze_crystals_equals_lattices"
+  },
+  {
+    "id": "e_25911",
+    "from": "t_derived_category_localization",
+    "to": "s_p_adic_motive",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25912",
+    "from": "s_prismatic_f_crystal",
+    "to": "t_derived_category_localization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25913",
+    "from": "s_log_correlated_gaussian_field",
+    "to": "t_log_correlated_field_zeta",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximum_cue_characteristic_polynomial"
+  },
+  {
+    "id": "e_25914",
+    "from": "s_circular_unitary_ensemble_characteristic_polynomial",
+    "to": "t_log_correlated_field_zeta",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximum_cue_characteristic_polynomial"
+  },
+  {
+    "id": "e_25915",
+    "from": "s_branching_random_walk_maximum",
+    "to": "t_log_correlated_field_zeta",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximum_cue_characteristic_polynomial"
+  },
+  {
+    "id": "e_25916",
+    "from": "t_log_correlated_field_zeta",
+    "to": "s_maximum_cue_characteristic_polynomial",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximum_cue_characteristic_polynomial"
+  },
+  {
+    "id": "e_25917",
+    "from": "s_log_correlated_gaussian_field",
+    "to": "t_first_moment_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_branching_random_walk_maximum"
+  },
+  {
+    "id": "e_25918",
+    "from": "t_first_moment_method",
+    "to": "s_branching_random_walk_maximum",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_branching_random_walk_maximum"
+  },
+  {
+    "id": "e_25919",
+    "from": "s_log_correlated_gaussian_field",
+    "to": "t_second_moment_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_branching_random_walk_maximum"
+  },
+  {
+    "id": "e_25920",
+    "from": "t_second_moment_method",
+    "to": "s_branching_random_walk_maximum",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_branching_random_walk_maximum"
+  },
+  {
+    "id": "e_25921",
+    "from": "s_borel_dwork_rationality_criterion",
+    "to": "t_arithmetic_algebraization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_schur_siegel_smyth_trace_problem"
+  },
+  {
+    "id": "e_25922",
+    "from": "t_arithmetic_algebraization",
+    "to": "s_schur_siegel_smyth_trace_problem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_schur_siegel_smyth_trace_problem"
+  },
+  {
+    "id": "e_25923",
+    "from": "t_arithmetic_algebraization",
+    "to": "s_borel_dwork_rationality_criterion",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25924",
+    "from": "s_kronecker_coefficient",
+    "to": "t_geometric_complexity_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gct_obstruction_vanishing_rectangular_kronecker"
+  },
+  {
+    "id": "e_25925",
+    "from": "s_plethysm_coefficient",
+    "to": "t_geometric_complexity_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gct_obstruction_vanishing_rectangular_kronecker"
+  },
+  {
+    "id": "e_25926",
+    "from": "s_combinatorial_interpretation_in_sharp_p",
+    "to": "t_geometric_complexity_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gct_obstruction_vanishing_rectangular_kronecker"
+  },
+  {
+    "id": "e_25927",
+    "from": "t_geometric_complexity_theory",
+    "to": "s_gct_obstruction_vanishing_rectangular_kronecker",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_gct_obstruction_vanishing_rectangular_kronecker"
+  },
+  {
+    "id": "e_25928",
+    "from": "s_complexity_class_sharp_p",
+    "to": "t_geometric_complexity_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25929",
+    "from": "t_geometric_complexity_theory",
+    "to": "s_combinatorial_interpretation_in_sharp_p",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25930",
+    "from": "s_kronecker_coefficient",
+    "to": "t_geometric_complexity_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_saturation_theorem_littlewood_richardson"
+  },
+  {
+    "id": "e_25931",
+    "from": "t_geometric_complexity_theory",
+    "to": "s_saturation_theorem_littlewood_richardson",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_saturation_theorem_littlewood_richardson"
+  },
+  {
+    "id": "e_25932",
+    "from": "s_kronecker_coefficient",
+    "to": "t_geometric_complexity_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_positivity_kronecker_coefficients_np_hard"
+  },
+  {
+    "id": "e_25933",
+    "from": "s_complexity_class_sharp_p",
+    "to": "t_geometric_complexity_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_positivity_kronecker_coefficients_np_hard"
+  },
+  {
+    "id": "e_25934",
+    "from": "t_geometric_complexity_theory",
+    "to": "s_positivity_kronecker_coefficients_np_hard",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_positivity_kronecker_coefficients_np_hard"
+  },
+  {
+    "id": "e_25935",
+    "from": "t_geometric_complexity_theory",
+    "to": "s_plethysm_coefficient",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  }
+]

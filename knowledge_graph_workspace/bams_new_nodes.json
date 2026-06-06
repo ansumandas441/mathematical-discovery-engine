@@ -1,0 +1,1571 @@
+[
+  {
+    "id": "t_quadratic_chabauty",
+    "kind": "technique",
+    "name": "Quadratic Chabauty",
+    "function_signature": "(Curve C/ℚ with Mordell-Weil rank = genus) → (Finite locus containing C(ℚ))",
+    "description": "The depth-two explicit instance of Kim's nonabelian Chabauty method (Balakrishnan-Dogra) that uses p-adic height pairings to cut out an explicit finite locus containing the rational points when the Mordell-Weil rank equals the genus.",
+    "_deps": ["Kim's Nonabelian Chabauty Method", "p-adic height pairing", "Nekovar height", "Coleman integration"],
+    "_source": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "id": "t_kim_nonabelian_chabauty",
+    "kind": "technique",
+    "name": "Kim's Nonabelian Chabauty Method",
+    "function_signature": "(Curve C/ℚ, unipotent fundamental group data) → (Selmer-type p-adic locus containing C(ℚ))",
+    "description": "A generalization of Chabauty's method replacing the Jacobian by the unipotent (de Rham/étale) fundamental group, locating rational points inside a Selmer-type p-adic locus cut out by iterated Coleman integrals.",
+    "_deps": ["Chabauty's Method", "unipotent fundamental group", "Selmer scheme", "p-adic Hodge theory"],
+    "_source": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "id": "s_coleman_effective_chabauty_bound",
+    "kind": "theorem",
+    "name": "Coleman's Effective Chabauty Bound",
+    "type_signature": "",
+    "description": "Under the Chabauty rank hypothesis, a curve of genus g with good reduction at a prime p > 2g has at most #C(𝔽_p) + 2g − 2 rational points.",
+    "_deps": ["Chabauty's Method", "Coleman integration", "good reduction", "genus"],
+    "_source": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "id": "t_lawrence_venkatesh_method",
+    "kind": "technique",
+    "name": "Lawrence-Venkatesh Method",
+    "function_signature": "(Family of curves over a base, p-adic Hodge data) → (Finiteness of rational points)",
+    "description": "A proof of the Mordell conjecture using a Kodaira-Parshin family of covers and p-adic Hodge theory to show that the p-adic Galois representations attached to fibers vary so much that only finitely many fibers sit over rational points.",
+    "_deps": ["p-adic Hodge theory", "Galois representation", "Kodaira-Parshin family", "period mapping", "Mordell–Faltings theorem"],
+    "_source": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "id": "t_skolem_p_adic_method",
+    "kind": "technique",
+    "name": "Skolem's Method (p-adic, integral points)",
+    "function_signature": "(Integral-point equation) → (Finite set of integral solutions)",
+    "description": "A p-adic method for integral points expressing solutions as zeros of p-adic analytic functions whose finiteness follows from the Strassmann/Weierstrass preparation property of convergent p-adic power series.",
+    "_deps": ["p-adic analytic functions", "Strassmann's theorem", "integral points"],
+    "_source": "A p-adic approach to rational points on curves, Bjorn Poonen, 2021"
+  },
+  {
+    "id": "s_croot_lev_pach_lemma",
+    "kind": "theorem",
+    "name": "Croot-Lev-Pach lemma",
+    "type_signature": "",
+    "description": "A low-degree multilinear polynomial that vanishes off the diagonal of a finite-field cube has a number of nonzero diagonal entries bounded by twice the dimension of the relevant low-degree polynomial space.",
+    "_deps": ["Polynomial method", "finite vector space (Z/3Z)^n", "low-degree polynomials"],
+    "_source": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "id": "s_ellenberg_gijswijt_cap_set",
+    "kind": "theorem",
+    "name": "Ellenberg-Gijswijt cap set theorem",
+    "type_signature": "",
+    "description": "Every cap set in (ℤ/3ℤ)^n has size at most c^n with c ≈ 2.756, i.e. exponentially smaller than 3^n, resolving the cap set problem via the polynomial method.",
+    "_deps": ["Cap set problem", "Croot-Lev-Pach lemma", "Slice rank of a tensor"],
+    "_source": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "id": "s_slice_rank_of_a_tensor",
+    "kind": "axiom",
+    "name": "Slice rank of a tensor",
+    "type_signature": "",
+    "description": "The minimum number of terms needed to write a tensor as a sum of products each of which depends in one factor on a single variable group and in the other on the rest (Tao's symmetric generalization of matrix rank).",
+    "_deps": ["tensor", "matrix rank", "Polynomial method"],
+    "_source": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "id": "t_slice_rank_polynomial_method",
+    "kind": "technique",
+    "name": "Slice rank polynomial method",
+    "function_signature": "(Combinatorial configuration as diagonal tensor) → (Exponential upper bound on its size)",
+    "description": "A proof technique that bounds the size of a combinatorial configuration by encoding it as a tensor supported on a diagonal, bounding its slice rank from below by the support size and from above via low-degree polynomials.",
+    "_deps": ["Slice rank of a tensor", "Croot-Lev-Pach lemma", "Polynomial method"],
+    "_source": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "id": "s_sunflower_free_tricolored_slice_rank",
+    "kind": "theorem",
+    "name": "Sunflower-free / tri-colored sum-free bounds via slice rank",
+    "type_signature": "",
+    "description": "Application of the slice rank method giving exponential upper bounds on sunflower-free set systems and on tri-colored sum-free sets in abelian groups (Naslund-Sawin, Blasiak et al.).",
+    "_deps": ["Slice rank polynomial method", "sunflower (Δ-system)", "sum-free set"],
+    "_source": "New applications of the polynomial method: the cap set conjecture and beyond, Joshua A. Grochow, 2019"
+  },
+  {
+    "id": "s_analytic_l_function_axiomatic",
+    "kind": "axiom",
+    "name": "Analytic L-function (axiomatic)",
+    "type_signature": "",
+    "description": "A Dirichlet series with Euler product, meromorphic continuation, and a functional equation relating s to 1−s, packaged with prescribed analytic data such as conductor, gamma factors, and central character.",
+    "_deps": ["Dirichlet series", "Euler product", "functional equation", "gamma factor", "analytic continuation"],
+    "_source": "Analytic L-functions: definitions, theorems, and connections, Farmer, Pitale, Ryan, and Schmidt, 2019"
+  },
+  {
+    "id": "s_stably_rational_variety",
+    "kind": "axiom",
+    "name": "Stably Rational Variety",
+    "type_signature": "",
+    "description": "A variety X such that X × ℙ^m is rational for some m, an intermediate notion strictly between rational and unirational.",
+    "_deps": ["Rational variety", "projective space", "birational equivalence"],
+    "_source": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "id": "s_luroth_problem",
+    "kind": "state",
+    "name": "Lüroth Problem",
+    "type_signature": "",
+    "description": "The question of whether every unirational variety is rational, answered affirmatively for curves and surfaces but negatively in dimension three and higher.",
+    "_deps": ["Rational variety", "Unirational variety"],
+    "_source": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "id": "t_decomposition_of_the_diagonal",
+    "kind": "technique",
+    "name": "Decomposition of the Diagonal Method",
+    "function_signature": "(Variety X, specialization family) → (Obstruction certifying non-stable-rationality)",
+    "description": "An obstruction to (stable) rationality showing that a stably rational variety admits a Chow-theoretic decomposition of its diagonal, whose failure under specialization (Voisin, Colliot-Thélène-Pirutka) certifies non-stable-rationality.",
+    "_deps": ["Stably Rational Variety", "Chow group", "specialization of cycles", "unramified cohomology"],
+    "_source": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "id": "s_non_stable_rationality_hypersurfaces",
+    "kind": "theorem",
+    "name": "Non-Stable-Rationality of Very General Hypersurfaces",
+    "type_signature": "",
+    "description": "A very general hypersurface of sufficiently high degree in projective space (degree at least roughly two-thirds the dimension, after Totaro and Schreieder) is not stably rational.",
+    "_deps": ["Stably Rational Variety", "Decomposition of the Diagonal Method", "hypersurface", "very general point"],
+    "_source": "Algebraic hypersurfaces, Janos Kollar, 2019"
+  },
+  {
+    "id": "s_big_polynomial_ring_uniformity",
+    "kind": "state",
+    "name": "Big Polynomial Ring / Uniformity (Erman-Sam-Snowden)",
+    "type_signature": "",
+    "description": "The phenomenon, formalized via the inverse-limit polynomial ring in infinitely many variables and GL-equivariant commutative algebra, that bounds on invariants of cubic (and higher-degree) forms become independent of the number of variables.",
+    "_deps": ["polynomial ring", "GL-equivariant module", "Noetherianity up to symmetry", "Stillman's conjecture (theorem)"],
+    "_source": "Cubics in 10 variables vs. cubics in 1000 variables: uniformity phenomena, Erman, Sam, and Snowden, 2019"
+  },
+  {
+    "id": "s_stillmans_conjecture",
+    "kind": "theorem",
+    "name": "Stillman's Conjecture (Theorem)",
+    "type_signature": "",
+    "description": "The projective dimension of an ideal generated by a fixed number of homogeneous polynomials of fixed degrees is bounded independently of the number of variables of the ambient polynomial ring.",
+    "_deps": ["projective dimension", "free resolution", "Big Polynomial Ring / Uniformity (Erman-Sam-Snowden)"],
+    "_source": "Cubics in 10 variables vs. cubics in 1000 variables: uniformity phenomena, Erman, Sam, and Snowden, 2019"
+  },
+  {
+    "id": "s_strength_of_a_polynomial",
+    "kind": "axiom",
+    "name": "Strength of a Polynomial",
+    "type_signature": "",
+    "description": "The least number r such that a homogeneous form is a sum of r products of lower-degree forms, a measure of degeneracy controlling the uniform algebraic behavior of higher-degree forms.",
+    "_deps": ["homogeneous polynomial", "Big Polynomial Ring / Uniformity (Erman-Sam-Snowden)"],
+    "_source": "Cubics in 10 variables vs. cubics in 1000 variables: uniformity phenomena, Erman, Sam, and Snowden, 2019"
+  },
+  {
+    "id": "s_tangent_developable_surface",
+    "kind": "axiom",
+    "name": "Tangent Developable Surface",
+    "type_signature": "",
+    "description": "The ruled surface swept out by the tangent lines to a space curve, naturally attached to the curve and whose singular structure encodes the curve's projective geometry.",
+    "_deps": ["algebraic curve", "tangent line", "ruled surface"],
+    "_source": "Tangent developable surfaces and the equations defining algebraic curves, Ein and Lazarsfeld, 2020"
+  },
+  {
+    "id": "s_greens_conjecture",
+    "kind": "theorem",
+    "name": "Green's Conjecture",
+    "type_signature": "",
+    "description": "The Clifford index of a smooth projective curve equals the index of the first nonzero linear syzygy in the minimal free resolution of its canonical embedding, proved generically by Voisin and in general via degenerations to tangent developable surfaces.",
+    "_deps": ["canonical embedding", "Clifford index", "syzygies", "minimal free resolution", "Tangent Developable Surface"],
+    "_source": "Tangent developable surfaces and the equations defining algebraic curves, Ein and Lazarsfeld, 2020"
+  },
+  {
+    "id": "s_koszul_cohomology_property_np",
+    "kind": "axiom",
+    "name": "Koszul Cohomology / Property N_p",
+    "type_signature": "",
+    "description": "The graded groups computing the syzygies of an embedded variety, with property N_p meaning the resolution is linear up to homological degree p, governing how a curve is cut out by quadrics and higher relations.",
+    "_deps": ["syzygies", "minimal free resolution", "canonical embedding"],
+    "_source": "Tangent developable surfaces and the equations defining algebraic curves, Ein and Lazarsfeld, 2020"
+  },
+  {
+    "id": "t_degeneration_to_tangent_developable",
+    "kind": "technique",
+    "name": "Degeneration to Tangent Developable Surfaces",
+    "function_signature": "(Canonical curve, specialization to tangent developable of rational normal curve) → (Computation of syzygies)",
+    "description": "A proof method computing syzygies of canonical curves by specializing to the tangent developable of a rational normal curve and using its explicit, computable resolution.",
+    "_deps": ["Tangent Developable Surface", "Green's Conjecture", "specialization", "Koszul Cohomology / Property N_p"],
+    "_source": "Tangent developable surfaces and the equations defining algebraic curves, Ein and Lazarsfeld, 2020"
+  },
+  {
+    "id": "s_compactified_jacobian_universal_picard",
+    "kind": "state",
+    "name": "Compactified Jacobian / Universal Picard Variety",
+    "type_signature": "",
+    "description": "A compactification of the moduli of line bundles over a family of curves (including degenerate nodal fibers) parametrizing rank-one torsion-free sheaves with a stability condition.",
+    "_deps": ["Jacobian variety", "torsion-free sheaf", "stability condition", "stable curve"],
+    "_source": "Compactifying moduli spaces, Lucia Caporaso, 2020"
+  },
+  {
+    "id": "t_tropical_dual_graph_boundary",
+    "kind": "technique",
+    "name": "Tropical / Dual-Graph Combinatorics of the Boundary",
+    "function_signature": "(Boundary strata of a compactified moduli space) → (Polyhedral / tropical combinatorial encoding)",
+    "description": "The encoding of the boundary strata of compactified moduli spaces by the dual graphs of stable curves, linking the geometry to tropical moduli and combinatorial polyhedral data.",
+    "_deps": ["Deligne-Mumford compactification M̄_g", "dual graph", "tropical curve", "stable curve"],
+    "_source": "Compactifying moduli spaces, Lucia Caporaso, 2020"
+  },
+  {
+    "id": "s_space_of_diagonal_harmonics",
+    "kind": "axiom",
+    "name": "Space of Diagonal Harmonics",
+    "type_signature": "",
+    "description": "The bigraded vector space DH_n of polynomials in two sets of n variables killed by all symmetric-group-invariant differential operators of positive degree, carrying a diagonal S_n-action.",
+    "_deps": ["symmetric group action", "polynomial ring", "harmonic polynomials", "bigrading"],
+    "_source": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "id": "s_nabla_operator",
+    "kind": "axiom",
+    "name": "Nabla Operator",
+    "type_signature": "",
+    "description": "The Garsia-Bergeron linear operator on symmetric functions, diagonal in the modified Macdonald polynomial basis with explicit eigenvalues, whose value on e_n equals the bigraded Frobenius characteristic of diagonal harmonics.",
+    "_deps": ["symmetric function", "Macdonald polynomial P_λ(x;q,t)", "Frobenius characteristic map", "Space of Diagonal Harmonics"],
+    "_source": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "id": "s_parking_function",
+    "kind": "axiom",
+    "name": "Parking Function (combinatorics)",
+    "type_signature": "",
+    "description": "A Dyck path of order n together with a column-increasing labeling of its north steps by 1,...,n, equipped with the statistics area and dinv (diagonal inversions).",
+    "_deps": ["dyck paths 2n", "area statistic", "dinv statistic"],
+    "_source": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "id": "s_shuffle_conjecture",
+    "kind": "theorem",
+    "name": "Shuffle Conjecture (Theorem)",
+    "type_signature": "",
+    "description": "The symmetric function ∇(e_n) equals the weighted generating function over parking functions of order n with weight q^dinv t^area times the quasisymmetric function of the descent set.",
+    "_deps": ["Nabla Operator", "Parking Function (combinatorics)", "Space of Diagonal Harmonics", "Quasisymmetric function"],
+    "_source": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "id": "s_compositional_shuffle_conjecture",
+    "kind": "theorem",
+    "name": "Compositional Shuffle Conjecture (Theorem)",
+    "type_signature": "",
+    "description": "A refinement of the shuffle conjecture indexed by compositions controlling the touch points of the Dyck path, whose proof by Carlsson and Mellit (via the double affine Hecke algebra) implies the shuffle conjecture.",
+    "_deps": ["Shuffle Conjecture (Theorem)", "Parking Function (combinatorics)", "composition (combinatorics)", "double affine Hecke algebra"],
+    "_source": "The shuffle conjecture, Stephanie van Willigenburg, 2020"
+  },
+  {
+    "id": "s_overconvergent_modular_form",
+    "kind": "axiom",
+    "name": "Overconvergent Modular Form",
+    "type_signature": "",
+    "description": "A p-adic modular form converging on a strict neighborhood of the ordinary locus of the modular curve, organized into Coleman's finite-slope eigenvariety theory.",
+    "_deps": ["p-adic modular form", "modular curve", "ordinary locus", "rigid analytic geometry"],
+    "_source": "Overconvergent modular forms and their explicit arithmetic, Jan Vonk, 2021"
+  },
+  {
+    "id": "s_up_operator_slope_decomposition",
+    "kind": "axiom",
+    "name": "U_p Operator and Slope Decomposition",
+    "type_signature": "",
+    "description": "The completely continuous Atkin-Lehner operator on spaces of overconvergent forms whose finite-slope generalized eigenspaces (by p-adic valuation of eigenvalue) give the finite-slope classical and overconvergent forms.",
+    "_deps": ["Overconvergent Modular Form", "Hecke operator", "compact operator", "slope (p-adic valuation)"],
+    "_source": "Overconvergent modular forms and their explicit arithmetic, Jan Vonk, 2021"
+  },
+  {
+    "id": "s_coleman_classicality_theorem",
+    "kind": "theorem",
+    "name": "Coleman Classicality Theorem",
+    "type_signature": "",
+    "description": "An overconvergent eigenform of weight k and slope strictly less than k−1 is a classical modular form.",
+    "_deps": ["Overconvergent Modular Form", "U_p Operator and Slope Decomposition", "classical modular form"],
+    "_source": "Overconvergent modular forms and their explicit arithmetic, Jan Vonk, 2021"
+  },
+  {
+    "id": "s_rigid_meromorphic_cocycles",
+    "kind": "state",
+    "name": "Rigid Meromorphic Cocycles / p-adic Singular Moduli",
+    "type_signature": "",
+    "description": "The Darmon-Vonk p-adic analogues of singular moduli, constructed from overconvergent forms and real quadratic geodesics, conjecturally algebraic and refining complex multiplication to real quadratic fields.",
+    "_deps": ["Overconvergent Modular Form", "complex multiplication", "real quadratic field", "rigid analytic geometry"],
+    "_source": "Overconvergent modular forms and their explicit arithmetic, Jan Vonk, 2021"
+  },
+  {
+    "id": "s_classical_siegel_weil_formula",
+    "kind": "theorem",
+    "name": "Classical Siegel-Weil Formula",
+    "type_signature": "",
+    "description": "An identity expressing a special value of a Siegel Eisenstein series as the average over a genus of theta series of quadratic forms.",
+    "_deps": ["theta series", "Eisenstein series", "quadratic form", "genus of a quadratic form"],
+    "_source": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "id": "s_special_cycles_shimura",
+    "kind": "axiom",
+    "name": "Special Cycles on Shimura Varieties",
+    "type_signature": "",
+    "description": "Algebraic cycles on orthogonal or unitary Shimura varieties indexed by positive-definite quadratic/Hermitian data, generalizing Heegner points to higher codimension.",
+    "_deps": ["shimura_variety", "algebraic cycle", "Heegner points", "quadratic form"],
+    "_source": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "id": "s_kudla_modularity_conjecture",
+    "kind": "theorem",
+    "name": "Kudla's Modularity Conjecture (Theorem)",
+    "type_signature": "",
+    "description": "The generating series whose coefficients are the classes of special cycles of a fixed codimension in the Chow group of a Shimura variety is a (vector-valued) modular form.",
+    "_deps": ["Special Cycles on Shimura Varieties", "Chow group", "modular form", "generating series"],
+    "_source": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "id": "s_geometric_siegel_weil_formula",
+    "kind": "theorem",
+    "name": "Geometric Siegel-Weil Formula",
+    "type_signature": "",
+    "description": "An identity expressing the special value of a Siegel Eisenstein series as a generating series of degrees/volumes of special cycles on a Shimura variety, lifting the classical formula to geometry.",
+    "_deps": ["Classical Siegel-Weil Formula", "Special Cycles on Shimura Varieties", "Eisenstein series"],
+    "_source": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "id": "s_arithmetic_siegel_weil_formula",
+    "kind": "theorem",
+    "name": "Arithmetic Siegel-Weil Formula",
+    "type_signature": "",
+    "description": "An identity relating arithmetic intersection numbers of special cycles on integral models of Shimura varieties to derivatives of Siegel Eisenstein series at the near-central point.",
+    "_deps": ["Geometric Siegel-Weil Formula", "arithmetic intersection theory", "Eisenstein series", "integral model"],
+    "_source": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "id": "s_kudla_rapoport_conjecture",
+    "kind": "theorem",
+    "name": "Kudla-Rapoport Conjecture (Theorem)",
+    "type_signature": "",
+    "description": "A local identity equating the arithmetic intersection number of special cycles on a Rapoport-Zink space with the derivative of a local representation/Whittaker density, proved by Li and Zhang.",
+    "_deps": ["Special Cycles on Shimura Varieties", "Rapoport-Zink Space", "arithmetic intersection theory", "Whittaker function"],
+    "_source": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "id": "s_rapoport_zink_space",
+    "kind": "axiom",
+    "name": "Rapoport-Zink Space",
+    "type_signature": "",
+    "description": "A formal/rigid moduli space of p-divisible groups with additional structure (polarization, level) serving as the local p-adic uniformization of Shimura varieties.",
+    "_deps": ["p-divisible group", "formal scheme", "shimura_variety", "polarization"],
+    "_source": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "id": "s_arithmetic_inner_product_formula",
+    "kind": "theorem",
+    "name": "Arithmetic Inner Product Formula",
+    "type_signature": "",
+    "description": "An identity relating the Beilinson-Bloch height of an arithmetic theta lift cycle to the central derivative of an L-function, generalizing the Gross-Zagier formula to higher dimension.",
+    "_deps": ["Arithmetic Siegel-Weil Formula", "Beilinson-Bloch height", "central derivative of L-function", "Gross-Zagier formula"],
+    "_source": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "id": "s_beilinson_bloch_conjecture",
+    "kind": "state",
+    "name": "Beilinson-Bloch Conjecture",
+    "type_signature": "",
+    "description": "The conjecture that the rank of the Chow group of homologically trivial cycles on a smooth projective variety equals the order of vanishing of the associated L-function at the central point.",
+    "_deps": ["Chow group", "L-function", "algebraic cycle", "height pairing"],
+    "_source": "From sum of two squares to arithmetic Siegel-Weil formulas, Chao Li, 2023"
+  },
+  {
+    "id": "t_macaulay_inverse_system",
+    "kind": "technique",
+    "name": "Macaulay Inverse System",
+    "function_signature": "(Artinian quotient of polynomial ring) ↔ (Finitely generated submodule of dual divided-power module)",
+    "description": "Macaulay's duality between Artinian quotients of a polynomial ring and finitely generated submodules of the dual divided-power (or polynomial) module under contraction, parametrizing such quotients by inverse systems.",
+    "_deps": ["Gorenstein ring", "Artinian ring", "Matlis duality", "polynomial ring"],
+    "_source": "F. S. Macaulay: from plane curves to Gorenstein rings, Eisenbud and Gray, 2023"
+  },
+  {
+    "id": "s_embedding_q_finitely_presented",
+    "kind": "theorem",
+    "name": "Embedding Q into a Finitely Presented Group (Theorem)",
+    "type_signature": "",
+    "description": "The additive group of rational numbers embeds into a finitely presented group, realized via Belk-Hyde-Matucci using twisted Brin-Thompson groups acting on Cantor space.",
+    "_deps": ["finitely presented group", "rational numbers", "Twisted Brin-Thompson Group", "Higman embedding theorem"],
+    "_source": "Embedding Q into a finitely presented group, Belk, Hyde, and Matucci, 2022"
+  },
+  {
+    "id": "s_twisted_brin_thompson_group",
+    "kind": "axiom",
+    "name": "Twisted Brin-Thompson Group",
+    "type_signature": "",
+    "description": "A group of homeomorphisms of a Cantor space built from a base group acting on an alphabet together with prefix-replacement (Thompson-type) moves, simple and finitely presented under mild hypotheses.",
+    "_deps": ["Thompson's group V", "Cantor space", "group action", "finitely presented group"],
+    "_source": "Embedding Q into a finitely presented group, Belk, Hyde, and Matucci, 2022"
+  },
+
+  {
+    "id": "s_space_time_white_noise",
+    "kind": "axiom",
+    "name": "Space-time white noise",
+    "type_signature": "",
+    "description": "A Gaussian generalized random field on ℝ₊ × ℝ^d whose values over disjoint space-time regions are independent with covariance equal to the Lebesgue measure of their overlap.",
+    "_deps": ["Gaussian random field", "distributions", "Central Limit Theorem"],
+    "_source": "Some recent progress in singular stochastic PDEs, Corwin and Shen, 2020"
+  },
+  {
+    "id": "s_dynamical_phi4_equation",
+    "kind": "axiom",
+    "name": "Dynamical Phi^4 equation",
+    "type_signature": "",
+    "description": "The renormalized stochastic reaction-diffusion equation ∂_t Φ = ΔΦ − (Φ³ − ∞·Φ) + ξ, the Langevin dynamics of Φ⁴ Euclidean QFT, singular in spatial dimension d = 2, 3.",
+    "_deps": ["Space-time white noise", "renormalization group flow to continuum", "quantum field theory"],
+    "_source": "Some recent progress in singular stochastic PDEs, Corwin and Shen, 2020"
+  },
+  {
+    "id": "s_parabolic_anderson_model",
+    "kind": "axiom",
+    "name": "Parabolic Anderson Model",
+    "type_signature": "",
+    "description": "The linear singular SPDE ∂_t u = Δu + u·(ζ − ∞) with spatial white noise potential ζ, requiring renormalization in dimension d ≥ 2.",
+    "_deps": ["spatial white noise", "renormalization group flow to continuum", "linear parabolic PDE"],
+    "_source": "Some recent progress in singular stochastic PDEs, Corwin and Shen, 2020"
+  },
+  {
+    "id": "t_renormalization_counterterm_spde",
+    "kind": "technique",
+    "name": "Renormalization (counter-term subtraction) for singular SPDEs",
+    "function_signature": "(Mollified singular SPDE) → (Nontrivial renormalized limit solution)",
+    "description": "Mollifying the noise, subtracting divergent counter-terms C_ε (chosen via Gaussian moment / Wick-power computations) from the nonlinearity, and passing to the limit to obtain a nontrivial solution.",
+    "_deps": ["Space-time white noise", "Wick powers", "Mollification (Friedrich's smoothing)", "Kolmogorov-Čentsov continuity theorem"],
+    "_source": "Some recent progress in singular stochastic PDEs, Corwin and Shen, 2020"
+  },
+  {
+    "id": "t_da_prato_debussche_trick",
+    "kind": "technique",
+    "name": "Da Prato-Debussche trick",
+    "function_signature": "(Not-too-singular SPDE) → (Well-posed fixed-point equation for the remainder)",
+    "description": "Splitting the solution Φ = u + v into the stochastic linear (Gaussian) part u and a higher-regularity remainder v solving a classically well-posed fixed-point equation, valid for mildly singular equations such as 2D Φ⁴.",
+    "_deps": ["Renormalization (counter-term subtraction) for singular SPDEs", "Young's multiplication theorem", "Schauder estimates", "Picard iteration"],
+    "_source": "Some recent progress in singular stochastic PDEs, Corwin and Shen, 2020"
+  },
+  {
+    "id": "s_primary_uncertainty_principle",
+    "kind": "theorem",
+    "name": "Primary uncertainty principle",
+    "type_signature": "",
+    "description": "For operators A, B with ‖A‖_{1→∞} ≤ 1, ‖B‖_{1→∞} ≤ 1 and ‖BAv‖_∞ ≥ k‖v‖_∞, one has ‖v‖₁‖Av‖₁ ≥ k‖v‖_∞‖Av‖_∞, from which classical Fourier uncertainty principles follow.",
+    "_deps": ["operator norms", "L¹-L^∞ boundedness", "unitarity"],
+    "_source": "The uncertainty principle: variations on a theme, Wigderson and Wigderson, 2021"
+  },
+  {
+    "id": "s_k_hadamard_matrix",
+    "kind": "axiom",
+    "name": "k-Hadamard matrix",
+    "type_signature": "",
+    "description": "A matrix A with entries bounded by 1 satisfying ‖A*Av‖_∞ ≥ k‖v‖_∞ (equivalently A*A invertible with ‖(A*A)⁻¹‖_{∞→∞} ≤ 1/k); precisely the matrices to which the primary uncertainty principle applies.",
+    "_deps": ["Primary uncertainty principle", "Hadamard matrix", "operator norms"],
+    "_source": "The uncertainty principle: variations on a theme, Wigderson and Wigderson, 2021"
+  },
+  {
+    "id": "s_donoho_stark_uncertainty",
+    "kind": "theorem",
+    "name": "Donoho-Stark support-size uncertainty principle",
+    "type_signature": "",
+    "description": "For a nonzero function f on a finite abelian group G with Fourier transform f̂, the supports satisfy |supp(f)|·|supp(f̂)| ≥ |G|.",
+    "_deps": ["Fourier transform on finite abelian groups", "k-Hadamard matrix", "Primary uncertainty principle"],
+    "_source": "The uncertainty principle: variations on a theme, Wigderson and Wigderson, 2021"
+  },
+  {
+    "id": "s_meshulam_nonabelian_uncertainty",
+    "kind": "theorem",
+    "name": "Meshulam's non-abelian uncertainty principle",
+    "type_signature": "",
+    "description": "An extension of the Donoho-Stark support-size inequality to functions on arbitrary finite groups via rank and min-support notions of support for the Fourier transform.",
+    "_deps": ["Donoho-Stark support-size uncertainty principle", "representation theory of finite groups"],
+    "_source": "The uncertainty principle: variations on a theme, Wigderson and Wigderson, 2021"
+  },
+  {
+    "id": "s_hardy_uncertainty_principle",
+    "kind": "theorem",
+    "name": "Hardy's uncertainty principle",
+    "type_signature": "",
+    "description": "If |f(x)| ≤ C e^{−a|x|²} and |f̂(ξ)| ≤ C e^{−b|ξ|²} with ab > 1/4 then f = 0, and with ab = 1/4 then f is a constant multiple of the Gaussian e^{−a|x|²}.",
+    "_deps": ["Fourier transform", "Phragmén–Lindelöf principle", "entire function of exponential type"],
+    "_source": "Dynamical versions of Hardy's uncertainty principle, Fernandez-Bertolin and Malinnikova, 2021"
+  },
+  {
+    "id": "s_dynamical_hardy_reformulation",
+    "kind": "state",
+    "name": "Dynamical (Schrödinger) reformulation of Hardy's uncertainty principle",
+    "type_signature": "",
+    "description": "The reinterpretation of Hardy's theorem as a unique-continuation/rigidity statement for the free Schrödinger equation: a solution Gaussian-bounded at two distinct times must vanish.",
+    "_deps": ["Hardy's uncertainty principle", "schrodinger equation", "unique continuation"],
+    "_source": "Dynamical versions of Hardy's uncertainty principle, Fernandez-Bertolin and Malinnikova, 2021"
+  },
+  {
+    "id": "t_liouville_proof_hardy_uncertainty",
+    "kind": "technique",
+    "name": "Liouville-theorem proof of Hardy's uncertainty principle",
+    "function_signature": "(Schrödinger connection + bounded entire function) → (Hardy uncertainty rigidity)",
+    "description": "A proof deriving the uncertainty principle from the Schrödinger connection together with Liouville's theorem for bounded entire functions rather than Phragmén-Lindelöf.",
+    "_deps": ["Dynamical (Schrödinger) reformulation of Hardy's uncertainty principle", "bounded entire function", "complex analysis"],
+    "_source": "Dynamical versions of Hardy's uncertainty principle, Fernandez-Bertolin and Malinnikova, 2021"
+  },
+  {
+    "id": "s_sine_kernel_fredholm_determinant",
+    "kind": "axiom",
+    "name": "Sine-kernel Fredholm determinant",
+    "type_signature": "",
+    "description": "The determinant P_x = det(1 − K_sine) of the trace-class operator with kernel sin(x(z−z'))/(π(z−z')), giving the probability of no GUE eigenvalues in a union of bulk intervals.",
+    "_deps": ["Fredholm determinant", "gaussian unitary ensemble", "bulk scaling limit"],
+    "_source": "Harold Widom's work in random matrix theory, Corwin, Deift and Its, 2022"
+  },
+  {
+    "id": "s_widom_large_gap_asymptotics",
+    "kind": "theorem",
+    "name": "Widom's large-gap asymptotics for the sine-kernel determinant",
+    "type_signature": "",
+    "description": "Widom's rigorous proof that ln P_x = −(x²/2)(1 + o(1)) as x → ∞, the first rigorous large-gap asymptotics for the sine determinant.",
+    "_deps": ["Sine-kernel Fredholm determinant", "Toeplitz determinant asymptotics", "Krein functions"],
+    "_source": "Harold Widom's work in random matrix theory, Corwin, Deift and Its, 2022"
+  },
+  {
+    "id": "s_tracy_widom_painleve_representation",
+    "kind": "theorem",
+    "name": "Tracy-Widom Painlevé representation",
+    "type_signature": "",
+    "description": "The identity F_2(t) = exp(−∫_t^∞ (s−t)u(s)² ds) where u is the Hastings-McLeod solution of the second Painlevé equation u_tt = t u + 2u³, with F_1, F_4 also expressed through u.",
+    "_deps": ["Tracy–Widom Distribution (largest eigenvalue)", "Second Painleve Equation P_II", "Hastings-McLeod solution", "Integrable Fredholm operator"],
+    "_source": "Harold Widom's work in random matrix theory, Corwin, Deift and Its, 2022"
+  },
+  {
+    "id": "s_integrable_fredholm_operator",
+    "kind": "axiom",
+    "name": "Integrable Fredholm operator",
+    "type_signature": "",
+    "description": "An integral operator whose kernel has the form (φ(z)ψ(z')−ψ(z)φ(z'))/(z−z'), a structure whose determinant satisfies nonlinear integrable PDEs and admits a Riemann-Hilbert representation.",
+    "_deps": ["Fredholm determinant", "Riemann–Hilbert problem (for linear ODE)", "lax pair LP"],
+    "_source": "Harold Widom's work in random matrix theory, Corwin, Deift and Its, 2022"
+  },
+  {
+    "id": "t_nonlinear_steepest_descent_rh",
+    "kind": "technique",
+    "name": "Riemann-Hilbert / nonlinear steepest descent method",
+    "function_signature": "(Painlevé / integrable-determinant function as RH problem) → (Asymptotics and connection formulae)",
+    "description": "Representing Painlevé and integrable-determinant functions as matrix Riemann-Hilbert problems whose asymptotics are computed via the Deift-Zhou nonlinear steepest descent deformation of contours.",
+    "_deps": ["Integrable Fredholm operator", "Riemann–Hilbert problem (for linear ODE)", "lax pair LP"],
+    "_source": "Harold Widom's work in random matrix theory, Corwin, Deift and Its, 2022"
+  },
+  {
+    "id": "s_arnold_geodesic_hydrodynamics",
+    "kind": "axiom",
+    "name": "Arnold's geodesic formulation of ideal hydrodynamics",
+    "type_signature": "",
+    "description": "The principle that the incompressible Euler equations are the geodesic equations of the right-invariant L² (kinetic-energy) metric on the group of volume-preserving diffeomorphisms.",
+    "_deps": ["diffeomorphism group", "right-invariant Riemannian metric", "incompressible euler equations"],
+    "_source": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Khesin, Misiolek and Modin, 2021"
+  },
+  {
+    "id": "s_newton_equations_diffeo_density",
+    "kind": "state",
+    "name": "Newton's equations on diffeomorphism groups and density spaces",
+    "type_signature": "",
+    "description": "The generalization ∇_{q̇} q̇ = −∇U(q) of geodesic flow to infinite dimensions, with a potential U on Diff(M) or Dens(M), unifying compressible/incompressible fluids, MHD, shallow-water and relativistic fluid equations.",
+    "_deps": ["Arnold's geodesic formulation of ideal hydrodynamics", "potential energy", "spaces of probability densities"],
+    "_source": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Khesin, Misiolek and Modin, 2021"
+  },
+  {
+    "id": "s_fisher_rao_metric_infinite",
+    "kind": "axiom",
+    "name": "Fisher-Rao information metric (infinite-dimensional)",
+    "type_signature": "",
+    "description": "The diffeomorphism-invariant information-geometric Riemannian metric on probability densities, whose Newton equations yield the μ-Camassa-Holm and Klein-Gordon type equations.",
+    "_deps": ["information geometry", "spaces of probability densities", "Riemannian submersion"],
+    "_source": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Khesin, Misiolek and Modin, 2021"
+  },
+  {
+    "id": "s_madelung_transform_symplectomorphism",
+    "kind": "theorem",
+    "name": "Madelung transform as a symplectomorphism",
+    "type_signature": "",
+    "description": "The map sending a wave function to its density-and-phase (hydrodynamic) variables is a symplectomorphism (and Kähler morphism) intertwining the Schrödinger equation with Newton's equations of compressible fluids on the space of densities.",
+    "_deps": ["wasserstein 2 metric on probability measures", "schrodinger equation", "symplectic geometry", "Hopf-Cole transform"],
+    "_source": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Khesin, Misiolek and Modin, 2021"
+  },
+  {
+    "id": "t_symplectic_poisson_reduction_hydro",
+    "kind": "technique",
+    "name": "Symplectic and Poisson reduction for hydrodynamics",
+    "function_signature": "(Hamiltonian system with symmetry group) → (Reduced equations + Casimir invariants)",
+    "description": "Reduction of Hamiltonian systems with semidirect-product symmetry used to derive Hamiltonian/Poisson structures, Casimir invariants, and equations of motion for ideal, barotropic and magneto-hydrodynamic fluids.",
+    "_deps": ["Newton's equations on diffeomorphism groups and density spaces", "momentum map", "semidirect product groups"],
+    "_source": "Geometric hydrodynamics and infinite-dimensional Newton's equations, Khesin, Misiolek and Modin, 2021"
+  },
+  {
+    "id": "t_frequency_envelopes",
+    "kind": "technique",
+    "name": "Frequency envelopes",
+    "function_signature": "(Data with Littlewood-Paley decomposition) → (Slowly varying dominating sequence tracking energy)",
+    "description": "A device assigning a slowly varying admissible sequence dominating the Littlewood-Paley pieces of the data, used to track and propagate the dyadic distribution of energy and prove continuous dependence and rough-data well-posedness.",
+    "_deps": ["Littlewood–Paley decomposition", "Sobolev spaces", "energy estimates"],
+    "_source": "Local well-posedness for quasilinear problems: a primer, Ifrim and Tataru, 2023"
+  },
+  {
+    "id": "t_rough_solutions_as_limits",
+    "kind": "technique",
+    "name": "Rough solutions as limits of smooth solutions",
+    "function_signature": "(Rough data) → (Low-regularity solution with existence, uniqueness, continuous dependence)",
+    "description": "Constructing low-regularity solutions of quasilinear evolutions by regularizing the data, solving smoothly, and passing to the limit using uniform energy and frequency-envelope bounds.",
+    "_deps": ["Frequency envelopes", "energy estimates", "Hadamard well-posedness criterion"],
+    "_source": "Local well-posedness for quasilinear problems: a primer, Ifrim and Tataru, 2023"
+  },
+  {
+    "id": "t_quasilinear_energy_estimates",
+    "kind": "technique",
+    "name": "Quasilinear energy estimates",
+    "function_signature": "(Symmetrizable hyperbolic system) → (Coercive a priori H^s bound via Lipschitz norm)",
+    "description": "Coercive a priori bounds for symmetric (or symmetrizable) hyperbolic systems ∂_t u = A_j(u)∂_j u obtained by differentiating, symmetrizing and integrating by parts, controlling the H^s norm via a lower (Lipschitz) norm.",
+    "_deps": ["symmetric hyperbolic systems", "Sobolev spaces", "Gronwall inequality"],
+    "_source": "Local well-posedness for quasilinear problems: a primer, Ifrim and Tataru, 2023"
+  },
+  {
+    "id": "t_convex_integration_hydrodynamics",
+    "kind": "technique",
+    "name": "Convex integration in hydrodynamics",
+    "function_signature": "(Approximate fluid solution with Reynolds stress error) → (Wild weak solution)",
+    "description": "An iterative construction adding high-frequency oscillatory perturbations (Mikado/intermittent flows) to approximate solutions of the fluid equations to cancel a Reynolds stress error in the limit, producing wild weak solutions.",
+    "_deps": ["Nash-Kuiper iteration", "Mikado flows", "intermittency", "weak solution conservation law"],
+    "_source": "Convex integration constructions in hydrodynamics, Buckmaster and Vicol, 2021"
+  },
+  {
+    "id": "s_onsagers_conjecture",
+    "kind": "state",
+    "name": "Onsager's conjecture",
+    "type_signature": "",
+    "description": "The conjecture that weak solutions of the incompressible Euler equations conserve kinetic energy if their Hölder regularity exponent exceeds 1/3 and may dissipate it below 1/3.",
+    "_deps": ["incompressible euler equations", "weak solution conservation law", "Hölder regularity"],
+    "_source": "Convex integration constructions in hydrodynamics, Buckmaster and Vicol, 2021"
+  },
+  {
+    "id": "s_flexible_side_onsager",
+    "kind": "theorem",
+    "name": "Resolution of the flexible side of Onsager's conjecture",
+    "type_signature": "",
+    "description": "The construction (Isett; Buckmaster-De Lellis-Székelyhidi-Vicol) via convex integration of C^{1/3−} weak solutions of the Euler equations that dissipate energy, proving the sharp threshold predicted by Onsager.",
+    "_deps": ["Convex integration in hydrodynamics", "Onsager's conjecture", "Nash-Kuiper iteration"],
+    "_source": "Convex integration constructions in hydrodynamics, Buckmaster and Vicol, 2021"
+  },
+  {
+    "id": "s_nonuniqueness_weak_navier_stokes",
+    "kind": "theorem",
+    "name": "Nonuniqueness of weak solutions of Navier-Stokes",
+    "type_signature": "",
+    "description": "Buckmaster-Vicol's theorem that the 3D incompressible Navier-Stokes equations admit nonunique weak solutions with bounded kinetic energy, obtained by intermittent convex integration.",
+    "_deps": ["Convex integration in hydrodynamics", "intermittency", "Leray–Hopf weak solutions", "weak solution conservation law"],
+    "_source": "Convex integration constructions in hydrodynamics, Buckmaster and Vicol, 2021"
+  },
+  {
+    "id": "s_intermittency_convex_integration",
+    "kind": "state",
+    "name": "Intermittency in convex integration",
+    "type_signature": "",
+    "description": "The use of spatially concentrated (high L^∞, low L^p for p<2) building-block flows that mimic turbulent energy concentration and supply the extra integrability needed to dissipate viscosity in Navier-Stokes constructions.",
+    "_deps": ["Convex integration in hydrodynamics", "Mikado flows", "turbulence"],
+    "_source": "Convex integration constructions in hydrodynamics, Buckmaster and Vicol, 2021"
+  },
+  {
+    "id": "s_polya_fourier_transform_gaussian",
+    "kind": "axiom",
+    "name": "Polya-Fourier transform with Gaussian factor",
+    "type_signature": "",
+    "description": "The entire function H_{ρ,λ}(z) = ∫ e^{izt} e^{λt²} dρ(t) extending the Riemann ξ-function, whose real-zeros property as λ varies encodes the Riemann Hypothesis.",
+    "_deps": ["Fourier transform", "entire function of finite order", "Riemann Hypothesis"],
+    "_source": "Constants of de Bruijn-Newman type, Newman and Wu, 2019"
+  },
+  {
+    "id": "s_de_bruijn_newman_constant",
+    "kind": "state",
+    "name": "de Bruijn-Newman constant",
+    "type_signature": "",
+    "description": "The finite constant Λ_DN ∈ (−∞, 1/2] such that H_{Φ,λ} has only real zeros iff λ ≥ Λ_DN, so the Riemann Hypothesis is equivalent to Λ_DN ≤ 0.",
+    "_deps": ["Polya-Fourier transform with Gaussian factor", "Riemann Hypothesis"],
+    "_source": "Constants of de Bruijn-Newman type, Newman and Wu, 2019"
+  },
+  {
+    "id": "s_polya_debruijn_newman_bounds",
+    "kind": "theorem",
+    "name": "Polya monotonicity / De Bruijn upper bound / Newman lower bound",
+    "type_signature": "",
+    "description": "The three facts that the real-zeros set P_Φ is an upper half-line (Pólya), contains 1/2 (De Bruijn), and is bounded below (Newman), which together define Λ_DN.",
+    "_deps": ["Polya-Fourier transform with Gaussian factor", "de Bruijn-Newman constant", "backward heat flow of zeros"],
+    "_source": "Constants of de Bruijn-Newman type, Newman and Wu, 2019"
+  },
+  {
+    "id": "s_rodgers_tao_theorem",
+    "kind": "theorem",
+    "name": "Rodgers-Tao theorem (Λ_DN ≥ 0)",
+    "type_signature": "",
+    "description": "The 2018 proof by Rodgers and Tao of Newman's 1976 conjecture that the de Bruijn-Newman constant is nonnegative, formalizing that the Riemann Hypothesis, if true, is only barely so.",
+    "_deps": ["de Bruijn-Newman constant", "heat-flow dynamics of zeros"],
+    "_source": "Constants of de Bruijn-Newman type, Newman and Wu, 2019"
+  },
+  {
+    "id": "s_newman_wu_weak_convergence",
+    "kind": "theorem",
+    "name": "Newman-Wu weak-convergence theorem for real-zero distributions",
+    "type_signature": "",
+    "description": "A theorem that the purely-real-zeros property of Fourier transforms of a sequence of probability measures controls their tail behavior uniformly, used to classify the joint behavior of (T_ρ, P_ρ).",
+    "_deps": ["Polya-Fourier transform with Gaussian factor", "Weak convergence of measures (narrow convergence)", "Laguerre-Polya class"],
+    "_source": "Constants of de Bruijn-Newman type, Newman and Wu, 2019"
+  },
+  {
+    "id": "s_euler_alignment_equations",
+    "kind": "axiom",
+    "name": "Euler alignment (hydrodynamic alignment) equations",
+    "type_signature": "",
+    "description": "The pressure-augmented continuity-momentum system ∂_t ρ + div(ρu) = 0, ∂_t(ρu) + div(ρu⊗u + P) = A(ρ,u) with nonlocal alignment forcing A weighted by a symmetric communication kernel φ.",
+    "_deps": ["Cucker-Smale model", "communication kernel", "pressure tensor"],
+    "_source": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023"
+  },
+  {
+    "id": "s_p_alignment_hydrodynamics",
+    "kind": "axiom",
+    "name": "p-alignment hydrodynamics",
+    "type_signature": "",
+    "description": "The class of alignment models based on (fractional) weighted 2p-graph Laplacians, generalizing Cucker-Smale alignment to nonlinear p-Laplacian-type interaction operators.",
+    "_deps": ["Euler alignment (hydrodynamic alignment) equations", "fractional 2p-Laplacian"],
+    "_source": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023"
+  },
+  {
+    "id": "s_entropic_pressure_tensor",
+    "kind": "state",
+    "name": "Entropic pressure tensor",
+    "type_signature": "",
+    "description": "A pressure law required only to form an energy-dissipative process (no thermodynamic closure assumption), introduced to study long-time alignment dynamics with general pressure.",
+    "_deps": ["Euler alignment (hydrodynamic alignment) equations", "energy dissipation"],
+    "_source": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023"
+  },
+  {
+    "id": "s_flocking_p_alignment_entropic",
+    "kind": "theorem",
+    "name": "Flocking of p-alignment with entropic pressure",
+    "type_signature": "",
+    "description": "Tadmor's result that p-alignment hydrodynamics driven by singular (heavy-tailed) communication kernels flock unconditionally even with general entropic pressure tensors and no closure assumption.",
+    "_deps": ["p-alignment hydrodynamics", "Entropic pressure tensor", "decay of energy fluctuations"],
+    "_source": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023"
+  },
+  {
+    "id": "t_energy_fluctuation_decay_flocking",
+    "kind": "technique",
+    "name": "Energy-fluctuation decay method for flocking",
+    "function_signature": "(Alignment dynamics with heavy-tailed kernel) → (Quantitative flocking / emergence)",
+    "description": "Quantifying flocking by controlling the decay of velocity-energy fluctuations, with enstrophy bounds upgraded to Hölder regularity and uniform dispersion bounds, to prove emergence under heavy-tailed kernels.",
+    "_deps": ["Flocking of p-alignment with entropic pressure", "enstrophy bounds", "communication kernel"],
+    "_source": "Swarming: hydrodynamic alignment with pressure, Eitan Tadmor, 2023"
+  },
+  {
+    "id": "s_non_euclidean_elasticity",
+    "kind": "axiom",
+    "name": "Non-Euclidean (incompatible) elasticity",
+    "type_signature": "",
+    "description": "The variational model in which a growing thin body carries a prescribed target metric g not realizable by an isometric immersion, and the observed shape minimizes an elastic energy measuring deviation of the realized metric from g.",
+    "_deps": ["Riemannian metric", "Isometric immersion", "elastic energy functional"],
+    "_source": "Geometry, analysis, and morphogenesis, Lewicka and Mahadevan, 2022"
+  },
+  {
+    "id": "s_metric_frustration_biological_shape",
+    "kind": "state",
+    "name": "Metric frustration as the origin of biological shape",
+    "type_signature": "",
+    "description": "The principle that morphogenesis of thin tissues results from differential growth inducing an incompatible (e.g. hyperbolic) metric whose frustrated embedding into ℝ³ selects a shape by elastic energy minimization.",
+    "_deps": ["Non-Euclidean (incompatible) elasticity", "Nash embedding theorem", "differential growth"],
+    "_source": "Geometry, analysis, and morphogenesis, Lewicka and Mahadevan, 2022"
+  },
+  {
+    "id": "s_gamma_convergence_plate_shell_hierarchy",
+    "kind": "theorem",
+    "name": "Gamma-convergence hierarchy of thin elastic plate/shell theories",
+    "type_signature": "",
+    "description": "The derivation, as thickness tends to zero, of a hierarchy of reduced 2D energies (membrane, von Kármán, bending/Kirchhoff) as Γ-limits of 3D non-Euclidean elastic energies, indexed by the energy scaling exponent.",
+    "_deps": ["Non-Euclidean (incompatible) elasticity", "Γ-convergence", "geometric rigidity estimate"],
+    "_source": "Geometry, analysis, and morphogenesis, Lewicka and Mahadevan, 2022"
+  },
+  {
+    "id": "t_convex_integration_prestrained_immersions",
+    "kind": "technique",
+    "name": "Convex-integration construction of low-regularity isometric immersions of prestrained films",
+    "function_signature": "(Prescribed growth metric) → (C^{1,α} very-weak isometric immersion with energy-scaling)",
+    "description": "The use of Nash-Kuiper-type convex integration to construct C^{1,α} very-weak (non-Euclidean) isometric immersions realizing prescribed growth metrics, with energy-scaling estimates for the frustrated shapes.",
+    "_deps": ["Nash embedding theorem", "Metric frustration as the origin of biological shape", "Convex integration in hydrodynamics"],
+    "_source": "Geometry, analysis, and morphogenesis, Lewicka and Mahadevan, 2022"
+  },
+  {
+    "id": "s_monge_ampere_constrained_energy",
+    "kind": "state",
+    "name": "Monge-Ampère constrained energy for weak prestrains",
+    "type_signature": "",
+    "description": "The reduced energy governing weakly prestrained thin films whose admissible out-of-plane deflections are constrained by a Monge-Ampère (Gauss-curvature) equation det(D²v) = f.",
+    "_deps": ["Gamma-convergence hierarchy of thin elastic plate/shell theories", "Monge-Ampère equation"],
+    "_source": "Geometry, analysis, and morphogenesis, Lewicka and Mahadevan, 2022"
+  },
+  {
+    "id": "s_boolean_gaussian_noise_stability",
+    "kind": "axiom",
+    "name": "Boolean / Gaussian noise stability",
+    "type_signature": "",
+    "description": "The probability that two ρ-correlated random inputs (on the discrete cube or, in the Gaussian limit, on ℝ^n) yield the same output of a function, the central quantity in probabilistic social choice.",
+    "_deps": ["Boolean function", "correlated Gaussian vectors", "Fourier analysis on the cube"],
+    "_source": "Probabilistic view of voting, paradoxes, and manipulation, Mossel, 2022"
+  },
+  {
+    "id": "s_majority_is_stablest",
+    "kind": "theorem",
+    "name": "Majority is Stablest theorem",
+    "type_signature": "",
+    "description": "Among low-influence balanced Boolean functions, weighted majority maximizes noise stability, with optimal value given by Borell's Gaussian (arccos) noise-stability bound (Mossel, O'Donnell, Oleszkiewicz).",
+    "_deps": ["Boolean / Gaussian noise stability", "Influence of a variable", "Invariance principle for low-influence functions", "Gaussian isoperimetric theorem (Borell, Sudakov-Tsirelson)"],
+    "_source": "Probabilistic view of voting, paradoxes, and manipulation, Mossel, 2022"
+  },
+  {
+    "id": "s_gaussian_quantitative_arrow",
+    "kind": "theorem",
+    "name": "Quantitative Arrow theorem",
+    "type_signature": "",
+    "description": "A quantitative version of Arrow's impossibility theorem: any aggregation rule ε-far from every dictatorship produces an irrational (non-transitive) outcome with probability bounded below polynomially in ε.",
+    "_deps": ["Arrow's impossibility theorem", "Boolean / Gaussian noise stability", "reverse hypercontractivity"],
+    "_source": "Probabilistic view of voting, paradoxes, and manipulation, Mossel, 2022"
+  },
+  {
+    "id": "s_quantitative_gibbard_satterthwaite",
+    "kind": "theorem",
+    "name": "Quantitative Gibbard-Satterthwaite theorem",
+    "type_signature": "",
+    "description": "Any social choice function far from dictatorship has a non-negligible (inverse-polynomial) probability of being manipulable by a random voter, proved via isoperimetric arguments on the rankings graph.",
+    "_deps": ["Gibbard–Satterthwaite theorem", "Boolean / Gaussian noise stability", "isoperimetric inequalities", "Influence of a variable"],
+    "_source": "Probabilistic view of voting, paradoxes, and manipulation, Mossel, 2022"
+  },
+  {
+    "id": "t_invariance_principle_low_influence",
+    "kind": "technique",
+    "name": "Invariance principle for low-influence functions",
+    "function_signature": "(Low-degree low-influence multilinear polynomial) → (Near-equal distribution under Bernoulli and Gaussian inputs)",
+    "description": "A nonlinear Lindeberg-type theorem showing low-degree, low-influence multilinear polynomials have nearly the same distribution under Bernoulli and Gaussian inputs, reducing discrete voting problems to Gaussian geometry.",
+    "_deps": ["Boolean / Gaussian noise stability", "Hypercontractive semigroup", "Influence of a variable"],
+    "_source": "Probabilistic view of voting, paradoxes, and manipulation, Mossel, 2022"
+  },
+  {
+    "id": "s_boolean_social_choice_function",
+    "kind": "axiom",
+    "name": "Boolean social choice function",
+    "type_signature": "",
+    "description": "A function assigning a societal outcome to a profile of voter preferences (e.g. a Boolean function aggregating n voters' binary opinions), the basic object of probabilistic social choice theory.",
+    "_deps": ["Boolean function", "Finite voting profiles"],
+    "_source": "A probabilistic view of voting, paradoxes, and manipulation, Mossel, 2022"
+  },
+
+  {
+    "id": "s_dolds_theorem_equivariant",
+    "kind": "theorem",
+    "name": "Dold's theorem (equivariant map nonexistence)",
+    "type_signature": "",
+    "description": "For a finite group G of order >1, if X is n-connected with a free G-action and Y is paracompact of dimension ≤ n with a free G-action, then there is no G-equivariant continuous map X → Y.",
+    "_deps": ["free group action", "n-connected space", "Equivariant map", "Borsuk–Ulam theorem"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "t_test_map_configuration_space",
+    "kind": "technique",
+    "name": "Test map / configuration space scheme",
+    "function_signature": "(Combinatorial mass-partition problem) → (Nonexistence of a G-equivariant map)",
+    "description": "Reducing a combinatorial mass-partition problem to the nonexistence of a G-equivariant map by parametrizing partitions as a configuration space X and encoding the splitting via a test map to a space Y with a G-action.",
+    "_deps": ["deleted join configuration space", "Equivariant map", "Borsuk–Ulam theorem", "Dold's theorem (equivariant map nonexistence)"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_mass_partition_problem",
+    "kind": "axiom",
+    "name": "Mass partition problem",
+    "type_signature": "",
+    "description": "Given a fixed family P of partitions of ℝ^d each into a fixed number of parts and a family H of measures, deciding whether some partition in P splits each measure in a prescribed way.",
+    "_deps": ["absolutely continuous measure", "partition of Euclidean space", "hyperplane / convex partition"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_general_position_point_set",
+    "kind": "axiom",
+    "name": "General position (point set)",
+    "type_signature": "",
+    "description": "A finite set of points in ℝ^d such that no d+1 of them lie on a common hyperplane.",
+    "_deps": ["hyperplane", "finite point set"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_necklace_splitting_theorem",
+    "kind": "theorem",
+    "name": "Necklace splitting theorem (Hobby-Rice / Alon)",
+    "type_signature": "",
+    "description": "For m absolutely continuous probability measures on ℝ and r thieves, there is a partition using (r−1)m cuts whose pieces can be distributed among r parties so each receives an equal share of every measure.",
+    "_deps": ["absolutely continuous measure", "Ham sandwich theorem", "moment curve", "Borsuk–Ulam theorem"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "t_moment_curve_lifting",
+    "kind": "technique",
+    "name": "Moment curve lifting (necklace splitting proof)",
+    "function_signature": "(Measures on ℝ) → (Cuts via bisecting hyperplane in ℝ^m)",
+    "description": "Embedding measures on ℝ via the moment curve t ↦ (t, t², ..., t^m) into ℝ^m and applying the Ham Sandwich theorem, so a bisecting hyperplane yields the required cuts.",
+    "_deps": ["moment curve", "Ham sandwich theorem"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_grunbaum_hadwiger_ramos_problem",
+    "kind": "state",
+    "name": "Grünbaum-Hadwiger-Ramos problem",
+    "type_signature": "",
+    "description": "Determining the smallest dimension d for which a single arrangement of k hyperplanes can equipart any given collection of j measures in ℝ^d.",
+    "_deps": ["hyperplane arrangement", "equipartition", "absolutely continuous measure"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_nandakumar_ramana_rao_problem",
+    "kind": "state",
+    "name": "Nandakumar-Ramana-Rao problem",
+    "type_signature": "",
+    "description": "Whether any convex body (or measure) in ℝ^d can be partitioned into k convex pieces simultaneously equal in measure and in a prescribed list of d−1 additional continuous functionals (e.g. perimeter).",
+    "_deps": ["convex partition", "absolutely continuous measure", "optimal transport / power diagram"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_convex_equipartition_theorem",
+    "kind": "theorem",
+    "name": "Convex equipartition theorem (spicy chicken theorem)",
+    "type_signature": "",
+    "description": "For k a prime power, any absolutely continuous probability measure on ℝ^d admits a partition into k convex pieces of equal measure on which any chosen d−1 continuous functionals are also equalized.",
+    "_deps": ["Nandakumar-Ramana-Rao problem", "convex partition", "equivariant topology", "optimal transport (power diagrams)"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_holmsen_kyncl_valculescu_conjecture",
+    "kind": "state",
+    "name": "Holmsen-Kynčl-Valculescu conjecture",
+    "type_signature": "",
+    "description": "A conjecture asserting bounds on partitions of colored point sets into parts each capturing prescribed numbers of points from each color class while respecting a containment/transversal condition.",
+    "_deps": ["convex partition", "colored point sets", "General position (point set)"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_center_transversal_theorem",
+    "kind": "theorem",
+    "name": "Center Transversal theorem",
+    "type_signature": "",
+    "description": "For any k+1 measures in ℝ^d there exists a k-dimensional affine subspace that is a center transversal: every hyperplane containing it has at least a 1/(d−k+1) fraction of each measure on each side.",
+    "_deps": ["Borsuk–Ulam theorem", "centerpoint", "Ham sandwich theorem"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_yao_yao_partition_theorem",
+    "kind": "theorem",
+    "name": "Yao-Yao partition theorem",
+    "type_signature": "",
+    "description": "A measure in ℝ^d can be partitioned into 2^d convex cones from a common apex, each of equal measure and with bounded directional spread, enabling efficient geometric range searching.",
+    "_deps": ["convex cone partition", "absolutely continuous measure", "geometric range searching"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_same_type_lemma",
+    "kind": "theorem",
+    "name": "Same-type lemma",
+    "type_signature": "",
+    "description": "Given finitely many point sets in general position in ℝ^d, large positive-fraction subsets can be chosen so that every transversal (one point per subset) realizes the same order type.",
+    "_deps": ["General position (point set)", "order type", "Ramsey-type partition"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "s_ppa_completeness_ham_sandwich",
+    "kind": "theorem",
+    "name": "PPA-completeness of discrete Ham Sandwich",
+    "type_signature": "",
+    "description": "Computing a discrete ham sandwich cut, with dimension as part of the input, is complete for the complexity class PPA (Polynomial Parity Argument).",
+    "_deps": ["Ham sandwich theorem", "PPA complexity class", "General position (point set)"],
+    "_source": "A survey of mass partitions, Roldán-Pensado and Soberón, 2022"
+  },
+  {
+    "id": "t_categorification",
+    "kind": "technique",
+    "name": "Categorification",
+    "function_signature": "(Algebraic invariant) → (Categorical object whose decategorification recovers it)",
+    "description": "Lifting an algebraic invariant to a richer categorical object (homology groups or a category) whose decategorification (Euler characteristic or Grothendieck group) recovers the original invariant.",
+    "_deps": ["Grothendieck group", "Euler characteristic", "TQFT"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_reduced_khovanov_homology",
+    "kind": "state",
+    "name": "Reduced Khovanov homology",
+    "type_signature": "",
+    "description": "A variant of Khovanov homology defined using a marked point on the link, splitting unreduced homology and refining the invariant.",
+    "_deps": ["Khovanov homology", "Frobenius algebra (rank two)"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_functoriality_khovanov_cobordism",
+    "kind": "theorem",
+    "name": "Functoriality of Khovanov homology under link cobordisms",
+    "type_signature": "",
+    "description": "A smooth cobordism between links in ℝ³ × [0,1] induces a (well-defined up to sign) map on Khovanov homology, making it a functor from the link cobordism category.",
+    "_deps": ["Khovanov homology", "link cobordism", "movie moves"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_lee_spectral_sequence_homology",
+    "kind": "theorem",
+    "name": "Lee spectral sequence and Lee homology",
+    "type_signature": "",
+    "description": "A deformation of the Khovanov differential yields Lee homology of dimension 2^{#components}, with an induced spectral sequence from Khovanov homology converging to it.",
+    "_deps": ["Khovanov homology", "Frobenius algebra deformation", "spectral sequence"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_rasmussen_s_invariant",
+    "kind": "state",
+    "name": "Rasmussen s-invariant",
+    "type_signature": "",
+    "description": "An integer s(K) extracted from the adjacent quantum gradings of the two surviving generators on the E_∞ page of the Lee spectral sequence, defining a concordance homomorphism.",
+    "_deps": ["Lee spectral sequence and Lee homology", "Khovanov homology", "quantum grading"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_rasmussen_slice_genus_bound",
+    "kind": "theorem",
+    "name": "Rasmussen's slice-genus bound",
+    "type_signature": "",
+    "description": "The s-invariant is a homomorphism from the smooth concordance group and satisfies |s(K)| ≤ 2 g_4(K), giving a combinatorial lower bound on the slice genus.",
+    "_deps": ["Rasmussen s-invariant", "smooth concordance group", "Slice genus"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_combinatorial_milnor_conjecture",
+    "kind": "theorem",
+    "name": "Combinatorial proof of the Milnor conjecture (torus knots)",
+    "type_signature": "",
+    "description": "Rasmussen's s-invariant gives s(T_{p,q}) = 2 g_4(T_{p,q}) = (p−1)(q−1), yielding the first gauge-theory-free proof that the slice genus of the (p,q)-torus knot equals (p−1)(q−1)/2.",
+    "_deps": ["Rasmussen s-invariant", "Rasmussen's slice-genus bound", "torus knot", "Slice genus"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_khovanov_stable_homotopy_type",
+    "kind": "state",
+    "name": "Khovanov stable homotopy type (Lipshitz-Sarkar spectrum)",
+    "type_signature": "",
+    "description": "A stable homotopy refinement (a spectrum) whose cohomology recovers Khovanov homology, carrying Steenrod operations that strictly strengthen the homological invariant.",
+    "_deps": ["Khovanov homology", "stable homotopy theory (spectra)", "Steenrod operations"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_odd_khovanov_homology",
+    "kind": "state",
+    "name": "Odd Khovanov homology",
+    "type_signature": "",
+    "description": "An integral variant of Khovanov homology (Ozsváth-Rasmussen-Szabó) that lifts the Ozsváth-Szabó spectral sequence to ℤ-coefficients and is mutation invariant.",
+    "_deps": ["Khovanov homology", "cube of resolutions", "mutation"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_kronheimer_mrowka_unknot_detection",
+    "kind": "theorem",
+    "name": "Kronheimer-Mrowka unknot detection",
+    "type_signature": "",
+    "description": "Via a spectral sequence from singular-instanton homology to Khovanov homology, if reduced Khovanov homology of K has rank one then K is the unknot.",
+    "_deps": ["Khovanov homology", "instanton Floer homology", "spectral sequence"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_symplectic_khovanov_homology",
+    "kind": "state",
+    "name": "Symplectic Khovanov homology",
+    "type_signature": "",
+    "description": "A Floer-theoretic (Lagrangian intersection) construction of a link invariant via the geometry of nilpotent slices, conjecturally (and in cases provably) isomorphic to combinatorial Khovanov homology.",
+    "_deps": ["Khovanov homology", "lagrangian floer homology", "nilpotent slice", "quiver variety"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "t_spectral_sequences_to_khovanov",
+    "kind": "technique",
+    "name": "Spectral sequences from gauge/Floer theories to Khovanov homology",
+    "function_signature": "(Khovanov homology, gauge/Floer invariant) → (Detection result)",
+    "description": "A family of spectral sequences from Khovanov homology to instanton, monopole, or Heegaard Floer invariants used to prove detection results in the spirit of unknot detection.",
+    "_deps": ["Khovanov homology", "instanton Floer homology", "Heegaard Floer homology", "spectral sequence"],
+    "_source": "Categorical lifting of the Jones polynomial: a survey, Khovanov and Lipshitz, 2023"
+  },
+  {
+    "id": "s_teichmuller_curve",
+    "kind": "axiom",
+    "name": "Teichmüller curve",
+    "type_signature": "",
+    "description": "An algebraic curve V isometrically and holomorphically immersed in the moduli space M_g of genus-g Riemann surfaces with respect to the Teichmüller metric, i.e. a totally geodesic complex curve.",
+    "_deps": ["Moduli space of Riemann surfaces", "Teichmüller metric", "complex geodesic"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_veech_group_lattice_surface",
+    "kind": "axiom",
+    "name": "Veech group / lattice surface SL(X, ω)",
+    "type_signature": "",
+    "description": "The group of derivatives of affine automorphisms of a translation surface (X, ω); when it is a lattice in SL_2(ℝ) the surface is a lattice (Veech) surface generating a Teichmüller curve.",
+    "_deps": ["veech translation surface", "affine automorphism", "lattice in SL_2(ℝ)"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_primitive_teichmuller_curve",
+    "kind": "axiom",
+    "name": "Primitive Teichmüller curve",
+    "type_signature": "",
+    "description": "A Teichmüller curve in M_g that does not arise by covering constructions from a Teichmüller curve in a moduli space of lower genus.",
+    "_deps": ["Teichmüller curve", "branched covering"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_optimal_dynamics_lattice_billiards",
+    "kind": "theorem",
+    "name": "Optimal dynamics of billiards in lattice polygons",
+    "type_signature": "",
+    "description": "Billiards in a polygon whose unfolding generates a lattice surface have optimal dynamics: every trajectory is either periodic or uniformly distributed; in particular this holds for regular polygons.",
+    "_deps": ["Veech dichotomy for translation surfaces", "Veech group / lattice surface SL(X, ω)", "billiard unfolding"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_regular_polygons_primitive_teichmuller",
+    "kind": "theorem",
+    "name": "Regular polygons generate primitive Teichmüller curves",
+    "type_signature": "",
+    "description": "The translation surface obtained by unfolding billiards in a regular n-gon has a lattice Veech group and generates a primitive Teichmüller curve.",
+    "_deps": ["Veech group / lattice surface SL(X, ω)", "Primitive Teichmüller curve", "billiard unfolding", "cylinder decomposition"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_masurs_criterion",
+    "kind": "theorem",
+    "name": "Masur's criterion",
+    "type_signature": "",
+    "description": "If the Teichmüller geodesic ray generated by (X, ω) does not return to a compact set infinitely often, then its horizontal foliation fails to be uniquely ergodic; conversely recurrence forces unique ergodicity.",
+    "_deps": ["veech translation surface", "teichmuller geodesic", "unique ergodicity"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "t_cylinder_decomposition_parabolic",
+    "kind": "technique",
+    "name": "Cylinder decomposition and parabolic affine automorphisms",
+    "function_signature": "(Translation surface with commensurable cylinder moduli) → (Parabolic elements certifying lattice Veech group)",
+    "description": "Decomposing a translation surface into parallel cylinders with commensurable moduli and applying simultaneous Dehn twists to produce parabolic elements of the Veech group, certifying that it is a lattice.",
+    "_deps": ["veech translation surface", "Veech group / lattice surface SL(X, ω)", "Dehn twist"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_weierstrass_curve_wd",
+    "kind": "state",
+    "name": "Weierstrass curve W_D (genus 2 classification)",
+    "type_signature": "",
+    "description": "For each non-square discriminant D, the locus W_D in M_2 of genus-2 surfaces with a double-zero 1-form whose Jacobian admits real multiplication by the order of discriminant D, an infinite series of primitive Teichmüller curves.",
+    "_deps": ["Primitive Teichmüller curve", "real multiplication", "Hilbert modular surface", "Weierstrass point"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_classification_primitive_teichmuller_genus2",
+    "kind": "theorem",
+    "name": "Classification of primitive Teichmüller curves in genus 2",
+    "type_signature": "",
+    "description": "Every primitive Teichmüller curve in M_2 is one of the Weierstrass curves W_D (with the decagon example a special case), giving a complete classification in genus 2.",
+    "_deps": ["Weierstrass curve W_D (genus 2 classification)", "Primitive Teichmüller curve", "real multiplication"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_finiteness_primitive_teichmuller_genus3",
+    "kind": "theorem",
+    "name": "Finiteness of primitive Teichmüller curves in genus 3 outside W_D",
+    "type_signature": "",
+    "description": "In M_3 there are only finitely many primitive Teichmüller curves not belonging to the Weierstrass series W_D.",
+    "_deps": ["Weierstrass curve W_D (genus 2 classification)", "Primitive Teichmüller curve"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_infinitude_primitive_teichmuller_open",
+    "kind": "state",
+    "name": "Infinitude of primitive Teichmüller curves in higher genus (open problem)",
+    "type_signature": "",
+    "description": "The open question of whether there exist infinitely many primitive Teichmüller curves in M_g for g ≥ 5, where no infinite construction is currently known.",
+    "_deps": ["Primitive Teichmüller curve", "Moduli space of Riemann surfaces"],
+    "_source": "Billiards and Teichmüller curves, McMullen, 2023"
+  },
+  {
+    "id": "s_slice_knot",
+    "kind": "axiom",
+    "name": "Slice knot",
+    "type_signature": "",
+    "description": "A knot K in S³ that bounds a smoothly embedded disk in the 4-ball B⁴.",
+    "_deps": ["knot in S³", "4-ball B⁴", "smooth embedded disk"],
+    "_source": "Getting a handle on the Conway knot, Jennifer Hom, 2022"
+  },
+  {
+    "id": "s_slice_genus",
+    "kind": "axiom",
+    "name": "Slice genus",
+    "type_signature": "",
+    "description": "The minimal genus of a smooth compact oriented connected surface embedded in the 4-ball with boundary K; slice knots are exactly those of slice genus zero.",
+    "_deps": ["Slice knot", "4-ball B⁴", "Seifert surface"],
+    "_source": "Getting a handle on the Conway knot, Jennifer Hom, 2022"
+  },
+  {
+    "id": "s_knot_mutation",
+    "kind": "axiom",
+    "name": "Knot mutation",
+    "type_signature": "",
+    "description": "Excising a tangle from a knot diagram and regluing it after a rotation, relating the Conway knot to the Kinoshita-Terasaka knot and preserving many invariants.",
+    "_deps": ["knot diagram", "tangle"],
+    "_source": "Getting a handle on the Conway knot, Jennifer Hom, 2022"
+  },
+  {
+    "id": "s_knot_trace",
+    "kind": "axiom",
+    "name": "Knot trace X(K)",
+    "type_signature": "",
+    "description": "The 4-manifold obtained from the 4-ball by attaching a 0-framed 2-handle along the knot K in S³ = ∂B⁴.",
+    "_deps": ["knot in S³", "4-ball B⁴", "2-handle attachment"],
+    "_source": "Getting a handle on the Conway knot, Jennifer Hom, 2022"
+  },
+  {
+    "id": "s_conway_knot_not_slice",
+    "kind": "theorem",
+    "name": "The Conway knot is not slice",
+    "type_signature": "",
+    "description": "Piccirillo's theorem that the Conway knot does not bound a smooth disk in the 4-ball, settling the last sub-13-crossing knot whose sliceness was unknown.",
+    "_deps": ["Slice knot", "Knot trace X(K)", "Trace embedding lemma", "Trace invariance of nu (knot Floer slice obstruction)"],
+    "_source": "Getting a handle on the Conway knot, Jennifer Hom, 2022"
+  },
+  {
+    "id": "s_trace_embedding_lemma",
+    "kind": "theorem",
+    "name": "Trace embedding lemma",
+    "type_signature": "",
+    "description": "A knot K is slice if and only if its trace X(K) embeds smoothly in S⁴, so that sliceness depends only on the diffeomorphism type of the trace.",
+    "_deps": ["Knot trace X(K)", "Slice knot", "smooth embedding in S⁴"],
+    "_source": "Getting a handle on the Conway knot, Jennifer Hom, 2022"
+  },
+  {
+    "id": "t_handle_rearrangement_trace_equivalent",
+    "kind": "technique",
+    "name": "Handle-rearrangement construction of trace-equivalent knots",
+    "function_signature": "(Knot K) → (Different knot K' with the same trace)",
+    "description": "Building the knot trace from a 4-ball plus a 1-handle and two 2-handles and reinterpreting which 2-handle is the attaching knot, producing a different knot K' with the same trace as K.",
+    "_deps": ["Knot trace X(K)", "2-handle attachment", "handle decomposition"],
+    "_source": "Getting a handle on the Conway knot, Jennifer Hom, 2022"
+  },
+  {
+    "id": "s_trace_invariance_nu",
+    "kind": "theorem",
+    "name": "Trace invariance of nu (knot Floer slice obstruction)",
+    "type_signature": "",
+    "description": "The slice obstruction ν from knot Floer homology is an invariant of the knot trace, so knots sharing a trace have equal ν, allowing K' to obstruct sliceness of the Conway knot.",
+    "_deps": ["Knot trace X(K)", "knot Floer homology", "Slice knot"],
+    "_source": "Getting a handle on the Conway knot, Jennifer Hom, 2022"
+  },
+  {
+    "id": "s_vanishing_classical_slice_obstructions_conway",
+    "kind": "state",
+    "name": "Vanishing of classical slice obstructions for the Conway knot",
+    "type_signature": "",
+    "description": "Every classical sliceness obstruction (Alexander polynomial, signature, Rasmussen s-invariant, etc.) vanishes for the Conway knot, motivating Piccirillo's trace-based approach.",
+    "_deps": ["Alexander polynomial", "Rasmussen s-invariant", "Knot mutation", "Slice knot"],
+    "_source": "Getting a handle on the Conway knot, Jennifer Hom, 2022"
+  },
+
+  {
+    "id": "s_topological_helly_theorem",
+    "kind": "theorem",
+    "name": "Topological Helly theorem",
+    "type_signature": "",
+    "description": "For a good cover (a family of open sets in ℝ^d all of whose nonempty intersections are contractible), if every d+1 sets intersect then all sets have a common point.",
+    "_deps": ["good cover", "nerve of cover simplicial complex", "contractibility / acyclicity"],
+    "_source": "Helly-type problems, Bárány and Kalai, 2022"
+  },
+  {
+    "id": "s_colorful_caratheodory_theorem",
+    "kind": "theorem",
+    "name": "Colorful Caratheodory theorem",
+    "type_signature": "",
+    "description": "Given d+1 color classes in ℝ^d each whose convex hull contains a point x, there is a rainbow selection of one point from each class whose convex hull contains x (Bárány 1982).",
+    "_deps": ["Carathéodory's theorem (convex hull)", "convex hull", "rainbow / transversal selection"],
+    "_source": "Helly-type problems, Bárány and Kalai, 2022"
+  },
+  {
+    "id": "s_upper_bound_theorem_convex_sets",
+    "kind": "theorem",
+    "name": "Upper bound theorem for convex sets",
+    "type_signature": "",
+    "description": "Bounds the number of k-fold intersection points of n convex sets in ℝ^d in which no d+r+1 sets have a common point, in terms of the number of empty intersections (Kalai 1984, Eckhoff 1985).",
+    "_deps": ["nerve of cover simplicial complex", "algebraic shifting", "exterior face rings"],
+    "_source": "Helly-type problems, Bárány and Kalai, 2022"
+  },
+  {
+    "id": "s_topological_tverberg_conjecture",
+    "kind": "state",
+    "name": "Topological Tverberg conjecture",
+    "type_signature": "",
+    "description": "Conjecture that for any continuous map from the (d+1)(r−1)-simplex to ℝ^d there exist r pairwise vertex-disjoint faces whose images have a common point; true for r a prime power and disproved by Frick for general r.",
+    "_deps": ["Tverberg's theorem", "equivariant topology", "Borsuk–Ulam theorem"],
+    "_source": "Helly-type problems, Bárány and Kalai, 2022"
+  },
+  {
+    "id": "s_sierksma_conjecture",
+    "kind": "state",
+    "name": "Sierksma's conjecture",
+    "type_signature": "",
+    "description": "Conjecture that the number of Tverberg r-partitions of any (r−1)(d+1)+1 points in general position in ℝ^d is at least ((r−1)!)^d.",
+    "_deps": ["Tverberg's theorem"],
+    "_source": "Helly-type problems, Bárány and Kalai, 2022"
+  },
+  {
+    "id": "s_cascade_conjecture",
+    "kind": "state",
+    "name": "Cascade conjecture",
+    "type_signature": "",
+    "description": "Kalai's conjecture that if Σ_i (1+dim T_i(A)) over i=1..r−1 is less than |A| then the r-fold Tverberg set T_r(A) is nonempty, interpolating between Radon and Tverberg.",
+    "_deps": ["Tverberg's theorem", "Radon's theorem", "Tverberg depth"],
+    "_source": "Helly-type problems, Bárány and Kalai, 2022"
+  },
+  {
+    "id": "t_nerve_complex_method",
+    "kind": "technique",
+    "name": "Nerve complex method",
+    "function_signature": "(Family of sets) → (Helly-type bound via nerve topology)",
+    "description": "Encoding the intersection pattern of a family of sets as a simplicial complex (the nerve) whose combinatorial-topological properties (d-collapsibility, being d-Leray) drive Helly-type bounds.",
+    "_deps": ["simplicial complex", "d-collapsibility", "Leray number"],
+    "_source": "Helly-type problems, Bárány and Kalai, 2022"
+  },
+  {
+    "id": "s_impagliazzo_wigderson_theorem",
+    "kind": "theorem",
+    "name": "Impagliazzo-Wigderson theorem (hardness vs randomness)",
+    "type_signature": "",
+    "description": "If some problem in E requires Boolean circuits of size 2^{Ω(n)}, then P = BPP, i.e. randomized polynomial time can be fully derandomized.",
+    "_deps": ["Nisan-Wigderson design", "hardness amplification (Yao XOR lemma / direct product)", "complexity class BPP", "circuit lower bounds"],
+    "_source": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "id": "t_hardness_amplification",
+    "kind": "technique",
+    "name": "Hardness amplification (Yao XOR lemma / direct product)",
+    "function_signature": "(Mildly average-case-hard function) → (Extremely average-case-hard function)",
+    "description": "Converting a function mildly hard on average into one extremely hard on average by taking XORs or direct products of independent instances.",
+    "_deps": ["average-case hardness", "Boolean function"],
+    "_source": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "id": "s_zigzag_product_of_graphs",
+    "kind": "state",
+    "name": "Zig-zag product of graphs",
+    "type_signature": "",
+    "description": "A graph product (Reingold-Vadhan-Wigderson) combining a large graph with a small one to produce expanders of controlled degree, yielding an iterative combinatorial construction of expander families.",
+    "_deps": ["Expander graph", "spectral gap", "graph product"],
+    "_source": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "id": "s_sl_equals_l_theorem",
+    "kind": "theorem",
+    "name": "SL = L theorem (Reingold)",
+    "type_signature": "",
+    "description": "Undirected s-t connectivity can be decided in deterministic logarithmic space (symmetric logspace equals logspace), proved via the zig-zag product.",
+    "_deps": ["Zig-zag product of graphs", "Expander graph", "logspace computation"],
+    "_source": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "id": "t_operator_scaling",
+    "kind": "technique",
+    "name": "Operator scaling / noncommutative optimization",
+    "function_signature": "(Tuple of matrices) → (Doubly balanced form; null-cone / PIT decision)",
+    "description": "A geodesically-convex alternating-minimization algorithm over symmetric (group-orbit) spaces that scales tuples of matrices toward doubly balanced form, solving null-cone and noncommutative singularity problems and instances of polynomial identity testing.",
+    "_deps": ["First fundamental theorem of invariant theory", "geodesic convexity", "polynomial identity testing", "null-cone problem"],
+    "_source": "On the works of Avi Wigderson, 2023"
+  },
+  {
+    "id": "s_efficiency_gap",
+    "kind": "state",
+    "name": "Efficiency gap",
+    "type_signature": "",
+    "description": "A scalar measure of partisan advantage in a districting plan equal to the normalized difference between the two parties' total wasted votes (votes for losers plus surplus votes for winners).",
+    "_deps": ["wasted votes", "districting plan", "seats-votes relation"],
+    "_source": "Geometry, Inference, Complexity, and Democracy, Ellenberg, 2021"
+  },
+  {
+    "id": "s_partisan_symmetry",
+    "kind": "axiom",
+    "name": "Partisan symmetry",
+    "type_signature": "",
+    "description": "The criterion that a districting plan's seats-votes curve be invariant under swapping the two parties' roles, i.e. symmetric under (x,y) ↦ (1−x,1−y).",
+    "_deps": ["seats-votes relation", "districting plan"],
+    "_source": "Geometry, Inference, Complexity, and Democracy, Ellenberg, 2021"
+  },
+  {
+    "id": "t_ensemble_outlier_analysis_districting",
+    "kind": "technique",
+    "name": "Ensemble (outlier) analysis of districting plans",
+    "function_signature": "(Enacted plan, random sample of valid plans) → (Outlier / gerrymander verdict)",
+    "description": "Detecting partisan gerrymanders by generating a large random sample of legally valid districting plans and testing whether an enacted plan is a statistical outlier relative to that ensemble.",
+    "_deps": ["Markov chain Monte Carlo", "districting plan", "outlier / hypothesis testing"],
+    "_source": "Geometry, Inference, Complexity, and Democracy, Ellenberg, 2021"
+  },
+  {
+    "id": "s_recombination_recom_markov_chain",
+    "kind": "state",
+    "name": "Recombination (ReCom) Markov chain",
+    "type_signature": "",
+    "description": "A Markov chain on balanced graph partitions that merges two adjacent districts, samples a uniform spanning tree of the union, and splits it along an edge into two balanced connected parts, mixing far faster than single-unit flip walks.",
+    "_deps": ["Markov chain Monte Carlo", "spanning tree", "graph partition", "districting plan"],
+    "_source": "Geometry, Inference, Complexity, and Democracy, Ellenberg, 2021"
+  },
+  {
+    "id": "s_chikina_frieze_pegden_local_outlier_test",
+    "kind": "theorem",
+    "name": "Chikina-Frieze-Pegden local outlier test",
+    "type_signature": "",
+    "description": "For a reversible Markov chain, a rigorous statistical significance bound on a plan being an outlier obtained from short random walks without knowing the mixing time, with false-positive probability at most 2√ε.",
+    "_deps": ["reversible Markov chain", "Ensemble (outlier) analysis of districting plans"],
+    "_source": "Geometry, Inference, Complexity, and Democracy, Ellenberg, 2021"
+  },
+  {
+    "id": "s_nphardness_balanced_connected_partition",
+    "kind": "theorem",
+    "name": "NP-hardness of balanced connected graph partition",
+    "type_signature": "",
+    "description": "Sampling or counting balanced partitions of a weighted planar graph into connected pieces of equal weight is NP-hard, even into two parts, formalizing the computational difficulty of districting.",
+    "_deps": ["graph partition", "NP-hardness", "planar graph"],
+    "_source": "Geometry, Inference, Complexity, and Democracy, Ellenberg, 2021"
+  },
+  {
+    "id": "s_sunflower_conjecture_open",
+    "kind": "state",
+    "name": "Sunflower conjecture",
+    "type_signature": "",
+    "description": "Conjecture of Erdős and Rado that for each r there is a constant c(r) such that any family of more than c(r)^w sets of size at most w contains an r-sunflower.",
+    "_deps": ["sunflower (Δ-system)", "Sunflower lemma (Erdős-Ko)"],
+    "_source": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "id": "s_spread_robust_sunflower_family",
+    "kind": "axiom",
+    "name": "Spread (robust sunflower) family",
+    "type_signature": "",
+    "description": "A weighted set family is r-spread if for every set T the total weight of members containing T is at most r^{−|T|} of the whole, a pseudorandomness condition forcing the family to look uniformly spread out.",
+    "_deps": ["set system", "uniform distribution / measure"],
+    "_source": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "id": "s_kahn_kalai_expectation_threshold",
+    "kind": "theorem",
+    "name": "Kahn-Kalai expectation-threshold conjecture (Park-Pham theorem)",
+    "type_signature": "",
+    "description": "For any monotone property, the threshold probability is at most a logarithmic factor times the expectation threshold (the fractional lower bound), proved by Park and Pham via spread families.",
+    "_deps": ["Spread (robust sunflower) family", "monotone property", "threshold function"],
+    "_source": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "id": "t_random_restriction_with_spreadness",
+    "kind": "technique",
+    "name": "Random restriction with spreadness",
+    "function_signature": "(Spread set family) → (Forced sunflower)",
+    "description": "Repeatedly applying random restrictions to a spread set family, shrinking set sizes while preserving approximate spreadness until a sunflower is forced, with Janson-type inequalities at the base case.",
+    "_deps": ["Spread (robust sunflower) family", "random restriction argument", "Janson's inequality"],
+    "_source": "Sunflowers: from soil to oil, Anup Rao, 2023"
+  },
+  {
+    "id": "s_chow_ring_of_a_matroid",
+    "kind": "axiom",
+    "name": "Chow ring of a matroid",
+    "type_signature": "",
+    "description": "A graded commutative ring built from the flats of a matroid (via the Bergman fan / order complex) that plays the role of the cohomology of a smooth projective variety even for nonrealizable matroids.",
+    "_deps": ["Matroid", "Bergman fan", "lattice of flats", "wonderful compactification"],
+    "_source": "Essence of independence: Hodge theory of matroids, Christopher Eur, 2023"
+  },
+  {
+    "id": "s_kahler_package_for_matroids",
+    "kind": "theorem",
+    "name": "Kahler package for matroids",
+    "type_signature": "",
+    "description": "The Chow ring of any matroid satisfies Poincaré duality, the hard Lefschetz theorem, and the Hodge-Riemann relations, despite the absence of an underlying variety (Adiprasito-Huh-Katz).",
+    "_deps": ["Chow ring of a matroid", "hard Lefschetz theorem", "Hodge-Riemann relations", "Poincaré duality"],
+    "_source": "Essence of independence: Hodge theory of matroids, Christopher Eur, 2023"
+  },
+  {
+    "id": "s_heron_rota_welsh_conjecture",
+    "kind": "theorem",
+    "name": "Heron-Rota-Welsh conjecture (theorem)",
+    "type_signature": "",
+    "description": "The coefficients of the reduced characteristic polynomial of any matroid form a log-concave sequence, proved via the Hodge-Riemann relations on the Chow ring.",
+    "_deps": ["Chow ring of a matroid", "Kahler package for matroids", "characteristic polynomial", "log-concavity"],
+    "_source": "Essence of independence: Hodge theory of matroids, Christopher Eur, 2023"
+  },
+  {
+    "id": "s_dowling_wilson_top_heavy",
+    "kind": "theorem",
+    "name": "Dowling-Wilson top-heavy theorem",
+    "type_signature": "",
+    "description": "For any matroid the number of flats of rank k is at most the number of flats of corank k for k below half the rank (Braden-Huh-Matherne-Proudfoot-Wang).",
+    "_deps": ["Matroid", "lattice of flats", "Whitney numbers", "intersection cohomology / Kahler package"],
+    "_source": "Essence of independence: Hodge theory of matroids, Christopher Eur, 2023"
+  },
+  {
+    "id": "s_mason_log_concavity_conjecture",
+    "kind": "theorem",
+    "name": "Mason's log-concavity conjecture (theorem)",
+    "type_signature": "",
+    "description": "The numbers of independent sets of each size in a matroid form an (ultra) log-concave sequence, established via the Hodge-theoretic / Lorentzian polynomial framework (Adiprasito-Huh-Katz, Anari et al., Brändén-Huh).",
+    "_deps": ["Matroid", "log-concavity", "Lorentzian polynomials", "Kahler package for matroids"],
+    "_source": "Essence of independence: Hodge theory of matroids, Christopher Eur, 2023"
+  },
+  {
+    "id": "t_hodge_riemann_relations_combinatorial",
+    "kind": "technique",
+    "name": "Hodge-Riemann relations (combinatorial use)",
+    "function_signature": "(Degree-graded ring with bilinear form) → (Log-concavity / top-heaviness inequalities)",
+    "description": "Establishing inequalities by proving that a bilinear form on a degree-graded ring is nondegenerate with prescribed signature, transferring algebraic positivity to combinatorial sequences.",
+    "_deps": ["Chow ring of a matroid", "hard Lefschetz theorem", "signature of bilinear forms"],
+    "_source": "Essence of independence: Hodge theory of matroids, Christopher Eur, 2023"
+  },
+  {
+    "id": "s_classical_verification_quantum_computation",
+    "kind": "axiom",
+    "name": "Classical verification of quantum computation",
+    "type_signature": "",
+    "description": "A protocol in which a polynomial-time classical verifier interacts with a single untrusted quantum prover and accepts only if the prover correctly performs a claimed quantum computation (the BQP verification problem).",
+    "_deps": ["BQP", "interactive proof system", "quantum computation"],
+    "_source": "Verifying quantum computations at scale, Thomas Vidick, 2020"
+  },
+  {
+    "id": "s_trapdoor_claw_free_function_family",
+    "kind": "axiom",
+    "name": "Trapdoor claw-free function family",
+    "type_signature": "",
+    "description": "A family of two-to-one functions for which finding a colliding pair (a claw) is computationally hard while a secret trapdoor allows inversion, instantiated from the learning-with-errors assumption.",
+    "_deps": ["Learning with errors (LWE)", "one-way function", "trapdoor / cryptographic hardness"],
+    "_source": "Verifying quantum computations at scale, Thomas Vidick, 2020"
+  },
+  {
+    "id": "s_mahadev_classical_verification_theorem",
+    "kind": "theorem",
+    "name": "Mahadev's classical verification theorem",
+    "type_signature": "",
+    "description": "Assuming the quantum hardness of learning with errors, there is an interactive protocol by which a classical verifier can verify the output of an arbitrary polynomial-time quantum computation performed by a single quantum prover.",
+    "_deps": ["Classical verification of quantum computation", "Trapdoor claw-free function family", "Learning with errors (LWE)"],
+    "_source": "Verifying quantum computations at scale, Thomas Vidick, 2020"
+  },
+  {
+    "id": "t_cryptographic_measurement_protocol",
+    "kind": "technique",
+    "name": "Cryptographic measurement protocol (qubit commitment)",
+    "function_signature": "(Quantum prover) → (Committed qubit + verified basis measurement)",
+    "description": "A cryptographic primitive forcing a quantum prover to commit to a qubit and later reveal a measurement in a verifier-chosen basis, so the prover cannot cheat across bases, built from trapdoor claw-free functions.",
+    "_deps": ["Trapdoor claw-free function family", "commitment scheme", "quantum measurement"],
+    "_source": "Verifying quantum computations at scale, Thomas Vidick, 2020"
+  }
+]

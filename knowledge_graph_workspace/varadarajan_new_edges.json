@@ -1,0 +1,20 @@
+[
+  {"from":"s_exponential_map_lie_group","to":"t_taylor_expansion_product_map","role":"input","parameter_binding":{},"used_in_theorem":"s_baker_campbell_hausdorff_formula"},
+  {"from":"s_canonical_coordinates","to":"t_taylor_expansion_product_map","role":"input","parameter_binding":{},"used_in_theorem":"s_baker_campbell_hausdorff_formula"},
+  {"from":"s_lie_group","to":"t_taylor_expansion_product_map","role":"input","parameter_binding":{},"used_in_theorem":"s_baker_campbell_hausdorff_formula"},
+  {"from":"t_taylor_expansion_product_map","to":"s_lie_algebra_of_a_lie_group","role":"output","parameter_binding":{},"used_in_theorem":"s_baker_campbell_hausdorff_formula"},
+  {"from":"t_taylor_expansion_product_map","to":"s_baker_campbell_hausdorff_formula","role":"output","parameter_binding":{},"used_in_theorem":"s_baker_campbell_hausdorff_formula"},
+  {"from":"t_chart_computation","to":"s_analytic_manifold","role":"output","parameter_binding":{},"used_in_theorem":"s_analytic_manifold"},
+  {"from":"s_analytic_manifold","to":"t_lie_functor","role":"input","parameter_binding":{},"used_in_theorem":"s_lie_group"},
+  {"from":"t_lie_functor","to":"s_canonical_coordinates","role":"output","parameter_binding":{},"used_in_theorem":"s_baker_campbell_hausdorff_formula"},
+  {"from":"t_chart_computation","to":"s_canonical_coordinates","role":"output","parameter_binding":{},"used_in_theorem":"s_baker_campbell_hausdorff_formula"},
+  {"from":"s_lie_algebra_homomorphism","to":"t_integration_of_lie_algebra_homomorphisms","role":"input","parameter_binding":{},"used_in_theorem":"s_lie_third_theorem_existence"},
+  {"from":"s_baker_campbell_hausdorff_formula","to":"t_integration_of_lie_algebra_homomorphisms","role":"input","parameter_binding":{},"used_in_theorem":"s_lie_third_theorem_existence"},
+  {"from":"t_integration_of_lie_algebra_homomorphisms","to":"s_lie_third_theorem_existence","role":"output","parameter_binding":{},"used_in_theorem":"s_lie_third_theorem_existence"},
+  {"from":"t_lie_functor","to":"s_ad_exp_naturality","role":"output","parameter_binding":{},"used_in_theorem":"s_ad_exp_naturality"},
+  {"from":"s_ad_exp_naturality","to":"t_taylor_expansion_product_map","role":"input","parameter_binding":{},"used_in_theorem":"s_ad_exp_naturality"},
+  {"from":"t_pbw_basis_construction","to":"s_symmetrization_map_pbw","role":"output","parameter_binding":{},"used_in_theorem":"s_poincare_birkhoff_witt_theorem"},
+  {"from":"s_symmetrization_map_pbw","to":"t_harish_chandra_projection_rho_shift","role":"input","parameter_binding":{},"used_in_theorem":"s_harish_chandra_isomorphism"},
+  {"from":"t_harish_chandra_projection_rho_shift","to":"s_infinitesimal_character","role":"output","parameter_binding":{},"used_in_theorem":"s_harish_chandra_isomorphism"},
+  {"from":"s_infinitesimal_character","to":"t_harish_chandra_projection_rho_shift","role":"input","parameter_binding":{},"used_in_theorem":"s_harish_chandra_isomorphism"}
+]

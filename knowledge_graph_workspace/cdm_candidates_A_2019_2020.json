@@ -1,0 +1,464 @@
+[
+  {
+    "candidate_name": "Quintic Calabi-Yau threefold",
+    "kind": "axiom",
+    "description": "A smooth degree-5 hypersurface in complex projective 4-space, the canonical example of a compact Calabi-Yau threefold with trivial canonical bundle.",
+    "dependencies": ["complex projective space", "hypersurface", "Calabi-Yau manifold", "canonical bundle"],
+    "source_article": "CDM 2019 — Jun Li, 'A proof of the structure results of BCOV and YY on the GW invariants of the quintic CY threefolds'"
+  },
+  {
+    "candidate_name": "Gromov-Witten invariant",
+    "kind": "axiom",
+    "description": "A rational number counting (virtually) the number of stable maps from genus-g curves to a target variety representing a fixed homology class, defined via integration against the virtual fundamental class of the moduli space of stable maps.",
+    "dependencies": ["moduli space of stable maps", "virtual fundamental class", "stable map", "homology class"],
+    "source_article": "CDM 2019 — Jun Li, 'GW invariants of the quintic CY threefolds'"
+  },
+  {
+    "candidate_name": "Virtual fundamental class",
+    "kind": "axiom",
+    "description": "A homology class of expected (virtual) dimension associated to a moduli space carrying a perfect obstruction theory, allowing enumerative integrals even when the moduli space is singular or of excess dimension.",
+    "dependencies": ["perfect obstruction theory", "moduli space", "homology class", "intrinsic normal cone"],
+    "source_article": "CDM 2019 — Jun Li, 'GW invariants of the quintic CY threefolds'"
+  },
+  {
+    "candidate_name": "Moduli space of stable maps",
+    "kind": "axiom",
+    "description": "The compact moduli stack parametrizing maps from nodal genus-g curves with marked points into a target, satisfying Kontsevich's stability condition of finitely many automorphisms.",
+    "dependencies": ["stable map", "nodal curve", "moduli stack", "Deligne-Mumford stack"],
+    "source_article": "CDM 2019 — Jun Li, 'GW invariants of the quintic CY threefolds'"
+  },
+  {
+    "candidate_name": "BCOV holomorphic anomaly equation",
+    "kind": "axiom",
+    "description": "A recursion of Bershadsky-Cecotti-Ooguri-Vafa governing the dependence of higher-genus topological string free energies on the anti-holomorphic moduli, predicting the structure of Gromov-Witten potentials of Calabi-Yau threefolds.",
+    "dependencies": ["topological string theory", "Calabi-Yau threefold", "Gromov-Witten invariant", "special geometry"],
+    "source_article": "CDM 2019 — Jun Li, 'GW invariants of the quintic CY threefolds'"
+  },
+  {
+    "candidate_name": "Yamaguchi-Yau finiteness (polynomial structure) conjecture",
+    "kind": "state",
+    "description": "The conjecture that the genus-g Gromov-Witten potential of the quintic threefold is a polynomial of bounded degree in a finite set of generators built from special geometry data.",
+    "dependencies": ["Gromov-Witten potential", "quintic Calabi-Yau threefold", "BCOV holomorphic anomaly equation", "special geometry"],
+    "source_article": "CDM 2019 — Jun Li, 'GW invariants of the quintic CY threefolds'"
+  },
+  {
+    "candidate_name": "Structure theorem for higher-genus GW invariants of the quintic",
+    "kind": "theorem",
+    "description": "A proof (via Mixed-Spin-P fields / Guo-Janda-Ruan-type techniques in the work surveyed by Jun Li) establishing the BCOV holomorphic anomaly equations and the Yamaguchi-Yau polynomial finiteness for the all-genus Gromov-Witten potentials of the quintic threefold.",
+    "dependencies": ["Yamaguchi-Yau finiteness conjecture", "BCOV holomorphic anomaly equation", "Mixed-Spin-P field", "Gromov-Witten invariant"],
+    "source_article": "CDM 2019 — Jun Li, 'GW invariants of the quintic CY threefolds'"
+  },
+  {
+    "candidate_name": "Mixed-Spin-P (MSP) field",
+    "kind": "technique",
+    "description": "A moduli-theoretic construction interpolating between the Gromov-Witten theory of the quintic and Fan-Jarvis-Ruan-Witten theory via a master space carrying a torus action, enabling localization-based recursions for higher-genus invariants.",
+    "dependencies": ["Gromov-Witten invariant", "Fan-Jarvis-Ruan-Witten theory", "virtual localization", "moduli space of stable maps"],
+    "source_article": "CDM 2019 — Jun Li, 'GW invariants of the quintic CY threefolds'"
+  },
+  {
+    "candidate_name": "Virtual (Graber-Pandharipande) localization",
+    "kind": "technique",
+    "description": "An equivariant localization formula expressing virtual integrals over a moduli space with torus action as a sum of contributions from the fixed loci weighted by virtual normal bundles.",
+    "dependencies": ["virtual fundamental class", "torus action", "equivariant cohomology", "fixed locus"],
+    "source_article": "CDM 2019 — Jun Li, 'GW invariants of the quintic CY threefolds'"
+  },
+  {
+    "candidate_name": "Minimal surface",
+    "kind": "axiom",
+    "description": "A submanifold that is a critical point of the area functional, equivalently having vanishing mean curvature at every point.",
+    "dependencies": ["area functional", "mean curvature", "submanifold", "first variation of area"],
+    "source_article": "CDM 2019 — André Neves, 'Recent progress on minimal surfaces'"
+  },
+  {
+    "candidate_name": "Almgren-Pitts min-max theory",
+    "kind": "technique",
+    "description": "A variational scheme producing closed minimal hypersurfaces as min-max critical values of the area functional over sweepouts of a Riemannian manifold, using geometric measure theory and varifold limits.",
+    "dependencies": ["area functional", "varifold", "sweepout", "minimal surface", "geometric measure theory"],
+    "source_article": "CDM 2019 — André Neves, 'Recent progress on minimal surfaces'"
+  },
+  {
+    "candidate_name": "Yau conjecture on infinitely many minimal hypersurfaces",
+    "kind": "state",
+    "description": "Yau's conjecture that every closed Riemannian manifold of dimension 3 (and more generally up to dimension 7) contains infinitely many smooth closed embedded minimal hypersurfaces.",
+    "dependencies": ["minimal surface", "closed Riemannian manifold", "Almgren-Pitts min-max theory"],
+    "source_article": "CDM 2019 — André Neves, 'Recent progress on minimal surfaces'"
+  },
+  {
+    "candidate_name": "Marques-Neves theorem (existence of infinitely many minimal hypersurfaces)",
+    "kind": "theorem",
+    "description": "The theorem of Marques and Neves that any closed Riemannian manifold of dimension between 3 and 7 with positive Ricci curvature contains infinitely many smooth embedded closed minimal hypersurfaces, resolving Yau's conjecture in that setting.",
+    "dependencies": ["Yau conjecture on infinitely many minimal hypersurfaces", "Almgren-Pitts min-max theory", "Lusternik-Schnirelmann category", "minimal surface"],
+    "source_article": "CDM 2019 — André Neves, 'Recent progress on minimal surfaces'"
+  },
+  {
+    "candidate_name": "Weyl law for the volume spectrum (Liokumovich-Marques-Neves)",
+    "kind": "theorem",
+    "description": "An asymptotic law showing the p-th min-max width (volume spectrum) of a closed manifold grows like a universal constant times p^{1/n} multiplied by the manifold's volume to the power (n-1)/n.",
+    "dependencies": ["volume spectrum", "Almgren-Pitts min-max theory", "area functional", "Weyl law"],
+    "source_article": "CDM 2019 — André Neves, 'Recent progress on minimal surfaces'"
+  },
+  {
+    "candidate_name": "Volume spectrum (p-widths)",
+    "kind": "state",
+    "description": "The non-decreasing sequence of min-max critical values of the area functional obtained from p-parameter sweepouts, serving as a nonlinear analogue of Laplacian eigenvalues.",
+    "dependencies": ["area functional", "Almgren-Pitts min-max theory", "sweepout", "cohomology of the space of cycles"],
+    "source_article": "CDM 2019 — André Neves, 'Recent progress on minimal surfaces'"
+  },
+  {
+    "candidate_name": "Equidistribution of minimal hypersurfaces (Marques-Neves-Song)",
+    "kind": "theorem",
+    "description": "The result that for a generic metric on a closed manifold there exists a sequence of closed minimal hypersurfaces that becomes equidistributed, with area-weighted limits proportional to the volume measure.",
+    "dependencies": ["minimal surface", "volume spectrum", "Weyl law for the volume spectrum", "generic metric"],
+    "source_article": "CDM 2019 — André Neves, 'Recent progress on minimal surfaces'"
+  },
+  {
+    "candidate_name": "Generic density of minimal hypersurfaces (Irie-Marques-Neves)",
+    "kind": "theorem",
+    "description": "The theorem that for a C-infinity generic Riemannian metric on a closed manifold of dimension 3 to 7, the union of all closed minimal hypersurfaces is dense.",
+    "dependencies": ["minimal surface", "Weyl law for the volume spectrum", "generic metric", "Almgren-Pitts min-max theory"],
+    "source_article": "CDM 2019 — André Neves, 'Recent progress on minimal surfaces'"
+  },
+  {
+    "candidate_name": "PCP theorem",
+    "kind": "theorem",
+    "description": "The theorem that every problem in NP admits a probabilistically checkable proof verifiable by a randomized verifier using a constant number of query bits and logarithmic randomness, equivalently that approximating MAX-3SAT within some constant factor is NP-hard.",
+    "dependencies": ["NP", "probabilistically checkable proof", "MAX-3SAT", "constraint satisfaction problem"],
+    "source_article": "CDM 2019 — Subhash Khot, 'Hardness of Approximation: From the PCP Theorem to the 2-to-2 Games Theorem'"
+  },
+  {
+    "candidate_name": "Probabilistically checkable proof (PCP)",
+    "kind": "axiom",
+    "description": "A proof system in which a randomized verifier, given oracle access to a proof string, decides membership using bounded randomness and a bounded number of queries with one-sided or two-sided error guarantees.",
+    "dependencies": ["randomized verifier", "complexity class", "oracle access"],
+    "source_article": "CDM 2019 — Subhash Khot, 'Hardness of Approximation'"
+  },
+  {
+    "candidate_name": "Unique Games Conjecture",
+    "kind": "state",
+    "description": "Khot's conjecture that for every epsilon there is an alphabet size such that distinguishing unique-constraint label-cover instances that are (1-epsilon)-satisfiable from those at most epsilon-satisfiable is NP-hard.",
+    "dependencies": ["label cover", "constraint satisfaction problem", "NP-hardness", "unique constraint"],
+    "source_article": "CDM 2019 — Subhash Khot, 'Hardness of Approximation'"
+  },
+  {
+    "candidate_name": "2-to-2 Games Theorem",
+    "kind": "theorem",
+    "description": "The theorem of Khot, Minzer, and Safra establishing NP-hardness of 2-to-2 games with imperfect completeness, which implies the Unique Games Conjecture holds with completeness 1/2 and yields half of the UGC.",
+    "dependencies": ["Unique Games Conjecture", "label cover", "Grassmann graph", "expansion of the Grassmann graph"],
+    "source_article": "CDM 2019 — Subhash Khot, 'Characterization of Non-expanding Sets in the Grassmann Graph'"
+  },
+  {
+    "candidate_name": "Grassmann graph",
+    "kind": "axiom",
+    "description": "The graph whose vertices are the k-dimensional subspaces of an n-dimensional vector space over a finite field, with edges joining subspaces whose intersection has dimension k-1.",
+    "dependencies": ["vector space over a finite field", "subspace", "graph"],
+    "source_article": "CDM 2019 — Subhash Khot, 'Characterization of Non-expanding Sets in the Grassmann Graph'"
+  },
+  {
+    "candidate_name": "Grassmann graph expansion theorem (characterization of non-expanding sets)",
+    "kind": "theorem",
+    "description": "The theorem of Khot-Minzer-Safra (with Dinur-Khot-Kindler-Minzer-Safra) that every non-expanding set of vertices in the Grassmann graph is structured, being correlated with a sub-Grassmannian defined by containing or being contained in a fixed subspace.",
+    "dependencies": ["Grassmann graph", "edge expansion", "sub-Grassmannian", "small-set expansion"],
+    "source_article": "CDM 2019 — Subhash Khot, 'Characterization of Non-expanding Sets in the Grassmann Graph'"
+  },
+  {
+    "candidate_name": "Dictatorship test",
+    "kind": "technique",
+    "description": "A probabilistic gadget that distinguishes Boolean functions depending on a single coordinate (dictators) from functions with no influential coordinate, used to convert algebraic gap instances into hardness-of-approximation reductions.",
+    "dependencies": ["Boolean function", "influence of a variable", "Fourier analysis on the hypercube", "probabilistically checkable proof"],
+    "source_article": "CDM 2019 — Subhash Khot, 'Hardness of Approximation'"
+  },
+  {
+    "candidate_name": "Almost Mathieu operator",
+    "kind": "axiom",
+    "description": "The discrete one-dimensional Schrodinger operator on l^2(Z) with potential 2*lambda*cos(2*pi*(theta + n*alpha)), modeling an electron on a lattice in a magnetic field with coupling lambda, frequency alpha, and phase theta.",
+    "dependencies": ["discrete Schrodinger operator", "quasi-periodic potential", "Diophantine condition"],
+    "source_article": "CDM 2019 — Svetlana Jitomirskaya, 'Critical phenomena, arithmetic phase transitions, and universality: ... the almost Mathieu operator'"
+  },
+  {
+    "candidate_name": "Lyapunov exponent (quasi-periodic Schrodinger cocycle)",
+    "kind": "axiom",
+    "description": "The exponential growth rate of the norm of the transfer matrix cocycle associated to a quasi-periodic Schrodinger operator, governing localization versus extended states.",
+    "dependencies": ["transfer matrix cocycle", "quasi-periodic potential", "almost Mathieu operator", "subadditive ergodic theorem"],
+    "source_article": "CDM 2019 — Svetlana Jitomirskaya, 'almost Mathieu operator'"
+  },
+  {
+    "candidate_name": "Aubry duality",
+    "kind": "technique",
+    "description": "A self-duality of the almost Mathieu family under Fourier transform that exchanges coupling lambda with 1/lambda and maps localized eigenfunctions to extended states, exhibiting a metal-insulator transition at lambda = 1.",
+    "dependencies": ["almost Mathieu operator", "Fourier transform", "Anderson localization"],
+    "source_article": "CDM 2019 — Svetlana Jitomirskaya, 'almost Mathieu operator'"
+  },
+  {
+    "candidate_name": "Ten Martini Problem",
+    "kind": "theorem",
+    "description": "The theorem (Avila-Jitomirskaya) that for all irrational frequencies and nonzero coupling the spectrum of the almost Mathieu operator is a Cantor set.",
+    "dependencies": ["almost Mathieu operator", "Cantor set", "spectrum of an operator", "continued fraction expansion"],
+    "source_article": "CDM 2019 — Svetlana Jitomirskaya, 'almost Mathieu operator'"
+  },
+  {
+    "candidate_name": "Arithmetic spectral (localization) transition",
+    "kind": "theorem",
+    "description": "The sharp result (Avila-You-Zhou, Jitomirskaya et al.) that for the almost Mathieu operator in the localization regime the type of spectrum is determined by an arithmetic competition between the Lyapunov exponent and the exponential rate beta(alpha) of frequency resonances, with Anderson localization holding precisely when ln lambda exceeds beta.",
+    "dependencies": ["almost Mathieu operator", "Lyapunov exponent", "Anderson localization", "continued fraction expansion", "Diophantine condition"],
+    "source_article": "CDM 2019 — Svetlana Jitomirskaya, 'almost Mathieu operator'"
+  },
+  {
+    "candidate_name": "Avila's global theory of one-frequency cocycles",
+    "kind": "technique",
+    "description": "A classification of analytic one-frequency SL(2,R) cocycles into subcritical, critical, and supercritical regimes via the acceleration (quantized slope of the complexified Lyapunov exponent), underpinning the spectral analysis of quasi-periodic operators.",
+    "dependencies": ["Lyapunov exponent", "SL(2,R) cocycle", "acceleration", "almost Mathieu operator", "Avila quantization of acceleration"],
+    "source_article": "CDM 2019 — Svetlana Jitomirskaya, 'almost Mathieu operator'"
+  },
+  {
+    "candidate_name": "Universality of the critical almost Mathieu operator (hidden singularity / spectral universality)",
+    "kind": "theorem",
+    "description": "Recent results showing that at the critical coupling lambda = 1 the almost Mathieu operator exhibits a hidden singularity with universal continuity of spectral gaps and a sharp Hausdorff dimension 1/2 for the spectrum in suitable arithmetic regimes.",
+    "dependencies": ["almost Mathieu operator", "Hausdorff dimension", "Avila's global theory of one-frequency cocycles", "Ten Martini Problem"],
+    "source_article": "CDM 2019 — Svetlana Jitomirskaya, 'almost Mathieu operator'"
+  },
+  {
+    "candidate_name": "Parity sheaf",
+    "kind": "axiom",
+    "description": "An indecomposable complex of sheaves (with coefficients in a field of positive characteristic) on a stratified variety satisfying parity vanishing conditions on the stalks and costalks, providing modular replacements for intersection cohomology complexes.",
+    "dependencies": ["stratified variety", "constructible sheaf", "derived category of sheaves", "parity vanishing condition"],
+    "source_article": "CDM 2019 — Geordie Williamson, 'Parity sheaves and modular representations'"
+  },
+  {
+    "candidate_name": "Soergel bimodule",
+    "kind": "axiom",
+    "description": "A graded bimodule over a polynomial ring built as a direct summand of tensor products of the elementary bimodules associated to simple reflections, categorifying the Hecke algebra of a Coxeter group.",
+    "dependencies": ["Hecke algebra", "Coxeter group", "polynomial ring", "graded bimodule", "Bott-Samelson bimodule"],
+    "source_article": "CDM 2019 — Geordie Williamson, 'Parity sheaves and modular representations'"
+  },
+  {
+    "candidate_name": "Kazhdan-Lusztig conjecture / theory",
+    "kind": "state",
+    "description": "The statement, originally conjectural, that the multiplicities of simple modules in Verma modules for a complex semisimple Lie algebra are given by values at 1 of Kazhdan-Lusztig polynomials of the Weyl group.",
+    "dependencies": ["Verma module", "Kazhdan-Lusztig polynomial", "Weyl group", "category O", "Hecke algebra"],
+    "source_article": "CDM 2019 — Geordie Williamson, 'Parity sheaves and modular representations'"
+  },
+  {
+    "candidate_name": "Lusztig modular representation conjecture",
+    "kind": "state",
+    "description": "Lusztig's conjecture expressing the characters of simple modules for a reductive algebraic group in characteristic p (above the Coxeter number) via affine Kazhdan-Lusztig polynomials.",
+    "dependencies": ["reductive algebraic group", "affine Weyl group", "Kazhdan-Lusztig polynomial", "Coxeter number", "simple module"],
+    "source_article": "CDM 2019 — Geordie Williamson, 'Parity sheaves and modular representations'"
+  },
+  {
+    "candidate_name": "Williamson counterexamples to the expected bounds in modular representation theory",
+    "kind": "theorem",
+    "description": "Williamson's construction of families of examples showing that Lusztig's character formula and the James conjecture fail, with the bound on the prime p growing super-polynomially (in fact super-exponentially) in the rank.",
+    "dependencies": ["Lusztig modular representation conjecture", "parity sheaf", "Soergel bimodule", "torsion in intersection cohomology"],
+    "source_article": "CDM 2019 — Geordie Williamson, 'Parity sheaves and modular representations'"
+  },
+  {
+    "candidate_name": "p-canonical basis",
+    "kind": "state",
+    "description": "The basis of the Hecke algebra recording the graded ranks of indecomposable Soergel bimodules / parity sheaves in characteristic p, which controls modular decomposition numbers and reduces to the Kazhdan-Lusztig basis for large p.",
+    "dependencies": ["Hecke algebra", "Soergel bimodule", "parity sheaf", "Kazhdan-Lusztig conjecture"],
+    "source_article": "CDM 2019 — Geordie Williamson, 'Parity sheaves and modular representations'"
+  },
+  {
+    "candidate_name": "Decomposition theorem (BBD) and its modular failure",
+    "kind": "theorem",
+    "description": "The Beilinson-Bernstein-Deligne-Gabber theorem that with characteristic-zero coefficients the pushforward of an intersection cohomology complex under a proper map splits into shifted simple perverse sheaves, together with the observation that this splitting fails in positive characteristic, motivating parity sheaves.",
+    "dependencies": ["perverse sheaf", "intersection cohomology", "proper pushforward", "parity sheaf"],
+    "source_article": "CDM 2019 — Geordie Williamson, 'Parity sheaves and modular representations'"
+  },
+  {
+    "candidate_name": "Quantum spin chain",
+    "kind": "axiom",
+    "description": "A one-dimensional lattice quantum system with a finite-dimensional Hilbert space at each site and a local (finite-range) Hamiltonian acting on the infinite tensor product / quasi-local algebra.",
+    "dependencies": ["quasi-local algebra", "local Hamiltonian", "tensor product Hilbert space", "spin"],
+    "source_article": "CDM 2020 — Yoshiko Ogata, 'Classification of symmetry protected topological phases in quantum spin chains'"
+  },
+  {
+    "candidate_name": "Symmetry protected topological (SPT) phase",
+    "kind": "axiom",
+    "description": "A gapped phase of a quantum many-body system with a unique ground state that is trivial without symmetry but cannot be connected to a product state through symmetric, gapped local paths, becoming nontrivial only in the presence of an on-site symmetry group.",
+    "dependencies": ["quantum spin chain", "gapped ground state", "on-site symmetry group", "short-range entanglement"],
+    "source_article": "CDM 2020 — Yoshiko Ogata, 'Classification of SPT phases in quantum spin chains'"
+  },
+  {
+    "candidate_name": "Gapped ground state phase equivalence",
+    "kind": "axiom",
+    "description": "The equivalence relation on interactions defined by the existence of a smooth path of uniformly gapped local Hamiltonians (automorphic equivalence via quasi-local automorphisms) connecting them.",
+    "dependencies": ["local Hamiltonian", "spectral gap", "quasi-local automorphism", "quantum spin chain"],
+    "source_article": "CDM 2020 — Yoshiko Ogata, 'Classification of SPT phases in quantum spin chains'"
+  },
+  {
+    "candidate_name": "Matrix product state",
+    "kind": "axiom",
+    "description": "A translation-invariant pure state of a spin chain represented by contracting a fixed tensor at each site, generating all frustration-free gapped ground states and serving as the variational class for one-dimensional gapped phases.",
+    "dependencies": ["quantum spin chain", "tensor network", "frustration-free Hamiltonian", "completely positive map"],
+    "source_article": "CDM 2020 — Yoshiko Ogata, 'Classification of SPT phases in quantum spin chains'"
+  },
+  {
+    "candidate_name": "Group cohomology invariant of SPT phases",
+    "kind": "state",
+    "description": "The assignment to each symmetric gapped phase of an element of the second group cohomology H^2(G,U(1)) of the symmetry group with U(1) coefficients, extracted from the projective representation appearing in the boundary/edge structure.",
+    "dependencies": ["symmetry protected topological phase", "group cohomology", "projective representation", "U(1)"],
+    "source_article": "CDM 2020 — Yoshiko Ogata, 'Classification of SPT phases in quantum spin chains'"
+  },
+  {
+    "candidate_name": "Ogata classification of SPT phases by H^2(G,U(1))",
+    "kind": "theorem",
+    "description": "Ogata's operator-algebraic theorem proving that the H^2(G,U(1)) index is a well-defined invariant of symmetric gapped phases of quantum spin chains, giving a rigorous classification of SPT phases protected by a finite (or compact) on-site symmetry group.",
+    "dependencies": ["symmetry protected topological phase", "group cohomology invariant of SPT phases", "gapped ground state phase equivalence", "split property", "quasi-local automorphism"],
+    "source_article": "CDM 2020 — Yoshiko Ogata, 'Classification of SPT phases in quantum spin chains'"
+  },
+  {
+    "candidate_name": "Split property of quantum spin chains",
+    "kind": "state",
+    "description": "The structural property of a pure gapped ground state that the observable algebras of complementary half-infinite chains are related by a type-I factor, enabling the definition of edge representations and SPT indices.",
+    "dependencies": ["quasi-local algebra", "gapped ground state", "von Neumann factor", "GNS representation"],
+    "source_article": "CDM 2020 — Yoshiko Ogata, 'Classification of SPT phases in quantum spin chains'"
+  },
+  {
+    "candidate_name": "Lieb-Robinson bound",
+    "kind": "theorem",
+    "description": "An estimate giving an emergent finite speed of propagation of information in non-relativistic quantum lattice systems with local interactions, bounding the operator norm of the commutator of time-evolved local observables by an exponentially decaying function of distance minus group velocity times time.",
+    "dependencies": ["local Hamiltonian", "quasi-local algebra", "Heisenberg time evolution", "commutator"],
+    "source_article": "CDM 2020 — Yoshiko Ogata, 'Classification of SPT phases in quantum spin chains'"
+  },
+  {
+    "candidate_name": "Black hole stability problem",
+    "kind": "state",
+    "description": "The conjecture that the Kerr family of rotating black hole spacetimes is a nonlinearly asymptotically stable solution of the vacuum Einstein equations under small perturbations of initial data.",
+    "dependencies": ["Kerr spacetime", "Einstein vacuum equations", "asymptotic stability", "Cauchy problem in general relativity"],
+    "source_article": "CDM 2020 — Andras Vasy, 'The black hole stability problem'"
+  },
+  {
+    "candidate_name": "Kerr (Kerr-de Sitter) spacetime",
+    "kind": "axiom",
+    "description": "The two-parameter family of stationary, axisymmetric, asymptotically flat (or de Sitter) vacuum solutions of the Einstein equations describing a rotating black hole of given mass and angular momentum.",
+    "dependencies": ["Einstein vacuum equations", "Lorentzian manifold", "event horizon", "cosmological constant"],
+    "source_article": "CDM 2020 — Andras Vasy, 'The black hole stability problem'"
+  },
+  {
+    "candidate_name": "Einstein vacuum equations",
+    "kind": "axiom",
+    "description": "The system Ric(g) = Lambda*g asserting that the Ricci curvature of a Lorentzian metric is proportional to the metric, equivalently that the spacetime has vanishing trace-reversed stress-energy with cosmological constant Lambda.",
+    "dependencies": ["Lorentzian manifold", "Ricci curvature", "cosmological constant", "general covariance"],
+    "source_article": "CDM 2020 — Andras Vasy, 'The black hole stability problem'"
+  },
+  {
+    "candidate_name": "Hintz-Vasy global stability of Kerr-de Sitter",
+    "kind": "theorem",
+    "description": "The theorem of Hintz and Vasy establishing the global nonlinear asymptotic stability of slowly rotating Kerr-de Sitter black holes as solutions of the Einstein vacuum equations with positive cosmological constant.",
+    "dependencies": ["black hole stability problem", "Kerr (Kerr-de Sitter) spacetime", "Einstein vacuum equations", "microlocal analysis", "Nash-Moser iteration"],
+    "source_article": "CDM 2020 — Andras Vasy, 'The black hole stability problem'"
+  },
+  {
+    "candidate_name": "Microlocal analysis of stationary wave operators (b-calculus / scattering calculus)",
+    "kind": "technique",
+    "description": "A framework using pseudodifferential operators adapted to the geometry near the event horizon and infinity (b- and scattering calculus, radial point estimates) to obtain Fredholm theory and resolvent estimates for wave equations on black hole backgrounds.",
+    "dependencies": ["pseudodifferential operator", "Kerr (Kerr-de Sitter) spacetime", "Fredholm operator", "radial point estimate"],
+    "source_article": "CDM 2020 — Andras Vasy, 'The black hole stability problem'"
+  },
+  {
+    "candidate_name": "Quasinormal modes / resonances of black holes",
+    "kind": "state",
+    "description": "The complex frequencies, identified with poles of the meromorphically continued resolvent of the wave operator, that govern the exponentially damped ringdown of perturbations of a black hole spacetime.",
+    "dependencies": ["Kerr (Kerr-de Sitter) spacetime", "resolvent", "meromorphic continuation", "wave equation"],
+    "source_article": "CDM 2020 — Andras Vasy, 'The black hole stability problem'"
+  },
+  {
+    "candidate_name": "Red-shift effect (Dafermos-Rodnianski)",
+    "kind": "technique",
+    "description": "A geometric vector-field multiplier estimate exploiting the positive surface gravity at a nondegenerate event horizon to gain decay (a coercive energy estimate) for solutions of wave equations crossing the horizon.",
+    "dependencies": ["event horizon", "surface gravity", "vector field method", "wave equation"],
+    "source_article": "CDM 2020 — Andras Vasy, 'The black hole stability problem'"
+  },
+  {
+    "candidate_name": "Newtonian N-body problem",
+    "kind": "axiom",
+    "description": "The system of ordinary differential equations governing the motion of N point masses under mutual gravitational attraction following Newton's inverse-square law.",
+    "dependencies": ["Newton's law of gravitation", "ordinary differential equation", "Hamiltonian system", "point mass"],
+    "source_article": "CDM 2020 — Jinxin Xue, 'Painleve conjecture in Newtonian N-body problem'"
+  },
+  {
+    "candidate_name": "Painleve conjecture (noncollision singularities)",
+    "kind": "state",
+    "description": "Painleve's conjecture that for N greater than 3 the Newtonian N-body problem admits singularities that are not caused by collisions, i.e. solutions reaching infinity in finite time without any two bodies colliding.",
+    "dependencies": ["Newtonian N-body problem", "finite-time singularity", "collision singularity", "Painleve-Painleve classification of singularities"],
+    "source_article": "CDM 2020 — Jinxin Xue, 'Painleve conjecture in Newtonian N-body problem'"
+  },
+  {
+    "candidate_name": "Von Zeipel theorem on singularities",
+    "kind": "theorem",
+    "description": "The theorem that a singularity of the N-body problem is a non-collision singularity if and only if the maximal mutual distance among the bodies becomes unbounded as time approaches the singularity time.",
+    "dependencies": ["Newtonian N-body problem", "finite-time singularity", "collision singularity"],
+    "source_article": "CDM 2020 — Jinxin Xue, 'Painleve conjecture in Newtonian N-body problem'"
+  },
+  {
+    "candidate_name": "Xia's example of noncollision singularities (5-body)",
+    "kind": "theorem",
+    "description": "Zhihong Xia's construction of a spatial 5-body configuration exhibiting a noncollision singularity, where two binaries oscillate and drive a fifth body to infinity in finite time, the first rigorous instance of the Painleve scenario.",
+    "dependencies": ["Painleve conjecture (noncollision singularities)", "Newtonian N-body problem", "von Zeipel theorem on singularities", "near-collision dynamics"],
+    "source_article": "CDM 2020 — Jinxin Xue, 'Painleve conjecture in Newtonian N-body problem'"
+  },
+  {
+    "candidate_name": "Xue's solution of the Painleve conjecture for the 4-body problem",
+    "kind": "theorem",
+    "description": "Jinxin Xue's theorem constructing noncollision singularities in the planar Newtonian 4-body problem, settling the Painleve conjecture in its lowest open dimension.",
+    "dependencies": ["Painleve conjecture (noncollision singularities)", "Newtonian N-body problem", "hyperbolic invariant set", "near-collision dynamics", "symbolic dynamics"],
+    "source_article": "CDM 2020 — Jinxin Xue, 'Painleve conjecture in Newtonian N-body problem'"
+  },
+  {
+    "candidate_name": "Near-collision (regularization) analysis via hyperbolic dynamics",
+    "kind": "technique",
+    "description": "A method combining McGehee/Levi-Civita regularization of close encounters with the construction of hyperbolic invariant sets and shadowing/symbolic dynamics to assemble infinitely many near-collisions accelerating a body to infinity in finite time.",
+    "dependencies": ["Newtonian N-body problem", "regularization of collisions", "hyperbolic invariant set", "symbolic dynamics", "shadowing lemma"],
+    "source_article": "CDM 2020 — Jinxin Xue, 'Painleve conjecture in Newtonian N-body problem'"
+  },
+  {
+    "candidate_name": "Phi^4_4 Euclidean field theory",
+    "kind": "axiom",
+    "description": "The four-dimensional Euclidean scalar field theory with quartic self-interaction, constructed as a continuum scaling limit of lattice models with a single-site weight, central to constructive quantum field theory.",
+    "dependencies": ["Euclidean field theory", "scaling limit", "lattice field theory", "Gibbs measure"],
+    "source_article": "CDM 2020 — Michael Aizenman, 'Marginal triviality of the scaling limits of 4D critical Ising and Phi^4_4 models'"
+  },
+  {
+    "candidate_name": "Ising model",
+    "kind": "axiom",
+    "description": "The lattice spin system with plus-or-minus-one spins and nearest-neighbor ferromagnetic interaction, whose critical scaling limit at the critical temperature is the object of interest in dimension 4.",
+    "dependencies": ["lattice spin system", "Gibbs measure", "ferromagnetic interaction", "critical temperature"],
+    "source_article": "CDM 2020 — Michael Aizenman, 'Marginal triviality of ... 4D critical Ising and Phi^4_4 models'"
+  },
+  {
+    "candidate_name": "Random current representation",
+    "kind": "technique",
+    "description": "A graphical/probabilistic reformulation of the Ising model expressing correlation functions as sums over integer-valued currents on the lattice, enabling switching-lemma identities and correlation inequalities.",
+    "dependencies": ["Ising model", "correlation function", "switching lemma", "graphical representation"],
+    "source_article": "CDM 2020 — Michael Aizenman, 'Marginal triviality ... 4D critical Ising and Phi^4_4 models'"
+  },
+  {
+    "candidate_name": "Triviality (Gaussianity) of the scaling limit in dimension d >= 4",
+    "kind": "theorem",
+    "description": "The result of Aizenman and Frohlich that the continuum scaling limit of the critical Ising and Phi^4 models in dimensions strictly greater than 4 is a free (Gaussian) field with vanishing renormalized coupling.",
+    "dependencies": ["Phi^4_4 Euclidean field theory", "Ising model", "scaling limit", "Gaussian field", "Lebowitz inequality"],
+    "source_article": "CDM 2020 — Michael Aizenman, 'Marginal triviality ... 4D critical Ising and Phi^4_4 models'"
+  },
+  {
+    "candidate_name": "Aizenman-Duminil-Copin marginal triviality theorem in 4D",
+    "kind": "theorem",
+    "description": "The theorem of Aizenman and Duminil-Copin that the scaling limits of the critical nearest-neighbor Ising and Phi^4 models in the marginal dimension 4 are Gaussian, with the renormalized four-point coupling vanishing logarithmically.",
+    "dependencies": ["triviality of the scaling limit in dimension d >= 4", "Phi^4_4 Euclidean field theory", "Ising model", "random current representation", "tree-graph / Aizenman-Frohlich inequality"],
+    "source_article": "CDM 2020 — Michael Aizenman, 'Marginal triviality ... 4D critical Ising and Phi^4_4 models'"
+  },
+  {
+    "candidate_name": "Aizenman-Frohlich (tree-graph) inequality",
+    "kind": "theorem",
+    "description": "An upper bound on the truncated four-point Ursell function of the Ising / Phi^4 model in terms of a tree-graph sum of two-point functions, the key correlation inequality forcing triviality of the scaling limit at and above four dimensions.",
+    "dependencies": ["Ising model", "Ursell function", "random current representation", "correlation inequality", "intersection of random walks"],
+    "source_article": "CDM 2020 — Michael Aizenman, 'Marginal triviality ... 4D critical Ising and Phi^4_4 models'"
+  },
+  {
+    "candidate_name": "Reflection positivity",
+    "kind": "axiom",
+    "description": "A positivity condition on a lattice or Euclidean field measure under reflection through a hyperplane that yields the Osterwalder-Schrader reconstruction of a quantum theory and key infrared bounds.",
+    "dependencies": ["Euclidean field theory", "Osterwalder-Schrader axioms", "Gibbs measure", "infrared bound"],
+    "source_article": "CDM 2020 — Michael Aizenman, 'Marginal triviality ... 4D critical Ising and Phi^4_4 models'"
+  }
+]

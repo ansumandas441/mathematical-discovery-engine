@@ -1,0 +1,1306 @@
+[
+  {
+    "id": "e_25102",
+    "from": "s_regular_element_lie_algebra",
+    "to": "t_cartan_subalgebra_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_25103",
+    "from": "s_semisimple_lie_algebra",
+    "to": "t_cartan_subalgebra_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_25104",
+    "from": "t_cartan_subalgebra_construction",
+    "to": "s_existence_of_cartan_subalgebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_25105",
+    "from": "t_cartan_subalgebra_construction",
+    "to": "s_cartan_subalgebra_of_real_semisimple",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_25106",
+    "from": "s_compact_lie_algebra",
+    "to": "t_killing_form_root_computation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_killing_form_negative_definite_compact"
+  },
+  {
+    "id": "e_25107",
+    "from": "s_killing_form",
+    "to": "t_killing_form_root_computation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_killing_form_negative_definite_compact"
+  },
+  {
+    "id": "e_25108",
+    "from": "t_killing_form_root_computation",
+    "to": "s_killing_form_negative_definite_compact",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_killing_form_negative_definite_compact"
+  },
+  {
+    "id": "e_25109",
+    "from": "s_semisimple_lie_algebra",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_compact_real_form"
+  },
+  {
+    "id": "e_25110",
+    "from": "s_conjugation_relative_to_real_form",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_compact_real_form"
+  },
+  {
+    "id": "e_25111",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_existence_of_compact_real_form",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_compact_real_form"
+  },
+  {
+    "id": "e_25112",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_uniqueness_of_compact_real_form",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniqueness_of_compact_real_form"
+  },
+  {
+    "id": "e_25113",
+    "from": "s_existence_of_compact_real_form",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniqueness_of_compact_real_form"
+  },
+  {
+    "id": "e_25114",
+    "from": "s_compact_real_form",
+    "to": "t_complexification_linear_operator",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugation_relative_to_real_form"
+  },
+  {
+    "id": "e_25115",
+    "from": "t_complexification_linear_operator",
+    "to": "s_conjugation_relative_to_real_form",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugation_relative_to_real_form"
+  },
+  {
+    "id": "e_25116",
+    "from": "s_compact_lie_algebra",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25117",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_complexification_of_compact_lie_group",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25118",
+    "from": "s_compact_lie_algebra",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_theorem_finite_fundamental_group"
+  },
+  {
+    "id": "e_25119",
+    "from": "s_killing_form_negative_definite_compact",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_theorem_finite_fundamental_group"
+  },
+  {
+    "id": "e_25120",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_weyl_theorem_finite_fundamental_group",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_theorem_finite_fundamental_group"
+  },
+  {
+    "id": "e_25121",
+    "from": "s_maximal_torus",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_surjectivity_of_exp_compact_connected"
+  },
+  {
+    "id": "e_25122",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_surjectivity_of_exp_compact_connected",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_surjectivity_of_exp_compact_connected"
+  },
+  {
+    "id": "e_25123",
+    "from": "s_compact_real_form",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_cartan_involution"
+  },
+  {
+    "id": "e_25124",
+    "from": "s_killing_form",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_cartan_involution"
+  },
+  {
+    "id": "e_25125",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_existence_of_cartan_involution",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_cartan_involution"
+  },
+  {
+    "id": "e_25126",
+    "from": "s_cartan_involution",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cartan_decomposition"
+  },
+  {
+    "id": "e_25127",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_cartan_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_cartan_decomposition"
+  },
+  {
+    "id": "e_25128",
+    "from": "s_existence_of_cartan_involution",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugacy_of_cartan_involutions"
+  },
+  {
+    "id": "e_25129",
+    "from": "s_uniqueness_of_compact_real_form",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugacy_of_cartan_involutions"
+  },
+  {
+    "id": "e_25130",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_conjugacy_of_cartan_involutions",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_conjugacy_of_cartan_involutions"
+  },
+  {
+    "id": "e_25131",
+    "from": "s_existence_of_cartan_involution",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25132",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_reductive_lie_group_harish_chandra_class",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25133",
+    "from": "s_complexification_of_compact_lie_group",
+    "to": "t_verma_module_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_borel_weil_theorem"
+  },
+  {
+    "id": "e_25134",
+    "from": "s_dominant_integral_weight",
+    "to": "t_verma_module_induction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_borel_weil_theorem"
+  },
+  {
+    "id": "e_25135",
+    "from": "t_verma_module_induction",
+    "to": "s_borel_weil_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_borel_weil_theorem"
+  },
+  {
+    "id": "e_25136",
+    "from": "s_cartan_subalgebra_of_real_semisimple",
+    "to": "t_cartan_subalgebra_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_theta_stable_cartan_subalgebra"
+  },
+  {
+    "id": "e_25137",
+    "from": "s_cartan_involution",
+    "to": "t_cartan_subalgebra_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_theta_stable_cartan_subalgebra"
+  },
+  {
+    "id": "e_25138",
+    "from": "t_cartan_subalgebra_construction",
+    "to": "s_theta_stable_cartan_subalgebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_theta_stable_cartan_subalgebra"
+  },
+  {
+    "id": "e_25139",
+    "from": "s_cartan_involution",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_theta_stable_cartan_subalgebra"
+  },
+  {
+    "id": "e_25140",
+    "from": "s_cartan_subalgebra_of_real_semisimple",
+    "to": "t_weyl_s_unitary_trick",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_theta_stable_cartan_subalgebra"
+  },
+  {
+    "id": "e_25141",
+    "from": "t_weyl_s_unitary_trick",
+    "to": "s_existence_of_theta_stable_cartan_subalgebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_existence_of_theta_stable_cartan_subalgebra"
+  },
+  {
+    "id": "e_25142",
+    "from": "s_theta_stable_cartan_subalgebra",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximally_compact_noncompact_cartan_subalgebras"
+  },
+  {
+    "id": "e_25143",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_maximally_compact_noncompact_cartan_subalgebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximally_compact_noncompact_cartan_subalgebras"
+  },
+  {
+    "id": "e_25144",
+    "from": "s_theta_stable_cartan_subalgebra",
+    "to": "t_cayley_transform_lie",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_finiteness_of_conjugacy_classes_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_25145",
+    "from": "s_compact_and_noncompact_imaginary_roots",
+    "to": "t_cayley_transform_lie",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_finiteness_of_conjugacy_classes_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_25146",
+    "from": "s_real_imaginary_complex_roots",
+    "to": "t_cayley_transform_lie",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25147",
+    "from": "s_root_and_root_space",
+    "to": "t_cayley_transform_lie",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25148",
+    "from": "s_maximally_compact_noncompact_cartan_subalgebras",
+    "to": "t_cayley_transform_lie",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_finiteness_of_conjugacy_classes_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_25149",
+    "from": "t_cayley_transform_lie",
+    "to": "s_theta_stable_cartan_subalgebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25150",
+    "from": "t_cayley_transform_lie",
+    "to": "s_finiteness_of_conjugacy_classes_of_cartan_subalgebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_finiteness_of_conjugacy_classes_of_cartan_subalgebras"
+  },
+  {
+    "id": "e_25151",
+    "from": "t_cayley_transform_lie",
+    "to": "s_maximally_compact_noncompact_cartan_subalgebras",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximally_compact_noncompact_cartan_subalgebras"
+  },
+  {
+    "id": "e_25152",
+    "from": "s_root_and_root_space",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_real_imaginary_complex_roots"
+  },
+  {
+    "id": "e_25153",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_real_imaginary_complex_roots",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_real_imaginary_complex_roots"
+  },
+  {
+    "id": "e_25154",
+    "from": "s_real_imaginary_complex_roots",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_compact_and_noncompact_imaginary_roots"
+  },
+  {
+    "id": "e_25155",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_compact_and_noncompact_imaginary_roots",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_compact_and_noncompact_imaginary_roots"
+  },
+  {
+    "id": "e_25156",
+    "from": "s_compact_and_noncompact_imaginary_roots",
+    "to": "t_dynkin_diagram_classification_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_vogan_diagram"
+  },
+  {
+    "id": "e_25157",
+    "from": "s_maximally_compact_noncompact_cartan_subalgebras",
+    "to": "t_dynkin_diagram_classification_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_vogan_diagram"
+  },
+  {
+    "id": "e_25158",
+    "from": "t_dynkin_diagram_classification_algorithm",
+    "to": "s_vogan_diagram",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_vogan_diagram"
+  },
+  {
+    "id": "e_25159",
+    "from": "s_vogan_diagram",
+    "to": "t_dynkin_diagram_classification_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_vogan_diagram_theorem"
+  },
+  {
+    "id": "e_25160",
+    "from": "s_real_forms_classification",
+    "to": "t_dynkin_diagram_classification_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_vogan_diagram_theorem"
+  },
+  {
+    "id": "e_25161",
+    "from": "t_dynkin_diagram_classification_algorithm",
+    "to": "s_vogan_diagram_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_vogan_diagram_theorem"
+  },
+  {
+    "id": "e_25162",
+    "from": "s_affine_root_system",
+    "to": "t_dynkin_diagram_classification_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_borel_de_siebenthal_theorem"
+  },
+  {
+    "id": "e_25163",
+    "from": "t_dynkin_diagram_classification_algorithm",
+    "to": "s_borel_de_siebenthal_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_borel_de_siebenthal_theorem"
+  },
+  {
+    "id": "e_25164",
+    "from": "s_borel_de_siebenthal_theorem",
+    "to": "t_dynkin_diagram_classification_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_vogan_diagram_theorem"
+  },
+  {
+    "id": "e_25165",
+    "from": "s_cartan_decomposition",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximal_abelian_subspace_of_p"
+  },
+  {
+    "id": "e_25166",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_maximal_abelian_subspace_of_p",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maximal_abelian_subspace_of_p"
+  },
+  {
+    "id": "e_25167",
+    "from": "s_maximal_abelian_subspace_of_p",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_real_rank"
+  },
+  {
+    "id": "e_25168",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_real_rank",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_real_rank"
+  },
+  {
+    "id": "e_25169",
+    "from": "s_maximal_abelian_subspace_of_p",
+    "to": "t_root_system_explicit_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_restricted_root_space_decomposition"
+  },
+  {
+    "id": "e_25170",
+    "from": "s_cartan_decomposition",
+    "to": "t_root_system_explicit_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_restricted_root_space_decomposition"
+  },
+  {
+    "id": "e_25171",
+    "from": "t_root_system_explicit_construction",
+    "to": "s_restricted_roots",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_restricted_root_space_decomposition"
+  },
+  {
+    "id": "e_25172",
+    "from": "t_root_system_explicit_construction",
+    "to": "s_restricted_root_space_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_restricted_root_space_decomposition"
+  },
+  {
+    "id": "e_25173",
+    "from": "t_root_system_explicit_construction",
+    "to": "s_restricted_root_multiplicity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_restricted_root_space_decomposition"
+  },
+  {
+    "id": "e_25174",
+    "from": "t_root_system_explicit_construction",
+    "to": "s_restricted_root_system",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_restricted_root_system"
+  },
+  {
+    "id": "e_25175",
+    "from": "s_restricted_roots",
+    "to": "t_root_system_explicit_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_restricted_root_system"
+  },
+  {
+    "id": "e_25176",
+    "from": "t_root_system_explicit_construction",
+    "to": "s_centralizer_m_of_a_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_restricted_root_space_decomposition"
+  },
+  {
+    "id": "e_25177",
+    "from": "s_restricted_root_space_decomposition",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_centralizer_m_of_a_algebra"
+  },
+  {
+    "id": "e_25178",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_centralizer_m_of_a_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_centralizer_m_of_a_algebra"
+  },
+  {
+    "id": "e_25179",
+    "from": "s_centralizer_m_of_a_algebra",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25180",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_centralizer_M_of_a_group",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25181",
+    "from": "s_maximal_abelian_subspace_of_p",
+    "to": "t_ordering_of_restricted_roots",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_algebra"
+  },
+  {
+    "id": "e_25182",
+    "from": "s_restricted_roots",
+    "to": "t_ordering_of_restricted_roots",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_algebra"
+  },
+  {
+    "id": "e_25183",
+    "from": "s_restricted_root_system",
+    "to": "t_ordering_of_restricted_roots",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_algebra"
+  },
+  {
+    "id": "e_25184",
+    "from": "t_ordering_of_restricted_roots",
+    "to": "s_nilpotent_subalgebra_n",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_algebra"
+  },
+  {
+    "id": "e_25185",
+    "from": "t_ordering_of_restricted_roots",
+    "to": "s_closed_positive_weyl_chamber_a_plus",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25186",
+    "from": "t_ordering_of_restricted_roots",
+    "to": "s_half_sum_of_positive_restricted_roots",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25187",
+    "from": "s_restricted_root_multiplicity",
+    "to": "t_ordering_of_restricted_roots",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25188",
+    "from": "s_nilpotent_subalgebra_n",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_algebra"
+  },
+  {
+    "id": "e_25189",
+    "from": "s_maximal_compact_subgroup",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_algebra"
+  },
+  {
+    "id": "e_25190",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_iwasawa_decomposition_algebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_algebra"
+  },
+  {
+    "id": "e_25191",
+    "from": "s_iwasawa_decomposition_algebra",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_group_kan"
+  },
+  {
+    "id": "e_25192",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_iwasawa_decomposition_group_kan",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_group_kan"
+  },
+  {
+    "id": "e_25193",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_vector_group_A",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25194",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_nilpotent_group_N",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25195",
+    "from": "s_nilpotent_subalgebra_n",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_group_kan"
+  },
+  {
+    "id": "e_25196",
+    "from": "s_maximal_abelian_subspace_of_p",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_decomposition_group_kan"
+  },
+  {
+    "id": "e_25197",
+    "from": "s_iwasawa_decomposition_group_kan",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniqueness_in_iwasawa_decomposition"
+  },
+  {
+    "id": "e_25198",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_uniqueness_in_iwasawa_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_uniqueness_in_iwasawa_decomposition"
+  },
+  {
+    "id": "e_25199",
+    "from": "s_uniqueness_in_iwasawa_decomposition",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_iwasawa_projection_H"
+  },
+  {
+    "id": "e_25200",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_iwasawa_projection_H",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25201",
+    "from": "s_restricted_root_system",
+    "to": "t_root_system_explicit_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25202",
+    "from": "t_root_system_explicit_construction",
+    "to": "s_weyl_group_of_restricted_roots",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25203",
+    "from": "s_weyl_group_of_restricted_roots",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_group_as_NK_over_ZK"
+  },
+  {
+    "id": "e_25204",
+    "from": "s_centralizer_M_of_a_group",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_group_as_NK_over_ZK"
+  },
+  {
+    "id": "e_25205",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_weyl_group_as_NK_over_ZK",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_weyl_group_as_NK_over_ZK"
+  },
+  {
+    "id": "e_25206",
+    "from": "s_closed_positive_weyl_chamber_a_plus",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kak_decomposition"
+  },
+  {
+    "id": "e_25207",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_kak_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kak_decomposition"
+  },
+  {
+    "id": "e_25208",
+    "from": "s_weyl_group_of_restricted_roots",
+    "to": "t_ordering_of_restricted_roots",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_closed_positive_weyl_chamber_a_plus"
+  },
+  {
+    "id": "e_25209",
+    "from": "s_vector_group_A",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25210",
+    "from": "s_nilpotent_group_N",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25211",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_minimal_parabolic_subgroup",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25212",
+    "from": "s_minimal_parabolic_subgroup",
+    "to": "t_dynkin_diagram_classification_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_standard_parabolic_subgroups_real"
+  },
+  {
+    "id": "e_25213",
+    "from": "s_restricted_root_system",
+    "to": "t_dynkin_diagram_classification_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_standard_parabolic_subgroups_real"
+  },
+  {
+    "id": "e_25214",
+    "from": "t_dynkin_diagram_classification_algorithm",
+    "to": "s_standard_parabolic_subgroups_real",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_standard_parabolic_subgroups_real"
+  },
+  {
+    "id": "e_25215",
+    "from": "s_minimal_parabolic_subgroup",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_langlands_decomposition"
+  },
+  {
+    "id": "e_25216",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_langlands_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_langlands_decomposition"
+  },
+  {
+    "id": "e_25217",
+    "from": "s_standard_parabolic_subgroups_real",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_langlands_decomposition"
+  },
+  {
+    "id": "e_25218",
+    "from": "s_iwasawa_decomposition_group_kan",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_formula_kan"
+  },
+  {
+    "id": "e_25219",
+    "from": "s_half_sum_of_positive_restricted_roots",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_formula_kan"
+  },
+  {
+    "id": "e_25220",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_integral_formula_kan",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_formula_kan"
+  },
+  {
+    "id": "e_25221",
+    "from": "s_kak_decomposition",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_formula_kak"
+  },
+  {
+    "id": "e_25222",
+    "from": "s_restricted_root_multiplicity",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_formula_kak"
+  },
+  {
+    "id": "e_25223",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_integral_formula_kak",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_formula_kak"
+  },
+  {
+    "id": "e_25224",
+    "from": "s_invariant_metric_on_G_mod_K_from_B_theta",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_formula_over_G_mod_K"
+  },
+  {
+    "id": "e_25225",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_integral_formula_over_G_mod_K",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_integral_formula_over_G_mod_K"
+  },
+  {
+    "id": "e_25226",
+    "from": "s_minimal_parabolic_subgroup",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_non_unimodularity_of_AN"
+  },
+  {
+    "id": "e_25227",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_non_unimodularity_of_AN",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_non_unimodularity_of_AN"
+  },
+  {
+    "id": "e_25228",
+    "from": "s_reductive_lie_group_harish_chandra_class",
+    "to": "t_integration_of_lie_algebra_homomorphisms",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unimodularity_of_reductive_groups"
+  },
+  {
+    "id": "e_25229",
+    "from": "t_integration_of_lie_algebra_homomorphisms",
+    "to": "s_unimodularity_of_reductive_groups",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_unimodularity_of_reductive_groups"
+  },
+  {
+    "id": "e_25230",
+    "from": "s_symmetric_space_noncompact_type",
+    "to": "t_symmetric_space_morse_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25231",
+    "from": "t_symmetric_space_morse_theory",
+    "to": "s_hermitian_symmetric_space",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25232",
+    "from": "s_hermitian_symmetric_space",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_criterion_for_hermitian_type"
+  },
+  {
+    "id": "e_25233",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_criterion_for_hermitian_type",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_criterion_for_hermitian_type"
+  },
+  {
+    "id": "e_25234",
+    "from": "s_hermitian_symmetric_space",
+    "to": "t_complexification_linear_operator",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_harish_chandra_decomposition"
+  },
+  {
+    "id": "e_25235",
+    "from": "s_criterion_for_hermitian_type",
+    "to": "t_complexification_linear_operator",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_harish_chandra_decomposition"
+  },
+  {
+    "id": "e_25236",
+    "from": "t_complexification_linear_operator",
+    "to": "s_harish_chandra_decomposition",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_harish_chandra_decomposition"
+  },
+  {
+    "id": "e_25237",
+    "from": "s_harish_chandra_decomposition",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_harish_chandra_embedding"
+  },
+  {
+    "id": "e_25238",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_harish_chandra_embedding",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_harish_chandra_embedding"
+  },
+  {
+    "id": "e_25239",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_bounded_symmetric_domain",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_harish_chandra_embedding"
+  },
+  {
+    "id": "e_25240",
+    "from": "s_harish_chandra_embedding",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bounded_symmetric_domain"
+  },
+  {
+    "id": "e_25241",
+    "from": "s_harish_chandra_decomposition",
+    "to": "t_root_system_explicit_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25242",
+    "from": "t_root_system_explicit_construction",
+    "to": "s_strongly_orthogonal_roots",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25243",
+    "from": "s_bounded_symmetric_domain",
+    "to": "t_cayley_transform_lie",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25244",
+    "from": "s_strongly_orthogonal_roots",
+    "to": "t_cayley_transform_lie",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25245",
+    "from": "t_cayley_transform_lie",
+    "to": "s_siegel_domain_realization",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25246",
+    "from": "s_iwasawa_projection_H",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kostant_linear_convexity_theorem"
+  },
+  {
+    "id": "e_25247",
+    "from": "s_weyl_group_of_restricted_roots",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kostant_linear_convexity_theorem"
+  },
+  {
+    "id": "e_25248",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_kostant_linear_convexity_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kostant_linear_convexity_theorem"
+  },
+  {
+    "id": "e_25249",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_opposite_nilpotent_subalgebra",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_opposite_nilpotent_subalgebra"
+  },
+  {
+    "id": "e_25250",
+    "from": "s_opposite_nilpotent_subalgebra",
+    "to": "t_decomposition_via_inner_products",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_open_bruhat_cell"
+  },
+  {
+    "id": "e_25251",
+    "from": "t_decomposition_via_inner_products",
+    "to": "s_open_bruhat_cell",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_open_bruhat_cell"
+  },
+  {
+    "id": "e_25252",
+    "from": "s_cartan_decomposition",
+    "to": "t_symmetric_space_morse_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_invariant_metric_on_G_mod_K_from_B_theta"
+  },
+  {
+    "id": "e_25253",
+    "from": "s_cartan_involution",
+    "to": "t_symmetric_space_morse_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_invariant_metric_on_G_mod_K_from_B_theta"
+  },
+  {
+    "id": "e_25254",
+    "from": "t_symmetric_space_morse_theory",
+    "to": "s_invariant_metric_on_G_mod_K_from_B_theta",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_invariant_metric_on_G_mod_K_from_B_theta"
+  },
+  {
+    "id": "e_25255",
+    "from": "s_invariant_metric_on_G_mod_K_from_B_theta",
+    "to": "t_symmetric_space_morse_theory",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_curvature_of_symmetric_space_bracket_formula"
+  },
+  {
+    "id": "e_25256",
+    "from": "t_symmetric_space_morse_theory",
+    "to": "s_curvature_of_symmetric_space_bracket_formula",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_curvature_of_symmetric_space_bracket_formula"
+  },
+  {
+    "id": "e_25257",
+    "from": "s_center_of_enveloping_algebra",
+    "to": "t_harish_chandra_projection_rho_shift",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25258",
+    "from": "s_universal_enveloping_algebra",
+    "to": "t_harish_chandra_projection_rho_shift",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25259",
+    "from": "s_root_space_decomposition",
+    "to": "t_harish_chandra_projection_rho_shift",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25260",
+    "from": "s_weyl_group",
+    "to": "t_harish_chandra_projection_rho_shift",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25261",
+    "from": "s_cartan_subalgebra_of_real_semisimple",
+    "to": "t_harish_chandra_projection_rho_shift",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25262",
+    "from": "t_harish_chandra_projection_rho_shift",
+    "to": "s_highest_weight_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": ""
+  },
+  {
+    "id": "e_25263",
+    "from": "s_reduced_root_system",
+    "to": "t_root_system_explicit_construction",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_restricted_root_system"
+  },
+  {
+    "id": "e_25264",
+    "from": "s_reduced_root_system",
+    "to": "t_dynkin_diagram_classification_algorithm",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_classification_of_irreducible_root_systems"
+  }
+]

@@ -1,0 +1,404 @@
+[
+  {
+    "name": "Mass partition problem",
+    "kind": "axiom",
+    "description": "The problem of, given a fixed family P of partitions of R^d each splitting it into a fixed number of parts and a family H of measures, deciding whether some partition in P splits each measure in a prescribed way.",
+    "dependencies": ["measure (absolutely continuous)", "partition of Euclidean space", "hyperplane / convex partition"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Absolutely continuous finite measure (mass partition setting)",
+    "kind": "axiom",
+    "description": "A finite Borel measure on R^d that is absolutely continuous with respect to Lebesgue measure, so that every hyperplane has measure zero.",
+    "dependencies": ["Lebesgue measure", "absolute continuity"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "General position (point set)",
+    "kind": "axiom",
+    "description": "A finite set of points in R^d such that no d+1 of them lie on a common hyperplane.",
+    "dependencies": ["hyperplane", "finite point set"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Ham Sandwich theorem",
+    "kind": "theorem",
+    "description": "Given d finite measures absolutely continuous w.r.t. Lebesgue measure on R^d, there is a single hyperplane that simultaneously bisects every one of them.",
+    "dependencies": ["absolutely continuous finite measure", "hyperplane", "Borsuk-Ulam theorem"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Borsuk-Ulam theorem",
+    "kind": "theorem",
+    "description": "Any continuous odd map f from the d-sphere S^d to R^d (satisfying f(x) = -f(-x)) has a zero.",
+    "dependencies": ["sphere S^d", "continuous antipodal (odd) map", "Z/2 action"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Dold's theorem (equivariant map nonexistence)",
+    "kind": "theorem",
+    "description": "For a finite group G of order >1, if X is n-connected with a free G-action and Y is paracompact of dimension at most n with a free G-action, then there is no G-equivariant continuous map X to Y.",
+    "dependencies": ["free group action", "n-connected space", "equivariant map", "Borsuk-Ulam theorem"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Test map / configuration space scheme",
+    "kind": "technique",
+    "description": "A method reducing a combinatorial mass-partition problem to the nonexistence of a G-equivariant map by parametrizing partitions as a configuration space X, encoding the splitting via a test map f to a space Y carrying a G-action.",
+    "dependencies": ["configuration space", "equivariant map", "Borsuk-Ulam theorem", "Dold's theorem"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Necklace splitting theorem (Hobby-Rice / Alon)",
+    "kind": "theorem",
+    "description": "For m absolutely continuous probability measures on R and r thieves, there is a partition using (r-1)m cuts whose pieces can be distributed among r parties so each receives an equal share of every measure.",
+    "dependencies": ["absolutely continuous measure", "Ham Sandwich theorem", "moment curve", "Borsuk-Ulam theorem"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Moment curve lifting (necklace splitting proof)",
+    "kind": "technique",
+    "description": "Embedding measures on R via the moment curve t -> (t, t^2, ..., t^m) into R^m and applying the Ham Sandwich theorem, so a bisecting hyperplane yields the required cuts.",
+    "dependencies": ["moment curve", "Ham Sandwich theorem"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Grünbaum-Hadwiger-Ramos problem",
+    "kind": "state",
+    "description": "The problem of determining the smallest dimension d for which a single arrangement of k hyperplanes can equipart any given collection of j measures in R^d.",
+    "dependencies": ["hyperplane arrangement", "equipartition", "absolutely continuous measure"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Nandakumar-Ramana-Rao problem",
+    "kind": "state",
+    "description": "The question of whether any convex body (or measure) in R^d can be partitioned into k convex pieces that are simultaneously equal in measure and in a prescribed list of d-1 additional continuous functionals (e.g. perimeter).",
+    "dependencies": ["convex partition", "absolutely continuous measure", "optimal transport / power diagram"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Convex equipartition theorem (spicy chicken theorem)",
+    "kind": "theorem",
+    "description": "For k a prime power, any absolutely continuous probability measure on R^d admits a partition into k convex pieces of equal measure on which any chosen d-1 continuous functionals are also equalized.",
+    "dependencies": ["Nandakumar-Ramana-Rao problem", "convex partition", "equivariant topology", "optimal transport (power diagrams)"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Holmsen-Kynčl-Valculescu conjecture",
+    "kind": "state",
+    "description": "A conjecture asserting bounds on partitions of colored point sets into parts each capturing prescribed numbers of points from each color class while respecting a containment/transversal condition.",
+    "dependencies": ["convex partition", "colored point sets", "general position"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Center Transversal theorem",
+    "kind": "theorem",
+    "description": "For any k+1 measures in R^d there exists a k-dimensional affine subspace that is a center transversal, meaning every hyperplane containing it has at least a 1/(d-k+1) fraction of each measure on each side.",
+    "dependencies": ["Borsuk-Ulam theorem", "centerpoint", "Ham Sandwich theorem"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Yao-Yao partition theorem",
+    "kind": "theorem",
+    "description": "A measure in R^d can be partitioned into 2^d convex cones from a common apex, each of equal measure and with bounded directional spread, enabling efficient geometric range searching.",
+    "dependencies": ["convex cone partition", "absolutely continuous measure", "geometric range searching"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "Same-type lemma",
+    "kind": "theorem",
+    "description": "Given finitely many point sets in general position in R^d, large positive-fraction subsets can be chosen so that every transversal choosing one point per subset realizes the same order type.",
+    "dependencies": ["general position", "order type", "Ramsey-type partition"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+  {
+    "name": "PPA-completeness of discrete Ham Sandwich",
+    "kind": "theorem",
+    "description": "Computing a discrete ham sandwich cut, with dimension as part of the input, is complete for the complexity class PPA (Polynomial Parity Argument).",
+    "dependencies": ["Ham Sandwich theorem", "PPA complexity class", "general position"],
+    "source_article": "A survey of mass partitions, Edgardo Roldán-Pensado and Pablo Soberón, 2022 (BAMS 59(2))"
+  },
+
+  {
+    "name": "Jones polynomial",
+    "kind": "axiom",
+    "description": "A Laurent-polynomial invariant J(L) of an oriented link L, determined uniquely by a skein relation together with the normalization J(unknot)=1.",
+    "dependencies": ["oriented link", "skein relation", "Kauffman bracket"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Kauffman bracket",
+    "kind": "axiom",
+    "description": "A state-sum invariant of unoriented link diagrams obtained by resolving each crossing into two smoothings, recovering the Jones polynomial after framing correction.",
+    "dependencies": ["link diagram", "crossing resolution (smoothing)", "Reidemeister moves"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Khovanov homology",
+    "kind": "axiom",
+    "description": "A bigraded homology H(L) of an oriented link, built from a cube of resolutions using a rank-two Frobenius algebra, whose graded Euler characteristic is the Jones polynomial.",
+    "dependencies": ["Jones polynomial", "Frobenius algebra (rank two)", "cube of resolutions", "2-dimensional TQFT", "categorification"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Categorification",
+    "kind": "technique",
+    "description": "The process of lifting an algebraic invariant to a richer categorical object (e.g. homology groups or a category) whose decategorification (Euler characteristic or Grothendieck group) recovers the original invariant.",
+    "dependencies": ["Grothendieck group", "Euler characteristic", "TQFT"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Reduced Khovanov homology",
+    "kind": "state",
+    "description": "A variant of Khovanov homology defined using a marked point on the link, splitting unreduced homology and refining the invariant.",
+    "dependencies": ["Khovanov homology", "Frobenius algebra (rank two)"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Functoriality of Khovanov homology under link cobordisms",
+    "kind": "theorem",
+    "description": "A smooth cobordism between links in R^3 x [0,1] induces a (well-defined up to sign) map on Khovanov homology, making it a functor from the link cobordism category.",
+    "dependencies": ["Khovanov homology", "link cobordism", "movie moves"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Lee spectral sequence and Lee homology",
+    "kind": "theorem",
+    "description": "A deformation of the Khovanov differential yields Lee homology of dimension 2^{#components}, with an induced spectral sequence from Khovanov homology converging to it.",
+    "dependencies": ["Khovanov homology", "Frobenius algebra deformation", "spectral sequence"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Rasmussen s-invariant",
+    "kind": "state",
+    "description": "An integer s(K) extracted from the adjacent quantum gradings of the two surviving generators on the E-infinity page of the Lee spectral sequence, defining a concordance homomorphism.",
+    "dependencies": ["Lee spectral sequence and Lee homology", "Khovanov homology", "quantum grading"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Rasmussen's slice-genus bound",
+    "kind": "theorem",
+    "description": "The s-invariant is a homomorphism from the smooth concordance group and satisfies |s(K)| <= 2 g_4(K), giving a combinatorial lower bound on the slice genus.",
+    "dependencies": ["Rasmussen s-invariant", "smooth concordance group", "slice genus"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Combinatorial proof of the Milnor conjecture (torus knots)",
+    "kind": "theorem",
+    "description": "Rasmussen's s-invariant gives s(T_{p,q}) = 2 g_4(T_{p,q}) = (p-1)(q-1), yielding the first gauge-theory-free proof that the slice genus of the (p,q)-torus knot equals (p-1)(q-1)/2.",
+    "dependencies": ["Rasmussen s-invariant", "Rasmussen's slice-genus bound", "torus knot", "slice genus"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Khovanov stable homotopy type (Lipshitz-Sarkar spectrum)",
+    "kind": "state",
+    "description": "A stable homotopy refinement (a spectrum) whose cohomology recovers Khovanov homology, carrying Steenrod operations that strictly strengthen the homological invariant.",
+    "dependencies": ["Khovanov homology", "stable homotopy theory (spectra)", "Steenrod operations"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Odd Khovanov homology",
+    "kind": "state",
+    "description": "An integral variant of Khovanov homology, due to Ozsváth-Rasmussen-Szabó, that lifts the Ozsváth-Szabó spectral sequence to Z-coefficients and is mutation invariant.",
+    "dependencies": ["Khovanov homology", "cube of resolutions", "mutation"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Kronheimer-Mrowka unknot detection",
+    "kind": "theorem",
+    "description": "Via a spectral sequence from a singular-instanton homology to Khovanov homology, if reduced Khovanov homology of K has rank one then K is the unknot.",
+    "dependencies": ["Khovanov homology", "instanton Floer homology", "spectral sequence"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Symplectic Khovanov homology",
+    "kind": "state",
+    "description": "A Floer-theoretic (Lagrangian intersection) construction of a link invariant, defined via the geometry of nilpotent slices, conjecturally and in cases provably isomorphic to combinatorial Khovanov homology.",
+    "dependencies": ["Khovanov homology", "Lagrangian Floer homology", "nilpotent slice", "quiver variety"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+  {
+    "name": "Spectral sequences from gauge/Floer theories to Khovanov homology",
+    "kind": "technique",
+    "description": "A family of spectral sequences from Khovanov homology to instanton, monopole, or Heegaard Floer invariants used to prove detection results in the spirit of unknot detection.",
+    "dependencies": ["Khovanov homology", "instanton Floer homology", "Heegaard Floer homology", "spectral sequence"],
+    "source_article": "Categorical lifting of the Jones polynomial: a survey, Mikhail Khovanov and Robert Lipshitz, 2023 (BAMS 60(4))"
+  },
+
+  {
+    "name": "Teichmüller curve",
+    "kind": "axiom",
+    "description": "An algebraic curve V isometrically and holomorphically immersed in the moduli space M_g of genus-g Riemann surfaces with respect to the Teichmüller metric, i.e. a totally geodesic complex curve.",
+    "dependencies": ["moduli space of Riemann surfaces", "Teichmüller metric", "complex geodesic"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Holomorphic 1-form / translation surface (X, omega)",
+    "kind": "axiom",
+    "description": "A compact Riemann surface X with a nonzero holomorphic 1-form omega, equivalently a flat metric |omega| with cone-angle singularities at the zeros of omega, giving a translation structure.",
+    "dependencies": ["Riemann surface", "holomorphic 1-form", "flat (translation) structure", "stratum of abelian differentials"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Stratum of abelian differentials",
+    "kind": "axiom",
+    "description": "The subvariety of the bundle Omega M_g of holomorphic 1-forms consisting of forms whose zeros have a fixed multiplicity partition, preserved by the SL_2(R) action.",
+    "dependencies": ["holomorphic 1-form / translation surface (X, omega)", "moduli space of Riemann surfaces"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "SL_2(R) action on Omega M_g",
+    "kind": "axiom",
+    "description": "The action of SL_2(R) on the moduli space of holomorphic 1-forms by post-composition with linear maps on the flat charts, leaving each stratum invariant and projecting to complex geodesics in M_g.",
+    "dependencies": ["holomorphic 1-form / translation surface (X, omega)", "stratum of abelian differentials", "complex geodesic"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Veech group / lattice surface SL(X, omega)",
+    "kind": "axiom",
+    "description": "The group of derivatives of affine automorphisms of a translation surface (X, omega); when it is a lattice in SL_2(R) the surface is a lattice (Veech) surface generating a Teichmüller curve.",
+    "dependencies": ["holomorphic 1-form / translation surface (X, omega)", "affine automorphism", "lattice in SL_2(R)"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Primitive Teichmüller curve",
+    "kind": "axiom",
+    "description": "A Teichmüller curve in M_g that does not arise by covering constructions from a Teichmüller curve in a moduli space of lower genus.",
+    "dependencies": ["Teichmüller curve", "branched covering"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Veech dichotomy",
+    "kind": "theorem",
+    "description": "On a lattice (Veech) surface, every direction is either completely periodic (the surface decomposes into cylinders of closed geodesics) or every geodesic in that direction is uniformly distributed.",
+    "dependencies": ["Veech group / lattice surface SL(X, omega)", "cylinder decomposition", "unique ergodicity", "Masur's criterion"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Optimal dynamics of billiards in lattice polygons",
+    "kind": "theorem",
+    "description": "Billiards in a polygon whose unfolding generates a lattice surface have optimal dynamics: every trajectory is either periodic or uniformly distributed; in particular this holds for regular polygons.",
+    "dependencies": ["Veech dichotomy", "Veech group / lattice surface SL(X, omega)", "billiard unfolding"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Regular polygons generate primitive Teichmüller curves",
+    "kind": "theorem",
+    "description": "The translation surface obtained by unfolding billiards in a regular n-gon has a lattice Veech group and generates a primitive Teichmüller curve.",
+    "dependencies": ["Veech group / lattice surface SL(X, omega)", "primitive Teichmüller curve", "billiard unfolding", "cylinder decomposition"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Masur's criterion",
+    "kind": "theorem",
+    "description": "If the Teichmüller geodesic ray generated by (X, omega) does not return to a compact set infinitely often (its horizontal foliation diverges in moduli space), then the horizontal foliation fails to be uniquely ergodic; conversely recurrence forces unique ergodicity.",
+    "dependencies": ["holomorphic 1-form / translation surface (X, omega)", "Teichmüller geodesic", "unique ergodicity"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Cylinder decomposition and parabolic affine automorphisms",
+    "kind": "technique",
+    "description": "Decomposing a translation surface into parallel cylinders with commensurable moduli and applying simultaneous Dehn twists to produce parabolic elements of the Veech group, certifying that it is a lattice.",
+    "dependencies": ["holomorphic 1-form / translation surface (X, omega)", "Veech group / lattice surface SL(X, omega)", "Dehn twist"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Weierstrass curve W_D (genus 2 classification)",
+    "kind": "state",
+    "description": "For each non-square discriminant D, the locus W_D in M_2 of genus-2 surfaces with a double-zero 1-form whose Jacobian admits real multiplication by the order of discriminant D, forming an infinite series of primitive Teichmüller curves.",
+    "dependencies": ["primitive Teichmüller curve", "real multiplication", "Hilbert modular surface", "Weierstrass point"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Classification of primitive Teichmüller curves in genus 2",
+    "kind": "theorem",
+    "description": "Every primitive Teichmüller curve in M_2 is one of the Weierstrass curves W_D (with the decagon example a special case), giving a complete classification in genus 2.",
+    "dependencies": ["Weierstrass curve W_D (genus 2 classification)", "primitive Teichmüller curve", "real multiplication"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Finiteness of primitive Teichmüller curves in genus 3 outside W_D",
+    "kind": "theorem",
+    "description": "In M_3 there are only finitely many primitive Teichmüller curves not belonging to the Weierstrass series W_D.",
+    "dependencies": ["Weierstrass curve W_D (genus 2 classification)", "primitive Teichmüller curve"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+  {
+    "name": "Infinitude of primitive Teichmüller curves in higher genus (open problem)",
+    "kind": "state",
+    "description": "The open question of whether there exist infinitely many primitive Teichmüller curves in M_g for g >= 5, where no infinite construction is currently known.",
+    "dependencies": ["primitive Teichmüller curve", "moduli space of Riemann surfaces"],
+    "source_article": "Billiards and Teichmüller curves, Curtis T. McMullen, 2023 (BAMS 60(2))"
+  },
+
+  {
+    "name": "Slice knot",
+    "kind": "axiom",
+    "description": "A knot K in S^3 that bounds a smoothly embedded disk in the 4-ball B^4.",
+    "dependencies": ["knot in S^3", "4-ball B^4", "smooth embedded disk"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  },
+  {
+    "name": "Slice genus",
+    "kind": "axiom",
+    "description": "The minimal genus of a smooth, compact, oriented, connected surface embedded in the 4-ball with boundary the knot K; slice knots are exactly those of slice genus zero.",
+    "dependencies": ["slice knot", "4-ball B^4", "Seifert surface"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  },
+  {
+    "name": "Knot mutation",
+    "kind": "axiom",
+    "description": "The operation of excising a tangle from a knot diagram and regluing it after a rotation, relating the Conway knot to the Kinoshita-Terasaka knot and preserving many invariants.",
+    "dependencies": ["knot diagram", "tangle"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  },
+  {
+    "name": "Knot trace X(K)",
+    "kind": "axiom",
+    "description": "The 4-manifold obtained from the 4-ball by attaching a 0-framed 2-handle along the knot K in S^3 = boundary of B^4.",
+    "dependencies": ["knot in S^3", "4-ball B^4", "2-handle attachment"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  },
+  {
+    "name": "The Conway knot is not slice",
+    "kind": "theorem",
+    "description": "Piccirillo's theorem that the Conway knot does not bound a smooth disk in the 4-ball, settling the last sub-13-crossing knot whose sliceness was unknown.",
+    "dependencies": ["slice knot", "knot trace X(K)", "Trace embedding lemma", "trace invariants from knot Floer homology"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  },
+  {
+    "name": "Trace embedding lemma",
+    "kind": "theorem",
+    "description": "A knot K is slice if and only if its trace X(K) embeds smoothly in S^4, so that sliceness depends only on the diffeomorphism type of the trace.",
+    "dependencies": ["knot trace X(K)", "slice knot", "smooth embedding in S^4"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  },
+  {
+    "name": "Handle-rearrangement construction of trace-equivalent knots",
+    "kind": "technique",
+    "description": "Building the knot trace from a 4-ball plus a 1-handle and two 2-handles and reinterpreting which 2-handle is the attaching knot, producing a different knot K' with the same trace as a given knot.",
+    "dependencies": ["knot trace X(K)", "2-handle attachment", "handle decomposition"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  },
+  {
+    "name": "Trace invariance of nu (knot Floer slice obstruction)",
+    "kind": "theorem",
+    "description": "The slice obstruction nu coming from knot Floer homology is an invariant of the knot trace, so knots sharing a trace have equal nu, allowing K' to obstruct sliceness of the Conway knot.",
+    "dependencies": ["knot trace X(K)", "knot Floer homology", "slice knot"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  },
+  {
+    "name": "Alexander polynomial",
+    "kind": "axiom",
+    "description": "A Laurent-polynomial knot invariant Delta(t) giving a lower bound on the genus and invariant under mutation; it equals 1 for both the Conway and Kinoshita-Terasaka knots.",
+    "dependencies": ["knot in S^3", "Seifert surface", "knot mutation"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  },
+  {
+    "name": "Vanishing of classical slice obstructions for the Conway knot",
+    "kind": "state",
+    "description": "The fact that every classical sliceness obstruction (Alexander polynomial, signature, Rasmussen s-invariant, etc.) vanishes for the Conway knot, motivating Piccirillo's trace-based approach.",
+    "dependencies": ["Alexander polynomial", "Rasmussen s-invariant", "knot mutation", "slice knot"],
+    "source_article": "Getting a handle on the Conway knot, Jennifer Hom, 2022 (BAMS 59(1))"
+  }
+]

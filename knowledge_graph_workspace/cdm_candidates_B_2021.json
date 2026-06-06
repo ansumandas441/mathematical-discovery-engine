@@ -1,0 +1,481 @@
+[
+  {
+    "candidate_name": "Reductive p-adic group",
+    "kind": "axiom",
+    "description": "A connected reductive linear algebraic group G defined over a non-archimedean local field F, together with its group of F-points G(F) regarded as a locally profinite topological group.",
+    "dependencies": ["connected reductive algebraic group", "non-archimedean local field", "locally profinite group"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Smooth representation of a p-adic group",
+    "kind": "axiom",
+    "description": "A representation of G(F) on a complex vector space in which every vector has open stabilizer, equivalently the union of fixed spaces of compact open subgroups is the whole space.",
+    "dependencies": ["reductive p-adic group", "compact open subgroup", "complex vector space"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Admissible representation",
+    "kind": "axiom",
+    "description": "A smooth representation of G(F) in which the fixed subspace under every compact open subgroup is finite-dimensional.",
+    "dependencies": ["smooth representation of a p-adic group", "compact open subgroup"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Supercuspidal representation",
+    "kind": "axiom",
+    "description": "An irreducible smooth representation of G(F) all of whose matrix coefficients are compactly supported modulo the center, equivalently one not appearing in any parabolic induction from a proper Levi subgroup.",
+    "dependencies": ["smooth representation of a p-adic group", "parabolic induction", "Jacquet module", "matrix coefficient"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Parahoric subgroup and Bruhat-Tits building",
+    "kind": "axiom",
+    "description": "The parahoric subgroups are the stabilizers of facets of the Bruhat-Tits building, a simplicial complex on which G(F) acts encoding its compact open subgroup structure.",
+    "dependencies": ["reductive p-adic group", "apartment", "affine root system", "Iwahori subgroup"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Moy-Prasad filtration",
+    "kind": "axiom",
+    "description": "A decreasing filtration of a parahoric subgroup by normal compact open subgroups indexed by non-negative real numbers, defined via the Bruhat-Tits building and used to assign a depth to representations.",
+    "dependencies": ["parahoric subgroup and Bruhat-Tits building", "Moy-Prasad point", "valuation on the field"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Depth of a representation",
+    "kind": "state",
+    "description": "The smallest non-negative real number r such that the representation has nonzero vectors fixed by the (r+)-step of the Moy-Prasad filtration of some point, giving a numerical invariant of an irreducible smooth representation.",
+    "dependencies": ["Moy-Prasad filtration", "smooth representation of a p-adic group"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Type (Bushnell-Kutzko theory)",
+    "kind": "axiom",
+    "description": "A pair (K, rho) of a compact open subgroup K and an irreducible representation rho of K such that the irreducible representations containing rho exactly fill out a fixed block of the category of smooth representations.",
+    "dependencies": ["smooth representation of a p-adic group", "compact open subgroup", "Bernstein decomposition"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Tame elliptic regular pair / generic cuspidal datum",
+    "kind": "axiom",
+    "description": "The input data for Yu's construction: a tame twisted Levi sequence of subgroups together with characters and a depth-zero supercuspidal datum satisfying a genericity condition.",
+    "dependencies": ["twisted Levi subgroup", "Moy-Prasad filtration", "tamely ramified extension", "generic character"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Yu's construction of supercuspidal representations",
+    "kind": "technique",
+    "description": "A construction producing irreducible smooth representations of G(F) by compact induction from a chain of subgroups built using a tame twisted Levi sequence, Heisenberg-Weil representations and generic characters.",
+    "dependencies": ["tame elliptic regular pair / generic cuspidal datum", "compact induction", "Heisenberg-Weil representation", "twisted Levi subgroup"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Supercuspidality of Yu-constructed representations",
+    "kind": "theorem",
+    "description": "Fintzen proves that the representations output by Yu's construction are irreducible and supercuspidal, giving a self-contained proof valid in all residual characteristics including p = 2.",
+    "dependencies": ["Yu's construction of supercuspidal representations", "supercuspidal representation", "compact induction"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Exhaustion theorem for tame supercuspidals (Fintzen)",
+    "kind": "theorem",
+    "description": "If p does not divide the order of the absolute Weyl group of G, then every supercuspidal representation of G(F) arises from Yu's construction, sharpening the prior Kim exhaustion result.",
+    "dependencies": ["Yu's construction of supercuspidal representations", "supercuspidal representation", "absolute Weyl group", "tamely ramified extension"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Fintzen-Kaletha-Spice quadratic twist",
+    "kind": "state",
+    "description": "A correction by an explicit sign character valued in {+1,-1} of an appropriate compact open subgroup, twisting Yu's construction so that the resulting representations match the expected character formulas and stability properties.",
+    "dependencies": ["Yu's construction of supercuspidal representations", "generic character", "quadratic character"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Adler-Spice / DeBacker-Spice character formula",
+    "kind": "theorem",
+    "description": "An explicit formula for the Harish-Chandra character of a tame supercuspidal representation on regular semisimple elements, expressed via Gauss sums and the geometry of the building.",
+    "dependencies": ["Yu's construction of supercuspidal representations", "Harish-Chandra character", "regular semisimple element", "Gauss sum"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Depth-zero supercuspidal representation",
+    "kind": "state",
+    "description": "A supercuspidal representation of depth zero, obtained by compact induction of an inflation of a cuspidal representation of the reductive quotient of a parahoric subgroup.",
+    "dependencies": ["depth of a representation", "parahoric subgroup and Bruhat-Tits building", "cuspidal representation of a finite reductive group", "compact induction"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+  {
+    "candidate_name": "Analogy with discrete series of real Lie groups",
+    "kind": "state",
+    "description": "The structural parallel observed by Fintzen between tame supercuspidal representations of p-adic groups and Harish-Chandra discrete series representations of real reductive Lie groups, both indexed by regular characters of elliptic tori.",
+    "dependencies": ["supercuspidal representation", "discrete series representation", "elliptic maximal torus"],
+    "source_article": "CDM 2021, Jessica Fintzen, Representations of p-adic groups"
+  },
+
+  {
+    "candidate_name": "Mixed quantum state (density matrix)",
+    "kind": "axiom",
+    "description": "A d-by-d positive semidefinite Hermitian matrix of trace one representing the state of a quantum system of dimension d.",
+    "dependencies": ["positive semidefinite matrix", "Hermitian matrix", "trace"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Quantum state tomography problem",
+    "kind": "axiom",
+    "description": "The task of producing, from independent copies rho-tensor-n of an unknown d-dimensional mixed state, an estimate rho-hat close to rho in trace distance with high probability.",
+    "dependencies": ["mixed quantum state (density matrix)", "trace distance", "POVM measurement"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Quantum spectrum estimation / testing problem",
+    "kind": "axiom",
+    "description": "The task of estimating, or testing properties of, the unordered spectrum (eigenvalue multiset) of an unknown mixed state from independent copies, without estimating the eigenvectors.",
+    "dependencies": ["mixed quantum state (density matrix)", "spectrum of a matrix"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Schur-Weyl duality",
+    "kind": "theorem",
+    "description": "The decomposition of the n-fold tensor power (C^d)-tensor-n as a bimodule over GL(d) and the symmetric group S_n, splitting into a multiplicity-free sum over partitions lambda of irreducible pairs (Weyl module times Specht module).",
+    "dependencies": ["irreducible representation of the symmetric group", "irreducible polynomial representation of GL(d)", "partition / Young diagram", "tensor power"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Weak Schur sampling",
+    "kind": "technique",
+    "description": "The measurement of rho-tensor-n by the projectors onto the GL(d) x S_n isotypic subspaces indexed by partitions lambda, whose outcome is a random Young diagram lambda.",
+    "dependencies": ["Schur-Weyl duality", "POVM measurement", "mixed quantum state (density matrix)"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Schur-Weyl distribution",
+    "kind": "state",
+    "description": "The probability distribution on partitions lambda of n arising as the outcome of weak Schur sampling on rho-tensor-n, whose probabilities are given by the Schur polynomial of the spectrum of rho times the dimension of the Specht module.",
+    "dependencies": ["weak Schur sampling", "Schur polynomial", "partition / Young diagram", "mixed quantum state (density matrix)"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Robinson-Schensted-Knuth (RSK) correspondence",
+    "kind": "theorem",
+    "description": "A bijection sending a word in the alphabet [d] of length n to a pair of Young tableaux of the same shape lambda (a semistandard insertion tableau and a standard recording tableau), with the shape recording longest increasing subsequence data.",
+    "dependencies": ["partition / Young diagram", "semistandard Young tableau", "standard Young tableau", "longest increasing subsequence"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "RSK realization of the Schur-Weyl distribution",
+    "kind": "theorem",
+    "description": "The shape of the RSK tableau produced from a word of n i.i.d. letters drawn from the distribution given by the eigenvalues of rho is distributed exactly as the Schur-Weyl distribution of rho.",
+    "dependencies": ["Robinson-Schensted-Knuth (RSK) correspondence", "Schur-Weyl distribution", "mixed quantum state (density matrix)"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Empirical Young Diagram (EYD) algorithm",
+    "kind": "technique",
+    "description": "The spectrum-estimation procedure that performs weak Schur sampling on rho-tensor-n and outputs the normalized sorted Young diagram lambda/n as an estimate of the spectrum of rho.",
+    "dependencies": ["weak Schur sampling", "Schur-Weyl distribution", "quantum spectrum estimation / testing problem"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Optimal sample complexity of state tomography (O'Donnell-Wright / Haah et al.)",
+    "kind": "theorem",
+    "description": "Theta(d^2/epsilon^2) copies of an unknown rank-d state are necessary and sufficient to estimate it to trace distance epsilon, with a matching upper bound achieved by a representation-theoretic measurement.",
+    "dependencies": ["quantum state tomography problem", "trace distance", "weak Schur sampling"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Pure-state tomography sample complexity",
+    "kind": "theorem",
+    "description": "Theta(d/epsilon^2) copies suffice and are required to learn an unknown pure state in dimension d to fidelity error epsilon.",
+    "dependencies": ["quantum state tomography problem", "pure quantum state", "fidelity"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Convergence of the maximal Schur-Weyl row to the top eigenvalue",
+    "kind": "theorem",
+    "description": "The normalized longest row lambda_1/n of a Schur-Weyl-distributed diagram concentrates around the largest eigenvalue of rho, generalizing the Vershik-Kerov / Logan-Shepp limit for the longest increasing subsequence.",
+    "dependencies": ["Schur-Weyl distribution", "longest increasing subsequence", "mixed quantum state (density matrix)"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+  {
+    "candidate_name": "Quantum identity / maximal-mixedness testing bounds",
+    "kind": "theorem",
+    "description": "Property-testing results, proved via the Schur-Weyl distribution, giving the optimal number of copies needed to distinguish whether an unknown state equals the maximally mixed state versus being epsilon-far from it.",
+    "dependencies": ["quantum spectrum estimation / testing problem", "Schur-Weyl distribution", "maximally mixed state"],
+    "source_article": "CDM 2021, O'Donnell and Wright, Learning and testing quantum states via probabilistic combinatorics and representation theory"
+  },
+
+  {
+    "candidate_name": "Dirichlet L-function",
+    "kind": "axiom",
+    "description": "The L-function L(chi,s) = sum chi(n) n^{-s} attached to a Dirichlet character chi modulo N, admitting an Euler product over primes.",
+    "dependencies": ["Dirichlet character", "Euler product", "Riemann zeta function"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Artin L-function of a Galois representation",
+    "kind": "axiom",
+    "description": "The L-function L(rho,s) attached to a representation rho of a Galois group, defined as an Euler product whose local factors are determined by the action of Frobenius elements on rho.",
+    "dependencies": ["Galois representation", "Frobenius element", "Euler product"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Chebotarev density theorem",
+    "kind": "theorem",
+    "description": "For a Galois extension K/Q with group G and conjugacy-invariant subset C of G, the density of primes whose Frobenius conjugacy class lies in C equals |C|/|G|.",
+    "dependencies": ["Galois extension", "Frobenius element", "natural density of primes"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "p-adic Galois representation",
+    "kind": "axiom",
+    "description": "A continuous representation of the absolute Galois group G_M of a number field on a finite-dimensional vector space over a p-adic field.",
+    "dependencies": ["absolute Galois group", "p-adic field", "continuous representation"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "de Rham / potentially semistable representation",
+    "kind": "axiom",
+    "description": "A p-adic representation of the local Galois group G_{Q_p} that is de Rham (equivalently potentially semistable) in the sense of Fontaine's p-adic Hodge theory, the local condition expected of representations coming from geometry.",
+    "dependencies": ["p-adic Galois representation", "p-adic Hodge theory", "Hodge-Tate weights"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Algebraic Galois representation",
+    "kind": "axiom",
+    "description": "A continuous semisimple p-adic representation of G_M that is unramified outside finitely many primes and de Rham at all places above p, the class conjecturally matching automorphic representations.",
+    "dependencies": ["p-adic Galois representation", "de Rham / potentially semistable representation", "unramified representation"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Fontaine-Mazur conjecture",
+    "kind": "state",
+    "description": "The conjecture that an irreducible p-adic Galois representation of G_M unramified outside finitely many primes and de Rham at p arises (up to twist) from the etale cohomology of an algebraic variety.",
+    "dependencies": ["algebraic Galois representation", "etale cohomology", "de Rham / potentially semistable representation"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Automorphic representation of GL_n",
+    "kind": "axiom",
+    "description": "An irreducible constituent of the space of automorphic forms on GL_n(A_Q), i.e. an irreducible admissible representation of the adelic group occurring in the discrete/cuspidal spectrum.",
+    "dependencies": ["adele ring", "automorphic form", "cuspidal automorphic representation"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Regular algebraic cuspidal automorphic representation",
+    "kind": "axiom",
+    "description": "A cuspidal automorphic representation of GL_n(A_Q) whose archimedean component has the same infinitesimal character as a finite-dimensional algebraic representation, the class conjecturally carrying associated Galois representations.",
+    "dependencies": ["automorphic representation of GL_n", "infinitesimal character", "cuspidal automorphic representation"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Langlands functoriality conjecture",
+    "kind": "state",
+    "description": "The conjecture that any homomorphism R: ^LH -> ^LG of Langlands dual groups gives rise to a transfer of automorphic representations from H to G compatible with L-functions at all places.",
+    "dependencies": ["Langlands dual group", "automorphic representation of GL_n", "automorphic L-function"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Symmetric power lifting Sym^m",
+    "kind": "state",
+    "description": "The functorial lift along the m-th symmetric power map Sym^m: GL_2 -> GL_{m+1}, sending an automorphic representation pi of GL_2 to a conjectural automorphic representation Sym^m pi of GL_{m+1}.",
+    "dependencies": ["Langlands functoriality conjecture", "automorphic representation of GL_n", "symmetric power of a representation"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Symmetric power L-function",
+    "kind": "state",
+    "description": "The L-function L(pi, Sym^m, s) attached to an automorphic representation pi of GL_2 via the m-th symmetric power representation of the dual group, generalizing the symmetric power L-functions of Ramanujan's Delta.",
+    "dependencies": ["symmetric power lifting Sym^m", "automorphic L-function", "Langlands dual group"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Reciprocity conjecture",
+    "kind": "state",
+    "description": "Thorne's formulation that every algebraic p-adic Galois representation of G_M should correspond to a regular algebraic automorphic representation of GL_n with matching L-functions, and conversely.",
+    "dependencies": ["algebraic Galois representation", "regular algebraic cuspidal automorphic representation", "Artin L-function of a Galois representation"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Ramanujan conjecture for Delta",
+    "kind": "theorem",
+    "description": "The bound |tau(p)| <= 2 p^{11/2} on the Fourier coefficients of the modular discriminant, proved by Deligne as a consequence of the Weil conjectures.",
+    "dependencies": ["modular discriminant Delta", "Galois representation", "Weil conjectures"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Sato-Tate conjecture",
+    "kind": "theorem",
+    "description": "For a non-CM elliptic curve over Q, the normalized Frobenius traces a_p/(2 sqrt p) are equidistributed with respect to the Sato-Tate (semicircle) measure on [-1,1].",
+    "dependencies": ["elliptic curve", "Frobenius element", "symmetric power L-function", "equidistribution"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Symmetric power functoriality for holomorphic newforms (Newton-Thorne)",
+    "kind": "theorem",
+    "description": "For every regular algebraic cuspidal automorphic representation pi of GL_2(A_Q) without CM and every m >= 1, the symmetric power lift Sym^m pi exists as a cuspidal automorphic representation of GL_{m+1}(A_Q).",
+    "dependencies": ["symmetric power lifting Sym^m", "regular algebraic cuspidal automorphic representation", "reciprocity conjecture"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Automorphy lifting theorem",
+    "kind": "theorem",
+    "description": "A theorem asserting that a p-adic Galois representation with suitable local conditions whose mod-p reduction is automorphic is itself automorphic, identifying a deformation ring with a Hecke algebra (R = T).",
+    "dependencies": ["p-adic Galois representation", "residual Galois representation", "Galois deformation ring", "Hecke algebra"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Taylor-Wiles method (Taylor-Wiles-Kisin patching)",
+    "kind": "technique",
+    "description": "A patching technique that proves R = T by adjoining auxiliary Taylor-Wiles primes to enlarge the level, taking an inverse limit to produce a big module over a power-series ring whose support forces the deformation ring to equal the Hecke algebra.",
+    "dependencies": ["automorphy lifting theorem", "Galois deformation ring", "Hecke algebra", "Taylor-Wiles primes"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Residual automorphy obstruction",
+    "kind": "state",
+    "description": "The requirement, central to applying automorphy lifting, that the mod-p reduction of the target Galois representation be both irreducible and itself automorphic, which is hard to verify for high symmetric powers.",
+    "dependencies": ["residual Galois representation", "automorphy lifting theorem"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Brauer induction reduction of L-functions",
+    "kind": "technique",
+    "description": "Expressing the L-function of a symmetric power representation as a ratio of automorphic L-functions using Brauer's induction theorem on virtual characters, so that potential automorphy yields the desired analytic properties.",
+    "dependencies": ["symmetric power L-function", "Brauer induction theorem", "automorphy lifting theorem"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Coleman-Mazur eigencurve",
+    "kind": "state",
+    "description": "A rigid analytic curve p-adically interpolating finite-slope overconvergent Hecke eigenforms of fixed tame level, parametrizing systems of Hecke eigenvalues with their weights.",
+    "dependencies": ["overconvergent modular form", "Hecke eigenform", "finite slope", "p-adic family of modular forms"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Overconvergent finite-slope Hecke eigenform",
+    "kind": "axiom",
+    "description": "A p-adic modular form that is overconvergent and an eigenform for the U_p operator with nonzero (finite slope) eigenvalue, the points of the eigencurve.",
+    "dependencies": ["overconvergent modular form", "U_p operator", "finite slope"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Coleman classicality theorem",
+    "kind": "theorem",
+    "description": "An overconvergent eigenform of weight k and slope strictly less than k-1 is classical, so small-slope points of the eigencurve correspond to genuine modular forms.",
+    "dependencies": ["overconvergent finite-slope Hecke eigenform", "finite slope", "Coleman-Mazur eigencurve"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Analytic continuation of functoriality along the eigencurve",
+    "kind": "technique",
+    "description": "Newton-Thorne's strategy of proving symmetric power functoriality at one accessible point of the eigencurve and then propagating it p-adically across the connected eigenvariety to all classical points.",
+    "dependencies": ["Coleman-Mazur eigencurve", "symmetric power functoriality for holomorphic newforms (Newton-Thorne)", "automorphy lifting theorem"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+  {
+    "candidate_name": "Pseudo-representation (pseudocharacter)",
+    "kind": "axiom",
+    "description": "A trace-like function on a group satisfying the formal identities of the trace of an n-dimensional representation, used to construct and interpolate Galois representations in families even where they may be reducible.",
+    "dependencies": ["Galois representation", "Hecke algebra"],
+    "source_article": "CDM 2021, Jack A. Thorne, Reciprocity and symmetric power functoriality"
+  },
+
+  {
+    "candidate_name": "Isolated gravitating system / asymptotically flat spacetime",
+    "kind": "axiom",
+    "description": "A spacetime modeling a self-contained gravitating system whose metric approaches the Minkowski metric at large distances, admitting a notion of null infinity.",
+    "dependencies": ["Lorentzian metric", "Einstein field equations", "Minkowski spacetime"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Future null infinity (scri-plus)",
+    "kind": "axiom",
+    "description": "The idealized boundary at which outgoing light rays of an asymptotically flat spacetime terminate, foliated by retarded-time cuts on which radiated quantities are measured.",
+    "dependencies": ["isolated gravitating system / asymptotically flat spacetime", "Bondi coordinates", "conformal compactification"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Bondi-Metzner-Sachs (BMS) group",
+    "kind": "axiom",
+    "description": "The asymptotic symmetry group of future null infinity, an infinite-dimensional group that is the semidirect product of the Lorentz group with the abelian group of supertranslations.",
+    "dependencies": ["future null infinity (scri-plus)", "supertranslation", "Lorentz group", "Poincare group"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Supertranslation",
+    "kind": "axiom",
+    "description": "An angle-dependent shift of the retarded time coordinate u -> u + f(theta,phi) by an arbitrary smooth function on the celestial sphere, generalizing rigid time translation.",
+    "dependencies": ["future null infinity (scri-plus)", "Bondi coordinates"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Bondi-Sachs energy-momentum",
+    "kind": "state",
+    "description": "The four-vector of conserved energy and linear momentum at a cut of null infinity, obtained by integrating the mass aspect against the lowest spherical harmonics.",
+    "dependencies": ["future null infinity (scri-plus)", "mass aspect function", "Bondi coordinates"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "ADM mass",
+    "kind": "state",
+    "description": "The total mass-energy of an asymptotically flat initial data set measured at spatial infinity, representing the system's mass before gravitational radiation.",
+    "dependencies": ["isolated gravitating system / asymptotically flat spacetime", "initial data set"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "News tensor",
+    "kind": "state",
+    "description": "The retarded-time derivative N_AB of the shear tensor of null infinity, encoding the outgoing gravitational radiation and possessing a simple transformation under supertranslations.",
+    "dependencies": ["future null infinity (scri-plus)", "shear tensor", "supertranslation"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Bondi mass loss formula",
+    "kind": "theorem",
+    "description": "The identity that the retarded-time derivative of the Bondi energy equals minus the integral of the squared news tensor over the sphere, so radiated gravitational waves strictly decrease the Bondi mass.",
+    "dependencies": ["Bondi-Sachs energy-momentum", "news tensor", "future null infinity (scri-plus)"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Supertranslation ambiguity of angular momentum",
+    "kind": "state",
+    "description": "The phenomenon that classical definitions of angular momentum at null infinity change under BMS supertranslations, so different distant observers may measure different values.",
+    "dependencies": ["Bondi-Metzner-Sachs (BMS) group", "supertranslation", "angular momentum at null infinity"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Wang-Yau quasi-local mass",
+    "kind": "state",
+    "description": "A quasi-local energy assigned to a spacelike 2-surface defined by comparing its geometry to an optimal isometric embedding into Minkowski space, characterized by intrinsic and extrinsic data.",
+    "dependencies": ["spacelike 2-surface", "optimal isometric embedding", "mean curvature vector", "Minkowski spacetime"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Optimal isometric embedding",
+    "kind": "state",
+    "description": "An isometric embedding of a spacelike 2-surface into Minkowski spacetime that is critical for the quasi-local energy, equivalently making the embedded surface's momentum density divergence-free.",
+    "dependencies": ["spacelike 2-surface", "Minkowski spacetime", "isometric embedding", "Wang-Yau quasi-local mass"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Chen-Wang-Yau angular momentum",
+    "kind": "state",
+    "description": "A definition of angular momentum at null infinity obtained as the large-radius limit of quasi-local angular momentum, pairing the optimal isometric embedding with rotation Killing fields of Minkowski space.",
+    "dependencies": ["Wang-Yau quasi-local mass", "optimal isometric embedding", "rotation Killing field", "angular momentum at null infinity"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Supertranslation invariance of Chen-Wang-Yau angular momentum",
+    "kind": "theorem",
+    "description": "Chen-Wang-Yau prove that their quasi-local-limit definition of total angular momentum at null infinity is invariant under BMS supertranslations, resolving the historical ambiguity.",
+    "dependencies": ["Chen-Wang-Yau angular momentum", "supertranslation ambiguity of angular momentum", "Bondi-Metzner-Sachs (BMS) group"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  },
+  {
+    "candidate_name": "Supertranslation-invariant center of mass at null infinity",
+    "kind": "state",
+    "description": "A new definition of the center-of-mass integral at null infinity, shown to be supertranslation invariant and forming with the Bondi energy-momentum a complete set of conserved quantities transforming under physical laws.",
+    "dependencies": ["Bondi-Sachs energy-momentum", "Chen-Wang-Yau angular momentum", "supertranslation"],
+    "source_article": "CDM 2021, Mu-Tao Wang, Angular momentum and supertranslation in general relativity"
+  }
+]
