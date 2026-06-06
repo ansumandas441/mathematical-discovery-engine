@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Collatz conjecture (note)",
+    "existing_id": "s_collatz_conjecture",
+    "reason": "Added as new; placeholder skip not needed — disregard (kept in new_nodes)."
+  },
+  {
+    "name": "Liouville function",
+    "existing_id": "s_liouville_completely_multiplicative",
+    "reason": "The Liouville function as a concept is already present (completely-multiplicative theorem, summatory function, Dirichlet series nodes); no separate axiom node needed."
+  },
+  {
+    "name": "Gowers uniformity norm",
+    "existing_id": "s_gowers_uniformity_norm",
+    "reason": "Exact concept already exists as Gowers uniformity norm U^k."
+  },
+  {
+    "name": "Inverse theorem for Gowers uniformity norms",
+    "existing_id": "s_gowers_inverse_uk",
+    "reason": "Already present as the Gowers inverse conjecture/theorem for U^k (Green–Tao–Ziegler); generic inverse theorem node."
+  },
+  {
+    "name": "Chowla conjecture (dup check)",
+    "existing_id": "s_sarnak_mobius_horocycle",
+    "reason": "Chowla itself NOT present (kept in new_nodes); only related Sarnak/Möbius nodes exist."
+  },
+  {
+    "name": "Duffin–Schaeffer theorem",
+    "existing_id": "s_duffin_schaeffer_theorem",
+    "reason": "Already present (Koukoulopoulos–Maynard) including alias."
+  },
+  {
+    "name": "GCD graph method",
+    "existing_id": "t_gcd_graph_method",
+    "reason": "Already present as a technique node."
+  },
+  {
+    "name": "de Bruijn–Newman constant",
+    "existing_id": "s_de_bruijn_newman_constant",
+    "reason": "The constant itself already exists as a state node."
+  },
+  {
+    "name": "Ternary Goldbach theorem",
+    "existing_id": "s_ternary_goldbach",
+    "reason": "Already present as Ternary Goldbach (Helfgott)."
+  },
+  {
+    "name": "Erdős–Rado sunflower theorem",
+    "existing_id": "s_erdos_rado_theorem",
+    "reason": "Erdős–Rado theorem already present (also sunflower lemma node s_sunflower_lemma_erdsko)."
+  },
+  {
+    "name": "Sunflower conjecture",
+    "existing_id": "s_sunflower_conjecture_open",
+    "reason": "Open sunflower conjecture already present as a state node."
+  },
+  {
+    "name": "Alweiss–Lovett–Wu–Zhang sunflower bound",
+    "existing_id": "s_sunflower_conjecture",
+    "reason": "Already present as Improved sunflower lemma (Alweiss-Lovett-Wu-Zhang)."
+  },
+  {
+    "name": "Robust sunflower",
+    "existing_id": "s_spread_robust_sunflower_family",
+    "reason": "Robust/spread sunflower family already present as an axiom node."
+  },
+  {
+    "name": "R-Spread Set / Spread Distribution",
+    "existing_id": "s_spread_robust_sunflower_family",
+    "reason": "Spread family concept already captured by the spread/robust sunflower family node (and t_random_restriction_with_spreadness)."
+  },
+  {
+    "name": "Polynomial Freiman-Ruzsa Conjecture (Marton's Conjecture)",
+    "existing_id": "s_polynomial_freiman_ruzsa_conjecture",
+    "reason": "Already present as Polynomial Freiman–Ruzsa conjecture (Marton)."
+  },
+  {
+    "name": "Gowers-Green-Manners-Tao Theorem (PFR in characteristic 2)",
+    "existing_id": "s_ggmt_polynomial_freiman_ruzsa",
+    "reason": "Already present as Polynomial Freiman–Ruzsa theorem (Gowers–Green–Manners–Tao)."
+  },
+  {
+    "name": "Maynard–Tao bounded gaps theorem",
+    "existing_id": "s_maynard_bounded_gaps_improved",
+    "reason": "Already present as Bounded gaps between primes (Zhang / Maynard); core bounded-gaps node s_bounded_gaps_between_primes also exists."
+  },
+  {
+    "name": "Zhang bounded gaps theorem",
+    "existing_id": "s_maynard_bounded_gaps_improved",
+    "reason": "Zhang's bounded gaps result is covered by the existing Zhang/Maynard bounded gaps node and s_bounded_gaps_between_primes."
+  }
+]

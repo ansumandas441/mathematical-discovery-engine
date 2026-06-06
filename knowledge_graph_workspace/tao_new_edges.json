@@ -1,0 +1,618 @@
+[
+  {
+    "id": "e_26254",
+    "from": "s_collatz_map",
+    "to": "t_syracuse_random_variable",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_almost_bounded_collatz_orbits"
+  },
+  {
+    "id": "e_26255",
+    "from": "t_syracuse_random_variable",
+    "to": "s_syracuse_characteristic_decay",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_syracuse_characteristic_decay"
+  },
+  {
+    "id": "e_26256",
+    "from": "s_syracuse_characteristic_decay",
+    "to": "t_transport_log_density_first_passage",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_almost_bounded_collatz_orbits"
+  },
+  {
+    "id": "e_26257",
+    "from": "s_collatz_map",
+    "to": "t_transport_log_density_first_passage",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_almost_bounded_collatz_orbits"
+  },
+  {
+    "id": "e_26258",
+    "from": "t_transport_log_density_first_passage",
+    "to": "s_almost_bounded_collatz_orbits",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_almost_bounded_collatz_orbits"
+  },
+  {
+    "id": "e_26259",
+    "from": "s_sendov_conjecture",
+    "to": "t_polynomial_zeros_as_point_processes",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sendov_high_degree"
+  },
+  {
+    "id": "e_26260",
+    "from": "t_polynomial_zeros_as_point_processes",
+    "to": "s_sendov_high_degree",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sendov_high_degree"
+  },
+  {
+    "id": "e_26261",
+    "from": "t_log_potential_stieltjes_zero_measure",
+    "to": "s_sendov_high_degree",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sendov_high_degree"
+  },
+  {
+    "id": "e_26262",
+    "from": "s_potential_theory_capacity",
+    "to": "t_log_potential_stieltjes_zero_measure",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sendov_high_degree"
+  },
+  {
+    "id": "e_26263",
+    "from": "s_grace_apolarity_theorem",
+    "to": "t_compactness_limit_high_degree_polynomials",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sendov_high_degree"
+  },
+  {
+    "id": "e_26264",
+    "from": "s_prokhorov_theorem",
+    "to": "t_compactness_limit_high_degree_polynomials",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sendov_high_degree"
+  },
+  {
+    "id": "e_26265",
+    "from": "s_tightness_of_measures",
+    "to": "t_compactness_limit_high_degree_polynomials",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sendov_high_degree"
+  },
+  {
+    "id": "e_26266",
+    "from": "t_compactness_limit_high_degree_polynomials",
+    "to": "s_sendov_high_degree",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sendov_high_degree"
+  },
+  {
+    "id": "e_26267",
+    "from": "s_liouville_completely_multiplicative",
+    "to": "t_matomaki_radziwill_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_higher_local_fourier_uniformity"
+  },
+  {
+    "id": "e_26268",
+    "from": "s_gowers_uniformity_norm",
+    "to": "t_matomaki_radziwill_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_higher_local_fourier_uniformity"
+  },
+  {
+    "id": "e_26269",
+    "from": "t_matomaki_radziwill_method",
+    "to": "s_higher_local_fourier_uniformity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_higher_local_fourier_uniformity"
+  },
+  {
+    "id": "e_26270",
+    "from": "s_liouville_completely_multiplicative",
+    "to": "t_multiplicativity_small_primes_functional_equation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_higher_local_fourier_uniformity"
+  },
+  {
+    "id": "e_26271",
+    "from": "s_nilsequence",
+    "to": "t_multiplicativity_small_primes_functional_equation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_higher_local_fourier_uniformity"
+  },
+  {
+    "id": "e_26272",
+    "from": "s_gowers_inverse_uk",
+    "to": "t_multiplicativity_small_primes_functional_equation",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_higher_local_fourier_uniformity"
+  },
+  {
+    "id": "e_26273",
+    "from": "t_multiplicativity_small_primes_functional_equation",
+    "to": "s_higher_local_fourier_uniformity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_higher_local_fourier_uniformity"
+  },
+  {
+    "id": "e_26274",
+    "from": "t_matomaki_radziwill_method",
+    "to": "s_local_fourier_uniformity_conjecture",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_local_fourier_uniformity_conjecture"
+  },
+  {
+    "id": "e_26275",
+    "from": "s_chowla_conjecture",
+    "to": "t_matomaki_radziwill_method",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_higher_local_fourier_uniformity"
+  },
+  {
+    "id": "e_26276",
+    "from": "s_admissible_k_tuple",
+    "to": "t_maynard_sieve_prime_tuples",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_infinite_partial_sumsets_primes"
+  },
+  {
+    "id": "e_26277",
+    "from": "t_maynard_sieve_prime_tuples",
+    "to": "s_infinite_partial_sumsets_primes",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_infinite_partial_sumsets_primes"
+  },
+  {
+    "id": "e_26278",
+    "from": "t_bergelson_intersectivity_lemma",
+    "to": "s_infinite_partial_sumsets_primes",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_infinite_partial_sumsets_primes"
+  },
+  {
+    "id": "e_26279",
+    "from": "t_maynard_sieve_prime_tuples",
+    "to": "s_bounded_gaps_between_primes",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bounded_gaps_between_primes"
+  },
+  {
+    "id": "e_26280",
+    "from": "t_bergelson_intersectivity_lemma",
+    "to": "s_kmrr_sumset_theorem",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_kmrr_sumset_theorem"
+  },
+  {
+    "id": "e_26281",
+    "from": "s_admissible_k_tuple",
+    "to": "t_polymath_collaborative_mathematics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_polymath8_distribution_estimate"
+  },
+  {
+    "id": "e_26282",
+    "from": "s_weil_conjectures_deligne",
+    "to": "t_polymath_collaborative_mathematics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_polymath8_distribution_estimate"
+  },
+  {
+    "id": "e_26283",
+    "from": "t_polymath_collaborative_mathematics",
+    "to": "s_polymath8_distribution_estimate",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_polymath8_distribution_estimate"
+  },
+  {
+    "id": "e_26284",
+    "from": "s_polymath8_distribution_estimate",
+    "to": "t_maynard_sieve_prime_tuples",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maynard_bounded_gaps_improved"
+  },
+  {
+    "id": "e_26285",
+    "from": "s_bombieri_vinogradov",
+    "to": "t_maynard_sieve_prime_tuples",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_maynard_bounded_gaps_improved"
+  },
+  {
+    "id": "e_26286",
+    "from": "s_riemann_xi_function",
+    "to": "t_backward_heat_flow_repulsion",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_de_bruijn_newman_nonnegativity"
+  },
+  {
+    "id": "e_26287",
+    "from": "s_heat_equation_PDE",
+    "to": "t_backward_heat_flow_repulsion",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_de_bruijn_newman_nonnegativity"
+  },
+  {
+    "id": "e_26288",
+    "from": "s_de_bruijn_newman_constant",
+    "to": "t_backward_heat_flow_repulsion",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_de_bruijn_newman_nonnegativity"
+  },
+  {
+    "id": "e_26289",
+    "from": "t_backward_heat_flow_repulsion",
+    "to": "s_de_bruijn_newman_nonnegativity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_de_bruijn_newman_nonnegativity"
+  },
+  {
+    "id": "e_26290",
+    "from": "t_polymath_collaborative_mathematics",
+    "to": "s_de_bruijn_newman_nonnegativity",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_de_bruijn_newman_nonnegativity"
+  },
+  {
+    "id": "e_26291",
+    "from": "s_erdos_primitive_set_conjecture",
+    "to": "t_polymath_collaborative_mathematics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lichtman_primitive_set_bound"
+  },
+  {
+    "id": "e_26292",
+    "from": "t_polymath_collaborative_mathematics",
+    "to": "s_lichtman_primitive_set_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lichtman_primitive_set_bound"
+  },
+  {
+    "id": "e_26293",
+    "from": "s_hadwiger_nelson_problem",
+    "to": "t_polymath_collaborative_mathematics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_de_grey_chromatic_plane_bound"
+  },
+  {
+    "id": "e_26294",
+    "from": "t_polymath_collaborative_mathematics",
+    "to": "s_de_grey_chromatic_plane_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_de_grey_chromatic_plane_bound"
+  },
+  {
+    "id": "e_26295",
+    "from": "s_unit_balls_sphere_packing",
+    "to": "t_polymath_collaborative_mathematics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bourgain_clozel_kahane_uncertainty"
+  },
+  {
+    "id": "e_26296",
+    "from": "s_linear_programming",
+    "to": "t_polymath_collaborative_mathematics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bourgain_clozel_kahane_uncertainty"
+  },
+  {
+    "id": "e_26297",
+    "from": "t_polymath_collaborative_mathematics",
+    "to": "s_bourgain_clozel_kahane_uncertainty",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_bourgain_clozel_kahane_uncertainty"
+  },
+  {
+    "id": "e_26298",
+    "from": "s_entropy",
+    "to": "t_entropy_method_additive_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26299",
+    "from": "s_entropic_doubling_constant",
+    "to": "t_entropy_method_additive_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26300",
+    "from": "s_entropic_ruzsa_distance",
+    "to": "t_entropy_method_additive_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26301",
+    "from": "t_entropy_method_additive_combinatorics",
+    "to": "s_ggmt_polynomial_freiman_ruzsa",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26302",
+    "from": "s_polynomial_freiman_ruzsa_conjecture",
+    "to": "t_entropy_method_additive_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26303",
+    "from": "s_entropic_doubling_constant",
+    "to": "t_sumset_intersection_improvement_ops",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26304",
+    "from": "s_fibring_inequality_entropy",
+    "to": "t_sumset_intersection_improvement_ops",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26305",
+    "from": "s_conditional_doubling_constant",
+    "to": "t_sumset_intersection_improvement_ops",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26306",
+    "from": "t_sumset_intersection_improvement_ops",
+    "to": "s_entropic_balog_szemeredi_gowers",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26307",
+    "from": "s_entropic_doubling_constant",
+    "to": "t_induction_on_doubling_constant",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26308",
+    "from": "s_entropic_balog_szemeredi_gowers",
+    "to": "t_induction_on_doubling_constant",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26309",
+    "from": "t_induction_on_doubling_constant",
+    "to": "s_ggmt_polynomial_freiman_ruzsa",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26310",
+    "from": "s_conditional_mutual_information",
+    "to": "t_characteristic_2_endgame_identity",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26311",
+    "from": "s_fibring_inequality_entropy",
+    "to": "t_characteristic_2_endgame_identity",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26312",
+    "from": "t_characteristic_2_endgame_identity",
+    "to": "s_ggmt_polynomial_freiman_ruzsa",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_ggmt_polynomial_freiman_ruzsa"
+  },
+  {
+    "id": "e_26313",
+    "from": "s_balog_szemeredi_gowers",
+    "to": "t_entropy_method_additive_combinatorics",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropic_balog_szemeredi_gowers"
+  },
+  {
+    "id": "e_26314",
+    "from": "t_entropy_method_additive_combinatorics",
+    "to": "s_entropic_balog_szemeredi_gowers",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_entropic_balog_szemeredi_gowers"
+  },
+  {
+    "id": "e_26315",
+    "from": "t_entropy_method_additive_combinatorics",
+    "to": "s_fibring_inequality_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_fibring_inequality_entropy"
+  },
+  {
+    "id": "e_26316",
+    "from": "s_spread_robust_sunflower_family",
+    "to": "t_entropy_proof_sunflower_lemma",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rao_sunflower_bound"
+  },
+  {
+    "id": "e_26317",
+    "from": "s_conditional_entropy",
+    "to": "t_entropy_proof_sunflower_lemma",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rao_sunflower_bound"
+  },
+  {
+    "id": "e_26318",
+    "from": "t_entropy_proof_sunflower_lemma",
+    "to": "s_rao_sunflower_bound",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rao_sunflower_bound"
+  },
+  {
+    "id": "e_26319",
+    "from": "s_shannon_source_coding",
+    "to": "t_entropy_proof_sunflower_lemma",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_rao_sunflower_bound"
+  },
+  {
+    "id": "e_26320",
+    "from": "t_entropy_proof_sunflower_lemma",
+    "to": "s_sunflower_conjecture",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_sunflower_conjecture"
+  },
+  {
+    "id": "e_26321",
+    "from": "s_gowers_uniformity_norm",
+    "to": "t_random_sampling_entropy_bounds",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_quantitative_inverse_gowers"
+  },
+  {
+    "id": "e_26322",
+    "from": "s_inverse_theorem_entropy",
+    "to": "t_random_sampling_entropy_bounds",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_quantitative_inverse_gowers"
+  },
+  {
+    "id": "e_26323",
+    "from": "t_random_sampling_entropy_bounds",
+    "to": "s_inverse_theorem_entropy",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_quantitative_inverse_gowers"
+  },
+  {
+    "id": "e_26324",
+    "from": "t_random_sampling_entropy_bounds",
+    "to": "s_quantitative_inverse_gowers",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_quantitative_inverse_gowers"
+  },
+  {
+    "id": "e_26325",
+    "from": "s_gowers_uniformity_norm",
+    "to": "t_manners_nilsequence_encoding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_inverse_theorem_u3_finite_abelian"
+  },
+  {
+    "id": "e_26326",
+    "from": "s_nilmanifold",
+    "to": "t_manners_nilsequence_encoding",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_inverse_theorem_u3_finite_abelian"
+  },
+  {
+    "id": "e_26327",
+    "from": "t_manners_nilsequence_encoding",
+    "to": "s_inverse_theorem_u3_finite_abelian",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_inverse_theorem_u3_finite_abelian"
+  },
+  {
+    "id": "e_26328",
+    "from": "s_inverse_theorem_u3_finite_abelian",
+    "to": "t_random_sampling_entropy_bounds",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_quantitative_inverse_gowers"
+  },
+  {
+    "id": "e_26329",
+    "from": "s_ggmt_polynomial_freiman_ruzsa",
+    "to": "t_blueprint_driven_formalization",
+    "role": "input",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lean4_formalization_pfr"
+  },
+  {
+    "id": "e_26330",
+    "from": "t_blueprint_driven_formalization",
+    "to": "s_lean4_formalization_pfr",
+    "role": "output",
+    "parameter_binding": {},
+    "used_in_theorem": "s_lean4_formalization_pfr"
+  }
+]

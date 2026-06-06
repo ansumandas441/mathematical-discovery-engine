@@ -1,0 +1,331 @@
+[
+  {
+    "id": "t_syracuse_random_variable",
+    "kind": "technique",
+    "name": "Syracuse random variables on 3-adic rings",
+    "function_signature": "(Collatz iteration on ℤ/3ⁿℤ) -> (probability distribution Syrac(ℤ/3ⁿℤ))",
+    "description": "A construction of explicit random variables ∑ᵢ 3^{i-1} 2^{-(a₁+…+aᵢ)} mod 3ⁿ from i.i.d. geometric exponents that model the value of the accelerated Collatz (Syracuse) map on the cyclic group ℤ/3ⁿℤ."
+  },
+  {
+    "id": "s_syracuse_characteristic_decay",
+    "kind": "theorem",
+    "name": "Characteristic function decay estimate for Syracuse distributions",
+    "type_signature": "Theorem",
+    "description": "The characteristic function 𝔼 e^{-2πiξ·Syrac/3ⁿ} of the Syracuse random variable on ℤ/3ⁿℤ decays faster than any fixed negative power of n at every nonzero non-3-divisible frequency ξ."
+  },
+  {
+    "id": "t_transport_log_density_first_passage",
+    "kind": "technique",
+    "name": "Approximate transport of logarithmic density under Collatz first-passage map",
+    "function_signature": "(log-density measure on ℕ, Collatz first-passage time) -> (approximately invariant pushforward measure)",
+    "description": "A method showing that the logarithmic-density distribution of n is approximately preserved under the Collatz first-passage random variable, reducing the bounded-orbit problem to mixing of the associated 3-adic random walk."
+  },
+  {
+    "id": "s_almost_bounded_collatz_orbits",
+    "kind": "theorem",
+    "name": "Almost-bounded Collatz orbits theorem",
+    "type_signature": "Theorem",
+    "description": "For any function f tending to infinity, the minimal value Col_min(N) attained by the Collatz orbit of N is below f(N) for almost all N in the sense of logarithmic density."
+  },
+  {
+    "id": "s_collatz_conjecture",
+    "kind": "state",
+    "name": "Collatz conjecture",
+    "type_signature": "Conjecture",
+    "description": "The conjecture that iterating the Collatz map (n↦n/2 if even, 3n+1 if odd) from any positive integer eventually reaches 1."
+  },
+  {
+    "id": "s_collatz_map",
+    "kind": "axiom",
+    "name": "Collatz map",
+    "type_signature": "Function",
+    "description": "The function on positive integers sending even n to n/2 and odd n to 3n+1."
+  },
+  {
+    "id": "s_sendov_conjecture",
+    "kind": "state",
+    "name": "Sendov's conjecture",
+    "type_signature": "Conjecture",
+    "description": "The conjecture that for a complex polynomial of degree at least 2 with all zeros in the closed unit disk, every zero has a critical point of the polynomial within distance one."
+  },
+  {
+    "id": "s_sendov_high_degree",
+    "kind": "theorem",
+    "name": "Sendov's conjecture for high-degree polynomials",
+    "type_signature": "Theorem",
+    "description": "There is an absolute degree threshold n₀ above which Sendov's conjecture holds for all polynomials of degree n, proved by a probabilistic compactness argument on empirical zero measures."
+  },
+  {
+    "id": "t_polynomial_zeros_as_point_processes",
+    "kind": "technique",
+    "name": "Probabilistic reformulation of polynomial zeros as point processes",
+    "function_signature": "(polynomial f of degree n) -> (random zero λ and random critical point ζ uniform on zero sets)",
+    "description": "A method recasting statements about all zeros and critical points of a polynomial as statements about random variables drawn uniformly from the multiplicity-counted zero sets of the polynomial and its derivative."
+  },
+  {
+    "id": "t_log_potential_stieltjes_zero_measure",
+    "kind": "technique",
+    "name": "Logarithmic potential and Stieltjes transform of empirical zero measure",
+    "function_signature": "(empirical zero measure μ) -> (logarithmic potential Uμ and Stieltjes transform sμ = f'/(nf))",
+    "description": "The representation of the normalized logarithmic derivative f'/(nf) of a polynomial as the Stieltjes transform of its empirical zero measure, with the associated logarithmic potential controlling zero locations via potential theory."
+  },
+  {
+    "id": "t_compactness_limit_high_degree_polynomials",
+    "kind": "technique",
+    "name": "Compactness limiting argument for high-degree polynomials",
+    "function_signature": "(sequence of degree-n counterexamples, n→∞) -> (limiting random variables) -> contradiction",
+    "description": "A strategy extracting weak limits via Prokhorov tightness of the random zero and critical-point variables of a hypothetical sequence of high-degree counterexamples and deriving a contradiction from the limiting potential-theoretic structure."
+  },
+  {
+    "id": "s_grace_apolarity_theorem",
+    "kind": "theorem",
+    "name": "Grace's apolarity theorem",
+    "type_signature": "Theorem",
+    "description": "A classical apolarity criterion stating that the zeros of two apolar polynomials of the same degree cannot be separated by any circle (or more generally any circular region)."
+  },
+  {
+    "id": "s_local_fourier_uniformity_conjecture",
+    "kind": "state",
+    "name": "Local Fourier uniformity conjecture for multiplicative functions",
+    "type_signature": "Conjecture",
+    "description": "The conjecture that bounded multiplicative functions such as the Liouville function have negligible averaged Gowers Uᵏ uniformity norm over almost all short intervals."
+  },
+  {
+    "id": "s_higher_local_fourier_uniformity",
+    "kind": "theorem",
+    "name": "Higher-order local Fourier uniformity of multiplicative functions",
+    "type_signature": "Theorem",
+    "description": "The Liouville and Möbius functions have asymptotically vanishing averaged Gowers Uᵏ norm over short intervals of length H≥exp(log^{5/8+ε}X) for every fixed k, extending the previously known linear case."
+  },
+  {
+    "id": "t_matomaki_radziwill_method",
+    "kind": "technique",
+    "name": "Matomäki–Radziwiłł method",
+    "function_signature": "(mean of multiplicative function over short interval) -> (mean over long interval via small-prime factorization)",
+    "description": "A technique controlling averages of bounded multiplicative functions in short intervals by exploiting their factorization through small prime factors to relate short-interval to long-interval averages."
+  },
+  {
+    "id": "t_multiplicativity_small_primes_functional_equation",
+    "kind": "technique",
+    "name": "Multiplicativity at small primes functional equation",
+    "function_signature": "(λ(pn)=−λ(n)) -> (dilation-invariance constraints ruling out correlating nilsequences)",
+    "description": "A method using the identity λ(pn)=−λ(n) at small primes to force any nilsequence correlating with the Liouville function to be approximately dilation-invariant, which is then ruled out by Lie-theoretic rigidity on the nilmanifold."
+  },
+  {
+    "id": "s_chowla_conjecture",
+    "kind": "state",
+    "name": "Chowla conjecture",
+    "type_signature": "Conjecture",
+    "description": "The conjecture that shifted products ∑_{n≤X} λ(n+h₁)…λ(n+hₖ) of the Liouville (or Möbius) function over distinct shifts exhibit cancellation, i.e. are o(X)."
+  },
+  {
+    "id": "s_infinite_partial_sumsets_primes",
+    "kind": "theorem",
+    "name": "Infinite partial sumsets in the primes",
+    "type_signature": "Theorem",
+    "description": "There exist two infinite increasing sequences (aᵢ) and (bⱼ) of natural numbers whose pairwise sums aᵢ+bⱼ for i<j are all prime, resolving an Erdős question on partial sumsets in the primes."
+  },
+  {
+    "id": "t_bergelson_intersectivity_lemma",
+    "kind": "technique",
+    "name": "Bergelson intersectivity lemma",
+    "function_signature": "(countable family of positive-measure sets) -> (infinite subfamily with all finite intersections of positive measure)",
+    "description": "A measure-theoretic selection principle extracting from infinitely many positive-measure sets an infinite subfamily whose every finite intersection still has positive measure."
+  },
+  {
+    "id": "t_maynard_sieve_prime_tuples",
+    "kind": "technique",
+    "name": "Maynard sieve for prime-producing tuples",
+    "function_signature": "(admissible k-tuple of shifts) -> (positive proportion of n giving ≥m primes among n+hᵢ)",
+    "description": "A multidimensional Selberg-type sieve with smooth weights that, for any admissible tuple of shifts, produces a positive density of n for which many of the shifted values n+hᵢ are simultaneously prime."
+  },
+  {
+    "id": "s_kmrr_sumset_theorem",
+    "kind": "theorem",
+    "name": "Kra–Moreira–Richter–Robertson sumset theorem",
+    "type_signature": "Theorem",
+    "description": "Every set of positive upper density in the natural numbers contains a B+B-type infinite sumset configuration, resolving Erdős's sumset conjecture via topological dynamics."
+  },
+  {
+    "id": "s_polymath8_distribution_estimate",
+    "kind": "theorem",
+    "name": "Polymath8 distribution estimate",
+    "type_signature": "Theorem",
+    "description": "A Bombieri–Vinogradov-type equidistribution of primes in arithmetic progressions to smooth moduli at a level of distribution exceeding 1/2, obtained via Weil/Deligne exponential sum bounds, used to drive the H₁≤246 prime gap bound."
+  },
+  {
+    "id": "s_de_bruijn_newman_nonnegativity",
+    "kind": "theorem",
+    "name": "de Bruijn–Newman constant nonnegativity",
+    "type_signature": "Theorem",
+    "description": "The de Bruijn–Newman constant Λ, defined so that the heat-deformed Riemann ξ-function H_t has only real zeros iff t≥Λ, satisfies Λ≥0, so the Riemann hypothesis (Λ≤0) would be only barely true."
+  },
+  {
+    "id": "t_backward_heat_flow_repulsion",
+    "kind": "technique",
+    "name": "Backward heat flow repulsion of zeros",
+    "function_signature": "(real zeros of H_t under reverse heat flow) -> (contradiction unless zeros are too regularly spaced)",
+    "description": "A method tracking the dynamics of zeros of the heat-deformed ξ-function under reverse time, showing that Λ<0 would force the zeros to be implausibly regularly spaced, contradicting known pair-correlation behavior."
+  },
+  {
+    "id": "s_erdos_primitive_set_conjecture",
+    "kind": "state",
+    "name": "Erdős primitive set conjecture",
+    "type_signature": "Conjecture",
+    "description": "The conjecture that among all primitive sets (sets with no element dividing another) the sum ∑_{a∈A} 1/(a log a) is maximized by the set of primes."
+  },
+  {
+    "id": "s_lichtman_primitive_set_bound",
+    "kind": "theorem",
+    "name": "Lichtman bound for primitive sets",
+    "type_signature": "Theorem",
+    "description": "For every primitive set A the reciprocal log-weighted sum ∑_{a∈A} 1/(a log a) is at most the corresponding sum ∑_p 1/(p log p) over the primes, resolving the Erdős primitive set conjecture."
+  },
+  {
+    "id": "s_de_grey_chromatic_plane_bound",
+    "kind": "theorem",
+    "name": "de Grey chromatic number of the plane lower bound",
+    "type_signature": "Theorem",
+    "description": "The chromatic number of the unit-distance graph of the Euclidean plane is at least five, established via an explicit non-4-colorable finite unit-distance graph."
+  },
+  {
+    "id": "s_hadwiger_nelson_problem",
+    "kind": "state",
+    "name": "Hadwiger–Nelson problem",
+    "type_signature": "Open problem",
+    "description": "The open problem of determining the minimum number of colors needed to color the plane so that no two points at unit distance share a color."
+  },
+  {
+    "id": "s_bourgain_clozel_kahane_uncertainty",
+    "kind": "theorem",
+    "name": "Bourgain–Clozel–Kahane Fourier uncertainty principle",
+    "type_signature": "Theorem",
+    "description": "A real even self-dual function (f=f̂) that is nonpositive at the origin in both physical and frequency space cannot change sign arbitrarily close to the origin, quantifying a +1-eigenfunction sign uncertainty linked to sphere packing linear programming bounds."
+  },
+  {
+    "id": "t_polymath_collaborative_mathematics",
+    "kind": "technique",
+    "name": "Polymath project (massively collaborative mathematics)",
+    "function_signature": "(hard open problem) -> (open online collaborative incremental progress) -> (verified result or simplification)",
+    "description": "A methodology of solving or simplifying mathematical problems through open, public, incremental online collaboration by many contributors."
+  },
+  {
+    "id": "s_entropic_doubling_constant",
+    "kind": "axiom",
+    "name": "Entropic doubling constant",
+    "type_signature": "Function",
+    "description": "The Shannon-entropy analogue of the combinatorial doubling constant, defined for a group-valued random variable X as d(X;X)=H(X₁+X₂)−H(X) using two independent copies."
+  },
+  {
+    "id": "s_entropic_ruzsa_distance",
+    "kind": "axiom",
+    "name": "Entropic Ruzsa distance",
+    "type_signature": "Function",
+    "description": "A symmetric, nonnegative, triangle-inequality-obeying pseudo-distance d(X;Y)=H(X'−Y')−H(X)/2−H(Y)/2 between two independent group-valued random variables, the entropy analogue of Ruzsa distance."
+  },
+  {
+    "id": "t_entropy_method_additive_combinatorics",
+    "kind": "technique",
+    "name": "Entropy method for additive combinatorics",
+    "function_signature": "(combinatorial sumset problem) -> (inequality among Shannon entropies of group-valued random variables)",
+    "description": "A proof strategy replacing sets and their sumsets with group-valued random variables and analyzing combinatorial doubling via Shannon entropy quantities, working entirely in physical space rather than Fourier space."
+  },
+  {
+    "id": "s_fibring_inequality_entropy",
+    "kind": "theorem",
+    "name": "Fibring inequality (entropic)",
+    "type_signature": "Theorem",
+    "description": "An entropy inequality stating that the entropic doubling of X is at least the doubling of its homomorphic image π(X) plus the conditional doubling along the fibers, enabling decomposition of the doubling problem."
+  },
+  {
+    "id": "s_conditional_doubling_constant",
+    "kind": "axiom",
+    "name": "Conditional doubling constant",
+    "type_signature": "Function",
+    "description": "The entropic doubling constant of a random variable measured conditionally on the value of a homomorphic image, quantifying doubling within the fibers of a homomorphism."
+  },
+  {
+    "id": "s_entropic_balog_szemeredi_gowers",
+    "kind": "theorem",
+    "name": "Entropic Balog–Szemerédi–Gowers lemma",
+    "type_signature": "Theorem",
+    "description": "An entropy-formulated analogue of the Balog–Szemerédi–Gowers theorem converting small conditional mutual information into structural control with bounded entropic doubling, used in the PFR endgame."
+  },
+  {
+    "id": "t_sumset_intersection_improvement_ops",
+    "kind": "technique",
+    "name": "Sumset/intersection improvement operations",
+    "function_signature": "(random variable X with doubling K) -> (random variable X' with strictly smaller entropic doubling)",
+    "description": "A pair of operations replacing A by A+A or by A∩(A+h) for typical h, each of which strictly reduces the entropic doubling constant unless a rigid conditional-independence configuration is reached."
+  },
+  {
+    "id": "t_induction_on_doubling_constant",
+    "kind": "technique",
+    "name": "Induction on the doubling constant",
+    "function_signature": "(claim at doubling K) -> (reduction to claim at smaller doubling, down to base case)",
+    "description": "A descent strategy that inductively lowers the entropic doubling constant by repeatedly applying improvement operations until reaching the trivial regime where the sumset is already a subspace."
+  },
+  {
+    "id": "t_characteristic_2_endgame_identity",
+    "kind": "technique",
+    "name": "Characteristic-2 endgame identity",
+    "function_signature": "(characteristic-2 cancellation + conditional independence) -> (subspace structure)",
+    "description": "The use of the characteristic-2 cancellation identity (X₁+X₂)+(X₂+X₃)=X₁+X₃ together with conditional independence relative to X₁+X₂+X₃+X₄ to close the PFR argument."
+  },
+  {
+    "id": "s_rao_sunflower_bound",
+    "kind": "theorem",
+    "name": "Rao sunflower bound via Shannon coding",
+    "type_signature": "Theorem",
+    "description": "A refinement of the Alweiss–Lovett–Wu–Zhang sunflower bound giving Sun(k,r) ≤ O(r log k)^k, obtained by encoding spread sets through the Shannon noiseless coding theorem."
+  },
+  {
+    "id": "t_entropy_proof_sunflower_lemma",
+    "kind": "technique",
+    "name": "Entropy proof of the sunflower lemma",
+    "function_signature": "(spread set family) -> (sunflower, via conditional entropy bounds)",
+    "description": "Tao's information-theoretic reformulation proving the improved sunflower lemma by bounding conditional Shannon entropy of constrained random variables instead of using explicit encoding schemes."
+  },
+  {
+    "id": "s_inverse_theorem_entropy",
+    "kind": "axiom",
+    "name": "Inverse theorem entropy",
+    "type_signature": "Function",
+    "description": "The minimal cardinality of a family of structured functions needed so that every 1-bounded function with seminorm at least η correlates at level ε with some family member, quantifying the complexity of an inverse theorem."
+  },
+  {
+    "id": "t_random_sampling_entropy_bounds",
+    "kind": "technique",
+    "name": "Random sampling argument for inverse-theorem entropy bounds",
+    "function_signature": "(seminorm with an inverse theorem) -> (dimension-independent entropy bound)",
+    "description": "A technique conditioning on a randomly chosen subset with tuned probability to construct dual functions with controllable L² bounds, yielding inverse-theorem-entropy bounds independent of dimension in certain regimes."
+  },
+  {
+    "id": "s_inverse_theorem_u3_finite_abelian",
+    "kind": "theorem",
+    "name": "Inverse theorem for the U³ Gowers norm on arbitrary finite abelian groups",
+    "type_signature": "Theorem",
+    "description": "A bounded function on an arbitrary finite abelian group with large U³ norm correlates with a Lipschitz function on an explicit degree-two filtered nilmanifold composed with a polynomial map."
+  },
+  {
+    "id": "t_manners_nilsequence_encoding",
+    "kind": "technique",
+    "name": "Manners' nilsequence encoding of locally quadratic phases",
+    "function_signature": "(locally quadratic phase function) -> (degree-2 nilsequence)",
+    "description": "An algebraic construction encoding a locally quadratic phase function as a nilsequence on a degree-two filtered nilmanifold, adapted to arbitrary finite abelian groups."
+  },
+  {
+    "id": "t_blueprint_driven_formalization",
+    "kind": "technique",
+    "name": "Blueprint-driven formalization",
+    "function_signature": "(informal proof) -> (human-readable blueprint with dependency graph linked to Lean4 formalization)",
+    "description": "A formalization methodology using Massot's Blueprint tool to write a human-readable proof outline whose statements link to Lean4 lemmas, with a color-coded dependency graph tracking formalization progress."
+  },
+  {
+    "id": "s_lean4_formalization_pfr",
+    "kind": "theorem",
+    "name": "Lean4 formalization of PFR",
+    "type_signature": "Theorem",
+    "description": "A complete machine-verified proof in the Lean4 proof assistant of the Gowers–Green–Manners–Tao proof of the polynomial Freiman–Ruzsa conjecture over 𝔽₂ⁿ."
+  }
+]
