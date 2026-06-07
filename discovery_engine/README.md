@@ -98,6 +98,49 @@ python -m discovery_engine --dry-run --save-tree output.json --print-tree \
 | `--save-tree` | none | Save search tree JSON |
 | `--print-tree` | off | Print tree at end |
 | `--quiet` | off | Suppress progress output |
+| `--bfs` | off | Breadth-first (level-order) search instead of best-first priority search |
+| `--runs-dir` | `<repo>/runs` | Where the problem registry + per-problem state live |
+| `--restart` | off | Ignore saved state for this problem and start fresh |
+| `--list-problems` | off | List every problem the engine has been given, then exit |
+| `--inspect <id>` | none | Print the saved tree + per-level attempt ledger for a problem, then exit |
+
+## Continuable runs (registry + resumable state)
+
+Every problem you give is recorded in a **registry** (`runs/registry.json`) under a
+stable id (hash of the problem + goal). Give the *same* problem again and the engine
+recognizes it and **resumes from where it stopped** instead of starting over —
+no flags needed.
+
+```bash
+# First run (Ctrl-C any time — state is saved)
+python -m discovery_engine --use-cli --bfs "Prove <X>"
+
+# Later: same command resumes automatically
+python -m discovery_engine --use-cli --bfs "Prove <X>"
+
+# See everything you've worked on
+python -m discovery_engine --list-problems
+
+# See exactly which techniques were tried at which level (and what was pruned)
+python -m discovery_engine --inspect <problem-id>
+
+# Throw away saved progress and start the problem fresh
+python -m discovery_engine --restart "Prove <X>"
+```
+
+**What the state remembers.** Each search node keeps an *attempt ledger*: the ordered
+candidate techniques chosen for it and, per technique, the outcome
+(`child` / `pruned` / `impossible`). So on resume:
+
+- **Untried techniques run first.** If level 1 was trying `[fourier, laplace]` and you
+  interrupted after `fourier`, resume runs `laplace` before descending to level 2.
+- **Dead directions stay dead.** A technique that returned `impossible` (or was pruned)
+  is never retried.
+- **BFS ordering is preserved** (`--bfs`): all techniques at one level before the next,
+  with partially-expanded nodes re-queued at the front so they finish first.
+
+Interrupt granularity is the worker window (`--workers`); use `--workers 1` for strict
+one-technique-at-a-time resumption.
 
 ## Worker Modes
 

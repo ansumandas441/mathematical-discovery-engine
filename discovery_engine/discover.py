@@ -32,6 +32,59 @@ import time
 from pathlib import Path
 
 
+def _fmt_age(ts: float) -> str:
+    import datetime
+    try:
+        return datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M")
+    except (OverflowError, OSError, ValueError):
+        return "?"
+
+
+def _list_problems(registry) -> None:
+    rows = registry.list_all()
+    if not rows:
+        print("No problems registered yet.")
+        return
+    print(f"{'ID':<14}{'STATUS':<13}{'ITERS':<7}{'UPDATED':<18}PROBLEM")
+    print("-" * 92)
+    for e in rows:
+        problem = (e.get("problem") or "").replace("\n", " ")
+        if len(problem) > 40:
+            problem = problem[:37] + "..."
+        print(
+            f"{e['id']:<14}{e.get('status',''):<13}{e.get('iterations',0):<7}"
+            f"{_fmt_age(e.get('updated_at', 0)):<18}{problem}"
+        )
+    print("\nResume any of these by giving the same problem again, "
+          "or inspect with --inspect <ID>.")
+
+
+def _inspect_problem(registry, pid: str) -> int:
+    entry = registry.get(pid)
+    if entry is None:
+        print(f"No registered problem with id {pid}. Use --list-problems.")
+        return 1
+    print(f"Problem {pid}  (status={entry.get('status')}, iterations={entry.get('iterations')})")
+    print(f"  {entry.get('problem','')[:200]}")
+    if entry.get("goal"):
+        print(f"  Goal: {entry['goal'][:200]}")
+    state_path = registry.state_path(pid)
+    if not state_path.exists():
+        print("\nNo saved search state yet (problem registered but not run).")
+        return 0
+
+    from .search_tree import SearchTree
+
+    ckpt = json.loads(state_path.read_text())
+    tree = SearchTree.from_dict(ckpt.get("tree", {}))
+    print(f"\nSearch mode: {tree.mode}   Tree: {tree.summary()}")
+    print("\n=== Per-level attempt ledger (techniques tried at each level) ===")
+    tree.print_attempts()
+    print("\n=== Search tree ===")
+    tree.print_tree()
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Theorem Discovery Engine — search for proofs through the knowledge graph",
@@ -142,8 +195,47 @@ def main():
         default=5,
         help="Save checkpoint every N iterations (default: 5)",
     )
+    parser.add_argument(
+        "--bfs",
+        action="store_true",
+        help="Breadth-first (level-order) search instead of best-first priority search",
+    )
+    parser.add_argument(
+        "--runs-dir",
+        type=str,
+        default=None,
+        help="Directory for the problem registry + per-problem state (default: <repo>/runs)",
+    )
+    parser.add_argument(
+        "--restart",
+        action="store_true",
+        help="Ignore any saved state for this problem and start fresh",
+    )
+    parser.add_argument(
+        "--list-problems",
+        action="store_true",
+        help="List all problems the engine has been given (the registry) and exit",
+    )
+    parser.add_argument(
+        "--inspect",
+        type=str,
+        default=None,
+        help="Print the saved state (tree + per-level attempt ledger) for a problem id and exit",
+    )
 
     args = parser.parse_args()
+
+    # Resolve the runs directory (registry + per-problem state live here).
+    runs_dir = Path(args.runs_dir) if args.runs_dir else (Path(__file__).resolve().parent.parent / "runs")
+
+    from .registry import ProblemRegistry
+
+    # --- registry-only commands (no graph load needed) ---
+    if args.list_problems:
+        _list_problems(ProblemRegistry(runs_dir))
+        return 0
+    if args.inspect:
+        return _inspect_problem(ProblemRegistry(runs_dir), args.inspect)
 
     if not args.problem and not args.resume and not args.goal:
         parser.error("a problem statement or --goal is required (or use --resume to continue from a checkpoint)")
@@ -193,6 +285,37 @@ def main():
             print(f"  (workers use cheaper model for ~20x token savings)")
         print(f"  Prompt caching:     ON (system prompts cached for 5 min)\n")
 
+    # --- Registry: recognize seen problems and resume their per-problem state ---
+    registry = ProblemRegistry(runs_dir)
+    pid = None
+    entry = None
+    resume_from = args.resume
+    checkpoint_dir = args.checkpoint_dir
+    state_filename = "checkpoint_latest.json"
+    search_mode = "bfs" if args.bfs else "best_first"
+
+    if args.problem:
+        pid, entry = registry.register(args.problem, args.goal or "")
+        problem_dir = registry.problem_dir(pid)
+        state_path = registry.state_path(pid)
+        print(f"Problem id: {pid}  (search mode: {search_mode})")
+        if not args.checkpoint_dir:
+            checkpoint_dir = str(problem_dir)
+            state_filename = "state.json"
+        if not resume_from:
+            if args.restart:
+                registry.clear_state(pid)
+                print("  --restart: ignoring saved state, starting fresh.")
+            elif state_path.exists():
+                resume_from = str(state_path)
+                print(
+                    f"  ✓ Seen before (status={entry['status']}, "
+                    f"iterations={entry['iterations']}). Resuming from saved state."
+                )
+            else:
+                print("  New problem — starting fresh.")
+        registry.update(pid, status=ProblemRegistry.IN_PROGRESS)
+
     # Create orchestrator
     api_parallel = args.workers or 5
     orch = Orchestrator(
@@ -204,8 +327,10 @@ def main():
         candidates_per_step=args.candidates,
         model=args.model,
         verbose=not args.quiet,
-        checkpoint_dir=args.checkpoint_dir,
+        checkpoint_dir=checkpoint_dir,
         checkpoint_every=args.checkpoint_every,
+        search_mode=search_mode,
+        state_filename=state_filename,
     )
 
     # Parse start nodes
@@ -214,10 +339,10 @@ def main():
         start_ids = [s.strip() for s in args.start.split(",")]
 
     # Resume info
-    if args.resume:
-        print(f"Resuming from checkpoint: {args.resume}")
-    if args.checkpoint_dir:
-        print(f"Checkpointing every {args.checkpoint_every} iterations to {args.checkpoint_dir}/")
+    if resume_from:
+        print(f"Resuming from checkpoint: {resume_from}")
+    if checkpoint_dir:
+        print(f"Checkpointing every {args.checkpoint_every} iterations to {checkpoint_dir}/{state_filename}")
 
     # Run discovery
     t0 = time.time()
@@ -226,9 +351,24 @@ def main():
         start_node_ids=start_ids,
         goal=args.goal,
         use_llm_for_orchestration=args.llm_orchestrate,
-        resume_from=args.resume,
+        resume_from=resume_from,
     )
     elapsed = time.time() - t0
+
+    # --- Registry: record outcome ---
+    if pid is not None:
+        if result.get("found"):
+            status = ProblemRegistry.SOLVED
+        elif result.get("interrupted"):
+            status = ProblemRegistry.INTERRUPTED
+        else:
+            status = ProblemRegistry.EXHAUSTED
+        registry.update(
+            pid,
+            status=status,
+            iterations=result["stats"].get("iterations", 0),
+            summary=result["tree"].get("summary", {}),
+        )
 
     # Output
     print(f"\n{'='*60}")
@@ -243,7 +383,12 @@ def main():
             conf = node["confidence"]
             print(f"  {i}. [{technique}] ({conf:.0%}) {desc}")
     elif result.get("interrupted"):
-        print("\n⚠ Search interrupted — checkpoint saved. Resume with --resume <path>")
+        print("\n⚠ Search interrupted — state saved.")
+        if pid is not None:
+            print(f"  Resume by giving the same problem again (id {pid}), "
+                  f"or: python -m discovery_engine --inspect {pid}")
+        else:
+            print(f"  Resume with --resume {resume_from}")
     else:
         print("\n✗ No proof found within search limits.")
 

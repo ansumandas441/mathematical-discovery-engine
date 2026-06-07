@@ -13,7 +13,7 @@ import os
 import signal
 import sys
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, as_completed, wait
 from pathlib import Path
 from typing import Optional
 
@@ -80,11 +80,15 @@ class Orchestrator:
         verbose: bool = True,
         checkpoint_dir: str | None = None,
         checkpoint_every: int = 5,
+        search_mode: str = "best_first",
+        state_filename: str = "checkpoint_latest.json",
     ):
         self.graph = graph
         self.worker = worker or MockWorker()
         self.pruner = Pruner(graph)
-        self.tree = SearchTree()
+        self.search_mode = search_mode
+        self.state_filename = state_filename
+        self.tree = SearchTree(mode=search_mode)
         self.max_depth = max_depth
         self.max_iterations = max_iterations
         self.max_parallel = max_parallel_workers
@@ -345,7 +349,7 @@ class Orchestrator:
         if not self.checkpoint_dir:
             return None
         self.checkpoint_dir.mkdir(parents=True, exist_ok=True)
-        return self.checkpoint_dir / "checkpoint_latest.json"
+        return self.checkpoint_dir / self.state_filename
 
     def _install_signal_handler(self):
         def _handler(sig, frame):
@@ -453,84 +457,18 @@ class Orchestrator:
                 self._log(f"  ✗ Skipping dead node {current.id}: {current.state.description[:60]}")
                 continue
 
-            current.status = NodeStatus.EXPANDED
-
             self._log(
                 f"\n--- Iteration {iteration} | "
-                f"Expanding {current.id} (depth {current.depth}) | "
+                f"Expanding {current.id} (depth {current.depth}, "
+                f"status {current.status.value}) | "
                 f"Frontier: {self.tree.frontier_size()} ---"
             )
             self._log(f"  State: {current.state.description[:100]}")
 
-            # Select techniques
-            if use_llm_for_orchestration:
-                candidates = self.select_techniques_llm(current.state)
-            else:
-                candidates = self.select_techniques(current.state)
-
-            self._log(f"  Candidates: {candidates}")
-
-            # Dispatch workers
-            results = self._dispatch_workers(current.state, candidates)
-            stats["worker_calls"] += len(results)
-
-            # Process results
-            for technique_id, result in results:
-                if result.impossible:
-                    child = self.tree.add_child(
-                        current, result, NodeStatus.PRUNED, result.impossible_reason or "Worker marked impossible"
-                    )
-                    stats["pruned"] += 1
-                    self._log(f"  ✗ IMPOSSIBLE {technique_id}: {result.impossible_reason[:80] if result.impossible_reason else 'no reason'}")
-                    continue
-
-                prune_decision = self.pruner.check(
-                    current.state, technique_id, result, current.depth + 1
-                )
-
-                if prune_decision.should_prune:
-                    child = self.tree.add_child(
-                        current, result, NodeStatus.PRUNED, prune_decision.reason
-                    )
-                    stats["pruned"] += 1
-                    self._log(f"  ✗ PRUNED {technique_id}: {prune_decision.reason}")
-                    continue
-
-                adjusted_confidence = result.confidence * prune_decision.confidence_multiplier
-                result.confidence = adjusted_confidence
-
-                child = self.tree.add_child(current, result, NodeStatus.FRONTIER)
-
-                self._log(
-                    f"  ○ {technique_id} -> {child.id} "
-                    f"(conf={adjusted_confidence:.0%}) "
-                    f"{result.new_state.description[:60]}"
-                )
-
-                # Check goal
-                if use_llm_for_orchestration:
-                    reached = self.check_goal(result.new_state)
-                else:
-                    reached = self.check_goal_mock(result.new_state)
-
-                if reached:
-                    self.tree.mark_goal(child)
-                    path = self.tree.extract_path(child)
-                    stats["goal_found"] = True
-                    stats["tokens"] = self._collect_token_stats()
-                    self._log(f"\n★ GOAL REACHED at {child.id}!")
-                    self._log_path(path)
-                    return {
-                        "found": True,
-                        "path": [n.to_dict() for n in path],
-                        "tree": self.tree.to_dict(),
-                        "stats": stats,
-                    }
-
-                # Score and push to frontier
-                score = self._score_technique(technique_id, result.new_state)
-                score *= adjusted_confidence
-                self.tree.push_frontier(child, score)
+            # Resumable, per-technique expansion of this node.
+            goal_result = self._expand_node(current, stats, use_llm_for_orchestration)
+            if goal_result is not None:
+                return goal_result
 
             # Periodic checkpoint
             if self.checkpoint_dir and iteration % self.checkpoint_every == 0:
@@ -541,6 +479,14 @@ class Orchestrator:
 
         self._log(f"\nSearch complete. No proof found in {stats['iterations']} iterations.")
         stats["tokens"] = self._collect_token_stats()
+        # Save final state so a later run with the same problem continues
+        # from here (resumes any remaining frontier) rather than restarting.
+        ckpt_path = self._checkpoint_path(stats["iterations"])
+        if ckpt_path:
+            self.save_checkpoint(
+                ckpt_path, stats["iterations"], stats, problem,
+                start_node_ids, goal, use_llm_for_orchestration,
+            )
         return {
             "found": False,
             "path": None,
@@ -555,6 +501,160 @@ class Orchestrator:
         else:
             fallback = Path("checkpoint_interrupted.json")
             self.save_checkpoint(fallback, iteration, stats, problem, start_node_ids, goal, use_llm)
+
+    def _expand_node(self, current: SearchNode, stats: dict, use_llm: bool) -> dict | None:
+        """Try the untried candidate techniques at ``current``, recording each
+        attempt in the node's ledger.
+
+        Resumable & granular: candidates are dispatched through a sliding window
+        sized to the worker's parallelism. On interrupt, in-flight techniques
+        finish and are recorded; techniques not yet submitted stay *untried*, so
+        the node is re-queued at the front and resumes with exactly those.
+        Returns a goal-result dict if the goal is reached, else None.
+        """
+        # Pick (once) the ordered candidate techniques for this node.
+        if not current.candidates:
+            if use_llm:
+                current.candidates = self.select_techniques_llm(current.state)
+            else:
+                current.candidates = self.select_techniques(current.state)
+            self._log(f"  Candidates: {current.candidates}")
+
+        untried = current.untried()
+        if not untried:
+            current.status = NodeStatus.EXPANDED
+            return None
+        self._log(f"  Untried at this node: {untried}")
+
+        max_p = getattr(self.worker, "max_parallel", None) or self.max_parallel
+        is_mock = isinstance(self.worker, MockWorker)
+
+        def run(tid: str) -> WorkerResult:
+            try:
+                return self.worker.apply_technique(
+                    current.state, tid, self.goal_description, self.graph
+                )
+            except Exception as exc:  # noqa: BLE001
+                return WorkerResult(
+                    new_state=MathState(description=f"[ERROR] {exc}"),
+                    confidence=0.0, proof_sketch="",
+                    impossible=True, impossible_reason=str(exc), technique_id=tid,
+                )
+
+        goal_result: dict | None = None
+
+        if is_mock or max_p <= 1:
+            # Strict one-technique-at-a-time (exact interrupt granularity).
+            for tid in untried:
+                if self._interrupted:
+                    break
+                goal_result = self._process_attempt(current, tid, run(tid), stats, use_llm)
+                if goal_result is not None:
+                    return goal_result
+        else:
+            # Sliding-window parallel: refill only while not interrupted, so
+            # un-submitted techniques remain untried for the resume.
+            it = iter(untried)
+            inflight: dict = {}
+
+            def fill(pool):
+                while len(inflight) < max_p:
+                    tid = next(it, None)
+                    if tid is None:
+                        break
+                    inflight[pool.submit(run, tid)] = tid
+
+            with ThreadPoolExecutor(max_workers=max_p) as pool:
+                fill(pool)
+                while inflight:
+                    done, _ = wait(list(inflight), return_when=FIRST_COMPLETED)
+                    for f in done:
+                        tid = inflight.pop(f)
+                        gr = self._process_attempt(current, tid, f.result(), stats, use_llm)
+                        if gr is not None and goal_result is None:
+                            goal_result = gr
+                    if goal_result is not None:
+                        break
+                    if not self._interrupted:
+                        fill(pool)
+            if goal_result is not None:
+                return goal_result
+
+        # Decide node status: anything left untried => partial, re-queue at front.
+        if current.untried():
+            current.status = NodeStatus.PARTIAL
+            self.tree.requeue_front(current)
+            self._log(f"  ◐ {current.id} partially expanded — {current.untried()} pending")
+        else:
+            current.status = NodeStatus.EXPANDED
+        return None
+
+    def _process_attempt(
+        self, current: SearchNode, technique_id: str, result: WorkerResult,
+        stats: dict, use_llm: bool,
+    ) -> dict | None:
+        """Record one technique attempt in the ledger and act on its result.
+        Returns a goal-result dict if the goal is reached, else None."""
+        stats["worker_calls"] += 1
+
+        if result.impossible:
+            child = self.tree.add_child(
+                current, result, NodeStatus.PRUNED,
+                result.impossible_reason or "Worker marked impossible",
+            )
+            current.attempts[technique_id] = {
+                "outcome": "impossible", "child_id": child.id,
+                "reason": result.impossible_reason or "", "confidence": result.confidence,
+            }
+            stats["pruned"] += 1
+            self._log(f"  ⊘ IMPOSSIBLE {technique_id}: {(result.impossible_reason or 'no reason')[:80]}")
+            return None
+
+        prune_decision = self.pruner.check(
+            current.state, technique_id, result, current.depth + 1
+        )
+        if prune_decision.should_prune:
+            child = self.tree.add_child(
+                current, result, NodeStatus.PRUNED, prune_decision.reason
+            )
+            current.attempts[technique_id] = {
+                "outcome": "pruned", "child_id": child.id,
+                "reason": prune_decision.reason, "confidence": result.confidence,
+            }
+            stats["pruned"] += 1
+            self._log(f"  ✗ PRUNED {technique_id}: {prune_decision.reason}")
+            return None
+
+        adjusted_confidence = result.confidence * prune_decision.confidence_multiplier
+        result.confidence = adjusted_confidence
+        child = self.tree.add_child(current, result, NodeStatus.FRONTIER)
+        current.attempts[technique_id] = {
+            "outcome": "child", "child_id": child.id,
+            "reason": "", "confidence": adjusted_confidence,
+        }
+        self._log(
+            f"  ○ {technique_id} -> {child.id} "
+            f"(conf={adjusted_confidence:.0%}) {result.new_state.description[:60]}"
+        )
+
+        reached = self.check_goal(result.new_state) if use_llm else self.check_goal_mock(result.new_state)
+        if reached:
+            self.tree.mark_goal(child)
+            path = self.tree.extract_path(child)
+            stats["goal_found"] = True
+            stats["tokens"] = self._collect_token_stats()
+            self._log(f"\n★ GOAL REACHED at {child.id}!")
+            self._log_path(path)
+            return {
+                "found": True,
+                "path": [n.to_dict() for n in path],
+                "tree": self.tree.to_dict(),
+                "stats": stats,
+            }
+
+        score = self._score_technique(technique_id, result.new_state) * adjusted_confidence
+        self.tree.push_frontier(child, score)
+        return None
 
     def _dispatch_workers(
         self, state: MathState, technique_ids: list[str]
