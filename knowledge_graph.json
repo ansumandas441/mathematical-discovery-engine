@@ -124273,6 +124273,1429 @@
       "has_subgraph": false,
       "toolbox_ref": "",
       "description": "Encode a finite combinatorial statement as a Boolean satisfiability instance and resolve it via a SAT solver or exhaustive search, yielding a machine-checkable certificate."
+    },
+    {
+      "id": "s_sub_markovian_kernel",
+      "kind": "axiom",
+      "name": "Sub-Markovian (substochastic) kernel",
+      "type_signature": "N : E × ℰ → [0,1], N(x,E) ≤ 1",
+      "description": "A positive kernel N on a measurable state space with N(x,E) ≤ 1 for every x, modelling a transition mechanism under which mass may be lost (the chain killed or sent to a cemetery).",
+      "aliases": [
+        "substochastic kernel",
+        "sub-stochastic kernel",
+        "killing kernel"
+      ]
+    },
+    {
+      "id": "s_kernel_action_on_functions_and_measures",
+      "kind": "state",
+      "name": "Kernel acting on functions and on measures",
+      "type_signature": "Nf(x)=∫N(x,dy)f(y); (μN)(A)=∫μ(dx)N(x,A)",
+      "description": "The two dual actions of a kernel N: on the right Nf(x)=∫N(x,dy)f(y) mapping measurable functions to functions, and on the left (μN)(A)=∫μ(dx)N(x,A) mapping measures to measures.",
+      "aliases": [
+        "right and left action of a kernel",
+        "kernel operating on functions and measures",
+        "duality of kernel actions"
+      ]
+    },
+    {
+      "id": "s_product_of_kernels",
+      "kind": "state",
+      "name": "Product (composition) of kernels",
+      "type_signature": "(MN)(x,A)=∫M(x,dy)N(y,A)",
+      "description": "The kernel MN defined by (MN)(x,A)=∫M(x,dy)N(y,A), an associative composition under which the positive kernels form a semigroup with the identity kernel as unit.",
+      "aliases": [
+        "composition of kernels",
+        "kernel product",
+        "kernel semigroup"
+      ]
+    },
+    {
+      "id": "s_ionescu_tulcea_theorem",
+      "kind": "theorem",
+      "name": "Ionescu-Tulcea theorem",
+      "type_signature": "consistent transition kernels on ∏Eₙ ⟹ unique P on (∏Eₙ, ⊗ℰₙ)",
+      "description": "A sequence of transition probability kernels on an infinite product of measurable spaces, with prescribed initial law, extends to a unique probability measure on the product σ-algebra, requiring no topological regularity of the factors.",
+      "aliases": [
+        "Ionescu Tulcea extension theorem",
+        "Tulcea's theorem"
+      ]
+    },
+    {
+      "id": "s_shift_operator_path_space",
+      "kind": "state",
+      "name": "Shift operator on path space",
+      "type_signature": "θ : Ω → Ω, (θω)ₙ = ω_{n+1}",
+      "description": "The map θ on the canonical path space Ω=E^ℕ defined by (θω)ₙ=ω_{n+1}, whose iterates θ^k advance the trajectory by k steps and intertwine the Markov property via Xₙ∘θ^k = X_{n+k}.",
+      "aliases": [
+        "shift map theta",
+        "time-shift operator",
+        "θ-shift"
+      ]
+    },
+    {
+      "id": "t_strong_markov_via_stopping_approximation",
+      "kind": "technique",
+      "name": "Strong Markov property via stopping-time approximation",
+      "function_signature": "(stopping time T, Markov property) -> (strong Markov identity on {T<∞})",
+      "description": "A proof technique that establishes the strong Markov property by approximating a general stopping time T from above by discrete-valued stopping times and applying the ordinary Markov property on each event {T=n}.",
+      "aliases": [
+        "discretization proof of strong Markov property",
+        "dyadic approximation of stopping times"
+      ]
+    },
+    {
+      "id": "s_excessive_measure_mc",
+      "kind": "axiom",
+      "name": "Excessive measure",
+      "type_signature": "μ ≥ 0 with μP ≤ μ (invariant if μP = μ)",
+      "description": "A positive measure μ on the state space satisfying μP ≤ μ, the measure-side analogue of an excessive function, reducing to an invariant measure when μP = μ.",
+      "aliases": [
+        "superinvariant measure",
+        "supermedian measure"
+      ]
+    },
+    {
+      "id": "s_decreasing_limit_excessive_functions",
+      "kind": "theorem",
+      "name": "Convergence of decreasing iterates of an excessive function",
+      "type_signature": "f excessive ⟹ Pⁿf ↓ h with Ph = h maximal invariant minorant",
+      "description": "For an excessive function f the iterates Pⁿf decrease pointwise to a limit h which is the largest invariant (harmonic) function dominated by f, the harmonic part appearing in the Riesz decomposition.",
+      "aliases": [
+        "maximal invariant minorant",
+        "limit of Pⁿf for excessive f"
+      ]
+    },
+    {
+      "id": "s_random_walk_on_a_group",
+      "kind": "state",
+      "name": "Random walk on a group",
+      "type_signature": "P(x,A) = μ(x⁻¹A) on a group G with step law μ",
+      "description": "The Markov chain on a (countable or locally compact) group with transition kernel P(x,A)=μ(x⁻¹A) given by convolution with a fixed step distribution μ, translation-invariant by construction.",
+      "aliases": [
+        "group random walk",
+        "convolution random walk",
+        "left random walk on a group"
+      ]
+    },
+    {
+      "id": "s_cemetery_point_compactification",
+      "kind": "state",
+      "name": "Cemetery point / one-point adjunction",
+      "type_signature": "E_Δ = E ∪ {Δ}, P(Δ,{Δ}) = 1, P(x,{Δ}) = 1 − N(x,E)",
+      "description": "The adjunction of an absorbing cemetery state Δ that turns a sub-Markovian kernel N into a genuine Markov kernel on E∪{Δ} by assigning the deficient mass 1−N(x,E) to the transition into Δ.",
+      "aliases": [
+        "cemetery state Delta",
+        "coffin state",
+        "one-point compactification by a cemetery"
+      ]
+    },
+    {
+      "id": "t_maximal_irreducibility_measure_construction",
+      "kind": "technique",
+      "name": "Maximal irreducibility measure construction",
+      "function_signature": "(irreducibility measure φ) -> (maximal irreducibility measure ψ)",
+      "description": "A construction producing a maximal irreducibility measure ψ from any irreducibility measure φ by setting ψ ∝ Σₙ 2^{-n} φPⁿ (or φ swept through the potential kernel), so that ψ dominates every irreducibility measure of the chain.",
+      "aliases": [
+        "reference measure construction",
+        "psi-irreducibility measure",
+        "maximal phi-irreducibility measure"
+      ]
+    },
+    {
+      "id": "s_conservative_dissipative_parts",
+      "kind": "state",
+      "name": "Conservative and dissipative parts (Hopf)",
+      "type_signature": "E = C ⊔ D, C = {Gf ≡ ∞ for f > 0}, D = Cᶜ",
+      "description": "The partition of the state space into the conservative part C, where the Green/potential kernel of every strictly positive function is identically infinite, and its complementary dissipative part D, defined relative to a positive contraction or sub-Markovian kernel.",
+      "aliases": [
+        "Hopf conservative part",
+        "dissipative part",
+        "conservative-dissipative decomposition"
+      ]
+    },
+    {
+      "id": "s_hopf_decomposition_theorem",
+      "kind": "theorem",
+      "name": "Hopf decomposition theorem",
+      "type_signature": "positive contraction T on L¹ ⟹ X = C ⊔ D essentially unique",
+      "description": "For a positive contraction of L¹ (or a sub-Markovian kernel) there is an essentially unique partition of the space into a conservative set C and a dissipative set D, characterized by the dichotomy that the potential of a strictly positive function is finite a.e. on D and infinite a.e. on C.",
+      "aliases": [
+        "Hopf's decomposition",
+        "conservative-dissipative dichotomy"
+      ]
+    },
+    {
+      "id": "s_recurrent_transient_kernels",
+      "kind": "axiom",
+      "name": "Recurrent and transient kernels (Hopf sense)",
+      "type_signature": "P recurrent ⟺ C = E; P transient ⟺ ∃ f > 0 with Gf bounded",
+      "description": "A kernel (or chain) is recurrent when its conservative part is the whole space, so the potential of any strictly positive function is everywhere infinite, and transient when some strictly positive function has a bounded potential.",
+      "aliases": [
+        "recurrent kernel",
+        "transient kernel",
+        "conservative kernel"
+      ]
+    },
+    {
+      "id": "s_cyclic_class_decomposition",
+      "kind": "state",
+      "name": "Cyclic class decomposition of a periodic chain",
+      "type_signature": "period d ⟹ E = ⊔_{r=0}^{d-1} C_r, P : C_r → C_{r+1 mod d}",
+      "description": "For an irreducible chain of period d the state space decomposes into d disjoint cyclic subclasses C₀,…,C_{d-1} that the kernel permutes cyclically, with Pᵈ recurrent and aperiodic on each subclass.",
+      "aliases": [
+        "cyclic subclasses",
+        "cyclic decomposition of a Markov chain",
+        "periodic class decomposition"
+      ]
+    },
+    {
+      "id": "s_maximal_ergodic_lemma_positive_contraction",
+      "kind": "theorem",
+      "name": "Hopf maximal ergodic lemma (positive contractions)",
+      "type_signature": "T positive contraction on L¹, f∈L¹ ⟹ ∫_{{sup_n Sₙf > 0}} f dμ ≥ 0",
+      "description": "For a positive contraction T of L¹ and f∈L¹, the integral of f over the set where some partial sum Sₙf = f + Tf + … + T^{n-1}f is positive is nonnegative; the operator-theoretic maximal inequality driving the Chacon-Ornstein theorem.",
+      "aliases": [
+        "maximal ergodic inequality for positive contractions",
+        "Hopf maximal lemma"
+      ]
+    },
+    {
+      "id": "t_brunel_lemma",
+      "kind": "technique",
+      "name": "Brunel's lemma (filling estimate)",
+      "function_signature": "(positive contraction T, functions f,p) -> (maximal/filling inequality on Σ Tᵏf)",
+      "description": "A combinatorial filling and maximal-function inequality for a positive contraction of L¹ that controls the partial sums Σ Tᵏf relative to Σ Tᵏp and provides the key estimate in the proof of the Chacon-Ornstein theorem.",
+      "aliases": [
+        "Brunel's inequality",
+        "filling lemma"
+      ]
+    },
+    {
+      "id": "t_filling_scheme",
+      "kind": "technique",
+      "name": "Filling scheme",
+      "function_signature": "(two measures/functions μ,ν) -> (iterated balayage transporting mass to compare them)",
+      "description": "An iterative balayage/transport procedure that successively moves mass to compare two measures or functions, underlying proofs of maximal and ratio ergodic theorems for positive contractions.",
+      "aliases": [
+        "filling procedure",
+        "mass-transport balayage scheme"
+      ]
+    },
+    {
+      "id": "s_chacon_ornstein_ratio_ergodic",
+      "kind": "theorem",
+      "name": "Chacon-Ornstein ratio ergodic theorem",
+      "type_signature": "(Σ_{k<n} Tᵏf)/(Σ_{k<n} Tᵏp) → finite limit a.e. on C",
+      "description": "For a positive contraction T of L¹, f∈L¹ and strictly positive p∈L¹, the ratio of the partial sums Σ_{k<n} Tᵏf over Σ_{k<n} Tᵏp converges almost everywhere on the conservative part to a finite limit.",
+      "aliases": [
+        "Chacon-Ornstein theorem",
+        "ratio ergodic theorem for positive contractions"
+      ]
+    },
+    {
+      "id": "s_chacon_ornstein_limit_identification",
+      "kind": "theorem",
+      "name": "Identification of the Chacon-Ornstein limit",
+      "type_signature": "limit = E[f|I]/E[p|I] on C, = ∫f dπ/∫p dπ if ergodic",
+      "description": "On the conservative part the Chacon-Ornstein ratio limit equals the conditional expectations E[f|I]/E[p|I] with respect to the invariant σ-field I, reducing to ∫f dπ/∫p dπ against the invariant measure in the ergodic case.",
+      "aliases": [
+        "Chacon-Ornstein limit formula",
+        "identification of the ratio limit"
+      ]
+    },
+    {
+      "id": "s_chacon_ornstein_markov_chain",
+      "kind": "theorem",
+      "name": "Chacon-Ornstein theorem for Markov chains",
+      "type_signature": "(Σ_{k<n} f(X_k))/(Σ_{k<n} g(X_k)) → ∫f dm/∫g dm a.s.",
+      "description": "For a Harris recurrent chain with invariant measure m, the ratio of the ergodic sums Σ_{k<n} f(X_k) over Σ_{k<n} g(X_k) converges almost surely to ∫f dm / ∫g dm for m-integrable f, g with ∫g dm ≠ 0.",
+      "aliases": [
+        "pathwise ratio ergodic theorem for Harris chains"
+      ]
+    },
+    {
+      "id": "s_tail_and_invariant_sigma_field_chain",
+      "kind": "state",
+      "name": "Tail and invariant σ-fields of a chain",
+      "type_signature": "tail = ⋂ₙ σ(X_k : k ≥ n); invariant = {A : θ⁻¹A = A}",
+      "description": "The tail σ-field is the intersection over n of the σ-fields generated by the trajectory from time n onward, while the invariant σ-field consists of the shift-invariant events; both encode the asymptotic behaviour of the chain.",
+      "aliases": [
+        "tail sigma-field of a Markov chain",
+        "exit sigma-field",
+        "invariant events of a chain"
+      ]
+    },
+    {
+      "id": "s_tail_zero_one_law_harris",
+      "kind": "theorem",
+      "name": "Zero-one law for the tail field (Harris aperiodic)",
+      "type_signature": "A ∈ tail σ-field ⟹ P_x(A) ∈ {0,1} for all x",
+      "description": "For a Harris recurrent aperiodic chain the tail σ-field is trivial: every tail event has probability 0 or 1 under each P_x, a consequence of total-variation convergence to equilibrium.",
+      "aliases": [
+        "triviality of the tail field",
+        "tail 0-1 law for Harris chains"
+      ]
+    },
+    {
+      "id": "s_space_time_chain",
+      "kind": "state",
+      "name": "Space-time chain",
+      "type_signature": "(Xₙ, t+n) on E × ℤ (or E × ℕ)",
+      "description": "The Markov chain on E×ℤ obtained by augmenting the state with a deterministic time coordinate, (Xₙ, t+n), which converts space-time (time-inhomogeneous or parabolic) quantities into purely spatial ones and pairs with the Doob h-transform.",
+      "aliases": [
+        "space-time process",
+        "augmented time chain",
+        "parabolic Markov chain"
+      ]
+    },
+    {
+      "id": "s_poisson_boundary",
+      "kind": "state",
+      "name": "Poisson boundary",
+      "type_signature": "measurable boundary representing bounded harmonic functions ↔ invariant σ-field",
+      "description": "The probability boundary representing the bounded harmonic functions of a chain, identified with the invariant/exit σ-field of the trajectory, through which every bounded harmonic function is realized as an integral of boundary data.",
+      "aliases": [
+        "Poisson-Furstenberg boundary",
+        "exit boundary"
+      ]
+    },
+    {
+      "id": "s_minimal_excessive_functions",
+      "kind": "state",
+      "name": "Minimal (extremal) excessive functions",
+      "type_signature": "extreme rays of the cone of excessive functions",
+      "description": "The extreme rays of the cone of excessive functions—those h that cannot be written as a nontrivial sum of two non-proportional excessive functions—which index the minimal Martin boundary and yield the unique Martin representation.",
+      "aliases": [
+        "extremal excessive functions",
+        "minimal harmonic functions",
+        "extreme points of the excessive cone"
+      ]
+    },
+    {
+      "id": "s_quasi_stationary_distribution",
+      "kind": "state",
+      "name": "Quasi-stationary distribution",
+      "type_signature": "νP = λν on the surviving set, λ ∈ (0,1)",
+      "description": "For a sub-Markovian (killed) chain, a probability measure ν such that the law conditioned on non-absorption is invariant in time, equivalently νP = λν on the surviving part for some decay rate λ ∈ (0,1).",
+      "aliases": [
+        "QSD",
+        "Yaglom limit measure",
+        "quasistationary measure"
+      ]
+    },
+    {
+      "id": "s_substochastic_kernel",
+      "kind": "axiom",
+      "name": "Sub-stochastic kernel",
+      "type_signature": "K: X x B(X) -> [0,1], K(x,X) <= 1",
+      "description": "A kernel K(x,A) that is a sub-probability measure in A for each x (total mass at most 1), arising as taboo or restricted transition kernels where mass can be lost to a forbidden set or to escape."
+    },
+    {
+      "id": "s_linear_state_space_model",
+      "kind": "axiom",
+      "name": "Linear (Gaussian) state-space LSS model",
+      "type_signature": "X_{n+1} = F X_n + G W_{n+1}, Y_n = H X_n + V_n",
+      "description": "The Markov chain driven by the linear recursion X_{n+1}=F X_n+G W_{n+1} with i.i.d. Gaussian noise, whose irreducibility, T-chain property, and geometric ergodicity follow from controllability of (F,G) and the spectral radius of F being below 1."
+    },
+    {
+      "id": "s_random_walk_half_line",
+      "kind": "axiom",
+      "name": "Random walk on a half-line",
+      "type_signature": "X_{n+1} = max(X_n + W_{n+1}, 0) on R_+",
+      "description": "The reflected random walk X_{n+1}=(X_n+W_{n+1})^+ on the half-line, a canonical Meyn-Tweedie queueing/storage Markov model whose recurrence is governed by the sign of the increment mean E[W]."
+    },
+    {
+      "id": "s_random_walk_increment_mean_criterion",
+      "kind": "state",
+      "name": "Increment-mean criterion for random-walk stability",
+      "type_signature": "E[W] < 0 => positive recurrent; E[W] > 0 => transient",
+      "description": "The classification that a random walk on a half-line is positive Harris recurrent when the increment has negative mean, null recurrent when the mean is zero, and transient when the mean is positive."
+    },
+    {
+      "id": "s_forward_recurrence_time_chain",
+      "kind": "state",
+      "name": "Forward/backward recurrence-time chains",
+      "type_signature": "V_n^+ (forward), V_n^- (backward) on Z_+ or R_+",
+      "description": "The Markov chains formed by the residual (forward) and elapsed (backward) time to the next or last renewal of a renewal process, canonical examples used to test irreducibility, small sets, and ergodicity criteria."
+    },
+    {
+      "id": "s_existence_small_sets",
+      "kind": "theorem",
+      "name": "Existence of small sets",
+      "type_signature": "phi-irreducible => exists small set C with phi(C) > 0",
+      "description": "Every phi-irreducible Markov chain admits a small set of positive irreducibility measure, obtained by partitioning the state space and applying a minorization to one cell, so that the splitting construction always applies."
+    },
+    {
+      "id": "s_reachable_point_mc",
+      "kind": "axiom",
+      "name": "Reachable point",
+      "type_signature": "x* s.t. for all open O containing x* and all y: sum_n P^n(y,O) > 0",
+      "description": "A point every neighbourhood of which is reached with positive probability from every initial state; existence of a reachable point links topological structure to phi-irreducibility for Feller and T-chains."
+    },
+    {
+      "id": "s_topological_irreducibility_t_chain",
+      "kind": "theorem",
+      "name": "Topological irreducibility for T-chains",
+      "type_signature": "T-chain + reachable point => psi-irreducible",
+      "description": "For a T-chain, open-set (topological) irreducibility together with the existence of a reachable point implies phi-irreducibility, so the topological and measure-theoretic notions of irreducibility coincide."
+    },
+    {
+      "id": "s_recurrence_transience_dichotomy_mc",
+      "kind": "theorem",
+      "name": "Recurrence/transience dichotomy",
+      "type_signature": "psi-irreducible => (recurrent) XOR (transient)",
+      "description": "Every psi-irreducible Markov chain is either recurrent, with potential U(x,A)=infinity for all x and all psi-positive A, or transient, with the state space a countable union of uniformly transient sets, with no intermediate case."
+    },
+    {
+      "id": "s_maximal_harris_set",
+      "kind": "theorem",
+      "name": "Maximal Harris set / Harris decomposition",
+      "type_signature": "X = H union N, H maximal absorbing Harris, psi(N)=0",
+      "description": "A recurrent psi-irreducible chain decomposes its space into a maximal absorbing Harris-recurrent set H, on which the chain returns to every psi-positive set with probability one, and a psi-null remainder."
+    },
+    {
+      "id": "s_drift_operator_mc",
+      "kind": "axiom",
+      "name": "Drift operator Delta V = P V - V",
+      "type_signature": "Delta V(x) = int P(x,dy) V(y) - V(x)",
+      "description": "The discrete generator Delta=P-I applied to a function V, giving the one-step expected change of V and serving as the central object of all Foster-Lyapunov drift conditions."
+    },
+    {
+      "id": "s_f_regularity_mc",
+      "kind": "state",
+      "name": "f-regular set / f-regularity",
+      "type_signature": "sup_{x in C} E_x[ sum_{k=0}^{tau_B-1} f(X_k) ] < infinity",
+      "description": "A set C is f-regular if the expected f-weighted occupation time before hitting any psi-positive set is uniformly bounded over C; f-regularity of the chain quantifies the rate in f-norm ergodic theorems."
+    },
+    {
+      "id": "s_drift_criterion_f_regularity",
+      "kind": "theorem",
+      "name": "Drift criterion V3 for f-regularity",
+      "type_signature": "P V <= V - f + b*1_C => f-regular",
+      "description": "If a function V>=0 satisfies the drift inequality P V(x) <= V(x) - f(x) + b*1_C(x) for a petite set C, then sublevel sets of V are f-regular and the chain is f-ergodic, the V3 condition of Meyn-Tweedie."
+    },
+    {
+      "id": "s_poisson_equation_mc",
+      "kind": "state",
+      "name": "Poisson equation for Markov chains",
+      "type_signature": "(I - P) g_hat = f - pi(f)",
+      "description": "The equation (I-P) g_hat = f - pi(f) whose solution g_hat, the centered potential of f, removes the drift of f, underlying martingale decompositions, the CLT, and asymptotic-variance formulas."
+    },
+    {
+      "id": "s_fundamental_kernel_z_mc",
+      "kind": "state",
+      "name": "Fundamental kernel Z = (I - P + Pi)^{-1}",
+      "type_signature": "Z = (I - P + Pi)^{-1}, Pi f = pi(f)*1",
+      "description": "The fundamental kernel of an ergodic chain, the bounded inverse of I-P+Pi on functions of zero pi-mean, providing the canonical solution g_hat=Z f to the Poisson equation and the asymptotic variance formula."
+    },
+    {
+      "id": "s_dynkin_formula_discrete_mc",
+      "kind": "theorem",
+      "name": "Dynkin's formula (discrete, Markov chain)",
+      "type_signature": "E_x[V(X_n)] = V(x) + E_x[ sum_{k=0}^{n-1} Delta V(X_k) ]",
+      "description": "For a Markov chain with drift operator Delta=P-I, the telescoping identity E_x[V(X_{tau wedge n})] = V(x) + E_x[ sum_{k=0}^{tau wedge n-1} Delta V(X_k) ], the discrete-time analogue of Dynkin's formula linking drift to expected values at stopping times."
+    },
+    {
+      "id": "s_clt_geometric_ergodicity",
+      "kind": "theorem",
+      "name": "CLT under geometric ergodicity",
+      "type_signature": "V-geometrically ergodic + pi(f^2 V) < infinity => sqrt(n)(S_n/n - pi(f)) => N(0,sigma_f^2)",
+      "description": "A V-geometrically ergodic chain satisfies the central limit theorem for every f with f^2 <= V and has finite asymptotic variance sigma_f^2, the sharp moment-condition strengthening of the Harris-chain CLT."
+    },
+    {
+      "id": "s_functional_clt_markov",
+      "kind": "theorem",
+      "name": "Functional CLT / invariance principle for Markov chains",
+      "type_signature": "(1/sqrt(n)) sum_{k<=floor(nt)} (f(X_k)-pi(f)) => sigma_f B(t) in D[0,1]",
+      "description": "Under geometric ergodicity or f-regularity with finite variance, the partial-sum process of a centered functional of a Markov chain converges weakly to a Brownian motion with variance sigma_f^2, a Donsker-type invariance principle proved via martingale approximation."
+    },
+    {
+      "id": "s_quasi_compactness_weighted_mc",
+      "kind": "theorem",
+      "name": "Quasi-compactness / spectral gap of P on L_inf^V",
+      "type_signature": "P on L_inf^V: spectral radius 1, essential spectral radius < 1",
+      "description": "V-geometric ergodicity is equivalent to the transition operator P being quasi-compact on the weighted space L_inf^V with a spectral gap, an isolated simple eigenvalue 1 and essential spectral radius strictly below 1, giving the geometric convergence rate."
+    },
+    {
+      "id": "t_martingale_approximation_mc",
+      "kind": "technique",
+      "name": "Martingale approximation / Poisson-equation method",
+      "function_signature": "(f - pi(f)) = g_hat - P g_hat => S_n = M_n + (g_hat(X_0) - g_hat(X_n))",
+      "description": "The technique of solving the Poisson equation (I-P) g_hat = f - pi(f) to write the centered partial sums as a martingale plus a negligible telescoping remainder, the engine behind the CLT, FCLT, and LIL for Markov chains."
+    },
+    {
+      "id": "s_sub_super_harmonic_mc",
+      "kind": "state",
+      "name": "Sub/super-harmonic functions for a Markov chain",
+      "type_signature": "P h <= h (superharmonic) / P h >= h (subharmonic)",
+      "description": "Functions satisfying P h <= h (superharmonic/excessive, the Lyapunov objects of recurrence drift conditions) or P h >= h (subharmonic), whose boundedness and minimal-solution structure characterize recurrence, transience, and hitting probabilities."
+    },
+    {
+      "id": "s_indefinite_integral_measure_density",
+      "kind": "state",
+      "name": "indefinite integral (measure with a density)",
+      "type_signature": "(Measure,DensityFunction)->Measure",
+      "description": "For a measure mu and nonnegative measurable f, the measure nu(A)=int_A f dmu, written nu=f.mu, which is absolutely continuous with respect to mu with Radon-Nikodym derivative f."
+    },
+    {
+      "id": "s_kernel_built_product_measure",
+      "kind": "state",
+      "name": "kernel-built product measure (mu (x) K)",
+      "type_signature": "(Measure,MarkovKernel)->Measure",
+      "description": "The measure on the product space X x Y defined by (mu (x) K)(A x B)=int_A K(x,B)mu(dx), uniquely extending Fubini-type integration int f d(mu (x) K)=int mu(dx) int K(x,dy)f(x,y) when the second coordinate is governed by a transition kernel."
+    },
+    {
+      "id": "s_moments_variance_covariance",
+      "kind": "state",
+      "name": "moments, variance, and covariance",
+      "type_signature": "(RandomVariable)->Reals",
+      "description": "The n-th moment E[X^n], the variance Var(X)=E[(X-EX)^2], and the covariance Cov(X,Y)=E[(X-EX)(Y-EY)] of integrable random variables, the basic numerical summaries of a distribution's spread and dependence."
+    },
+    {
+      "id": "t_law_of_unconscious_statistician",
+      "kind": "technique",
+      "name": "law of the unconscious statistician (expectation via distribution)",
+      "function_signature": "(RandomVariable,MeasurableFunction)->Expectation",
+      "description": "Computes E[g(X)] as the integral int g(x) mu_X(dx) against the law of X rather than against the underlying probability measure, transferring expectation computations to the distribution."
+    },
+    {
+      "id": "s_doob_dynkin_lemma",
+      "kind": "theorem",
+      "name": "Doob-Dynkin lemma",
+      "type_signature": "(RandomVariable,SigmaAlgebra)->MeasurableFactorization",
+      "description": "A random variable Y is sigma(X)-measurable if and only if Y=g(X) for some Borel-measurable function g, characterizing sigma(X)-measurability as functional dependence on X."
+    },
+    {
+      "id": "t_de_la_vallee_poussin_ui_criterion",
+      "kind": "technique",
+      "name": "de la Vallee-Poussin criterion for uniform integrability",
+      "function_signature": "(Family<RandomVariables>)->UniformIntegrability",
+      "description": "A family is uniformly integrable if and only if there exists an increasing convex function phi with phi(t)/t->infinity such that sup_n E[phi(|X_n|)]<infinity, giving a verifiable moment-growth test for uniform integrability."
+    },
+    {
+      "id": "s_conditional_independence",
+      "kind": "axiom",
+      "name": "conditional independence given a sigma-algebra",
+      "type_signature": "(SigmaAlgebra,SigmaAlgebra,SigmaAlgebra)->Property",
+      "description": "Sub-sigma-algebras F and H are conditionally independent given G if E[FH|G]=E[F|G]E[H|G] for bounded F- and H-measurable F,H, i.e. they are independent under the conditional measure given G."
+    },
+    {
+      "id": "t_substitution_rule_conditioning",
+      "kind": "technique",
+      "name": "substitution (freezing) rule for conditional expectation",
+      "function_signature": "(BivariateFunction,RandomVariable,SigmaAlgebra)->ConditionalExpectation",
+      "description": "If X is G-measurable and Y is independent of G, then E[g(X,Y)|G]=h(X) where h(x)=E[g(x,Y)], allowing the G-measurable argument to be frozen as a constant and the independent argument integrated out."
+    },
+    {
+      "id": "s_gaussian_random_vector",
+      "kind": "axiom",
+      "name": "Gaussian random vector",
+      "type_signature": "(MeanVector,CovarianceMatrix)->RandomVector",
+      "description": "A random vector X in R^n such that every linear combination <a,X> is a one-dimensional Gaussian, equivalently with characteristic function exp(i<a,mu>-1/2 a^T Sigma a) determined by mean mu and covariance Sigma."
+    },
+    {
+      "id": "s_gaussian_process",
+      "kind": "axiom",
+      "name": "Gaussian process",
+      "type_signature": "(MeanFunction,CovarianceKernel)->StochasticProcess",
+      "description": "A stochastic process (X_t) all of whose finite-dimensional distributions are multivariate Gaussian, completely specified by its mean function m(t)=E[X_t] and covariance kernel C(s,t)=Cov(X_s,X_t)."
+    },
+    {
+      "id": "s_progressively_measurable_process",
+      "kind": "axiom",
+      "name": "progressively measurable process",
+      "type_signature": "(Process,Filtration)->Property",
+      "description": "A process X such that for each t the map (s,omega)->X_s(omega) restricted to [0,t] x Omega is B([0,t]) (x) F_t-measurable; a measurability strengthening of adaptedness ensuring stopped values are measurable."
+    },
+    {
+      "id": "s_doob_decomposition_discrete",
+      "kind": "theorem",
+      "name": "Doob decomposition (discrete time)",
+      "type_signature": "(Submartingale)->(Martingale,PredictableIncreasingProcess)",
+      "description": "Every integrable adapted discrete-time process decomposes uniquely as X_n=X_0+M_n+A_n with M a martingale and A a predictable process started at 0; A is increasing iff X is a submartingale."
+    },
+    {
+      "id": "s_square_integrable_martingale",
+      "kind": "axiom",
+      "name": "square-integrable martingale",
+      "type_signature": "(Filtration)->Martingale",
+      "description": "A cadlag martingale M with sup_t E[M_t^2]<infinity (or E[M_t^2]<infinity for all t), the natural class on which the L^2 theory of stochastic integration and the bracket <M> is built."
+    },
+    {
+      "id": "s_optional_quadratic_variation",
+      "kind": "state",
+      "name": "optional quadratic variation [M]",
+      "type_signature": "(Semimartingale)->IncreasingProcess",
+      "description": "The adapted increasing process [M]_t=lim sum (M_{t_{i+1}}-M_{t_i})^2 along refining partitions, equal to the continuous part <M^c> plus the sum of squared jumps sum_{s<=t}(Delta M_s)^2, making M^2-[M] a local martingale."
+    },
+    {
+      "id": "s_quadratic_covariation",
+      "kind": "state",
+      "name": "quadratic covariation [M,N]",
+      "type_signature": "(Semimartingale,Semimartingale)->FiniteVariationProcess",
+      "description": "The finite-variation process [M,N]=1/4([M+N]-[M-N]) obtained by polarization, satisfying MN-[M,N] is a local martingale and giving the cross term in the integration-by-parts formula for semimartingales."
+    },
+    {
+      "id": "t_ito_isometry_martingale",
+      "kind": "technique",
+      "name": "Ito isometry for martingale integrands",
+      "function_signature": "(PredictableProcess,SquareIntegrableMartingale)->L2Norm",
+      "description": "Establishes E[(int H dM)_t^2]=E[int_0^t H_s^2 d<M>_s], the isometry from L^2(d<M>) into square-integrable martingales that defines the stochastic integral against a square-integrable martingale."
+    },
+    {
+      "id": "s_stochastic_integral_semimartingale",
+      "kind": "state",
+      "name": "stochastic integral with respect to a semimartingale",
+      "type_signature": "(PredictableProcess,Semimartingale)->Semimartingale",
+      "description": "For a locally bounded predictable H and semimartingale X, the process (H.X)_t=int_0^t H_s dX_s defined by linearity over the martingale and finite-variation parts, itself a semimartingale and a local martingale when X is."
+    },
+    {
+      "id": "s_kunita_watanabe_inequality",
+      "kind": "theorem",
+      "name": "Kunita-Watanabe inequality",
+      "type_signature": "(Semimartingale,Semimartingale,Process,Process)->Inequality",
+      "description": "For semimartingales M,N and measurable processes H,K, int |H_s||K_s||d[M,N]_s| <= (int H_s^2 d[M])^{1/2}(int K_s^2 d[N])^{1/2}, a pathwise Cauchy-Schwarz bound for covariation integrals."
+    },
+    {
+      "id": "t_integration_by_parts_semimartingale",
+      "kind": "technique",
+      "name": "integration by parts for semimartingales",
+      "function_signature": "(Semimartingale,Semimartingale)->Semimartingale",
+      "description": "Expresses the product as X_t Y_t=X_0 Y_0+int X_{s-}dY_s+int Y_{s-}dX_s+[X,Y]_t, the stochastic product rule whose extra covariation term distinguishes it from classical integration by parts."
+    },
+    {
+      "id": "s_ito_formula_jump_semimartingale",
+      "kind": "theorem",
+      "name": "Ito formula for jump semimartingales",
+      "type_signature": "(C2Function,Semimartingale)->Semimartingale",
+      "description": "For a general semimartingale X and f in C^2, f(X_t)=f(X_0)+int f'(X_{s-})dX_s+1/2 int f''(X_{s-})d[X]^c_s+sum_{s<=t}[f(X_s)-f(X_{s-})-f'(X_{s-})Delta X_s], adding a jump correction to the continuous Ito formula."
+    },
+    {
+      "id": "s_increasing_process_stieltjes_measure",
+      "kind": "state",
+      "name": "increasing process and its Stieltjes measure",
+      "type_signature": "(IncreasingProcess)->RandomMeasure",
+      "description": "A right-continuous nondecreasing adapted process A that induces, pathwise, a random Lebesgue-Stieltjes measure dA_s on [0,infinity), against which pathwise integrals int H_s dA_s are defined."
+    },
+    {
+      "id": "s_random_measure",
+      "kind": "axiom",
+      "name": "random measure",
+      "type_signature": "(ProbabilitySpace,MeasurableSpace)->RandomElement",
+      "description": "A measurable map from a probability space into the space of (sigma-finite) measures on a state space, so that M(A) is a random variable for each measurable A; the framework subsuming point processes and Poisson random measures."
+    },
+    {
+      "id": "s_point_process",
+      "kind": "axiom",
+      "name": "point process (counting random measure)",
+      "type_signature": "(ProbabilitySpace,StateSpace)->IntegerValuedRandomMeasure",
+      "description": "A random measure N taking nonnegative-integer values on bounded sets, N=sum delta_{T_i}, representing a random configuration of points; its distribution is determined by the joint laws of the counts N(A)."
+    },
+    {
+      "id": "s_intensity_measure",
+      "kind": "state",
+      "name": "intensity (mean) measure of a random measure",
+      "type_signature": "(RandomMeasure)->Measure",
+      "description": "The deterministic measure nu(A)=E[N(A)] giving the expected number of points (or expected mass) in each set A, the first-moment measure of a point process or random measure."
+    },
+    {
+      "id": "t_laplace_functional_prm",
+      "kind": "technique",
+      "name": "Laplace functional of a Poisson random measure",
+      "function_signature": "(NonnegativeFunction,PoissonRandomMeasure)->Reals",
+      "description": "Characterizes a Poisson random measure N with intensity nu via E[exp(-int f dN)]=exp(-int(1-e^{-f})dnu) for nonnegative f, uniquely identifying its law and linearizing computations over independent regions."
+    },
+    {
+      "id": "s_integral_wrt_poisson_random_measure",
+      "kind": "state",
+      "name": "integral with respect to a Poisson random measure",
+      "type_signature": "(MeasurableFunction,PoissonRandomMeasure)->RandomVariable",
+      "description": "The random variable int f dN=sum f(T_i) summing a function over the atoms of a Poisson random measure N, defined for f with int(|f|^1)dnu<infinity and finite when int|f|dnu<infinity."
+    },
+    {
+      "id": "s_compensated_poisson_integral",
+      "kind": "state",
+      "name": "compensated Poisson integral",
+      "type_signature": "(MeasurableFunction,PoissonRandomMeasure)->Martingale",
+      "description": "The centered integral int f d(N-nu)=int f dN-int f dnu against the compensated measure N~=N-nu, a mean-zero (square-integrable when int f^2 dnu<infinity) martingale that is the jump-integral building block of Levy processes."
+    },
+    {
+      "id": "s_campbell_theorem",
+      "kind": "theorem",
+      "name": "Campbell's theorem",
+      "type_signature": "(MeasurableFunction,PoissonRandomMeasure)->MomentFormulas",
+      "description": "For a Poisson random measure with intensity nu, E[int f dN]=int f dnu and Var(int f dN)=int f^2 dnu (when finite), giving the mean and variance of additive functionals of the point configuration."
+    },
+    {
+      "id": "s_mapping_theorem_prm",
+      "kind": "theorem",
+      "name": "mapping (marking) theorem for Poisson random measures",
+      "type_signature": "(PoissonRandomMeasure,MeasurableMap)->PoissonRandomMeasure",
+      "description": "The image of a Poisson random measure of intensity nu under a measurable map T is again a Poisson random measure, with intensity the pushforward T_*nu; independent marking similarly yields a Poisson measure on the enlarged space."
+    },
+    {
+      "id": "s_subordinator",
+      "kind": "axiom",
+      "name": "subordinator",
+      "type_signature": "()->LevyProcess",
+      "description": "A one-dimensional Levy process with nondecreasing (almost surely increasing) paths, equivalently with Levy triplet having no Gaussian part, nonnegative drift, and Levy measure supported on (0,infinity); used as a random time change."
+    },
+    {
+      "id": "t_subordination_of_processes",
+      "kind": "technique",
+      "name": "subordination (time change by a subordinator)",
+      "function_signature": "(MarkovProcess,Subordinator)->MarkovProcess",
+      "description": "Constructs a new process Y_t=X_{S_t} by running a Markov or Levy process X along the random clock of an independent subordinator S, producing e.g. the Cauchy process from Brownian motion via a 1/2-stable subordinator."
+    },
+    {
+      "id": "s_characteristic_exponent_levy",
+      "kind": "state",
+      "name": "characteristic exponent of a Levy process",
+      "type_signature": "(LevyProcess)->Function",
+      "description": "The function psi with E[e^{iuX_t}]=e^{-t psi(u)}, given by the Levy-Khintchine form psi(u)=-ibu+1/2 sigma^2 u^2+int(1-e^{iux}+iux 1_{|x|<1})nu(dx), encoding the law of the Levy process in a single function."
+    },
+    {
+      "id": "s_generator_of_levy_process",
+      "kind": "state",
+      "name": "infinitesimal generator of a Levy process",
+      "type_signature": "(LevyProcess)->IntegroDifferentialOperator",
+      "description": "The operator Af(x)=bf'(x)+1/2 sigma^2 f''(x)+int[f(x+y)-f(x)-yf'(x)1_{|y|<1}]nu(dy), a Fourier multiplier with symbol -psi(u) whose drift, diffusion, and integral parts mirror the Levy triplet."
+    },
+    {
+      "id": "s_transition_function_semigroup",
+      "kind": "axiom",
+      "name": "transition function (Markov semigroup)",
+      "type_signature": "(StateSpace,TimeIndex)->KernelFamily",
+      "description": "A family (P_t)_{t>=0} of Markov kernels satisfying P_0=Id and the Chapman-Kolmogorov identity P_{s+t}=P_s P_t, acting on functions by P_t f(x)=int P_t(x,dy)f(y) as the operator semigroup governing a Markov process."
+    },
+    {
+      "id": "s_canonical_realization_markov",
+      "kind": "state",
+      "name": "canonical realization of a Markov process",
+      "type_signature": "(TransitionFunction,InitialLaw)->PathSpaceProcess",
+      "description": "The construction of a Markov process on the path space Omega=E^{[0,infinity)} (or the cadlag space) with coordinate maps X_t(omega)=omega(t), shift operators theta_t, and the measure P^mu produced from the transition function via the Ionescu-Tulcea/Kolmogorov extension."
+    },
+    {
+      "id": "s_multidimensional_brownian_motion",
+      "kind": "axiom",
+      "name": "multidimensional Brownian motion",
+      "type_signature": "()->VectorValuedProcess",
+      "description": "An R^d-valued process whose d coordinates are independent standard one-dimensional Brownian motions, a continuous Gaussian process with stationary independent increments of covariance tI and generator 1/2 Delta."
+    },
+    {
+      "id": "s_brownian_bridge_process",
+      "kind": "state",
+      "name": "Brownian bridge",
+      "type_signature": "()->GaussianProcess",
+      "description": "The process (B_t-tB_1)_{0<=t<=1}, equivalently Brownian motion conditioned to satisfy B_0=B_1=0, a centered Gaussian process with covariance s^t-st."
+    },
+    {
+      "id": "s_potential_of_a_measure",
+      "kind": "state",
+      "name": "potential of a measure (Green function)",
+      "type_signature": "(Measure,PotentialKernel)->ExcessiveFunction",
+      "description": "The function Umu(x)=int U(x,dy)mu(dy) obtained by applying the potential (Green) kernel of a transient Markov process to a measure mu, an excessive function representing the expected occupation generated by charge mu."
+    },
+    {
+      "id": "t_stochastic_fubini_theorem",
+      "kind": "technique",
+      "name": "stochastic Fubini theorem",
+      "function_signature": "(ParametrizedIntegrand,Semimartingale,Measure)->Equality",
+      "description": "Permits interchange of an ordinary integral and a stochastic integral, int(int H(s,a)dX_s)lambda(da)=int(int H(s,a)lambda(da))dX_s, under joint measurability and an integrability condition on H."
+    },
+    {
+      "id": "s_ito_tanaka_formula",
+      "kind": "theorem",
+      "name": "Ito-Tanaka formula (convex functions)",
+      "type_signature": "(ConvexFunction,Semimartingale)->Decomposition",
+      "description": "For a convex (or difference-of-convex) f, f(X_t)=f(X_0)+int f'_-(X_s)dX_s+1/2 int L_t^a(X)f''(da), extending Ito's formula to non-C^2 functions by integrating local time against the second-derivative measure f''."
+    },
+    {
+      "id": "s_optional_time",
+      "kind": "axiom",
+      "name": "Optional Time",
+      "type_signature": "",
+      "description": "A random time T:Omega->[0,infinity] such that {T<t} belongs to F_t for every t>=0."
+    },
+    {
+      "id": "s_optional_stopping_time_equivalence",
+      "kind": "theorem",
+      "name": "Equivalence of Optional and Stopping Times under Right-Continuity",
+      "type_signature": "",
+      "description": "When the filtration is right-continuous, a random time is an optional time if and only if it is a stopping time, i.e. {T<t} in F_t for all t is equivalent to {T<=t} in F_t for all t."
+    },
+    {
+      "id": "s_stopping_time_closure_properties",
+      "kind": "theorem",
+      "name": "Closure Properties of Stopping Times",
+      "type_signature": "",
+      "description": "If S and T are stopping times then S∧T, S∨T, S+T, and (for a right-continuous filtration) suprema, infima, limsups and liminfs of countable families of stopping times are again stopping times."
+    },
+    {
+      "id": "s_stopping_time_sigma_algebra_F_T",
+      "kind": "axiom",
+      "name": "Stopping-Time Sigma-Algebra F_T",
+      "type_signature": "",
+      "description": "The collection F_T = {A in F : A∩{T<=t} in F_t for all t>=0} of events determined by time T, which forms a sigma-algebra."
+    },
+    {
+      "id": "s_properties_of_F_T",
+      "kind": "theorem",
+      "name": "Properties of the Stopping-Time Sigma-Algebra",
+      "type_signature": "",
+      "description": "For stopping times S<=T one has F_S subset F_T, T is F_T-measurable, F_{S∧T}=F_S∩F_T, and events such as {S<T},{S=T},{S<=T} lie in both F_S and F_T."
+    },
+    {
+      "id": "s_hitting_time_of_set_is_stopping_time",
+      "kind": "theorem",
+      "name": "Hitting Time of a Set is a Stopping Time",
+      "type_signature": "",
+      "description": "For a right-continuous adapted process and a usual-conditions filtration, the first hitting (debut) time of an open set is an optional time and that of a closed set is a stopping time."
+    },
+    {
+      "id": "s_optional_sampling_for_ui_martingales",
+      "kind": "theorem",
+      "name": "Optional Sampling for Uniformly Integrable Martingales",
+      "type_signature": "",
+      "description": "If (M_t) is a uniformly integrable martingale with last element M_infinity and S<=T are stopping times, then E[M_T|F_S]=M_S a.s., so M_T=E[M_infinity|F_T]."
+    },
+    {
+      "id": "s_modification_vs_indistinguishability",
+      "kind": "theorem",
+      "name": "Modification versus Indistinguishability",
+      "type_signature": "",
+      "description": "Two processes that are modifications of each other (P(X_t=Y_t)=1 for each t) and are both right-continuous are indistinguishable (P(X_t=Y_t for all t)=1)."
+    },
+    {
+      "id": "s_progressive_measurability_of_rcll_adapted",
+      "kind": "theorem",
+      "name": "Progressive Measurability of Right-Continuous Adapted Processes",
+      "type_signature": "",
+      "description": "Every adapted process with right-continuous (or left-continuous) paths is progressively measurable."
+    },
+    {
+      "id": "s_natural_increasing_process",
+      "kind": "axiom",
+      "name": "Natural Increasing Process",
+      "type_signature": "",
+      "description": "An integrable right-continuous increasing process A such that E[∫ M_s dA_s]=E[∫ M_{s-} dA_s] for every bounded right-continuous martingale M, equivalently a predictable increasing process."
+    },
+    {
+      "id": "s_meyer_process",
+      "kind": "axiom",
+      "name": "Meyer Process",
+      "type_signature": "",
+      "description": "The unique natural (predictable) integrable increasing process appearing in the Doob–Meyer decomposition of a submartingale of class DL."
+    },
+    {
+      "id": "s_increasing_process",
+      "kind": "axiom",
+      "name": "Increasing Process",
+      "type_signature": "",
+      "description": "An adapted process A with A_0=0 whose paths are right-continuous and nondecreasing, of finite variation on compacts."
+    },
+    {
+      "id": "s_cross_variation_M_N",
+      "kind": "state",
+      "name": "Cross-Variation <M,N>",
+      "type_signature": "",
+      "description": "For continuous local martingales M,N the unique continuous adapted finite-variation process <M,N>=(1/4)(<M+N>-<M-N>) making MN-<M,N> a local martingale."
+    },
+    {
+      "id": "s_quadratic_variation_as_limit_of_sums",
+      "kind": "theorem",
+      "name": "Quadratic Variation as Limit of Sums",
+      "type_signature": "",
+      "description": "For a continuous local martingale M, the sums Σ(M_{t_{i+1}}-M_{t_i})^2 over partitions converge in probability, as the mesh tends to zero, to the quadratic variation <M>_t."
+    },
+    {
+      "id": "t_levy_ciesielski_construction",
+      "kind": "technique",
+      "name": "Lévy–Ciesielski Construction of Brownian Motion",
+      "function_signature": "(iid N(0,1) coefficients, Haar/Schauder basis) → (continuous Brownian path on [0,1])",
+      "description": "A construction of Brownian motion as the uniformly convergent series Σ ξ_n S_n(t) of Schauder functions S_n with independent standard Gaussian coefficients ξ_n."
+    },
+    {
+      "id": "s_haar_schauder_functions",
+      "kind": "axiom",
+      "name": "Haar and Schauder Functions",
+      "type_signature": "",
+      "description": "The orthonormal Haar wavelet system on [0,1] together with its integrals, the triangular Schauder functions, forming a basis used in the Lévy–Ciesielski construction."
+    },
+    {
+      "id": "s_brownian_transition_semigroup",
+      "kind": "state",
+      "name": "Brownian (Heat) Transition Semigroup",
+      "type_signature": "",
+      "description": "The Markov semigroup (P_t f)(x)=∫ p_t(x,y)f(y)dy with Gaussian kernel p_t(x,y)=(2πt)^{-n/2}exp(-|x-y|^2/2t), the transition semigroup of Brownian motion solving the heat equation."
+    },
+    {
+      "id": "s_gaussian_heat_kernel",
+      "kind": "state",
+      "name": "Gaussian Heat Kernel / Transition Density",
+      "type_signature": "",
+      "description": "The function p_t(x,y)=(2πt)^{-n/2}exp(-|x-y|^2/(2t)), the fundamental solution of the heat equation and the transition density of n-dimensional Brownian motion."
+    },
+    {
+      "id": "s_augmented_brownian_filtration",
+      "kind": "axiom",
+      "name": "Augmented Brownian Filtration",
+      "type_signature": "",
+      "description": "The filtration generated by Brownian motion completed with all P-null sets and made right-continuous, satisfying the usual conditions."
+    },
+    {
+      "id": "s_first_passage_time_T_a_distribution",
+      "kind": "theorem",
+      "name": "Distribution of Brownian First Passage Time T_a",
+      "type_signature": "",
+      "description": "For standard Brownian motion the first passage time T_a=inf{t:B_t=a} has the stable(1/2) density (|a|/√(2πt^3))exp(-a^2/2t) with Laplace transform E[e^{-λT_a}]=exp(-|a|√(2λ))."
+    },
+    {
+      "id": "s_T_a_finite_infinite_expectation",
+      "kind": "theorem",
+      "name": "Brownian Hitting Time is Finite a.s. with Infinite Mean",
+      "type_signature": "",
+      "description": "For one-dimensional Brownian motion T_a<infinity almost surely for every level a, yet E[T_a]=infinity."
+    },
+    {
+      "id": "s_law_of_iterated_logarithm_bm",
+      "kind": "theorem",
+      "name": "Law of the Iterated Logarithm for Brownian Motion",
+      "type_signature": "",
+      "description": "For standard Brownian motion, limsup_{t->0+} B_t/√(2t log log(1/t))=1 a.s. and the corresponding statement holds as t->infinity with √(2t log log t)."
+    },
+    {
+      "id": "s_unbounded_variation_bm_paths",
+      "kind": "theorem",
+      "name": "Unbounded Total Variation of Brownian Paths",
+      "type_signature": "",
+      "description": "Almost every Brownian path has infinite total variation on every nondegenerate time interval, while having finite quadratic variation."
+    },
+    {
+      "id": "s_markov_family",
+      "kind": "axiom",
+      "name": "Markov Family / Transition Function",
+      "type_signature": "",
+      "description": "A family of probability measures (P^x) on path space together with a transition function P(s,x,t,·) such that the process is Markov under each P^x started at x."
+    },
+    {
+      "id": "s_feller_implies_strong_markov",
+      "kind": "theorem",
+      "name": "Feller Family is Strong Markov",
+      "type_signature": "",
+      "description": "A Markov family whose transition semigroup has the Feller property (with a right-continuous realization) is automatically a strong Markov family."
+    },
+    {
+      "id": "t_wald_exponential_martingale_technique",
+      "kind": "technique",
+      "name": "Exponential (Wald) Martingale and Wald Identities",
+      "function_signature": "(Brownian motion B, parameters λ,μ) → (martingale exp(λB_t-λ^2 t/2) and identities for E[T],E[B_T^2])",
+      "description": "The technique of using exp(λB_t-λ^2t/2) and B_t, B_t^2-t as martingales together with optional sampling to derive Wald-type identities for stopping times."
+    },
+    {
+      "id": "s_b_squared_minus_t_martingale",
+      "kind": "theorem",
+      "name": "B_t^2 - t is a Martingale",
+      "type_signature": "",
+      "description": "For standard Brownian motion the process B_t^2 - t is a martingale, and more generally f(B_t)-(1/2)∫f''(B_s)ds is a martingale for suitable f."
+    },
+    {
+      "id": "s_space_of_simple_processes",
+      "kind": "axiom",
+      "name": "Space of Simple / Elementary Processes",
+      "type_signature": "",
+      "description": "The space of processes of the form H_t=Σ ξ_i 1_{(t_i,t_{i+1}]}(t) with ξ_i bounded and F_{t_i}-measurable, dense in the L^2 space of progressively measurable integrands."
+    },
+    {
+      "id": "t_ito_integral_simple_processes",
+      "kind": "technique",
+      "name": "Itô Integral Construction for Simple Processes",
+      "function_signature": "(simple process H, martingale M) → (elementary stochastic integral Σ ξ_i (M_{t_{i+1}}-M_{t_i}))",
+      "description": "The definition of the stochastic integral of a simple integrand as the finite martingale transform sum Σ ξ_i (M_{t_{i+1}∧t}-M_{t_i∧t})."
+    },
+    {
+      "id": "t_isometric_extension_ito_integral",
+      "kind": "technique",
+      "name": "Extension of the Itô Integral by Isometry",
+      "function_signature": "(L^2-Cauchy sequence of simple integrals) → (stochastic integral of general L^2 integrand)",
+      "description": "The extension of the stochastic integral from simple integrands to all progressively measurable L^2 integrands by completion using the Itô isometry."
+    },
+    {
+      "id": "s_stochastic_integral_is_continuous_L2_martingale",
+      "kind": "theorem",
+      "name": "Stochastic Integral is a Continuous L^2 Martingale",
+      "type_signature": "",
+      "description": "For an L^2 integrand against a continuous L^2 martingale, the Itô integral (∫H dM)_t is itself a continuous square-integrable martingale null at zero."
+    },
+    {
+      "id": "s_quadratic_variation_of_stochastic_integral",
+      "kind": "theorem",
+      "name": "Quadratic Variation of the Stochastic Integral",
+      "type_signature": "",
+      "description": "The quadratic variation of the stochastic integral I=∫H dM is <I>_t=∫_0^t H_s^2 d<M>_s, and the cross-variation of ∫H dM and ∫K dN is ∫ H_s K_s d<M,N>_s."
+    },
+    {
+      "id": "s_localization_of_quadratic_variation",
+      "kind": "theorem",
+      "name": "Localization of Quadratic Variation",
+      "type_signature": "",
+      "description": "Every continuous local martingale M admits a unique continuous increasing adapted process <M> with <M>_0=0 such that M^2-<M> is a local martingale, obtained by localizing the L^2 theory."
+    },
+    {
+      "id": "s_associativity_of_stochastic_integral",
+      "kind": "theorem",
+      "name": "Associativity of the Stochastic Integral",
+      "type_signature": "",
+      "description": "If N=∫H dM then ∫K dN=∫KH dM, i.e. integrating against a stochastic integral equals integrating against the product integrand."
+    },
+    {
+      "id": "s_ito_formula_one_dimensional",
+      "kind": "theorem",
+      "name": "Itô Formula (One-Dimensional)",
+      "type_signature": "",
+      "description": "For f in C^2 and a continuous semimartingale X, f(X_t)=f(X_0)+∫f'(X_s)dX_s+(1/2)∫f''(X_s)d<X>_s."
+    },
+    {
+      "id": "s_ito_formula_multidimensional",
+      "kind": "theorem",
+      "name": "Itô Formula (Multidimensional)",
+      "type_signature": "",
+      "description": "For f in C^2(R^n) and a vector continuous semimartingale X, f(X_t)=f(X_0)+Σ∫∂_i f dX^i_s+(1/2)ΣΣ∫∂_{ij}f d<X^i,X^j>_s."
+    },
+    {
+      "id": "s_ito_formula_time_dependent",
+      "kind": "theorem",
+      "name": "Itô Formula for Time-Dependent C^{1,2} Functions",
+      "type_signature": "",
+      "description": "For f(t,x) in C^{1,2} and a continuous semimartingale X, f(t,X_t)=f(0,X_0)+∫∂_t f ds+∫∂_x f dX_s+(1/2)∫∂_{xx}f d<X>_s."
+    },
+    {
+      "id": "s_kazamaki_condition",
+      "kind": "theorem",
+      "name": "Kazamaki Condition",
+      "type_signature": "",
+      "description": "If the exponential exp(M_t/2) of a continuous local martingale M is a uniformly integrable submartingale, then the Doléans–Dade exponential E(M) is a uniformly integrable martingale."
+    },
+    {
+      "id": "s_girsanov_transformation_local_martingales",
+      "kind": "theorem",
+      "name": "Girsanov Transformation of Local Martingales",
+      "type_signature": "",
+      "description": "Under the measure change dQ=E(N)_T dP, a P-local martingale M becomes the Q-semimartingale M-<M,N>, so M-<M,N> is a Q-local martingale."
+    },
+    {
+      "id": "s_knight_theorem_multidim_time_change",
+      "kind": "theorem",
+      "name": "Knight's Multidimensional Time-Change Theorem",
+      "type_signature": "",
+      "description": "Orthogonal continuous local martingales, when each is time-changed by the inverse of its own quadratic variation, become independent standard Brownian motions."
+    },
+    {
+      "id": "s_harmonic_function_of_bm_is_local_martingale",
+      "kind": "theorem",
+      "name": "Harmonic Function of Brownian Motion is a Local Martingale",
+      "type_signature": "",
+      "description": "If h is harmonic on a domain D and B is Brownian motion, then h(B_{t∧τ_D}) is a continuous local martingale up to the exit time τ_D of D."
+    },
+    {
+      "id": "s_probabilistic_mean_value_property",
+      "kind": "theorem",
+      "name": "Probabilistic Mean Value Property",
+      "type_signature": "",
+      "description": "For h harmonic on D, h(x)=E^x[h(B_{τ})] for the exit time τ from any ball (or relatively compact subdomain) centered at x, expressing the mean value property via Brownian motion."
+    },
+    {
+      "id": "s_dirichlet_problem",
+      "kind": "axiom",
+      "name": "Dirichlet Problem",
+      "type_signature": "",
+      "description": "The boundary value problem of finding a function harmonic in a domain D and equal to prescribed continuous boundary data f on ∂D."
+    },
+    {
+      "id": "s_stochastic_solution_of_dirichlet_problem",
+      "kind": "theorem",
+      "name": "Stochastic Solution of the Dirichlet Problem",
+      "type_signature": "",
+      "description": "If every boundary point of D is regular then u(x)=E^x[f(B_{τ_D})] is the unique bounded harmonic function on D with boundary values f, solving the Dirichlet problem."
+    },
+    {
+      "id": "t_exterior_cone_zaremba_condition",
+      "kind": "technique",
+      "name": "Exterior Cone (Zaremba) Condition",
+      "function_signature": "(boundary point z, truncated exterior cone at z) → (regularity of z)",
+      "description": "The technique establishing regularity of a boundary point by exhibiting a nondegenerate truncated cone in the complement with vertex at that point."
+    },
+    {
+      "id": "s_harmonic_measure_exit_distribution",
+      "kind": "state",
+      "name": "Harmonic Measure / Exit Distribution",
+      "type_signature": "",
+      "description": "The probability measure μ_x(A)=P^x(B_{τ_D} in A) on ∂D giving the distribution of the Brownian exit position from D started at x, against which harmonic functions reproduce their boundary values."
+    },
+    {
+      "id": "s_poisson_kernel_exit_distribution_ball",
+      "kind": "theorem",
+      "name": "Poisson Kernel Exit Distribution on a Ball",
+      "type_signature": "",
+      "description": "The Brownian exit distribution from a ball B(0,r) started at x has density (r^2-|x|^2)/(σ_r |y-x|^n) on the sphere, the Poisson kernel of the ball."
+    },
+    {
+      "id": "s_polarity_of_points_and_sets",
+      "kind": "theorem",
+      "name": "Polarity of Points and Sets for Brownian Motion",
+      "type_signature": "",
+      "description": "For Brownian motion in dimension n>=2 single points are polar (never hit by the path from a distinct start), and more generally sets of zero capacity are polar."
+    },
+    {
+      "id": "s_hitting_probabilities_annulus_exit",
+      "kind": "theorem",
+      "name": "Hitting Probabilities and Annulus Exit",
+      "type_signature": "",
+      "description": "For Brownian motion the probability of hitting the inner sphere before the outer sphere of an annulus is given explicitly via the harmonic function log|x| (n=2) or |x|^{2-n} (n>=3)."
+    },
+    {
+      "id": "s_poisson_equation_probabilistic_solution",
+      "kind": "theorem",
+      "name": "Probabilistic Solution of the Poisson Equation",
+      "type_signature": "",
+      "description": "The solution of (1/2)Δu=-g in D with zero boundary data is u(x)=E^x[∫_0^{τ_D} g(B_s)ds]=∫_D G_D(x,y)g(y)dy."
+    },
+    {
+      "id": "s_kac_formula_brownian_functionals",
+      "kind": "theorem",
+      "name": "Kac Formula for Brownian Functionals",
+      "type_signature": "",
+      "description": "The Laplace transform in space of the expected exponential functional E^x[exp(-∫_0^τ V(B_s)ds)] solves a Sturm–Liouville eigenvalue equation, giving distributions of additive Brownian functionals."
+    },
+    {
+      "id": "s_heat_equation_probabilistic_solution",
+      "kind": "theorem",
+      "name": "Probabilistic Solution of the Cauchy Heat Problem",
+      "type_signature": "",
+      "description": "The bounded solution of the Cauchy problem ∂_t u=(1/2)Δu, u(0,·)=f is u(t,x)=E^x[f(B_t)]=∫ p_t(x,y)f(y)dy."
+    },
+    {
+      "id": "s_cauchy_problem_uniqueness_tychonoff",
+      "kind": "theorem",
+      "name": "Tychonoff Uniqueness for the Cauchy Problem",
+      "type_signature": "",
+      "description": "The Cauchy problem for the heat equation has a unique solution within the class of functions of at most exponential quadratic growth (the Tychonoff growth condition)."
+    },
+    {
+      "id": "t_sturm_liouville_green_function",
+      "kind": "technique",
+      "name": "Sturm–Liouville Green's Function",
+      "function_signature": "(scale function, speed measure, boundary data) → (Green's function of the 1-D generator)",
+      "description": "The construction of the Green's function of a one-dimensional diffusion generator from increasing and decreasing solutions of the associated Sturm–Liouville equation."
+    },
+    {
+      "id": "s_expected_exit_time_solves_poisson",
+      "kind": "theorem",
+      "name": "Expected Exit Time Solves the Poisson Equation",
+      "type_signature": "",
+      "description": "The mean exit time v(x)=E^x[τ_D] of Brownian motion from D is the solution of (1/2)Δv=-1 in D with v=0 on ∂D."
+    },
+    {
+      "id": "s_probabilistic_maximum_principle",
+      "kind": "theorem",
+      "name": "Probabilistic Maximum Principle",
+      "type_signature": "",
+      "description": "A function that is subharmonic (Lu>=0 for the diffusion generator L) attains its maximum on the boundary, derived from the submartingale property of u(X_t)."
+    },
+    {
+      "id": "s_strong_solution_of_sde",
+      "kind": "axiom",
+      "name": "Strong Solution of an SDE",
+      "type_signature": "",
+      "description": "A process X adapted to the augmented filtration of a given Brownian motion W on a given probability space that satisfies dX_t=b(t,X_t)dt+σ(t,X_t)dW_t pathwise."
+    },
+    {
+      "id": "s_weak_solution_of_sde",
+      "kind": "axiom",
+      "name": "Weak Solution of an SDE",
+      "type_signature": "",
+      "description": "A triple consisting of a filtered probability space, a Brownian motion W, and a process X on it satisfying the SDE, where the driving Brownian motion is part of the solution rather than prescribed."
+    },
+    {
+      "id": "s_pathwise_uniqueness",
+      "kind": "axiom",
+      "name": "Pathwise Uniqueness",
+      "type_signature": "",
+      "description": "The property that any two solutions of an SDE driven by the same Brownian motion on the same space with the same initial condition are indistinguishable."
+    },
+    {
+      "id": "s_uniqueness_in_law",
+      "kind": "axiom",
+      "name": "Uniqueness in Law / Distribution",
+      "type_signature": "",
+      "description": "The property that any two weak solutions of an SDE with the same initial distribution induce the same law on path space."
+    },
+    {
+      "id": "s_ito_existence_uniqueness_theorem",
+      "kind": "theorem",
+      "name": "Itô Existence–Uniqueness Theorem",
+      "type_signature": "",
+      "description": "Under global Lipschitz and linear-growth conditions on the coefficients, the SDE has a unique strong solution that is a square-integrable continuous process."
+    },
+    {
+      "id": "t_picard_iteration_sde",
+      "kind": "technique",
+      "name": "Picard Iteration for SDEs",
+      "function_signature": "(coefficients b,σ, initial X^0) → (successive approximations X^{n+1}=X_0+∫b(X^n)ds+∫σ(X^n)dW converging to the solution)",
+      "description": "The successive-approximation scheme that constructs the strong solution of a Lipschitz SDE as the limit of iterates X^{n+1}_t=X_0+∫b(s,X^n_s)ds+∫σ(s,X^n_s)dW_s."
+    },
+    {
+      "id": "s_a_priori_moment_estimates_sde",
+      "kind": "theorem",
+      "name": "A Priori Moment Estimates and Continuity in Initial Data",
+      "type_signature": "",
+      "description": "Solutions of Lipschitz/linear-growth SDEs satisfy E[sup_{s<=t}|X_s|^{2p}]<=C(1+|x|^{2p})e^{Ct} and depend continuously, in L^{2p}, on the initial condition."
+    },
+    {
+      "id": "s_yamada_watanabe_theorem",
+      "kind": "theorem",
+      "name": "Yamada–Watanabe Theorem",
+      "type_signature": "",
+      "description": "Weak existence together with pathwise uniqueness implies existence of a strong solution and uniqueness in law for the SDE."
+    },
+    {
+      "id": "s_yamada_watanabe_pathwise_condition",
+      "kind": "theorem",
+      "name": "Yamada–Watanabe One-Dimensional Pathwise Uniqueness Condition",
+      "type_signature": "",
+      "description": "For a one-dimensional SDE, pathwise uniqueness holds if the diffusion coefficient satisfies |σ(x)-σ(y)|<=ρ(|x-y|) with ∫_{0+}ρ^{-2}=infinity (e.g. Hölder-1/2) and the drift is Lipschitz."
+    },
+    {
+      "id": "s_equivalence_weak_solutions_martingale_problem",
+      "kind": "theorem",
+      "name": "Equivalence of Weak Solutions and the Martingale Problem",
+      "type_signature": "",
+      "description": "A weak solution of an SDE with coefficients (b,σ) exists if and only if the Stroock–Varadhan martingale problem for the generator L=(1/2)Σa_{ij}∂_{ij}+Σb_i∂_i is solvable, with a=σσ^T."
+    },
+    {
+      "id": "s_markov_property_of_sde_solutions",
+      "kind": "theorem",
+      "name": "Markov Property of SDE Solutions",
+      "type_signature": "",
+      "description": "Under uniqueness, the solution of an SDE with time-homogeneous coefficients is a Markov family with transition function determined by the law of the solution started at each point."
+    },
+    {
+      "id": "s_strong_markov_property_of_sde_solutions",
+      "kind": "theorem",
+      "name": "Strong Markov Property of SDE Solutions",
+      "type_signature": "",
+      "description": "Under uniqueness in law, the solution of a time-homogeneous SDE is a strong Markov process, satisfying the Markov property at stopping times."
+    },
+    {
+      "id": "s_comparison_theorem_1d_sde",
+      "kind": "theorem",
+      "name": "Comparison Theorem for One-Dimensional SDEs",
+      "type_signature": "",
+      "description": "For two one-dimensional SDEs with the same diffusion coefficient and ordered drifts and initial conditions, the corresponding solutions remain pathwise ordered for all time."
+    },
+    {
+      "id": "s_ornstein_uhlenbeck_process",
+      "kind": "state",
+      "name": "Ornstein–Uhlenbeck Process",
+      "type_signature": "",
+      "description": "The solution of the linear SDE dX_t=-θX_t dt+σ dW_t, a stationary Gaussian Markov diffusion mean-reverting to zero with exponential covariance."
+    },
+    {
+      "id": "s_linear_sde_solution",
+      "kind": "theorem",
+      "name": "Linear SDEs",
+      "type_signature": "",
+      "description": "The linear SDE dX_t=(A(t)X_t+a(t))dt+Σ(C_i(t)X_t+c_i(t))dW^i_t has an explicit solution via a matrix fundamental solution and variation of constants, with Gaussian law when the multiplicative noise terms vanish."
+    },
+    {
+      "id": "s_bessel_process",
+      "kind": "state",
+      "name": "Bessel Process",
+      "type_signature": "",
+      "description": "The radial part R_t=|B_t| of n-dimensional Brownian motion, equivalently the solution of dR_t=dβ_t+((δ-1)/(2R_t))dt of dimension δ, a nonnegative diffusion."
+    },
+    {
+      "id": "t_girsanov_weak_solution_construction",
+      "kind": "technique",
+      "name": "Girsanov-Based Weak Solution Construction",
+      "function_signature": "(bounded measurable drift b, Brownian motion under P) → (weak solution under Q=E(∫b dW)·P)",
+      "description": "The construction of a weak solution of an SDE with bounded measurable drift by changing measure via the Girsanov density to absorb the drift into a new Brownian motion."
+    },
+    {
+      "id": "s_cameron_martin_formula",
+      "kind": "theorem",
+      "name": "Cameron–Martin Formula",
+      "type_signature": "",
+      "description": "Translating Wiener measure by an absolutely continuous path h with h'∈L^2 yields a measure equivalent to Wiener measure with density exp(∫h' dB-(1/2)∫|h'|^2 ds)."
+    },
+    {
+      "id": "s_tanaka_example_weak_no_strong",
+      "kind": "state",
+      "name": "Tanaka's Example (Weak but No Strong Solution)",
+      "type_signature": "",
+      "description": "The SDE dX_t=sgn(X_t)dW_t, which possesses a weak solution and uniqueness in law but no strong solution and fails pathwise uniqueness."
+    },
+    {
+      "id": "s_engelbert_schmidt_conditions",
+      "kind": "theorem",
+      "name": "Engelbert–Schmidt Conditions",
+      "type_signature": "",
+      "description": "For the driftless one-dimensional SDE dX_t=σ(X_t)dW_t, a weak solution exists if 1/σ^2 is locally integrable, and uniqueness in law holds under the additional non-degeneracy of σ."
+    },
+    {
+      "id": "s_engelbert_schmidt_zero_one_law",
+      "kind": "theorem",
+      "name": "Engelbert–Schmidt Zero-One Law",
+      "type_signature": "",
+      "description": "For a measurable f and Brownian motion, the additive functional ∫_0^t f(B_s)ds is either finite for all t a.s. or infinite for all t>0 a.s., according to the local integrability of f."
+    },
+    {
+      "id": "t_time_change_construction_1d_sde",
+      "kind": "technique",
+      "name": "Time-Change Construction of a One-Dimensional SDE",
+      "function_signature": "(Brownian motion, diffusion coefficient σ) → (weak solution as a time-changed Brownian motion)",
+      "description": "The construction of a weak solution of dX=σ(X)dW by time-changing a Brownian motion using the inverse of the additive functional ∫σ^{-2}(B_s)ds."
+    },
+    {
+      "id": "s_feller_test_for_explosions",
+      "kind": "theorem",
+      "name": "Feller's Test for Explosions",
+      "type_signature": "",
+      "description": "A criterion, in terms of the scale function and speed measure, deciding whether a one-dimensional diffusion reaches its boundary in finite time (explodes) with positive probability."
+    },
+    {
+      "id": "s_explosion_time",
+      "kind": "state",
+      "name": "Explosion Time",
+      "type_signature": "",
+      "description": "The time e=lim τ_n at which a diffusion exits every compact subinterval, i.e. reaches the boundary of its state space or diverges to infinity."
+    },
+    {
+      "id": "s_stroock_varadhan_support_theorem",
+      "kind": "theorem",
+      "name": "Stroock–Varadhan Support Theorem",
+      "type_signature": "",
+      "description": "The topological support of the law of a nondegenerate diffusion in path space is the closure of the set of solutions of the associated control (ODE) system obtained by replacing the noise with smooth controls."
+    },
+    {
+      "id": "t_wong_zakai_stratonovich_correction",
+      "kind": "technique",
+      "name": "Wong–Zakai / Stratonovich Correction",
+      "function_signature": "(piecewise-linear approximations of Brownian motion) → (Stratonovich SDE limit with drift correction)",
+      "description": "The technique whereby ODEs driven by smooth approximations of Brownian motion converge to the Stratonovich SDE, differing from the Itô equation by the correction drift (1/2)σσ'."
+    },
+    {
+      "id": "s_weak_existence_skorokhod",
+      "kind": "theorem",
+      "name": "Weak Existence under Bounded Continuous Coefficients (Skorokhod)",
+      "type_signature": "",
+      "description": "An SDE with bounded continuous coefficients and nondegenerate diffusion admits a weak solution, constructed by tightness and the Skorokhod representation of approximating Euler solutions."
+    },
+    {
+      "id": "s_uniqueness_in_law_via_martingale_problem",
+      "kind": "theorem",
+      "name": "Uniqueness in Law via Martingale Problem Well-Posedness",
+      "type_signature": "",
+      "description": "Uniqueness in law for an SDE is equivalent to well-posedness (existence and uniqueness) of the corresponding Stroock–Varadhan martingale problem for its generator."
+    },
+    {
+      "id": "s_tanaka_formula_positive_part",
+      "kind": "theorem",
+      "name": "Tanaka Formulas for (X-a)^+ and (X-a)^-",
+      "type_signature": "",
+      "description": "For a continuous semimartingale X, (X_t-a)^+=(X_0-a)^+ +∫1_{X_s>a}dX_s+(1/2)L_t^a and (X_t-a)^- = (X_0-a)^- -∫1_{X_s<=a}dX_s+(1/2)L_t^a, where L^a is the local time at level a."
+    },
+    {
+      "id": "s_trotter_joint_continuity_local_time",
+      "kind": "theorem",
+      "name": "Trotter's Joint Continuity of Local Time",
+      "type_signature": "",
+      "description": "The local time L_t^a of Brownian motion admits a modification that is jointly continuous in (t,a), and continuous in t and càdlàg in a for general continuous semimartingales."
+    },
+    {
+      "id": "s_levy_theorem_local_time",
+      "kind": "theorem",
+      "name": "Lévy's Theorem on Local Time",
+      "type_signature": "",
+      "description": "The pair (|B_t|, L_t^0) of reflected Brownian motion and its local time at zero has the same law as (M_t-B_t, M_t), where M_t=max_{s<=t}B_s is the running maximum."
+    },
+    {
+      "id": "s_skorokhod_reflection_problem",
+      "kind": "theorem",
+      "name": "Skorokhod Reflection Problem",
+      "type_signature": "",
+      "description": "Given a continuous path y with y_0>=0, there exist unique continuous processes (x,k) with x=y+k>=0, k nondecreasing with k_0=0, and k increasing only when x=0; x is the reflection of y at zero."
+    },
+    {
+      "id": "s_skorokhod_lemma_explicit_formula",
+      "kind": "theorem",
+      "name": "Skorokhod Lemma (Explicit Formula)",
+      "type_signature": "",
+      "description": "The regulator solving the reflection problem is given explicitly by k_t=max_{s<=t}(-y_s)^+=sup_{s<=t}(0∨(-y_s)), and the reflected path is x_t=y_t+k_t."
+    },
+    {
+      "id": "s_reflected_brownian_motion",
+      "kind": "state",
+      "name": "Reflected Brownian Motion",
+      "type_signature": "",
+      "description": "The nonnegative process |B_t|, equivalently the solution of the Skorokhod reflection problem driven by Brownian motion, a Markov diffusion reflecting instantaneously at zero."
+    },
+    {
+      "id": "s_downcrossing_representation_local_time",
+      "kind": "theorem",
+      "name": "Downcrossing Representation of Local Time",
+      "type_signature": "",
+      "description": "Brownian local time at a level a equals the limit, as ε->0, of ε times the number of downcrossings (or upcrossings) of the interval (a,a+ε) by the path up to time t."
+    },
+    {
+      "id": "s_first_ray_knight_theorem",
+      "kind": "theorem",
+      "name": "First Ray–Knight Theorem",
+      "type_signature": "",
+      "description": "For Brownian motion stopped at the first hitting time of level 1, the family of local times {L_{T_1}^{1-a}}_{0<=a<=1} as a process in the space variable is a squared Bessel process of dimension 2."
+    },
+    {
+      "id": "s_second_ray_knight_theorem",
+      "kind": "theorem",
+      "name": "Second Ray–Knight Theorem",
+      "type_signature": "",
+      "description": "For Brownian motion run until the inverse local time at zero reaches level t, the local-time field in the space variable is a squared Bessel process of dimension 0 started at t."
+    },
+    {
+      "id": "s_joint_distribution_B_and_local_time",
+      "kind": "theorem",
+      "name": "Joint Distribution of (B_t, L_t^0)",
+      "type_signature": "",
+      "description": "The pair (B_t,L_t^0) of Brownian motion and its local time at zero has an explicit joint density obtainable from the reflection principle and Lévy's theorem."
+    },
+    {
+      "id": "s_inverse_local_time_stable_subordinator",
+      "kind": "theorem",
+      "name": "Inverse Local Time as a Stable Subordinator",
+      "type_signature": "",
+      "description": "The right-continuous inverse τ_ℓ=inf{t:L_t^0>ℓ} of Brownian local time at zero is a stable subordinator of index 1/2 with no drift."
+    },
+    {
+      "id": "t_ito_excursion_theory",
+      "kind": "technique",
+      "name": "Itô Excursion Theory / Excursion Measure",
+      "function_signature": "(Brownian motion, local time clock) → (Poisson point process of excursions with Itô excursion measure)",
+      "description": "The description of the excursions of Brownian motion away from zero, indexed by local time, as a Poisson point process governed by the σ-finite Itô excursion measure."
+    },
+    {
+      "id": "s_continuity_of_local_time_support",
+      "kind": "theorem",
+      "name": "Continuity and Support Property of Local Time",
+      "type_signature": "",
+      "description": "The local time L^a_t is supported on the closure of the zero set {s:X_s=a}, i.e. dL^a_s is carried by the times when X_s=a, and is jointly continuous for Brownian motion."
+    },
+    {
+      "id": "t_local_time_via_dds",
+      "kind": "technique",
+      "name": "Local Time of a Continuous Local Martingale via DDS",
+      "function_signature": "(continuous local martingale M=B_{<M>}) → (local time of M from Brownian local time under Dambis–Dubins–Schwarz time change)",
+      "description": "The technique of obtaining the local time of a continuous local martingale by transporting Brownian local time through the Dambis–Dubins–Schwarz time change M_t=B_{<M>_t}."
     }
   ],
   "edges": [
@@ -348984,6 +350407,3158 @@
       "role": "output",
       "parameter_binding": {},
       "used_in_theorem": "s_euler_3d_finite_time_blowup"
+    },
+    {
+      "id": "e_26340",
+      "from": "s_stopping_time",
+      "to": "t_strong_markov_via_stopping_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26341",
+      "from": "s_markov_property",
+      "to": "t_strong_markov_via_stopping_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26342",
+      "from": "t_strong_markov_via_stopping_approximation",
+      "to": "s_strong_markov_property_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strong_markov_property_mc"
+    },
+    {
+      "id": "e_26343",
+      "from": "s_irreducibility_mc",
+      "to": "t_maximal_irreducibility_measure_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26344",
+      "from": "s_potential_kernel_U",
+      "to": "t_maximal_irreducibility_measure_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26345",
+      "from": "s_kernel_action_on_functions_and_measures",
+      "to": "t_maximal_irreducibility_measure_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26346",
+      "from": "s_minorization_condition",
+      "to": "t_nummelin_splitting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26347",
+      "from": "s_small_set",
+      "to": "t_nummelin_splitting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26348",
+      "from": "s_harris_recurrence",
+      "to": "t_nummelin_splitting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26349",
+      "from": "s_atom_general_state_space",
+      "to": "t_nummelin_splitting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26350",
+      "from": "t_nummelin_splitting",
+      "to": "s_regeneration_at_atom_via_nummelin_splitting",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26351",
+      "from": "t_nummelin_splitting",
+      "to": "s_chacon_ornstein_markov_chain",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chacon_ornstein_markov_chain"
+    },
+    {
+      "id": "e_26352",
+      "from": "s_maximal_ergodic_lemma_positive_contraction",
+      "to": "t_brunel_lemma",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26353",
+      "from": "t_brunel_lemma",
+      "to": "s_chacon_ornstein_ratio_ergodic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chacon_ornstein_ratio_ergodic"
+    },
+    {
+      "id": "e_26354",
+      "from": "t_brunel_lemma",
+      "to": "s_maximal_ergodic_lemma_positive_contraction",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_ergodic_lemma_positive_contraction"
+    },
+    {
+      "id": "e_26355",
+      "from": "s_maximal_ergodic_lemma_positive_contraction",
+      "to": "t_filling_scheme",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26356",
+      "from": "t_filling_scheme",
+      "to": "s_chacon_ornstein_ratio_ergodic",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_chacon_ornstein_ratio_ergodic"
+    },
+    {
+      "id": "e_26357",
+      "from": "s_balayage_of_measure_mc",
+      "to": "t_filling_scheme",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26358",
+      "from": "s_markov_kernel",
+      "to": "t_balayage_mc",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26359",
+      "from": "t_doob_h_transform",
+      "to": "s_space_time_chain",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26360",
+      "from": "s_n_step_transition_probability",
+      "to": "t_canonical_construction_mc",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26361",
+      "from": "t_canonical_construction_mc",
+      "to": "s_shift_operator_path_space",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26362",
+      "from": "t_canonical_construction_mc",
+      "to": "s_tail_and_invariant_sigma_field_chain",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26363",
+      "from": "s_sub_markovian_kernel",
+      "to": "t_balayage_mc",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26364",
+      "from": "s_excessive_function_mc",
+      "to": "t_balayage_mc",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26365",
+      "from": "s_kernel_action_on_functions_and_measures",
+      "to": "t_doob_h_transform",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26366",
+      "from": "s_chacon_ornstein_ratio_ergodic",
+      "to": "t_nummelin_splitting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26367",
+      "from": "s_poisson_equation_mc",
+      "to": "t_martingale_approximation_mc",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_clt_geometric_ergodicity"
+    },
+    {
+      "id": "e_26368",
+      "from": "s_fundamental_kernel_z_mc",
+      "to": "t_martingale_approximation_mc",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_clt_geometric_ergodicity"
+    },
+    {
+      "id": "e_26369",
+      "from": "t_martingale_approximation_mc",
+      "to": "s_clt_geometric_ergodicity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_clt_geometric_ergodicity"
+    },
+    {
+      "id": "e_26370",
+      "from": "t_martingale_approximation_mc",
+      "to": "s_functional_clt_markov",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_functional_clt_markov"
+    },
+    {
+      "id": "e_26371",
+      "from": "t_martingale_approximation_mc",
+      "to": "s_clt_harris_chain",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_clt_harris_chain"
+    },
+    {
+      "id": "e_26372",
+      "from": "t_martingale_approximation_mc",
+      "to": "s_asymptotic_variance_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_clt_geometric_ergodicity"
+    },
+    {
+      "id": "e_26373",
+      "from": "s_drift_operator_mc",
+      "to": "t_lyapunov_foster_criterion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_drift_criterion_f_regularity"
+    },
+    {
+      "id": "e_26374",
+      "from": "s_sub_super_harmonic_mc",
+      "to": "t_lyapunov_foster_criterion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_transience_dichotomy_mc"
+    },
+    {
+      "id": "e_26375",
+      "from": "t_lyapunov_foster_criterion",
+      "to": "s_drift_criterion_f_regularity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_drift_criterion_f_regularity"
+    },
+    {
+      "id": "e_26376",
+      "from": "t_lyapunov_foster_criterion",
+      "to": "s_f_regularity_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_drift_criterion_f_regularity"
+    },
+    {
+      "id": "e_26377",
+      "from": "t_lyapunov_foster_criterion",
+      "to": "s_recurrence_transience_dichotomy_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_transience_dichotomy_mc"
+    },
+    {
+      "id": "e_26378",
+      "from": "t_lyapunov_foster_criterion",
+      "to": "s_random_walk_increment_mean_criterion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_transience_dichotomy_mc"
+    },
+    {
+      "id": "e_26379",
+      "from": "t_lyapunov_foster_criterion",
+      "to": "s_dynkin_formula_discrete_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_dynkin_formula_discrete_mc"
+    },
+    {
+      "id": "e_26380",
+      "from": "s_dynkin_formula_discrete_mc",
+      "to": "t_lyapunov_foster_criterion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_comparison_theorem_drift"
+    },
+    {
+      "id": "e_26381",
+      "from": "t_lyapunov_foster_criterion",
+      "to": "s_comparison_theorem_drift",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_comparison_theorem_drift"
+    },
+    {
+      "id": "e_26382",
+      "from": "s_small_set",
+      "to": "t_nummelin_splitting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_small_sets"
+    },
+    {
+      "id": "e_26383",
+      "from": "s_minorization_condition",
+      "to": "t_nummelin_splitting",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_small_sets"
+    },
+    {
+      "id": "e_26384",
+      "from": "t_nummelin_splitting",
+      "to": "s_existence_small_sets",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_existence_small_sets"
+    },
+    {
+      "id": "e_26385",
+      "from": "t_nummelin_splitting",
+      "to": "s_maximal_harris_set",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_harris_set"
+    },
+    {
+      "id": "e_26386",
+      "from": "s_atom_general_state_space",
+      "to": "t_regeneration_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fundamental_kernel_z_mc"
+    },
+    {
+      "id": "e_26387",
+      "from": "t_regeneration_technique",
+      "to": "s_fundamental_kernel_z_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fundamental_kernel_z_mc"
+    },
+    {
+      "id": "e_26388",
+      "from": "t_regeneration_technique",
+      "to": "s_maximal_harris_set",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_maximal_harris_set"
+    },
+    {
+      "id": "e_26389",
+      "from": "s_poisson_equation_mc",
+      "to": "t_regeneration_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_fundamental_kernel_z_mc"
+    },
+    {
+      "id": "e_26390",
+      "from": "s_drift_operator_mc",
+      "to": "t_generator_characterization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quasi_compactness_weighted_mc"
+    },
+    {
+      "id": "e_26391",
+      "from": "t_generator_characterization",
+      "to": "s_quasi_compactness_weighted_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quasi_compactness_weighted_mc"
+    },
+    {
+      "id": "e_26392",
+      "from": "s_reachable_point_mc",
+      "to": "t_generator_characterization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_irreducibility_t_chain"
+    },
+    {
+      "id": "e_26393",
+      "from": "s_t_chain",
+      "to": "t_generator_characterization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_irreducibility_t_chain"
+    },
+    {
+      "id": "e_26394",
+      "from": "t_generator_characterization",
+      "to": "s_topological_irreducibility_t_chain",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_topological_irreducibility_t_chain"
+    },
+    {
+      "id": "e_26395",
+      "from": "s_substochastic_kernel",
+      "to": "t_generator_characterization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transience_mc"
+    },
+    {
+      "id": "e_26396",
+      "from": "t_generator_characterization",
+      "to": "s_transience_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transience_mc"
+    },
+    {
+      "id": "e_26397",
+      "from": "s_linear_state_space_model",
+      "to": "t_lyapunov_foster_criterion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_v_uniform_ergodicity"
+    },
+    {
+      "id": "e_26398",
+      "from": "t_lyapunov_foster_criterion",
+      "to": "s_v_uniform_ergodicity",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_v_uniform_ergodicity"
+    },
+    {
+      "id": "e_26399",
+      "from": "s_random_walk_half_line",
+      "to": "t_lyapunov_foster_criterion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_drift_criterion_positive_recurrence"
+    },
+    {
+      "id": "e_26400",
+      "from": "t_lyapunov_foster_criterion",
+      "to": "s_drift_criterion_positive_recurrence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_drift_criterion_positive_recurrence"
+    },
+    {
+      "id": "e_26401",
+      "from": "s_forward_recurrence_time_chain",
+      "to": "t_regeneration_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_positive_harris_recurrence"
+    },
+    {
+      "id": "e_26402",
+      "from": "t_regeneration_technique",
+      "to": "s_positive_harris_recurrence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_positive_harris_recurrence"
+    },
+    {
+      "id": "e_26403",
+      "from": "s_random_walk_increment_mean_criterion",
+      "to": "t_lyapunov_foster_criterion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_mc"
+    },
+    {
+      "id": "e_26404",
+      "from": "t_lyapunov_foster_criterion",
+      "to": "s_recurrence_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_mc"
+    },
+    {
+      "id": "e_26405",
+      "from": "s_f_regularity_mc",
+      "to": "t_martingale_approximation_mc",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_clt_geometric_ergodicity"
+    },
+    {
+      "id": "e_26406",
+      "from": "s_quasi_compactness_weighted_mc",
+      "to": "t_martingale_approximation_mc",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_clt_geometric_ergodicity"
+    },
+    {
+      "id": "e_26407",
+      "from": "s_sub_super_harmonic_mc",
+      "to": "t_generator_characterization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_recurrence_transience_dichotomy_mc"
+    },
+    {
+      "id": "e_26408",
+      "from": "t_generator_characterization",
+      "to": "s_drift_operator_mc",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26409",
+      "from": "s_law_of_random_variable",
+      "to": "t_law_of_unconscious_statistician",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26410",
+      "from": "s_expectation",
+      "to": "t_law_of_unconscious_statistician",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26411",
+      "from": "s_kernel_action_on_functions_and_measures",
+      "to": "t_law_of_unconscious_statistician",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26412",
+      "from": "t_law_of_unconscious_statistician",
+      "to": "s_expectation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26413",
+      "from": "t_law_of_unconscious_statistician",
+      "to": "s_moments_variance_covariance",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moments_variance_covariance"
+    },
+    {
+      "id": "e_26414",
+      "from": "t_law_of_unconscious_statistician",
+      "to": "s_characteristic_function",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26415",
+      "from": "s_ui_and_l1_convergence",
+      "to": "t_de_la_vallee_poussin_ui_criterion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26416",
+      "from": "s_expectation",
+      "to": "t_de_la_vallee_poussin_ui_criterion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26417",
+      "from": "s_submartingale",
+      "to": "t_de_la_vallee_poussin_ui_criterion",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26418",
+      "from": "t_de_la_vallee_poussin_ui_criterion",
+      "to": "s_ui_and_l1_convergence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26419",
+      "from": "t_de_la_vallee_poussin_ui_criterion",
+      "to": "s_square_integrable_martingale",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_square_integrable_martingale"
+    },
+    {
+      "id": "e_26420",
+      "from": "s_conditional_expectation",
+      "to": "t_substitution_rule_conditioning",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26421",
+      "from": "s_regular_conditional_distribution",
+      "to": "t_substitution_rule_conditioning",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26422",
+      "from": "s_independence_of_sigma_algebras",
+      "to": "t_substitution_rule_conditioning",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26423",
+      "from": "s_conditional_independence",
+      "to": "t_substitution_rule_conditioning",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conditional_independence"
+    },
+    {
+      "id": "e_26424",
+      "from": "t_substitution_rule_conditioning",
+      "to": "s_conditional_expectation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26425",
+      "from": "t_substitution_rule_conditioning",
+      "to": "s_conditional_independence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_conditional_independence"
+    },
+    {
+      "id": "e_26426",
+      "from": "s_it_integral",
+      "to": "t_ito_isometry_martingale",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26427",
+      "from": "s_brownian_motion",
+      "to": "t_ito_isometry_martingale",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26428",
+      "from": "s_progressively_measurable_process",
+      "to": "t_ito_isometry_martingale",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_progressively_measurable_process"
+    },
+    {
+      "id": "e_26429",
+      "from": "s_square_integrable_martingale",
+      "to": "t_ito_isometry_martingale",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_square_integrable_martingale"
+    },
+    {
+      "id": "e_26430",
+      "from": "t_ito_isometry_martingale",
+      "to": "s_it_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26431",
+      "from": "t_ito_isometry_martingale",
+      "to": "s_optional_quadratic_variation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_optional_quadratic_variation"
+    },
+    {
+      "id": "e_26432",
+      "from": "t_ito_isometry_martingale",
+      "to": "s_stochastic_integral_semimartingale",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_integral_semimartingale"
+    },
+    {
+      "id": "e_26433",
+      "from": "s_semimartingale",
+      "to": "t_integration_by_parts_semimartingale",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26434",
+      "from": "s_stochastic_integral_semimartingale",
+      "to": "t_integration_by_parts_semimartingale",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_integral_semimartingale"
+    },
+    {
+      "id": "e_26435",
+      "from": "s_quadratic_covariation",
+      "to": "t_integration_by_parts_semimartingale",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_covariation"
+    },
+    {
+      "id": "e_26436",
+      "from": "t_integration_by_parts_semimartingale",
+      "to": "s_quadratic_covariation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_covariation"
+    },
+    {
+      "id": "e_26437",
+      "from": "t_integration_by_parts_semimartingale",
+      "to": "s_ito_formula_jump_semimartingale",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_jump_semimartingale"
+    },
+    {
+      "id": "e_26438",
+      "from": "t_integration_by_parts_semimartingale",
+      "to": "s_stochastic_exponential",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26439",
+      "from": "s_poisson_random_measure",
+      "to": "t_laplace_functional_prm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26440",
+      "from": "s_intensity_measure",
+      "to": "t_laplace_functional_prm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_intensity_measure"
+    },
+    {
+      "id": "e_26441",
+      "from": "s_random_measure",
+      "to": "t_laplace_functional_prm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_random_measure"
+    },
+    {
+      "id": "e_26442",
+      "from": "t_laplace_functional_prm",
+      "to": "s_campbell_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_campbell_theorem"
+    },
+    {
+      "id": "e_26443",
+      "from": "t_laplace_functional_prm",
+      "to": "s_integral_wrt_poisson_random_measure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_integral_wrt_poisson_random_measure"
+    },
+    {
+      "id": "e_26444",
+      "from": "t_laplace_functional_prm",
+      "to": "s_characteristic_exponent_levy",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characteristic_exponent_levy"
+    },
+    {
+      "id": "e_26445",
+      "from": "s_levy_process",
+      "to": "t_subordination_of_processes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26446",
+      "from": "s_subordinator",
+      "to": "t_subordination_of_processes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_subordinator"
+    },
+    {
+      "id": "e_26447",
+      "from": "s_brownian_motion",
+      "to": "t_subordination_of_processes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26448",
+      "from": "s_markov_process_cinlar",
+      "to": "t_subordination_of_processes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26449",
+      "from": "t_subordination_of_processes",
+      "to": "s_subordinator",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_subordinator"
+    },
+    {
+      "id": "e_26450",
+      "from": "t_subordination_of_processes",
+      "to": "s_generator_of_levy_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generator_of_levy_process"
+    },
+    {
+      "id": "e_26451",
+      "from": "t_subordination_of_processes",
+      "to": "s_stable_distribution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26452",
+      "from": "s_it_integral",
+      "to": "t_stochastic_fubini_theorem",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26453",
+      "from": "s_product_measure",
+      "to": "t_stochastic_fubini_theorem",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26454",
+      "from": "s_progressively_measurable_process",
+      "to": "t_stochastic_fubini_theorem",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_progressively_measurable_process"
+    },
+    {
+      "id": "e_26455",
+      "from": "s_stochastic_integral_semimartingale",
+      "to": "t_stochastic_fubini_theorem",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_integral_semimartingale"
+    },
+    {
+      "id": "e_26456",
+      "from": "t_stochastic_fubini_theorem",
+      "to": "s_it_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26457",
+      "from": "t_stochastic_fubini_theorem",
+      "to": "s_potential_of_a_measure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_potential_of_a_measure"
+    },
+    {
+      "id": "e_26458",
+      "from": "s_radon_nikodym_derivative",
+      "to": "t_radon_nikodym_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26459",
+      "from": "t_radon_nikodym_technique",
+      "to": "s_indefinite_integral_measure_density",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_indefinite_integral_measure_density"
+    },
+    {
+      "id": "e_26460",
+      "from": "s_indefinite_integral_measure_density",
+      "to": "t_radon_nikodym_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_indefinite_integral_measure_density"
+    },
+    {
+      "id": "e_26461",
+      "from": "s_indefinite_integral_measure_density",
+      "to": "t_change_of_measure_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_indefinite_integral_measure_density"
+    },
+    {
+      "id": "e_26462",
+      "from": "s_markov_kernel",
+      "to": "t_law_of_unconscious_statistician",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26463",
+      "from": "t_conditional_measures_disintegration",
+      "to": "s_kernel_built_product_measure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kernel_built_product_measure"
+    },
+    {
+      "id": "e_26464",
+      "from": "s_product_of_kernels",
+      "to": "t_conditional_measures_disintegration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26465",
+      "from": "s_kernel_built_product_measure",
+      "to": "t_stochastic_fubini_theorem",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kernel_built_product_measure"
+    },
+    {
+      "id": "e_26466",
+      "from": "s_moments_variance_covariance",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moments_variance_covariance"
+    },
+    {
+      "id": "e_26467",
+      "from": "t_characteristic_function_method",
+      "to": "s_gaussian_random_vector",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gaussian_random_vector"
+    },
+    {
+      "id": "e_26468",
+      "from": "s_gaussian_random_vector",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gaussian_random_vector"
+    },
+    {
+      "id": "e_26469",
+      "from": "s_law_of_random_variable",
+      "to": "t_conditional_measures_disintegration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26470",
+      "from": "t_conditional_measures_disintegration",
+      "to": "s_doob_dynkin_lemma",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_doob_dynkin_lemma"
+    },
+    {
+      "id": "e_26471",
+      "from": "s_doob_dynkin_lemma",
+      "to": "t_conditional_expectations_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_doob_dynkin_lemma"
+    },
+    {
+      "id": "e_26472",
+      "from": "s_gaussian_random_vector",
+      "to": "t_skorokhod_representation_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gaussian_random_vector"
+    },
+    {
+      "id": "e_26473",
+      "from": "t_skorokhod_representation_technique",
+      "to": "s_gaussian_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gaussian_process"
+    },
+    {
+      "id": "e_26474",
+      "from": "s_gaussian_process",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_gaussian_process"
+    },
+    {
+      "id": "e_26475",
+      "from": "t_it_calculus",
+      "to": "s_multidimensional_brownian_motion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_multidimensional_brownian_motion"
+    },
+    {
+      "id": "e_26476",
+      "from": "s_multidimensional_brownian_motion",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_multidimensional_brownian_motion"
+    },
+    {
+      "id": "e_26477",
+      "from": "s_gaussian_process",
+      "to": "t_change_of_measure_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26478",
+      "from": "t_change_of_measure_technique",
+      "to": "s_brownian_bridge_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brownian_bridge_process"
+    },
+    {
+      "id": "e_26479",
+      "from": "s_brownian_bridge_process",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brownian_bridge_process"
+    },
+    {
+      "id": "e_26480",
+      "from": "s_filtration_f_t",
+      "to": "t_localization_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26481",
+      "from": "t_localization_technique",
+      "to": "s_progressively_measurable_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_progressively_measurable_process"
+    },
+    {
+      "id": "e_26482",
+      "from": "s_progressively_measurable_process",
+      "to": "t_localization_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_progressively_measurable_process"
+    },
+    {
+      "id": "e_26483",
+      "from": "s_submartingale",
+      "to": "t_doob_meyer_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26484",
+      "from": "t_doob_meyer_technique",
+      "to": "s_doob_decomposition_discrete",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_doob_decomposition_discrete"
+    },
+    {
+      "id": "e_26485",
+      "from": "s_doob_decomposition_discrete",
+      "to": "t_doob_meyer_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_doob_decomposition_discrete"
+    },
+    {
+      "id": "e_26486",
+      "from": "t_doob_meyer_technique",
+      "to": "s_increasing_process_stieltjes_measure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_increasing_process_stieltjes_measure"
+    },
+    {
+      "id": "e_26487",
+      "from": "s_increasing_process_stieltjes_measure",
+      "to": "t_doob_meyer_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_increasing_process_stieltjes_measure"
+    },
+    {
+      "id": "e_26488",
+      "from": "s_square_integrable_martingale",
+      "to": "t_doob_meyer_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_square_integrable_martingale"
+    },
+    {
+      "id": "e_26489",
+      "from": "t_doob_meyer_technique",
+      "to": "s_optional_quadratic_variation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_optional_quadratic_variation"
+    },
+    {
+      "id": "e_26490",
+      "from": "s_optional_quadratic_variation",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_optional_quadratic_variation"
+    },
+    {
+      "id": "e_26491",
+      "from": "t_it_calculus",
+      "to": "s_quadratic_covariation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_covariation"
+    },
+    {
+      "id": "e_26492",
+      "from": "s_quadratic_covariation",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_covariation"
+    },
+    {
+      "id": "e_26493",
+      "from": "s_local_martingale_M_t",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26494",
+      "from": "t_it_calculus",
+      "to": "s_stochastic_integral_semimartingale",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_integral_semimartingale"
+    },
+    {
+      "id": "e_26495",
+      "from": "s_stochastic_integral_semimartingale",
+      "to": "t_localization_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_integral_semimartingale"
+    },
+    {
+      "id": "e_26496",
+      "from": "s_quadratic_covariation",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kunita_watanabe_inequality"
+    },
+    {
+      "id": "e_26497",
+      "from": "t_it_calculus",
+      "to": "s_kunita_watanabe_inequality",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kunita_watanabe_inequality"
+    },
+    {
+      "id": "e_26498",
+      "from": "s_kunita_watanabe_inequality",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kunita_watanabe_inequality"
+    },
+    {
+      "id": "e_26499",
+      "from": "s_semimartingale",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_jump_semimartingale"
+    },
+    {
+      "id": "e_26500",
+      "from": "s_quadratic_covariation",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_jump_semimartingale"
+    },
+    {
+      "id": "e_26501",
+      "from": "t_it_calculus",
+      "to": "s_ito_formula_jump_semimartingale",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_jump_semimartingale"
+    },
+    {
+      "id": "e_26502",
+      "from": "s_ito_formula_jump_semimartingale",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_jump_semimartingale"
+    },
+    {
+      "id": "e_26503",
+      "from": "s_local_time",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_tanaka_formula"
+    },
+    {
+      "id": "e_26504",
+      "from": "s_tanaka_formula",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_tanaka_formula"
+    },
+    {
+      "id": "e_26505",
+      "from": "t_it_calculus",
+      "to": "s_ito_tanaka_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_tanaka_formula"
+    },
+    {
+      "id": "e_26506",
+      "from": "s_ito_tanaka_formula",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_tanaka_formula"
+    },
+    {
+      "id": "e_26507",
+      "from": "t_it_calculus",
+      "to": "s_occupation_times_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_tanaka_formula"
+    },
+    {
+      "id": "e_26508",
+      "from": "s_poisson_random_measure",
+      "to": "t_standard_machine",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_random_measure"
+    },
+    {
+      "id": "e_26509",
+      "from": "t_standard_machine",
+      "to": "s_random_measure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_random_measure"
+    },
+    {
+      "id": "e_26510",
+      "from": "s_random_measure",
+      "to": "t_monotone_class_argument",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_point_process"
+    },
+    {
+      "id": "e_26511",
+      "from": "t_monotone_class_argument",
+      "to": "s_point_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_point_process"
+    },
+    {
+      "id": "e_26512",
+      "from": "s_point_process",
+      "to": "t_laplace_functional_prm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_point_process"
+    },
+    {
+      "id": "e_26513",
+      "from": "s_random_measure",
+      "to": "t_law_of_unconscious_statistician",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_intensity_measure"
+    },
+    {
+      "id": "e_26514",
+      "from": "t_law_of_unconscious_statistician",
+      "to": "s_intensity_measure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_intensity_measure"
+    },
+    {
+      "id": "e_26515",
+      "from": "s_poisson_random_measure",
+      "to": "t_standard_machine",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_integral_wrt_poisson_random_measure"
+    },
+    {
+      "id": "e_26516",
+      "from": "t_standard_machine",
+      "to": "s_integral_wrt_poisson_random_measure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_integral_wrt_poisson_random_measure"
+    },
+    {
+      "id": "e_26517",
+      "from": "s_integral_wrt_poisson_random_measure",
+      "to": "t_martingale_method_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compensated_poisson_integral"
+    },
+    {
+      "id": "e_26518",
+      "from": "t_martingale_method_cinlar",
+      "to": "s_compensated_poisson_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_compensated_poisson_integral"
+    },
+    {
+      "id": "e_26519",
+      "from": "s_compensated_poisson_integral",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levy_ito_decomposition"
+    },
+    {
+      "id": "e_26520",
+      "from": "t_it_calculus",
+      "to": "s_levy_ito_decomposition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levy_ito_decomposition"
+    },
+    {
+      "id": "e_26521",
+      "from": "s_intensity_measure",
+      "to": "t_laplace_functional_prm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_campbell_theorem"
+    },
+    {
+      "id": "e_26522",
+      "from": "s_campbell_theorem",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_campbell_theorem"
+    },
+    {
+      "id": "e_26523",
+      "from": "s_poisson_random_measure",
+      "to": "t_law_of_unconscious_statistician",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mapping_theorem_prm"
+    },
+    {
+      "id": "e_26524",
+      "from": "t_law_of_unconscious_statistician",
+      "to": "s_mapping_theorem_prm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mapping_theorem_prm"
+    },
+    {
+      "id": "e_26525",
+      "from": "s_mapping_theorem_prm",
+      "to": "t_laplace_functional_prm",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_mapping_theorem_prm"
+    },
+    {
+      "id": "e_26526",
+      "from": "s_levy_process",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characteristic_exponent_levy"
+    },
+    {
+      "id": "e_26527",
+      "from": "t_characteristic_function_method",
+      "to": "s_characteristic_exponent_levy",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characteristic_exponent_levy"
+    },
+    {
+      "id": "e_26528",
+      "from": "s_characteristic_exponent_levy",
+      "to": "t_generator_characterization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generator_of_levy_process"
+    },
+    {
+      "id": "e_26529",
+      "from": "t_generator_characterization",
+      "to": "s_generator_of_levy_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generator_of_levy_process"
+    },
+    {
+      "id": "e_26530",
+      "from": "s_levy_khintchine_formula",
+      "to": "t_characteristic_function_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_characteristic_exponent_levy"
+    },
+    {
+      "id": "e_26531",
+      "from": "s_chapman_kolmogorov_equations",
+      "to": "t_semigroup_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transition_function_semigroup"
+    },
+    {
+      "id": "e_26532",
+      "from": "t_semigroup_method",
+      "to": "s_transition_function_semigroup",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_transition_function_semigroup"
+    },
+    {
+      "id": "e_26533",
+      "from": "s_transition_function_semigroup",
+      "to": "t_generator_characterization",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generator_of_levy_process"
+    },
+    {
+      "id": "e_26534",
+      "from": "s_transition_function_semigroup",
+      "to": "t_time_change_markov",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_canonical_realization_markov"
+    },
+    {
+      "id": "e_26535",
+      "from": "s_ionescu_tulcea_theorem",
+      "to": "t_conditional_measures_disintegration",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_canonical_realization_markov"
+    },
+    {
+      "id": "e_26536",
+      "from": "t_conditional_measures_disintegration",
+      "to": "s_canonical_realization_markov",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_canonical_realization_markov"
+    },
+    {
+      "id": "e_26537",
+      "from": "s_canonical_realization_markov",
+      "to": "t_martingale_method_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_canonical_realization_markov"
+    },
+    {
+      "id": "e_26538",
+      "from": "s_subordinator",
+      "to": "t_subordination_formula",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_subordinator"
+    },
+    {
+      "id": "e_26539",
+      "from": "t_subordination_formula",
+      "to": "s_generator_of_levy_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_generator_of_levy_process"
+    },
+    {
+      "id": "e_26540",
+      "from": "s_levy_measure_integral_existence",
+      "to": "t_subordination_of_processes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_subordinator"
+    },
+    {
+      "id": "e_26541",
+      "from": "s_potential_kernel_U",
+      "to": "t_potential_theory_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_potential_of_a_measure"
+    },
+    {
+      "id": "e_26542",
+      "from": "t_potential_theory_technique",
+      "to": "s_potential_of_a_measure",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_potential_of_a_measure"
+    },
+    {
+      "id": "e_26543",
+      "from": "s_potential_of_a_measure",
+      "to": "t_potential_theory_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_potential_of_a_measure"
+    },
+    {
+      "id": "e_26544",
+      "from": "s_excessive_function_mc",
+      "to": "t_potential_theory_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_potential_of_a_measure"
+    },
+    {
+      "id": "e_26545",
+      "from": "s_conditional_independence",
+      "to": "t_conditional_expectations_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_markov_property"
+    },
+    {
+      "id": "e_26546",
+      "from": "t_conditional_expectations_method",
+      "to": "s_markov_property",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_markov_property"
+    },
+    {
+      "id": "e_26547",
+      "from": "s_doob_decomposition_discrete",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26548",
+      "from": "s_increasing_process_stieltjes_measure",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_covariation"
+    },
+    {
+      "id": "e_26549",
+      "from": "s_compensator_process",
+      "to": "t_doob_meyer_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_doob_decomposition_discrete"
+    },
+    {
+      "id": "e_26550",
+      "from": "s_multidimensional_brownian_motion",
+      "to": "t_ito_isometry_martingale",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26551",
+      "from": "s_brownian_bridge_process",
+      "to": "t_stochastic_fubini_theorem",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": ""
+    },
+    {
+      "id": "e_26552",
+      "from": "s_gaussian_random_vector",
+      "to": "t_law_of_unconscious_statistician",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_moments_variance_covariance"
+    },
+    {
+      "id": "e_26553",
+      "from": "s_haar_schauder_functions",
+      "to": "t_levy_ciesielski_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brownian_motion"
+    },
+    {
+      "id": "e_26554",
+      "from": "t_levy_ciesielski_construction",
+      "to": "s_brownian_motion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brownian_motion"
+    },
+    {
+      "id": "e_26555",
+      "from": "s_brownian_motion",
+      "to": "t_wald_exponential_martingale_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_passage_time_T_a_distribution"
+    },
+    {
+      "id": "e_26556",
+      "from": "t_wald_exponential_martingale_technique",
+      "to": "s_b_squared_minus_t_martingale",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_b_squared_minus_t_martingale"
+    },
+    {
+      "id": "e_26557",
+      "from": "t_wald_exponential_martingale_technique",
+      "to": "s_first_passage_time_T_a_distribution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_passage_time_T_a_distribution"
+    },
+    {
+      "id": "e_26558",
+      "from": "t_wald_exponential_martingale_technique",
+      "to": "s_T_a_finite_infinite_expectation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_T_a_finite_infinite_expectation"
+    },
+    {
+      "id": "e_26559",
+      "from": "s_b_squared_minus_t_martingale",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_T_a_finite_infinite_expectation"
+    },
+    {
+      "id": "e_26560",
+      "from": "s_space_of_simple_processes",
+      "to": "t_ito_integral_simple_processes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_it_integral"
+    },
+    {
+      "id": "e_26561",
+      "from": "t_ito_integral_simple_processes",
+      "to": "s_it_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_it_integral"
+    },
+    {
+      "id": "e_26562",
+      "from": "s_martingale",
+      "to": "t_ito_integral_simple_processes",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_it_integral"
+    },
+    {
+      "id": "e_26563",
+      "from": "s_it_integral",
+      "to": "t_isometric_extension_ito_integral",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_integral_is_continuous_L2_martingale"
+    },
+    {
+      "id": "e_26564",
+      "from": "s_space_of_simple_processes",
+      "to": "t_isometric_extension_ito_integral",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_integral_is_continuous_L2_martingale"
+    },
+    {
+      "id": "e_26565",
+      "from": "t_isometric_extension_ito_integral",
+      "to": "s_stochastic_integral_is_continuous_L2_martingale",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_integral_is_continuous_L2_martingale"
+    },
+    {
+      "id": "e_26566",
+      "from": "s_it_integral",
+      "to": "t_ito_isometry_martingale",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_integral_is_continuous_L2_martingale"
+    },
+    {
+      "id": "e_26567",
+      "from": "s_stochastic_integral_is_continuous_L2_martingale",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_variation_of_stochastic_integral"
+    },
+    {
+      "id": "e_26568",
+      "from": "t_it_calculus",
+      "to": "s_quadratic_variation_of_stochastic_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_variation_of_stochastic_integral"
+    },
+    {
+      "id": "e_26569",
+      "from": "t_it_calculus",
+      "to": "s_associativity_of_stochastic_integral",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_associativity_of_stochastic_integral"
+    },
+    {
+      "id": "e_26570",
+      "from": "s_localization_of_quadratic_variation",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_variation_of_stochastic_integral"
+    },
+    {
+      "id": "e_26571",
+      "from": "t_doob_meyer_technique",
+      "to": "s_localization_of_quadratic_variation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_localization_of_quadratic_variation"
+    },
+    {
+      "id": "e_26572",
+      "from": "s_doob_meyer_decomposition",
+      "to": "t_doob_meyer_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_localization_of_quadratic_variation"
+    },
+    {
+      "id": "e_26573",
+      "from": "t_localization_technique",
+      "to": "s_localization_of_quadratic_variation",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_localization_of_quadratic_variation"
+    },
+    {
+      "id": "e_26574",
+      "from": "t_doob_meyer_technique",
+      "to": "s_cross_variation_M_N",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cross_variation_M_N"
+    },
+    {
+      "id": "e_26575",
+      "from": "s_localization_of_quadratic_variation",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cross_variation_M_N"
+    },
+    {
+      "id": "e_26576",
+      "from": "t_it_calculus",
+      "to": "s_quadratic_variation_as_limit_of_sums",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_quadratic_variation_as_limit_of_sums"
+    },
+    {
+      "id": "e_26577",
+      "from": "s_submartingale",
+      "to": "t_doob_meyer_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_meyer_process"
+    },
+    {
+      "id": "e_26578",
+      "from": "t_doob_meyer_technique",
+      "to": "s_meyer_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_meyer_process"
+    },
+    {
+      "id": "e_26579",
+      "from": "s_increasing_process",
+      "to": "t_doob_meyer_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_meyer_process"
+    },
+    {
+      "id": "e_26580",
+      "from": "s_natural_increasing_process",
+      "to": "t_doob_meyer_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_meyer_process"
+    },
+    {
+      "id": "e_26581",
+      "from": "s_it_process",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_one_dimensional"
+    },
+    {
+      "id": "e_26582",
+      "from": "t_it_calculus",
+      "to": "s_ito_formula_one_dimensional",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_one_dimensional"
+    },
+    {
+      "id": "e_26583",
+      "from": "t_it_calculus",
+      "to": "s_ito_formula_multidimensional",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_multidimensional"
+    },
+    {
+      "id": "e_26584",
+      "from": "t_it_calculus",
+      "to": "s_ito_formula_time_dependent",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_time_dependent"
+    },
+    {
+      "id": "e_26585",
+      "from": "s_semimartingale",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_formula_multidimensional"
+    },
+    {
+      "id": "e_26586",
+      "from": "s_girsanov_theorem",
+      "to": "t_change_of_measure_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_girsanov_transformation_local_martingales"
+    },
+    {
+      "id": "e_26587",
+      "from": "t_change_of_measure_technique",
+      "to": "s_girsanov_transformation_local_martingales",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_girsanov_transformation_local_martingales"
+    },
+    {
+      "id": "e_26588",
+      "from": "s_novikov_condition",
+      "to": "t_change_of_measure_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kazamaki_condition"
+    },
+    {
+      "id": "e_26589",
+      "from": "t_change_of_measure_technique",
+      "to": "s_kazamaki_condition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kazamaki_condition"
+    },
+    {
+      "id": "e_26590",
+      "from": "t_change_of_measure_technique",
+      "to": "s_cameron_martin_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cameron_martin_formula"
+    },
+    {
+      "id": "e_26591",
+      "from": "s_brownian_motion",
+      "to": "t_change_of_measure_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cameron_martin_formula"
+    },
+    {
+      "id": "e_26592",
+      "from": "s_dambis_dubins_schwarz",
+      "to": "t_time_change_markov",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_knight_theorem_multidim_time_change"
+    },
+    {
+      "id": "e_26593",
+      "from": "s_cross_variation_M_N",
+      "to": "t_time_change_markov",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_knight_theorem_multidim_time_change"
+    },
+    {
+      "id": "e_26594",
+      "from": "t_time_change_markov",
+      "to": "s_knight_theorem_multidim_time_change",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_knight_theorem_multidim_time_change"
+    },
+    {
+      "id": "e_26595",
+      "from": "s_dirichlet_problem",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_harmonic_function_of_bm_is_local_martingale"
+    },
+    {
+      "id": "e_26596",
+      "from": "t_it_calculus",
+      "to": "s_harmonic_function_of_bm_is_local_martingale",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_harmonic_function_of_bm_is_local_martingale"
+    },
+    {
+      "id": "e_26597",
+      "from": "s_harmonic_function_of_bm_is_local_martingale",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_probabilistic_mean_value_property"
+    },
+    {
+      "id": "e_26598",
+      "from": "t_optional_stopping_technique_cinlar",
+      "to": "s_probabilistic_mean_value_property",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_probabilistic_mean_value_property"
+    },
+    {
+      "id": "e_26599",
+      "from": "s_dirichlet_problem",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_solution_of_dirichlet_problem"
+    },
+    {
+      "id": "e_26600",
+      "from": "s_harmonic_function_of_bm_is_local_martingale",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_solution_of_dirichlet_problem"
+    },
+    {
+      "id": "e_26601",
+      "from": "t_optional_stopping_technique_cinlar",
+      "to": "s_stochastic_solution_of_dirichlet_problem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_solution_of_dirichlet_problem"
+    },
+    {
+      "id": "e_26602",
+      "from": "s_stochastic_solution_of_dirichlet_problem",
+      "to": "t_exterior_cone_zaremba_condition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_solution_of_dirichlet_problem"
+    },
+    {
+      "id": "e_26603",
+      "from": "s_polarity_of_points_and_sets",
+      "to": "t_exterior_cone_zaremba_condition",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_solution_of_dirichlet_problem"
+    },
+    {
+      "id": "e_26604",
+      "from": "t_exterior_cone_zaremba_condition",
+      "to": "s_stochastic_solution_of_dirichlet_problem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stochastic_solution_of_dirichlet_problem"
+    },
+    {
+      "id": "e_26605",
+      "from": "t_optional_stopping_technique_cinlar",
+      "to": "s_harmonic_measure_exit_distribution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_harmonic_measure_exit_distribution"
+    },
+    {
+      "id": "e_26606",
+      "from": "s_stochastic_solution_of_dirichlet_problem",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poisson_kernel_exit_distribution_ball"
+    },
+    {
+      "id": "e_26607",
+      "from": "t_it_calculus",
+      "to": "s_poisson_kernel_exit_distribution_ball",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poisson_kernel_exit_distribution_ball"
+    },
+    {
+      "id": "e_26608",
+      "from": "s_harmonic_function_of_bm_is_local_martingale",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hitting_probabilities_annulus_exit"
+    },
+    {
+      "id": "e_26609",
+      "from": "t_optional_stopping_technique_cinlar",
+      "to": "s_hitting_probabilities_annulus_exit",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hitting_probabilities_annulus_exit"
+    },
+    {
+      "id": "e_26610",
+      "from": "s_hitting_probabilities_annulus_exit",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_polarity_of_points_and_sets"
+    },
+    {
+      "id": "e_26611",
+      "from": "t_optional_stopping_technique_cinlar",
+      "to": "s_polarity_of_points_and_sets",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_polarity_of_points_and_sets"
+    },
+    {
+      "id": "e_26612",
+      "from": "s_dirichlet_problem",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poisson_equation_probabilistic_solution"
+    },
+    {
+      "id": "e_26613",
+      "from": "t_optional_stopping_technique_cinlar",
+      "to": "s_poisson_equation_probabilistic_solution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_poisson_equation_probabilistic_solution"
+    },
+    {
+      "id": "e_26614",
+      "from": "t_optional_stopping_technique_cinlar",
+      "to": "s_expected_exit_time_solves_poisson",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_expected_exit_time_solves_poisson"
+    },
+    {
+      "id": "e_26615",
+      "from": "s_poisson_equation_probabilistic_solution",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_expected_exit_time_solves_poisson"
+    },
+    {
+      "id": "e_26616",
+      "from": "t_optional_stopping_technique_cinlar",
+      "to": "s_probabilistic_maximum_principle",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_probabilistic_maximum_principle"
+    },
+    {
+      "id": "e_26617",
+      "from": "s_harmonic_function_of_bm_is_local_martingale",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_probabilistic_maximum_principle"
+    },
+    {
+      "id": "e_26618",
+      "from": "s_brownian_motion",
+      "to": "t_sturm_liouville_green_function",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kac_formula_brownian_functionals"
+    },
+    {
+      "id": "e_26619",
+      "from": "t_sturm_liouville_green_function",
+      "to": "s_kac_formula_brownian_functionals",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kac_formula_brownian_functionals"
+    },
+    {
+      "id": "e_26620",
+      "from": "s_poisson_equation_probabilistic_solution",
+      "to": "t_sturm_liouville_green_function",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_kac_formula_brownian_functionals"
+    },
+    {
+      "id": "e_26621",
+      "from": "s_gaussian_heat_kernel",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_heat_equation_probabilistic_solution"
+    },
+    {
+      "id": "e_26622",
+      "from": "t_it_calculus",
+      "to": "s_heat_equation_probabilistic_solution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_heat_equation_probabilistic_solution"
+    },
+    {
+      "id": "e_26623",
+      "from": "s_brownian_transition_semigroup",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_heat_equation_probabilistic_solution"
+    },
+    {
+      "id": "e_26624",
+      "from": "t_it_calculus",
+      "to": "s_cauchy_problem_uniqueness_tychonoff",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_cauchy_problem_uniqueness_tychonoff"
+    },
+    {
+      "id": "e_26625",
+      "from": "s_feynman_kac_formula",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_heat_equation_probabilistic_solution"
+    },
+    {
+      "id": "e_26626",
+      "from": "t_levy_ciesielski_construction",
+      "to": "s_brownian_transition_semigroup",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brownian_transition_semigroup"
+    },
+    {
+      "id": "e_26627",
+      "from": "s_gaussian_heat_kernel",
+      "to": "t_semigroup_method",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brownian_transition_semigroup"
+    },
+    {
+      "id": "e_26628",
+      "from": "t_semigroup_method",
+      "to": "s_brownian_transition_semigroup",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_brownian_transition_semigroup"
+    },
+    {
+      "id": "e_26629",
+      "from": "s_gronwall_inequality",
+      "to": "t_picard_iteration_sde",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_existence_uniqueness_theorem"
+    },
+    {
+      "id": "e_26630",
+      "from": "t_picard_iteration_sde",
+      "to": "s_strong_solution_of_sde",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_existence_uniqueness_theorem"
+    },
+    {
+      "id": "e_26631",
+      "from": "t_picard_iteration_sde",
+      "to": "s_ito_existence_uniqueness_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_existence_uniqueness_theorem"
+    },
+    {
+      "id": "e_26632",
+      "from": "t_picard_iteration_sde",
+      "to": "s_a_priori_moment_estimates_sde",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_a_priori_moment_estimates_sde"
+    },
+    {
+      "id": "e_26633",
+      "from": "s_gronwall_inequality",
+      "to": "t_picard_iteration_sde",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_a_priori_moment_estimates_sde"
+    },
+    {
+      "id": "e_26634",
+      "from": "s_strong_solution_of_sde",
+      "to": "t_picard_iteration_sde",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ito_existence_uniqueness_theorem"
+    },
+    {
+      "id": "e_26635",
+      "from": "s_ito_existence_uniqueness_theorem",
+      "to": "t_strong_markov_via_stopping_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strong_markov_property_of_sde_solutions"
+    },
+    {
+      "id": "e_26636",
+      "from": "t_strong_markov_via_stopping_approximation",
+      "to": "s_strong_markov_property_of_sde_solutions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_strong_markov_property_of_sde_solutions"
+    },
+    {
+      "id": "e_26637",
+      "from": "s_uniqueness_in_law",
+      "to": "t_strong_markov_via_stopping_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_markov_property_of_sde_solutions"
+    },
+    {
+      "id": "e_26638",
+      "from": "t_strong_markov_via_stopping_approximation",
+      "to": "s_markov_property_of_sde_solutions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_markov_property_of_sde_solutions"
+    },
+    {
+      "id": "e_26639",
+      "from": "s_ito_formula_one_dimensional",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_linear_sde_solution"
+    },
+    {
+      "id": "e_26640",
+      "from": "t_it_calculus",
+      "to": "s_linear_sde_solution",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_linear_sde_solution"
+    },
+    {
+      "id": "e_26641",
+      "from": "t_it_calculus",
+      "to": "s_ornstein_uhlenbeck_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ornstein_uhlenbeck_process"
+    },
+    {
+      "id": "e_26642",
+      "from": "s_linear_sde_solution",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_ornstein_uhlenbeck_process"
+    },
+    {
+      "id": "e_26643",
+      "from": "s_ito_formula_multidimensional",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bessel_process"
+    },
+    {
+      "id": "e_26644",
+      "from": "t_it_calculus",
+      "to": "s_bessel_process",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_bessel_process"
+    },
+    {
+      "id": "e_26645",
+      "from": "s_strong_solution_of_sde",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_comparison_theorem_1d_sde"
+    },
+    {
+      "id": "e_26646",
+      "from": "t_it_calculus",
+      "to": "s_comparison_theorem_1d_sde",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_comparison_theorem_1d_sde"
+    },
+    {
+      "id": "e_26647",
+      "from": "s_girsanov_theorem",
+      "to": "t_girsanov_weak_solution_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_solution_of_sde"
+    },
+    {
+      "id": "e_26648",
+      "from": "s_cameron_martin_formula",
+      "to": "t_girsanov_weak_solution_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_solution_of_sde"
+    },
+    {
+      "id": "e_26649",
+      "from": "t_girsanov_weak_solution_construction",
+      "to": "s_weak_solution_of_sde",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_solution_of_sde"
+    },
+    {
+      "id": "e_26650",
+      "from": "t_girsanov_weak_solution_construction",
+      "to": "s_uniqueness_in_law",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_uniqueness_in_law"
+    },
+    {
+      "id": "e_26651",
+      "from": "s_pathwise_uniqueness",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_yamada_watanabe_theorem"
+    },
+    {
+      "id": "e_26652",
+      "from": "s_weak_solution_of_sde",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_yamada_watanabe_theorem"
+    },
+    {
+      "id": "e_26653",
+      "from": "t_it_calculus",
+      "to": "s_yamada_watanabe_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_yamada_watanabe_theorem"
+    },
+    {
+      "id": "e_26654",
+      "from": "t_it_calculus",
+      "to": "s_yamada_watanabe_pathwise_condition",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_yamada_watanabe_pathwise_condition"
+    },
+    {
+      "id": "e_26655",
+      "from": "s_yamada_watanabe_pathwise_condition",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_pathwise_uniqueness"
+    },
+    {
+      "id": "e_26656",
+      "from": "s_weak_solution_of_sde",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equivalence_weak_solutions_martingale_problem"
+    },
+    {
+      "id": "e_26657",
+      "from": "s_martingale_problem",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equivalence_weak_solutions_martingale_problem"
+    },
+    {
+      "id": "e_26658",
+      "from": "t_it_calculus",
+      "to": "s_equivalence_weak_solutions_martingale_problem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_equivalence_weak_solutions_martingale_problem"
+    },
+    {
+      "id": "e_26659",
+      "from": "s_martingale_problem",
+      "to": "t_change_of_measure_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_uniqueness_in_law_via_martingale_problem"
+    },
+    {
+      "id": "e_26660",
+      "from": "t_change_of_measure_technique",
+      "to": "s_uniqueness_in_law_via_martingale_problem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_uniqueness_in_law_via_martingale_problem"
+    },
+    {
+      "id": "e_26661",
+      "from": "s_skorokhod_embedding",
+      "to": "t_skorokhod_representation_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_existence_skorokhod"
+    },
+    {
+      "id": "e_26662",
+      "from": "t_skorokhod_representation_technique",
+      "to": "s_weak_existence_skorokhod",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_existence_skorokhod"
+    },
+    {
+      "id": "e_26663",
+      "from": "s_martingale_problem",
+      "to": "t_skorokhod_representation_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_existence_skorokhod"
+    },
+    {
+      "id": "e_26664",
+      "from": "s_brownian_motion",
+      "to": "t_time_change_construction_1d_sde",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_solution_of_sde"
+    },
+    {
+      "id": "e_26665",
+      "from": "s_engelbert_schmidt_zero_one_law",
+      "to": "t_time_change_construction_1d_sde",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_engelbert_schmidt_conditions"
+    },
+    {
+      "id": "e_26666",
+      "from": "t_time_change_construction_1d_sde",
+      "to": "s_engelbert_schmidt_conditions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_engelbert_schmidt_conditions"
+    },
+    {
+      "id": "e_26667",
+      "from": "t_time_change_construction_1d_sde",
+      "to": "s_weak_solution_of_sde",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_weak_solution_of_sde"
+    },
+    {
+      "id": "e_26668",
+      "from": "t_time_change_construction_1d_sde",
+      "to": "s_tanaka_example_weak_no_strong",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tanaka_example_weak_no_strong"
+    },
+    {
+      "id": "e_26669",
+      "from": "s_engelbert_schmidt_zero_one_law",
+      "to": "t_time_change_markov",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_engelbert_schmidt_zero_one_law"
+    },
+    {
+      "id": "e_26670",
+      "from": "t_time_change_markov",
+      "to": "s_engelbert_schmidt_zero_one_law",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_engelbert_schmidt_zero_one_law"
+    },
+    {
+      "id": "e_26671",
+      "from": "s_feller_test_for_explosions",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_explosion_time"
+    },
+    {
+      "id": "e_26672",
+      "from": "t_it_calculus",
+      "to": "s_feller_test_for_explosions",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_feller_test_for_explosions"
+    },
+    {
+      "id": "e_26673",
+      "from": "s_explosion_time",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_feller_test_for_explosions"
+    },
+    {
+      "id": "e_26674",
+      "from": "s_brownian_motion",
+      "to": "t_wong_zakai_stratonovich_correction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stroock_varadhan_support_theorem"
+    },
+    {
+      "id": "e_26675",
+      "from": "t_wong_zakai_stratonovich_correction",
+      "to": "s_stroock_varadhan_support_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stroock_varadhan_support_theorem"
+    },
+    {
+      "id": "e_26676",
+      "from": "s_strong_solution_of_sde",
+      "to": "t_wong_zakai_stratonovich_correction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stroock_varadhan_support_theorem"
+    },
+    {
+      "id": "e_26677",
+      "from": "s_ito_formula_one_dimensional",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tanaka_formula_positive_part"
+    },
+    {
+      "id": "e_26678",
+      "from": "t_it_calculus",
+      "to": "s_tanaka_formula_positive_part",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tanaka_formula_positive_part"
+    },
+    {
+      "id": "e_26679",
+      "from": "s_local_time",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tanaka_formula_positive_part"
+    },
+    {
+      "id": "e_26680",
+      "from": "s_tanaka_formula",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_tanaka_formula_positive_part"
+    },
+    {
+      "id": "e_26681",
+      "from": "s_local_time",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_trotter_joint_continuity_local_time"
+    },
+    {
+      "id": "e_26682",
+      "from": "t_it_calculus",
+      "to": "s_trotter_joint_continuity_local_time",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_trotter_joint_continuity_local_time"
+    },
+    {
+      "id": "e_26683",
+      "from": "t_it_calculus",
+      "to": "s_downcrossing_representation_local_time",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_downcrossing_representation_local_time"
+    },
+    {
+      "id": "e_26684",
+      "from": "s_local_time",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_downcrossing_representation_local_time"
+    },
+    {
+      "id": "e_26685",
+      "from": "t_it_calculus",
+      "to": "s_continuity_of_local_time_support",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuity_of_local_time_support"
+    },
+    {
+      "id": "e_26686",
+      "from": "s_local_time",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuity_of_local_time_support"
+    },
+    {
+      "id": "e_26687",
+      "from": "s_tanaka_formula_positive_part",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levy_theorem_local_time"
+    },
+    {
+      "id": "e_26688",
+      "from": "t_it_calculus",
+      "to": "s_levy_theorem_local_time",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levy_theorem_local_time"
+    },
+    {
+      "id": "e_26689",
+      "from": "s_skorokhod_lemma_explicit_formula",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_levy_theorem_local_time"
+    },
+    {
+      "id": "e_26690",
+      "from": "s_brownian_motion",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_skorokhod_reflection_problem"
+    },
+    {
+      "id": "e_26691",
+      "from": "t_it_calculus",
+      "to": "s_skorokhod_reflection_problem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_skorokhod_reflection_problem"
+    },
+    {
+      "id": "e_26692",
+      "from": "s_skorokhod_reflection_problem",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_skorokhod_lemma_explicit_formula"
+    },
+    {
+      "id": "e_26693",
+      "from": "t_it_calculus",
+      "to": "s_skorokhod_lemma_explicit_formula",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_skorokhod_lemma_explicit_formula"
+    },
+    {
+      "id": "e_26694",
+      "from": "s_skorokhod_reflection_problem",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_reflected_brownian_motion"
+    },
+    {
+      "id": "e_26695",
+      "from": "t_it_calculus",
+      "to": "s_reflected_brownian_motion",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_reflected_brownian_motion"
+    },
+    {
+      "id": "e_26696",
+      "from": "s_levy_theorem_local_time",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_reflected_brownian_motion"
+    },
+    {
+      "id": "e_26697",
+      "from": "s_levy_theorem_local_time",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_joint_distribution_B_and_local_time"
+    },
+    {
+      "id": "e_26698",
+      "from": "t_it_calculus",
+      "to": "s_joint_distribution_B_and_local_time",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_joint_distribution_B_and_local_time"
+    },
+    {
+      "id": "e_26699",
+      "from": "s_local_time",
+      "to": "t_ito_excursion_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_ray_knight_theorem"
+    },
+    {
+      "id": "e_26700",
+      "from": "s_bessel_process",
+      "to": "t_ito_excursion_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_ray_knight_theorem"
+    },
+    {
+      "id": "e_26701",
+      "from": "t_ito_excursion_theory",
+      "to": "s_first_ray_knight_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_ray_knight_theorem"
+    },
+    {
+      "id": "e_26702",
+      "from": "s_local_time",
+      "to": "t_ito_excursion_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_second_ray_knight_theorem"
+    },
+    {
+      "id": "e_26703",
+      "from": "s_bessel_process",
+      "to": "t_ito_excursion_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_second_ray_knight_theorem"
+    },
+    {
+      "id": "e_26704",
+      "from": "t_ito_excursion_theory",
+      "to": "s_second_ray_knight_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_second_ray_knight_theorem"
+    },
+    {
+      "id": "e_26705",
+      "from": "s_local_time",
+      "to": "t_ito_excursion_theory",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_inverse_local_time_stable_subordinator"
+    },
+    {
+      "id": "e_26706",
+      "from": "t_ito_excursion_theory",
+      "to": "s_inverse_local_time_stable_subordinator",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_inverse_local_time_stable_subordinator"
+    },
+    {
+      "id": "e_26707",
+      "from": "s_dambis_dubins_schwarz",
+      "to": "t_local_time_via_dds",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_ray_knight_theorem"
+    },
+    {
+      "id": "e_26708",
+      "from": "s_local_time",
+      "to": "t_local_time_via_dds",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_continuity_of_local_time_support"
+    },
+    {
+      "id": "e_26709",
+      "from": "t_local_time_via_dds",
+      "to": "s_first_ray_knight_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_first_ray_knight_theorem"
+    },
+    {
+      "id": "e_26710",
+      "from": "t_local_time_via_dds",
+      "to": "s_second_ray_knight_theorem",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_second_ray_knight_theorem"
+    },
+    {
+      "id": "e_26711",
+      "from": "s_optional_time",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_optional_stopping_time_equivalence"
+    },
+    {
+      "id": "e_26712",
+      "from": "t_stopping_time_technique",
+      "to": "s_optional_stopping_time_equivalence",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_optional_stopping_time_equivalence"
+    },
+    {
+      "id": "e_26713",
+      "from": "s_stopping_time",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stopping_time_closure_properties"
+    },
+    {
+      "id": "e_26714",
+      "from": "t_stopping_time_technique",
+      "to": "s_stopping_time_closure_properties",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_stopping_time_closure_properties"
+    },
+    {
+      "id": "e_26715",
+      "from": "s_stopping_time_sigma_algebra_F_T",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_properties_of_F_T"
+    },
+    {
+      "id": "e_26716",
+      "from": "t_stopping_time_technique",
+      "to": "s_properties_of_F_T",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_properties_of_F_T"
+    },
+    {
+      "id": "e_26717",
+      "from": "s_stopping_time",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hitting_time_of_set_is_stopping_time"
+    },
+    {
+      "id": "e_26718",
+      "from": "t_stopping_time_technique",
+      "to": "s_hitting_time_of_set_is_stopping_time",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hitting_time_of_set_is_stopping_time"
+    },
+    {
+      "id": "e_26719",
+      "from": "s_optional_time",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hitting_time_of_set_is_stopping_time"
+    },
+    {
+      "id": "e_26720",
+      "from": "s_martingale",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_optional_sampling_for_ui_martingales"
+    },
+    {
+      "id": "e_26721",
+      "from": "s_stopping_time_sigma_algebra_F_T",
+      "to": "t_optional_stopping_technique_cinlar",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_optional_sampling_for_ui_martingales"
+    },
+    {
+      "id": "e_26722",
+      "from": "t_optional_stopping_technique_cinlar",
+      "to": "s_optional_sampling_for_ui_martingales",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_optional_sampling_for_ui_martingales"
+    },
+    {
+      "id": "e_26723",
+      "from": "t_stopping_time_technique",
+      "to": "s_progressive_measurability_of_rcll_adapted",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_progressive_measurability_of_rcll_adapted"
+    },
+    {
+      "id": "e_26724",
+      "from": "s_progressive_measurability_of_rcll_adapted",
+      "to": "t_stopping_time_technique",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_hitting_time_of_set_is_stopping_time"
+    },
+    {
+      "id": "e_26725",
+      "from": "s_brownian_motion",
+      "to": "t_it_calculus",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_unbounded_variation_bm_paths"
+    },
+    {
+      "id": "e_26726",
+      "from": "t_it_calculus",
+      "to": "s_unbounded_variation_bm_paths",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_unbounded_variation_bm_paths"
+    },
+    {
+      "id": "e_26727",
+      "from": "s_brownian_motion",
+      "to": "t_levy_ciesielski_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_law_of_iterated_logarithm_bm"
+    },
+    {
+      "id": "e_26728",
+      "from": "t_levy_ciesielski_construction",
+      "to": "s_law_of_iterated_logarithm_bm",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_law_of_iterated_logarithm_bm"
+    },
+    {
+      "id": "e_26729",
+      "from": "s_markov_family",
+      "to": "t_strong_markov_via_stopping_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_feller_implies_strong_markov"
+    },
+    {
+      "id": "e_26730",
+      "from": "s_feller_semigroup",
+      "to": "t_strong_markov_via_stopping_approximation",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_feller_implies_strong_markov"
+    },
+    {
+      "id": "e_26731",
+      "from": "t_strong_markov_via_stopping_approximation",
+      "to": "s_feller_implies_strong_markov",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_feller_implies_strong_markov"
+    },
+    {
+      "id": "e_26732",
+      "from": "t_levy_ciesielski_construction",
+      "to": "s_augmented_brownian_filtration",
+      "role": "output",
+      "parameter_binding": {},
+      "used_in_theorem": "s_augmented_brownian_filtration"
+    },
+    {
+      "id": "e_26733",
+      "from": "s_brownian_motion",
+      "to": "t_levy_ciesielski_construction",
+      "role": "input",
+      "parameter_binding": {},
+      "used_in_theorem": "s_augmented_brownian_filtration"
     }
   ],
   "subgraphs": [
