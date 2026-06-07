@@ -202,6 +202,13 @@ def main():
         help="Breadth-first (level-order) search instead of best-first priority search",
     )
     parser.add_argument(
+        "--level-parallel",
+        action="store_true",
+        help="Strict level-by-level BFS: expand EVERY node at a depth in "
+             "parallel before descending. Spreads --workers across different "
+             "nodes (forces BFS ordering). Great for wide exploration.",
+    )
+    parser.add_argument(
         "--runs-dir",
         type=str,
         default=None,
@@ -279,7 +286,10 @@ def main():
         worker = MockWorker()
         print("Mode: DRY RUN (mock workers, no API calls)\n")
     elif args.use_cli:
-        cli_parallel = args.workers or 2
+        # Modest default for the subscription CLI: each call spawns a
+        # `claude -p` subprocess, so keep concurrency in the 4-6 range to avoid
+        # rate-limiting / local load. Raise with --workers when on the API.
+        cli_parallel = args.workers or 6
         worker = CLIWorker(model=args.worker_model, max_parallel=cli_parallel)
         print("Mode: CLI (uses Claude Code subscription)")
         print(f"  Workers: {cli_parallel} parallel")
@@ -305,13 +315,15 @@ def main():
     resume_from = args.resume
     checkpoint_dir = args.checkpoint_dir
     state_filename = "checkpoint_latest.json"
-    search_mode = "bfs" if args.bfs else "best_first"
+    # Level-parallel is inherently breadth-first, so it forces BFS ordering.
+    search_mode = "bfs" if (args.bfs or args.level_parallel) else "best_first"
 
     if args.problem:
         pid, entry = registry.register(args.problem, args.goal or "")
         problem_dir = registry.problem_dir(pid)
         state_path = registry.state_path(pid)
-        print(f"Problem id: {pid}  (search mode: {search_mode})")
+        mode_note = search_mode + (", level-parallel" if args.level_parallel else "")
+        print(f"Problem id: {pid}  (search mode: {mode_note})")
         if not args.checkpoint_dir:
             checkpoint_dir = str(problem_dir)
             state_filename = "state.json"
@@ -344,6 +356,7 @@ def main():
         checkpoint_every=args.checkpoint_every,
         search_mode=search_mode,
         state_filename=state_filename,
+        level_parallel=args.level_parallel,
     )
 
     # Parse start nodes

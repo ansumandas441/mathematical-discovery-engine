@@ -10,9 +10,11 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import signal
 import sys
 import time
+from collections import Counter, deque
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, as_completed, wait
 from pathlib import Path
 from typing import Optional
@@ -82,10 +84,16 @@ class Orchestrator:
         checkpoint_every: int = 5,
         search_mode: str = "best_first",
         state_filename: str = "checkpoint_latest.json",
+        level_parallel: bool = False,
     ):
         self.graph = graph
         self.worker = worker or MockWorker()
         self.pruner = Pruner(graph)
+        # Strict level-by-level BFS: expand every node at depth d in parallel
+        # waves before descending to depth d+1. Forces BFS frontier ordering.
+        self.level_parallel = level_parallel
+        if level_parallel:
+            search_mode = "bfs"
         self.search_mode = search_mode
         self.state_filename = state_filename
         self.tree = SearchTree(mode=search_mode)
@@ -102,6 +110,13 @@ class Orchestrator:
         self.checkpoint_every = checkpoint_every
         self._interrupted = False
         self._resume_iteration = 0
+        # Grounding anchors: valid graph ids of the start state, kept sticky on
+        # every descendant so technique selection never loses the graph (Fix 1).
+        self._anchor_ids: list[str] = []
+        # Novelty / no-op guards (Fix 3): signatures of states already seen.
+        self._seen_signatures: set[str] = set()
+        # Clusters chosen recently, to apply cross-field pressure (Fix 5).
+        self._recent_clusters: deque = deque(maxlen=24)
 
     # ------------------------------------------------------------------
     # LLM calls for orchestration decisions
@@ -240,33 +255,125 @@ class Orchestrator:
             if nid in self.graph.nodes
         ]
 
+    # ------------------------------------------------------------------
+    # Grounding & novelty guards (Fix 1 / Fix 3)
+    # ------------------------------------------------------------------
+
+    # Phrases a worker uses when a technique produced nothing new (most often
+    # "compose with identity"). These confident-but-empty states otherwise flood
+    # the frontier because priority = score × confidence rewards certainty.
+    _NOOP_MARKERS = (
+        "no-op", "no op", "noop", "verbatim", "neutral element",
+        "no analytic content", "no new content", "no structural change",
+        "returns the state", "returns the same state", "unchanged",
+        "fixed point of identity", "identity composition", "is a no-op",
+        "leaves the state", "same state", "trivially", "adds nothing",
+    )
+
+    def _reground_state(self, parent: SearchNode, state: MathState) -> None:
+        """Resolve a worker's free-text node names back to real graph ids and
+        keep the parent's grounding + start anchors sticky (Fix 1).
+
+        Without this, worker states carry names like "Mertens-type estimates"
+        instead of ids, ``_valid_state_ids`` returns empty, and technique
+        selection falls back to a fixed generic pool — the failure that stalled
+        the original run.
+        """
+        resolved_used = self.graph.reground(state.graph_nodes_used)
+        resolved_prod = self.graph.reground(state.graph_nodes_produced)
+        parent_ids = self._valid_state_ids(parent.state)
+        state.graph_nodes_produced = resolved_prod
+        state.graph_nodes_used = list(
+            dict.fromkeys(
+                resolved_used + resolved_prod + parent_ids + self._anchor_ids
+            )
+        )
+
+    def _state_signature(self, state: MathState) -> str:
+        """Normalized fingerprint of a state for duplicate detection.
+
+        Strips a leading "[technique …]" tag so the same result reached via
+        different techniques collapses to one signature.
+        """
+        desc = re.sub(r"^\s*\[[^\]]*\]\s*", "", state.description or "")
+        text = (desc + " " + (state.formal or "")).lower()
+        toks = re.sub(r"[^a-z0-9]+", " ", text).split()
+        return " ".join(toks[:60])
+
+    def _is_noop(self, state: MathState) -> bool:
+        text = (state.description or "").lower()
+        return any(m in text for m in self._NOOP_MARKERS)
+
+    # Abstraction/algebra clusters the search tends to get stuck in; when recent
+    # picks are dominated by these, inject cross-field techniques (Fix 5).
+    _STUCK_CLUSTERS = {2, 5}
+    _DIVERSITY_CLUSTERS = (11, 9, 4, 1, 3)  # probabilistic, cross-field, limits, …
+
+    def _candidate_pool(self, state: MathState) -> list[str]:
+        """Assemble the technique candidate pool for a state.
+
+        Combines four sources so the search can actually traverse the graph
+        instead of collapsing onto the first-20 generic techniques:
+          1. techniques reachable from the state's grounded graph ids,
+          2. techniques reachable from the sticky start anchors (Fix 1),
+          3. keyword/topic search over the goal + state text (Fix 2),
+          4. cross-field techniques when recent picks are stuck in abstraction
+             clusters (Fix 5).
+        """
+        pool: list[str] = []
+        seen: set[str] = set()
+
+        def add(tids):
+            for t in tids:
+                if t in self.graph.techniques and t not in seen:
+                    seen.add(t)
+                    pool.append(t)
+
+        # 1 + 2: grounded state ids and sticky anchors.
+        ground_ids = list(dict.fromkeys(self._valid_state_ids(state) + self._anchor_ids))
+        for nid in ground_ids:
+            add(self.graph.techniques_from(nid))
+
+        # 3: keyword route — always on, this is what surfaces number-theoretic
+        # techniques (Mertens, sieves, first-step analysis, density arguments).
+        keywords = self.goal_description.split() + state.description.split()
+        add(self.graph.search_techniques(keywords, max_results=14))
+
+        # 4: cross-field pressure when the search is stuck in abstraction.
+        if self._recent_clusters:
+            stuck = sum(1 for c in self._recent_clusters if c in self._STUCK_CLUSTERS)
+            if stuck >= 0.6 * len(self._recent_clusters):
+                for c in self._DIVERSITY_CLUSTERS:
+                    add(self.graph.techniques_by_cluster(c)[:3])
+
+        if not pool:
+            # Last-resort: keyword search with no overlap is unlikely, but keep a
+            # graph-grounded fallback rather than the raw first-20 dict slice.
+            add(list(self.graph.techniques.keys())[:20])
+        return pool
+
     def select_techniques(self, state: MathState) -> list[str]:
         """Score and rank techniques for the current state."""
-        all_techniques_from_state: set[str] = set()
-        for nid in self._valid_state_ids(state):
-            all_techniques_from_state.update(self.graph.techniques_from(nid))
-
-        if not all_techniques_from_state:
-            all_techniques_from_state = set(list(self.graph.techniques.keys())[:20])
-
+        pool = self._candidate_pool(state)
         scored: list[tuple[float, str]] = []
-        for tid in all_techniques_from_state:
+        for tid in pool:
             score = self._score_technique(tid, state)
             scored.append((score, tid))
 
         scored.sort(reverse=True)
-        return [tid for _, tid in scored[: self.candidates_per_step]]
+        chosen = [tid for _, tid in scored[: self.candidates_per_step]]
+        for tid in chosen:
+            self._recent_clusters.append(self.graph.get_cluster(tid))
+        return chosen
 
     def select_techniques_llm(self, state: MathState) -> list[str]:
         """Use LLM to pick techniques (more expensive but smarter)."""
-        all_techniques_from_state: set[str] = set()
-        for nid in self._valid_state_ids(state):
-            all_techniques_from_state.update(self.graph.techniques_from(nid))
+        pool = self._candidate_pool(state)
 
         candidate_list = "\n".join(
             f"- {tid}: {self.graph.techniques[tid].get('name', tid)} "
             f"(cluster {self.graph.get_cluster(tid)})"
-            for tid in all_techniques_from_state
+            for tid in pool
             if tid in self.graph.techniques
         )
 
@@ -283,7 +390,10 @@ class Orchestrator:
         valid = [t for t in selected if t in self.graph.techniques]
         if not valid:
             return self.select_techniques(state)
-        return valid[: self.candidates_per_step]
+        chosen = valid[: self.candidates_per_step]
+        for tid in chosen:
+            self._recent_clusters.append(self.graph.get_cluster(tid))
+        return chosen
 
     def _score_technique(self, technique_id: str, state: MathState) -> float:
         """Heuristic scoring from Ch. 13."""
@@ -385,6 +495,14 @@ class Orchestrator:
         self.goal_description = ckpt["goal_description"]
         self.token_stats = ckpt.get("token_stats", self.token_stats)
         self._resume_iteration = ckpt["iteration"]
+        # Rebuild grounding anchors and the seen-state set so Fix 1 / Fix 3
+        # behaviour survives a resume.
+        root = self.tree.nodes.get(self.tree.root_id) if self.tree.root_id else None
+        if root is not None:
+            self._anchor_ids = self._valid_state_ids(root.state)
+        self._seen_signatures = {
+            self._state_signature(n.state) for n in self.tree.nodes.values()
+        }
 
     def _checkpoint_path(self, iteration: int) -> Path | None:
         if not self.checkpoint_dir:
@@ -449,7 +567,19 @@ class Orchestrator:
                     problem, start_node_ids, goal
                 )
             elif use_llm_for_orchestration:
-                start_state, self.goal_description = self.parse_problem(problem)
+                # The LLM may pick start nodes, but it must NOT redefine the
+                # theorem: pin the user's --goal verbatim when one was given
+                # (Fix 4). Otherwise parse_problem can drift onto a different
+                # (e.g. stronger/unrelated) statement and the whole search aims
+                # at the wrong target.
+                start_state, parsed_goal = self.parse_problem(problem)
+                self.goal_description = goal if goal else parsed_goal
+                if goal and parsed_goal and goal.strip() != parsed_goal.strip():
+                    self._log(
+                        "  ⚠ LLM restated the goal; keeping user --goal verbatim:\n"
+                        f"      user : {goal}\n"
+                        f"      (llm): {parsed_goal[:160]}"
+                    )
             else:
                 start_state = MathState(
                     description=problem,
@@ -457,7 +587,22 @@ class Orchestrator:
                 )
                 self.goal_description = goal or problem
 
+            # Grounding anchors: the start state's valid graph ids, made sticky
+            # on every descendant so technique selection always has a real
+            # foothold in the graph (Fix 1).
+            self._anchor_ids = self._valid_state_ids(start_state)
+            if not self._anchor_ids:
+                # Worker/LLM gave un-resolvable start ids — recover by keyword.
+                self._anchor_ids = self._auto_find_start_nodes(
+                    self.goal_description + " " + problem
+                )
+                start_state.graph_nodes_used = list(
+                    dict.fromkeys(start_state.graph_nodes_used + self._anchor_ids)
+                )
+            self._seen_signatures.add(self._state_signature(start_state))
+
             self._log(f"Start nodes: {start_state.graph_nodes_used}")
+            self._log(f"Anchors: {self._anchor_ids}")
             self._log(f"Goal: {self.goal_description}")
 
             root = self.tree.create_root(start_state)
@@ -482,34 +627,51 @@ class Orchestrator:
 
             stats["iterations"] = iteration
 
-            current = self.tree.pop_frontier()
-            if current is None:
-                self._log("Frontier exhausted.")
-                break
+            if self.level_parallel:
+                # One iteration == one whole BFS level expanded in parallel.
+                level, depth = self._pop_current_level()
+                if not level:
+                    if self.tree.frontier_size() == 0:
+                        self._log("Frontier exhausted.")
+                        break
+                    continue  # only depth-limit/dead nodes at this depth
+                self._log(
+                    f"\n=== Iteration {iteration} | Level depth {depth} | "
+                    f"{len(level)} nodes in parallel | "
+                    f"Frontier: {self.tree.frontier_size()} ==="
+                )
+                goal_result = self._expand_level(level, stats, use_llm_for_orchestration)
+                if goal_result is not None:
+                    return goal_result
+            else:
+                current = self.tree.pop_frontier()
+                if current is None:
+                    self._log("Frontier exhausted.")
+                    break
 
-            if current.depth >= self.max_depth:
-                current.status = NodeStatus.DEPTH_LIMIT
-                self._log(f"  Depth limit at {current.id}")
-                continue
+                if current.depth >= self.max_depth:
+                    current.status = NodeStatus.DEPTH_LIMIT
+                    self._log(f"  Depth limit at {current.id}")
+                    continue
 
-            if current.state.description.startswith(("[TIMEOUT]", "[ERROR]", "[PARSE ERROR]")):
-                current.status = NodeStatus.PRUNED
-                current.pruned_reason = "Dead state (timeout/error)"
-                self._log(f"  ✗ Skipping dead node {current.id}: {current.state.description[:60]}")
-                continue
+                if current.state.description.startswith(("[TIMEOUT]", "[ERROR]", "[PARSE ERROR]")):
+                    current.status = NodeStatus.PRUNED
+                    current.pruned_reason = "Dead state (timeout/error)"
+                    self._log(f"  ✗ Skipping dead node {current.id}: {current.state.description[:60]}")
+                    continue
 
-            self._log(
-                f"\n--- Iteration {iteration} | "
-                f"Expanding {current.id} (depth {current.depth}, "
-                f"status {current.status.value}) | "
-                f"Frontier: {self.tree.frontier_size()} ---"
-            )
-            self._log(f"  State: {current.state.description[:100]}")
+                self._log(
+                    f"\n--- Iteration {iteration} | "
+                    f"Expanding {current.id} (depth {current.depth}, "
+                    f"status {current.status.value}) | "
+                    f"Frontier: {self.tree.frontier_size()} ---"
+                )
+                self._log(f"  State: {current.state.description[:100]}")
 
-            # Resumable, per-technique expansion of this node.
-            goal_result = self._expand_node(current, stats, use_llm_for_orchestration)
-            if goal_result is not None:
-                return goal_result
+                # Resumable, per-technique expansion of this node.
+                goal_result = self._expand_node(current, stats, use_llm_for_orchestration)
+                if goal_result is not None:
+                    return goal_result
 
             # Periodic checkpoint
             if self.checkpoint_dir and iteration % self.checkpoint_every == 0:
@@ -630,12 +792,158 @@ class Orchestrator:
             current.status = NodeStatus.EXPANDED
         return None
 
-    def _process_attempt(
+    # ------------------------------------------------------------------
+    # Strict level-by-level parallel expansion
+    # ------------------------------------------------------------------
+
+    def _pop_current_level(self) -> tuple[list[SearchNode], int | None]:
+        """Pop every active node at the shallowest frontier depth (one BFS
+        level). Depth-limit and dead nodes are retired in passing; the first
+        deeper node encountered is pushed back to the front and stops the sweep.
+
+        Relies on BFS frontier ordering (level_parallel forces ``mode='bfs'``),
+        so a whole level is contiguous at the front of the queue.
+        """
+        level: list[SearchNode] = []
+        target_depth: int | None = None
+        while True:
+            node = self.tree.pop_frontier()
+            if node is None:
+                break
+            if target_depth is None:
+                target_depth = node.depth
+            if node.depth != target_depth:
+                self.tree.requeue_front(node)  # belongs to the next level
+                break
+            if node.depth >= self.max_depth:
+                node.status = NodeStatus.DEPTH_LIMIT
+                continue
+            if node.state.description.startswith(("[TIMEOUT]", "[ERROR]", "[PARSE ERROR]")):
+                node.status = NodeStatus.PRUNED
+                node.pruned_reason = "Dead state (timeout/error)"
+                continue
+            level.append(node)
+        return level, target_depth
+
+    def _expand_level(self, level: list[SearchNode], stats: dict, use_llm: bool) -> dict | None:
+        """Expand a whole BFS level in parallel waves.
+
+        Every (node, technique) pair across the level feeds a single shared
+        thread pool of size ``max_parallel`` — so concurrency is spread across
+        *different nodes*, not just techniques of one node. Worker LLM calls run
+        in the pool; all tree/stat mutation happens in this (main) thread.
+        Returns a goal-result dict if any child reaches the goal, else None.
+        """
+        # 1) Pick candidates per node (serial: LLM calls + cluster bookkeeping),
+        #    then flatten to the full task list for this level.
+        tasks: list[tuple[SearchNode, str]] = []
+        for node in level:
+            if not node.candidates:
+                node.candidates = (
+                    self.select_techniques_llm(node.state) if use_llm
+                    else self.select_techniques(node.state)
+                )
+                self._log(f"  [{node.id}] candidates: {node.candidates}")
+            for tid in node.untried():
+                tasks.append((node, tid))
+
+        if not tasks:
+            for node in level:
+                node.status = NodeStatus.EXPANDED
+            return None
+
+        self._log(f"  Level tasks: {len(tasks)} (node,technique) pairs across {len(level)} nodes")
+
+        max_p = getattr(self.worker, "max_parallel", None) or self.max_parallel
+        is_mock = isinstance(self.worker, MockWorker)
+
+        def run(node: SearchNode, tid: str):
+            try:
+                res = self.worker.apply_technique(
+                    node.state, tid, self.goal_description, self.graph
+                )
+            except Exception as exc:  # noqa: BLE001
+                res = WorkerResult(
+                    new_state=MathState(description=f"[ERROR] {exc}"),
+                    confidence=0.0, proof_sketch="",
+                    impossible=True, impossible_reason=str(exc), technique_id=tid,
+                )
+            return node, tid, res
+
+        def handle(node: SearchNode, tid: str, res: WorkerResult) -> dict | None:
+            child = self._commit_result(node, tid, res, stats)
+            if child is None:
+                return None
+            if self._check_goal_for(child.state, use_llm):
+                return self._goal_result_for(child, stats)
+            self._push_child(node, child, tid)
+            return None
+
+        goal_result: dict | None = None
+
+        if is_mock or max_p <= 1:
+            for node, tid in tasks:
+                if self._interrupted:
+                    break
+                goal_result = handle(*run(node, tid))
+                if goal_result is not None:
+                    break
+        else:
+            it = iter(tasks)
+            inflight: dict = {}
+
+            def fill(pool):
+                while len(inflight) < max_p:
+                    nt = next(it, None)
+                    if nt is None:
+                        break
+                    node, tid = nt
+                    inflight[pool.submit(run, node, tid)] = (node, tid)
+
+            with ThreadPoolExecutor(max_workers=max_p) as pool:
+                fill(pool)
+                while inflight:
+                    done, _ = wait(list(inflight), return_when=FIRST_COMPLETED)
+                    finished = list(done)
+                    for f in finished:
+                        inflight.pop(f, None)
+                    # Refill BEFORE the (slower) result handling so the pool
+                    # never idles while a goal-check LLM call runs.
+                    if not self._interrupted:
+                        fill(pool)
+                    for f in finished:
+                        node, tid, res = f.result()
+                        gr = handle(node, tid, res)
+                        if gr is not None and goal_result is None:
+                            goal_result = gr
+                    if goal_result is not None:
+                        break
+
+        if goal_result is not None:
+            return goal_result
+
+        # Retire the level: partially-expanded nodes (interrupt) go back to the
+        # front so they finish first on resume; the rest are done.
+        for node in level:
+            if node.untried():
+                node.status = NodeStatus.PARTIAL
+                self.tree.requeue_front(node)
+            else:
+                node.status = NodeStatus.EXPANDED
+        return None
+
+    def _commit_result(
         self, current: SearchNode, technique_id: str, result: WorkerResult,
-        stats: dict, use_llm: bool,
-    ) -> dict | None:
-        """Record one technique attempt in the ledger and act on its result.
-        Returns a goal-result dict if the goal is reached, else None."""
+        stats: dict,
+    ) -> SearchNode | None:
+        """Record one technique attempt in the ledger and create its child node,
+        applying re-grounding, no-op/duplicate guards, and pruning.
+
+        Returns a *live* FRONTIER child to be goal-checked & pushed by the
+        caller, or None if the attempt was impossible/pruned. All state this
+        touches (tree, stats, seen-set) is mutated here, so in parallel mode the
+        caller must hold ``self._lock`` around this call.
+        """
         stats["worker_calls"] += 1
 
         if result.impossible:
@@ -650,6 +958,30 @@ class Orchestrator:
             stats["pruned"] += 1
             self._log(f"  ⊘ IMPOSSIBLE {technique_id}: {(result.impossible_reason or 'no reason')[:80]}")
             return None
+
+        # Fix 1: re-ground the new state's node names to real graph ids (sticky
+        # anchors included) before anything downstream reads them.
+        self._reground_state(current, result.new_state)
+
+        # Fix 3: drop vacuous no-op states and already-seen duplicates so the
+        # frontier isn't flooded with confident-but-empty rederivations.
+        noop = self._is_noop(result.new_state)
+        sig = self._state_signature(result.new_state)
+        dup = sig in self._seen_signatures
+        if noop or dup:
+            reason = (
+                "no-op / identity state (no new content)" if noop
+                else "duplicate of an already-explored state"
+            )
+            child = self.tree.add_child(current, result, NodeStatus.PRUNED, reason)
+            current.attempts[technique_id] = {
+                "outcome": "pruned", "child_id": child.id,
+                "reason": reason, "confidence": result.confidence,
+            }
+            stats["pruned"] += 1
+            self._log(f"  ✗ PRUNED {technique_id}: {reason}")
+            return None
+        self._seen_signatures.add(sig)
 
         prune_decision = self.pruner.check(
             current.state, technique_id, result, current.depth + 1
@@ -677,24 +1009,48 @@ class Orchestrator:
             f"  ○ {technique_id} -> {child.id} "
             f"(conf={adjusted_confidence:.0%}) {result.new_state.description[:60]}"
         )
+        return child
 
-        reached = self.check_goal(result.new_state) if use_llm else self.check_goal_mock(result.new_state)
-        if reached:
-            self.tree.mark_goal(child)
-            path = self.tree.extract_path(child)
-            stats["goal_found"] = True
-            stats["tokens"] = self._collect_token_stats()
-            self._log(f"\n★ GOAL REACHED at {child.id}!")
-            self._log_path(path)
-            return {
-                "found": True,
-                "path": [n.to_dict() for n in path],
-                "tree": self.tree.to_dict(),
-                "stats": stats,
-            }
+    def _goal_result_for(self, child: SearchNode, stats: dict) -> dict:
+        """Mark a child as the goal and build the discovery return payload.
+        Mutates the tree/stats — hold ``self._lock`` in parallel mode."""
+        self.tree.mark_goal(child)
+        path = self.tree.extract_path(child)
+        stats["goal_found"] = True
+        stats["tokens"] = self._collect_token_stats()
+        self._log(f"\n★ GOAL REACHED at {child.id}!")
+        self._log_path(path)
+        return {
+            "found": True,
+            "path": [n.to_dict() for n in path],
+            "tree": self.tree.to_dict(),
+            "stats": stats,
+        }
 
-        score = self._score_technique(technique_id, result.new_state) * adjusted_confidence
+    def _push_child(self, parent: SearchNode, child: SearchNode, technique_id: str):
+        """Score a non-goal child and push it onto the frontier.
+        Mutates the frontier — hold ``self._lock`` in parallel mode."""
+        # Priority blends technique fit with confidence rather than multiplying
+        # by it outright, so a certain-but-shallow move no longer outranks a
+        # promising uncertain one (Fix 3).
+        score = self._score_technique(technique_id, child.state) * (0.5 + 0.5 * child.confidence)
         self.tree.push_frontier(child, score)
+
+    def _check_goal_for(self, state: MathState, use_llm: bool) -> bool:
+        return self.check_goal(state) if use_llm else self.check_goal_mock(state)
+
+    def _process_attempt(
+        self, current: SearchNode, technique_id: str, result: WorkerResult,
+        stats: dict, use_llm: bool,
+    ) -> dict | None:
+        """Serial-path attempt handling: commit, goal-check, push.
+        Returns a goal-result dict if the goal is reached, else None."""
+        child = self._commit_result(current, technique_id, result, stats)
+        if child is None:
+            return None
+        if self._check_goal_for(child.state, use_llm):
+            return self._goal_result_for(child, stats)
+        self._push_child(current, child, technique_id)
         return None
 
     def _dispatch_workers(

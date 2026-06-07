@@ -73,6 +73,23 @@ python -m discovery_engine --llm-orchestrate \
     "Prove the Erdős primitive set conjecture"
 ```
 
+### Wide exploration — level-by-level parallel BFS
+
+Expand *every* node at a tree depth in parallel before descending to the next
+depth. `--workers` is the total concurrency, shared across all nodes in the
+level (so it fans out across *different states*, not just techniques of one
+state):
+
+```bash
+python -m discovery_engine --use-cli --llm-orchestrate --level-parallel \
+    --workers 6 \
+    --goal "sum_{a in A} 1/(a log a) < 1 + o(1) for any primitive A in [x,inf)" \
+    "Prove the Erdős primitive set 1+o(1) bound"
+```
+
+Each iteration is one full BFS wave; `--level-parallel` forces BFS ordering.
+Interruptible/resumable: partially-expanded nodes resume first.
+
 ### Save and inspect the search tree
 
 ```bash
@@ -99,6 +116,8 @@ python -m discovery_engine --dry-run --save-tree output.json --print-tree \
 | `--print-tree` | off | Print tree at end |
 | `--quiet` | off | Suppress progress output |
 | `--bfs` | off | Breadth-first (level-order) search instead of best-first priority search |
+| `--level-parallel` | off | Strict level-by-level BFS: expand *every* node at a depth in parallel before descending. Spreads `--workers` across different nodes (forces BFS). |
+| `--workers` | 6 (CLI) / 5 (API) | Max concurrent worker calls (total, shared across all nodes in a level) |
 | `--runs-dir` | `<repo>/runs` | Where the problem registry + per-problem state live |
 | `--restart` | off | Ignore saved state for this problem and start fresh |
 | `--list-problems` | off | List every problem the engine has been given, then exit |
