@@ -98,6 +98,27 @@ These are *meta-moves*: they do not prove new theorems, they make existing quest
 
 ---
 
+## 6. Problem identity — canonical encoding of a claim regardless of phrasing
+
+**Gap.** A node's identity is currently its surface text. The same problem stated in different words, different notation, a different order, or a different language produces *different* nodes — so the graph cannot guarantee that "Solve 2x = 4 for x" and "Find x if 2x = 4" are one node, nor that a translation of a theorem reuses the existing node instead of creating a duplicate. Item 1's `claim_id` asserts that lifecycle-variants share identity but provides no *mechanism* to compute that identity from an arbitrary input. This blocks reliable dedup on ingest (the iter-2/iter-3 web-sourced rounds rely on text matching) and blocks robust query-time lookup.
+
+**Concrete example it fails to capture.** During an integration run, the Prime Number Theorem arrives once as "π(x) ∼ x/ln x", once as "the number of primes below x is asymptotic to x over the natural log of x", and once from a non-English source. Today these risk landing as three nodes (or being silently dropped by a brittle string match). We want any of them to resolve to the *same* PNT node with high recall and near-zero false merges.
+
+**Approach — a layered identity cascade, strict→flexible** (no single method is both reliable and flexible; precision and recall pull apart, so layer them):
+1. **Canonical fingerprint** (exact, zero false positives). Normalize before hashing: lowercase, strip whitespace, normalize math notation, rename bound variables to canonical names (x, y, …), sort commutative terms, evaluate constants → SHA-256. Catches re-encounters and notational variants. (Computing a canonical form of structured math is equivalent to graph canonical form.)
+2. **Embedding ANN lookup** (flexible recall, cross-lingual). Encode each claim with a *multilingual* sentence encoder (e.g. LaBSE) into a vector; retrieve top-k nearest existing nodes by cosine similarity. Handles rewording and translation — different language lands at nearly the same vector. This is the Quora-question-pairs / semantic-textual-similarity problem.
+3. **Verification gate** (precision, math-specific). For candidates above threshold, confirm with a structural/symbolic check, or — strongest — autoformalize to Lean and test **bidirectional equivalence** (A provable from B and B from A). This kills the false merges that pure embeddings create before two claims collapse to one node.
+
+**Schema change required.**
+- Add to state nodes of `kind: theorem`/`claim`: `canonical_fingerprint` (hash string), `embedding` (vector ref / external index id), and `aliases` (list of observed surface forms + language tags). This is the CESI pattern — many surface forms, one canonical node.
+- Optional `formal_statement` field (Lean) for nodes where equivalence has been verified, reused by the verification gate.
+- Make `claim_id` from item 1 *derived* from `canonical_fingerprint` rather than assigned by hand, so lifecycle-variants and phrasing-variants share one identity mechanism.
+- Ingest pipeline change (not just schema): the cascade runs on every incoming node before it is added.
+
+**Estimated scope.** Schema fields are small; the work is the ingest cascade and standing up a vector index. Layers 1–2 are a medium round and would immediately de-duplicate the existing graph (good ROI given the multi-source iter-2/iter-3 corpus). Layer 3 (Lean equivalence) is research-grade and optional — defer unless a round specifically needs provable identity. See [[Source.md]] / the research notes for the surveyed methods (entity resolution, STS, LSH/MinHash, autoformalization).
+
+---
+
 ## Suggested ordering if tackling these
 
 1. **Item 2 (counterexample-first)** — smallest, adds one technique, no schema rewrite. Good warm-up.
@@ -105,6 +126,8 @@ These are *meta-moves*: they do not prove new theorems, they make existing quest
 3. **Item 1 (conjecture ↔ negation dynamics)** — requires schema extension (`status` field, lifecycle edges, `claim_id`) but the pattern is clean and well-scoped.
 4. **Item 5 (failed attempts)** — natural follow-on to item 1 (both are about non-trivial status handling). Reuses the `status` infrastructure.
 5. **Item 3 (Lakatos monster-barring)** — most ambitious. Tackle after the schema has already absorbed status fields and lifecycle edges from items 1 and 5; otherwise the DAG→general-graph move is too much to combine with content work.
+
+**Item 6 (problem identity)** is somewhat orthogonal and high-ROI: layers 1–2 can be done independently at any time and would clean up duplicates from the multi-source rounds. Best sequenced *before or alongside item 1*, since item 1's `claim_id` is meant to be derived from item 6's canonical fingerprint.
 
 ---
 
