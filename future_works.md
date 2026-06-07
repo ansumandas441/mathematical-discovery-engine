@@ -140,5 +140,6 @@ None of these change the ~100 theorems of chapters 01–06 or the 57 techniques 
 - After item 3: Euler's formula has *two* entries — the 1813 proof for convex polyhedra AND the 1895 generalization with a "monster-barring" edge between them.
 - After item 4: Taniyama–Shimura has a `t_reformulate_in_new_category` edge making explicit that the translation came before the proof.
 - After item 5: Kummer's regular-primes attempt at FLT appears as a `status: superseded` subgraph, with an explicit `refuted_by` link to Wiles.
+- After item 6: the same theorem stated three different ways (or in another language) resolves to one node, and ingest stops minting duplicates — node identity becomes a computed property, not a function of surface text.
 
 The graph grows in **expressive power** rather than in size. A reader who wants the clean picture can still read the proved-only DAG; a reader who wants the history of discovery sees the richer structure.
