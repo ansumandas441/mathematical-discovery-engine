@@ -42,13 +42,32 @@ Return ONLY a JSON object:
 }"""
 
 GOAL_CHECK_SYSTEM = """\
-You are a mathematical proof verifier. Given a claimed result and the \
-original goal, decide if the goal has been reached.
+You are a STRICT, adversarial mathematical proof verifier. You are given the \
+ORIGINAL GOAL, a CLAIMED RESULT, and its PROOF SKETCH. Decide conservatively \
+whether the goal has genuinely been reached. Default to false.
+
+A claim reaches the goal ONLY if ALL of these hold:
+1. SAME STATEMENT. It establishes the same quantity, the same direction of \
+inequality, AND the same constant / asymptotic strength as the goal. A weaker \
+result does NOT count. Examples of weaker (=> false): proving sum <= 1.399 (or \
+<= e^gamma*pi/4) when the goal asks for sum <= 1+o(1); proving a mere O(1) \
+bound when a sharp constant is required; proving it for a special family when \
+the goal is "for all".
+2. COMPLETE PROOF. The sketch actually finishes the argument. Reject strategies, \
+plans, reductions to an unproven sub-claim, or "apply technique X and the \
+result follows".
+3. DECISIVE STEP IS SOLID. The step that pins the constant or closes the bound \
+must be justified, not asserted with low confidence or "it can be shown".
+
+First determine the strongest statement the sketch ACTUALLY proves (with its \
+explicit constant/asymptotics), then compare to the goal.
 
 Return ONLY a JSON object:
 {
-  "goal_reached": true/false,
-  "explanation": "..."
+  "achieved_statement": "strongest result the sketch actually proves, with explicit constant/asymptotics",
+  "goal_statement": "the goal restated with its required constant/asymptotics",
+  "weaker_or_incomplete_reason": "if not matching, exactly why (weaker constant? incomplete? special case?); else ''",
+  "goal_reached": true/false
 }"""
 
 TECHNIQUE_SELECT_SYSTEM = """\
@@ -433,17 +452,31 @@ class Orchestrator:
     # Phase 3: Check goal
     # ------------------------------------------------------------------
 
-    def check_goal(self, state: MathState) -> bool:
-        """Use LLM to check if the goal has been reached."""
+    def check_goal(self, state: MathState, proof_sketch: str = "") -> bool:
+        """Use the LLM (strict verifier) to check if the goal is genuinely
+        reached — same statement, same constant, complete proof. The proof
+        sketch is included so the verifier can judge whether the decisive step
+        is actually carried out rather than asserted."""
         user = (
+            f"## Original Goal\n{self.goal_description}\n\n"
             f"## Claimed Result\n{state.description}\n\n"
             f"Formal: {state.formal}\n\n"
-            f"## Original Goal\n{self.goal_description}\n\n"
-            "Has the goal been reached?"
+            f"## Proof Sketch\n{proof_sketch or '(none provided)'}\n\n"
+            "Has the goal genuinely been reached at full strength?"
         )
         raw = self._call_llm(GOAL_CHECK_SYSTEM, user)
         parsed = self._parse_json(raw)
-        return bool(parsed.get("goal_reached", False))
+        reached = bool(parsed.get("goal_reached", False))
+        # Surface the verifier's reasoning — especially a near-miss that proves
+        # only a weaker bound — so it isn't silently accepted or discarded.
+        achieved = parsed.get("achieved_statement")
+        reason = parsed.get("weaker_or_incomplete_reason")
+        if achieved:
+            tag = "✓ accepted" if reached else "✗ rejected"
+            self._log(f"  [goal-check {tag}] achieved: {str(achieved)[:140]}")
+            if not reached and reason:
+                self._log(f"     reason: {str(reason)[:140]}")
+        return reached
 
     def check_goal_mock(self, state: MathState) -> bool:
         """Keyword-based goal check for dry runs."""
@@ -642,6 +675,8 @@ class Orchestrator:
                 )
                 goal_result = self._expand_level(level, stats, use_llm_for_orchestration)
                 if goal_result is not None:
+                    self._save_on_success(iteration, stats, problem, start_node_ids,
+                                          goal, use_llm_for_orchestration)
                     return goal_result
             else:
                 current = self.tree.pop_frontier()
@@ -671,6 +706,8 @@ class Orchestrator:
                 # Resumable, per-technique expansion of this node.
                 goal_result = self._expand_node(current, stats, use_llm_for_orchestration)
                 if goal_result is not None:
+                    self._save_on_success(iteration, stats, problem, start_node_ids,
+                                          goal, use_llm_for_orchestration)
                     return goal_result
 
             # Periodic checkpoint
@@ -704,6 +741,17 @@ class Orchestrator:
         else:
             fallback = Path("checkpoint_interrupted.json")
             self.save_checkpoint(fallback, iteration, stats, problem, start_node_ids, goal, use_llm)
+
+    def _save_on_success(self, iteration, stats, problem, start_node_ids, goal, use_llm):
+        """Persist the full tree the instant the goal is reached, so a found
+        proof (its states + proof sketches) is never lost. Saves to the
+        per-problem state file when checkpointing, else to ``proof_found.json``.
+        """
+        ckpt_path = self._checkpoint_path(iteration)
+        target = ckpt_path or Path("proof_found.json")
+        self.save_checkpoint(target, iteration, stats, problem, start_node_ids, goal, use_llm)
+        self._log(f"  ✅ Proof state saved to {target} "
+                  f"(inspect full sketches there or via --inspect)")
 
     def _expand_node(self, current: SearchNode, stats: dict, use_llm: bool) -> dict | None:
         """Try the untried candidate techniques at ``current``, recording each
@@ -874,7 +922,7 @@ class Orchestrator:
             child = self._commit_result(node, tid, res, stats)
             if child is None:
                 return None
-            if self._check_goal_for(child.state, use_llm):
+            if self._check_goal_for(child, use_llm):
                 return self._goal_result_for(child, stats)
             self._push_child(node, child, tid)
             return None
@@ -1036,8 +1084,10 @@ class Orchestrator:
         score = self._score_technique(technique_id, child.state) * (0.5 + 0.5 * child.confidence)
         self.tree.push_frontier(child, score)
 
-    def _check_goal_for(self, state: MathState, use_llm: bool) -> bool:
-        return self.check_goal(state) if use_llm else self.check_goal_mock(state)
+    def _check_goal_for(self, child: SearchNode, use_llm: bool) -> bool:
+        if use_llm:
+            return self.check_goal(child.state, child.proof_sketch)
+        return self.check_goal_mock(child.state)
 
     def _process_attempt(
         self, current: SearchNode, technique_id: str, result: WorkerResult,
@@ -1048,7 +1098,7 @@ class Orchestrator:
         child = self._commit_result(current, technique_id, result, stats)
         if child is None:
             return None
-        if self._check_goal_for(child.state, use_llm):
+        if self._check_goal_for(child, use_llm):
             return self._goal_result_for(child, stats)
         self._push_child(current, child, technique_id)
         return None
