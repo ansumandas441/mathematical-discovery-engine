@@ -146,8 +146,9 @@ def main():
     parser.add_argument(
         "--model",
         type=str,
-        default="claude-sonnet-4-20250514",
-        help="Claude model for orchestrator (default: claude-sonnet-4-20250514)",
+        default=None,
+        help="Claude model for orchestrator. Default: the CLI's own model in "
+             "--use-cli mode, else claude-sonnet-4-6 for the API.",
     )
     parser.add_argument(
         "--worker-model",
@@ -262,6 +263,17 @@ def main():
     graph = KnowledgeGraph(graph_path)
     print(f"Loaded in {time.time() - t0:.1f}s — {graph.stats()}")
 
+    # Resolve the orchestrator model. The old hardcoded default
+    # (claude-sonnet-4-20250514) now 404s via the CLI, so make it mode-aware:
+    #   --use-cli  -> None (let the claude CLI use its configured default)
+    #   API        -> a current valid model id
+    if args.model:
+        orch_model = args.model
+    elif args.use_cli:
+        orch_model = None
+    else:
+        orch_model = "claude-sonnet-4-6"
+
     # Create worker
     if args.dry_run:
         worker = MockWorker()
@@ -272,6 +284,7 @@ def main():
         print("Mode: CLI (uses Claude Code subscription)")
         print(f"  Workers: {cli_parallel} parallel")
         print("  No API key needed — uses your subscription")
+        print(f"  Orchestrator model: {orch_model or 'CLI default'}")
         if args.worker_model:
             print(f"  Worker model: {args.worker_model}")
         print()
@@ -279,7 +292,7 @@ def main():
         worker_model = args.worker_model or Worker.DEFAULT_MODEL
         worker = Worker(model=worker_model)
         print(f"Mode: LIVE (API)")
-        print(f"  Orchestrator model: {args.model}")
+        print(f"  Orchestrator model: {orch_model}")
         print(f"  Worker model:       {worker_model}")
         if worker_model != args.model:
             print(f"  (workers use cheaper model for ~20x token savings)")
@@ -325,7 +338,7 @@ def main():
         max_iterations=args.max_iterations,
         max_parallel_workers=api_parallel,
         candidates_per_step=args.candidates,
-        model=args.model,
+        model=orch_model,
         verbose=not args.quiet,
         checkpoint_dir=checkpoint_dir,
         checkpoint_every=args.checkpoint_every,

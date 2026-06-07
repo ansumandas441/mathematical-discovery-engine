@@ -108,6 +108,13 @@ class Orchestrator:
     # ------------------------------------------------------------------
 
     def _call_llm(self, system: str, user: str) -> str:
+        # In --use-cli mode the workers shell out to `claude -p` and there is
+        # no API key. The orchestrator's own calls must use the same path,
+        # otherwise the Anthropic SDK fails with "Could not resolve
+        # authentication method".
+        if isinstance(self.worker, CLIWorker):
+            return self._call_llm_cli(system, user)
+
         import anthropic
 
         client = anthropic.Anthropic(api_key=self._api_key)
@@ -128,6 +135,40 @@ class Orchestrator:
         self.token_stats["orchestrator_output"] += getattr(usage, "output_tokens", 0)
         self.token_stats["orchestrator_calls"] += 1
         return resp.content[0].text
+
+    def _call_llm_cli(self, system: str, user: str) -> str:
+        """Orchestrator LLM call via `claude -p` — uses the Claude Code
+        subscription, no API key needed. Mirrors CLIWorker."""
+        import subprocess
+
+        full_prompt = system + "\n\n" + user
+        cmd = ["claude", "-p", full_prompt, "--output-format", "json"]
+        if self.model:
+            cmd.extend(["--model", self.model])
+
+        try:
+            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+        except subprocess.TimeoutExpired:
+            return ""
+        except FileNotFoundError:
+            raise RuntimeError(
+                "claude CLI not found in PATH. Install Claude Code, or drop "
+                "--use-cli and set ANTHROPIC_API_KEY instead."
+            )
+
+        raw_output = proc.stdout.strip()
+        self.token_stats["orchestrator_calls"] += 1
+
+        result_text = raw_output
+        try:
+            envelope = json.loads(raw_output)
+            result_text = envelope.get("result", raw_output)
+            usage = envelope.get("usage", {})
+            self.token_stats["orchestrator_input"] += usage.get("input_tokens", 0)
+            self.token_stats["orchestrator_output"] += usage.get("output_tokens", 0)
+        except (json.JSONDecodeError, AttributeError):
+            pass
+        return result_text
 
     def _parse_json(self, text: str) -> dict:
         text = text.strip()
