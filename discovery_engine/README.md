@@ -90,6 +90,21 @@ python -m discovery_engine --use-cli --llm-orchestrate --level-parallel \
 Each iteration is one full BFS wave; `--level-parallel` forces BFS ordering.
 Interruptible/resumable: partially-expanded nodes resume first.
 
+### Write the proof paper (master write-up)
+
+When a run reaches the goal it **auto-saves** the full path and then a master LLM
+**writes a complete proof paper** from it (LaTeX + Markdown) into the problem's
+run directory. Disable with `--no-proof-paper`.
+
+You can also (re)generate the paper from any saved run — even one that didn't
+confirm a proof (it writes from the best path so far, and flags that it's
+partial):
+
+```bash
+python -m discovery_engine --use-cli --write-proof <problem-id>
+# -> runs/<id>/proof_paper.tex  and  runs/<id>/proof_paper.md
+```
+
 ### Save and inspect the search tree
 
 ```bash

@@ -85,6 +85,71 @@ def _inspect_problem(registry, pid: str) -> int:
     return 0
 
 
+def _extract_latex(text: str) -> str | None:
+    """Pull the first fenced ```latex / ```tex block out of the writer output."""
+    import re
+    m = re.search(r"```(?:latex|tex)?\s*\n(.*?)```", text, re.DOTALL)
+    return m.group(1).strip() if m else None
+
+
+def _save_paper(text: str, out_dir, stem: str = "proof_paper") -> list[str]:
+    """Save the writer's full response as Markdown, and the extracted LaTeX as
+    .tex if present. Returns the paths written."""
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    written = []
+    md = out_dir / f"{stem}.md"
+    md.write_text(text)
+    written.append(str(md))
+    tex = _extract_latex(text)
+    if tex:
+        texp = out_dir / f"{stem}.tex"
+        texp.write_text(tex)
+        written.append(str(texp))
+    return written
+
+
+def _write_proof(graph, worker, orch_model, registry, pid: str) -> int:
+    """Standalone: load a saved run and have the master LLM write its paper."""
+    from .orchestrator import Orchestrator
+    from .search_tree import SearchTree
+
+    entry = registry.get(pid)
+    if entry is None:
+        print(f"No registered problem with id {pid}. Use --list-problems.")
+        return 1
+    state_path = registry.state_path(pid)
+    if not state_path.exists():
+        print(f"No saved state for {pid} — run the search first.")
+        return 1
+
+    ckpt = json.loads(state_path.read_text())
+    tree = SearchTree.from_dict(ckpt.get("tree", {}))
+    goal_node = tree.find_goal()
+    if goal_node is None:
+        goal_node = tree.best_node()
+        print("⚠ No goal node in saved state — writing from the best path so far "
+              "(the run did not confirm a proof).")
+    if goal_node is None:
+        print("Saved state has no usable path.")
+        return 1
+
+    path = [n.to_dict() for n in tree.extract_path(goal_node)]
+    orch = Orchestrator(graph=graph, worker=worker, model=orch_model, verbose=True)
+    orch.goal_description = ckpt.get("goal_description", entry.get("goal", ""))
+
+    print(f"\n📝 Master LLM writing the proof paper from {len(path)} path steps...")
+    paper = orch.write_proof(path)
+    if not paper.strip():
+        print("✗ Writer returned nothing (timeout or empty response).")
+        return 1
+    written = _save_paper(paper, registry.problem_dir(pid))
+    print("✅ Proof paper written:")
+    for w in written:
+        print(f"   {w}")
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Theorem Discovery Engine — search for proofs through the knowledge graph",
@@ -230,6 +295,20 @@ def main():
         default=None,
         help="Print the saved state (tree + per-level attempt ledger) for a problem id and exit",
     )
+    parser.add_argument(
+        "--write-proof",
+        type=str,
+        default=None,
+        metavar="ID",
+        help="Have the master LLM write a full proof paper from a saved run's "
+             "discovered path, then exit. Uses the goal node if found, else the "
+             "best path so far.",
+    )
+    parser.add_argument(
+        "--no-proof-paper",
+        action="store_true",
+        help="Do not auto-write a proof paper after a successful run.",
+    )
 
     args = parser.parse_args()
 
@@ -245,9 +324,9 @@ def main():
     if args.inspect:
         return _inspect_problem(ProblemRegistry(runs_dir), args.inspect)
 
-    if not args.problem and not args.resume and not args.goal:
+    if not args.problem and not args.resume and not args.goal and not args.write_proof:
         parser.error("a problem statement or --goal is required (or use --resume to continue from a checkpoint)")
-    if not args.problem:
+    if not args.problem and not args.write_proof:
         args.problem = args.goal or ""
 
     # Import here to avoid slow import on --help
@@ -307,6 +386,10 @@ def main():
         if worker_model != args.model:
             print(f"  (workers use cheaper model for ~20x token savings)")
         print(f"  Prompt caching:     ON (system prompts cached for 5 min)\n")
+
+    # --- Standalone: write a proof paper from a saved run, then exit ---
+    if args.write_proof:
+        return _write_proof(graph, worker, orch_model, ProblemRegistry(runs_dir), args.write_proof)
 
     # --- Registry: recognize seen problems and resume their per-problem state ---
     registry = ProblemRegistry(runs_dir)
@@ -408,6 +491,21 @@ def main():
             desc = node["state"]["description"][:80]
             conf = node["confidence"]
             print(f"  {i}. [{technique}] ({conf:.0%}) {desc}")
+
+        # Master write-up: turn the discovered path into a full proof paper.
+        if not args.no_proof_paper:
+            out_dir = registry.problem_dir(pid) if pid is not None else Path.cwd()
+            print("\n📝 Master LLM writing the proof paper from the discovered path...")
+            try:
+                paper = orch.write_proof(result["path"])
+                if paper.strip():
+                    for w in _save_paper(paper, out_dir):
+                        print(f"   ✅ {w}")
+                else:
+                    print("   ✗ Writer returned nothing (timeout/empty).")
+            except Exception as exc:  # noqa: BLE001
+                print(f"   ✗ Proof write-up failed: {exc}")
+                print(f"     You can retry later: python -m discovery_engine --write-proof {pid}")
     elif result.get("interrupted"):
         print("\n⚠ Search interrupted — state saved.")
         if pid is not None:

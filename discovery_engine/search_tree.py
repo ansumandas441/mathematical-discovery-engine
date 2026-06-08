@@ -231,6 +231,21 @@ class SearchTree:
     def mark_goal(self, node: SearchNode):
         node.status = NodeStatus.GOAL
 
+    def find_goal(self) -> SearchNode | None:
+        """Return the node marked GOAL, if any."""
+        for n in self.nodes.values():
+            if n.status == NodeStatus.GOAL:
+                return n
+        return None
+
+    def best_node(self) -> SearchNode | None:
+        """Best node to write up when no goal was reached: deepest, then highest
+        confidence. Used as a fallback for proof synthesis on an unsolved run."""
+        candidates = [n for n in self.nodes.values() if n.id != self.root_id]
+        if not candidates:
+            return self.nodes.get(self.root_id)
+        return max(candidates, key=lambda n: (n.depth, n.confidence))
+
     def mark_pruned(self, node: SearchNode, reason: str):
         node.status = NodeStatus.PRUNED
         node.pruned_reason = reason

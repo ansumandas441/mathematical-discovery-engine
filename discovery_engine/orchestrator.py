@@ -70,6 +70,30 @@ Return ONLY a JSON object:
   "goal_reached": true/false
 }"""
 
+PROOF_WRITER_SYSTEM = """\
+You are a meticulous research mathematician (the "master" writer). You are \
+given a GOAL (the theorem to prove) and a discovered PROOF PATH: an ordered \
+chain of intermediate states, each with the technique used, a description, a \
+formal statement, and a proof sketch.
+
+Your job is to assemble these into a SINGLE, complete, rigorous, self-contained \
+proof of the goal, written as a short research paper whose focus is the proof.
+
+Rules:
+- Do NOT merely concatenate the sketches. Fill every gap, justify every step, \
+and make the argument fully rigorous and self-contained (state and prove the \
+lemmas you use, or cite standard results precisely).
+- Treat the path as GUIDANCE, not gospel. If a step is wrong, hand-wavy, or \
+weaker than it claims, fix it or route around it. The deliverable is a correct \
+proof of the stated goal.
+- Be explicit about the exact constant / asymptotic strength you actually \
+establish. If the path does not reach the goal at full strength, say so plainly \
+at the top, then give the strongest result you CAN prove rigorously.
+- Output LaTeX using amsart with a4paper and margin=1in: brief title, an \
+abstract of at most 6 sentences, no author entry, section headings used \
+sparingly. Put the entire LaTeX in ONE fenced code block (```latex ... ```).
+"""
+
 TECHNIQUE_SELECT_SYSTEM = """\
 You are a mathematical strategist. Given a current state and a goal, \
 select the most promising techniques to try next from the candidate list.
@@ -141,20 +165,21 @@ class Orchestrator:
     # LLM calls for orchestration decisions
     # ------------------------------------------------------------------
 
-    def _call_llm(self, system: str, user: str) -> str:
+    def _call_llm(self, system: str, user: str, max_tokens: int = 1024,
+                  timeout: int = 180) -> str:
         # In --use-cli mode the workers shell out to `claude -p` and there is
         # no API key. The orchestrator's own calls must use the same path,
         # otherwise the Anthropic SDK fails with "Could not resolve
         # authentication method".
         if isinstance(self.worker, CLIWorker):
-            return self._call_llm_cli(system, user)
+            return self._call_llm_cli(system, user, timeout=timeout)
 
         import anthropic
 
         client = anthropic.Anthropic(api_key=self._api_key)
         resp = client.messages.create(
             model=self.model,
-            max_tokens=1024,
+            max_tokens=max_tokens,
             system=[
                 {
                     "type": "text",
@@ -170,7 +195,7 @@ class Orchestrator:
         self.token_stats["orchestrator_calls"] += 1
         return resp.content[0].text
 
-    def _call_llm_cli(self, system: str, user: str) -> str:
+    def _call_llm_cli(self, system: str, user: str, timeout: int = 180) -> str:
         """Orchestrator LLM call via `claude -p` — uses the Claude Code
         subscription, no API key needed. Mirrors CLIWorker."""
         import subprocess
@@ -181,7 +206,7 @@ class Orchestrator:
             cmd.extend(["--model", self.model])
 
         try:
-            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
         except subprocess.TimeoutExpired:
             return ""
         except FileNotFoundError:
@@ -477,6 +502,33 @@ class Orchestrator:
             if not reached and reason:
                 self._log(f"     reason: {str(reason)[:140]}")
         return reached
+
+    def write_proof(self, goal_path: list[dict]) -> str:
+        """Master write-up stage: turn the discovered path into a complete,
+        rigorous proof paper (LaTeX). ``goal_path`` is the root→goal chain as a
+        list of node dicts (``SearchNode.to_dict()``)."""
+        blocks: list[str] = []
+        for i, n in enumerate(goal_path):
+            st = n.get("state", {}) or {}
+            tech = n.get("technique_applied") or "START"
+            parts = [f"### Step {i} — technique: {tech}"]
+            if st.get("description"):
+                parts.append(f"Description: {st['description']}")
+            if st.get("formal"):
+                parts.append(f"Formal: {st['formal']}")
+            if n.get("proof_sketch"):
+                parts.append(f"Proof sketch: {n['proof_sketch']}")
+            blocks.append("\n".join(parts))
+        path_text = "\n\n".join(blocks)
+
+        user = (
+            f"## Goal (theorem to prove)\n{self.goal_description}\n\n"
+            f"## Discovered proof path ({len(goal_path)} steps)\n{path_text}\n\n"
+            "Assemble and complete the rigorous proof paper now."
+        )
+        # Papers are long and synthesis is slow — allow a big output and a
+        # generous CLI timeout.
+        return self._call_llm(PROOF_WRITER_SYSTEM, user, max_tokens=16000, timeout=600)
 
     def check_goal_mock(self, state: MathState) -> bool:
         """Keyword-based goal check for dry runs."""
