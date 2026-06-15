@@ -12,3 +12,6 @@ temp_prompt.md
 run_resources.sh
 run_resources.log
 .run_progress
+discovery_engine/runs/
+runs/
+WORK_CHECKLIST.md
