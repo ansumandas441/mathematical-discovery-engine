@@ -32,6 +32,124 @@ import time
 from pathlib import Path
 
 
+def _fmt_age(ts: float) -> str:
+    import datetime
+    try:
+        return datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M")
+    except (OverflowError, OSError, ValueError):
+        return "?"
+
+
+def _list_problems(registry) -> None:
+    rows = registry.list_all()
+    if not rows:
+        print("No problems registered yet.")
+        return
+    print(f"{'ID':<14}{'STATUS':<13}{'ITERS':<7}{'UPDATED':<18}PROBLEM")
+    print("-" * 92)
+    for e in rows:
+        problem = (e.get("problem") or "").replace("\n", " ")
+        if len(problem) > 40:
+            problem = problem[:37] + "..."
+        print(
+            f"{e['id']:<14}{e.get('status',''):<13}{e.get('iterations',0):<7}"
+            f"{_fmt_age(e.get('updated_at', 0)):<18}{problem}"
+        )
+    print("\nResume any of these by giving the same problem again, "
+          "or inspect with --inspect <ID>.")
+
+
+def _inspect_problem(registry, pid: str) -> int:
+    entry = registry.get(pid)
+    if entry is None:
+        print(f"No registered problem with id {pid}. Use --list-problems.")
+        return 1
+    print(f"Problem {pid}  (status={entry.get('status')}, iterations={entry.get('iterations')})")
+    print(f"  {entry.get('problem','')[:200]}")
+    if entry.get("goal"):
+        print(f"  Goal: {entry['goal'][:200]}")
+    state_path = registry.state_path(pid)
+    if not state_path.exists():
+        print("\nNo saved search state yet (problem registered but not run).")
+        return 0
+
+    from .search_tree import SearchTree
+
+    ckpt = json.loads(state_path.read_text())
+    tree = SearchTree.from_dict(ckpt.get("tree", {}))
+    print(f"\nSearch mode: {tree.mode}   Tree: {tree.summary()}")
+    print("\n=== Per-level attempt ledger (techniques tried at each level) ===")
+    tree.print_attempts()
+    print("\n=== Search tree ===")
+    tree.print_tree()
+    return 0
+
+
+def _extract_latex(text: str) -> str | None:
+    """Pull the first fenced ```latex / ```tex block out of the writer output."""
+    import re
+    m = re.search(r"```(?:latex|tex)?\s*\n(.*?)```", text, re.DOTALL)
+    return m.group(1).strip() if m else None
+
+
+def _save_paper(text: str, out_dir, stem: str = "proof_paper") -> list[str]:
+    """Save the writer's full response as Markdown, and the extracted LaTeX as
+    .tex if present. Returns the paths written."""
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    written = []
+    md = out_dir / f"{stem}.md"
+    md.write_text(text)
+    written.append(str(md))
+    tex = _extract_latex(text)
+    if tex:
+        texp = out_dir / f"{stem}.tex"
+        texp.write_text(tex)
+        written.append(str(texp))
+    return written
+
+
+def _write_proof(graph, worker, orch_model, registry, pid: str) -> int:
+    """Standalone: load a saved run and have the master LLM write its paper."""
+    from .orchestrator import Orchestrator
+    from .search_tree import SearchTree
+
+    entry = registry.get(pid)
+    if entry is None:
+        print(f"No registered problem with id {pid}. Use --list-problems.")
+        return 1
+    state_path = registry.state_path(pid)
+    if not state_path.exists():
+        print(f"No saved state for {pid} — run the search first.")
+        return 1
+
+    ckpt = json.loads(state_path.read_text())
+    tree = SearchTree.from_dict(ckpt.get("tree", {}))
+    goal_node = tree.find_goal()
+    if goal_node is None:
+        goal_node = tree.best_node()
+        print("⚠ No goal node in saved state — writing from the best path so far "
+              "(the run did not confirm a proof).")
+    if goal_node is None:
+        print("Saved state has no usable path.")
+        return 1
+
+    path = [n.to_dict() for n in tree.extract_path(goal_node)]
+    orch = Orchestrator(graph=graph, worker=worker, model=orch_model, verbose=True)
+    orch.goal_description = ckpt.get("goal_description", entry.get("goal", ""))
+
+    print(f"\n📝 Master LLM writing the proof paper from {len(path)} path steps...")
+    paper = orch.write_proof(path)
+    if not paper.strip():
+        print("✗ Writer returned nothing (timeout or empty response).")
+        return 1
+    written = _save_paper(paper, registry.problem_dir(pid))
+    print("✅ Proof paper written:")
+    for w in written:
+        print(f"   {w}")
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Theorem Discovery Engine — search for proofs through the knowledge graph",
@@ -93,8 +211,9 @@ def main():
     parser.add_argument(
         "--model",
         type=str,
-        default="claude-sonnet-4-20250514",
-        help="Claude model for orchestrator (default: claude-sonnet-4-20250514)",
+        default=None,
+        help="Claude model for orchestrator. Default: the CLI's own model in "
+             "--use-cli mode, else claude-sonnet-4-6 for the API.",
     )
     parser.add_argument(
         "--worker-model",
@@ -142,12 +261,72 @@ def main():
         default=5,
         help="Save checkpoint every N iterations (default: 5)",
     )
+    parser.add_argument(
+        "--bfs",
+        action="store_true",
+        help="Breadth-first (level-order) search instead of best-first priority search",
+    )
+    parser.add_argument(
+        "--level-parallel",
+        action="store_true",
+        help="Strict level-by-level BFS: expand EVERY node at a depth in "
+             "parallel before descending. Spreads --workers across different "
+             "nodes (forces BFS ordering). Great for wide exploration.",
+    )
+    parser.add_argument(
+        "--runs-dir",
+        type=str,
+        default=None,
+        help="Directory for the problem registry + per-problem state (default: <repo>/runs)",
+    )
+    parser.add_argument(
+        "--restart",
+        action="store_true",
+        help="Ignore any saved state for this problem and start fresh",
+    )
+    parser.add_argument(
+        "--list-problems",
+        action="store_true",
+        help="List all problems the engine has been given (the registry) and exit",
+    )
+    parser.add_argument(
+        "--inspect",
+        type=str,
+        default=None,
+        help="Print the saved state (tree + per-level attempt ledger) for a problem id and exit",
+    )
+    parser.add_argument(
+        "--write-proof",
+        type=str,
+        default=None,
+        metavar="ID",
+        help="Have the master LLM write a full proof paper from a saved run's "
+             "discovered path, then exit. Uses the goal node if found, else the "
+             "best path so far.",
+    )
+    parser.add_argument(
+        "--no-proof-paper",
+        action="store_true",
+        help="Do not auto-write a proof paper after a successful run.",
+    )
 
     args = parser.parse_args()
 
-    if not args.problem and not args.resume and not args.goal:
+    # Resolve the runs directory (registry + per-problem state live here).
+    runs_dir = Path(args.runs_dir) if args.runs_dir else (Path(__file__).resolve().parent.parent / "runs")
+
+    from .registry import ProblemRegistry
+
+    # --- registry-only commands (no graph load needed) ---
+    if args.list_problems:
+        _list_problems(ProblemRegistry(runs_dir))
+        return 0
+    if args.inspect:
+        return _inspect_problem(ProblemRegistry(runs_dir), args.inspect)
+
+    if not args.problem and not args.resume and not args.goal and not args.write_proof:
         parser.error("a problem statement or --goal is required (or use --resume to continue from a checkpoint)")
-    if not args.problem:
+    if not args.problem and not args.write_proof:
         args.problem = args.goal or ""
 
     # Import here to avoid slow import on --help
@@ -170,16 +349,31 @@ def main():
     graph = KnowledgeGraph(graph_path)
     print(f"Loaded in {time.time() - t0:.1f}s — {graph.stats()}")
 
+    # Resolve the orchestrator model. The old hardcoded default
+    # (claude-sonnet-4-20250514) now 404s via the CLI, so make it mode-aware:
+    #   --use-cli  -> None (let the claude CLI use its configured default)
+    #   API        -> a current valid model id
+    if args.model:
+        orch_model = args.model
+    elif args.use_cli:
+        orch_model = None
+    else:
+        orch_model = "claude-sonnet-4-6"
+
     # Create worker
     if args.dry_run:
         worker = MockWorker()
         print("Mode: DRY RUN (mock workers, no API calls)\n")
     elif args.use_cli:
-        cli_parallel = args.workers or 2
+        # Modest default for the subscription CLI: each call spawns a
+        # `claude -p` subprocess, so keep concurrency in the 4-6 range to avoid
+        # rate-limiting / local load. Raise with --workers when on the API.
+        cli_parallel = args.workers or 6
         worker = CLIWorker(model=args.worker_model, max_parallel=cli_parallel)
         print("Mode: CLI (uses Claude Code subscription)")
         print(f"  Workers: {cli_parallel} parallel")
         print("  No API key needed — uses your subscription")
+        print(f"  Orchestrator model: {orch_model or 'CLI default'}")
         if args.worker_model:
             print(f"  Worker model: {args.worker_model}")
         print()
@@ -187,11 +381,48 @@ def main():
         worker_model = args.worker_model or Worker.DEFAULT_MODEL
         worker = Worker(model=worker_model)
         print(f"Mode: LIVE (API)")
-        print(f"  Orchestrator model: {args.model}")
+        print(f"  Orchestrator model: {orch_model}")
         print(f"  Worker model:       {worker_model}")
         if worker_model != args.model:
             print(f"  (workers use cheaper model for ~20x token savings)")
         print(f"  Prompt caching:     ON (system prompts cached for 5 min)\n")
+
+    # --- Standalone: write a proof paper from a saved run, then exit ---
+    if args.write_proof:
+        return _write_proof(graph, worker, orch_model, ProblemRegistry(runs_dir), args.write_proof)
+
+    # --- Registry: recognize seen problems and resume their per-problem state ---
+    registry = ProblemRegistry(runs_dir)
+    pid = None
+    entry = None
+    resume_from = args.resume
+    checkpoint_dir = args.checkpoint_dir
+    state_filename = "checkpoint_latest.json"
+    # Level-parallel is inherently breadth-first, so it forces BFS ordering.
+    search_mode = "bfs" if (args.bfs or args.level_parallel) else "best_first"
+
+    if args.problem:
+        pid, entry = registry.register(args.problem, args.goal or "")
+        problem_dir = registry.problem_dir(pid)
+        state_path = registry.state_path(pid)
+        mode_note = search_mode + (", level-parallel" if args.level_parallel else "")
+        print(f"Problem id: {pid}  (search mode: {mode_note})")
+        if not args.checkpoint_dir:
+            checkpoint_dir = str(problem_dir)
+            state_filename = "state.json"
+        if not resume_from:
+            if args.restart:
+                registry.clear_state(pid)
+                print("  --restart: ignoring saved state, starting fresh.")
+            elif state_path.exists():
+                resume_from = str(state_path)
+                print(
+                    f"  ✓ Seen before (status={entry['status']}, "
+                    f"iterations={entry['iterations']}). Resuming from saved state."
+                )
+            else:
+                print("  New problem — starting fresh.")
+        registry.update(pid, status=ProblemRegistry.IN_PROGRESS)
 
     # Create orchestrator
     api_parallel = args.workers or 5
@@ -202,10 +433,13 @@ def main():
         max_iterations=args.max_iterations,
         max_parallel_workers=api_parallel,
         candidates_per_step=args.candidates,
-        model=args.model,
+        model=orch_model,
         verbose=not args.quiet,
-        checkpoint_dir=args.checkpoint_dir,
+        checkpoint_dir=checkpoint_dir,
         checkpoint_every=args.checkpoint_every,
+        search_mode=search_mode,
+        state_filename=state_filename,
+        level_parallel=args.level_parallel,
     )
 
     # Parse start nodes
@@ -214,10 +448,10 @@ def main():
         start_ids = [s.strip() for s in args.start.split(",")]
 
     # Resume info
-    if args.resume:
-        print(f"Resuming from checkpoint: {args.resume}")
-    if args.checkpoint_dir:
-        print(f"Checkpointing every {args.checkpoint_every} iterations to {args.checkpoint_dir}/")
+    if resume_from:
+        print(f"Resuming from checkpoint: {resume_from}")
+    if checkpoint_dir:
+        print(f"Checkpointing every {args.checkpoint_every} iterations to {checkpoint_dir}/{state_filename}")
 
     # Run discovery
     t0 = time.time()
@@ -226,9 +460,24 @@ def main():
         start_node_ids=start_ids,
         goal=args.goal,
         use_llm_for_orchestration=args.llm_orchestrate,
-        resume_from=args.resume,
+        resume_from=resume_from,
     )
     elapsed = time.time() - t0
+
+    # --- Registry: record outcome ---
+    if pid is not None:
+        if result.get("found"):
+            status = ProblemRegistry.SOLVED
+        elif result.get("interrupted"):
+            status = ProblemRegistry.INTERRUPTED
+        else:
+            status = ProblemRegistry.EXHAUSTED
+        registry.update(
+            pid,
+            status=status,
+            iterations=result["stats"].get("iterations", 0),
+            summary=result["tree"].get("summary", {}),
+        )
 
     # Output
     print(f"\n{'='*60}")
@@ -242,8 +491,28 @@ def main():
             desc = node["state"]["description"][:80]
             conf = node["confidence"]
             print(f"  {i}. [{technique}] ({conf:.0%}) {desc}")
+
+        # Master write-up: turn the discovered path into a full proof paper.
+        if not args.no_proof_paper:
+            out_dir = registry.problem_dir(pid) if pid is not None else Path.cwd()
+            print("\n📝 Master LLM writing the proof paper from the discovered path...")
+            try:
+                paper = orch.write_proof(result["path"])
+                if paper.strip():
+                    for w in _save_paper(paper, out_dir):
+                        print(f"   ✅ {w}")
+                else:
+                    print("   ✗ Writer returned nothing (timeout/empty).")
+            except Exception as exc:  # noqa: BLE001
+                print(f"   ✗ Proof write-up failed: {exc}")
+                print(f"     You can retry later: python -m discovery_engine --write-proof {pid}")
     elif result.get("interrupted"):
-        print("\n⚠ Search interrupted — checkpoint saved. Resume with --resume <path>")
+        print("\n⚠ Search interrupted — state saved.")
+        if pid is not None:
+            print(f"  Resume by giving the same problem again (id {pid}), "
+                  f"or: python -m discovery_engine --inspect {pid}")
+        else:
+            print(f"  Resume with --resume {resume_from}")
     else:
         print("\n✗ No proof found within search limits.")
 

@@ -73,6 +73,38 @@ python -m discovery_engine --llm-orchestrate \
     "Prove the Erdős primitive set conjecture"
 ```
 
+### Wide exploration — level-by-level parallel BFS
+
+Expand *every* node at a tree depth in parallel before descending to the next
+depth. `--workers` is the total concurrency, shared across all nodes in the
+level (so it fans out across *different states*, not just techniques of one
+state):
+
+```bash
+python -m discovery_engine --use-cli --llm-orchestrate --level-parallel \
+    --workers 6 \
+    --goal "sum_{a in A} 1/(a log a) < 1 + o(1) for any primitive A in [x,inf)" \
+    "Prove the Erdős primitive set 1+o(1) bound"
+```
+
+Each iteration is one full BFS wave; `--level-parallel` forces BFS ordering.
+Interruptible/resumable: partially-expanded nodes resume first.
+
+### Write the proof paper (master write-up)
+
+When a run reaches the goal it **auto-saves** the full path and then a master LLM
+**writes a complete proof paper** from it (LaTeX + Markdown) into the problem's
+run directory. Disable with `--no-proof-paper`.
+
+You can also (re)generate the paper from any saved run — even one that didn't
+confirm a proof (it writes from the best path so far, and flags that it's
+partial):
+
+```bash
+python -m discovery_engine --use-cli --write-proof <problem-id>
+# -> runs/<id>/proof_paper.tex  and  runs/<id>/proof_paper.md
+```
+
 ### Save and inspect the search tree
 
 ```bash
@@ -98,6 +130,51 @@ python -m discovery_engine --dry-run --save-tree output.json --print-tree \
 | `--save-tree` | none | Save search tree JSON |
 | `--print-tree` | off | Print tree at end |
 | `--quiet` | off | Suppress progress output |
+| `--bfs` | off | Breadth-first (level-order) search instead of best-first priority search |
+| `--level-parallel` | off | Strict level-by-level BFS: expand *every* node at a depth in parallel before descending. Spreads `--workers` across different nodes (forces BFS). |
+| `--workers` | 6 (CLI) / 5 (API) | Max concurrent worker calls (total, shared across all nodes in a level) |
+| `--runs-dir` | `<repo>/runs` | Where the problem registry + per-problem state live |
+| `--restart` | off | Ignore saved state for this problem and start fresh |
+| `--list-problems` | off | List every problem the engine has been given, then exit |
+| `--inspect <id>` | none | Print the saved tree + per-level attempt ledger for a problem, then exit |
+
+## Continuable runs (registry + resumable state)
+
+Every problem you give is recorded in a **registry** (`runs/registry.json`) under a
+stable id (hash of the problem + goal). Give the *same* problem again and the engine
+recognizes it and **resumes from where it stopped** instead of starting over —
+no flags needed.
+
+```bash
+# First run (Ctrl-C any time — state is saved)
+python -m discovery_engine --use-cli --bfs "Prove <X>"
+
+# Later: same command resumes automatically
+python -m discovery_engine --use-cli --bfs "Prove <X>"
+
+# See everything you've worked on
+python -m discovery_engine --list-problems
+
+# See exactly which techniques were tried at which level (and what was pruned)
+python -m discovery_engine --inspect <problem-id>
+
+# Throw away saved progress and start the problem fresh
+python -m discovery_engine --restart "Prove <X>"
+```
+
+**What the state remembers.** Each search node keeps an *attempt ledger*: the ordered
+candidate techniques chosen for it and, per technique, the outcome
+(`child` / `pruned` / `impossible`). So on resume:
+
+- **Untried techniques run first.** If level 1 was trying `[fourier, laplace]` and you
+  interrupted after `fourier`, resume runs `laplace` before descending to level 2.
+- **Dead directions stay dead.** A technique that returned `impossible` (or was pruned)
+  is never retried.
+- **BFS ordering is preserved** (`--bfs`): all techniques at one level before the next,
+  with partially-expanded nodes re-queued at the front so they finish first.
+
+Interrupt granularity is the worker window (`--workers`); use `--workers 1` for strict
+one-technique-at-a-time resumption.
 
 ## Worker Modes
 

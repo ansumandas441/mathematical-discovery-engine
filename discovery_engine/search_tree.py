@@ -11,6 +11,7 @@ from __future__ import annotations
 import heapq
 import json
 import time
+from collections import deque
 from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
@@ -19,10 +20,15 @@ from typing import Optional
 
 class NodeStatus(str, Enum):
     FRONTIER = "frontier"
+    PARTIAL = "partial"  # popped & some candidates tried, but untried ones remain
     EXPANDED = "expanded"
     PRUNED = "pruned"
     GOAL = "goal"
     DEPTH_LIMIT = "depth_limit"
+
+
+# Statuses that mean "still has work to do" — eligible to (re)enter expansion.
+ACTIVE_STATUSES = (NodeStatus.FRONTIER, NodeStatus.PARTIAL)
 
 
 @dataclass
@@ -89,6 +95,15 @@ class SearchNode:
     proof_sketch: str = ""
     children_ids: list[str] = field(default_factory=list)
     created_at: float = field(default_factory=time.time)
+    # --- attempt ledger: which techniques were tried at this node ---
+    candidates: list[str] = field(default_factory=list)  # ordered techniques chosen for this node
+    attempts: dict[str, dict] = field(default_factory=dict)
+    # attempts: technique_id -> {"outcome": "child"|"pruned"|"impossible",
+    #                            "child_id": str|None, "reason": str, "confidence": float}
+
+    def untried(self) -> list[str]:
+        """Candidate techniques not yet attempted at this node (BFS resume order)."""
+        return [t for t in self.candidates if t not in self.attempts]
 
     def to_dict(self) -> dict:
         return {
@@ -102,6 +117,8 @@ class SearchNode:
             "pruned_reason": self.pruned_reason,
             "proof_sketch": self.proof_sketch,
             "children_ids": self.children_ids,
+            "candidates": self.candidates,
+            "attempts": self.attempts,
         }
 
 
@@ -113,12 +130,14 @@ class SearchTree:
     the most promising frontier node at each iteration.
     """
 
-    def __init__(self):
+    def __init__(self, mode: str = "best_first"):
         self.nodes: dict[str, SearchNode] = {}
         self.root_id: Optional[str] = None
         self._counter = 0
         self._frontier: list[tuple[float, int, str]] = []  # (-score, tiebreak, node_id)
         self._tiebreak = 0
+        self.mode = mode  # "best_first" (priority heap) or "bfs" (FIFO, level-order)
+        self._bfs: deque[str] = deque()
 
     def _next_id(self) -> str:
         self._counter += 1
@@ -155,22 +174,48 @@ class SearchTree:
         return child
 
     def push_frontier(self, node: SearchNode, score: float):
-        self._tiebreak += 1
-        heapq.heappush(self._frontier, (-score, self._tiebreak, node.id))
+        if self.mode == "bfs":
+            self._bfs.append(node.id)
+        else:
+            self._tiebreak += 1
+            heapq.heappush(self._frontier, (-score, self._tiebreak, node.id))
+
+    def requeue_front(self, node: SearchNode):
+        """Put a partially-expanded node back at the *front* so resume tries its
+        remaining (untried) techniques before descending a level."""
+        if self.mode == "bfs":
+            self._bfs.appendleft(node.id)
+        else:
+            self._tiebreak += 1
+            # most-negative key == highest priority in the min-heap
+            heapq.heappush(self._frontier, (-1e18, self._tiebreak, node.id))
 
     def pop_frontier(self) -> SearchNode | None:
+        if self.mode == "bfs":
+            while self._bfs:
+                nid = self._bfs.popleft()
+                node = self.nodes.get(nid)
+                if node and node.status in ACTIVE_STATUSES:
+                    return node
+            return None
         while self._frontier:
             neg_score, _, nid = heapq.heappop(self._frontier)
             node = self.nodes.get(nid)
-            if node and node.status == NodeStatus.FRONTIER:
+            if node and node.status in ACTIVE_STATUSES:
                 return node
         return None
 
     def frontier_size(self) -> int:
+        if self.mode == "bfs":
+            return sum(
+                1
+                for nid in self._bfs
+                if nid in self.nodes and self.nodes[nid].status in ACTIVE_STATUSES
+            )
         return sum(
             1
             for _, _, nid in self._frontier
-            if nid in self.nodes and self.nodes[nid].status == NodeStatus.FRONTIER
+            if nid in self.nodes and self.nodes[nid].status in ACTIVE_STATUSES
         )
 
     def extract_path(self, node: SearchNode) -> list[SearchNode]:
@@ -185,6 +230,21 @@ class SearchTree:
 
     def mark_goal(self, node: SearchNode):
         node.status = NodeStatus.GOAL
+
+    def find_goal(self) -> SearchNode | None:
+        """Return the node marked GOAL, if any."""
+        for n in self.nodes.values():
+            if n.status == NodeStatus.GOAL:
+                return n
+        return None
+
+    def best_node(self) -> SearchNode | None:
+        """Best node to write up when no goal was reached: deepest, then highest
+        confidence. Used as a fallback for proof synthesis on an unsolved run."""
+        candidates = [n for n in self.nodes.values() if n.id != self.root_id]
+        if not candidates:
+            return self.nodes.get(self.root_id)
+        return max(candidates, key=lambda n: (n.depth, n.confidence))
 
     def mark_pruned(self, node: SearchNode, reason: str):
         node.status = NodeStatus.PRUNED
@@ -206,18 +266,20 @@ class SearchTree:
     def to_dict(self, include_frontier: bool = False) -> dict:
         d = {
             "root_id": self.root_id,
+            "mode": self.mode,
             "nodes": {nid: n.to_dict() for nid, n in self.nodes.items()},
             "summary": self.summary(),
         }
         if include_frontier:
             d["_frontier"] = list(self._frontier)
+            d["_bfs"] = list(self._bfs)
             d["_counter"] = self._counter
             d["_tiebreak"] = self._tiebreak
         return d
 
     @classmethod
     def from_dict(cls, d: dict) -> SearchTree:
-        tree = cls()
+        tree = cls(mode=d.get("mode", "best_first"))
         tree.root_id = d.get("root_id")
         tree._counter = d.get("_counter", 0)
         tree._tiebreak = d.get("_tiebreak", 0)
@@ -233,16 +295,27 @@ class SearchTree:
                 pruned_reason=nd.get("pruned_reason"),
                 proof_sketch=nd.get("proof_sketch", ""),
                 children_ids=nd.get("children_ids", []),
+                candidates=nd.get("candidates", []),
+                attempts=nd.get("attempts", {}),
             )
+        raw_bfs = d.get("_bfs", [])
         raw_frontier = d.get("_frontier", [])
-        if raw_frontier:
-            tree._frontier = [tuple(entry) for entry in raw_frontier]
-            heapq.heapify(tree._frontier)
+        if tree.mode == "bfs":
+            if raw_bfs:
+                tree._bfs = deque(raw_bfs)
+            else:
+                for nid, node in tree.nodes.items():
+                    if node.status in ACTIVE_STATUSES:
+                        tree._bfs.append(nid)
         else:
-            for nid, node in tree.nodes.items():
-                if node.status == NodeStatus.FRONTIER:
-                    tree._tiebreak += 1
-                    heapq.heappush(tree._frontier, (-node.confidence, tree._tiebreak, nid))
+            if raw_frontier:
+                tree._frontier = [tuple(entry) for entry in raw_frontier]
+                heapq.heapify(tree._frontier)
+            else:
+                for nid, node in tree.nodes.items():
+                    if node.status in ACTIVE_STATUSES:
+                        tree._tiebreak += 1
+                        heapq.heappush(tree._frontier, (-node.confidence, tree._tiebreak, nid))
         return tree
 
     @classmethod
@@ -263,6 +336,7 @@ class SearchTree:
         node = self.nodes[node_id]
         status_icon = {
             NodeStatus.FRONTIER: "○",
+            NodeStatus.PARTIAL: "◐",
             NodeStatus.EXPANDED: "◉",
             NodeStatus.PRUNED: "✗",
             NodeStatus.GOAL: "★",
@@ -276,3 +350,49 @@ class SearchTree:
         print(f"{prefix}{icon} [{technique}]{conf} {desc}")
         for cid in node.children_ids:
             self.print_tree(cid, indent + 1)
+
+    def attempt_report(self) -> dict[int, list[dict]]:
+        """Group every recorded technique attempt by tree depth (level).
+
+        Returns ``{depth: [{"node": id, "technique": tid, "outcome": ...,
+        "reason": ...}, ...]}`` — i.e. exactly which technique was tried at
+        which level and how it turned out (child / pruned / impossible).
+        """
+        by_level: dict[int, list[dict]] = {}
+        for node in self.nodes.values():
+            for tid, rec in node.attempts.items():
+                by_level.setdefault(node.depth, []).append(
+                    {
+                        "node": node.id,
+                        "technique": tid,
+                        "outcome": rec.get("outcome", "?"),
+                        "reason": rec.get("reason", ""),
+                        "confidence": rec.get("confidence", 0.0),
+                    }
+                )
+        return dict(sorted(by_level.items()))
+
+    def print_attempts(self):
+        """Human-readable per-level ledger of what has been tried."""
+        report = self.attempt_report()
+        if not report:
+            print("  (no technique attempts recorded yet)")
+            return
+        outcome_icon = {"child": "○", "pruned": "✗", "impossible": "⊘"}
+        for depth, attempts in report.items():
+            print(f"  Level {depth}:")
+            for a in attempts:
+                ic = outcome_icon.get(a["outcome"], "?")
+                reason = f" — {a['reason'][:60]}" if a["reason"] else ""
+                print(f"    {ic} [{a['technique']}] on {a['node']} ({a['outcome']}){reason}")
+        # show what is still pending
+        pending = [
+            (n.depth, n.id, t)
+            for n in self.nodes.values()
+            for t in n.untried()
+            if n.status in ACTIVE_STATUSES
+        ]
+        if pending:
+            print("  Pending (untried, will run on resume):")
+            for depth, nid, t in sorted(pending):
+                print(f"    · Level {depth}: [{t}] on {nid}")
