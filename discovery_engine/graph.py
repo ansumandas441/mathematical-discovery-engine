@@ -9,10 +9,27 @@ path finding, and bridge-technique identification.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Optional
 
 import networkx as nx
+
+_WORD_RE = re.compile(r"[a-z0-9]+")
+
+# Tokens too generic to be useful for fuzzy name resolution / technique search.
+_STOPWORDS = {
+    "the", "a", "an", "of", "for", "and", "or", "to", "in", "on", "by", "as",
+    "is", "are", "be", "with", "that", "this", "from", "any", "all", "via",
+    "set", "sets", "form", "case", "cases", "node", "nodes", "term", "terms",
+    "result", "results", "state", "states", "value", "values", "type", "types",
+    "map", "maps", "over", "under", "into", "onto", "its", "it", "we", "our",
+}
+
+
+def _tokens(text: str) -> set[str]:
+    """Lowercase alphanumeric tokens, minus generic stopwords."""
+    return {t for t in _WORD_RE.findall(text.lower()) if t not in _STOPWORDS and len(t) > 1}
 
 CLUSTER_MAP = {
     "t_spot_pattern_in_table": 1,
@@ -105,6 +122,12 @@ class KnowledgeGraph:
         self.nodes: dict[str, dict] = {}
         self.edges: list[dict] = []
         self.techniques: dict[str, dict] = {}
+        # Indices for name resolution (re-grounding worker output to real IDs).
+        self._name_to_id: dict[str, str] = {}        # exact lowercased name -> id
+        self._token_index: dict[str, set[str]] = {}  # name token -> {node ids}
+        self._name_tokens: dict[str, set[str]] = {}  # node id -> name token set
+        self._tech_tokens: dict[str, set[str]] = {}  # technique id -> name+desc tokens
+        self._cluster_members: dict[int, list[str]] = {}  # cluster -> technique ids
         self._load()
 
     def _load(self):
@@ -130,6 +153,28 @@ class KnowledgeGraph:
                 used_in_theorem=e.get("used_in_theorem"),
                 parameter_binding=e.get("parameter_binding", {}),
             )
+
+        self._build_indices()
+
+    def _build_indices(self):
+        """Build name/token indices used for re-grounding and technique search."""
+        for nid, n in self.nodes.items():
+            name = (n.get("name") or "").strip()
+            if name:
+                # First writer wins on exact-name collisions (rare).
+                self._name_to_id.setdefault(name.lower(), nid)
+            # Name tokens drive resolution (workers emit concept *names*); the
+            # index maps each name token back to the nodes that carry it.
+            name_toks = _tokens(name) or _tokens(nid)
+            self._name_tokens[nid] = name_toks
+            for t in name_toks:
+                self._token_index.setdefault(t, set()).add(nid)
+            # Technique search also leans on descriptions for topical recall.
+            if n.get("kind") == "technique":
+                self._tech_tokens[nid] = _tokens(name + " " + str(n.get("description", "")))
+        for tid in self.techniques:
+            c = CLUSTER_MAP.get(tid, 0)
+            self._cluster_members.setdefault(c, []).append(tid)
 
     # ------------------------------------------------------------------
     # Queries
@@ -166,6 +211,92 @@ class KnowledgeGraph:
             if nbr in self.techniques:
                 out.append(nbr)
         return list(set(out))
+
+    # ------------------------------------------------------------------
+    # Name resolution / re-grounding (Fix 1)
+    # ------------------------------------------------------------------
+
+    def resolve_name(
+        self, name: str, min_score: float = 0.34, prefer_non_technique: bool = True
+    ) -> str | None:
+        """Resolve a free-text node name (as emitted by a worker) to a real
+        graph node id, or None if there is no confident match.
+
+        Workers tend to return ``graph_nodes_produced`` as natural-language
+        names ("Mertens-type estimates") rather than ids ("t_mertens..."). This
+        maps such names back onto the graph so the search keeps its grounding.
+        """
+        if not name or not isinstance(name, str):
+            return None
+        # Already a valid id.
+        if name in self.nodes:
+            return name
+        key = name.strip().lower()
+        # Exact name hit.
+        if key in self._name_to_id:
+            return self._name_to_id[key]
+        qtok = _tokens(name)
+        if not qtok:
+            return None
+        candidates: set[str] = set()
+        for t in qtok:
+            candidates |= self._token_index.get(t, set())
+        best: str | None = None
+        best_score = 0.0
+        for cid in candidates:
+            ctok = self._name_tokens.get(cid)
+            if not ctok:
+                continue
+            inter = len(qtok & ctok)
+            if not inter:
+                continue
+            # Overlap coefficient relative to the shorter set, with a Jaccard
+            # tie-break so a tight full-name match beats a loose partial one.
+            score = inter / min(len(qtok), len(ctok))
+            score += 0.25 * inter / len(qtok | ctok)
+            if prefer_non_technique and self.nodes[cid].get("kind") == "technique":
+                score *= 0.85
+            if score > best_score:
+                best_score = score
+                best = cid
+        return best if best_score >= min_score else None
+
+    def reground(self, names: list[str], prefer_non_technique: bool = True) -> list[str]:
+        """Resolve a list of names to a de-duplicated list of valid node ids."""
+        out: list[str] = []
+        seen: set[str] = set()
+        for nm in names or []:
+            rid = self.resolve_name(nm, prefer_non_technique=prefer_non_technique)
+            if rid and rid not in seen:
+                seen.add(rid)
+                out.append(rid)
+        return out
+
+    def search_techniques(self, keywords: list[str], max_results: int = 12) -> list[str]:
+        """Rank technique ids by token overlap with *keywords*.
+
+        This is the keyword/topic route into the technique space (Fix 2): when a
+        state has no usable graph grounding, candidates are drawn from here using
+        the goal/state text, so number-theoretic techniques (Mertens, sieves,
+        first-step analysis, …) become reachable instead of the first-20 default.
+        """
+        qtok: set[str] = set()
+        for kw in keywords:
+            qtok |= _tokens(str(kw))
+        if not qtok:
+            return []
+        scored: list[tuple[float, str]] = []
+        for tid, ttok in self._tech_tokens.items():
+            inter = len(qtok & ttok)
+            if not inter:
+                continue
+            scored.append((inter / min(len(qtok), len(ttok)) + 0.05 * inter, tid))
+        scored.sort(reverse=True)
+        return [tid for _, tid in scored[:max_results]]
+
+    def techniques_by_cluster(self, cluster: int) -> list[str]:
+        """All technique ids assigned to a cluster number."""
+        return list(self._cluster_members.get(cluster, []))
 
     def technique_neighbors(self, technique_id: str) -> dict[str, list[dict]]:
         """Return inputs and outputs of a technique (nodes connected to it)."""

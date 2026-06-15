@@ -276,6 +276,37 @@ python3 -m discovery_engine.discover --use-cli \
     "ignored — problem is restored from checkpoint"
 ```
 
+### Continuable runs: problem registry + per-level resume
+
+Every problem you give is recorded in a **registry** (`runs/registry.json`) under a
+stable id (hash of the problem + goal). Give the **same problem again** and the engine
+recognizes it and **resumes from where it stopped** — no `--resume` path needed.
+
+```bash
+# Start a run (Ctrl-C any time — state is saved). --bfs = level-order tree search.
+python3 -m discovery_engine --use-cli --bfs "Prove <X>"
+
+# Later: the SAME command auto-resumes (untried techniques first, pruned ones skipped)
+python3 -m discovery_engine --use-cli --bfs "Prove <X>"
+
+# List every problem you've worked on (status, iterations, last updated)
+python3 -m discovery_engine --list-problems
+
+# Inspect a problem: tree + per-level ledger of which technique was tried at which level
+python3 -m discovery_engine --inspect <problem-id>
+
+# Discard saved progress and start the problem fresh
+python3 -m discovery_engine --restart "Prove <X>"
+```
+
+**What the saved state remembers** (in `runs/<id>/state.json`): each search node keeps an
+*attempt ledger* — the ordered candidate techniques and, per technique, the outcome
+(`child` / `pruned` / `impossible`). So on resume, **untried techniques run before
+descending a level** (e.g. `[fourier, laplace]` interrupted after `fourier` resumes at
+`laplace`), and **dead directions stay dead** (an `impossible` technique is never retried).
+Interrupt granularity is the worker window — use `--workers 1` for strict
+one-technique-at-a-time resumption.
+
 ### Example Output
 
 ```
@@ -350,6 +381,11 @@ Stats: {"iterations": 15, "worker_calls": 47, "pruned": 12, "goal_found": true}
 | `--checkpoint-dir <path>` | off | Directory for periodic checkpoints |
 | `--checkpoint-every N` | 5 | Save checkpoint every N iterations |
 | `--resume <path>` | — | Resume from a checkpoint file |
+| `--bfs` | — | Breadth-first (level-order) search instead of best-first priority search |
+| `--runs-dir <path>` | `<repo>/runs` | Where the problem registry + per-problem state live |
+| `--restart` | — | Ignore saved state for this problem and start fresh |
+| `--list-problems` | — | List every problem the engine has been given, then exit |
+| `--inspect <id>` | — | Print saved tree + per-level attempt ledger for a problem, then exit |
 | `--quiet` | — | Suppress progress output |
 
 ---
@@ -444,6 +480,35 @@ The knowledge graph is built from a companion report tracing ~100 pivotal theore
 Read in order for the narrative arc, or jump by area using [`INDEX.md`](INDEX.md).
 
 ---
+
+## Recent Improvements
+
+### 2026-06-07 — Continuable runs: problem registry + per-level resumable state
+
+The engine now remembers problems across sessions and resumes searches at
+technique-level granularity.
+
+- **Problem registry (`runs/registry.json`).** Every problem is recorded under a stable
+  id (`sha1` of the normalized problem + goal). Re-giving the same problem is detected
+  automatically and resumes its saved state instead of starting over.
+  New: `--list-problems`, `--inspect <id>`, `--restart`, `--runs-dir`.
+- **Per-(node, technique) attempt ledger.** Each search node stores its ordered
+  `candidates` and an `attempts` map (`technique → child | pruned | impossible`),
+  persisted in `runs/<id>/state.json`. `--inspect` prints the per-level ledger so you can
+  see exactly which technique was tried at which level and what was pruned.
+- **BFS / level-order mode (`--bfs`).** FIFO frontier: every technique at one level
+  before descending — the explicit tree-search picture (`[fourier, laplace]` per level).
+- **Exact, granular resume.** On Ctrl-C, a partially-expanded node is marked `partial`
+  and re-queued at the front; on resume its **untried** techniques run before descending,
+  and `impossible`/`pruned` directions are **never retried**. Final state is also saved on
+  normal completion, so re-runs continue rather than restart.
+
+Implementation: new `discovery_engine/registry.py`; `search_tree.py` gains the `partial`
+status, ledger fields, a BFS FIFO frontier, `requeue_front`, and an `attempt_report`;
+`orchestrator.py` expands nodes via a resumable, per-technique `_expand_node`;
+`discover.py` wires the registry, the new flags, and auto-resume. Backward compatible with
+existing checkpoints. See [`discovery_engine/README.md`](discovery_engine/README.md#continuable-runs-registry--resumable-state)
+for details.
 
 ## Roadmap
 
