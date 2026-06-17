@@ -6,7 +6,7 @@
 <title>The Mathematical Discovery Engine — a machine that searches for new theorems</title>
 <meta name="description" content="A knowledge graph of 15,941 mathematical states and 1,223 proof techniques. Proof becomes path-finding — and discovery becomes search, even with no specific problem to solve." />
 
-<!-- Open Graph / Twitter cards: links unfurl with the preview image -->
+<!-- Open Graph / Twitter cards -->
 <meta property="og:title" content="The Mathematical Discovery Engine" />
 <meta property="og:description" content="What if discovering a new theorem is just finding a path through a graph? 15,941 states · 1,223 techniques · open-ended search for mathematics no human has reached yet." />
 <meta property="og:type" content="website" />
@@ -14,193 +14,239 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="./assets/knowledge_graph_3d_preview.gif" />
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
 <style>
   :root{
-    --bg:#050510; --panel:rgba(255,255,255,0.035); --border:rgba(255,255,255,0.10);
-    --text:#e9eef6; --muted:#8b94a7; --accent:#5b9dff; --accent2:#a06bff; --glow:#3a6dff;
+    --bg:#03100f; --bg2:#061b1a;
+    --panel:rgba(120,230,215,0.035); --border:rgba(120,230,215,0.16); --border-soft:rgba(120,230,215,0.09);
+    --text:#dcebe7; --text:#dfeceb; --muted:#7e958f;
+    --teal:#5ce3d0; --teal-dim:#3ba99a; --amber:#f4a96f;
+    --disp:'Jost',-apple-system,BlinkMacSystemFont,sans-serif;
+    --mono:'Space Mono',ui-monospace,monospace;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
     background:var(--bg); color:var(--text); min-height:100vh; overflow-x:hidden;
-    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-family:var(--disp); font-weight:300; font-size:16px; line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  /* animated aurora backdrop */
   body::before{
-    content:""; position:fixed; inset:-30%; z-index:-1; pointer-events:none;
+    content:""; position:fixed; inset:-25%; z-index:-2; pointer-events:none;
     background:
-      radial-gradient(40% 50% at 20% 10%, rgba(91,157,255,0.18), transparent 60%),
-      radial-gradient(45% 50% at 85% 15%, rgba(160,107,255,0.16), transparent 60%),
-      radial-gradient(50% 60% at 50% 110%, rgba(58,109,255,0.14), transparent 60%);
-    filter:blur(20px); animation:drift 18s ease-in-out infinite alternate;
+      radial-gradient(50% 55% at 50% 8%, rgba(92,227,208,0.14), transparent 60%),
+      radial-gradient(45% 50% at 82% 30%, rgba(244,169,111,0.07), transparent 60%),
+      radial-gradient(60% 60% at 18% 70%, rgba(59,169,154,0.10), transparent 60%);
+    filter:blur(10px);
   }
-  @keyframes drift{ from{transform:translate(-2%,-1%) scale(1);} to{transform:translate(2%,2%) scale(1.08);} }
-
-  .wrap{max-width:980px; margin:0 auto; padding:40px 22px 90px;}
-
-  /* eyebrow */
-  .eyebrow{
-    text-align:center; letter-spacing:.18em; text-transform:uppercase; font-size:12px;
-    color:var(--muted); margin-bottom:18px;
+  /* faint grid texture for the HUD feel */
+  body::after{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.5;
+    background-image:
+      linear-gradient(rgba(120,230,215,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,230,215,0.025) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(circle at 50% 30%, #000 0%, transparent 75%);
+            mask-image:radial-gradient(circle at 50% 30%, #000 0%, transparent 75%);
   }
+
+  .wrap{max-width:1080px; margin:0 auto; padding:46px 26px 100px;}
+
+  /* HUD label: dash + tracked mono */
+  .label{
+    font-family:var(--mono); font-size:12px; letter-spacing:.34em; text-transform:uppercase;
+    color:var(--teal); display:inline-flex; align-items:center; gap:14px;
+  }
+  .label::before{content:""; width:34px; height:1px; background:var(--teal); opacity:.8;}
+  .center .label{justify-content:center;}
+
+  /* HERO */
+  .hero-head{text-align:center; margin-bottom:30px;}
+  .hero-head .label{margin-bottom:26px;}
   h1{
-    text-align:center; font-size:clamp(32px,6.2vw,62px); line-height:1.05; margin:0 0 18px;
-    letter-spacing:-0.03em; font-weight:800;
-    background:linear-gradient(180deg,#ffffff 0%, #cdd6ea 100%);
-    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    font-family:var(--disp); font-weight:200; margin:0 0 22px;
+    font-size:clamp(30px,6vw,64px); line-height:1.12; letter-spacing:.04em;
+    text-transform:uppercase; color:#fff;
   }
-  h1 .grad{
-    background:linear-gradient(100deg,var(--accent),var(--accent2));
-    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-  }
+  h1 b{font-weight:500;}
+  h1 .teal{color:var(--teal); font-weight:300;}
   .lede{
-    text-align:center; color:#c2cbdc; font-size:clamp(17px,2.5vw,22px);
-    max-width:720px; margin:0 auto 30px;
+    max-width:680px; margin:0 auto; color:#b6c8c4; font-weight:300;
+    font-size:clamp(16px,2.3vw,19px); letter-spacing:.01em; line-height:1.7;
   }
+  .lede b{color:#e7f4f2; font-weight:500;}
 
-  .hero{
-    position:relative; border:1px solid var(--border); border-radius:18px; overflow:hidden;
-    background:#000; aspect-ratio:16/9; margin:0 auto 14px;
-    box-shadow:0 0 0 1px rgba(91,157,255,0.15), 0 30px 80px rgba(20,30,90,0.45);
+  /* framed hero media with corner brackets */
+  .frame{position:relative; margin:40px auto 0; padding:14px;}
+  .frame::before,.frame::after,
+  .frame > .cnr1,.frame > .cnr2{
+    content:""; position:absolute; width:26px; height:26px; border:1px solid var(--teal); opacity:.7;
   }
-  .hero video,.hero img{width:100%;height:100%;object-fit:cover;display:block;}
+  .frame::before{top:0; left:0; border-right:0; border-bottom:0;}
+  .frame::after{top:0; right:0; border-left:0; border-bottom:0;}
+  .frame > .cnr1{bottom:0; left:0; border-right:0; border-top:0;}
+  .frame > .cnr2{bottom:0; right:0; border-left:0; border-top:0;}
+  .hero{
+    position:relative; overflow:hidden; aspect-ratio:16/9; background:#000;
+    border:1px solid var(--border-soft);
+  }
+  .hero video,.hero img{width:100%;height:100%;object-fit:cover;display:block; opacity:.92;}
+  .hero .vig{position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(70% 70% at 50% 50%, transparent 40%, rgba(3,16,15,0.55) 100%);}
   .hero a.play{
-    position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center;
-    text-decoration:none; color:#fff; background:linear-gradient(transparent 55%,rgba(0,0,0,0.6));
+    position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center; text-decoration:none;
   }
   .hero a.play span{
-    margin-bottom:18px; font-weight:600; font-size:15px; padding:9px 18px; border-radius:999px;
-    background:rgba(8,10,25,0.55); border:1px solid var(--border); backdrop-filter:blur(8px);
+    margin-bottom:20px; font-family:var(--mono); font-size:12px; letter-spacing:.22em; text-transform:uppercase;
+    color:#dfeceb; padding:10px 20px; border:1px solid var(--border);
+    background:rgba(3,16,15,0.5); backdrop-filter:blur(8px);
   }
 
-  .cta{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin:26px 0 14px;}
+  /* HUD buttons */
+  .cta{display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin:40px 0 12px;}
   .btn{
-    text-decoration:none; font-weight:650; font-size:16px; padding:15px 28px; border-radius:12px;
-    border:1px solid var(--border); color:var(--text); background:var(--panel);
-    transition:transform .15s, background .15s, box-shadow .15s; display:inline-flex; align-items:center; gap:9px;
+    font-family:var(--mono); text-decoration:none; font-size:13px; letter-spacing:.2em; text-transform:uppercase;
+    padding:16px 30px; border:1px solid var(--border); color:var(--text); background:transparent;
+    transition:all .2s; display:inline-flex; align-items:center; gap:10px; position:relative;
   }
-  .btn:hover{transform:translateY(-2px); background:rgba(255,255,255,0.08);}
-  .btn.primary{
-    color:#fff; border-color:transparent;
-    background:linear-gradient(100deg,var(--accent),var(--accent2));
-    box-shadow:0 10px 30px rgba(74,109,255,0.4);
+  .btn:hover{border-color:var(--teal); color:#fff; box-shadow:0 0 24px rgba(92,227,208,0.18) inset, 0 0 18px rgba(92,227,208,0.12);}
+  .btn.primary{border-color:var(--teal); color:var(--teal);}
+  .btn.primary:hover{background:rgba(92,227,208,0.08); color:#fff;}
+  .cta-note{text-align:center; color:var(--muted); font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; margin:0 0 60px; text-transform:uppercase;}
+
+  /* stats */
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); margin:0 0 76px; border:1px solid var(--border-soft);}
+  @media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr);} .stats .stat:nth-child(-n+2){border-bottom:1px solid var(--border-soft);}}
+  .stat{padding:26px 12px; text-align:center; border-right:1px solid var(--border-soft);}
+  .stat:last-child{border-right:0;}
+  .stat b{display:block; font-family:var(--disp); font-weight:300; font-size:clamp(22px,4vw,34px); letter-spacing:.02em; color:#fff;}
+  .stat small{display:block; margin-top:6px; font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted);}
+
+  /* narrative */
+  section.block{margin:0 0 70px;}
+  .kicker{margin:0 0 18px;}
+  h2{
+    font-family:var(--disp); font-weight:200; text-transform:uppercase; letter-spacing:.03em;
+    font-size:clamp(22px,3.6vw,36px); line-height:1.2; margin:0 0 20px; color:#fff;
   }
-  .btn.primary:hover{box-shadow:0 14px 40px rgba(74,109,255,0.55);}
-  .cta-note{text-align:center; color:var(--muted); font-size:13.5px; margin:0 0 50px;}
-
-  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:0 0 64px;}
-  @media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
-  .stat{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:20px 10px; text-align:center;}
-  .stat b{display:block; font-size:clamp(24px,4.4vw,34px); letter-spacing:-0.02em;
-    background:linear-gradient(180deg,#fff,#b9c4dc); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;}
-  .stat small{color:var(--muted); font-size:13px;}
-
-  /* narrative sections */
-  section.block{margin:0 0 56px;}
-  .kicker{color:var(--accent); font-weight:700; letter-spacing:.04em; font-size:14px; text-transform:uppercase; margin:0 0 10px;}
-  h2{font-size:clamp(24px,4vw,34px); line-height:1.15; letter-spacing:-0.02em; margin:0 0 16px;}
-  section.block p{color:#c5cee0; font-size:17.5px; margin:0 0 14px;}
+  h2 b{font-weight:500; color:var(--teal);}
+  section.block p{color:#aebfbb; font-weight:300; font-size:17px; letter-spacing:.01em; margin:0 0 16px;}
   section.block p:last-child{margin-bottom:0;}
-  .big{font-size:clamp(20px,3vw,26px); line-height:1.4; color:#e9eef6; font-weight:600;}
-  em.hl{font-style:normal; color:#fff; background:linear-gradient(100deg,rgba(91,157,255,.25),rgba(160,107,255,.25)); padding:0 6px; border-radius:5px;}
+  .big{font-size:clamp(18px,2.6vw,23px); line-height:1.5; color:#dfeceb; font-weight:300;}
+  em.hl{font-style:normal; color:#fff; border-bottom:1px solid var(--teal); padding-bottom:1px;}
+  b.amber{color:var(--amber); font-weight:500;}
 
-  .modes{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:6px;}
+  .modes{display:grid; grid-template-columns:1fr 1fr; gap:1px; margin-top:6px; background:var(--border-soft); border:1px solid var(--border-soft);}
   @media (max-width:640px){.modes{grid-template-columns:1fr;}}
-  .mode{background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:24px;}
-  .mode h3{margin:0 0 8px; font-size:20px;}
-  .mode .tag{display:inline-block; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent2); margin-bottom:12px;}
-  .mode p{font-size:16px; color:#b9c2d6; margin:0;}
+  .mode{background:var(--bg); padding:30px 28px;}
+  .mode .tag{font-family:var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--teal); display:block; margin-bottom:14px;}
+  .mode .tag.amber{color:var(--amber);}
+  .mode h3{font-family:var(--disp); font-weight:300; text-transform:uppercase; letter-spacing:.04em; margin:0 0 12px; font-size:20px; color:#fff;}
+  .mode p{font-size:15.5px; color:#a4b5b1; margin:0; font-weight:300;}
+  .mode em{font-style:italic; color:#dfeceb;}
 
-  .wow{
-    border:1px solid var(--border); border-radius:18px; padding:34px 30px; text-align:center;
-    background:linear-gradient(160deg,rgba(91,157,255,0.10),rgba(160,107,255,0.07));
-  }
-  .wow p{font-size:clamp(19px,3vw,25px); line-height:1.45; color:#eef2fb; margin:0 0 10px; font-weight:600;}
-  .wow .sub{font-size:16px; color:var(--muted); font-weight:400; margin:0;}
+  .wow{position:relative; padding:48px 38px; text-align:center; border:1px solid var(--border);
+    background:linear-gradient(160deg, rgba(92,227,208,0.06), rgba(244,169,111,0.04));}
+  .wow .label{justify-content:center; margin-bottom:24px;}
+  .wow p{font-family:var(--disp); font-weight:200; font-size:clamp(19px,3vw,27px); line-height:1.4; color:#fff; margin:0 0 14px; letter-spacing:.01em;}
+  .wow .sub{font-size:15px; color:var(--muted); font-weight:300; margin:0; letter-spacing:.02em;}
 
-  footer{text-align:center; color:var(--muted); font-size:14px; margin-top:30px;}
-  footer a{color:var(--accent); text-decoration:none;}
-  .disclaimer{max-width:680px; margin:22px auto 0; font-size:13.5px; color:#6f7890; text-align:center;}
+  footer{text-align:center; margin-top:40px;}
+  .disclaimer{max-width:700px; margin:0 auto 26px; font-family:var(--mono); font-size:11.5px; line-height:1.9; letter-spacing:.04em; color:#647571; text-align:center;}
+  footer .src{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);}
+  footer a{color:var(--teal); text-decoration:none;}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <p class="eyebrow">The Mathematical Discovery Engine</p>
-  <h1>What if a new theorem is just<br><span class="grad">a path waiting to be found?</span></h1>
-  <p class="lede">Every great theorem in history was reached by applying a known <b>technique</b> to a known <b>fact</b>. So we encoded all of it — 15,941 mathematical states, 1,223 techniques — into one graph. Now discovery isn't genius. It's <b>search</b>.</p>
+  <!-- HERO -->
+  <div class="hero-head center">
+    <span class="label">The Mathematical Discovery Engine</span>
+    <h1>What if a new theorem<br>is just <span class="teal">a path waiting to be found?</span></h1>
+    <p class="lede">Every great theorem in history was reached by applying a known <b>technique</b> to a known <b>fact</b>. We encoded all of it — 15,941 mathematical states, 1,223 techniques — into one graph. Now discovery isn't genius. It's <b>search</b>.</p>
+  </div>
 
-  <div class="hero">
-    <video autoplay muted loop playsinline poster="./assets/knowledge_graph_3d_preview.gif">
-      <source src="./assets/knowledge_graph_3d.mp4" type="video/mp4" />
-      <img src="./assets/knowledge_graph_3d_preview.gif" alt="3D knowledge graph of 15,941 mathematical states" />
-    </video>
-    <a class="play" href="./graph_viewer_3d.html" title="Open the live 3D graph">
-      <span>▶ Click to fly through the live graph</span>
-    </a>
+  <div class="frame">
+    <i class="cnr1"></i><i class="cnr2"></i>
+    <div class="hero">
+      <video autoplay muted loop playsinline poster="./assets/knowledge_graph_3d_preview.gif">
+        <source src="./assets/knowledge_graph_3d.mp4" type="video/mp4" />
+        <img src="./assets/knowledge_graph_3d_preview.gif" alt="3D knowledge graph of 15,941 mathematical states" />
+      </video>
+      <div class="vig"></div>
+      <a class="play" href="./graph_viewer_3d.html" title="Open the live 3D graph"><span>▶ Fly through the live graph</span></a>
+    </div>
   </div>
 
   <div class="cta">
-    <a class="btn primary" href="./graph_viewer_3d.html">🌐 Explore the live 3D graph</a>
-    <a class="btn" href="https://github.com/ansumandas441/mathematical-discovery-engine">⭐ Star on GitHub</a>
+    <a class="btn primary" href="./graph_viewer_3d.html">Explore the 3D graph</a>
+    <a class="btn" href="https://github.com/ansumandas441/mathematical-discovery-engine">★ Star on GitHub</a>
   </div>
-  <p class="cta-note">No install. Runs in your browser. Loads ~11&nbsp;MB of real graph data — give it a few seconds.</p>
+  <p class="cta-note">No install · runs in your browser · loads ~11 MB of real graph data</p>
 
+  <!-- STATS -->
   <div class="stats">
-    <div class="stat"><b>15,941</b><small>mathematical states</small></div>
-    <div class="stat"><b>1,223</b><small>proof techniques</small></div>
-    <div class="stat"><b>26,614</b><small>connections</small></div>
-    <div class="stat"><b>∞ → finite</b><small>search space</small></div>
+    <div class="stat"><b>15,941</b><small>States</small></div>
+    <div class="stat"><b>1,223</b><small>Techniques</small></div>
+    <div class="stat"><b>26,614</b><small>Connections</small></div>
+    <div class="stat"><b>∞ → finite</b><small>Search Space</small></div>
   </div>
 
+  <!-- IDEA -->
   <section class="block">
-    <p class="kicker">The idea</p>
-    <h2>Mathematics is not infinite to search. It only looks that way.</h2>
-    <p class="big">You cannot search over <em class="hl">all possible true statements</em> — there are infinitely many. But you <em class="hl">can</em> search over every <b>composition of known techniques applied to known facts</b>. That space is large, but it is <b>finite</b>. And finite spaces can be searched by machines.</p>
-    <p>Galois applied symmetry reduction to the roots of polynomials. Cantor applied diagonalization to the real numbers. Wiles built a bridge from modular forms to elliptic curves. Each was a human, sometimes spending a lifetime, finding <em>one path</em>. This engine treats that path-finding as a search problem an orchestrator can run thousands of times in parallel.</p>
+    <p class="kicker"><span class="label">The Idea</span></p>
+    <h2>Mathematics is not infinite to search. It only <b>looks</b> that way.</h2>
+    <p class="big">You cannot search over <em class="hl">all possible true statements</em> — there are infinitely many. But you <em class="hl">can</em> search over every composition of known techniques applied to known facts. That space is vast, yet <b class="amber">finite</b>. And finite spaces can be searched by machines.</p>
+    <p>Galois applied symmetry reduction to the roots of polynomials. Cantor applied diagonalization to the real numbers. Wiles built a bridge from modular forms to elliptic curves. Each was a human, sometimes spending a lifetime, finding <em>one path</em>. This engine treats that path-finding as a search an orchestrator can run thousands of times in parallel.</p>
   </section>
 
+  <!-- MODES -->
   <section class="block">
-    <p class="kicker">Two ways to discover</p>
-    <h2>Search with a goal — or with no goal at all.</h2>
+    <p class="kicker"><span class="label">Two Ways To Discover</span></p>
+    <h2>Search with a goal — or with <b>no goal at all</b>.</h2>
     <div class="modes">
       <div class="mode">
-        <span class="tag">Targeted</span>
+        <span class="tag">01 · Targeted</span>
         <h3>Prove a specific theorem</h3>
-        <p>Give it a goal. The engine searches for a chain of techniques connecting today's known axioms to that result — an automatically discovered proof. Impossible branches are pruned using known impossibility theorems (Abel–Ruffini, Gödel, Turing) so the search doesn't waste time on the unreachable.</p>
+        <p>Give it a goal. The engine searches for a chain of techniques connecting today's known axioms to that result — an automatically discovered proof. Impossible branches are pruned using known impossibility theorems (Abel–Ruffini, Gödel, Turing), so the search never wastes time on the unreachable.</p>
       </div>
       <div class="mode">
-        <span class="tag">Open-ended · by design</span>
+        <span class="tag amber">02 · Open-Ended · By Design</span>
         <h3>Discover with no problem in mind</h3>
-        <p>Here is the wild part the architecture is built for: point it at <b>no target at all.</b> Take existing nodes, apply techniques no one happened to try in that combination, and ask — <em>does this produce something new and true?</em> A finite, searchable graph makes goalless exploration possible in principle. Wiring it up is the next frontier of this project.</p>
+        <p>Here is the wild part the architecture is built for: point it at <em>no target at all</em>. Take existing nodes, apply techniques no one happened to try in that combination, and ask — does this produce something new and true? A finite, searchable graph makes goalless exploration possible in principle. Wiring it up is the next frontier of this project.</p>
       </div>
     </div>
   </section>
 
+  <!-- WOW -->
   <section class="block">
     <div class="wow">
-      <p>If this works at scale, the bottleneck on mathematical progress was never the truths themselves — it was <em class="hl">how long it takes a human to stumble onto the right combination.</em></p>
+      <span class="label">The Bet</span>
+      <p>If this works at scale, the bottleneck on mathematical progress was never the truths themselves — it was <em class="hl">how long it takes a human to stumble onto the right combination</em>.</p>
       <p>Remove that bottleneck, and centuries of advancement could compress into a search that runs while you sleep.</p>
-      <p class="sub">That is the bet. The graph below is real and explorable today. Spin it, follow a chain of techniques, and judge for yourself.</p>
+      <p class="sub">The graph below is real and explorable today. Spin it, follow a chain of techniques, and judge for yourself.</p>
     </div>
   </section>
 
+  <!-- HOW -->
   <section class="block">
-    <p class="kicker">How it runs</p>
-    <h2>An orchestra of models walking the graph.</h2>
-    <p>An <b>orchestrator</b> LLM decides which techniques to try next. <b>Worker</b> models attempt each technique application in parallel. A <b>pruner</b> kills branches that known impossibility results rule out. Every solved problem adds new edges back into the graph — so the system gets a little smarter every time it succeeds. The whole structure is grown by a pipeline that ingests mathematical sources and deduplicates against the existing canon.</p>
+    <p class="kicker"><span class="label">How It Runs</span></p>
+    <h2>An orchestra of models <b>walking the graph</b>.</h2>
+    <p>An <b style="color:#dfeceb;font-weight:500">orchestrator</b> model decides which techniques to try next. <b style="color:#dfeceb;font-weight:500">Worker</b> models attempt each technique application in parallel. A <b style="color:#dfeceb;font-weight:500">pruner</b> kills branches that known impossibility results rule out. Every solved problem adds new edges back into the graph — so the system grows a little smarter each time it succeeds. The whole structure is built by a pipeline that ingests mathematical sources and deduplicates against the existing canon.</p>
   </section>
 
   <div class="cta">
-    <a class="btn primary" href="./graph_viewer_3d.html">🌐 Explore the live 3D graph</a>
-    <a class="btn" href="https://github.com/ansumandas441/mathematical-discovery-engine">⭐ Star on GitHub</a>
+    <a class="btn primary" href="./graph_viewer_3d.html">Explore the 3D graph</a>
+    <a class="btn" href="https://github.com/ansumandas441/mathematical-discovery-engine">★ Star on GitHub</a>
   </div>
 
-  <p class="disclaimer">This is an open research project, not a finished oracle. The knowledge graph and 3D viewer are fully real and live here today; the discovery engine is an active, evolving system. The aim of sharing it is to find out — in the open — how far the idea can actually go. Skepticism and contributions both welcome.</p>
-
   <footer>
-    Open source · <a href="https://github.com/ansumandas441/mathematical-discovery-engine">github.com/ansumandas441/mathematical-discovery-engine</a>
+    <p class="disclaimer">An open research project, not a finished oracle. The knowledge graph and 3D viewer are fully real and live here today; the discovery engine is an active, evolving system. The aim of sharing it is to find out — in the open — how far the idea can go. Skepticism and contributions both welcome.</p>
+    <p class="src">Open source · <a href="https://github.com/ansumandas441/mathematical-discovery-engine">github.com/ansumandas441/mathematical-discovery-engine</a></p>
   </footer>
 
 </div>
