@@ -154,6 +154,19 @@
   .wow p{font-family:var(--disp); font-weight:200; font-size:clamp(19px,3vw,27px); line-height:1.4; color:#fff; margin:0 0 14px; letter-spacing:.01em;}
   .wow .sub{font-size:15px; color:var(--muted); font-weight:300; margin:0; letter-spacing:.02em;}
 
+  /* terminal / run-it-yourself */
+  .terminal{border:1px solid var(--border-soft); background:rgba(2,12,11,0.7); margin-top:6px;}
+  .terminal .bar{display:flex; align-items:center; gap:8px; padding:11px 16px; border-bottom:1px solid var(--border-soft);}
+  .terminal .bar i{width:10px; height:10px; border-radius:50%; background:#2c3d3a; display:inline-block;}
+  .terminal .bar i:nth-child(1){background:rgba(244,169,111,.55);}
+  .terminal .bar i:nth-child(2){background:rgba(92,227,208,.45);}
+  .terminal .bar .ttl{margin-left:10px; font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted);}
+  .terminal pre{margin:0; padding:22px 20px; overflow-x:auto; font-family:var(--mono); font-size:13.5px; line-height:1.9; color:#cfe6e1;}
+  .terminal .c{color:#5b716c;}            /* comment */
+  .terminal .p{color:var(--teal);}        /* prompt $ */
+  .terminal .k{color:var(--amber);}       /* highlight */
+  .step-note{font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; color:var(--muted); margin:16px 0 0; text-align:center;}
+
   footer{text-align:center; margin-top:40px;}
   .disclaimer{max-width:700px; margin:0 auto 26px; font-family:var(--mono); font-size:11.5px; line-height:1.9; letter-spacing:.04em; color:#647571; text-align:center;}
   footer .src{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);}
@@ -237,6 +250,35 @@
     <p class="kicker"><span class="label">How It Runs</span></p>
     <h2>An orchestra of models <b>walking the graph</b>.</h2>
     <p>An <b style="color:#dfeceb;font-weight:500">orchestrator</b> model decides which techniques to try next. <b style="color:#dfeceb;font-weight:500">Worker</b> models attempt each technique application in parallel. A <b style="color:#dfeceb;font-weight:500">pruner</b> kills branches that known impossibility results rule out. Every solved problem adds new edges back into the graph — so the system grows a little smarter each time it succeeds. The whole structure is built by a pipeline that ingests mathematical sources and deduplicates against the existing canon.</p>
+  </section>
+
+  <!-- RUN IT YOURSELF -->
+  <section class="block">
+    <p class="kicker"><span class="label">Search For Yourself</span></p>
+    <h2>Point it at a conjecture and <b>let it search</b>.</h2>
+    <p>The engine is open source and runs on your machine. Clone it, install two packages, and hand it a theorem to prove — the <em>dry-run</em> mode searches the graph for free, no API key required. Add your own key to put real models to work on the frontier.</p>
+    <div class="terminal">
+      <div class="bar"><i></i><i></i><i></i><span class="ttl">your terminal</span></div>
+<pre><span class="c"># 1 — get the engine</span>
+<span class="p">$</span> git clone https://github.com/ansumandas441/mathematical-discovery-engine
+<span class="p">$</span> cd mathematical-discovery-engine
+<span class="p">$</span> pip install anthropic networkx
+
+<span class="c"># 2 — search for a proof (free, no API key)</span>
+<span class="p">$</span> python3 -m discovery_engine.discover --dry-run \
+      <span class="k">"Prove the Erdős primitive set conjecture"</span>
+
+<span class="c"># 3 — go further: real models walking the graph</span>
+<span class="p">$</span> export ANTHROPIC_API_KEY=sk-ant-...
+<span class="p">$</span> python3 -m discovery_engine.discover --llm-orchestrate \
+      --workers 5 --max-depth 7 \
+      <span class="k">"&lt;your own conjecture here&gt;"</span></pre>
+    </div>
+    <p class="step-note">Full setup, every flag, and worker modes are documented in the README.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/ansumandas441/mathematical-discovery-engine#running-a-discovery">Read the setup guide →</a>
+      <a class="btn" href="https://github.com/ansumandas441/mathematical-discovery-engine">View on GitHub</a>
+    </div>
   </section>
 
   <div class="cta">
