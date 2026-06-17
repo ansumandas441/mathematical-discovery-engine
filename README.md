@@ -12,9 +12,16 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ansumandas441/mathematical-discovery-engine/pulls)
 
 <p align="center">
-  <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph — 15,941 mathematical nodes connected by 26,614 edges" width="720">
+  <a href="https://ansumandas441.github.io/mathematical-discovery-engine/"><b>▶ Explore the live interactive 3D graph →</b></a>
+  &nbsp;·&nbsp; no install, runs in your browser
+</p>
+
+<p align="center">
+  <a href="https://ansumandas441.github.io/mathematical-discovery-engine/">
+    <img src="assets/knowledge_graph_3d_preview.gif" alt="3D Knowledge Graph — 15,941 mathematical nodes connected by 26,614 edges — click to explore live" width="720">
+  </a>
   <br>
-  <sub>15,941 nodes · 26,614 edges · 1,223 proof techniques · 5,055 theorems — explore the full graph in 3D</sub>
+  <sub>15,941 nodes · 26,614 edges · 1,223 proof techniques · 5,055 theorems — <a href="https://ansumandas441.github.io/mathematical-discovery-engine/">click the graph to explore it in 3D</a></sub>
 </p>
 
 ## What This Repository Does
