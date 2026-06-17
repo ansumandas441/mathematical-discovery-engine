@@ -256,7 +256,7 @@
   <section class="block">
     <p class="kicker"><span class="label">Search For Yourself</span></p>
     <h2>Point it at a conjecture and <b>let it search</b>.</h2>
-    <p>The engine is open source and runs on your machine. Clone it, install two packages, and hand it a theorem to prove — the <em>dry-run</em> mode searches the graph for free, no API key required. Add your own key to put real models to work on the frontier.</p>
+    <p>The engine is open source and runs on your machine. Clone it, install two packages, and hand it a theorem to prove — the <em>dry-run</em> mode searches the graph for free. Already have <b style="color:#dfeceb;font-weight:500">Claude Code</b>? Put real models to work with <em>no API key at all</em> — it bills to your existing subscription.</p>
     <div class="terminal">
       <div class="bar"><i></i><i></i><i></i><span class="ttl">your terminal</span></div>
 <pre><span class="c"># 1 — get the engine</span>
@@ -268,10 +268,13 @@
 <span class="p">$</span> python3 -m discovery_engine.discover --dry-run \
       <span class="k">"Prove the Erdős primitive set conjecture"</span>
 
-<span class="c"># 3 — go further: real models walking the graph</span>
+<span class="c"># 3 — real models, no API key — uses your Claude Code subscription</span>
+<span class="p">$</span> python3 -m discovery_engine.discover --use-cli \
+      <span class="k">"&lt;your own conjecture here&gt;"</span>
+
+<span class="c"># …or bring an Anthropic API key for the cheapest large searches</span>
 <span class="p">$</span> export ANTHROPIC_API_KEY=sk-ant-...
-<span class="p">$</span> python3 -m discovery_engine.discover --llm-orchestrate \
-      --workers 5 --max-depth 7 \
+<span class="p">$</span> python3 -m discovery_engine.discover --llm-orchestrate --workers 5 \
       <span class="k">"&lt;your own conjecture here&gt;"</span></pre>
     </div>
     <p class="step-note">Full setup, every flag, and worker modes are documented in the README.</p>
