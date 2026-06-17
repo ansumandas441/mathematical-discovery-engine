@@ -3,91 +3,141 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mathematical Discovery Engine — a knowledge graph of 15,941 mathematical states</title>
-<meta name="description" content="An interactive knowledge graph of 15,941 mathematical states and 1,223 proof techniques — treating mathematical proof as path-finding through a finite graph." />
+<title>The Mathematical Discovery Engine — a machine that searches for new theorems</title>
+<meta name="description" content="A knowledge graph of 15,941 mathematical states and 1,223 proof techniques. Proof becomes path-finding — and discovery becomes search, even with no specific problem to solve." />
 
-<!-- Open Graph / Twitter cards: makes links unfurl with the preview image -->
-<meta property="og:title" content="Mathematical Discovery Engine" />
-<meta property="og:description" content="15,941 mathematical states · 26,614 connections · 1,223 proof techniques. Proof as path-finding through a finite graph. Explore it in 3D." />
+<!-- Open Graph / Twitter cards: links unfurl with the preview image -->
+<meta property="og:title" content="The Mathematical Discovery Engine" />
+<meta property="og:description" content="What if discovering a new theorem is just finding a path through a graph? 15,941 states · 1,223 techniques · open-ended search for mathematics no human has reached yet." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="./assets/knowledge_graph_3d_preview.gif" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="./assets/knowledge_graph_3d_preview.gif" />
 
 <style>
-  :root { --bg:#060612; --panel:rgba(255,255,255,0.04); --border:rgba(255,255,255,0.10);
-          --text:#e6edf3; --muted:#8b949e; --accent:#388bfd; }
-  * { box-sizing: border-box; }
-  html, body { margin:0; padding:0; }
-  body {
-    background: radial-gradient(1200px 700px at 50% -10%, #11112b 0%, var(--bg) 60%);
-    color: var(--text); min-height:100vh;
-    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
+  :root{
+    --bg:#050510; --panel:rgba(255,255,255,0.035); --border:rgba(255,255,255,0.10);
+    --text:#e9eef6; --muted:#8b94a7; --accent:#5b9dff; --accent2:#a06bff; --glow:#3a6dff;
   }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
-  header { text-align:center; }
-  h1 { font-size: clamp(28px, 5vw, 46px); line-height:1.1; margin:0 0 12px; letter-spacing:-0.02em; }
-  .tagline { color: var(--muted); font-size: clamp(16px, 2.4vw, 20px); max-width: 640px; margin: 0 auto 8px; }
-  .insight { color: var(--accent); font-weight:600; margin: 6px auto 28px; }
-
-  .hero {
-    position: relative; border:1px solid var(--border); border-radius: 16px; overflow:hidden;
-    background:#000; box-shadow: 0 20px 60px rgba(0,0,0,0.5); margin: 0 auto 28px; aspect-ratio: 16/9;
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--text); min-height:100vh; overflow-x:hidden;
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
   }
-  .hero video, .hero img { width:100%; height:100%; object-fit: cover; display:block; }
-  .hero a.play {
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    text-decoration:none; color:#fff; background: linear-gradient(transparent 60%, rgba(0,0,0,0.55));
+  /* animated aurora backdrop */
+  body::before{
+    content:""; position:fixed; inset:-30%; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(40% 50% at 20% 10%, rgba(91,157,255,0.18), transparent 60%),
+      radial-gradient(45% 50% at 85% 15%, rgba(160,107,255,0.16), transparent 60%),
+      radial-gradient(50% 60% at 50% 110%, rgba(58,109,255,0.14), transparent 60%);
+    filter:blur(20px); animation:drift 18s ease-in-out infinite alternate;
   }
-  .hero .play span {
-    align-self:flex-end; margin-bottom:18px; font-weight:600; font-size:15px;
-    background: rgba(0,0,0,0.45); padding:8px 16px; border-radius:999px; border:1px solid var(--border);
-    backdrop-filter: blur(6px);
+  @keyframes drift{ from{transform:translate(-2%,-1%) scale(1);} to{transform:translate(2%,2%) scale(1.08);} }
+
+  .wrap{max-width:980px; margin:0 auto; padding:40px 22px 90px;}
+
+  /* eyebrow */
+  .eyebrow{
+    text-align:center; letter-spacing:.18em; text-transform:uppercase; font-size:12px;
+    color:var(--muted); margin-bottom:18px;
+  }
+  h1{
+    text-align:center; font-size:clamp(32px,6.2vw,62px); line-height:1.05; margin:0 0 18px;
+    letter-spacing:-0.03em; font-weight:800;
+    background:linear-gradient(180deg,#ffffff 0%, #cdd6ea 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  h1 .grad{
+    background:linear-gradient(100deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .lede{
+    text-align:center; color:#c2cbdc; font-size:clamp(17px,2.5vw,22px);
+    max-width:720px; margin:0 auto 30px;
   }
 
-  .cta { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin: 8px 0 36px; }
-  .btn {
-    text-decoration:none; font-weight:600; font-size:16px; padding:14px 24px; border-radius:10px;
-    border:1px solid var(--border); color:var(--text); background:var(--panel); transition: all .15s;
-    display:inline-flex; align-items:center; gap:8px;
+  .hero{
+    position:relative; border:1px solid var(--border); border-radius:18px; overflow:hidden;
+    background:#000; aspect-ratio:16/9; margin:0 auto 14px;
+    box-shadow:0 0 0 1px rgba(91,157,255,0.15), 0 30px 80px rgba(20,30,90,0.45);
   }
-  .btn:hover { background: rgba(255,255,255,0.09); transform: translateY(-1px); }
-  .btn.primary { background: var(--accent); border-color: var(--accent); color:#fff; }
-  .btn.primary:hover { background:#4c9bff; }
+  .hero video,.hero img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero a.play{
+    position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center;
+    text-decoration:none; color:#fff; background:linear-gradient(transparent 55%,rgba(0,0,0,0.6));
+  }
+  .hero a.play span{
+    margin-bottom:18px; font-weight:600; font-size:15px; padding:9px 18px; border-radius:999px;
+    background:rgba(8,10,25,0.55); border:1px solid var(--border); backdrop-filter:blur(8px);
+  }
 
-  .stats { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin: 0 0 40px; }
-  @media (max-width:560px){ .stats { grid-template-columns: repeat(2,1fr); } }
-  .stat { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:18px 10px; text-align:center; }
-  .stat b { display:block; font-size: clamp(22px, 4vw, 30px); letter-spacing:-0.02em; }
-  .stat small { color:var(--muted); font-size:13px; }
+  .cta{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin:26px 0 14px;}
+  .btn{
+    text-decoration:none; font-weight:650; font-size:16px; padding:15px 28px; border-radius:12px;
+    border:1px solid var(--border); color:var(--text); background:var(--panel);
+    transition:transform .15s, background .15s, box-shadow .15s; display:inline-flex; align-items:center; gap:9px;
+  }
+  .btn:hover{transform:translateY(-2px); background:rgba(255,255,255,0.08);}
+  .btn.primary{
+    color:#fff; border-color:transparent;
+    background:linear-gradient(100deg,var(--accent),var(--accent2));
+    box-shadow:0 10px 30px rgba(74,109,255,0.4);
+  }
+  .btn.primary:hover{box-shadow:0 14px 40px rgba(74,109,255,0.55);}
+  .cta-note{text-align:center; color:var(--muted); font-size:13.5px; margin:0 0 50px;}
 
-  .about { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:24px 26px; margin-bottom: 28px; }
-  .about h2 { margin:0 0 10px; font-size:20px; }
-  .about p { color:#c9d1d9; margin:0 0 12px; }
-  .about p:last-child { margin-bottom:0; }
-  code { background: rgba(255,255,255,0.08); padding:1px 6px; border-radius:5px; font-size:0.9em; }
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:0 0 64px;}
+  @media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
+  .stat{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:20px 10px; text-align:center;}
+  .stat b{display:block; font-size:clamp(24px,4.4vw,34px); letter-spacing:-0.02em;
+    background:linear-gradient(180deg,#fff,#b9c4dc); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;}
+  .stat small{color:var(--muted); font-size:13px;}
 
-  footer { text-align:center; color:var(--muted); font-size:14px; margin-top:32px; }
-  footer a { color: var(--accent); text-decoration:none; }
+  /* narrative sections */
+  section.block{margin:0 0 56px;}
+  .kicker{color:var(--accent); font-weight:700; letter-spacing:.04em; font-size:14px; text-transform:uppercase; margin:0 0 10px;}
+  h2{font-size:clamp(24px,4vw,34px); line-height:1.15; letter-spacing:-0.02em; margin:0 0 16px;}
+  section.block p{color:#c5cee0; font-size:17.5px; margin:0 0 14px;}
+  section.block p:last-child{margin-bottom:0;}
+  .big{font-size:clamp(20px,3vw,26px); line-height:1.4; color:#e9eef6; font-weight:600;}
+  em.hl{font-style:normal; color:#fff; background:linear-gradient(100deg,rgba(91,157,255,.25),rgba(160,107,255,.25)); padding:0 6px; border-radius:5px;}
+
+  .modes{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:6px;}
+  @media (max-width:640px){.modes{grid-template-columns:1fr;}}
+  .mode{background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:24px;}
+  .mode h3{margin:0 0 8px; font-size:20px;}
+  .mode .tag{display:inline-block; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent2); margin-bottom:12px;}
+  .mode p{font-size:16px; color:#b9c2d6; margin:0;}
+
+  .wow{
+    border:1px solid var(--border); border-radius:18px; padding:34px 30px; text-align:center;
+    background:linear-gradient(160deg,rgba(91,157,255,0.10),rgba(160,107,255,0.07));
+  }
+  .wow p{font-size:clamp(19px,3vw,25px); line-height:1.45; color:#eef2fb; margin:0 0 10px; font-weight:600;}
+  .wow .sub{font-size:16px; color:var(--muted); font-weight:400; margin:0;}
+
+  footer{text-align:center; color:var(--muted); font-size:14px; margin-top:30px;}
+  footer a{color:var(--accent); text-decoration:none;}
+  .disclaimer{max-width:680px; margin:22px auto 0; font-size:13.5px; color:#6f7890; text-align:center;}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header>
-    <h1>The Mathematical Discovery Engine</h1>
-    <p class="tagline">An interactive knowledge graph of <b>15,941 mathematical states</b> and <b>1,223 proof techniques</b> — from Pythagoras to Perelman, connected by the methods that discovered them.</p>
-    <p class="insight">Proof, reframed as path-finding through a finite graph.</p>
-  </header>
+  <p class="eyebrow">The Mathematical Discovery Engine</p>
+  <h1>What if a new theorem is just<br><span class="grad">a path waiting to be found?</span></h1>
+  <p class="lede">Every great theorem in history was reached by applying a known <b>technique</b> to a known <b>fact</b>. So we encoded all of it — 15,941 mathematical states, 1,223 techniques — into one graph. Now discovery isn't genius. It's <b>search</b>.</p>
 
   <div class="hero">
     <video autoplay muted loop playsinline poster="./assets/knowledge_graph_3d_preview.gif">
       <source src="./assets/knowledge_graph_3d.mp4" type="video/mp4" />
-      <img src="./assets/knowledge_graph_3d_preview.gif" alt="3D knowledge graph of mathematical states" />
+      <img src="./assets/knowledge_graph_3d_preview.gif" alt="3D knowledge graph of 15,941 mathematical states" />
     </video>
-    <a class="play" href="./graph_viewer_3d.html" title="Open the interactive 3D graph">
-      <span>▶ Click to explore the live 3D graph</span>
+    <a class="play" href="./graph_viewer_3d.html" title="Open the live 3D graph">
+      <span>▶ Click to fly through the live graph</span>
     </a>
   </div>
 
@@ -95,24 +145,62 @@
     <a class="btn primary" href="./graph_viewer_3d.html">🌐 Explore the live 3D graph</a>
     <a class="btn" href="https://github.com/ansumandas441/mathematical-discovery-engine">⭐ Star on GitHub</a>
   </div>
+  <p class="cta-note">No install. Runs in your browser. Loads ~11&nbsp;MB of real graph data — give it a few seconds.</p>
 
   <div class="stats">
-    <div class="stat"><b>15,941</b><small>states &amp; nodes</small></div>
-    <div class="stat"><b>26,614</b><small>connections</small></div>
+    <div class="stat"><b>15,941</b><small>mathematical states</small></div>
     <div class="stat"><b>1,223</b><small>proof techniques</small></div>
-    <div class="stat"><b>5,055</b><small>theorems</small></div>
+    <div class="stat"><b>26,614</b><small>connections</small></div>
+    <div class="stat"><b>∞ → finite</b><small>search space</small></div>
   </div>
 
-  <div class="about">
-    <h2>What is this?</h2>
-    <p>Most of mathematics is recorded as prose — theorems, proofs, and the techniques behind them scattered across centuries of papers. The Mathematical Discovery Engine encodes that web as a single graph: every <b>state</b> (a known result or object), every <b>axiom</b>, every <b>theorem</b>, and the <b>technique</b> edges that move you from one to the next.</p>
-    <p>Once proof is a graph, discovery becomes <b>search</b>. Finding a new proof is finding a path; finding an open problem is finding a promising node with no outgoing edge yet. The graph is LLM-orchestrated — an automated pipeline ingests mathematical sources, deduplicates against the canon, and grows the structure.</p>
-    <p>Everything here is open source. Spin the graph, follow a chain of techniques, and see how Fourier connects to number theory connects to topology. <a href="https://github.com/ansumandas441/mathematical-discovery-engine" style="color:var(--accent)">Read the full writeup on GitHub →</a></p>
+  <section class="block">
+    <p class="kicker">The idea</p>
+    <h2>Mathematics is not infinite to search. It only looks that way.</h2>
+    <p class="big">You cannot search over <em class="hl">all possible true statements</em> — there are infinitely many. But you <em class="hl">can</em> search over every <b>composition of known techniques applied to known facts</b>. That space is large, but it is <b>finite</b>. And finite spaces can be searched by machines.</p>
+    <p>Galois applied symmetry reduction to the roots of polynomials. Cantor applied diagonalization to the real numbers. Wiles built a bridge from modular forms to elliptic curves. Each was a human, sometimes spending a lifetime, finding <em>one path</em>. This engine treats that path-finding as a search problem an orchestrator can run thousands of times in parallel.</p>
+  </section>
+
+  <section class="block">
+    <p class="kicker">Two ways to discover</p>
+    <h2>Search with a goal — or with no goal at all.</h2>
+    <div class="modes">
+      <div class="mode">
+        <span class="tag">Targeted</span>
+        <h3>Prove a specific theorem</h3>
+        <p>Give it a goal. The engine searches for a chain of techniques connecting today's known axioms to that result — an automatically discovered proof. Impossible branches are pruned using known impossibility theorems (Abel–Ruffini, Gödel, Turing) so the search doesn't waste time on the unreachable.</p>
+      </div>
+      <div class="mode">
+        <span class="tag">Open-ended</span>
+        <h3>Discover with no problem in mind</h3>
+        <p>Here is the wild part. Point it at <b>no target at all.</b> The engine takes existing nodes, applies techniques no one happened to try in that combination, and asks: <em>does this produce something new and true?</em> Mathematics no human set out to find — because no human thought to look there.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wow">
+      <p>If this works at scale, the bottleneck on mathematical progress was never the truths themselves — it was <em class="hl">how long it takes a human to stumble onto the right combination.</em></p>
+      <p>Remove that bottleneck, and centuries of advancement could compress into a search that runs while you sleep.</p>
+      <p class="sub">That is the bet. The graph below is real and explorable today. Spin it, follow a chain of techniques, and judge for yourself.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="kicker">How it runs</p>
+    <h2>An orchestra of models walking the graph.</h2>
+    <p>An <b>orchestrator</b> LLM decides which techniques to try next. <b>Worker</b> models attempt each technique application in parallel. A <b>pruner</b> kills branches that known impossibility results rule out. Every solved problem adds new edges back into the graph — so the system gets a little smarter every time it succeeds. The whole structure is grown by a pipeline that ingests mathematical sources and deduplicates against the existing canon.</p>
+  </section>
+
+  <div class="cta">
+    <a class="btn primary" href="./graph_viewer_3d.html">🌐 Explore the live 3D graph</a>
+    <a class="btn" href="https://github.com/ansumandas441/mathematical-discovery-engine">⭐ Star on GitHub</a>
   </div>
+
+  <p class="disclaimer">This is an open research project, not a finished oracle. The knowledge graph and 3D viewer are fully real and live here today; the discovery engine is an active, evolving system. The aim of sharing it is to find out — in the open — how far the idea can actually go. Skepticism and contributions both welcome.</p>
 
   <footer>
-    Open source · <a href="https://github.com/ansumandas441/mathematical-discovery-engine">github.com/ansumandas441/mathematical-discovery-engine</a><br/>
-    Tip: the 3D viewer downloads ~11&nbsp;MB of graph data — give it a few seconds on first load.
+    Open source · <a href="https://github.com/ansumandas441/mathematical-discovery-engine">github.com/ansumandas441/mathematical-discovery-engine</a>
   </footer>
 
 </div>
